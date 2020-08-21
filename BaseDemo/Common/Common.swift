@@ -21,4 +21,5 @@ public extension Notification.Name {
     static let ChangeSort = Notification.Name("ChangeSort")
     static let UpdateSort = Notification.Name("UpdateSort")
     static let DetailTicket = Notification.Name("DetailTicket")
+    static let DetailTicketTab = Notification.Name("DetailTicketTab")
 }

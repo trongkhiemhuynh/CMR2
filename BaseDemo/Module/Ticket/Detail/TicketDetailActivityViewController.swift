@@ -9,7 +9,6 @@
 import UIKit
 
 
-
 class TicketDetailActivityViewController: BaseViewController {
 
     let reuseId = "TDAID"
@@ -27,8 +26,15 @@ class TicketDetailActivityViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    override func setupView() {
+        view.backgroundColor = UIColor(hex: BASEColor.BACKGROUND_LIST_COLOR)
+        cvActivity.backgroundColor = UIColor(hex: BASEColor.BACKGROUND_LIST_COLOR)
         
         cvActivity.register(UINib(nibName: "TicketDetailActivityCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseId)
+        vActivity.layer.cornerRadius = 8
+        
     }
 
 

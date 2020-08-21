@@ -79,6 +79,9 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="322" height="197"/>
+            <connections>
+                <outlet property="vContent" destination="cvf-Ps-Vbp" id="JFq-uu-S11"/>
+            </connections>
             <point key="canvasLocation" x="162.31884057971016" y="127.56696428571428"/>
         </collectionViewCell>
     </objects>

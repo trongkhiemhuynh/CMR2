@@ -10,9 +10,13 @@ import UIKit
 
 class TicketDetailActivityCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var vContent : UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        vContent.layer.cornerRadius = 8
     }
 
 }

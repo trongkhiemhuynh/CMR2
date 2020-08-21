@@ -10,4 +10,5 @@ import Foundation
 
 struct BASEColor {
     static let APP_COLOR = "#0AB2A8"
+    static let BACKGROUND_LIST_COLOR = "#f9f9f9"
 }

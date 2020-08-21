@@ -23,9 +23,30 @@ class TicketDetailController: BaseViewController {
     }
 
     override func setupView() {
-        let vc = TicketDetailActivityViewController()
-        addChild(vc)
-        add(vc, contentView: vInfo)
+        let infoVC = TicketDetailInfoViewController()
+        let activityVC = TicketDetailActivityViewController()
+        
+        addChild(activityVC)
+        addChild(infoVC)
+        
+        add(infoVC, contentView: vInfo)
+        
+        print("debug --- \(vInfo.frame) -- window -- \(UIScreen.main.bounds)")
+        
+        NotificationCenter.default.addObserver(forName: .DetailTicketTab, object: nil, queue: nil) { (notif) in
+            
+            if let userInfo = notif.userInfo {
+                
+                let strNum = userInfo["action"] as! String
+//                let test = Self
+                
+                if strNum == "0" {
+                    self.add(infoVC, contentView: self.vInfo)
+                } else {
+                    self.add(activityVC, contentView: self.vInfo)
+                }
+            }
+        }
     }
 
     @IBAction func actionBack() {

@@ -12,7 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomDetailTabView" customModule="BaseDemo" customModuleProvider="target">
             <connections>
+                <outlet property="vActivity" destination="x7N-Q5-CVJ" id="xfD-u1-buD"/>
                 <outlet property="vContent" destination="iN0-l3-epB" id="Gf8-b9-dOZ"/>
+                <outlet property="vInfo" destination="iJ4-KO-5Ss" id="cFz-t4-YgA"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -39,7 +41,7 @@
                                             <rect key="frame" x="47" y="63" width="94" height="7"/>
                                         </imageView>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="bBv-lW-YNR" secondAttribute="bottom" id="0gC-4F-IQt"/>
                                         <constraint firstItem="bBv-lW-YNR" firstAttribute="width" secondItem="03o-qA-Pjt" secondAttribute="width" id="VaV-Lk-Q2f"/>
@@ -61,7 +63,7 @@
                                             <rect key="frame" x="61.5" y="63" width="65" height="7"/>
                                         </imageView>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="1iE-jx-0oD" firstAttribute="centerY" secondItem="x7N-Q5-CVJ" secondAttribute="centerY" id="3dK-ZQ-baW"/>
                                         <constraint firstItem="FaY-w5-edD" firstAttribute="centerX" secondItem="x7N-Q5-CVJ" secondAttribute="centerX" id="OLm-az-oQb"/>
@@ -71,9 +73,10 @@
                                     </constraints>
                                 </view>
                             </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="J16-TL-fdd" firstAttribute="leading" secondItem="EQY-WF-9UO" secondAttribute="leading" id="BLF-wT-Urt"/>
                         <constraint firstAttribute="height" constant="70" id="PR5-i3-QhW"/>
