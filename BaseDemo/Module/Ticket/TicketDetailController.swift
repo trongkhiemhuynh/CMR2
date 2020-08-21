@@ -15,6 +15,8 @@ class TicketDetailController: BaseViewController {
     @IBOutlet weak var vTab : CustomDetailTabView!
     @IBOutlet weak var vInfo : CustomDetailInfoView!
     
+    @IBOutlet weak var vTest : UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,11 +52,16 @@ class TicketDetailController: BaseViewController {
     }
 
     @IBAction func actionBack() {
-        dismiss(animated: false, completion: nil)
+//        dismiss(animated: false, completion: nil)
+        remove()
     }
     
     @IBAction func actionExtend() {
         // add more
+        
+//        vTest.frame = CGRect(origin: view.center, size: CGSize(width: 200, height: 200))
+        
+        view.addSubview(vTest)
         
     }
     

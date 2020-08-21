@@ -44,3 +44,24 @@ class SplashViewController: UIViewController {
     */
 
 }
+
+class TabBarController: UITabBarController {
+    
+//    var image: UIImageView?
+//    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        image = UIImageView(image: createImage(color: UIColor(red:0.18, green:0.66, blue:0.24, alpha:1.0), size: tabBarItemSize, lineHeight: 4))
+//        tabBar.addSubview(image!)
+//    }
+//    
+//    func createImage(color: UIColor, size: CGSize, lineHeight: CGFloat) -> UIImage {
+//        let rect: CGRect = CGRect(x: 0, y: size.height - lineHeight, width: size.width, height: lineHeight )
+//        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+//        color.setFill()
+//        UIRectFill(rect)
+//        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+//        UIGraphicsEndImageContext()
+//        return image
+//    }
+}

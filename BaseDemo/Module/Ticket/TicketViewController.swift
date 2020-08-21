@@ -41,9 +41,11 @@ class TicketViewController: BaseViewController {
         NotificationCenter.default.addObserver(forName: .DetailTicket, object: nil, queue: nil, using: { (noti) in
             
             // !!!FIX ME:
-            let detailVC = TicketDetailController()
+            let detailVC = TicketDetailController(nibName: "TicketDetailController", bundle: nil)
+            self.addChild(detailVC)
+            self.add(detailVC, contentView: self.view)
             
-            self.present(detailVC, animated: false, completion: nil)
+//            self.present(detailVC, animated: false, completion: nil)
             
             
         })
