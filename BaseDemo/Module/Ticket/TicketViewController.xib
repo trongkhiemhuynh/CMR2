@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TicketViewController" customModule="BaseDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="vListView" destination="Iba-Pz-Mum" id="ClZ-ey-Pes"/>
+                <outlet property="vTicket" destination="OrB-Ef-Axg" id="FlG-Pi-LAi"/>
+                <outlet property="vTitle" destination="jMU-a7-D4b" id="Pl7-64-ds7"/>
+                <outlet property="view" destination="iN0-l3-epB" id="uoZ-N3-UCz"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OrB-Ef-Axg">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jMU-a7-D4b" customClass="CustomTitleView" customModule="BaseDemo" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="63"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="63" id="FeJ-E2-W5L"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iba-Pz-Mum" customClass="CustomListView" customModule="BaseDemo" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="133" width="414" height="685"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JFM-N0-seG" customClass="CustomTicketStageView" customModule="BaseDemo" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="63" width="414" height="70"/>
+                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="6rH-tl-25A"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="jMU-a7-D4b" firstAttribute="leading" secondItem="OrB-Ef-Axg" secondAttribute="leading" id="197-ex-Jsc"/>
+                        <constraint firstAttribute="bottom" secondItem="Iba-Pz-Mum" secondAttribute="bottom" id="1M9-pf-gQ2"/>
+                        <constraint firstItem="JFM-N0-seG" firstAttribute="top" secondItem="jMU-a7-D4b" secondAttribute="bottom" id="2wq-kg-ITD"/>
+                        <constraint firstItem="JFM-N0-seG" firstAttribute="leading" secondItem="OrB-Ef-Axg" secondAttribute="leading" id="GQQ-Cg-GoG"/>
+                        <constraint firstItem="jMU-a7-D4b" firstAttribute="top" secondItem="OrB-Ef-Axg" secondAttribute="top" id="Mwg-4h-5bL"/>
+                        <constraint firstAttribute="trailing" secondItem="JFM-N0-seG" secondAttribute="trailing" id="PNy-Ht-waF"/>
+                        <constraint firstItem="Iba-Pz-Mum" firstAttribute="top" secondItem="JFM-N0-seG" secondAttribute="bottom" id="S7x-AH-Nfv"/>
+                        <constraint firstAttribute="trailing" secondItem="Iba-Pz-Mum" secondAttribute="trailing" id="WVD-sy-bIv"/>
+                        <constraint firstItem="Iba-Pz-Mum" firstAttribute="leading" secondItem="OrB-Ef-Axg" secondAttribute="leading" id="gKN-s8-MCh"/>
+                        <constraint firstAttribute="trailing" secondItem="jMU-a7-D4b" secondAttribute="trailing" id="lRg-5T-0fN"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="OrB-Ef-Axg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1un-fR-nTZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="OrB-Ef-Axg" secondAttribute="bottom" id="Has-ZH-wu1"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="OrB-Ef-Axg" secondAttribute="trailing" id="See-Bl-D62"/>
+                <constraint firstItem="OrB-Ef-Axg" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="v4W-jf-8y5"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+</document>

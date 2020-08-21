@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TabMenuController" customModule="BaseDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="vContent" destination="9tn-qw-oDQ" id="aDB-rP-ywq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9tn-qw-oDQ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="602"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3il-yt-mdC" customClass="CustomTabBarView" customModule="BaseDemo" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="602" width="375" height="65"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="65" id="ulZ-zd-9xV"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="9tn-qw-oDQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="2vr-2f-Ndu"/>
+                <constraint firstItem="9tn-qw-oDQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3v5-k5-aEa"/>
+                <constraint firstItem="3il-yt-mdC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JRb-jT-Ts4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3il-yt-mdC" secondAttribute="trailing" id="Jei-0i-Q8L"/>
+                <constraint firstItem="3il-yt-mdC" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="crz-Pt-67L"/>
+                <constraint firstItem="3il-yt-mdC" firstAttribute="top" secondItem="9tn-qw-oDQ" secondAttribute="bottom" id="uYk-cU-EUH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9tn-qw-oDQ" secondAttribute="trailing" id="vuF-K5-b8S"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CustomTicketStageCollectionViewCell" customModule="BaseDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="254" height="147"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="254" height="147"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeD-2d-jrZ">
+                        <rect key="frame" x="103.5" y="61.5" width="47" height="24"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_bar_selected" translatesAutoresizingMaskIntoConstraints="NO" id="iIr-fD-kvC">
+                        <rect key="frame" x="0.0" y="137" width="254" height="10"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="PNj-j4-bQx"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="iIr-fD-kvC" secondAttribute="bottom" id="B6J-xi-itt"/>
+                <constraint firstAttribute="trailing" secondItem="iIr-fD-kvC" secondAttribute="trailing" id="LWO-9p-cXi"/>
+                <constraint firstItem="eeD-2d-jrZ" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="ZxX-gm-oqA"/>
+                <constraint firstItem="eeD-2d-jrZ" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="dBe-AM-XlW"/>
+                <constraint firstItem="iIr-fD-kvC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="wBz-Po-qGi"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="254" height="147"/>
+            <connections>
+                <outlet property="imgStage" destination="iIr-fD-kvC" id="EG2-VQ-9mJ"/>
+                <outlet property="lblStage" destination="eeD-2d-jrZ" id="TqR-MV-FaN"/>
+            </connections>
+            <point key="canvasLocation" x="285.50724637681162" y="168.41517857142856"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="menu_bar_selected" width="62" height="7"/>
+    </resources>
+</document>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomTitleView" customModule="BaseDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="btnFilter" destination="Gwf-9D-8GX" id="UjL-R3-lGZ"/>
+                <outlet property="btnSearch" destination="EJ1-uF-p5E" id="6Mx-Bm-ljN"/>
+                <outlet property="lblTitle" destination="c5U-7K-y3O" id="wDu-yR-4nh"/>
+                <outlet property="vContent" destination="iN0-l3-epB" id="1pG-U2-oR4"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALo-Lq-2k5">
+                    <rect key="frame" x="0.0" y="673" width="414" height="63"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ticket list" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5U-7K-y3O">
+                            <rect key="frame" x="13" y="19.666666666666629" width="80" height="24"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                            <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gwf-9D-8GX">
+                            <rect key="frame" x="371" y="16.666666666666629" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="zy4-1g-I65"/>
+                            </constraints>
+                            <state key="normal" image="filter"/>
+                            <connections>
+                                <action selector="actionFilter:" destination="-1" eventType="touchUpInside" id="wNM-Vf-8M8"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJ1-uF-p5E">
+                            <rect key="frame" x="333" y="16" width="30" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="ciG-YC-TdJ"/>
+                            </constraints>
+                            <state key="normal" image="search"/>
+                            <connections>
+                                <action selector="actionSearch:" destination="-1" eventType="touchUpInside" id="kaW-My-cOX"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.039215686270000001" green="0.69803921570000005" blue="0.6588235294" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="EJ1-uF-p5E" firstAttribute="centerY" secondItem="ALo-Lq-2k5" secondAttribute="centerY" id="7NI-Af-1ec"/>
+                        <constraint firstAttribute="height" constant="63" id="A6w-3y-bts"/>
+                        <constraint firstAttribute="trailing" secondItem="Gwf-9D-8GX" secondAttribute="trailing" constant="13" id="Hcg-sr-QbW"/>
+                        <constraint firstItem="c5U-7K-y3O" firstAttribute="centerY" secondItem="ALo-Lq-2k5" secondAttribute="centerY" id="KBc-dn-h3E"/>
+                        <constraint firstItem="c5U-7K-y3O" firstAttribute="leading" secondItem="ALo-Lq-2k5" secondAttribute="leading" constant="13" id="hN2-sW-67s"/>
+                        <constraint firstItem="Gwf-9D-8GX" firstAttribute="leading" secondItem="EJ1-uF-p5E" secondAttribute="trailing" constant="8" id="wQw-aD-Njb"/>
+                        <constraint firstItem="Gwf-9D-8GX" firstAttribute="centerY" secondItem="ALo-Lq-2k5" secondAttribute="centerY" id="yhJ-MH-FLH"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ALo-Lq-2k5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="4yw-Wr-7Yo"/>
+                <constraint firstAttribute="bottom" secondItem="ALo-Lq-2k5" secondAttribute="bottom" id="8Kb-YK-z4S"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ALo-Lq-2k5" secondAttribute="trailing" id="HyR-c1-dhD"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="139" y="116"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="filter" width="15" height="15.333333015441895"/>
+        <image name="search" width="15.333333015441895" height="15.666666984558105"/>
+    </resources>
+</document>
