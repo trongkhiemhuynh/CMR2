@@ -33,6 +33,7 @@ class CustomListView: BaseView {
     @IBOutlet weak var vSorted : UIView!
     
     @IBOutlet weak var cvList : UICollectionView!
+    @IBOutlet weak var vBgList : UIView!
     
     override func commonInit() {
         Bundle.main.loadNibNamed("CustomListView", owner: self, options: nil)
@@ -44,6 +45,8 @@ class CustomListView: BaseView {
         vCounted.layer.cornerRadius = 8
         
         cvList.register(UINib(nibName: "CustomTicketCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseId)
+        
+        vBgList.backgroundColor = BASEColor.BackgroundListColor()
     }
     
     @IBAction func changeSort() {

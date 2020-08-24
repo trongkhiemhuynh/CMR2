@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TabbarItem" customModule="BaseDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bc8-qO-ghd">
+                    <rect key="frame" x="148" y="228" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="mL7-OT-gw9"/>
+                        <constraint firstAttribute="height" constant="24" id="r3t-db-6Hf"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOt-hN-iYm">
+                    <rect key="frame" x="180" y="228.5" width="47.5" height="23"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                    <color key="textColor" red="0.039215686270000001" green="0.69803921570000005" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="TOt-hN-iYm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="6OD-Jo-juw"/>
+                <constraint firstItem="bc8-qO-ghd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="KIS-5H-bGe"/>
+                <constraint firstItem="bc8-qO-ghd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="LCo-Of-Nm7"/>
+                <constraint firstItem="TOt-hN-iYm" firstAttribute="leading" secondItem="bc8-qO-ghd" secondAttribute="trailing" constant="8" id="hR3-pE-8hN"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="imgItem" destination="bc8-qO-ghd" id="eCg-Sr-KmU"/>
+                <outlet property="lblItem" destination="TOt-hN-iYm" id="GgQ-aV-3Da"/>
+            </connections>
+            <point key="canvasLocation" x="138.75" y="93.75"/>
+        </view>
+    </objects>
+</document>

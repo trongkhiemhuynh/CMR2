@@ -19,7 +19,9 @@ class BaseViewController: UIViewController {
     }
     
 
-    func setupView() {}
+    func setupView() {
+        navigationController?.navigationBar.isHidden = true
+    }
     
     func initData() {}
     /*

@@ -81,7 +81,7 @@ class CustomTabBarView: BaseView {
                 }
                 
                 btn.setTitle(strName, for: .normal)
-                btn.setTitleColor(UIColor(hex: BASEColor.APP_COLOR), for: .normal)
+                btn.setTitleColor(BASEColor.MainAppColor(), for: .normal)
                 btn.setImage(UIImage(named: "\(strName.lowercased())_selected"), for: .normal)
                 
                 btn.isSelected = false

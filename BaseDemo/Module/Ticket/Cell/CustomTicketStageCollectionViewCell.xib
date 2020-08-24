@@ -17,26 +17,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="254" height="147"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeD-2d-jrZ">
-                        <rect key="frame" x="103.5" y="61.5" width="47" height="24"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeD-2d-jrZ">
+                        <rect key="frame" x="96" y="61.5" width="62" height="24"/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_bar_selected" translatesAutoresizingMaskIntoConstraints="NO" id="iIr-fD-kvC">
-                        <rect key="frame" x="0.0" y="137" width="254" height="10"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_bar_selected" translatesAutoresizingMaskIntoConstraints="NO" id="iIr-fD-kvC">
+                        <rect key="frame" x="96" y="134" width="62" height="13"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="10" id="PNj-j4-bQx"/>
+                            <constraint firstAttribute="height" constant="13" id="PNj-j4-bQx"/>
                         </constraints>
                     </imageView>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="iIr-fD-kvC" firstAttribute="width" secondItem="eeD-2d-jrZ" secondAttribute="width" id="2wm-wq-rle"/>
                 <constraint firstAttribute="bottom" secondItem="iIr-fD-kvC" secondAttribute="bottom" id="B6J-xi-itt"/>
-                <constraint firstAttribute="trailing" secondItem="iIr-fD-kvC" secondAttribute="trailing" id="LWO-9p-cXi"/>
                 <constraint firstItem="eeD-2d-jrZ" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="ZxX-gm-oqA"/>
                 <constraint firstItem="eeD-2d-jrZ" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="dBe-AM-XlW"/>
-                <constraint firstItem="iIr-fD-kvC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="wBz-Po-qGi"/>
+                <constraint firstItem="iIr-fD-kvC" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="eRn-bL-0Wn"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="254" height="147"/>

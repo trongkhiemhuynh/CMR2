@@ -25,6 +25,8 @@ class TicketDetailController: BaseViewController {
     }
 
     override func setupView() {
+        super.setupView()
+        
         let infoVC = TicketDetailInfoViewController()
         let activityVC = TicketDetailActivityViewController()
         
@@ -53,15 +55,24 @@ class TicketDetailController: BaseViewController {
 
     @IBAction func actionBack() {
 //        dismiss(animated: false, completion: nil)
-        remove()
+//        remove()
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func actionExtend() {
         // add more
+        // FIXME
+        
+        let vExtend = Bundle.main.loadNibNamed("TicketDetailExtendView", owner: self, options: nil)?.first as! TicketDetailExtendView
+        vExtend.frame = view.bounds
+        
+        view.addSubview(vExtend)
+        
+        
         
 //        vTest.frame = CGRect(origin: view.center, size: CGSize(width: 200, height: 200))
         
-        view.addSubview(vTest)
+//        view.addSubview(vTest)
         
     }
     

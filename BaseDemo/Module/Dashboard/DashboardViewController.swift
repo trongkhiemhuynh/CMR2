@@ -18,7 +18,18 @@ class DashboardViewController: BaseViewController {
 
 
     override func setupView() {
-
+        self.view.backgroundColor = UIColor.white
+        let label = UILabel(frame: CGRect.zero)
+        label.text = "[CONTROLLER_NAME] View Controller"
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.clipsToBounds = true
+        label.sizeToFit()
+        self.view.addSubview(label)
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+        ])
     }
     /*
     // MARK: - Navigation

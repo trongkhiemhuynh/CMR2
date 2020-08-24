@@ -92,12 +92,15 @@ extension CustomTicketStageView : UICollectionViewDelegate {
             let pCell = collectionView.cellForItem(at: preIdx) as? CustomTicketStageCollectionViewCell
             
             pCell?.imgStage.isHidden = true
+            pCell?.lblStage.font = UIFont.systemFont(ofSize: 20.0, weight: .light)
             
             preIdx = indexPath
             
             let cell = collectionView.cellForItem(at: indexPath) as? CustomTicketStageCollectionViewCell
             
+            // update title bold and image bottom line
             cell?.imgStage.isHidden = false
+            cell?.lblStage.font = UIFont.boldSystemFont(ofSize: 20.0)
         }
         
         NotificationCenter.default.post(name: .StageName, object: nil)

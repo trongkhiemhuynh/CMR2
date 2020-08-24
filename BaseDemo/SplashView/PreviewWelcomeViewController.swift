@@ -31,7 +31,7 @@ class PreviewWelcomeViewController: UIViewController {
         
         ivAgree.isHidden = true
         
-        let color = UIColor(hex: BASEColor.APP_COLOR)
+        let color = BASEColor.MainAppColor()
         print(color!)
         
         vCircle.backgroundColor = color
@@ -54,7 +54,7 @@ class PreviewWelcomeViewController: UIViewController {
     }
     
     func navigationToMainController() {
-        let tabbar = TabMenuController(nibName: "TabMenuController", bundle: nil)
+//        let tabbar = TabMenuController(nibName: "TabMenuController", bundle: nil)
         
 //        let dashboardVC = DashboardViewController()
 //        let ticketVC =  TicketViewController()
@@ -72,7 +72,8 @@ class PreviewWelcomeViewController: UIViewController {
 //        ticketItem?.title = "Ticket"
 //        ticketItem?.image = UIImage(named: "icons8-movie-ticket-24")
         
-        present(tabbar, animated: false) {
+        let tabbarMenu = NavigationMenuBaseController()
+        present(tabbarMenu, animated: false) {
             print("completed preview")
         }
 

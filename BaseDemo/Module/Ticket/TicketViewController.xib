@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -59,15 +57,32 @@
                         <constraint firstAttribute="trailing" secondItem="jMU-a7-D4b" secondAttribute="trailing" id="lRg-5T-0fN"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpO-0F-pEk">
+                    <rect key="frame" x="358" y="806" width="36" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="JWX-vt-KEc"/>
+                        <constraint firstAttribute="width" constant="36" id="i2H-bf-kyv"/>
+                    </constraints>
+                    <state key="normal" image="setting_selected"/>
+                    <connections>
+                        <action selector="actionNewTicketWithSender:" destination="-1" eventType="touchUpInside" id="EU2-uo-iJX"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="OrB-Ef-Axg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1un-fR-nTZ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="OrB-Ef-Axg" secondAttribute="bottom" id="Has-ZH-wu1"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="LpO-0F-pEk" secondAttribute="bottom" constant="20" id="JE5-lL-9As"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="LpO-0F-pEk" secondAttribute="trailing" constant="20" id="Nbi-G3-KN6"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="OrB-Ef-Axg" secondAttribute="trailing" id="See-Bl-D62"/>
                 <constraint firstItem="OrB-Ef-Axg" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="v4W-jf-8y5"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="139" y="92"/>
         </view>
     </objects>
+    <resources>
+        <image name="setting_selected" width="20.5" height="20.5"/>
+    </resources>
 </document>

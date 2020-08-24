@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TicketDetailExtendView" customModule="BaseDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I2P-Yn-nsd">
+                    <rect key="frame" x="7" y="248" width="400" height="400"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="PHk-nf-CN5">
+                            <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JmN-qF-Osa">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <connections>
+                                <outlet property="dataSource" destination="iN0-l3-epB" id="YXg-Q4-aJY"/>
+                                <outlet property="delegate" destination="iN0-l3-epB" id="qQ2-l4-2jV"/>
+                            </connections>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="PHk-nf-CN5" secondAttribute="trailing" id="JDt-fP-cVb"/>
+                        <constraint firstItem="PHk-nf-CN5" firstAttribute="leading" secondItem="I2P-Yn-nsd" secondAttribute="leading" id="KTJ-FN-09e"/>
+                        <constraint firstAttribute="width" secondItem="I2P-Yn-nsd" secondAttribute="height" multiplier="1:1" id="Te1-BE-AzN"/>
+                        <constraint firstAttribute="width" constant="400" id="X2m-RS-cbg"/>
+                        <constraint firstItem="PHk-nf-CN5" firstAttribute="top" secondItem="I2P-Yn-nsd" secondAttribute="top" id="iOf-L0-ui0"/>
+                        <constraint firstAttribute="bottom" secondItem="PHk-nf-CN5" secondAttribute="bottom" id="oeG-Ew-3Fg"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="I2P-Yn-nsd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="cEK-pY-Afh"/>
+                <constraint firstItem="I2P-Yn-nsd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wz7-Ht-2ry"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="cvExtend" destination="PHk-nf-CN5" id="XUp-Jx-cwj"/>
+            </connections>
+            <point key="canvasLocation" x="119" y="94"/>
+        </view>
+    </objects>
+</document>

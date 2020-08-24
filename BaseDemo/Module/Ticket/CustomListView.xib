@@ -13,6 +13,7 @@
                 <outlet property="btnSorted" destination="mjF-jD-yQq" id="Eov-DJ-7gs"/>
                 <outlet property="cvList" destination="jCf-Ov-2cU" id="G5F-iG-L2Z"/>
                 <outlet property="lblCount" destination="zIu-W7-RaO" id="R46-MJ-fJ0"/>
+                <outlet property="vBgList" destination="vaJ-SR-GzA" id="VLs-FQ-As8"/>
                 <outlet property="vContent" destination="iN0-l3-epB" id="Jdv-0X-TiX"/>
                 <outlet property="vCounted" destination="Hcf-tM-NBJ" id="Nes-R6-TsN"/>
                 <outlet property="vSorted" destination="e2k-FO-pl3" id="W22-Ya-7BI"/>
@@ -105,7 +106,7 @@
                             <rect key="frame" x="0.0" y="63" width="375" height="604"/>
                             <subviews>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="jCf-Ov-2cU">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="604"/>
+                                    <rect key="frame" x="0.0" y="13" width="375" height="591"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3zm-M9-QhB">
                                         <size key="itemSize" width="50" height="50"/>
@@ -124,7 +125,7 @@
                                 <constraint firstItem="bN6-8v-umx" firstAttribute="bottom" secondItem="jCf-Ov-2cU" secondAttribute="bottom" id="bBB-cI-jI1"/>
                                 <constraint firstItem="jCf-Ov-2cU" firstAttribute="leading" secondItem="bN6-8v-umx" secondAttribute="leading" id="kIF-Pw-3kV"/>
                                 <constraint firstItem="bN6-8v-umx" firstAttribute="trailing" secondItem="jCf-Ov-2cU" secondAttribute="trailing" id="kp1-DQ-Ce1"/>
-                                <constraint firstItem="jCf-Ov-2cU" firstAttribute="top" secondItem="bN6-8v-umx" secondAttribute="top" id="t7l-84-ct7"/>
+                                <constraint firstItem="jCf-Ov-2cU" firstAttribute="top" secondItem="bN6-8v-umx" secondAttribute="top" constant="13" id="t7l-84-ct7"/>
                             </constraints>
                             <viewLayoutGuide key="safeArea" id="bN6-8v-umx"/>
                         </view>

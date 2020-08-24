@@ -25,7 +25,7 @@ class CustomDetailTabView: BaseView {
         Bundle.main.loadNibNamed("CustomDetailTabView", owner: self, options: nil)
         addSubview(vContent)
         vContent.frame = self.bounds
-        vContent.backgroundColor = UIColor(hex: BASEColor.BACKGROUND_LIST_COLOR)
+        vContent.backgroundColor = BASEColor.BackgroundListColor()
         
         print("debug123 - \(vContent.frame)")
         

@@ -34,6 +34,13 @@ class LoginViewController : BaseViewController {
         tfPassword.title = "Password"
         tfPassword.isSecureTextEntry = true
         btnLogin.layer.cornerRadius = 8
+        
+        let tapRecognization = UITapGestureRecognizer(target: self, action: #selector(self.tapDismiss(gesture:)))
+        self.view.addGestureRecognizer(tapRecognization)
+    }
+    
+    @objc func tapDismiss(gesture: UITapGestureRecognizer) {
+        self.view.endEditing(true)
     }
 
     @IBAction func loginAction(_ sender : AnyObject) {
@@ -46,7 +53,7 @@ class LoginViewController : BaseViewController {
         
         addAlertLoading()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
 //            nvActivity.stopAnimating()
             self.dismissAlertLoading()
            

@@ -34,7 +34,7 @@ class TicketDetailInfoViewController: BaseViewController {
         cvInfoDetail.register(UINib(nibName: "TicketDetailInfoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseID1)
         cvInfoDetail.register(UINib(nibName: "TicketDetailStatusCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseID2)
         
-        cvInfoDetail.backgroundColor = UIColor(hex: BASEColor.BACKGROUND_LIST_COLOR)
+        cvInfoDetail.backgroundColor = BASEColor.BackgroundListColor()
     }
 
     /*

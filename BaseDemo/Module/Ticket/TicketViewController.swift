@@ -25,14 +25,14 @@ class TicketViewController: BaseViewController {
     }
     
     override func setupView() {
-        
+        super.setupView()
         vTicket.backgroundColor = .red
         
         NotificationCenter.default.addObserver(forName: .StageName, object: nil, queue: nil) { (notif) in
             
             self.addAlertLoading()
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.dismissAlertLoading()
             }
             
@@ -42,43 +42,34 @@ class TicketViewController: BaseViewController {
             
             // !!!FIX ME:
             let detailVC = TicketDetailController(nibName: "TicketDetailController", bundle: nil)
-            self.addChild(detailVC)
-            self.add(detailVC, contentView: self.view)
+            self.navigationController?.pushViewController(detailVC, animated: true)
+            
+            
+//            self.addChild(detailVC)
+//            self.add(detailVC, contentView: self.view)
             
 //            self.present(detailVC, animated: false, completion: nil)
             
             
         })
-//        self.navigationController?.navigationBar.prefersLargeTitles = true
-//        self.title = "Ticket"
-//
-//        var arrController : [UIViewController] = []
-//
-//        let creatVC = CreateTicketViewController()
-//        creatVC.title = "Created"
-//
-//        let assignVC = AssignTicketViewController()
-//        assignVC.title = "Assigned"
-//
-//        let escalatVC = EscalatedViewController()
-//        escalatVC.title = "Escalated"
-//
-//        arrController.append(creatVC)
-//        arrController.append(assignVC)
-//        arrController.append(escalatVC)
-//
-//        let parameters : [CAPSPageMenuOption] = [.menuItemSeparatorWidth(4.3),
-//                                            .useMenuLikeSegmentedControl(true),
-//                                            .menuItemSeparatorPercentageHeight(0.1),
-//                                            .selectionIndicatorColor(UIColor(hex: BASEColor.MainHexColor)!),
-//                                            .scrollMenuBackgroundColor (.blue),
-//                                            .selectedMenuItemLabelColor (UIColor(hex: BASEColor.MainHexColor)!),
-//                                            .unselectedMenuItemLabelColor (.black)]
-//
-//        pageMenu = CAPSPageMenu(viewControllers: arrController, frame: vTicket.frame, pageMenuOptions: parameters)
-//        pageMenu?.delegate = self
-//
-//        self.view.addSubview(pageMenu!.view)
+    }
+    
+    @IBAction func actionNewTicket(sender : UIButton?) {
+        
+         print("--------- ", #function)
+        
+        let newV = Bundle.main.loadNibNamed("CreatNewTicketView", owner: self, options: nil)?.first as! CreatNewTicketView
+        newV.frame = view.bounds
+        view.addSubview(newV)
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+        
+        
     }
 
     /*
