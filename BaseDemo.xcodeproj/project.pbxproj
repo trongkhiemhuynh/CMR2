@@ -74,6 +74,7 @@
 		C23F629724EF225600E37560 /* CustomDetailTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23F629624EF225600E37560 /* CustomDetailTabView.swift */; };
 		C23F629924EF228100E37560 /* CustomDetailActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23F629824EF228100E37560 /* CustomDetailActionView.swift */; };
 		C23F629B24EF25F500E37560 /* CustomDetailActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C23F629A24EF25F500E37560 /* CustomDetailActionView.xib */; };
+		C2C33CC924F41612008C88B3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C2C33CC824F41612008C88B3 /* README.md */; };
 		C2E857DE24F368BC002960A2 /* CreatNewTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E857DD24F368BC002960A2 /* CreatNewTicketView.swift */; };
 		C2E857E024F368D7002960A2 /* CreatNewTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E857DF24F368D7002960A2 /* CreatNewTicketView.xib */; };
 		C2E857E224F36C06002960A2 /* InfoTicketRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E857E124F36C06002960A2 /* InfoTicketRow.xib */; };
@@ -210,6 +211,7 @@
 		C23F629624EF225600E37560 /* CustomDetailTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDetailTabView.swift; sourceTree = "<group>"; };
 		C23F629824EF228100E37560 /* CustomDetailActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDetailActionView.swift; sourceTree = "<group>"; };
 		C23F629A24EF25F500E37560 /* CustomDetailActionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDetailActionView.xib; sourceTree = "<group>"; };
+		C2C33CC824F41612008C88B3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C2E857DD24F368BC002960A2 /* CreatNewTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatNewTicketView.swift; sourceTree = "<group>"; };
 		C2E857DF24F368D7002960A2 /* CreatNewTicketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatNewTicketView.xib; sourceTree = "<group>"; };
 		C2E857E124F36C06002960A2 /* InfoTicketRow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTicketRow.xib; sourceTree = "<group>"; };
@@ -482,6 +484,7 @@
 		4BE6312D24DA9CBB00D9133C = {
 			isa = PBXGroup;
 			children = (
+				C2C33CC824F41612008C88B3 /* README.md */,
 				4BE6313824DA9CBB00D9133C /* BaseDemo */,
 				4BE6314D24DA9CC000D9133C /* BaseDemoTests */,
 				4BE6315824DA9CC000D9133C /* BaseDemoUITests */,
@@ -708,6 +711,7 @@
 				4B28018924ECE830007647F8 /* TicketViewController.xib in Resources */,
 				4B166C2D24ED0D140030C592 /* TicketDetailStatusCollectionViewCell.xib in Resources */,
 				4BE6314424DA9CC000D9133C /* LaunchScreen.storyboard in Resources */,
+				C2C33CC924F41612008C88B3 /* README.md in Resources */,
 				4B166C4024EE61DA0030C592 /* CustomListView.xib in Resources */,
 				4B28018424ECE5D7007647F8 /* DashboardViewController.xib in Resources */,
 				4B28017824ECC2B5007647F8 /* SplashViewController.xib in Resources */,
