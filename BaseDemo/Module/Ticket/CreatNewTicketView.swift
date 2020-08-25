@@ -47,8 +47,16 @@ class CreatNewTicketView: UIView {
 //        tvCreatNew.register(UINib(nibName: "", bundle: nil), forCellReuseIdentifier: "")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        tvCreatNew.register(UINib(nibName: "", bundle: nil), forCellReuseIdentifier: "")
+    }
+    
     
 }
+
+
 
 //extension CreatNewTicketView : UITableViewDataSource {
 //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -62,6 +70,16 @@ class CreatNewTicketView: UIView {
 //    
 //}
 
-extension CreatNewTicketView : UITableViewDelegate {
-    
-}
+//extension CreatNewTicketView : UITableViewDelegate {
+//    
+//}
+//
+//extension CreatNewTicketView : UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 10
+//    }
+//    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        
+//    }
+//}

@@ -65,9 +65,13 @@ class TicketDetailController: BaseViewController {
         
         let vExtend = Bundle.main.loadNibNamed("TicketDetailExtendView", owner: self, options: nil)?.first as! TicketDetailExtendView
         vExtend.frame = view.bounds
+        self.view.addSubview(vExtend)
         
-        view.addSubview(vExtend)
-        
+        UIView.animateKeyframes(withDuration: 0.35, delay: 0.0, options: .calculationModeLinear, animations: {
+            self.view.layoutIfNeeded()
+        }) { (success) in
+            print("showed")
+        }
         
         
 //        vTest.frame = CGRect(origin: view.center, size: CGSize(width: 200, height: 200))

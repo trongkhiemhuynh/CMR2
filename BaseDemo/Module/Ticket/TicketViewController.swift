@@ -58,9 +58,13 @@ class TicketViewController: BaseViewController {
         
          print("--------- ", #function)
         
-        let newV = Bundle.main.loadNibNamed("CreatNewTicketView", owner: self, options: nil)?.first as! CreatNewTicketView
-        newV.frame = view.bounds
-        view.addSubview(newV)
+//        let newV = Bundle.main.loadNibNamed("CreatNewTicketView", owner: self, options: nil)?.first as! CreatNewTicketView
+//        newV.frame = view.bounds
+//        view.addSubview(newV)
+        
+        let vc = NewTicketViewController()
+        
+        navigationController?.pushViewController(vc, animated: false)
 
     }
     

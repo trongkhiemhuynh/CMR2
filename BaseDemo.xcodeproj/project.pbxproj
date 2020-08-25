@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		224EBAF424F5068100CB676F /* ExtendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224EBAF224F5068100CB676F /* ExtendCollectionViewCell.swift */; };
 		224EBAF524F5068100CB676F /* ExtendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 224EBAF324F5068100CB676F /* ExtendCollectionViewCell.xib */; };
+		224EBAF824F50EDA00CB676F /* NewTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224EBAF624F50EDA00CB676F /* NewTicketViewController.swift */; };
+		224EBAF924F50EDA00CB676F /* NewTicketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 224EBAF724F50EDA00CB676F /* NewTicketViewController.xib */; };
 		4B166C2224ECFD620030C592 /* TabMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B166C2024ECFD620030C592 /* TabMenuController.swift */; };
 		4B166C2324ECFD620030C592 /* TabMenuController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B166C2124ECFD620030C592 /* TabMenuController.xib */; };
 		4B166C2524ED05D40030C592 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B166C2424ED05D40030C592 /* BaseViewController.swift */; };
@@ -136,6 +138,8 @@
 		15362592B92146FF85B12313 /* Pods_BaseDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		224EBAF224F5068100CB676F /* ExtendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendCollectionViewCell.swift; sourceTree = "<group>"; };
 		224EBAF324F5068100CB676F /* ExtendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExtendCollectionViewCell.xib; sourceTree = "<group>"; };
+		224EBAF624F50EDA00CB676F /* NewTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketViewController.swift; sourceTree = "<group>"; };
+		224EBAF724F50EDA00CB676F /* NewTicketViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTicketViewController.xib; sourceTree = "<group>"; };
 		3B3D82D809173A436C943DC0 /* Pods-BaseDemo-BaseDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseDemo-BaseDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-BaseDemo-BaseDemoUITests/Pods-BaseDemo-BaseDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3F7E6A73251477D2590F362F /* Pods-BaseDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-BaseDemoTests/Pods-BaseDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3F83892287D49B02D42D6E70 /* Pods-BaseDemo-BaseDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseDemo-BaseDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-BaseDemo-BaseDemoUITests/Pods-BaseDemo-BaseDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -377,6 +381,8 @@
 				C2E857DF24F368D7002960A2 /* CreatNewTicketView.xib */,
 				C2E857E124F36C06002960A2 /* InfoTicketRow.xib */,
 				C2E857E324F36D30002960A2 /* InfoTicketRow.swift */,
+				224EBAF624F50EDA00CB676F /* NewTicketViewController.swift */,
+				224EBAF724F50EDA00CB676F /* NewTicketViewController.xib */,
 			);
 			path = Ticket;
 			sourceTree = "<group>";
@@ -716,6 +722,7 @@
 				4B166C4D24EE7E380030C592 /* CustomTicketStageView.xib in Resources */,
 				4B166C5124EE7F9A0030C592 /* CustomTicketStageCollectionViewCell.xib in Resources */,
 				C2E857F224F3A886002960A2 /* TabNavigationMenu.xib in Resources */,
+				224EBAF924F50EDA00CB676F /* NewTicketViewController.xib in Resources */,
 				C2E857F624F3B975002960A2 /* TicketDetailExtendView.xib in Resources */,
 				4B28018924ECE830007647F8 /* TicketViewController.xib in Resources */,
 				4B166C2D24ED0D140030C592 /* TicketDetailStatusCollectionViewCell.xib in Resources */,
@@ -914,6 +921,7 @@
 				4BE6313C24DA9CBB00D9133C /* LoginViewController.swift in Sources */,
 				C2E857EC24F397A9002960A2 /* TabNavigationMenu.swift in Sources */,
 				4B166C3024ED0D690030C592 /* TicketDetailActivityViewController.swift in Sources */,
+				224EBAF824F50EDA00CB676F /* NewTicketViewController.swift in Sources */,
 				C2E857EE24F39CE7002960A2 /* TabbarItem.swift in Sources */,
 				4B28017F24ECD6DD007647F8 /* BASEColor.swift in Sources */,
 				4B28018724ECE676007647F8 /* TicketViewController.swift in Sources */,

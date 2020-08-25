@@ -16,11 +16,13 @@ class BaseViewController: UIViewController {
         setupView()
         initData()
         // Do any additional setup after loading the view.
+        
+        navigationController?.navigationBar.isHidden = true
     }
     
 
     func setupView() {
-        navigationController?.navigationBar.isHidden = true
+        
     }
     
     func initData() {}
