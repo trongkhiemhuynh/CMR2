@@ -72,7 +72,7 @@ class PreviewWelcomeViewController: UIViewController {
 //        ticketItem?.title = "Ticket"
 //        ticketItem?.image = UIImage(named: "icons8-movie-ticket-24")
         
-        let tabbarMenu = NavigationMenuBaseController()
+        let tabbarMenu = NavigationMenuBaseController(nibName: "NavigationMenuBaseController", bundle: nil)
         present(tabbarMenu, animated: false) {
             print("completed preview")
         }

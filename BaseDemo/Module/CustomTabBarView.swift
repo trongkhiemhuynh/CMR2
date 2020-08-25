@@ -26,13 +26,24 @@ class CustomTabBarView: BaseView {
     
     var arrMenu : [UIButton]!
     
+    var itemTapped : ((_ tab : Int) -> Void)?
+    var activeItem : Int = 0
+    
     @IBAction func tappedButton(_ sender : UIButton) {
         
-        sender.isSelected = true
+//        sender.isSelected = true
         
-        updateStatusMenu()
-
+//        updateStatusMenu()
+        
+        switchTab(from: self.activeItem, to: sender.tag)
+        
     }
+    
+    func switchTab(from: Int, to: Int) {
+        deactiveTab(tab: from)
+        activateTab(tab: to)
+    }
+    
     
     override func commonInit() {
         Bundle.main.loadNibNamed("CustomTabBarView", owner: self, options: nil)
@@ -49,67 +60,114 @@ class CustomTabBarView: BaseView {
         
         
         
-        btnHome.isSelected = true
+//        btnHome.isSelected = true
         
         arrMenu = [btnHome, btnProfile, btnTicket, btnSetting]
         
      
-        updateStatusMenu()
+//        updateStatusMenu()
     }
     
-    func updateStatusMenu() {
-
-        for btn in arrMenu {
+    
+    func deactiveTab(tab : Int) {
+        let btn = viewWithTag(tab) as! UIButton
+        
+        btn.setTitle("", for: .normal)
+        
+        switch tab {
+        case 0:
+            btn.setImage(UIImage(named: "home"), for: .normal)
+        case 1:
+            btn.setImage(UIImage(named: "profile"), for: .normal)
+        case 2:
+            btn.setImage(UIImage(named: "ticket"), for: .normal)
+        case 3:
+            btn.setImage(UIImage(named: "setting"), for: .normal)
+        default:
+            btn.setImage(UIImage(named: "home"), for: .normal)
+        }
+    }
+    
+    func activateTab(tab : Int) {
+        var strName : String
+        
+        switch tab {
+        case 0:
+            strName = "Home"
             
-            print("debug --- \(btn.titleLabel?.text) -- \(btn.isSelected)")
+        case 1:
+            strName = "Profile"
             
-            if (btn.isSelected) {
-                
-                var strName : String
-                
-                switch btn.tag {
-                case 0:
-                    strName = "Home"
-                case 1:
-                    strName = "Profile"
-                case 2:
-                    strName = "Ticket"
-                case 3:
-                    strName = "Setting"
-                default:
-                    strName = "Home"
-                }
-                
-                btn.setTitle(strName, for: .normal)
-                btn.setTitleColor(BASEColor.MainAppColor(), for: .normal)
-                btn.setImage(UIImage(named: "\(strName.lowercased())_selected"), for: .normal)
-                
-                btn.isSelected = false
-                
-                NotificationCenter.default.post(name: .TabbarName, object: nil, userInfo: ["name":strName])
-                
-            } else {
-                btn.setTitle("", for: .normal)
-                
-                switch btn.tag {
-                case 0:
-                    btn.setImage(UIImage(named: "home"), for: .normal)
-                case 1:
-                    btn.setImage(UIImage(named: "profile"), for: .normal)
-                case 2:
-                    btn.setImage(UIImage(named: "ticket"), for: .normal)
-                case 3:
-                    btn.setImage(UIImage(named: "setting"), for: .normal)
-                default:
-                    btn.setImage(UIImage(named: "home"), for: .normal)
-                }
-                
-            }
-            
-//            btn.layoutIfNeeded()
+        case 2:
+            strName = "Ticket"
+        case 3:
+            strName = "Setting"
+        default:
+            strName = "Home"
         }
         
+        let btn = viewWithTag(tab) as! UIButton
+        
+        btn.setTitle(strName, for: .normal)
+        btn.setTitleColor(BASEColor.MainAppColor(), for: .normal)
+        btn.setImage(UIImage(named: "\(strName.lowercased())_selected"), for: .normal)
+        
+        activeItem = tab
     }
+    
+//    func updateStatusMenu() {
+//
+//        for btn in arrMenu {
+//            
+//            print("debug --- \(btn.titleLabel?.text) -- \(btn.isSelected)")
+//            
+//            if (btn.isSelected) {
+//                
+//                var strName : String
+//                
+//                switch btn.tag {
+//                case 0:
+//                    strName = "Home"
+//                case 1:
+//                    strName = "Profile"
+//                case 2:
+//                    strName = "Ticket"
+//                case 3:
+//                    strName = "Setting"
+//                default:
+//                    strName = "Home"
+//                }
+//                
+//                btn.setTitle(strName, for: .normal)
+//                btn.setTitleColor(BASEColor.MainAppColor(), for: .normal)
+//                btn.setImage(UIImage(named: "\(strName.lowercased())_selected"), for: .normal)
+//                
+//                btn.isSelected = false
+//                
+//                NotificationCenter.default.post(name: .TabbarName, object: nil, userInfo: ["name":strName])
+//                
+//            } else {
+//                btn.setTitle("", for: .normal)
+//                
+//                switch btn.tag {
+//                case 0:
+//                    btn.setImage(UIImage(named: "home"), for: .normal)
+//                case 1:
+//                    btn.setImage(UIImage(named: "profile"), for: .normal)
+//                case 2:
+//                    btn.setImage(UIImage(named: "ticket"), for: .normal)
+//                case 3:
+//                    btn.setImage(UIImage(named: "setting"), for: .normal)
+//                default:
+//                    btn.setImage(UIImage(named: "home"), for: .normal)
+//                }
+//                
+//            }
+//            
+////            btn.layoutIfNeeded()
+//        }
+//        
+//    }
     
 
 }

@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavigationMenuBaseController" customModule="BaseDemo" customModuleProvider="target">
             <connections>
+                <outlet property="vCustomTabbar" destination="2zB-K3-Iqz" id="jLG-wB-V84"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,7 +18,21 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2zB-K3-Iqz" customClass="CustomTabBarView" customModule="BaseDemo" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="597" width="375" height="70"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="P20-BG-Sfa"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="2zB-K3-Iqz" secondAttribute="bottom" id="6hl-ql-Fx3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2zB-K3-Iqz" secondAttribute="trailing" id="Z5A-E8-W3x"/>
+                <constraint firstItem="2zB-K3-Iqz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ewD-uM-2xm"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="361" y="-37"/>
         </view>
