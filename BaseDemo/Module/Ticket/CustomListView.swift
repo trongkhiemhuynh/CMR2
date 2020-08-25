@@ -40,13 +40,15 @@ class CustomListView: BaseView {
         addSubview(vContent)
         
         vContent.frame = self.bounds
-        cvList.backgroundColor = UIColor(red: 243.0, green: 243.0, blue: 243.0)
-        vSorted.layer.cornerRadius = 8
-        vCounted.layer.cornerRadius = 8
+
+        vSorted.layer.cornerRadius = 12
+        vCounted.layer.cornerRadius = 12
         
         cvList.register(UINib(nibName: "CustomTicketCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseId)
         
+        cvList.backgroundColor = BASEColor.BackgroundListColor()
         vBgList.backgroundColor = BASEColor.BackgroundListColor()
+        vContent.backgroundColor = BASEColor.BackgroundListColor()
     }
     
     @IBAction func changeSort() {

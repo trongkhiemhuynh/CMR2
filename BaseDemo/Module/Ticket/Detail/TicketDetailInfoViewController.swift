@@ -18,8 +18,8 @@ class TicketDetailInfoViewController: BaseViewController {
                                              bottom: 10.0,
                                              right: 10.0)
     private let itemsPerRow: CGFloat = 1
-    private let heightCell1 : CGFloat = 300
-    private let heightCell2 : CGFloat = 140
+    private let heightCellInfo : CGFloat = 120
+    private let heightCellInfoDetail : CGFloat = 70
     
     @IBOutlet weak var cvInfoDetail : UICollectionView!
     
@@ -51,17 +51,17 @@ class TicketDetailInfoViewController: BaseViewController {
 
 extension TicketDetailInfoViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 100
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
-            let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: reuseID1, for: indexPath)
+            let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: reuseID1, for: indexPath) as! TicketDetailInfoCollectionViewCell
             
             return cell1
         } else {
-            let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: reuseID2, for: indexPath)
-            
+            let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: reuseID2, for: indexPath) as! TicketDetailStatusCollectionViewCell
+            cell2.reloadData(im: UIImage(named: "filter")!, title: "Ticket owner", name: "Apple Inc.")
             return cell2
         }
     }
@@ -83,9 +83,9 @@ extension TicketDetailInfoViewController : UICollectionViewDelegateFlowLayout {
         let widthPerItem = availableWidth / itemsPerRow
         
         if indexPath.row == 0 {
-            return CGSize(width: widthPerItem, height: heightCell1)
+            return CGSize(width: widthPerItem, height: heightCellInfo)
         } else {
-            return CGSize(width: widthPerItem, height: heightCell2)
+            return CGSize(width: widthPerItem, height: heightCellInfoDetail)
         }
 
     }

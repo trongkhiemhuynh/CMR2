@@ -23,7 +23,7 @@ class NavigationMenuBaseController: UITabBarController {
     
     func loadTabBar() {
         // We'll create and load our custom tab bar here
-        let tabItems: [TabItem] = [.dashboard, .profile, .ticket, .more]
+        let tabItems: [TabItem] = [.dashboard, .profile, .ticket, .setting]
         
         self.selectedIndex = 0
         

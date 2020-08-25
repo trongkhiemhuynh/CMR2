@@ -38,7 +38,7 @@ class PreviewWelcomeViewController: UIViewController {
         vCircle.layer.cornerRadius = vCircle.bounds.width/2
         
         vLarge.backgroundColor = .clear
-        vLarge.layer.borderWidth = 10
+        vLarge.layer.borderWidth = 18.0
         vLarge.layer.borderColor = UIColor(red: 217/255, green: 243/255, blue: 241/255, alpha: 1.0).cgColor // 217 243 241
         vLarge.layer.cornerRadius = vLarge.bounds.width/2
         
@@ -84,7 +84,7 @@ class PreviewWelcomeViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             
             self.view.layoutIfNeeded()
-            self.constraintIvUser.constant = 20
+            self.constraintIvUser.constant = 50
             
             UIView.animate(withDuration: 0.35, animations: {
                 self.view.layoutIfNeeded()

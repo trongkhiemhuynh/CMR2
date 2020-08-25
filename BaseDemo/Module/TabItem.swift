@@ -13,7 +13,7 @@ enum TabItem: String, CaseIterable {
     case dashboard = "dashboard"
     case profile = "profile"
     case ticket = "ticket"
-    case more = "more"
+    case setting = "setting"
     
     
     var viewController: UIViewController {
@@ -25,7 +25,7 @@ enum TabItem: String, CaseIterable {
             return UINavigationController(rootViewController: DashboardViewController())
         case .ticket:
             return UINavigationController(rootViewController: TicketViewController())
-        case .more:
+        case .setting:
             return UINavigationController(rootViewController: TicketViewController())
         }
     }
@@ -37,11 +37,11 @@ enum TabItem: String, CaseIterable {
             return UIImage(named: "home_selected")!
             
         case .profile:
-            return UIImage(named: "home_selected")!
+            return UIImage(named: "profile_selected")!
         case .ticket:
-            return UIImage(named: "home_selected")!
-        case .more:
-            return UIImage(named: "home_selected")!
+            return UIImage(named: "ticket_selected")!
+        case .setting:
+            return UIImage(named: "setting_selected")!
         }
     }
     

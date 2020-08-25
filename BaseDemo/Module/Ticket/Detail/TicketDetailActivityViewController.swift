@@ -12,12 +12,12 @@ import UIKit
 class TicketDetailActivityViewController: BaseViewController {
 
     let reuseId = "TDAID"
-    private let sectionInsets = UIEdgeInsets(top: 20.0,
-                                             left: 20.0,
-                                             bottom: 20.0,
-                                             right: 20.0)
+    private let sectionInsets = UIEdgeInsets(top: 10.0,
+                                             left: 10.0,
+                                             bottom: 10.0,
+                                             right: 10.0)
     private let itemsPerRow: CGFloat = 1
-    private let heightCell : CGFloat = 150
+    private let heightCell : CGFloat = 142
     
     @IBOutlet weak var lblActivity : UILabel!
     @IBOutlet weak var vActivity : UIView!

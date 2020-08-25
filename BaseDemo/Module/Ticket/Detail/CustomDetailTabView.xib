@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomDetailTabView" customModule="BaseDemo" customModuleProvider="target">
             <connections>
+                <outlet property="imgActivity" destination="FaY-w5-edD" id="gyV-Wy-JGO"/>
+                <outlet property="imgTicketDetail" destination="bBv-lW-YNR" id="Vd7-tg-AQx"/>
+                <outlet property="lblActivity" destination="1iE-jx-0oD" id="U97-lx-Zla"/>
+                <outlet property="lblTicketDetail" destination="03o-qA-Pjt" id="oCN-q2-wxe"/>
                 <outlet property="vActivity" destination="x7N-Q5-CVJ" id="xfD-u1-buD"/>
                 <outlet property="vContent" destination="iN0-l3-epB" id="Gf8-b9-dOZ"/>
                 <outlet property="vInfo" destination="iJ4-KO-5Ss" id="cFz-t4-YgA"/>
@@ -34,11 +36,14 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ticket details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03o-qA-Pjt">
                                             <rect key="frame" x="47" y="26" width="94" height="18"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_bar_selected" translatesAutoresizingMaskIntoConstraints="NO" id="bBv-lW-YNR">
+                                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_bar_selected" translatesAutoresizingMaskIntoConstraints="NO" id="bBv-lW-YNR">
                                             <rect key="frame" x="47" y="63" width="94" height="7"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="7" id="4JH-m3-b7q"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -50,17 +55,20 @@
                                         <constraint firstItem="03o-qA-Pjt" firstAttribute="centerX" secondItem="iJ4-KO-5Ss" secondAttribute="centerX" id="yty-EU-Seu"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x7N-Q5-CVJ">
+                                <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x7N-Q5-CVJ">
                                     <rect key="frame" x="187.5" y="0.0" width="187.5" height="70"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activities" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1iE-jx-0oD">
                                             <rect key="frame" x="61.5" y="26" width="65" height="18"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_bar_selected" translatesAutoresizingMaskIntoConstraints="NO" id="FaY-w5-edD">
+                                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_bar_selected" translatesAutoresizingMaskIntoConstraints="NO" id="FaY-w5-edD">
                                             <rect key="frame" x="61.5" y="63" width="65" height="7"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="7" id="nLh-o5-vYG"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

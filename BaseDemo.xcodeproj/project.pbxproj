@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		224EBAF424F5068100CB676F /* ExtendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224EBAF224F5068100CB676F /* ExtendCollectionViewCell.swift */; };
+		224EBAF524F5068100CB676F /* ExtendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 224EBAF324F5068100CB676F /* ExtendCollectionViewCell.xib */; };
 		4B166C2224ECFD620030C592 /* TabMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B166C2024ECFD620030C592 /* TabMenuController.swift */; };
 		4B166C2324ECFD620030C592 /* TabMenuController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B166C2124ECFD620030C592 /* TabMenuController.xib */; };
 		4B166C2524ED05D40030C592 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B166C2424ED05D40030C592 /* BaseViewController.swift */; };
@@ -132,6 +134,8 @@
 
 /* Begin PBXFileReference section */
 		15362592B92146FF85B12313 /* Pods_BaseDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		224EBAF224F5068100CB676F /* ExtendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendCollectionViewCell.swift; sourceTree = "<group>"; };
+		224EBAF324F5068100CB676F /* ExtendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExtendCollectionViewCell.xib; sourceTree = "<group>"; };
 		3B3D82D809173A436C943DC0 /* Pods-BaseDemo-BaseDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseDemo-BaseDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-BaseDemo-BaseDemoUITests/Pods-BaseDemo-BaseDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3F7E6A73251477D2590F362F /* Pods-BaseDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-BaseDemoTests/Pods-BaseDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3F83892287D49B02D42D6E70 /* Pods-BaseDemo-BaseDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseDemo-BaseDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-BaseDemo-BaseDemoUITests/Pods-BaseDemo-BaseDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -310,6 +314,8 @@
 				4B166C5B24EF78F80030C592 /* TicketDetailInfoCollectionViewCell.xib */,
 				4B166C2A24ED0D140030C592 /* TicketDetailStatusCollectionViewCell.swift */,
 				4B166C2B24ED0D140030C592 /* TicketDetailStatusCollectionViewCell.xib */,
+				224EBAF224F5068100CB676F /* ExtendCollectionViewCell.swift */,
+				224EBAF324F5068100CB676F /* ExtendCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -738,6 +744,7 @@
 				4B2D4BF224DD02D200CABF1D /* HomeViewController.xib in Resources */,
 				4B166C5D24EF78F80030C592 /* TicketDetailInfoCollectionViewCell.xib in Resources */,
 				C23F629324EF204F00E37560 /* TicketDetailController.xib in Resources */,
+				224EBAF524F5068100CB676F /* ExtendCollectionViewCell.xib in Resources */,
 				C23F628B24EEE89100E37560 /* CustomTabBarView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -896,6 +903,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				224EBAF424F5068100CB676F /* ExtendCollectionViewCell.swift in Sources */,
 				C2E857DE24F368BC002960A2 /* CreatNewTicketView.swift in Sources */,
 				C23F629924EF228100E37560 /* CustomDetailActionView.swift in Sources */,
 				4BE6316924DAA7ED00D9133C /* SplashViewController.swift in Sources */,

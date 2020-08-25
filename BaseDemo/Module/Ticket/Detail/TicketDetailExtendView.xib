@@ -15,10 +15,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I2P-Yn-nsd">
-                    <rect key="frame" x="7" y="248" width="400" height="400"/>
+                    <rect key="frame" x="32" y="273" width="350" height="350"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="PHk-nf-CN5">
-                            <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                            <rect key="frame" x="0.0" y="0.0" width="350" height="350"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JmN-qF-Osa">
                                 <size key="itemSize" width="50" height="50"/>
@@ -37,7 +37,7 @@
                         <constraint firstAttribute="trailing" secondItem="PHk-nf-CN5" secondAttribute="trailing" id="JDt-fP-cVb"/>
                         <constraint firstItem="PHk-nf-CN5" firstAttribute="leading" secondItem="I2P-Yn-nsd" secondAttribute="leading" id="KTJ-FN-09e"/>
                         <constraint firstAttribute="width" secondItem="I2P-Yn-nsd" secondAttribute="height" multiplier="1:1" id="Te1-BE-AzN"/>
-                        <constraint firstAttribute="width" constant="400" id="X2m-RS-cbg"/>
+                        <constraint firstAttribute="width" constant="350" id="X2m-RS-cbg"/>
                         <constraint firstItem="PHk-nf-CN5" firstAttribute="top" secondItem="I2P-Yn-nsd" secondAttribute="top" id="iOf-L0-ui0"/>
                         <constraint firstAttribute="bottom" secondItem="PHk-nf-CN5" secondAttribute="bottom" id="oeG-Ew-3Fg"/>
                     </constraints>
@@ -51,6 +51,7 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="cvExtend" destination="PHk-nf-CN5" id="XUp-Jx-cwj"/>
+                <outlet property="vBound" destination="I2P-Yn-nsd" id="oSe-L2-ri6"/>
             </connections>
             <point key="canvasLocation" x="119" y="94"/>
         </view>

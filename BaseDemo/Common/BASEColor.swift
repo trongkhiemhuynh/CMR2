@@ -17,5 +17,9 @@ struct BASEColor {
     static func BackgroundListColor() -> UIColor? {
         return UIColor(hex: "#f9f9f9")
     }
+    
+    static func BackgroundExtendColor() -> UIColor? {
+        return UIColor(hex: "#044743")
+    }
 
 }

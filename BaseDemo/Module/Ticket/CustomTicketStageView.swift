@@ -36,7 +36,7 @@ class CustomTicketStageView: BaseView {
         Bundle.main.loadNibNamed("CustomTicketStageView", owner: self, options: nil)
         vContent.frame = self.bounds
         addSubview(vContent)
-        
+        cvStage.backgroundColor = .white
         cvStage.register(UINib(nibName: "CustomTicketStageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseId)
     }
 
@@ -54,8 +54,10 @@ extension CustomTicketStageView : UICollectionViewDataSource {
         
         cell.lblStage.text = strStage
         if indexPath == preIdx {
+            cell.lblStage.font = UIFont.boldSystemFont(ofSize: 20.0)
             cell.imgStage.isHidden = false
         } else {
+            cell.lblStage.font = UIFont.systemFont(ofSize: 20.0, weight: .light)
             cell.imgStage.isHidden = true
         }
         
