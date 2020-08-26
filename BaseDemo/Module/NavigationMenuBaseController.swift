@@ -23,16 +23,31 @@ class NavigationMenuBaseController: UITabBarController {
     
     func loadTabBar() {
         // We'll create and load our custom tab bar here
+        tabBar.isHidden = true
         let tabItems: [TabItem] = [.dashboard, .profile, .ticket, .setting]
         
         self.selectedIndex = 0
         
-        self.setupCustomTabMenu(tabItems) { (controllers) in
-            self.viewControllers = controllers
+        let customTabbar = Bundle.main.loadNibNamed("CustomTabBarView", owner: self, options: nil)?.first as? CustomTabBarView
+        self.view.addSubview(customTabbar!)
+        customTabbar?.frame = CGRect(x: 0, y: heightScreen - 50, width: widthScreen, height: 67)
+        customTabbar?.itemTapped = changeTab(tab:)
+        // load controller
+        var controllers = [UIViewController]()
+        for i in 0 ..< tabItems.count {
+            controllers.append(tabItems[i].viewController) // we fetch the matching view controller and append here
         }
         
+        self.viewControllers = controllers
         
-         // default our selected index to the first item
+        
+        //        self.setupCustomTabMenu(tabItems) { (controllers) in
+        //            self.viewControllers = controllers
+        //        }
+        
+        
+        
+        // default our selected index to the first item
         
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomTabBarView: BaseView {
+class CustomTabBarView: UIView {
 
     
     /*
@@ -23,20 +23,15 @@ class CustomTabBarView: BaseView {
     @IBOutlet weak var btnProfile : UIButton!
     @IBOutlet weak var btnTicket : UIButton!
     @IBOutlet weak var btnSetting : UIButton!
+    @IBOutlet weak var vContent : UIView!
     
     var arrMenu : [UIButton]!
     
     var itemTapped : ((_ tab : Int) -> Void)?
-    var activeItem : Int = 0
+    var activeItem : Int = 10
     
     @IBAction func tappedButton(_ sender : UIButton) {
-        
-//        sender.isSelected = true
-        
-//        updateStatusMenu()
-        
         switchTab(from: self.activeItem, to: sender.tag)
-        
     }
     
     func switchTab(from: Int, to: Int) {
@@ -44,47 +39,47 @@ class CustomTabBarView: BaseView {
         activateTab(tab: to)
     }
     
-    
-    override func commonInit() {
-        Bundle.main.loadNibNamed("CustomTabBarView", owner: self, options: nil)
-        addSubview(vContent)
-        vContent.frame = self.bounds
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        print("-------",#function,String(describing: self))
         
+        setupView()
+    }
+    
+    func setupView() {
+        print("-------",vContent.frame, #function)
+        vContent.layer.cornerRadius = 12
+        vContent.backgroundColor = .white
+        vContent.clipsToBounds = true
         
         btnHome.centerButtonAndImageWithSpacing(spacing: 8.0)
         btnProfile.centerButtonAndImageWithSpacing(spacing: 8.0)
         btnTicket.centerButtonAndImageWithSpacing(spacing: 8.0)
         btnSetting.centerButtonAndImageWithSpacing(spacing: 8.0)
         
-        // set color button
-        
-        
-        
-//        btnHome.isSelected = true
-        
         arrMenu = [btnHome, btnProfile, btnTicket, btnSetting]
         
-     
-//        updateStatusMenu()
+        activateTab(tab: activeItem)
+
     }
     
-    
     func deactiveTab(tab : Int) {
-        let btn = viewWithTag(tab) as! UIButton
         
-        btn.setTitle("", for: .normal)
+        let btn = viewWithTag(tab) as? UIButton
+        
+        btn?.setTitle("", for: .normal)
         
         switch tab {
-        case 0:
-            btn.setImage(UIImage(named: "home"), for: .normal)
+        case 10:
+            btn?.setImage(UIImage(named: "home"), for: .normal)
         case 1:
-            btn.setImage(UIImage(named: "profile"), for: .normal)
+            btn?.setImage(UIImage(named: "profile"), for: .normal)
         case 2:
-            btn.setImage(UIImage(named: "ticket"), for: .normal)
+            btn?.setImage(UIImage(named: "ticket"), for: .normal)
         case 3:
-            btn.setImage(UIImage(named: "setting"), for: .normal)
+            btn?.setImage(UIImage(named: "setting"), for: .normal)
         default:
-            btn.setImage(UIImage(named: "home"), for: .normal)
+            btn?.setImage(UIImage(named: "home"), for: .normal)
         }
     }
     
@@ -92,7 +87,7 @@ class CustomTabBarView: BaseView {
         var strName : String
         
         switch tab {
-        case 0:
+        case 10:
             strName = "Home"
             
         case 1:
@@ -106,68 +101,14 @@ class CustomTabBarView: BaseView {
             strName = "Home"
         }
         
-        let btn = viewWithTag(tab) as! UIButton
+        let btn = viewWithTag(tab) as? UIButton
         
-        btn.setTitle(strName, for: .normal)
-        btn.setTitleColor(BASEColor.MainAppColor(), for: .normal)
-        btn.setImage(UIImage(named: "\(strName.lowercased())_selected"), for: .normal)
+        btn?.setTitle(strName, for: .normal)
+        btn?.setTitleColor(BASEColor.MainAppColor(), for: .normal)
+        btn?.setImage(UIImage(named: "\(strName.lowercased())_selected"), for: .normal)
         
         activeItem = tab
+        itemTapped!(tab)
     }
-    
-//    func updateStatusMenu() {
-//
-//        for btn in arrMenu {
-//            
-//            print("debug --- \(btn.titleLabel?.text) -- \(btn.isSelected)")
-//            
-//            if (btn.isSelected) {
-//                
-//                var strName : String
-//                
-//                switch btn.tag {
-//                case 0:
-//                    strName = "Home"
-//                case 1:
-//                    strName = "Profile"
-//                case 2:
-//                    strName = "Ticket"
-//                case 3:
-//                    strName = "Setting"
-//                default:
-//                    strName = "Home"
-//                }
-//                
-//                btn.setTitle(strName, for: .normal)
-//                btn.setTitleColor(BASEColor.MainAppColor(), for: .normal)
-//                btn.setImage(UIImage(named: "\(strName.lowercased())_selected"), for: .normal)
-//                
-//                btn.isSelected = false
-//                
-//                NotificationCenter.default.post(name: .TabbarName, object: nil, userInfo: ["name":strName])
-//                
-//            } else {
-//                btn.setTitle("", for: .normal)
-//                
-//                switch btn.tag {
-//                case 0:
-//                    btn.setImage(UIImage(named: "home"), for: .normal)
-//                case 1:
-//                    btn.setImage(UIImage(named: "profile"), for: .normal)
-//                case 2:
-//                    btn.setImage(UIImage(named: "ticket"), for: .normal)
-//                case 3:
-//                    btn.setImage(UIImage(named: "setting"), for: .normal)
-//                default:
-//                    btn.setImage(UIImage(named: "home"), for: .normal)
-//                }
-//                
-//            }
-//            
-////            btn.layoutIfNeeded()
-//        }
-//        
-//    }
-    
 
 }

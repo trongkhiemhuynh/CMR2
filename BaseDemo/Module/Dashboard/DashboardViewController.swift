@@ -20,7 +20,8 @@ class DashboardViewController: BaseViewController {
 
 
     override func setupView() {
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = BASEColor.BackgroundListColor()
+        
         let label = UILabel(frame: CGRect.zero)
         label.text = "[CONTROLLER_NAME] View Controller"
         label.font = UIFont.systemFont(ofSize: 16)
