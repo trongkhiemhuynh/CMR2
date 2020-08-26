@@ -10,6 +10,8 @@ import UIKit
 
 class CustomDetailActionView: BaseView {
 
+    var popupView : PopupView?
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -23,4 +25,21 @@ class CustomDetailActionView: BaseView {
         addSubview(vContent)
         vContent.frame = self.bounds
     }
+    
+    // MARK: FIXME
+    @IBAction func actionMore() {
+        
+        popupView = Bundle.main.loadNibNamed("PopupView", owner: self, options: nil)?.first as? PopupView
+        
+        popupView?.frame = CGRect(x: 0, y: 0, width: widthScreen, height: heightScreen)
+        
+        self.superview?.addSubview(popupView!)
+        
+        UIView.animate(withDuration: 0.35, delay: 0, options: .transitionFlipFromBottom, animations: {
+            self.superview?.layoutIfNeeded()
+        }) { (success) in
+            print(success)
+        }
+    }
+    
 }

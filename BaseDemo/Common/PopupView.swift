@@ -20,6 +20,7 @@ class PopupView : BaseView {
     
     @IBOutlet weak var iv : UIImageView!
     @IBOutlet weak var tbl : UITableView!
+    @IBOutlet weak var vDismiss : UIView!
     
     let ID = "popupID"
 //    override func commonInit() {
@@ -31,9 +32,17 @@ class PopupView : BaseView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.iv.layer.cornerRadius = 8.0
+        self.iv.layer.cornerRadius = 5.0
         
-        self.tbl.register(UITableViewCell.self, forCellReuseIdentifier: ID)
+        self.tbl.register(UINib(nibName: "CustomPopUpTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: ID)
+        
+        self.tbl.isUserInteractionEnabled = true
+        
+        vDismiss.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissView(gesture:))))
+    }
+    
+    @objc func dismissView( gesture : UITapGestureRecognizer) {
+        removeFromSuperview()
     }
     
     override func layoutSubviews() {
@@ -48,9 +57,14 @@ extension PopupView : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ID, for: indexPath)
-        cell.textLabel?.text = "Steve"
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ID, for: indexPath) as? CustomPopUpTableViewCell
+        cell?.updateData(img: UIImage(named: "setting_selected")!, title: "Change Owner")
+        
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
 }
 
