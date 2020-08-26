@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum TabMenu : String {
     case Dashboard
@@ -23,3 +24,6 @@ public extension Notification.Name {
     static let DetailTicket = Notification.Name("DetailTicket")
     static let DetailTicketTab = Notification.Name("DetailTicketTab")
 }
+
+let heightScreen = UIScreen.main.bounds.height
+let widthScreen = UIScreen.main.bounds.width

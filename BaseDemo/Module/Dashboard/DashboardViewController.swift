@@ -10,6 +10,8 @@ import UIKit
 
 class DashboardViewController: BaseViewController {
 
+    var popupView : PopupView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +32,25 @@ class DashboardViewController: BaseViewController {
             label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             label.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
         ])
+    }
+    
+    @IBAction func actionClick() {
+        let height = CGFloat(300)
+        
+        popupView = Bundle.main.loadNibNamed("PopupView", owner: self, options: nil)?.first as! PopupView
+        
+        popupView.frame = CGRect(x: 0, y: heightScreen - height, width: widthScreen, height: height)
+        view.addSubview(popupView)
+        
+        UIView.animate(withDuration: 0.35, delay: 0, options: .transitionFlipFromBottom, animations: {
+            self.view.layoutIfNeeded()
+        }) { (success) in
+            print(success)
+        }
+    }
+    
+    @IBAction func actionDismiss() {
+        popupView.removeFromSuperview()
     }
     /*
     // MARK: - Navigation

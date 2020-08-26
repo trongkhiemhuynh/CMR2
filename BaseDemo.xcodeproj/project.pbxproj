@@ -11,6 +11,9 @@
 		224EBAF524F5068100CB676F /* ExtendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 224EBAF324F5068100CB676F /* ExtendCollectionViewCell.xib */; };
 		224EBAF824F50EDA00CB676F /* NewTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224EBAF624F50EDA00CB676F /* NewTicketViewController.swift */; };
 		224EBAF924F50EDA00CB676F /* NewTicketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 224EBAF724F50EDA00CB676F /* NewTicketViewController.xib */; };
+		22DBF0B224F620BE00B6D992 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF0B124F620BE00B6D992 /* Coordinator.swift */; };
+		22DBF0B424F620CD00B6D992 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF0B324F620CD00B6D992 /* AppCoordinator.swift */; };
+		22DBF0B624F63C5E00B6D992 /* DashboardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF0B524F63C5E00B6D992 /* DashboardCoordinator.swift */; };
 		4B166C2224ECFD620030C592 /* TabMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B166C2024ECFD620030C592 /* TabMenuController.swift */; };
 		4B166C2324ECFD620030C592 /* TabMenuController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B166C2124ECFD620030C592 /* TabMenuController.xib */; };
 		4B166C2524ED05D40030C592 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B166C2424ED05D40030C592 /* BaseViewController.swift */; };
@@ -70,8 +73,8 @@
 		ADB64621B5D1967CC208E9F0 /* Pods_BaseDemo_BaseDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D55EAD9AB9548987ECEEC9D /* Pods_BaseDemo_BaseDemoUITests.framework */; };
 		C23F628924EE9C2600E37560 /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23F628824EE9C2600E37560 /* CustomTabBarView.swift */; };
 		C23F628B24EEE89100E37560 /* CustomTabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C23F628A24EEE89100E37560 /* CustomTabBarView.xib */; };
-		C23F628D24EF05AD00E37560 /* SortContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23F628C24EF05AD00E37560 /* SortContactView.swift */; };
-		C23F628F24EF05F100E37560 /* SortContactView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C23F628E24EF05F100E37560 /* SortContactView.xib */; };
+		C23F628D24EF05AD00E37560 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23F628C24EF05AD00E37560 /* PopupView.swift */; };
+		C23F628F24EF05F100E37560 /* PopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C23F628E24EF05F100E37560 /* PopupView.xib */; };
 		C23F629224EF204E00E37560 /* TicketDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23F629024EF204E00E37560 /* TicketDetailController.swift */; };
 		C23F629324EF204F00E37560 /* TicketDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C23F629124EF204E00E37560 /* TicketDetailController.xib */; };
 		C23F629524EF223000E37560 /* CustomDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23F629424EF223000E37560 /* CustomDetailInfoView.swift */; };
@@ -140,6 +143,9 @@
 		224EBAF324F5068100CB676F /* ExtendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExtendCollectionViewCell.xib; sourceTree = "<group>"; };
 		224EBAF624F50EDA00CB676F /* NewTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketViewController.swift; sourceTree = "<group>"; };
 		224EBAF724F50EDA00CB676F /* NewTicketViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTicketViewController.xib; sourceTree = "<group>"; };
+		22DBF0B124F620BE00B6D992 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		22DBF0B324F620CD00B6D992 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		22DBF0B524F63C5E00B6D992 /* DashboardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCoordinator.swift; sourceTree = "<group>"; };
 		3B3D82D809173A436C943DC0 /* Pods-BaseDemo-BaseDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseDemo-BaseDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-BaseDemo-BaseDemoUITests/Pods-BaseDemo-BaseDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3F7E6A73251477D2590F362F /* Pods-BaseDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-BaseDemoTests/Pods-BaseDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3F83892287D49B02D42D6E70 /* Pods-BaseDemo-BaseDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseDemo-BaseDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-BaseDemo-BaseDemoUITests/Pods-BaseDemo-BaseDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -212,8 +218,8 @@
 		B379D2610C593EB7DEB03B89 /* Pods-MyWebexAppBroadcastExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyWebexAppBroadcastExtension.debug.xcconfig"; path = "Target Support Files/Pods-MyWebexAppBroadcastExtension/Pods-MyWebexAppBroadcastExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		C23F628824EE9C2600E37560 /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 		C23F628A24EEE89100E37560 /* CustomTabBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTabBarView.xib; sourceTree = "<group>"; };
-		C23F628C24EF05AD00E37560 /* SortContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortContactView.swift; sourceTree = "<group>"; };
-		C23F628E24EF05F100E37560 /* SortContactView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortContactView.xib; sourceTree = "<group>"; };
+		C23F628C24EF05AD00E37560 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
+		C23F628E24EF05F100E37560 /* PopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupView.xib; sourceTree = "<group>"; };
 		C23F629024EF204E00E37560 /* TicketDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailController.swift; sourceTree = "<group>"; };
 		C23F629124EF204E00E37560 /* TicketDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TicketDetailController.xib; sourceTree = "<group>"; };
 		C23F629424EF223000E37560 /* CustomDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDetailInfoView.swift; sourceTree = "<group>"; };
@@ -277,6 +283,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22DBF0B024F6206800B6D992 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				22DBF0B124F620BE00B6D992 /* Coordinator.swift */,
+				22DBF0B324F620CD00B6D992 /* AppCoordinator.swift */,
+				22DBF0B524F63C5E00B6D992 /* DashboardCoordinator.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
 		4B166C4524EE6A0C0030C592 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -441,8 +457,8 @@
 				4B166C3724EE16BB0030C592 /* Common.swift */,
 				4B166C3924EE28790030C592 /* Extention.swift */,
 				4B166C4324EE621E0030C592 /* BaseView.swift */,
-				C23F628C24EF05AD00E37560 /* SortContactView.swift */,
-				C23F628E24EF05F100E37560 /* SortContactView.xib */,
+				C23F628C24EF05AD00E37560 /* PopupView.swift */,
+				C23F628E24EF05F100E37560 /* PopupView.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -523,6 +539,7 @@
 		4BE6313824DA9CBB00D9133C /* BaseDemo */ = {
 			isa = PBXGroup;
 			children = (
+				22DBF0B024F6206800B6D992 /* Scene */,
 				4B2D4BFE24DD333100CABF1D /* Network */,
 				4B2D4BF824DD28D100CABF1D /* Common */,
 				4B2D4BF724DD28C000CABF1D /* Helper */,
@@ -746,7 +763,7 @@
 				4B166C3124ED0D690030C592 /* TicketDetailActivityViewController.xib in Resources */,
 				4B166C3624ED22B40030C592 /* TabBarView.xib in Resources */,
 				4B166C4924EE6A340030C592 /* CustomTicketCollectionViewCell.xib in Resources */,
-				C23F628F24EF05F100E37560 /* SortContactView.xib in Resources */,
+				C23F628F24EF05F100E37560 /* PopupView.xib in Resources */,
 				4B166C5924EF78CD0030C592 /* TicketDetailActivityCollectionViewCell.xib in Resources */,
 				4B2D4BF224DD02D200CABF1D /* HomeViewController.xib in Resources */,
 				4B166C5D24EF78F80030C592 /* TicketDetailInfoCollectionViewCell.xib in Resources */,
@@ -915,6 +932,7 @@
 				C23F629924EF228100E37560 /* CustomDetailActionView.swift in Sources */,
 				4BE6316924DAA7ED00D9133C /* SplashViewController.swift in Sources */,
 				C2E857E624F39501002960A2 /* TabItem.swift in Sources */,
+				22DBF0B424F620CD00B6D992 /* AppCoordinator.swift in Sources */,
 				4B166C4824EE6A340030C592 /* CustomTicketCollectionViewCell.swift in Sources */,
 				4B166C5024EE7F9A0030C592 /* CustomTicketStageCollectionViewCell.swift in Sources */,
 				4B166C3C24EE5BFB0030C592 /* CustomTitleView.swift in Sources */,
@@ -930,8 +948,9 @@
 				C2E857E924F39744002960A2 /* NavigationMenuBaseController.swift in Sources */,
 				C23F628924EE9C2600E37560 /* CustomTabBarView.swift in Sources */,
 				4B166C2C24ED0D140030C592 /* TicketDetailStatusCollectionViewCell.swift in Sources */,
+				22DBF0B224F620BE00B6D992 /* Coordinator.swift in Sources */,
 				4B166C5C24EF78F80030C592 /* TicketDetailInfoCollectionViewCell.swift in Sources */,
-				C23F628D24EF05AD00E37560 /* SortContactView.swift in Sources */,
+				C23F628D24EF05AD00E37560 /* PopupView.swift in Sources */,
 				4B166C3A24EE28790030C592 /* Extention.swift in Sources */,
 				C23F629224EF204E00E37560 /* TicketDetailController.swift in Sources */,
 				4B166C4424EE621E0030C592 /* BaseView.swift in Sources */,
@@ -941,6 +960,7 @@
 				4B2D4C0124DD4B7D00CABF1D /* PreviewWelcomeViewController.swift in Sources */,
 				4B166C4224EE61FB0030C592 /* CustomListView.swift in Sources */,
 				4B2D4BF124DD02D200CABF1D /* HomeViewController.swift in Sources */,
+				22DBF0B624F63C5E00B6D992 /* DashboardCoordinator.swift in Sources */,
 				4B2D4C0C24DD6A0F00CABF1D /* EndPoint.swift in Sources */,
 				4B28018324ECE5D7007647F8 /* DashboardViewController.swift in Sources */,
 				C23F629524EF223000E37560 /* CustomDetailInfoView.swift in Sources */,

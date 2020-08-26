@@ -21,6 +21,8 @@ class SplashViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        let vc = UIAlertController(title: "test", message: "testt", preferredStyle: .actionSheet)
+        present(vc, animated: true, completion: nil)
 //        Timer.init(timeInterval: 3, repeats: false) { (timer) in
 //            
 //        }

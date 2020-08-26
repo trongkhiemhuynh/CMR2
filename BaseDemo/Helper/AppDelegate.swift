@@ -19,14 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let preVC = PreviewWelcomeViewController()
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        let loginVC = LoginViewController(nibName: "LoginViewController", bundle: nil)
         
+        let appCoordinator = AppCoordinator(window: window)
+        appCoordinator.start()
         
 //        let nav = UINavigationController(rootViewController: loginVC)
 //        nav.navigationBar.isTranslucent = false
-        window?.rootViewController = loginVC
         
-        window?.makeKeyAndVisible()
         
         
         return true
