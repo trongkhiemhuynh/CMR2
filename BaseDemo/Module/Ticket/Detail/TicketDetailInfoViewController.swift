@@ -32,7 +32,7 @@ class TicketDetailInfoViewController: BaseViewController {
 
     override func setupView() {
         cvInfoDetail.register(UINib(nibName: "TicketDetailInfoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseID1)
-        cvInfoDetail.register(UINib(nibName: "TicketDetailStatusCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseID2)
+        cvInfoDetail.register(UINib(nibName: "TicketDetailInputInfoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseID2)
         
         cvInfoDetail.backgroundColor = BASEColor.BackgroundListColor()
     }
@@ -51,7 +51,7 @@ class TicketDetailInfoViewController: BaseViewController {
 
 extension TicketDetailInfoViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return arrInputTicket.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -60,12 +60,15 @@ extension TicketDetailInfoViewController : UICollectionViewDataSource {
             
             return cell1
         } else {
-            let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: reuseID2, for: indexPath) as! TicketDetailStatusCollectionViewCell
-            cell2.reloadData(im: UIImage(named: "filter")!, title: "Ticket owner", name: "Apple Inc.")
+            let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: reuseID2, for: indexPath) as! TicketDetailInputInfoCollectionViewCell
+            
+            let icName = arrIcTicket[indexPath.row - 1]
+            
+            cell2.reloadData(UIImage(named: icName), arrInputTicket[indexPath.row-1],"Apple Inc.")
+            
             return cell2
         }
     }
-    
     
 }
 
@@ -75,9 +78,7 @@ extension TicketDetailInfoViewController : UICollectionViewDelegate {
 
 extension TicketDetailInfoViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        //2
-        
+
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
         let availableWidth = cvInfoDetail.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow

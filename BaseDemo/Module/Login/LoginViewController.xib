@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="BaseDemo" customModuleProvider="target">
             <connections>
+                <outlet property="btnCheckbox" destination="00h-t9-F0y" id="1Ch-ey-6HN"/>
                 <outlet property="btnLogin" destination="hAc-TF-Iu7" id="ahd-wR-oEc"/>
                 <outlet property="tfPassword" destination="fRy-Wt-JQT" id="7P9-Yx-e86"/>
                 <outlet property="tfUserName" destination="8sH-t6-iTI" id="pPu-U6-xIC"/>
@@ -125,6 +126,9 @@
                                 <constraint firstAttribute="height" constant="14" id="Wrq-H7-sTg"/>
                             </constraints>
                             <state key="normal" image="check_box"/>
+                            <connections>
+                                <action selector="actionCheck" destination="-1" eventType="touchUpInside" id="0jZ-Gu-2KT"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

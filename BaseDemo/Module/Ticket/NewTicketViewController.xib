@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewTicketViewController" customModule="BaseDemo" customModuleProvider="target">
             <connections>
+                <outlet property="cvNewTicket" destination="evR-c8-Fn6" id="DZH-Lj-umh"/>
                 <outlet property="vTitle" destination="847-Ht-0xd" id="lbG-mJ-fhw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -35,9 +36,13 @@
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="z9S-BR-PUB"/>
+                        <outlet property="delegate" destination="-1" id="arY-Zz-0B5"/>
+                    </connections>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZH-Gh-fIJ">
-                    <rect key="frame" x="207" y="435" width="100" height="50"/>
+                    <rect key="frame" x="212" y="435" width="100" height="50"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQF-tl-7Wv">
                             <rect key="frame" x="-5" y="5" width="40" height="40"/>
@@ -45,21 +50,23 @@
                                 <constraint firstAttribute="height" constant="40" id="7D1-2a-2i8"/>
                                 <constraint firstAttribute="width" constant="40" id="EoP-wf-eWd"/>
                             </constraints>
-                            <state key="normal" title="Button" image="backward.fill" catalog="system"/>
+                            <state key="normal" title="Button" image="back"/>
                             <connections>
                                 <action selector="back" destination="-1" eventType="touchUpInside" id="lbw-5w-V8t"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mff-F4-KiP">
-                            <rect key="frame" x="60" y="5" width="40" height="40"/>
+                            <rect key="frame" x="30" y="-11" width="70" height="72"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="40" id="2ln-nz-akH"/>
-                                <constraint firstAttribute="width" constant="40" id="Hse-Px-Ayd"/>
+                                <constraint firstAttribute="width" constant="70" id="zz0-km-g8v"/>
                             </constraints>
-                            <state key="normal" image="setting_selected"/>
+                            <state key="normal" image="save"/>
+                            <connections>
+                                <action selector="save" destination="-1" eventType="touchUpInside" id="qKh-xZ-Io2"/>
+                            </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="53h-Uu-Sxp"/>
                         <constraint firstItem="mff-F4-KiP" firstAttribute="centerY" secondItem="FZH-Gh-fIJ" secondAttribute="centerY" id="Poa-e4-oip"/>
@@ -74,7 +81,7 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="847-Ht-0xd" secondAttribute="trailing" id="9HK-mV-Jfn"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="evR-c8-Fn6" secondAttribute="trailing" id="L4E-Fb-tLW"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FZH-Gh-fIJ" secondAttribute="trailing" constant="13" id="QBo-yo-qqh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FZH-Gh-fIJ" secondAttribute="trailing" constant="8" id="QBo-yo-qqh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="FZH-Gh-fIJ" secondAttribute="bottom" constant="83" id="RJz-yC-jzu"/>
                 <constraint firstItem="evR-c8-Fn6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Swf-sK-t4e"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="evR-c8-Fn6" secondAttribute="bottom" id="YBX-Oz-L4z"/>
@@ -87,7 +94,7 @@
         </view>
     </objects>
     <resources>
-        <image name="backward.fill" catalog="system" width="64" height="38"/>
-        <image name="setting_selected" width="20.5" height="20.5"/>
+        <image name="back" width="54" height="54"/>
+        <image name="save" width="72" height="72"/>
     </resources>
 </document>

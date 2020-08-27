@@ -22,6 +22,7 @@ class PopupView : BaseView {
     @IBOutlet weak var tbl : UITableView!
     @IBOutlet weak var vDismiss : UIView!
     
+    
     let ID = "popupID"
 //    override func commonInit() {
 //        Bundle.main.loadNibNamed("LoadingView", owner: self, options: nil)

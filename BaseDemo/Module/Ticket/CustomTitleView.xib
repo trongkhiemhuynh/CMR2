@@ -31,21 +31,23 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gwf-9D-8GX">
-                            <rect key="frame" x="366" y="16.666666666666629" width="40" height="30"/>
+                            <rect key="frame" x="356" y="13.666666666666629" width="50" height="36"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="40" id="zy4-1g-I65"/>
+                                <constraint firstAttribute="height" constant="36" id="F2O-1X-OXL"/>
+                                <constraint firstAttribute="width" constant="50" id="nxg-PH-mBB"/>
                             </constraints>
-                            <state key="normal" image="filter"/>
+                            <state key="normal" image="filtertopview"/>
                             <connections>
                                 <action selector="actionFilter:" destination="-1" eventType="touchUpInside" id="wNM-Vf-8M8"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJ1-uF-p5E">
-                            <rect key="frame" x="318" y="16" width="40" height="31"/>
+                            <rect key="frame" x="306" y="13.666666666666629" width="50" height="36"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="40" id="ciG-YC-TdJ"/>
+                                <constraint firstAttribute="height" constant="36" id="OHT-NH-Z7w"/>
+                                <constraint firstAttribute="width" constant="50" id="ftX-3L-tkU"/>
                             </constraints>
-                            <state key="normal" image="search"/>
+                            <state key="normal" image="searchtopview"/>
                             <connections>
                                 <action selector="actionSearch:" destination="-1" eventType="touchUpInside" id="kaW-My-cOX"/>
                             </connections>
@@ -58,7 +60,7 @@
                         <constraint firstAttribute="trailing" secondItem="Gwf-9D-8GX" secondAttribute="trailing" constant="8" id="Hcg-sr-QbW"/>
                         <constraint firstItem="c5U-7K-y3O" firstAttribute="centerY" secondItem="ALo-Lq-2k5" secondAttribute="centerY" id="KBc-dn-h3E"/>
                         <constraint firstItem="c5U-7K-y3O" firstAttribute="leading" secondItem="ALo-Lq-2k5" secondAttribute="leading" constant="13" id="hN2-sW-67s"/>
-                        <constraint firstItem="Gwf-9D-8GX" firstAttribute="leading" secondItem="EJ1-uF-p5E" secondAttribute="trailing" constant="8" id="wQw-aD-Njb"/>
+                        <constraint firstItem="Gwf-9D-8GX" firstAttribute="leading" secondItem="EJ1-uF-p5E" secondAttribute="trailing" id="wQw-aD-Njb"/>
                         <constraint firstItem="Gwf-9D-8GX" firstAttribute="centerY" secondItem="ALo-Lq-2k5" secondAttribute="centerY" id="yhJ-MH-FLH"/>
                     </constraints>
                 </view>
@@ -74,7 +76,7 @@
         </view>
     </objects>
     <resources>
-        <image name="filter" width="15" height="15.333333015441895"/>
-        <image name="search" width="15.333333015441895" height="15.666666984558105"/>
+        <image name="filtertopview" width="25.333333969116211" height="25.666666030883789"/>
+        <image name="searchtopview" width="26.333333969116211" height="27"/>
     </resources>
 </document>

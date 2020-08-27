@@ -19,6 +19,10 @@ class LoginViewController : BaseViewController {
     
     @IBOutlet weak var btnLogin : UIButton!
     
+    @IBOutlet weak var btnCheckbox : UIButton!
+    
+    var isCheck = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -44,12 +48,6 @@ class LoginViewController : BaseViewController {
     }
 
     @IBAction func loginAction(_ sender : AnyObject) {
-
-//        let nvActivity = NVActivityIndicatorView(frame: CGRect(origin: CGPoint(x: (view.frame.width - 50)/2, y: (view.frame.height - 50)/2), size: CGSize(width: 50, height: 50)), type: .circleStrokeSpin, color: .red, padding: 0)
-        
-//        view.addSubview(nvActivity)
-        
-//        nvActivity.startAnimating()
         
         addAlertLoading()
         
@@ -64,6 +62,17 @@ class LoginViewController : BaseViewController {
             })
         }
 
+    }
+    
+    @IBAction func actionCheck() {
+        isCheck = !isCheck
+        
+        if (isCheck) {
+            btnCheckbox.setImage(UIImage(named: "checked_box"), for: .normal)
+        } else {
+            btnCheckbox.setImage(UIImage(named: "check_box"), for: .normal)
+        }
+        
     }
 
 }

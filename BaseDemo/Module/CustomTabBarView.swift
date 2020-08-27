@@ -31,12 +31,16 @@ class CustomTabBarView: UIView {
     var activeItem : Int = 10
     
     @IBAction func tappedButton(_ sender : UIButton) {
+        print("---",#function)
         switchTab(from: self.activeItem, to: sender.tag)
     }
     
     func switchTab(from: Int, to: Int) {
+        print("---",#function)
         deactiveTab(tab: from)
         activateTab(tab: to)
+        
+        layoutIfNeeded()
     }
     
     override func layoutSubviews() {
@@ -64,7 +68,7 @@ class CustomTabBarView: UIView {
     }
     
     func deactiveTab(tab : Int) {
-        
+        print("---",#function)
         let btn = viewWithTag(tab) as? UIButton
         
         btn?.setTitle("", for: .normal)
@@ -84,6 +88,7 @@ class CustomTabBarView: UIView {
     }
     
     func activateTab(tab : Int) {
+        print("---",#function)
         var strName : String
         
         switch tab {

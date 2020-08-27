@@ -34,7 +34,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="Jeg-y0-fUA" firstAttribute="leading" secondItem="nQB-1v-EqH" secondAttribute="trailing" constant="15" id="4sk-0E-SgG"/>
                                 <constraint firstItem="nQB-1v-EqH" firstAttribute="centerY" secondItem="kPA-aE-u1A" secondAttribute="centerY" id="7EG-gB-jmD"/>
@@ -46,23 +46,24 @@
                             <rect key="frame" x="0.0" y="240" width="320" height="240"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LX7-XE-BD6">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
+                                    <rect key="frame" x="8" y="0.0" width="304" height="240"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="LX7-XE-BD6" secondAttribute="bottom" id="6x5-iG-Dro"/>
-                                <constraint firstAttribute="trailing" secondItem="LX7-XE-BD6" secondAttribute="trailing" id="8hq-ug-x60"/>
-                                <constraint firstItem="LX7-XE-BD6" firstAttribute="leading" secondItem="DvM-Ai-bpa" secondAttribute="leading" id="gQA-TD-67H"/>
+                                <constraint firstAttribute="trailing" secondItem="LX7-XE-BD6" secondAttribute="trailing" constant="8" id="8hq-ug-x60"/>
+                                <constraint firstItem="LX7-XE-BD6" firstAttribute="leading" secondItem="DvM-Ai-bpa" secondAttribute="leading" constant="8" id="gQA-TD-67H"/>
                                 <constraint firstItem="LX7-XE-BD6" firstAttribute="top" secondItem="DvM-Ai-bpa" secondAttribute="top" id="sfs-8V-ToW"/>
                             </constraints>
                         </view>
                     </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="hUe-e1-FP7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="CPa-CH-XAi"/>
                 <constraint firstItem="hUe-e1-FP7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="drI-P4-9zS"/>

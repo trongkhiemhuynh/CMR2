@@ -30,12 +30,12 @@
                                         <constraint firstAttribute="width" constant="36" id="GuR-Tw-aPq"/>
                                         <constraint firstAttribute="height" constant="36" id="x9m-mB-2UJ"/>
                                     </constraints>
-                                    <state key="normal" image="setting_selected"/>
+                                    <state key="normal" image="post"/>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTD-NU-WK7">
-                                    <rect key="frame" x="34" y="48" width="25.5" height="14.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <nil key="textColor"/>
+                                    <rect key="frame" x="34" y="48" width="26" height="14.5"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                    <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -56,12 +56,12 @@
                                         <constraint firstAttribute="width" constant="36" id="7jr-yV-jfe"/>
                                         <constraint firstAttribute="height" constant="36" id="TFu-VR-r5a"/>
                                     </constraints>
-                                    <state key="normal" image="setting_selected"/>
+                                    <state key="normal" image="edit-1"/>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oh9-rF-EAI">
-                                    <rect key="frame" x="35.5" y="48" width="22" height="14.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <nil key="textColor"/>
+                                    <rect key="frame" x="35.5" y="48" width="22.5" height="14.5"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                    <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -82,12 +82,12 @@
                                         <constraint firstAttribute="height" constant="36" id="T5S-W5-nfl"/>
                                         <constraint firstAttribute="width" constant="36" id="c6a-JW-8Ho"/>
                                     </constraints>
-                                    <state key="normal" image="setting_selected"/>
+                                    <state key="normal" image="logacall"/>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log a call" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCp-Sn-ofO">
-                                    <rect key="frame" x="20" y="48" width="54" height="14.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <nil key="textColor"/>
+                                    <rect key="frame" x="19.5" y="48" width="55" height="14.5"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                    <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -108,15 +108,15 @@
                                         <constraint firstAttribute="height" constant="36" id="ecE-AL-Hl4"/>
                                         <constraint firstAttribute="width" constant="36" id="pVe-Mq-oPY"/>
                                     </constraints>
-                                    <state key="normal" image="setting_selected"/>
+                                    <state key="normal" image="more"/>
                                     <connections>
                                         <action selector="actionMore" destination="-1" eventType="touchUpInside" id="RI1-wQ-PpY"/>
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEp-eO-DnL">
-                                    <rect key="frame" x="35.5" y="48" width="22.5" height="14.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <nil key="textColor"/>
+                                    <rect key="frame" x="35" y="48" width="23.5" height="14.5"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                    <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -145,6 +145,9 @@
         </view>
     </objects>
     <resources>
-        <image name="setting_selected" width="20.5" height="20.5"/>
+        <image name="edit-1" width="58" height="58"/>
+        <image name="logacall" width="58" height="58"/>
+        <image name="more" width="58" height="58"/>
+        <image name="post" width="58" height="58"/>
     </resources>
 </document>

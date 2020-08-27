@@ -15,6 +15,15 @@ class InfoTicketRow: BaseView {
     @IBOutlet weak var lblTR : UILabel!
     @IBOutlet weak var ivTR : UIImageView!
     
+    override class func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
+    
+    override func layoutSubviews() {
+        self.tfTR.backgroundColor = .white
+        self.layer.backgroundColor = UIColor.clear.cgColor
+    }
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
