@@ -13,11 +13,7 @@ class NewTicketViewController: BaseViewController {
     @IBOutlet weak var vTitle : CustomTitleView!
     @IBOutlet weak var cvNewTicket : UICollectionView!
     
-    
     // variable
-    let reuseId = "TicketDetailInputInfoCollectionViewCell"
-    let reuseId0 = "ID"
-    
     private let sectionInsets = UIEdgeInsets(top: 10.0,
                                              left: 10.0,
                                              bottom: 10.0,
@@ -34,8 +30,10 @@ class NewTicketViewController: BaseViewController {
     override func setupView() {
         vTitle.lblTitle.text = "Create new ticket"
         cvNewTicket.layer.backgroundColor = BASEColor.BackgroundListColor()?.cgColor
-        cvNewTicket.register(UINib(nibName: "TicketDetailInputInfoCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseId)
-        cvNewTicket.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseId0)
+        
+        cvNewTicket.registerCell(TicketDetailInputInfoCollectionViewCell.self)
+        
+        cvNewTicket.registerCell(NewTicketCheckboxCollectionViewCell.self)
     }
 
     /*
@@ -78,15 +76,13 @@ extension NewTicketViewController : UICollectionViewDataSource {
         let titleName = arrInputTicket[indexPath.row]
         
         if titleName.contains("Escalated") || titleName.contains("Done") {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseId0, for: indexPath)
-            let title = UILabel(frame: CGRect(x: 0, y: 0, width: cell.bounds.size.width, height: 50))
-            title.text = "Some random text"
-            title.font = UIFont(name: "AvenirNext-Bold", size: 15)
-            title.textAlignment = .center
-            cell.contentView.addSubview(title)
-            return cell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewTicketCheckboxCollectionViewCell.identifier, for: indexPath) as? NewTicketCheckboxCollectionViewCell
+
+            cell?.lblTitle.text = titleName
+            
+            return cell!
         } else {
-            let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: reuseId, for: indexPath) as! TicketDetailInputInfoCollectionViewCell
+            let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailInputInfoCollectionViewCell.identifier, for: indexPath) as! TicketDetailInputInfoCollectionViewCell
             cell2.reloadData(UIImage(named: icName), titleName, "")
             
             return cell2

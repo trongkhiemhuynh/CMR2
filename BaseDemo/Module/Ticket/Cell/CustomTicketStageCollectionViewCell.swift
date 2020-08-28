@@ -19,3 +19,7 @@ class CustomTicketStageCollectionViewCell: UICollectionViewCell {
     }
 
 }
+
+extension CustomTicketStageCollectionViewCell : XibInitalization {
+    typealias Element = CustomTicketStageCollectionViewCell
+}

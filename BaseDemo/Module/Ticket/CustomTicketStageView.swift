@@ -11,15 +11,7 @@ import UIKit
 class CustomTicketStageView: BaseView {
 
     @IBOutlet weak var cvStage: UICollectionView!
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-    
-    let reuseId = "CellStageTicket"
+
     private let sectionInsets = UIEdgeInsets(top: 10.0,
                                              left: 10.0,
                                              bottom: 10.0,
@@ -28,7 +20,7 @@ class CustomTicketStageView: BaseView {
     private let heightCell : CGFloat = 60
     private let arrStage = ["New", "Processing", "Escalated", "Pending", "Upcoming"]
     
-    private let mockup = ["New":true, "Processing":false, "Escalated":false, "Pending":false, "Upcoming":false]
+//    private let mockup = ["New":true, "Processing":false, "Escalated":false, "Pending":false, "Upcoming":false]
     
     private var preIdx = IndexPath(row: 0, section: 0)
     
@@ -37,7 +29,9 @@ class CustomTicketStageView: BaseView {
         vContent.frame = self.bounds
         addSubview(vContent)
         cvStage.backgroundColor = .white
-        cvStage.register(UINib(nibName: "CustomTicketStageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseId)
+        
+        cvStage.registerCell(CustomTicketStageCollectionViewCell.self)
+        
     }
 
 }
@@ -48,7 +42,7 @@ extension CustomTicketStageView : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseId, for: indexPath) as! CustomTicketStageCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomTicketStageCollectionViewCell.identifier, for: indexPath) as! CustomTicketStageCollectionViewCell
         
         let strStage = arrStage[indexPath.row]
         

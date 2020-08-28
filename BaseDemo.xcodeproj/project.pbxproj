@@ -28,6 +28,8 @@
 		223E41DF24F8E4FA0064D4C6 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 223E41D224F8E4FA0064D4C6 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		223E41E024F8E4FA0064D4C6 /* SkyFloatingLabelTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223E41D324F8E4FA0064D4C6 /* SkyFloatingLabelTextField.framework */; };
 		223E41E124F8E4FA0064D4C6 /* SkyFloatingLabelTextField.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 223E41D324F8E4FA0064D4C6 /* SkyFloatingLabelTextField.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		223E41E524F9002B0064D4C6 /* NewTicketCheckboxCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E41E324F9002B0064D4C6 /* NewTicketCheckboxCollectionViewCell.swift */; };
+		223E41E624F9002B0064D4C6 /* NewTicketCheckboxCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223E41E424F9002B0064D4C6 /* NewTicketCheckboxCollectionViewCell.xib */; };
 		224EBAF424F5068100CB676F /* ExtendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224EBAF224F5068100CB676F /* ExtendCollectionViewCell.swift */; };
 		224EBAF524F5068100CB676F /* ExtendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 224EBAF324F5068100CB676F /* ExtendCollectionViewCell.xib */; };
 		224EBAF824F50EDA00CB676F /* NewTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224EBAF624F50EDA00CB676F /* NewTicketViewController.swift */; };
@@ -181,6 +183,8 @@
 		223E41D124F8E4FA0064D4C6 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
 		223E41D224F8E4FA0064D4C6 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		223E41D324F8E4FA0064D4C6 /* SkyFloatingLabelTextField.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkyFloatingLabelTextField.framework; path = Carthage/Build/iOS/SkyFloatingLabelTextField.framework; sourceTree = "<group>"; };
+		223E41E324F9002B0064D4C6 /* NewTicketCheckboxCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketCheckboxCollectionViewCell.swift; sourceTree = "<group>"; };
+		223E41E424F9002B0064D4C6 /* NewTicketCheckboxCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTicketCheckboxCollectionViewCell.xib; sourceTree = "<group>"; };
 		224EBAF224F5068100CB676F /* ExtendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendCollectionViewCell.swift; sourceTree = "<group>"; };
 		224EBAF324F5068100CB676F /* ExtendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExtendCollectionViewCell.xib; sourceTree = "<group>"; };
 		224EBAF624F50EDA00CB676F /* NewTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketViewController.swift; sourceTree = "<group>"; };
@@ -417,6 +421,8 @@
 				4B166C2B24ED0D140030C592 /* TicketDetailInputInfoCollectionViewCell.xib */,
 				224EBAF224F5068100CB676F /* ExtendCollectionViewCell.swift */,
 				224EBAF324F5068100CB676F /* ExtendCollectionViewCell.xib */,
+				223E41E324F9002B0064D4C6 /* NewTicketCheckboxCollectionViewCell.swift */,
+				223E41E424F9002B0064D4C6 /* NewTicketCheckboxCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -806,6 +812,7 @@
 				4BE6314124DA9CC000D9133C /* Assets.xcassets in Resources */,
 				222B5FC824F65C0300419452 /* CustomPopUpTableViewCell.xib in Resources */,
 				C2E857E024F368D7002960A2 /* CreatNewTicketView.xib in Resources */,
+				223E41E624F9002B0064D4C6 /* NewTicketCheckboxCollectionViewCell.xib in Resources */,
 				4B28017D24ECCA17007647F8 /* MainViewController.xib in Resources */,
 				4B166C3E24EE5C150030C592 /* CustomTitleView.xib in Resources */,
 				4B166C2324ECFD620030C592 /* TabMenuController.xib in Resources */,
@@ -971,6 +978,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				223E41E524F9002B0064D4C6 /* NewTicketCheckboxCollectionViewCell.swift in Sources */,
 				224EBAF424F5068100CB676F /* ExtendCollectionViewCell.swift in Sources */,
 				C2E857DE24F368BC002960A2 /* CreatNewTicketView.swift in Sources */,
 				2270237224F8AECB002C06AC /* Storyboard+Initialization.swift in Sources */,

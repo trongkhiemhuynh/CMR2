@@ -30,7 +30,7 @@ class TicketDetailInfoViewController: BaseViewController {
     override func setupView() {
         cvInfoDetail.registerCell(TicketDetailInfoCollectionViewCell.self)
         cvInfoDetail.registerCell(TicketDetailInputInfoCollectionViewCell.self)
-        
+        cvInfoDetail.registerCell(NewTicketCheckboxCollectionViewCell.self)
         cvInfoDetail.backgroundColor = BASEColor.BackgroundListColor()
     }
 
@@ -57,13 +57,23 @@ extension TicketDetailInfoViewController : UICollectionViewDataSource {
             
             return cell1
         } else {
-            let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailInputInfoCollectionViewCell.identifier, for: indexPath) as! TicketDetailInputInfoCollectionViewCell
             
             let icName = arrIcTicket[indexPath.row - 1]
+            let titleName = arrInputTicket[indexPath.row-1]
             
-            cell2.reloadData(UIImage(named: icName), arrInputTicket[indexPath.row-1],"Apple Inc.")
+            if titleName.contains("Escalated") || titleName.contains("Done") {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewTicketCheckboxCollectionViewCell.identifier, for: indexPath) as? NewTicketCheckboxCollectionViewCell
+                cell?.lblTitle.text = titleName
+                
+                return cell!
+            } else {
+                let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailInputInfoCollectionViewCell.identifier, for: indexPath) as? TicketDetailInputInfoCollectionViewCell
+                
+                cell2!.reloadData(UIImage(named: icName), titleName ,"Apple Inc.")
+                
+                return cell2!
+            }
             
-            return cell2
         }
     }
     
