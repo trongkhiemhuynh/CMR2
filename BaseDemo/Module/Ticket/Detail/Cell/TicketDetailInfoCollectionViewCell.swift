@@ -16,3 +16,7 @@ class TicketDetailInfoCollectionViewCell: UICollectionViewCell {
     }
 
 }
+
+extension TicketDetailInfoCollectionViewCell : XibInitalization {
+    typealias Element = TicketDetailInfoCollectionViewCell
+}

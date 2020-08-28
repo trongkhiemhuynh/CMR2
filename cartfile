@@ -1,0 +1,8 @@
+github "Skyscanner/SkyFloatingLabelTextField"
+github "ReactiveX/RxSwift" ~> 5.0
+
+github "SwiftyBeaver/SwiftyBeaver"
+github "mxcl/PromiseKit" ~> 6.8
+github "ReSwift/ReSwift"
+github "tristanhimmelman/ObjectMapper" ~> 4.0
+github "Alamofire/Alamofire" ~> 5.2

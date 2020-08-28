@@ -18,7 +18,6 @@ class CustomListView: BaseView {
     }
     */
     
-    let reuseId = "CellListTicket"
     private let sectionInsets = UIEdgeInsets(top: 20.0,
                                              left: 20.0,
                                              bottom: 20.0,
@@ -43,8 +42,8 @@ class CustomListView: BaseView {
 
         vSorted.layer.cornerRadius = 12
         vCounted.layer.cornerRadius = 12
-        
-        cvList.register(UINib(nibName: "CustomTicketCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseId)
+
+        cvList.registerCell(CustomTicketCollectionViewCell.self)
         
         cvList.backgroundColor = BASEColor.BackgroundListColor()
         vBgList.backgroundColor = BASEColor.BackgroundListColor()
@@ -63,7 +62,7 @@ extension CustomListView : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseId, for: indexPath) as! CustomTicketCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomTicketCollectionViewCell.identifier, for: indexPath) as! CustomTicketCollectionViewCell
         
         cell.lblID.text = "1234"
         cell.lblStatus.text = "Support call"

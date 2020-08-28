@@ -10,9 +10,8 @@ import UIKit
 
 class TicketDetailExtendView: UIView {
 
-    let identifyID = "ID"
     private let itemsPerRow: CGFloat = 3
-    private let heightCell : CGFloat = 70
+    private let heightCell : CGFloat = 100
     
     private let sectionInsets = UIEdgeInsets(top: 10.0,
     left: 10.0,
@@ -21,6 +20,7 @@ class TicketDetailExtendView: UIView {
     
     @IBOutlet weak var cvExtend : UICollectionView!
     @IBOutlet weak var vBound : UIView!
+    @IBOutlet weak var vBackground : UIView!
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -39,10 +39,12 @@ class TicketDetailExtendView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.cvExtend.backgroundColor = BASEColor.BackgroundExtendColor()
-        self.cvExtend.register(UINib(nibName: "ExtendCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: identifyID)
+        self.cvExtend.registerCell(ExtendCollectionViewCell.self)
+//        self.cvExtend.register(UINib(nibName: "ExtendCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: identifyID)
         self.vBound.layer.cornerRadius = 12
         self.vBound.clipsToBounds = true
-        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissView(_:))))
+        
+        self.vBackground.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissView(_:))))
     }
     
     @objc func dismissView(_ gesture : UITapGestureRecognizer) {
@@ -52,7 +54,13 @@ class TicketDetailExtendView: UIView {
 }
 
 extension TicketDetailExtendView : UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = collectionView.cellForItem(at: indexPath) as? ExtendCollectionViewCell
+        
+        if let it = item {
+            print(it.lblEx.text!)
+        }
+    }
 }
 
 extension TicketDetailExtendView : UICollectionViewDelegateFlowLayout {
@@ -73,9 +81,9 @@ extension TicketDetailExtendView : UICollectionViewDelegateFlowLayout {
 extension TicketDetailExtendView : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifyID, for: indexPath) as! ExtendCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExtendCollectionViewCell.identifier, for: indexPath) as! ExtendCollectionViewCell
         cell.lblEx.text = "Acitivity History"
-        cell.imgEx.image = UIImage(named: "setting_selected")
+        cell.imgEx.image = UIImage(named: "milestone")
         
         cell.backgroundColor = .clear
         

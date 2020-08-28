@@ -11,7 +11,6 @@ import UIKit
 
 class TicketDetailActivityViewController: BaseViewController {
 
-    let reuseId = "TDAID"
     private let sectionInsets = UIEdgeInsets(top: 10.0,
                                              left: 10.0,
                                              bottom: 10.0,
@@ -31,9 +30,8 @@ class TicketDetailActivityViewController: BaseViewController {
     override func setupView() {
         view.backgroundColor = BASEColor.BackgroundListColor()
         cvActivity.backgroundColor = BASEColor.BackgroundListColor()
-        
-        cvActivity.register(UINib(nibName: "TicketDetailActivityCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseId)
-        
+
+        cvActivity.registerCell(TicketDetailActivityCollectionViewCell.self)
         vActivity.layer.cornerRadius = 8
         
     }
@@ -62,7 +60,6 @@ extension TicketDetailActivityViewController : UICollectionViewDelegateFlowLayou
         return CGSize(width: widthPerItem, height: heightCell)
     }
     
-    
 }
 
 extension TicketDetailActivityViewController : UICollectionViewDelegate {
@@ -76,8 +73,7 @@ extension TicketDetailActivityViewController : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseId, for: indexPath) as! TicketDetailActivityCollectionViewCell
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailActivityCollectionViewCell.identifier, for: indexPath) as! TicketDetailActivityCollectionViewCell
         
         return cell
     }

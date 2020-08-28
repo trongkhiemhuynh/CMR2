@@ -19,3 +19,7 @@ class ExtendCollectionViewCell: UICollectionViewCell {
     }
 
 }
+
+extension ExtendCollectionViewCell : XibInitalization {
+    typealias Element = ExtendCollectionViewCell
+}

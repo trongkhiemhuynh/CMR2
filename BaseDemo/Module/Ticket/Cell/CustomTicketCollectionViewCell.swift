@@ -23,7 +23,7 @@ class CustomTicketCollectionViewCell: UICollectionViewCell {
         // Initialization code
         vBound.layer.cornerRadius = 8.0
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(closePopUp(gesture: )))
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(closePopUp(gesture: )))
         
 //        vBound.addGestureRecognizer(tap)
     }
@@ -45,4 +45,8 @@ class CustomTicketCollectionViewCell: UICollectionViewCell {
         }
         
     }
+}
+
+extension CustomTicketCollectionViewCell : XibInitalization {
+    typealias Element = CustomTicketCollectionViewCell
 }

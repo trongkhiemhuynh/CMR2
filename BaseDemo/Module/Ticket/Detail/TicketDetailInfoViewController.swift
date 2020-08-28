@@ -9,9 +9,6 @@
 import UIKit
 
 class TicketDetailInfoViewController: BaseViewController {
-
-    let reuseID1 = "reuseID1"
-    let reuseID2 = "reuseID2"
     
     private let sectionInsets = UIEdgeInsets(top: 10.0,
                                              left: 10.0,
@@ -31,8 +28,8 @@ class TicketDetailInfoViewController: BaseViewController {
     }
 
     override func setupView() {
-        cvInfoDetail.register(UINib(nibName: "TicketDetailInfoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseID1)
-        cvInfoDetail.register(UINib(nibName: "TicketDetailInputInfoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseID2)
+        cvInfoDetail.registerCell(TicketDetailInfoCollectionViewCell.self)
+        cvInfoDetail.registerCell(TicketDetailInputInfoCollectionViewCell.self)
         
         cvInfoDetail.backgroundColor = BASEColor.BackgroundListColor()
     }
@@ -56,11 +53,11 @@ extension TicketDetailInfoViewController : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
-            let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: reuseID1, for: indexPath) as! TicketDetailInfoCollectionViewCell
+            let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailInfoCollectionViewCell.identifier, for: indexPath) as! TicketDetailInfoCollectionViewCell
             
             return cell1
         } else {
-            let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: reuseID2, for: indexPath) as! TicketDetailInputInfoCollectionViewCell
+            let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailInputInfoCollectionViewCell.identifier, for: indexPath) as! TicketDetailInputInfoCollectionViewCell
             
             let icName = arrIcTicket[indexPath.row - 1]
             

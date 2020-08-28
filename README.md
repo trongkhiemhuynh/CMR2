@@ -6,4 +6,5 @@
 # Design pattern: Singeton, Factory, Observer ...
 # Clean code, SOLID
 # Networking layer
+# Logger
 
