@@ -43,7 +43,17 @@ class PopupView : BaseView {
     }
     
     @objc func dismissView( gesture : UITapGestureRecognizer) {
+
         removeFromSuperview()
+        
+        UIView.animate(withDuration: 0.35, delay: 0.0, options: .transitionFlipFromTop, animations: {
+            self.layoutIfNeeded()
+        }) { (success) in
+            if success {
+                print(#function)
+            }
+        }
+        
     }
     
     override func layoutSubviews() {

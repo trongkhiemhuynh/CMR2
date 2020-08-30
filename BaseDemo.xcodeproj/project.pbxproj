@@ -94,6 +94,11 @@
 		4BE6314F24DA9CC000D9133C /* BaseDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6314E24DA9CC000D9133C /* BaseDemoTests.swift */; };
 		4BE6315A24DA9CC000D9133C /* BaseDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6315924DA9CC000D9133C /* BaseDemoUITests.swift */; };
 		4BE6316924DAA7ED00D9133C /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6316824DAA7ED00D9133C /* SplashViewController.swift */; };
+		C22FEA9624FC0E01009D9219 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22FEA9524FC0E01009D9219 /* Constants.swift */; };
+		C22FEA9D24FC1935009D9219 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22FEA9B24FC1935009D9219 /* ProfileViewController.swift */; };
+		C22FEA9E24FC1935009D9219 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C22FEA9C24FC1935009D9219 /* ProfileViewController.xib */; };
+		C22FEAA124FC1AB3009D9219 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22FEA9F24FC1AB3009D9219 /* SettingViewController.swift */; };
+		C22FEAA224FC1AB3009D9219 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C22FEAA024FC1AB3009D9219 /* SettingViewController.xib */; };
 		C23F628924EE9C2600E37560 /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23F628824EE9C2600E37560 /* CustomTabBarView.swift */; };
 		C23F628B24EEE89100E37560 /* CustomTabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C23F628A24EEE89100E37560 /* CustomTabBarView.xib */; };
 		C23F628D24EF05AD00E37560 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23F628C24EF05AD00E37560 /* PopupView.swift */; };
@@ -259,6 +264,11 @@
 		4BE6315924DA9CC000D9133C /* BaseDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDemoUITests.swift; sourceTree = "<group>"; };
 		4BE6315B24DA9CC000D9133C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BE6316824DAA7ED00D9133C /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		C22FEA9524FC0E01009D9219 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C22FEA9B24FC1935009D9219 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C22FEA9C24FC1935009D9219 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		C22FEA9F24FC1AB3009D9219 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		C22FEAA024FC1AB3009D9219 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		C23F628824EE9C2600E37560 /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 		C23F628A24EEE89100E37560 /* CustomTabBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTabBarView.xib; sourceTree = "<group>"; };
 		C23F628C24EF05AD00E37560 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
@@ -371,6 +381,10 @@
 		22DBF0B024F6206800B6D992 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				C22FEA9A24FC18FA009D9219 /* Setting */,
+				C22FEA9924FC18F5009D9219 /* Ticket */,
+				C22FEA9824FC18EE009D9219 /* Profile */,
+				C22FEA9724FC18E3009D9219 /* Dashboard */,
 				22DBF0B124F620BE00B6D992 /* Coordinator.swift */,
 				22DBF0B324F620CD00B6D992 /* AppCoordinator.swift */,
 				22DBF0B524F63C5E00B6D992 /* DashboardCoordinator.swift */,
@@ -638,6 +652,7 @@
 		4BE6313824DA9CBB00D9133C /* BaseDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C22FEA9424FC0DA8009D9219 /* Configuration */,
 				2270236324F8ACAA002C06AC /* Shared */,
 				22DBF0B024F6206800B6D992 /* Scene */,
 				4B2D4BFE24DD333100CABF1D /* Network */,
@@ -677,6 +692,46 @@
 				4B28017724ECC2B5007647F8 /* SplashViewController.xib */,
 			);
 			path = SplashView;
+			sourceTree = "<group>";
+		};
+		C22FEA9424FC0DA8009D9219 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				C22FEA9524FC0E01009D9219 /* Constants.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		C22FEA9724FC18E3009D9219 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		C22FEA9824FC18EE009D9219 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C22FEA9B24FC1935009D9219 /* ProfileViewController.swift */,
+				C22FEA9C24FC1935009D9219 /* ProfileViewController.xib */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		C22FEA9924FC18F5009D9219 /* Ticket */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Ticket;
+			sourceTree = "<group>";
+		};
+		C22FEA9A24FC18FA009D9219 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				C22FEA9F24FC1AB3009D9219 /* SettingViewController.swift */,
+				C22FEAA024FC1AB3009D9219 /* SettingViewController.xib */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -792,6 +847,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B2D4C0224DD4B7D00CABF1D /* PreviewWelcomeViewController.xib in Resources */,
+				C22FEAA224FC1AB3009D9219 /* SettingViewController.xib in Resources */,
 				4B2D4BFD24DD2ABE00CABF1D /* LoginViewController.xib in Resources */,
 				4B166C4D24EE7E380030C592 /* CustomTicketStageView.xib in Resources */,
 				4B166C5124EE7F9A0030C592 /* CustomTicketStageCollectionViewCell.xib in Resources */,
@@ -809,6 +865,7 @@
 				4B166C2924ED07EF0030C592 /* TicketDetailInfoViewController.xib in Resources */,
 				C2E857F024F39CF6002960A2 /* TabbarItem.xib in Resources */,
 				C23F629B24EF25F500E37560 /* CustomDetailActionView.xib in Resources */,
+				C22FEA9E24FC1935009D9219 /* ProfileViewController.xib in Resources */,
 				4BE6314124DA9CC000D9133C /* Assets.xcassets in Resources */,
 				222B5FC824F65C0300419452 /* CustomPopUpTableViewCell.xib in Resources */,
 				C2E857E024F368D7002960A2 /* CreatNewTicketView.xib in Resources */,
@@ -983,6 +1040,7 @@
 				C2E857DE24F368BC002960A2 /* CreatNewTicketView.swift in Sources */,
 				2270237224F8AECB002C06AC /* Storyboard+Initialization.swift in Sources */,
 				C23F629924EF228100E37560 /* CustomDetailActionView.swift in Sources */,
+				C22FEA9624FC0E01009D9219 /* Constants.swift in Sources */,
 				4BE6316924DAA7ED00D9133C /* SplashViewController.swift in Sources */,
 				2270237624F8AEF5002C06AC /* BaseAbility.swift in Sources */,
 				C2E857E624F39501002960A2 /* TabItem.swift in Sources */,
@@ -990,6 +1048,7 @@
 				4B166C4824EE6A340030C592 /* CustomTicketCollectionViewCell.swift in Sources */,
 				4B166C5024EE7F9A0030C592 /* CustomTicketStageCollectionViewCell.swift in Sources */,
 				4B166C3C24EE5BFB0030C592 /* CustomTitleView.swift in Sources */,
+				C22FEA9D24FC1935009D9219 /* ProfileViewController.swift in Sources */,
 				4BE6313C24DA9CBB00D9133C /* LoginViewController.swift in Sources */,
 				C2E857EC24F397A9002960A2 /* TabNavigationMenu.swift in Sources */,
 				222B5FCA24F76CE600419452 /* CustomDashLeopard.swift in Sources */,
@@ -1011,6 +1070,7 @@
 				C23F628D24EF05AD00E37560 /* PopupView.swift in Sources */,
 				4B166C3A24EE28790030C592 /* Extention.swift in Sources */,
 				C23F629224EF204E00E37560 /* TicketDetailController.swift in Sources */,
+				C22FEAA124FC1AB3009D9219 /* SettingViewController.swift in Sources */,
 				4B166C4424EE621E0030C592 /* BaseView.swift in Sources */,
 				4BE6313A24DA9CBB00D9133C /* AppDelegate.swift in Sources */,
 				4B166C2824ED07EF0030C592 /* TicketDetailInfoViewController.swift in Sources */,

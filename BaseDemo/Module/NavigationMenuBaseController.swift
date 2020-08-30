@@ -13,7 +13,6 @@ class NavigationMenuBaseController: UITabBarController {
     @IBOutlet weak var vCustomTabbar : CustomTabBarView!
     
     var customTabBar: TabNavigationMenu!
-    var tabBarHeight: CGFloat = 70.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +29,7 @@ class NavigationMenuBaseController: UITabBarController {
         
         let customTabbar = Bundle.main.loadNibNamed("CustomTabBarView", owner: self, options: nil)?.first as? CustomTabBarView
         self.view.addSubview(customTabbar!)
-        customTabbar?.frame = CGRect(x: 0, y: heightScreen - 50, width: widthScreen, height: 67)
+        customTabbar?.frame = CGRect(x: 0, y: heightScreen - tabBarHeight, width: widthScreen, height: tabBarHeight)
         customTabbar?.itemTapped = changeTab(tab:)
         // load controller
         var controllers = [UIViewController]()

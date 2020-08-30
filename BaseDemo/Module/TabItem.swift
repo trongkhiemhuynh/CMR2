@@ -22,11 +22,11 @@ enum TabItem: String, CaseIterable {
             
             return UINavigationController(rootViewController: DashboardViewController(nibName: "DashboardViewController", bundle: Bundle.main))
         case .profile:
-            return UINavigationController(rootViewController: DashboardViewController())
+            return UINavigationController(rootViewController: ProfileViewController())
         case .ticket:
             return UINavigationController(rootViewController: TicketViewController())
         case .setting:
-            return UINavigationController(rootViewController: TicketViewController())
+            return UINavigationController(rootViewController: SettingViewController())
         }
     }
     

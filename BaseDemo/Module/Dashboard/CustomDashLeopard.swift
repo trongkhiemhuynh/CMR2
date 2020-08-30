@@ -24,6 +24,13 @@ class CustomDashLeopard: UIView {
     @IBOutlet weak var v1 : UIView!
     @IBOutlet weak var v2 : UIView!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.translatesAutoresizingMaskIntoConstraints = false
+        print("---",frame, #function, NSStringFromClass(self.classForCoder))
+    }
+    
     @objc func handleTapped( gesture : UITapGestureRecognizer){
         print("tapped !!!")
     }

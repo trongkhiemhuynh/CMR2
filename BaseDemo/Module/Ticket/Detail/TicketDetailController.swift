@@ -10,7 +10,6 @@ import UIKit
 
 class TicketDetailController: BaseViewController {
 
-    @IBOutlet weak var vTitle : CustomTitleView!
     @IBOutlet weak var vAction : CustomDetailActionView!
     @IBOutlet weak var vTab : CustomDetailTabView!
     @IBOutlet weak var vInfo : CustomDetailInfoView!

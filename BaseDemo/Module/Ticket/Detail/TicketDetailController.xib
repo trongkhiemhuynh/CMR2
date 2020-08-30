@@ -45,11 +45,11 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zf9-zM-K5D" customClass="CustomDetailInfoView" customModule="BaseDemo" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="195" width="375" height="472"/>
+                    <rect key="frame" x="0.0" y="195" width="375" height="402"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qRd-Vy-lZK">
-                    <rect key="frame" x="312" y="468" width="50" height="116"/>
+                    <rect key="frame" x="312" y="473" width="50" height="116"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2u-sQ-9zF">
                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -92,7 +92,7 @@
                 <constraint firstItem="WIt-sg-K03" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5gS-T1-DbS"/>
                 <constraint firstItem="zf9-zM-K5D" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="984-ih-6Pf"/>
                 <constraint firstItem="KCl-UR-xV6" firstAttribute="top" secondItem="WIt-sg-K03" secondAttribute="bottom" id="ACN-ta-VLl"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zf9-zM-K5D" secondAttribute="bottom" id="GCh-la-8fi"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zf9-zM-K5D" secondAttribute="bottom" constant="70" id="GCh-la-8fi"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9v4-u7-0fD" secondAttribute="trailing" id="GTh-Hh-X59"/>
                 <constraint firstItem="9v4-u7-0fD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="OoZ-S1-fNq"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qRd-Vy-lZK" secondAttribute="trailing" constant="13" id="SIn-6b-guL"/>
@@ -100,7 +100,7 @@
                 <constraint firstItem="WIt-sg-K03" firstAttribute="top" secondItem="9v4-u7-0fD" secondAttribute="bottom" id="eNA-1V-BnL"/>
                 <constraint firstItem="9v4-u7-0fD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fuq-E6-yCW"/>
                 <constraint firstItem="zf9-zM-K5D" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hIz-xh-ZjN"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="qRd-Vy-lZK" secondAttribute="bottom" constant="83" id="hVV-xT-5ie"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="qRd-Vy-lZK" secondAttribute="bottom" constant="78" id="hVV-xT-5ie"/>
                 <constraint firstItem="KCl-UR-xV6" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="pZo-73-eVg"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

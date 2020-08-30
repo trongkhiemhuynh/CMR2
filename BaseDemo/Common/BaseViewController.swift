@@ -10,6 +10,8 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+    @IBOutlet weak var vTitle : CustomTitleView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

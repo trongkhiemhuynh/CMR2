@@ -31,12 +31,40 @@ class DashboardViewController: BaseViewController {
 //            label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
 //            label.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
 //        ])
-        let modeLeo = Bundle.main.loadNibNamed("CustomDashboard", owner: self, options: nil)?.last as? UIView
-        modeLeo?.frame = CGRect(x: 0, y: 0, width: widthScreen, height: heightScreen)       
-        self.view.addSubview(modeLeo!)
-        self.view.layoutIfNeeded()
+        
+        print("---",view.frame, #function, NSStringFromClass(self.classForCoder))
+        
+   
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        print("---",view.frame, #function, NSStringFromClass(self.classForCoder))
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        print("---",view.frame, #function, NSStringFromClass(self.classForCoder))
+        
+        if view.subviews.count == 0 {
+            addSubView()            
+        }
+    }
+    
+    func addSubView() {
+        let modeLeo = Bundle.main.loadNibNamed("CustomDashboard", owner: self, options: nil)?.last as? UIView
+        
+        modeLeo?.frame = CGRect(x: 0, y: 0, width: widthScreen, height: heightScreen)
+        view.addSubview(modeLeo!)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print("---",view.frame, #function, NSStringFromClass(self.classForCoder))
+    }
     
     
     @IBAction func actionClick() {

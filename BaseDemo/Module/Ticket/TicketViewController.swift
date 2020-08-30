@@ -12,8 +12,7 @@ import UIKit
 class TicketViewController: BaseViewController {
 
 //    var pageMenu : CAPSPageMenu?
-    
-    @IBOutlet weak var vTitle : CustomTitleView!
+
     @IBOutlet weak var vListView : CustomListView!
     
     @IBOutlet weak var vTicket : UIView!

@@ -64,9 +64,7 @@ extension CustomListView : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomTicketCollectionViewCell.identifier, for: indexPath) as! CustomTicketCollectionViewCell
         
-        cell.lblID.text = "1234"
-        cell.lblStatus.text = "Support call"
-        cell.lblName.text = "Steve"
+        cell.updateData(TicketListModel(name: "Nguyen", id: "123456", status: "Support"))
         
         return cell
     }

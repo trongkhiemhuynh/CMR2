@@ -9,8 +9,7 @@
 import UIKit
 
 class NewTicketViewController: BaseViewController {
-
-    @IBOutlet weak var vTitle : CustomTitleView!
+    
     @IBOutlet weak var cvNewTicket : UICollectionView!
     
     // variable

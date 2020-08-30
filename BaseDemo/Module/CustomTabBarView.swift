@@ -28,7 +28,7 @@ class CustomTabBarView: UIView {
     var arrMenu : [UIButton]!
     
     var itemTapped : ((_ tab : Int) -> Void)?
-    var activeItem : Int = 10
+    var activeItem : Int = 0
     
     @IBAction func tappedButton(_ sender : UIButton) {
         print("---",#function)
@@ -74,8 +74,10 @@ class CustomTabBarView: UIView {
         btn?.setTitle("", for: .normal)
         
         switch tab {
-        case 10:
-            btn?.setImage(UIImage(named: "home"), for: .normal)
+        case 0:
+            // MARK: -FIXME
+            btnHome.setImage(UIImage(named: "home"), for: .normal)
+            btnHome.setTitle("", for: .normal)
         case 1:
             btn?.setImage(UIImage(named: "profile"), for: .normal)
         case 2:
@@ -92,9 +94,11 @@ class CustomTabBarView: UIView {
         var strName : String
         
         switch tab {
-        case 10:
+        case 0:
             strName = "Home"
-            
+            btnHome.setTitle(strName, for: .normal)
+            btnHome.setTitleColor(BASEColor.MainAppColor(), for: .normal)
+            btnHome.setImage(UIImage(named: "\(strName.lowercased())_selected"), for: .normal)
         case 1:
             strName = "Profile"
             

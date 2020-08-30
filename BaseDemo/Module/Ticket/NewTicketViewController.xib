@@ -28,7 +28,7 @@
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="evR-c8-Fn6">
-                    <rect key="frame" x="0.0" y="68" width="320" height="500"/>
+                    <rect key="frame" x="0.0" y="68" width="320" height="430"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dAW-SR-njV">
                         <size key="itemSize" width="50" height="50"/>
@@ -84,7 +84,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FZH-Gh-fIJ" secondAttribute="trailing" constant="8" id="QBo-yo-qqh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="FZH-Gh-fIJ" secondAttribute="bottom" constant="83" id="RJz-yC-jzu"/>
                 <constraint firstItem="evR-c8-Fn6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Swf-sK-t4e"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="evR-c8-Fn6" secondAttribute="bottom" id="YBX-Oz-L4z"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="evR-c8-Fn6" secondAttribute="bottom" constant="70" id="YBX-Oz-L4z"/>
                 <constraint firstItem="evR-c8-Fn6" firstAttribute="top" secondItem="847-Ht-0xd" secondAttribute="bottom" id="aMS-KC-Ugf"/>
                 <constraint firstItem="847-Ht-0xd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="g51-sp-zaK"/>
                 <constraint firstItem="847-Ht-0xd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="xI8-Vu-vHP"/>

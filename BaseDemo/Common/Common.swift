@@ -25,9 +25,6 @@ public extension Notification.Name {
     static let DetailTicketTab = Notification.Name("DetailTicketTab")
 }
 
-let heightScreen = UIScreen.main.bounds.size.height
-let widthScreen = UIScreen.main.bounds.size.width
-
 let arrInputTicket = ["Ticket owner","Ticket ID", "Phone", "Mail", "Priority", "Status", "Subject","Escalated ?", "Done ?","Date/Time opened","Date/Time closed","Created by..., date/time","Last modifined by..., date/time","Description"]
 
 let arrIcTicket = ["ticketowner","ticket_id", "phone", "mail_ic", "priority", "status", "status","escalated", "done","date","date","createdby","createdby","description"]

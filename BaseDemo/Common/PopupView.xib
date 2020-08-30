@@ -26,7 +26,7 @@
                             </constraints>
                         </imageView>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b6x-OP-NCN">
-                            <rect key="frame" x="0.0" y="30" width="414" height="268.5"/>
+                            <rect key="frame" x="0.0" y="30" width="414" height="198.5"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <connections>
                                 <outlet property="dataSource" destination="iN0-l3-epB" id="Dqp-ge-XJ0"/>
@@ -39,7 +39,7 @@
                         <constraint firstAttribute="trailing" secondItem="b6x-OP-NCN" secondAttribute="trailing" id="GGW-8Z-oew"/>
                         <constraint firstItem="b6x-OP-NCN" firstAttribute="top" secondItem="scd-i2-0le" secondAttribute="top" constant="30" id="MoB-39-UMm"/>
                         <constraint firstItem="b6x-OP-NCN" firstAttribute="leading" secondItem="scd-i2-0le" secondAttribute="leading" id="ZAB-JS-Kji"/>
-                        <constraint firstAttribute="bottom" secondItem="b6x-OP-NCN" secondAttribute="bottom" id="gFs-hn-zaA"/>
+                        <constraint firstAttribute="bottom" secondItem="b6x-OP-NCN" secondAttribute="bottom" constant="70" id="gFs-hn-zaA"/>
                         <constraint firstItem="MoF-zo-QQG" firstAttribute="top" secondItem="scd-i2-0le" secondAttribute="top" constant="8" id="joq-s5-nz3"/>
                         <constraint firstItem="MoF-zo-QQG" firstAttribute="centerX" secondItem="scd-i2-0le" secondAttribute="centerX" id="u16-x0-BvO"/>
                     </constraints>
