@@ -10,6 +10,7 @@ import UIKit
 
 class CustomDetailActionView: BaseView {
 
+    @IBOutlet weak var vCustom : UIView!
     var popupView : PopupView?
     
     /*
@@ -40,6 +41,14 @@ class CustomDetailActionView: BaseView {
         }) { (success) in
             print(success)
         }
+    }
+    
+    @IBAction func actionEdit() {
+        
+        let newVC = NewTicketViewController()
+
+        let topViewController = UIApplication.getTopViewController()
+        topViewController?.navigationController?.pushViewController(newVC, animated: true)
     }
     
 }

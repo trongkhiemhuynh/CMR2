@@ -32,18 +32,19 @@ class CustomTicketCollectionViewCell: UICollectionViewCell {
 //        let tap = UITapGestureRecognizer(target: self, action: #selector(closePopUp(gesture: )))
         
 //        vBound.addGestureRecognizer(tap)
-        layer.cornerRadius = 8.0
-        layer.borderWidth = 1.0
+        layer.cornerRadius = 12.0
+        layer.borderWidth = 4.0
         layer.borderColor = UIColor.clear.cgColor
         layer.masksToBounds = true
 
         layer.backgroundColor = UIColor.white.cgColor
-        layer.shadowColor = UIColor.lightGray.cgColor
+        layer.shadowColor = BASEColor.ShadowCellColor()?.cgColor
         layer.shadowOffset = CGSize(width: 0, height: 2.0)//CGSizeMake(0, 2.0);
-        layer.shadowRadius = 2.0
+        layer.shadowRadius = 1.0
         layer.shadowOpacity = 1.0
-        layer.masksToBounds = false
+        
         layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: layer.cornerRadius).cgPath
+        
     }
     
     @objc func closePopUp(gesture : UITapGestureRecognizer) {
@@ -68,6 +69,7 @@ class CustomTicketCollectionViewCell: UICollectionViewCell {
         lblName.text = data.name
         lblID.text = data.id
         lblStatus.text = data.status
+
     }
 }
 

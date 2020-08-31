@@ -21,5 +21,9 @@ struct BASEColor {
     static func BackgroundExtendColor() -> UIColor? {
         return UIColor(hex: "#044743")
     }
+    
+    static func ShadowCellColor() -> UIColor? {
+        return UIColor(hex: "#d6d6d6")
+    }
 
 }
