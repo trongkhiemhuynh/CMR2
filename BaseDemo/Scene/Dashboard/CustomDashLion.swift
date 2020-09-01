@@ -7,15 +7,25 @@
 //
 
 import UIKit
+import Charts
 
 class CustomDashLion: UIView {
 
+    @IBOutlet weak var vS : UIView!
+    
     @IBAction func tapMenu() {
         print(#function)
     }
     
     @IBAction func tapAlert() {
         print(#function)
+    }
+    
+    func addSub() {
+        let chart = BarChartView(frame: vS.bounds)
+        vS.addSubview(chart)
+        
+        
     }
     
     /*

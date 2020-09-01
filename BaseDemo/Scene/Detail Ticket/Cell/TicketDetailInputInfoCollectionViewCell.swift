@@ -16,7 +16,7 @@ class TicketDetailInputInfoCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 30))
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 8, height: 30))
         tf.leftView = paddingView
         tf.leftViewMode = .always
     }
@@ -43,4 +43,10 @@ extension TicketDetailInputInfoCollectionViewCell : XibInitalization {
     typealias Element = TicketDetailInputInfoCollectionViewCell
     
     
+}
+
+extension TicketDetailInputInfoCollectionViewCell : UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+    }
 }

@@ -28,7 +28,7 @@ class SplashViewController: UIViewController {
 //        }
         
         Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { (timer) in
-            let vc = PreviewWelcomeViewController()
+            let vc = WelcomeViewController()
             self.present(vc, animated: false, completion: nil)
         }
         

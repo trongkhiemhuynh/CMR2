@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FSCalendar
 
 class NewTicketViewController: BaseViewController {
     
@@ -19,6 +20,8 @@ class NewTicketViewController: BaseViewController {
                                              right: 10.0)
     private let itemsPerRow: CGFloat = 1
     private let heightCellInfoDetail : CGFloat = 70
+    private var selectedIdx : IndexPath?
+    private var vCal : CalendarView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +65,7 @@ class NewTicketViewController: BaseViewController {
             print(ok)
         }
     }
+    
 }
 
 extension NewTicketViewController : UICollectionViewDataSource {
@@ -91,6 +95,23 @@ extension NewTicketViewController : UICollectionViewDataSource {
     }
 }
 
+extension NewTicketViewController : UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        selectedIdx = indexPath
+        
+        guard let cell = collectionView.cellForItem(at: indexPath) as? TicketDetailInputInfoCollectionViewCell else { return }
+        
+        if (cell.lbl.text?.lowercased().contains("date"))! {
+            vCal = Bundle.main.loadNibNamed("CalendarView", owner: self, options: nil)?.first as? CalendarView
+            vCal?.fsCalendar.delegate = self
+            view.addSubview(vCal!)
+            vCal?.frame = view.bounds
+        }
+        
+    }
+}
+
 extension NewTicketViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -103,3 +124,32 @@ extension NewTicketViewController : UICollectionViewDelegateFlowLayout {
     
 }
 
+extension NewTicketViewController : UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        view.endEditing(true)
+    }
+}
+
+extension NewTicketViewController : FSCalendarDelegate {
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+        
+        let strDate = formatter.string(from: date)
+        
+        let cell = cvNewTicket.cellForItem(at: selectedIdx!) as? TicketDetailInputInfoCollectionViewCell
+        cell?.tf.text = strDate
+        vCal?.removeFromSuperview()
+        print("selected date :",strDate)
+    }
+    
+    func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+        
+        let strDate = formatter.string(from: date)
+        
+        print("deselected date :",strDate)
+    }
+}

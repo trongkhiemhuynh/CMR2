@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Charts
 
 class DashboardViewController: BaseViewController {
     
@@ -34,6 +35,7 @@ class DashboardViewController: BaseViewController {
         
         print("---",view.frame, #function, NSStringFromClass(self.classForCoder))
         
+//        let view = PieChartView
    
     }
     
@@ -54,10 +56,11 @@ class DashboardViewController: BaseViewController {
     }
     
     func addSubView() {
-        let modeLeo = Bundle.main.loadNibNamed("CustomDashboard", owner: self, options: nil)?.last as? UIView
+        let modeLeo = Bundle.main.loadNibNamed("CustomDashboard", owner: self, options: nil)?.last as? CustomDashLion
         
         modeLeo?.frame = CGRect(x: 0, y: 0, width: widthScreen, height: heightScreen)
         view.addSubview(modeLeo!)
+        modeLeo?.addSub()
     }
     
     override func viewWillAppear(_ animated: Bool) {

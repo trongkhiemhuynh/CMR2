@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import PageMenu
+import Alamofire
 
 class TicketViewController: BaseViewController {
 
@@ -53,6 +53,39 @@ class TicketViewController: BaseViewController {
         })
     }
     
+    override func initData() {
+//        Alamofire
+        getData()
+        
+//        Alamofire.request(url,
+//                          method: .post,
+//                          parameters: ["include_docs": "true"])
+//        .validate()
+//        .responseJSON { response in
+//          guard response.result.isSuccess else {
+//            print("Error while fetching remote rooms: \(String(describing: response.result.error)")
+//            completion(nil)
+//            return
+//          }
+//
+//          guard let value = response.result.value as? [String: Any],
+//            let rows = value["rows"] as? [[String: Any]] else {
+//              print("Malformed data received from fetchAllRooms service")
+//              completion(nil)
+//              return
+//          }
+//
+//          let rooms = rows.flatMap { roomDict in return RemoteRoom(jsonData: roomDict) }
+//          completion(rooms)
+//        }
+        
+//        let login = Login(email: "test@test.test", password: "testPassword")
+
+        
+     
+        
+    }
+    
     @IBAction func actionNewTicket(sender : UIButton?) {
         
          print("--------- ", #function)
@@ -75,15 +108,53 @@ class TicketViewController: BaseViewController {
         
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func getData() {
+        var json : [String : Any] = ["Record_per_page" : NSNumber(100), "Current_page": NSNumber(1)]
+        
+        //        exampleParameters["a"] = ["a1": "v1","a2": "v2"]
+        
+        debugPrint(json.description)
+        
+        let devUrlPush = URL.init(string:"http://172.23.90.170:8000/api/tenants/")
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        var request = URLRequest(url: devUrlPush!)
+        request.httpMethod = "POST"
+        request.httpBody = jsonData
+        let userDF = UserDefaults.standard
+        let token = userDF.object(forKey: "token") as! String
+        
+        let authen = "Bearer \(token)"
+        request.setValue(authen, forHTTPHeaderField: "Authorization")
+        //        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        //            do {
+        //                try request.setMultipartFormData(exampleParameters, encoding: .utf8)
+        //            } catch {
+        //                print(error.localizedDescription)
+        //            }
+        
+        //        request.httpBody = createBody(parameters: exampleParameters)
+        
+        AF.request(request).responseJSON { (response) in
+            
+            debugPrint(response)
+            
+            if( response != nil)
+            {
+                
+                
+                
+            }else
+            {
+                print("---error :",response.error?.localizedDescription)
+            }
+        }
+        
+        //        let string = String(data: request.httpBody!, encoding: .utf8)
+        //        let jsonString = JSON(data: request.httpBody!)
+        //        debugPrint(jsonString.rawString(.utf8, options: .prettyPrinted))
+        //        debugPrint(string)
     }
-    */
 
 }
 

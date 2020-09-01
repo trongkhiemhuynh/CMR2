@@ -164,7 +164,10 @@
                 <constraint firstItem="U24-Jp-x4y" firstAttribute="trailing" secondItem="9ZB-ih-EZd" secondAttribute="trailing" id="zVE-zB-LiY"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="U24-Jp-x4y"/>
-            <point key="canvasLocation" x="136.80000000000001" y="153.37331334332833"/>
+            <connections>
+                <outlet property="vS" destination="RZk-cd-GrG" id="P8e-f8-eXz"/>
+            </connections>
+            <point key="canvasLocation" x="25" y="110"/>
         </view>
     </objects>
     <resources>

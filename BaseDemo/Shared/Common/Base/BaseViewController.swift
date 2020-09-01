@@ -23,9 +23,7 @@ class BaseViewController: UIViewController {
     }
     
 
-    func setupView() {
-        
-    }
+    func setupView() {}
     
     func initData() {}
     /*
