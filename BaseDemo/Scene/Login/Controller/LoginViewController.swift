@@ -9,8 +9,11 @@
 import UIKit
 import Alamofire
 
-//import NVActivityIndicatorView
 import SkyFloatingLabelTextField
+
+protocol LoginControllerOutput {
+    func fetchAuthentication()
+}
 
 class LoginViewController : BaseViewController {
 
@@ -21,6 +24,9 @@ class LoginViewController : BaseViewController {
     @IBOutlet weak var btnLogin : UIButton!
     
     @IBOutlet weak var btnCheckbox : UIButton!
+    
+    ///  MARK: - Output
+    var output : LoginControllerOutput?
     
     var isCheck = false
     
@@ -50,27 +56,12 @@ class LoginViewController : BaseViewController {
 
     @IBAction func loginAction(_ sender : AnyObject) {
         
-//        addAlertLoading()
-//        test()
-//        AF.request("http://172.23.90.170:8000/api/login/",
-//                   method: .post,
-//                   parameters: parameters,
-//                   encoder: JSONEncoding.default,
-//                   headers:nil).response { response in
-//            debugPrint(response)
-//        }
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-////            nvActivity.stopAnimating()
-//            self.dismissAlertLoading()
-//
-//
-//        }
-
-        
-        let vc = WelcomeViewController()
-        present(vc, animated: true, completion: nil)
-//
+        if isCheck {
+            let vc = WelcomeViewController()
+            self.present(vc, animated: true, completion: nil)
+        } else {
+            getData()
+        }
         
     }
     
@@ -110,7 +101,8 @@ class LoginViewController : BaseViewController {
                 userDF.set(item.token, forKey: "token")
                 userDF.synchronize()
                 
-                
+                let vc = WelcomeViewController()
+                self.present(vc, animated: true, completion: nil)
                 
             }else
             {
@@ -240,5 +232,11 @@ struct LoginItem : Codable {
         case name = "Name"
         case token = "Token"
         case tenant = "Tenant"
+    }
+}
+
+extension LoginViewController : LoginPresenterOutput {
+    func presentError(_ error: Error) {
+        
     }
 }

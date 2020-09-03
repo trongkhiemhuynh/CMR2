@@ -60,7 +60,8 @@ class DashboardViewController: BaseViewController {
         
         modeLeo?.frame = CGRect(x: 0, y: 0, width: widthScreen, height: heightScreen)
         view.addSubview(modeLeo!)
-        modeLeo?.addSub()
+        modeLeo?.addBartChartView()
+        modeLeo?.addPieChartView()
     }
     
     override func viewWillAppear(_ animated: Bool) {

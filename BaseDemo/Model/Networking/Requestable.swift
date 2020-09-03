@@ -17,7 +17,7 @@ protocol Requestable {
     var basePath : String {get}
     var endPoint : String {get}
     var httpMethod : HTTPMethod {get}
-    var param : Parameters1 {get}
+    var param : BaseParameters {get}
     var addionalHeader : HeaderParameter? {get}
     var parameterEncoding: ParameterEncoding {get}
     func toPromise() -> Promise<T>
@@ -29,7 +29,7 @@ protocol Requestable {
 
 extension Requestable {
     // Variable
-    typealias Parameters1 = [String: Any]
+    typealias BaseParameters = [String: Any]
     typealias HeaderParameter = [String: String]
     typealias JSONDictionary = [String: Any]
     

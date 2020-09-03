@@ -29,7 +29,7 @@ class FetchTicketWorker: AsyncWorker {
         return Networking.shared.fetchTicketList(with: "").then { (tkObjs) -> Promise<T> in
             // dispatch action
             let action = UpdateTicketListAction(ticketList: tkObjs)
-//            mainStore.dispatch(action)
+            mainStore.dispatch(action)
             
             return Promise.value(tkObjs)
         }

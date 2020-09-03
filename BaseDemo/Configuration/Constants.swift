@@ -37,14 +37,17 @@ struct Constants {
     
     // MARK:
     // MARK: Feels Object
+    /// Declear OBJ
     struct Obj {
         
         
         // MARK:
-        // MARK: BASE
-        static let CreatedAt = "created_at"
-        static let UpdatedAt = "updated_at"
-        static let ObjectId = "id"
+        // MARK: Login
+        struct Login {
+            static let tenant = "Tenant"
+            static let name = "Name"
+            static let token = "Token"
+        }
         
         
         // MARK:
@@ -57,9 +60,11 @@ struct Constants {
         
         
         // MARK:
-        // MARK: Repo
-        struct Repo {
-            static let Name = "name"
+        // MARK: Ticket
+        struct Ticket {
+            static let UserTitleStatus = "status"
+            static let UserName = "name"
+            static let UserId = "id"
         }
     }
     

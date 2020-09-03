@@ -9,13 +9,17 @@
 import Foundation
 import ObjectMapper
 
-class TicketObj : BaseObj {
-    var name : String?
+class TicketObj : Mappable {
+    var usrName : String?
+    var usrID : String?
+    var usrTitleStatus : String?
     
     // Mappable
     override func mapping(map: Map) {
         super.mapping(map: map)
         
-        name <- map[Constants.Obj.Repo.Name]
+        usrName         <- map[Constants.Obj.Ticket.UserName]
+        usrID           <- map[Constants.Obj.Ticket.UserId]
+        usrTitleStatus  <- map[Constants.Obj.Ticket.UserTitleStatus]
     }
 }

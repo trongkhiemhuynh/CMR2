@@ -60,8 +60,13 @@
 		22802DEE24FE0D9200429518 /* FSCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22802DED24FE0D9200429518 /* FSCalendar.framework */; };
 		22802DF024FE1DD900429518 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22802DEF24FE1DD900429518 /* CalendarView.swift */; };
 		22802DF224FE1DF300429518 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22802DF124FE1DF300429518 /* CalendarView.xib */; };
-		22802DF424FE2F3200429518 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22802DF324FE2F3200429518 /* Charts.framework */; };
 		22802DF724FE334300429518 /* Charts.framework in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 22802DF624FE334300429518 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		229A55232500E6F1008A0ECD /* FetchLoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A55222500E6F1008A0ECD /* FetchLoginWorker.swift */; };
+		229A55252500E724008A0ECD /* LoginConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A55242500E724008A0ECD /* LoginConfiguration.swift */; };
+		229A55272500E733008A0ECD /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A55262500E733008A0ECD /* LoginPresenter.swift */; };
+		229A55292500E750008A0ECD /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A55282500E750008A0ECD /* LoginInteractor.swift */; };
+		229A552B2500EC49008A0ECD /* LoginObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A552A2500EC49008A0ECD /* LoginObj.swift */; };
+		229A552D2500EFDD008A0ECD /* FetchLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A552C2500EFDD008A0ECD /* FetchLoginRequest.swift */; };
 		22DBF0B224F620BE00B6D992 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF0B124F620BE00B6D992 /* Coordinator.swift */; };
 		22DBF0B424F620CD00B6D992 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF0B324F620CD00B6D992 /* AppCoordinator.swift */; };
 		22DBF0B624F63C5E00B6D992 /* DashboardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF0B524F63C5E00B6D992 /* DashboardCoordinator.swift */; };
@@ -241,6 +246,12 @@
 		22802DF124FE1DF300429518 /* CalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarView.xib; sourceTree = "<group>"; };
 		22802DF324FE2F3200429518 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
 		22802DF624FE334300429518 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
+		229A55222500E6F1008A0ECD /* FetchLoginWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchLoginWorker.swift; sourceTree = "<group>"; };
+		229A55242500E724008A0ECD /* LoginConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfiguration.swift; sourceTree = "<group>"; };
+		229A55262500E733008A0ECD /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		229A55282500E750008A0ECD /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		229A552A2500EC49008A0ECD /* LoginObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginObj.swift; sourceTree = "<group>"; };
+		229A552C2500EFDD008A0ECD /* FetchLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchLoginRequest.swift; sourceTree = "<group>"; };
 		22DBF0B124F620BE00B6D992 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		22DBF0B324F620CD00B6D992 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		22DBF0B524F63C5E00B6D992 /* DashboardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCoordinator.swift; sourceTree = "<group>"; };
@@ -338,7 +349,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22802DF424FE2F3200429518 /* Charts.framework in Frameworks */,
 				22802DEE24FE0D9200429518 /* FSCalendar.framework in Frameworks */,
 				223E41DC24F8E4FA0064D4C6 /* SwiftyBeaver.framework in Frameworks */,
 				223E41E024F8E4FA0064D4C6 /* SkyFloatingLabelTextField.framework in Frameworks */,
@@ -409,6 +419,7 @@
 			children = (
 				224346C424FCB38D00CF7AA3 /* TicketObj.swift */,
 				224346D324FCDF6300CF7AA3 /* BaseObj.swift */,
+				229A552A2500EC49008A0ECD /* LoginObj.swift */,
 			);
 			path = "Obj Model";
 			sourceTree = "<group>";
@@ -531,6 +542,7 @@
 			isa = PBXGroup;
 			children = (
 				224346D124FCD49E00CF7AA3 /* FetchTicketRequest.swift */,
+				229A552C2500EFDD008A0ECD /* FetchLoginRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -586,6 +598,33 @@
 				2270236B24F8AE5E002C06AC /* UITableView+Register.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		229A551F2500E693008A0ECD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				229A55242500E724008A0ECD /* LoginConfiguration.swift */,
+				4BE6313B24DA9CBB00D9133C /* LoginViewController.swift */,
+				229A55262500E733008A0ECD /* LoginPresenter.swift */,
+				229A55282500E750008A0ECD /* LoginInteractor.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		229A55202500E6A9008A0ECD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4B2D4BFC24DD2ABE00CABF1D /* LoginViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		229A55212500E6AE008A0ECD /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				229A55222500E6F1008A0ECD /* FetchLoginWorker.swift */,
+			);
+			path = Worker;
 			sourceTree = "<group>";
 		};
 		22DBF0B024F6206800B6D992 /* Scene */ = {
@@ -685,8 +724,9 @@
 		4B28017924ECC7B8007647F8 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				4BE6313B24DA9CBB00D9133C /* LoginViewController.swift */,
-				4B2D4BFC24DD2ABE00CABF1D /* LoginViewController.xib */,
+				229A55212500E6AE008A0ECD /* Worker */,
+				229A55202500E6A9008A0ECD /* View */,
+				229A551F2500E693008A0ECD /* Controller */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1109,7 +1149,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n\n#if which swiftlint >/dev/null; then\n # swiftlint\n#else\n # echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n#fi\n";
 		};
 		579D0C42E3CE21D12A0F5FCC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1220,6 +1260,7 @@
 				224346D824FCE0C100CF7AA3 /* ApplicationManager.swift in Sources */,
 				222B5FCA24F76CE600419452 /* CustomDashLeopard.swift in Sources */,
 				4B166C3024ED0D690030C592 /* TicketDetailActivityViewController.swift in Sources */,
+				229A55232500E6F1008A0ECD /* FetchLoginWorker.swift in Sources */,
 				224EBAF824F50EDA00CB676F /* NewTicketViewController.swift in Sources */,
 				22802DEA24FE049200429518 /* FilterView.swift in Sources */,
 				224346CF24FCD45100CF7AA3 /* Networking.swift in Sources */,
@@ -1257,8 +1298,11 @@
 				222B5FD024F7A31300419452 /* PopUpSuccessful.swift in Sources */,
 				224346DC24FCF4DC00CF7AA3 /* UIView+Anchors.swift in Sources */,
 				224346CD24FCD36B00CF7AA3 /* Requestable.swift in Sources */,
+				229A552D2500EFDD008A0ECD /* FetchLoginRequest.swift in Sources */,
+				229A55272500E733008A0ECD /* LoginPresenter.swift in Sources */,
 				4B28018324ECE5D7007647F8 /* DashboardViewController.swift in Sources */,
 				C23F629524EF223000E37560 /* CustomDetailInfoView.swift in Sources */,
+				229A55252500E724008A0ECD /* LoginConfiguration.swift in Sources */,
 				224346C924FCB80200CF7AA3 /* FetchTicketWorker.swift in Sources */,
 				2270236E24F8AE79002C06AC /* Identifier.swift in Sources */,
 				2270236C24F8AE5E002C06AC /* UITableView+Register.swift in Sources */,
@@ -1266,11 +1310,13 @@
 				4B166C4B24EE7DE90030C592 /* CustomTicketStageView.swift in Sources */,
 				224346C324FCB30B00CF7AA3 /* TicketState.swift in Sources */,
 				C2E857E424F36D30002960A2 /* InfoTicketRow.swift in Sources */,
+				229A55292500E750008A0ECD /* LoginInteractor.swift in Sources */,
 				222B5FCE24F76E7800419452 /* CustomDashLion.swift in Sources */,
 				224346C724FCB5CF00CF7AA3 /* MainReducer.swift in Sources */,
 				224346DA24FCF4D100CF7AA3 /* SwipeableCollectionViewCell.swift in Sources */,
 				C2E857F424F3B95F002960A2 /* TicketDetailExtendView.swift in Sources */,
 				4B166C2224ECFD620030C592 /* TabMenuController.swift in Sources */,
+				229A552B2500EC49008A0ECD /* LoginObj.swift in Sources */,
 				4B2D4C0524DD569100CABF1D /* Color.swift in Sources */,
 				4B28017C24ECCA17007647F8 /* MainViewController.swift in Sources */,
 			);

@@ -13,7 +13,15 @@ struct MainReducer {
     
 }
 
-//extension MainReducer : Reducer {
+func appReducer(action : Action, state : MainAppState?) -> MainAppState {
+
+    let ticketState = TicketState.reducer(action: action, state: state?.ticketState)
+    
+    // return
+    return MainAppState(ticketState: ticketState)
+}
+
+//extension MainReducer : Reducer<Any> {
 //
 //    func handleAction(action : Action, state : MainAppState?) -> MainAppState {
 ////        let ticketState = TicketState.re

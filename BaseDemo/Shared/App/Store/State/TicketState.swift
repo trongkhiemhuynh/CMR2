@@ -9,9 +9,11 @@
 import Foundation
 import ReSwift
 import RxSwift
+import RxCocoa
 
 struct TicketState : StateType {
-    var ticketList = Variable<[TicketObj]>([])
+    
+    var ticketList = BehaviorRelay<[TicketObj]>(value: []) //Variable<[TicketObj]>([])
 }
 
 extension TicketState {
@@ -22,7 +24,8 @@ extension TicketState {
         
         switch action {
         case let action as UpdateTicketListAction:
-            state.ticketList.value = action.ticketList ?? []
+            state.ticketList.accept(action.ticketList ?? [])
+//            state.ticketList.value = action.ticketList ?? []
             break
         default:
             break

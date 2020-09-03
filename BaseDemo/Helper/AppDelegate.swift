@@ -10,7 +10,8 @@ import UIKit
 import ReSwift
 
 // Main State
-//let mainStore = Store<MainAppState>(reducer: MainReducer(), state: nil, middleware: [])
+/// mainStore
+let mainStore = Store(reducer: appReducer, state: nil, middleware: [])
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

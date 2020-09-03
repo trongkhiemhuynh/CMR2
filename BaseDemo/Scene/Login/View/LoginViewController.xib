@@ -41,6 +41,9 @@
                             <state key="normal" title="Keep me logged in">
                                 <color key="titleColor" red="0.039215686270000001" green="0.69803921570000005" blue="0.6588235294" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="actionCheck" destination="-1" eventType="touchUpInside" id="7m0-sK-KF5"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAc-TF-Iu7">
                             <rect key="frame" x="40" y="360" width="240" height="50"/>

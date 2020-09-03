@@ -11,7 +11,9 @@ import Charts
 
 class CustomDashLion: UIView {
 
-    @IBOutlet weak var vS : UIView!
+    @IBOutlet weak var vBarChart : UIView!
+    @IBOutlet weak var vPieChart : UIView!
+    @IBOutlet weak var vInfoUser : UIView!
     
     @IBAction func tapMenu() {
         print(#function)
@@ -21,11 +23,14 @@ class CustomDashLion: UIView {
         print(#function)
     }
     
-    func addSub() {
-        let chart = BarChartView(frame: vS.bounds)
-        vS.addSubview(chart)
-        
-        
+    func addBartChartView() {
+        let chart = BarChartView(frame: vBarChart.bounds)
+        vBarChart.addSubview(chart)
+    }
+    
+    func addPieChartView() {
+        let chart = PieChartView(frame: vPieChart.bounds)
+        vPieChart.addSubview(chart)
     }
     
     /*

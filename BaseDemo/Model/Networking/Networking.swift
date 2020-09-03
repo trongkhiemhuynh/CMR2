@@ -19,4 +19,8 @@ class Networking {
         let ticketRequest = FetchTicketRequest(param: ["id":id])
         return ticketRequest.toPromise()
     }
+    
+    func fetchLoginAuthentication(with username: String, password: String) -> Promise<LoginObj> {
+        return FetchLoginRequest(param: ["":"","":""]).toPromise()
+    }
 }

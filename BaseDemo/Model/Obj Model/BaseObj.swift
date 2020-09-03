@@ -9,32 +9,32 @@
 import Foundation
 import ObjectMapper
 
-class BaseObj: Mappable {
-    
-    //
-    // MARK: - Variable
-    var objectId: String!
+//class BaseObj: Mappable {
+//    
+//    //
+//    // MARK: - Variable
+//    var objectId: String!
 //    var createdAt: Date!
 //    var updatedAt: Date!
-    var className: String!
-    
-    //
-    // MARK: - Init
-    required init?(map: Map) {
-        
-        guard map.JSON[Constants.Obj.ObjectId] != nil else {
-            Logger.error("Can't create obj in BaseObj. Missing ObjectId")
-            return nil
-        }
-    }
-    
-    // Mapping function
-    func mapping(map: Map) {
-        self.objectId <- map[Constants.Obj.ObjectId]
+//    var className: String!
+//    
+//    //
+//    // MARK: - Init
+//    required init?(map: Map) {
+//        
+//        guard map.JSON[Constants.Obj.ObjectId] != nil else {
+//            Logger.error("Can't create obj in BaseObj. Missing ObjectId")
+//            return nil
+//        }
+//    }
+//    
+//    // Mapping function
+//    func mapping(map: Map) {
+//        self.objectId <- map[Constants.Obj.ObjectId]
 //        self.createdAt <- (map[Constants.Obj.CreatedAt], APIDateTransform())
 //        self.updatedAt <- (map[Constants.Obj.UpdatedAt], APIDateTransform())
-    }
-}
+//    }
+//}
 
 
 //
