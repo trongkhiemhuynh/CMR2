@@ -21,17 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-//        let preVC = PreviewWelcomeViewController()
         
-        window = UIWindow(frame: UIScreen.main.bounds)
+        ApplicationManager.sharedInstance.initAllSDKs()
         
-        let appCoordinator = AppCoordinator(window: window)
-        appCoordinator.start()
+        ApplicationManager.sharedInstance.initCommon()
         
-//        let nav = UINavigationController(rootViewController: loginVC)
-//        nav.navigationBar.isTranslucent = false
+        let routerManager = RouterManager.shared
+        let routeLogin = LoginRoute()
         
-        
+        routerManager.handleRouter(routeLogin)
         
         return true
     }

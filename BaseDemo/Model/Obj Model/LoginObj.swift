@@ -11,7 +11,9 @@ import ObjectMapper
 
 class LoginObj : Mappable {
     required init?(map: Map) {
-        
+        if map.JSON["Token"] == nil {
+            return nil
+        }
     }
     
     /// Description

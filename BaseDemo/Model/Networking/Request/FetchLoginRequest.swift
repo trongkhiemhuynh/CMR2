@@ -8,13 +8,18 @@
 
 import Alamofire
 import ObjectMapper
+import Foundation
 
 struct FetchLoginRequest : Requestable {
     var param: Self.BaseParameters
     
     func decode(data: Any) -> LoginObj {
         
-//        return LoginObj(map: Map(mappingType: .toJSON, JSON: JSONSerialization.jsonObject(with: data, options: .allowFragments)))
+        let jsObj = try? JSONSerialization.jsonObject(with: data as! Data, options: [.allowFragments]) as? [String : Any]
+        
+        
+        return  LoginObj(JSON: jsObj!)!
+
     }
     
     
@@ -33,6 +38,6 @@ struct FetchLoginRequest : Requestable {
     }
     
     init(param: BaseParameters?) {
-        self.param = param
+        self.param = param!
     }
 }

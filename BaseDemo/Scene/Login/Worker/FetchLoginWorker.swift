@@ -10,18 +10,27 @@ import Foundation
 import PromiseKit
 import ReSwift
 
-class FetchLoginWorker : AsyncWorker {
+struct UpdateLoginAction: Action {
+    var login : LoginObj?
+}
+
+class FetchLoginWorker: AsyncLoginWorker {
     
     typealias T = LoginObj
     
-    func execute() -> Promise<T> {
+    func executeLogin(username: String, password: String) -> Promise<LoginObj> {
         
-        let fetch = Networking.shared.fetchLoginAuthentication(with: "", password: "").then {
-            (loginObj) -> Promise<T> in
+        let fetch = Networking.shared.fetchLoginAuthentication(with: username, password: password).then {
+            (loginObj) -> Promise<LoginObj> in
             
-            return Promise()
+            // Dispatch action '
+            let action = UpdateLoginAction(login: loginObj)
+            mainStore.dispatch(action)
+            
+            return Promise.value(loginObj)
         }
         
         return fetch
     }
+    
 }

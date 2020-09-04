@@ -54,9 +54,7 @@ extension Requestable {
      var defaultHeader: HeaderParameter {
          get { return ["Accept": "application/json"] }
      }
-    
-    
-    
+
     
     // Path
     var urlPath: String {
@@ -74,41 +72,41 @@ extension Requestable {
     }
     
     // Promise
+    /// Alamofire request to webservice
     func toPromise() -> Promise<T> {
-        let promise = Promise()
-        return promise as! Promise<Self.T>
+        
+        return Promise<T> {  seal in
+            guard let urlRequest = try? self.asURLRequest() else {
+                seal.reject(NSError.unknownError())
+                return
+            }
+            
+            AF.request(urlRequest)
+                .validate(statusCode: 200..<300)
+                .validate(contentType: ["application/json"])
+                .responseJSON(completionHandler: { (response) in
+                    
+                    switch response.result {
+                    case .success(_):
 
-//        return Promise { (fulfill, reject) in
-//
-//            guard let urlRequest = try? self.asURLRequest() else {
-//                reject(NSError.unknowError())
-//                return
-//            }
-//
-//            Alamofire.request(urlRequest)
-//                .validate(statusCode: 200..<300)
-//                .validate(contentType: ["application/json"])
-//                .responseJSON(completionHandler: { (response) in
-//
-//                    // Check error
-//                    if let error = response.result.error {
-//                        reject(error as NSError)
-//                        return
-//                    }
-//
-//                    // Check Response
-//                    guard let data = response.result.value else {
-//                        reject(NSError.jsonMapperError())
-//                        return
-//                    }
-//
-//                    // Parse here
-//                    let result = self.decode(data: data)
-//
-//                    // Fill
-//                    fulfill(result)
-//                })
-//        }
+                        // Check Response
+                        guard let data = response.data else {
+                            seal.reject(NSError.unknownError())
+                            return
+                        }
+                        
+                        let result = self.decode(data: data)
+                        
+                        seal.fulfill(result)
+
+                    case .failure(_):
+                        seal.reject(NSError.unknownError())
+                    }
+                    
+                   
+                })
+        }
+
     }
     
     // Build URL Request

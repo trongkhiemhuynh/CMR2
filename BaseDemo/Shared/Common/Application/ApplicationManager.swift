@@ -35,7 +35,7 @@ class ApplicationManager {
     
     
     /// Common
-    func initCommon(window: UIWindow?) {
+    func initCommon() {
         
         // Logger
         self.initLogger()

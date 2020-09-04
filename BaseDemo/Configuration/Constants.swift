@@ -17,22 +17,21 @@ var tabBarHeight: CGFloat = 70.0
 struct Constants {
     struct App {
         
-        static let isHTTPS = true
+        static let isHTTPS = false
         
         static let BaseURL : String = {
             if Constants.App.isHTTPS {
-                return "https://"
+                return "https://172.23.90.170:8000/api"
             } else {
-                return "http://"
+                return "http://172.23.90.170:8000/api"
             }
         }()
-        
         
     }
     
     struct APIEndPoint {
-        static let TicketList = "/ticket"
-        static let Login = ""
+        static let Login = "/login/"
+        static let Tenant = "/tenants/"
     }
     
     // MARK:
@@ -40,8 +39,6 @@ struct Constants {
     /// Declear OBJ
     struct Obj {
         
-        
-        // MARK:
         // MARK: Login
         struct Login {
             static let tenant = "Tenant"
@@ -49,17 +46,6 @@ struct Constants {
             static let token = "Token"
         }
         
-        
-        // MARK:
-        // MARK: USER
-        struct User {
-            static let Name = "name"
-            static let Username = "username"
-            static let Email = "email"
-        }
-        
-        
-        // MARK:
         // MARK: Ticket
         struct Ticket {
             static let UserTitleStatus = "status"
@@ -67,6 +53,4 @@ struct Constants {
             static let UserId = "id"
         }
     }
-    
-    
 }

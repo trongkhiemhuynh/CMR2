@@ -13,7 +13,7 @@ class LoginConfiguration {
     
     /// Description
     /// - Parameter viewController: viewController description
-    func configure(viewController : LoginViewController) {
+    func configure(viewController : LoginController) {
         
         /// Presenter
         let presenter = LoginPresenter()

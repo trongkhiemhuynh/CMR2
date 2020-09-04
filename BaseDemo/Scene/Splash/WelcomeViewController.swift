@@ -116,3 +116,7 @@ class WelcomeViewController: UIViewController {
     */
 
 }
+
+extension WelcomeViewController : XibInitalization {
+    typealias Element = WelcomeViewController
+}

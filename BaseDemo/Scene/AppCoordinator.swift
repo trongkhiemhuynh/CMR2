@@ -14,7 +14,7 @@ class AppCoordinator : Coordinator {
     let window : UIWindow?
     
     var rootViewController : UIViewController = {
-       return LoginViewController()
+       return LoginController()
     }()
     
     // MARK: - Coordinator

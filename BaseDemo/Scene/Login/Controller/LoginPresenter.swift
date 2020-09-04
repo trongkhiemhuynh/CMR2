@@ -19,8 +19,8 @@ class LoginPresenter {
 
 extension LoginPresenter : LoginInteractorOutput {
     
-    func interatorError(_ error: Error) {
-        
+    func presentError(_ error: Error) {
+        output?.presentError(error)
     }
     
 }

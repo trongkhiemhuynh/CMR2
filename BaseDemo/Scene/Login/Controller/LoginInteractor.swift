@@ -9,18 +9,35 @@
 import Foundation
 
 protocol LoginInteractorOutput : class {
-    func interatorError(_ error : Error)
+    func presentError(_ error : Error)
 }
 
 class LoginInteractor {
     /// Output
     weak var output : LoginInteractorOutput?
+    
+    fileprivate lazy var fetchLoginWorker : FetchLoginWorker = {
+        return FetchLoginWorker()
+    }()
 }
 
 extension LoginInteractor : LoginControllerOutput {
     
-    func fetchAuthentication() {
+    func fetchAuthentication(username: String, password: String) {
         
+        if username.isEmpty || password.isEmpty {
+            output?.presentError(NSError.emptyUsernameOrPassword())
+        } else {
+            fetchLoginWorker.executeLogin(username: username, password: password)
+            .catch { error in
+                self.output?.presentError(error)
+            }
+        }
+//
+//        guard let username = username, let password = password else {
+//            output?.presentError(NSError.emptyUsernameOrPassword()); return }
+//
+//
     }
     
 }

@@ -17,7 +17,15 @@ protocol AsyncWorker : Worker {
     associatedtype T
     
     func execute() -> Promise<T>
+    
 }
+//
+protocol AsyncLoginWorker : Worker {
+    associatedtype T
+    
+    func executeLogin(username: String, password: String) -> Promise<T>
+}
+
 
 protocol SyncWorker : Worker {
     func excecute()

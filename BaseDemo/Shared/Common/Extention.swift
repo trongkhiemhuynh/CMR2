@@ -47,6 +47,15 @@ extension UIViewController {
         view.removeFromSuperview()
 //        removeFromParent()
     }
+    
+    func showErrorAlert(message: String) {
+        let alertVC = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            print(action.title!)
+        }))
+        
+        present(alertVC, animated: true, completion: nil)
+    }
 
 }
 

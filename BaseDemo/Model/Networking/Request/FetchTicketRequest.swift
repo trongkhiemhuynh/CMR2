@@ -28,7 +28,7 @@ struct FetchTicketRequest : Requestable {
     }
     
     var endPoint: String {
-        return Constants.APIEndPoint.TicketList
+        return Constants.APIEndPoint.Tenant
     }
     
     var parameterEncoding: ParameterEncoding {
