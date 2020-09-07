@@ -55,7 +55,7 @@ class TicketViewController: BaseViewController {
     
     override func initData() {
 //        Alamofire
-        getData()
+//        getData()
         
 //        Alamofire.request(url,
 //                          method: .post,

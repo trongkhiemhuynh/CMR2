@@ -27,7 +27,7 @@
                     <rect key="frame" x="0.0" y="673" width="414" height="63"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ticket list" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5U-7K-y3O">
-                            <rect key="frame" x="13" y="6.6666666666666288" width="285" height="50"/>
+                            <rect key="frame" x="13" y="6.6666666666666288" width="305" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="pcw-xC-xms"/>
                             </constraints>
@@ -36,10 +36,10 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n6x-3f-VF1">
-                            <rect key="frame" x="13" y="6.6666666666666288" width="285" height="50"/>
+                            <rect key="frame" x="13" y="6.6666666666666288" width="305" height="50"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CPU-aN-MOz">
-                                    <rect key="frame" x="0.0" y="0.0" width="285" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="305" height="50"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <textInputTraits key="textInputTraits" returnKeyType="search"/>
@@ -57,10 +57,10 @@
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gwf-9D-8GX">
-                            <rect key="frame" x="356" y="13.666666666666629" width="50" height="36"/>
+                            <rect key="frame" x="366" y="18.666666666666629" width="40" height="26"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="36" id="F2O-1X-OXL"/>
-                                <constraint firstAttribute="width" constant="50" id="nxg-PH-mBB"/>
+                                <constraint firstAttribute="height" constant="26" id="F2O-1X-OXL"/>
+                                <constraint firstAttribute="width" constant="40" id="nxg-PH-mBB"/>
                             </constraints>
                             <state key="normal" image="filtertopview"/>
                             <connections>
@@ -68,12 +68,14 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJ1-uF-p5E">
-                            <rect key="frame" x="306" y="13.666666666666629" width="50" height="36"/>
+                            <rect key="frame" x="326" y="19" width="40" height="25"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="36" id="OHT-NH-Z7w"/>
-                                <constraint firstAttribute="width" constant="50" id="ftX-3L-tkU"/>
+                                <constraint firstAttribute="height" constant="25" id="OHT-NH-Z7w"/>
+                                <constraint firstAttribute="width" constant="40" id="ftX-3L-tkU"/>
                             </constraints>
-                            <state key="normal" image="searchtopview"/>
+                            <state key="normal" image="searchtopview">
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                            </state>
                             <connections>
                                 <action selector="actionSearch:" destination="-1" eventType="touchUpInside" id="kaW-My-cOX"/>
                             </connections>

@@ -11,4 +11,5 @@ import ReSwift
 
 struct MainAppState : StateType {
     let ticketState: TicketState?
+    let loginState: LoginState?
 }

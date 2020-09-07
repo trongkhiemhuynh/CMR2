@@ -25,7 +25,7 @@ class TabMenuController : BaseViewController {
     override func setupView() {
         
         // controller
-        dashVC = DashboardViewController()
+        dashVC = DashboardController()
         ticketVC = TicketViewController()
         
         self.addChild(dashVC)

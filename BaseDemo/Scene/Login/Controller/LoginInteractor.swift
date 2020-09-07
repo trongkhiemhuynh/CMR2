@@ -14,7 +14,7 @@ protocol LoginInteractorOutput : class {
 
 class LoginInteractor {
     /// Output
-    weak var output : LoginInteractorOutput?
+    var output : LoginInteractorOutput?
     
     fileprivate lazy var fetchLoginWorker : FetchLoginWorker = {
         return FetchLoginWorker()
@@ -25,7 +25,7 @@ extension LoginInteractor : LoginControllerOutput {
     
     func fetchAuthentication(username: String, password: String) {
         
-        if username.isEmpty || password.isEmpty {
+        if username.isEmpty || password.isEmpty || !username.isValidEmail() {
             output?.presentError(NSError.emptyUsernameOrPassword())
         } else {
             fetchLoginWorker.executeLogin(username: username, password: password)

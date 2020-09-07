@@ -11,7 +11,7 @@ import ReSwift
 
 // Main State
 /// mainStore
-let mainStore = Store(reducer: appReducer, state: nil, middleware: [])
+let mainStore = Store(reducer: appReducer, state: nil)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,9 +26,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         ApplicationManager.sharedInstance.initCommon()
         
+        sleep(3)
+        
         let routerManager = RouterManager.shared
         let routeLogin = LoginRoute()
-        
+//        routeLogin.handleData { (vc) in
+//            vc.tfPassword.text = ""
+//            vc.tfUserName.text = ""
+//            Logger.error("error")
+//        }
         routerManager.handleRouter(routeLogin)
         
         return true

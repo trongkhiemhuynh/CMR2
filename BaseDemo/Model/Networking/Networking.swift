@@ -22,5 +22,5 @@ class Networking {
     
     func fetchLoginAuthentication(with username: String, password: String) -> Promise<LoginObj> {
         return FetchLoginRequest(param: ["email":username, "pass":password]).toPromise()
-    } 
+    }
 }

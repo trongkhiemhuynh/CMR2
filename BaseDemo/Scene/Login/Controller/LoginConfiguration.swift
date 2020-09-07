@@ -25,5 +25,7 @@ class LoginConfiguration {
         
         //  ViewController
         viewController.output = interactor
+        
+        Logger.info("khiemht debug - \(presenter) - \(interactor) - \(viewController)")
     }
 }

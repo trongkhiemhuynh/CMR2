@@ -20,17 +20,17 @@ class FetchLoginWorker: AsyncLoginWorker {
     
     func executeLogin(username: String, password: String) -> Promise<LoginObj> {
         
-        let fetch = Networking.shared.fetchLoginAuthentication(with: username, password: password).then {
+        return Networking.shared.fetchLoginAuthentication(with: username, password: password).then {
             (loginObj) -> Promise<LoginObj> in
             
             // Dispatch action '
             let action = UpdateLoginAction(login: loginObj)
+            
             mainStore.dispatch(action)
             
             return Promise.value(loginObj)
         }
-        
-        return fetch
+
     }
     
 }

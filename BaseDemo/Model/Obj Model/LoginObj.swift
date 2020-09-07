@@ -9,7 +9,12 @@
 import Foundation
 import ObjectMapper
 
-class LoginObj : Mappable {
+class LoginObj : NSObject, Mappable {
+    
+    override init() {
+        super.init()
+    }
+    
     required init?(map: Map) {
         if map.JSON["Token"] == nil {
             return nil

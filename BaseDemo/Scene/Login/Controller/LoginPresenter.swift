@@ -7,14 +7,33 @@
 //
 
 import Foundation
+import RxCocoa
+import RxSwift
 
 protocol LoginPresenterOutput : class {
     func presentError(_ error: Error)
+    func updateView()
 }
 
 class LoginPresenter {
     /// Output
-    weak var output : LoginPresenterOutput?
+    var output : LoginPresenterOutput?
+    private let disposeBag = DisposeBag()
+    
+    fileprivate var loginObj: BehaviorRelay<LoginObj> {
+        return mainStore.state.loginState!.loginObj
+    }
+    
+    init() {
+        // Obser
+        self.loginObj.asObservable().subscribe {[unowned self] (loginObj) in
+            // Reload
+            
+            Logger.info(loginObj)
+            self.output?.updateView()
+            
+        }.disposed(by: self.disposeBag)
+    }
 }
 
 extension LoginPresenter : LoginInteractorOutput {

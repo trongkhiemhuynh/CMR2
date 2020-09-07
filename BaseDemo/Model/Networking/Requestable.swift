@@ -11,6 +11,7 @@ import PromiseKit
 import Alamofire
 import ObjectMapper
 
+/// Requestable function
 protocol Requestable {
     associatedtype T
     
@@ -23,6 +24,8 @@ protocol Requestable {
     func toPromise() -> Promise<T>
     
     func decode(data: Any) -> T
+    
+    func bodyRequest(request: inout URLRequest)
     
     init(param: Parameters?)
 }
@@ -38,23 +41,23 @@ extension Requestable {
         get { return Constants.App.BaseURL}
     }
     
-     // Param
-     var param: Parameters? {
-         get { return nil }
-     }
-     
-     
-     // Additional Header
-     var addionalHeader: HeaderParameter? {
-         get { return nil }
-     }
-     
-     
-     // Default
-     var defaultHeader: HeaderParameter {
-         get { return ["Accept": "application/json"] }
-     }
-
+    // Param
+    var param: Parameters? {
+        get { return nil }
+    }
+    
+    
+    // Additional Header
+    var addionalHeader: HeaderParameter? {
+        get { return nil }
+    }
+    
+    
+    // Default
+    var defaultHeader: HeaderParameter {
+        get { return ["Accept": "application/json"] }
+    }
+    
     
     // Path
     var urlPath: String {
@@ -66,8 +69,9 @@ extension Requestable {
         return URL(string: urlPath)!
     }
     
-    // Encoode
+    // Encode
     var parameterEncoding: ParameterEncoding {
+
         get { return JSONEncoding.default }
     }
     
@@ -83,12 +87,12 @@ extension Requestable {
             
             AF.request(urlRequest)
                 .validate(statusCode: 200..<300)
-                .validate(contentType: ["application/json"])
+//                .validate(contentType: ["application/json"])
                 .responseJSON(completionHandler: { (response) in
                     
                     switch response.result {
                     case .success(_):
-
+                        Logger.debug(response.result)
                         // Check Response
                         guard let data = response.data else {
                             seal.reject(NSError.unknownError())
@@ -98,15 +102,18 @@ extension Requestable {
                         let result = self.decode(data: data)
                         
                         seal.fulfill(result)
-
+                        
                     case .failure(_):
-                        seal.reject(NSError.unknownError())
+                        let error = NSError(domain: "com.basebs.crm", code: response.response!.statusCode , userInfo:[NSLocalizedDescriptionKey : response.error?.localizedDescription] )
+                        Logger.error(error)
+                        
+                        seal.reject(error)
                     }
                     
-                   
+                    
                 })
         }
-
+        
     }
     
     // Build URL Request
@@ -114,20 +121,24 @@ extension Requestable {
         
         // Init
         var urlRequest = URLRequest(url: self.url)
+
         urlRequest.httpMethod = self.httpMethod.rawValue
-        urlRequest.timeoutInterval = TimeInterval(10 * 1000)
+//        urlRequest.timeoutInterval = TimeInterval(10 * 1000)
         
         // Encode param
-        var request = try! self.parameterEncoding.encode(urlRequest, with: self.param)
-        
+//        var request = try! self.parameterEncoding.encode(urlRequest, with: self.param)
+
+        bodyRequest(request: &urlRequest)
         // Add addional Header if need
         if let additinalHeaders = self.addionalHeader {
             for (key, value) in additinalHeaders {
-                request.addValue(value, forHTTPHeaderField: key)
+                urlRequest.addValue(value, forHTTPHeaderField: key)
             }
         }
         
-        return request
+        Logger.info(urlRequest)
+        
+        return urlRequest
     }
 }
 

@@ -20,7 +20,7 @@ enum TabItem: String, CaseIterable {
         switch self {
         case .dashboard:
             
-            return UINavigationController(rootViewController: DashboardViewController(nibName: "DashboardViewController", bundle: Bundle.main))
+            return UINavigationController(rootViewController: DashboardController())
         case .profile:
             return UINavigationController(rootViewController: ProfileViewController())
         case .ticket:

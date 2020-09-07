@@ -16,9 +16,10 @@ struct MainReducer {
 func appReducer(action : Action, state : MainAppState?) -> MainAppState {
 
     let ticketState = TicketState.reducer(action: action, state: state?.ticketState)
+    let loginState = LoginState.reducer(action: action, state: state?.loginState)
     
     // return
-    return MainAppState(ticketState: ticketState)
+    return MainAppState(ticketState: ticketState, loginState: loginState)
 }
 
 //extension MainReducer : Reducer<Any> {

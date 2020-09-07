@@ -59,66 +59,63 @@ class LoginController : BaseViewController {
     @IBAction func loginAction(_ sender : AnyObject) {
         
         if isCheck {
-            let routerManager = RouterManager.shared
-            let routeWelcome = WelcomeRoute()
-            
-            routerManager.handleRouter(routeWelcome)
+            updateView()
         } else {
             output?.fetchAuthentication(username: tfUserName.text!, password: tfPassword.text!)
         }
         
     }
     
-//    func getData() {
-//        var exampleParameters : [String : String] = ["email" : tfUserName.text ?? "", "pass":tfPassword.text ?? ""]
-//
-//        //        exampleParameters["a"] = ["a1": "v1","a2": "v2"]
-//
-//        debugPrint(exampleParameters.description)
-//
-//        let devUrlPush = URL.init(string:"http://172.23.90.170:8000/api/login/")
-//
-//        var request = URLRequest(url: devUrlPush!)
-//        request.httpMethod = "POST"
-////        request.setValue("multipart/form-data", forHTTPHeaderField: "Content-Type")
-////        request.setValue("application/json", forHTTPHeaderField: "Accept")
-//
-//        do {
-//            try request.setMultipartFormData(exampleParameters, encoding: .utf8)
-//        } catch {
-//            print(error.localizedDescription)
-//        }
-//
-////        request.httpBody = createBody(parameters: exampleParameters)
-//
-//        AF.request(request).responseJSON { (response) in
-//
-//            debugPrint(response)
-//
-//            if( response != nil)
-//            {
-//                let jsonDecoder = JSONDecoder()
-//                guard let item = try? jsonDecoder.decode(LoginItem.self, from: response.data!) else {return}
-//                print("---token---",item.token)
-//
-//                let userDF = UserDefaults.standard
-//                userDF.set(item.token, forKey: "token")
-//                userDF.synchronize()
-//
-//                let vc = WelcomeViewController()
-//                self.present(vc, animated: true, completion: nil)
-//
-//            }else
-//            {
-//                print("---error :",response.error?.localizedDescription)
-//            }
-//        }
-//
-//        //        let string = String(data: request.httpBody!, encoding: .utf8)
-//        //        let jsonString = JSON(data: request.httpBody!)
-//        //        debugPrint(jsonString.rawString(.utf8, options: .prettyPrinted))
-//        //        debugPrint(string)
-//    }
+    func getData() {
+        var exampleParameters : [String : String] = ["email" : tfUserName.text ?? "", "pass":tfPassword.text ?? ""]
+
+        //        exampleParameters["a"] = ["a1": "v1","a2": "v2"]
+
+        debugPrint(exampleParameters.description)
+
+        let devUrlPush = URL.init(string:"http://172.23.90.170:8000/api/login/")
+
+        var request = URLRequest(url: devUrlPush!)
+        request.httpMethod = "POST"
+//        request.setValue("multipart/form-data", forHTTPHeaderField: "Content-Type")
+//        request.setValue("application/json", forHTTPHeaderField: "Accept")
+
+        do {
+            try request.setMultipartFormData(exampleParameters, encoding: .utf8)
+        } catch {
+            print(error.localizedDescription)
+        }
+
+//        request.httpBody = createBody(parameters: exampleParameters)
+
+        AF.request(request).responseJSON { (response) in
+
+            debugPrint(response)
+
+            if( response != nil)
+            {
+                let jsonDecoder = JSONDecoder()
+                guard let item = try? jsonDecoder.decode(LoginItem.self, from: response.data!) else {return}
+                print("---token---",item.token)
+
+                let userDF = UserDefaults.standard
+                userDF.set(item.token, forKey: "token")
+                userDF.synchronize()
+
+                let vc = WelcomeViewController()
+                self.present(vc, animated: true, completion: nil)
+
+            }else
+            {
+                print("---error :",response.error?.localizedDescription)
+            }
+        }
+
+        //        let string = String(data: request.httpBody!, encoding: .utf8)
+        //        let jsonString = JSON(data: request.httpBody!)
+        //        debugPrint(jsonString.rawString(.utf8, options: .prettyPrinted))
+        //        debugPrint(string)
+    }
 
     
     @IBAction func actionCheck() {
@@ -240,6 +237,13 @@ struct LoginItem : Codable {
 }
 
 extension LoginController : LoginPresenterOutput {
+    func updateView() {
+        let routerManager = RouterManager.shared
+        let routeWelcome = WelcomeRoute()
+        
+        routerManager.handleRouter(routeWelcome)
+    }
+    
     func presentError(_ error: Error) {
         showErrorAlert(message: error.localizedDescription)
     }
