@@ -8,8 +8,11 @@
 
 import UIKit
 import Charts
+import SideMenu
 
 class DashboardController: BaseViewController {
+    
+    var menu : SideMenuNavigationController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +23,12 @@ class DashboardController: BaseViewController {
 
     override func setupView() {
         self.view.backgroundColor = BASEColor.BackgroundListColor()
-   
+
+        menu = SideMenuNavigationController(rootViewController: MenuCollectionViewController())
+        menu?.leftSide = true
+        menu?.setNavigationBarHidden(true, animated: true)
+        SideMenuManager.default.leftMenuNavigationController = menu
+        SideMenuManager.default.addPanGestureToPresent(toView: view)
     }
     
     override func viewDidLayoutSubviews() {
@@ -30,7 +38,7 @@ class DashboardController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if view.subviews.count == 0 {
+        if view.subviews.count == 2 {
             addSubView()            
         }
     }
@@ -40,6 +48,7 @@ class DashboardController: BaseViewController {
         Logger.info("\(widthScreen) -\(heightScreen)")
         modeLeo?.frame = CGRect(x: 0, y: 0, width: widthScreen, height: heightScreen)
         view.addSubview(modeLeo!)
+        
         modeLeo?.addBartChartView()
         modeLeo?.addPieChartView()
     }
@@ -57,14 +66,15 @@ class DashboardController: BaseViewController {
     @IBAction func actionDismiss() {
 //        popupView.removeFromSuperview()
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    @IBAction func tapMenu() {
+        print(#function)
+        present(menu!, animated: true, completion: nil)
     }
-    */
+    
+    @IBAction func tapAlert() {
+        print(#function)
+    }
 
 }

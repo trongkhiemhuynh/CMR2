@@ -17,14 +17,7 @@ class CustomDashLion: BaseView {
     @IBOutlet weak var lblCountNotification : UILabel!
     
     var optionsBarChart: [Option]!
-    
-    @IBAction func tapMenu() {
-        print(#function)
-    }
-    
-    @IBAction func tapAlert() {
-        print(#function)
-    }
+
     
     override func layoutSubviews() {
         super.layoutSubviews()

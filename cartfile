@@ -7,4 +7,5 @@
 #github "tristanhimmelman/ObjectMapper" ~> 4.0
 #github "Alamofire/Alamofire" ~> 5.2
 #github "WenchaoD/FSCalendar"
-github "danielgindi/Charts" ~> 3.5.0
+#github "danielgindi/Charts" ~> 3.5.0
+github "jonkykong/SideMenu" ~> 6.0

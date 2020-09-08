@@ -29,13 +29,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sleep(3)
         
         let routerManager = RouterManager.shared
-        let routeLogin = LoginRoute()
+        let routeSplash = SplashRoute()
 //        routeLogin.handleData { (vc) in
 //            vc.tfPassword.text = ""
 //            vc.tfUserName.text = ""
 //            Logger.error("error")
 //        }
-        routerManager.handleRouter(routeLogin)
+        routerManager.handleRouter(routeSplash)
         
         return true
     }
