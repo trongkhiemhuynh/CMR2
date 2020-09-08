@@ -51,3 +51,9 @@ class BaseViewController: UIViewController {
         dismiss(animated: false, completion: nil)
     }
 }
+
+extension BaseViewController : UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        view.endEditing(true)
+    }
+}

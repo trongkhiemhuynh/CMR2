@@ -120,12 +120,6 @@ extension NewTicketViewController : UICollectionViewDelegateFlowLayout {
     
 }
 
-extension NewTicketViewController : UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        view.endEditing(true)
-    }
-}
-
 extension NewTicketViewController : FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         

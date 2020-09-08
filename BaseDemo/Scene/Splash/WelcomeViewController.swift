@@ -53,7 +53,7 @@ class WelcomeViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             
             self.view.layoutIfNeeded()
-            self.constraintIvUser.constant = 50
+            self.constraintIvUser.constant = 68
             
             UIView.animate(withDuration: 0.35, animations: {
                 

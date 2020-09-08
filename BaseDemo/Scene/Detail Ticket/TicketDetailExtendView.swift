@@ -77,17 +77,22 @@ extension TicketDetailExtendView : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExtendCollectionViewCell.identifier, for: indexPath) as! ExtendCollectionViewCell
-        cell.lblEx.text = "Acitivity History"
-        cell.imgEx.image = UIImage(named: "milestone")
+        
+        let title = arrMenuItems[indexPath.row+1]
+        
+        cell.lblEx.text = title
+        
+        let imageName = "menu_\(title.lowercased().replacingOccurrences(of: " ", with: "_"))"
+        
+        cell.imgEx.image = UIImage(named: imageName)
         
         cell.backgroundColor = .clear
-        
-        return cell
-        
+
+        return cell        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return arrMenuItems.count - 1 // not count first item
     }
 }
 

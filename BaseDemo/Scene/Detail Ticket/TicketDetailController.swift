@@ -14,8 +14,6 @@ class TicketDetailController: BaseViewController {
     @IBOutlet weak var vTab : CustomDetailTabView!
     @IBOutlet weak var vInfo : CustomDetailInfoView!
     
-    @IBOutlet weak var vTest : UIView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

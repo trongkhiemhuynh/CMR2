@@ -28,12 +28,12 @@ class CustomDashLion: BaseView {
         chart.autoresizingMask = [.flexibleWidth, .flexibleHeight,.flexibleTopMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin]
         
         vBarChart.addSubview(chart)
-        setupBarChart(chartView : chart)
+//        setupBarChart(chartView : chart)
     }
     
     func addPieChartView() {
         let chart = PieChartView(frame: vPieChart.bounds)
-//        chart.autoresizingMask = [.flexibleWidth, .flexibleHeight,.flexibleTopMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin]
+        chart.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         vPieChart.addSubview(chart)
     }

@@ -31,10 +31,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xpo-gC-aCR">
-                    <rect key="frame" x="32" y="273" width="350" height="350"/>
+                    <rect key="frame" x="40" y="281" width="334" height="334"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Yue-hs-puh">
-                            <rect key="frame" x="146" y="88" width="58" height="58"/>
+                            <rect key="frame" x="138" y="78" width="58" height="58"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="58" id="pdf-qT-KL0"/>
@@ -42,19 +42,19 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nguyen Van A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVw-im-Mhz">
-                            <rect key="frame" x="112" y="164" width="126" height="24"/>
+                            <rect key="frame" x="104" y="154" width="126" height="24"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sales Manager" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uyg-Q2-j0X">
-                            <rect key="frame" x="123" y="203" width="104" height="19.5"/>
+                            <rect key="frame" x="115" y="193" width="104" height="19.5"/>
                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="37h-wv-2vw">
-                            <rect key="frame" x="150" y="242.5" width="50" height="50"/>
+                            <rect key="frame" x="142" y="232.5" width="50" height="50"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="cQ8-cD-Zso"/>
@@ -66,7 +66,7 @@
                     <constraints>
                         <constraint firstItem="ZVw-im-Mhz" firstAttribute="centerX" secondItem="Xpo-gC-aCR" secondAttribute="centerX" id="7Yw-Fx-EO7"/>
                         <constraint firstItem="ZVw-im-Mhz" firstAttribute="top" secondItem="Yue-hs-puh" secondAttribute="bottom" constant="18" id="Hrg-Q7-a34"/>
-                        <constraint firstItem="Yue-hs-puh" firstAttribute="top" secondItem="Xpo-gC-aCR" secondAttribute="top" constant="88" id="SL3-9w-LHb"/>
+                        <constraint firstItem="Yue-hs-puh" firstAttribute="top" secondItem="Xpo-gC-aCR" secondAttribute="top" constant="78" id="SL3-9w-LHb"/>
                         <constraint firstItem="Uyg-Q2-j0X" firstAttribute="top" secondItem="ZVw-im-Mhz" secondAttribute="bottom" constant="15" id="bCu-yr-x5w"/>
                         <constraint firstItem="Uyg-Q2-j0X" firstAttribute="centerX" secondItem="Xpo-gC-aCR" secondAttribute="centerX" id="boz-nB-m2o"/>
                         <constraint firstItem="Yue-hs-puh" firstAttribute="centerX" secondItem="Xpo-gC-aCR" secondAttribute="centerX" id="cYt-iy-8sK"/>
@@ -96,7 +96,7 @@
                 <constraint firstItem="bNK-fV-poc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="Hnh-sQ-bJp"/>
                 <constraint firstItem="bNK-fV-poc" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="KTC-HW-WES"/>
                 <constraint firstItem="Xpo-gC-aCR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="P6r-om-ANB"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Xpo-gC-aCR" secondAttribute="trailing" constant="32" id="TVD-Iy-AKY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Xpo-gC-aCR" secondAttribute="trailing" constant="40" id="TVD-Iy-AKY"/>
                 <constraint firstItem="Fkd-zC-xmY" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-24" id="Wix-NN-I63"/>
                 <constraint firstItem="Fkd-zC-xmY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Wtg-2Z-FCs"/>
                 <constraint firstItem="u8R-Fc-mBV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ifh-Wt-6Hg"/>

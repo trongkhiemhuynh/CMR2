@@ -19,8 +19,6 @@ class MenuViewController: UIViewController {
     private let heightCellInfo : CGFloat = 100
     private let heightCellInfoDetail : CGFloat = 50
     
-    let arrItems = ["Profile","Ticket","Dashboards","Ticket Milestones","Notes","Open Activities","Activity History", "Articles"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -87,7 +85,7 @@ class MenuViewController: UIViewController {
 extension MenuViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return arrItems.count
+        return arrMenuItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -98,7 +96,7 @@ extension MenuViewController : UICollectionViewDataSource {
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.identifier, for: indexPath) as! MenuCollectionViewCell
-            let item = arrItems[indexPath.row]
+            let item = arrMenuItems[indexPath.row]
             let nameImage = "menu_\(item.lowercased().replacingOccurrences(of: " ", with: "_"))"
             let image = UIImage(named: nameImage)
             cell.imgMenu.image = image

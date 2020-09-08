@@ -16,7 +16,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RRO-Ff-d8d">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <gestureRecognizers/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I2P-Yn-nsd">
@@ -42,7 +42,6 @@
                         <constraint firstAttribute="trailing" secondItem="PHk-nf-CN5" secondAttribute="trailing" id="JDt-fP-cVb"/>
                         <constraint firstItem="PHk-nf-CN5" firstAttribute="leading" secondItem="I2P-Yn-nsd" secondAttribute="leading" id="KTJ-FN-09e"/>
                         <constraint firstAttribute="width" secondItem="I2P-Yn-nsd" secondAttribute="height" multiplier="1:1" id="Te1-BE-AzN"/>
-                        <constraint firstAttribute="width" constant="350" id="X2m-RS-cbg"/>
                         <constraint firstItem="PHk-nf-CN5" firstAttribute="top" secondItem="I2P-Yn-nsd" secondAttribute="top" id="iOf-L0-ui0"/>
                         <constraint firstAttribute="bottom" secondItem="PHk-nf-CN5" secondAttribute="bottom" id="oeG-Ew-3Fg"/>
                     </constraints>
@@ -53,6 +52,8 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RRO-Ff-d8d" secondAttribute="trailing" id="OzQ-aI-5bK"/>
                 <constraint firstItem="RRO-Ff-d8d" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="QDg-Q4-Qwc"/>
                 <constraint firstItem="I2P-Yn-nsd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="cEK-pY-Afh"/>
+                <constraint firstItem="I2P-Yn-nsd" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="dXQ-1T-sJp"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="I2P-Yn-nsd" secondAttribute="trailing" constant="32" id="g37-HD-8kj"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="RRO-Ff-d8d" secondAttribute="bottom" id="mKo-bn-Yh7"/>
                 <constraint firstItem="RRO-Ff-d8d" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="t22-73-GTg"/>
                 <constraint firstItem="I2P-Yn-nsd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wz7-Ht-2ry"/>

@@ -31,6 +31,8 @@ let arrInputTicket = ["Ticket owner", "Ticket ID", "Phone", "Mail", "Priority", 
 
 let arrIcTicket = ["ticketowner","ticket_id", "phone", "mail_ic", "priority", "status", "subject","escalated", "done","date","date","createdby","createdby","description"]
 
+let arrMenuItems = ["Profile","Ticket","Dashboards","Ticket Milestones","Notes","Open Activities","Activity History", "Articles"]
+
 enum ItemMenu : Int {
     case ticket = 1, dashboard, email, notes, activities, activities_history, articles
     
@@ -40,9 +42,9 @@ enum ItemMenu : Int {
 }
 
 let sectionInsetsDefault = UIEdgeInsets(top: 8.0,
-left: 8.0,
-bottom: 8.0,
-right: 8.0)
+                                        left: 8.0,
+                                        bottom: 8.0,
+                                        right: 8.0)
 
 public class DayAxisValueFormatter: NSObject, IAxisValueFormatter {
     weak var chart: BarLineChartViewBase?

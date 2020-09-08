@@ -44,6 +44,8 @@ class DashboardController: BaseViewController {
         menu?.setNavigationBarHidden(true, animated: true)
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: view)
+        
+        addSubView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -52,14 +54,6 @@ class DashboardController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        for v in view.subviews {
-            
-            if !v.isKind(of: CustomDashLion.self) || !v.isKind(of: CustomDashLeopard.self) {
-                addSubView()
-            }
-        }
-
     }
     
     func addSubView() {

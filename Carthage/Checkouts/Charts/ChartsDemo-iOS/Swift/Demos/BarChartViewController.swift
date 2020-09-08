@@ -99,7 +99,6 @@ class BarChartViewController: DemoBaseViewController {
         sliderX.value = 12
         sliderY.value = 50
         slidersValueChanged(nil)
- 
     }
     
     override func updateChartData() {
