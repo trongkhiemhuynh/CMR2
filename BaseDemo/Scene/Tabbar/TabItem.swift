@@ -19,7 +19,6 @@ enum TabItem: String, CaseIterable {
     var viewController: UIViewController {
         switch self {
         case .dashboard:
-            
             return UINavigationController(rootViewController: DashboardController())
         case .profile:
             return UINavigationController(rootViewController: ProfileViewController())

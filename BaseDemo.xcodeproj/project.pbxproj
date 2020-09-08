@@ -36,10 +36,11 @@
 		224326DB25073362005AE588 /* SideMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224326DA25073362005AE588 /* SideMenu.framework */; };
 		224326E12507394E005AE588 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224326DF2507394E005AE588 /* MenuCollectionViewCell.swift */; };
 		224326E22507394E005AE588 /* MenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 224326E02507394E005AE588 /* MenuCollectionViewCell.xib */; };
-		224326E425073A6F005AE588 /* MenuCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224326E325073A6F005AE588 /* MenuCollectionViewController.swift */; };
-		224326E725074089005AE588 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224326E525074089005AE588 /* CollectionViewController.swift */; };
-		224326E825074089005AE588 /* CollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 224326E625074089005AE588 /* CollectionViewController.xib */; };
-		224326EA250740CE005AE588 /* MenuCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 224326E9250740CE005AE588 /* MenuCollectionViewController.xib */; };
+		224326EA250740CE005AE588 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 224326E9250740CE005AE588 /* MenuViewController.xib */; };
+		224326EC25077295005AE588 /* DashboardRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224326EB25077295005AE588 /* DashboardRoute.swift */; };
+		224326EE2507738B005AE588 /* TicketRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224326ED2507738B005AE588 /* TicketRoute.swift */; };
+		224326F225077A81005AE588 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224326F125077A80005AE588 /* MenuViewController.swift */; };
+		224326F4250785D8005AE588 /* TicketDetailRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224326F3250785D8005AE588 /* TicketDetailRoute.swift */; };
 		224346C124FCB28800CF7AA3 /* MainAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224346C024FCB28800CF7AA3 /* MainAppState.swift */; };
 		224346C324FCB30B00CF7AA3 /* TicketState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224346C224FCB30B00CF7AA3 /* TicketState.swift */; };
 		224346C524FCB38D00CF7AA3 /* TicketObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224346C424FCB38D00CF7AA3 /* TicketObj.swift */; };
@@ -234,10 +235,11 @@
 		224326DA25073362005AE588 /* SideMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SideMenu.framework; path = Carthage/Build/iOS/SideMenu.framework; sourceTree = "<group>"; };
 		224326DF2507394E005AE588 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		224326E02507394E005AE588 /* MenuCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCollectionViewCell.xib; sourceTree = "<group>"; };
-		224326E325073A6F005AE588 /* MenuCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewController.swift; sourceTree = "<group>"; };
-		224326E525074089005AE588 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
-		224326E625074089005AE588 /* CollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewController.xib; sourceTree = "<group>"; };
-		224326E9250740CE005AE588 /* MenuCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCollectionViewController.xib; sourceTree = "<group>"; };
+		224326E9250740CE005AE588 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		224326EB25077295005AE588 /* DashboardRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRoute.swift; sourceTree = "<group>"; };
+		224326ED2507738B005AE588 /* TicketRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketRoute.swift; sourceTree = "<group>"; };
+		224326F125077A80005AE588 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		224326F3250785D8005AE588 /* TicketDetailRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailRoute.swift; sourceTree = "<group>"; };
 		224346C024FCB28800CF7AA3 /* MainAppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppState.swift; sourceTree = "<group>"; };
 		224346C224FCB30B00CF7AA3 /* TicketState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketState.swift; sourceTree = "<group>"; };
 		224346C424FCB38D00CF7AA3 /* TicketObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketObj.swift; sourceTree = "<group>"; };
@@ -441,6 +443,7 @@
 		224326DD2507391D005AE588 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				224326E9250740CE005AE588 /* MenuViewController.xib */,
 				224326DF2507394E005AE588 /* MenuCollectionViewCell.swift */,
 				224326E02507394E005AE588 /* MenuCollectionViewCell.xib */,
 			);
@@ -450,10 +453,7 @@
 		224326DE2507392B005AE588 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				224326E325073A6F005AE588 /* MenuCollectionViewController.swift */,
-				224326E525074089005AE588 /* CollectionViewController.swift */,
-				224326E625074089005AE588 /* CollectionViewController.xib */,
-				224326E9250740CE005AE588 /* MenuCollectionViewController.xib */,
+				224326F125077A80005AE588 /* MenuViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -719,6 +719,9 @@
 				229A55362501F619008A0ECD /* WelcomeRoute.swift */,
 				224326D6250724EF005AE588 /* SplashRoute.swift */,
 				224326D825072AE4005AE588 /* MainRoute.swift */,
+				224326EB25077295005AE588 /* DashboardRoute.swift */,
+				224326ED2507738B005AE588 /* TicketRoute.swift */,
+				224326F3250785D8005AE588 /* TicketDetailRoute.swift */,
 			);
 			path = Route;
 			sourceTree = "<group>";
@@ -1160,12 +1163,11 @@
 				4B28018924ECE830007647F8 /* TicketViewController.xib in Resources */,
 				4B166C2D24ED0D140030C592 /* TicketDetailInputInfoCollectionViewCell.xib in Resources */,
 				4BE6314424DA9CC000D9133C /* LaunchScreen.storyboard in Resources */,
-				224326EA250740CE005AE588 /* MenuCollectionViewController.xib in Resources */,
+				224326EA250740CE005AE588 /* MenuViewController.xib in Resources */,
 				C2C33CC924F41612008C88B3 /* README.md in Resources */,
 				4B166C4024EE61DA0030C592 /* CustomListView.xib in Resources */,
 				4B28018424ECE5D7007647F8 /* DashboardController.xib in Resources */,
 				4B28017824ECC2B5007647F8 /* SplashViewController.xib in Resources */,
-				224326E825074089005AE588 /* CollectionViewController.xib in Resources */,
 				C2E857E224F36C06002960A2 /* InfoTicketRow.xib in Resources */,
 				4B166C2924ED07EF0030C592 /* TicketDetailInfoViewController.xib in Resources */,
 				C2E857F024F39CF6002960A2 /* TabbarItem.xib in Resources */,
@@ -1349,9 +1351,9 @@
 				2270237224F8AECB002C06AC /* Storyboard+Initialization.swift in Sources */,
 				224346D224FCD49E00CF7AA3 /* FetchTicketRequest.swift in Sources */,
 				22802DF024FE1DD900429518 /* CalendarView.swift in Sources */,
+				224326F225077A81005AE588 /* MenuViewController.swift in Sources */,
 				224346D624FCE05F00CF7AA3 /* Logger.swift in Sources */,
 				C23F629924EF228100E37560 /* CustomDetailActionView.swift in Sources */,
-				224326E425073A6F005AE588 /* MenuCollectionViewController.swift in Sources */,
 				C22FEA9624FC0E01009D9219 /* Constants.swift in Sources */,
 				4BE6316924DAA7ED00D9133C /* SplashViewController.swift in Sources */,
 				2270237624F8AEF5002C06AC /* BaseAbility.swift in Sources */,
@@ -1376,12 +1378,12 @@
 				224346D424FCDF6300CF7AA3 /* BaseObj.swift in Sources */,
 				2270236A24F8AE46002C06AC /* UICollectionView+Register.swift in Sources */,
 				4B28018724ECE676007647F8 /* TicketViewController.swift in Sources */,
+				224326EC25077295005AE588 /* DashboardRoute.swift in Sources */,
 				224326D7250724EF005AE588 /* SplashRoute.swift in Sources */,
 				C23F629724EF225600E37560 /* CustomDetailTabView.swift in Sources */,
 				224346C124FCB28800CF7AA3 /* MainAppState.swift in Sources */,
 				4B166C2524ED05D40030C592 /* BaseViewController.swift in Sources */,
 				222B5FC724F65C0300419452 /* CustomPopUpTableViewCell.swift in Sources */,
-				224326E725074089005AE588 /* CollectionViewController.swift in Sources */,
 				C2E857E924F39744002960A2 /* MainAppController.swift in Sources */,
 				229A55312501E50C008A0ECD /* RouterManager.swift in Sources */,
 				C23F628924EE9C2600E37560 /* CustomTabBarView.swift in Sources */,
@@ -1397,7 +1399,9 @@
 				4B166C4424EE621E0030C592 /* BaseView.swift in Sources */,
 				224346C524FCB38D00CF7AA3 /* TicketObj.swift in Sources */,
 				4BE6313A24DA9CBB00D9133C /* AppDelegate.swift in Sources */,
+				224326EE2507738B005AE588 /* TicketRoute.swift in Sources */,
 				4B166C2824ED07EF0030C592 /* TicketDetailInfoViewController.swift in Sources */,
+				224326F4250785D8005AE588 /* TicketDetailRoute.swift in Sources */,
 				224326D925072AE4005AE588 /* MainRoute.swift in Sources */,
 				2270237424F8AEDA002C06AC /* Xib+Initialization.swift in Sources */,
 				4B166C5824EF78CD0030C592 /* TicketDetailActivityCollectionViewCell.swift in Sources */,

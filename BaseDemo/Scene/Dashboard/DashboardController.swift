@@ -12,7 +12,17 @@ import SideMenu
 
 class DashboardController: BaseViewController {
     
+    @IBOutlet weak var vContent : UIView!
+    @IBOutlet weak var lblCountNotification : UILabel!
+    
     var menu : SideMenuNavigationController?
+    lazy var blurView : UIView = {
+        let v = UIView(frame: view.frame)
+        v.backgroundColor = .black
+        v.layer.opacity = 0.4
+        
+        return v
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +32,15 @@ class DashboardController: BaseViewController {
 
 
     override func setupView() {
+        lblCountNotification.layer.cornerRadius = lblCountNotification.bounds.height/2
+        lblCountNotification.clipsToBounds = true
+        lblCountNotification.text = "999"
+
         self.view.backgroundColor = BASEColor.BackgroundListColor()
 
-        menu = SideMenuNavigationController(rootViewController: MenuCollectionViewController())
+        menu = SideMenuNavigationController(rootViewController: MenuViewController())
         menu?.leftSide = true
+        menu?.sideMenuDelegate = self
         menu?.setNavigationBarHidden(true, animated: true)
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: view)
@@ -38,19 +53,30 @@ class DashboardController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if view.subviews.count == 2 {
-            addSubView()            
+        for v in view.subviews {
+            
+            if !v.isKind(of: CustomDashLion.self) || !v.isKind(of: CustomDashLeopard.self) {
+                addSubView()
+            }
         }
+
     }
     
     func addSubView() {
         let modeLeo = Bundle.main.loadNibNamed("CustomDashboard", owner: self, options: nil)?.last as? CustomDashLion
+        
         Logger.info("\(widthScreen) -\(heightScreen)")
-        modeLeo?.frame = CGRect(x: 0, y: 0, width: widthScreen, height: heightScreen)
-        view.addSubview(modeLeo!)
+        
+        vContent.addSubview(modeLeo!)
+        
+//        vContent = modeLeo
+        
+        modeLeo?.frame = vContent.frame
         
         modeLeo?.addBartChartView()
         modeLeo?.addPieChartView()
+        
+        view.layoutIfNeeded()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,13 +94,57 @@ class DashboardController: BaseViewController {
     }
     
     
-    @IBAction func tapMenu() {
+    @IBAction func didTapMenu() {
         print(#function)
         present(menu!, animated: true, completion: nil)
     }
     
-    @IBAction func tapAlert() {
+    @IBAction func didTapAlert() {
         print(#function)
     }
 
+}
+
+extension DashboardController : SideMenuNavigationControllerDelegate {
+    
+    func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool) {
+        view.addSubview(blurView)
+    }
+    
+    func sideMenuWillDisappear(menu: SideMenuNavigationController, animated: Bool) {
+        blurView.removeFromSuperview()
+    }
+    
+    func sideMenuDidDisappear(menu: SideMenuNavigationController, animated: Bool) {
+        
+        print("SideMenu Disappeared! (animated: \(animated))")
+        
+//        let menuLeft = menu.popToRootViewController(animated: false) as? MenuViewController
+//
+//        if let mn = menuLeft {
+//
+//            Logger.info(mn.itemSeleted)
+//        }
+
+        
+        
+        if let tabbarController = ApplicationManager.sharedInstance.mainTabbar {
+            let nav = tabbarController.viewControllers?[0] as? UINavigationController
+            
+            let itemMenu = ApplicationManager.sharedInstance.itemMenuSelected
+            
+            switch itemMenu {
+            case .ticket:
+                nav?.pushViewController(TicketViewController(), animated: true)
+            default:
+                nav?.pushViewController(TicketDetailController(), animated: true)
+            }
+            
+        }
+//        RouterManager.shared.handleRouter(TicketRoute())
+    }
+}
+
+extension DashboardController : XibInitalization {
+    typealias Element = DashboardController
 }

@@ -60,7 +60,12 @@ class RouterManager {
         case .present:
             self.visibleViewController?.present(viewController, animated: true, completion: nil)
         case .push:
-            self.visibleNavigationController?.pushViewController(viewController, animated: true)
+            if let visibleNav = self.visibleNavigationController {
+                visibleNav.pushViewController(viewController, animated: true)
+            } else {
+                let topController = UIApplication.getTopViewController()
+                topController?.navigationController?.pushViewController(viewController, animated: true)
+            }
         }
     }
 }

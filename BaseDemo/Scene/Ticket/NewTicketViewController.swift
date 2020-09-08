@@ -14,10 +14,6 @@ class NewTicketViewController: BaseViewController {
     @IBOutlet weak var cvNewTicket : UICollectionView!
     
     // variable
-    private let sectionInsets = UIEdgeInsets(top: 10.0,
-                                             left: 10.0,
-                                             bottom: 10.0,
-                                             right: 10.0)
     private let itemsPerRow: CGFloat = 1
     private let heightCellInfoDetail : CGFloat = 70
     private var selectedIdx : IndexPath?
@@ -115,7 +111,7 @@ extension NewTicketViewController : UICollectionViewDelegate {
 extension NewTicketViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let paddingSpace = sectionInsetsDefault.left * (itemsPerRow + 1)
         let availableWidth = cvNewTicket.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
         

@@ -20,6 +20,7 @@ class MainRoute : Router {
     }()
     
     var viewController: MainAppController {
+        ApplicationManager.sharedInstance.mainTabbar = _viewController
         return _viewController
     }
 }

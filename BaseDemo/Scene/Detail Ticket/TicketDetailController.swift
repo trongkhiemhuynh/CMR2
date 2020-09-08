@@ -94,3 +94,7 @@ class TicketDetailController: BaseViewController {
     */
 
 }
+
+extension TicketDetailController : XibInitalization {
+    typealias Element = TicketDetailController
+}

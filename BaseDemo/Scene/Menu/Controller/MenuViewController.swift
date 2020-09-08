@@ -7,22 +7,19 @@
 //
 
 import UIKit
+import SideMenu
 
 private let reuseIdentifier = "Cell"
 
-class MenuCollectionViewController: UIViewController {
+class MenuViewController: UIViewController {
 
     @IBOutlet weak var collectionView : UICollectionView!
-    
-    private let sectionInsets = UIEdgeInsets(top: 10.0,
-                                             left: 10.0,
-                                             bottom: 10.0,
-                                             right: 10.0)
+
     private let itemsPerRow: CGFloat = 1
-    private let heightCellInfo : CGFloat = 120
-    private let heightCellInfoDetail : CGFloat = 70
+    private let heightCellInfo : CGFloat = 100
+    private let heightCellInfoDetail : CGFloat = 50
     
-    let arrItems = ["Profile","Ticket","Dashboards","Ticket Milestones","Notes","Open Activities","Activity History", "Acticles"]
+    let arrItems = ["Profile","Ticket","Dashboards","Ticket Milestones","Notes","Open Activities","Activity History", "Articles"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,7 +84,7 @@ class MenuCollectionViewController: UIViewController {
 
 }
 
-extension MenuCollectionViewController : UICollectionViewDataSource {
+extension MenuViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return arrItems.count
@@ -113,9 +110,9 @@ extension MenuCollectionViewController : UICollectionViewDataSource {
     }
 }
 
-extension MenuCollectionViewController : UICollectionViewDelegateFlowLayout {
+extension MenuViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let paddingSpace = sectionInsetsDefault.left * (itemsPerRow + 1)
         let availableWidth = collectionView.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
         
@@ -124,5 +121,15 @@ extension MenuCollectionViewController : UICollectionViewDelegateFlowLayout {
         } else {
             return CGSize(width: widthPerItem, height: heightCellInfoDetail)
         }
+    }
+}
+
+extension MenuViewController : UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        ApplicationManager.sharedInstance.itemMenuSelected = ItemMenu[indexPath.row]
+        
+        SideMenuManager.default.leftMenuNavigationController?.dismiss(animated: true, completion: {
+            Logger.debug("completed")
+        })
     }
 }

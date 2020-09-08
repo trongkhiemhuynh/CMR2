@@ -23,8 +23,8 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boost your business" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfh-5i-FZu">
-                    <rect key="frame" x="142.5" y="343" width="129" height="17"/>
-                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                    <rect key="frame" x="144.5" y="343" width="125" height="17"/>
+                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="14"/>
                     <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>

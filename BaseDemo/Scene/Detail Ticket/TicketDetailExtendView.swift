@@ -13,11 +13,6 @@ class TicketDetailExtendView: UIView {
     private let itemsPerRow: CGFloat = 3
     private let heightCell : CGFloat = 100
     
-    private let sectionInsets = UIEdgeInsets(top: 10.0,
-    left: 10.0,
-    bottom: 10.0,
-    right: 10.0)
-    
     @IBOutlet weak var cvExtend : UICollectionView!
     @IBOutlet weak var vBound : UIView!
     @IBOutlet weak var vBackground : UIView!
@@ -66,7 +61,7 @@ extension TicketDetailExtendView : UICollectionViewDelegate {
 extension TicketDetailExtendView : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let paddingSpace = sectionInsetsDefault.left * (itemsPerRow + 1)
         let availableWidth = cvExtend.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
         
@@ -74,7 +69,7 @@ extension TicketDetailExtendView : UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return sectionInsets.left
+        return sectionInsetsDefault.left
     }
 }
 

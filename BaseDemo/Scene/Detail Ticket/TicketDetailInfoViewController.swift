@@ -10,10 +10,6 @@ import UIKit
 
 class TicketDetailInfoViewController: BaseViewController {
     
-    private let sectionInsets = UIEdgeInsets(top: 10.0,
-                                             left: 10.0,
-                                             bottom: 10.0,
-                                             right: 10.0)
     private let itemsPerRow: CGFloat = 1
     private let heightCellInfo : CGFloat = 120
     private let heightCellInfoDetail : CGFloat = 70
@@ -86,7 +82,7 @@ extension TicketDetailInfoViewController : UICollectionViewDelegate {
 extension TicketDetailInfoViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let paddingSpace = sectionInsetsDefault.left * (itemsPerRow + 1)
         let availableWidth = cvInfoDetail.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
         

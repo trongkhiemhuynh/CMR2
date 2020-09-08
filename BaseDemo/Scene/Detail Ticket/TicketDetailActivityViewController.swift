@@ -11,10 +11,6 @@ import UIKit
 
 class TicketDetailActivityViewController: BaseViewController {
 
-    private let sectionInsets = UIEdgeInsets(top: 10.0,
-                                             left: 10.0,
-                                             bottom: 10.0,
-                                             right: 10.0)
     private let itemsPerRow: CGFloat = 1
     private let heightCell : CGFloat = 142
     
@@ -53,7 +49,7 @@ extension TicketDetailActivityViewController : UICollectionViewDelegateFlowLayou
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //2
-        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let paddingSpace = sectionInsetsDefault.left * (itemsPerRow + 1)
         let availableWidth = cvActivity.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
         

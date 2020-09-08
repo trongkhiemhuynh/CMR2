@@ -12,10 +12,6 @@ class CustomTicketStageView: BaseView {
 
     @IBOutlet weak var cvStage: UICollectionView!
 
-    private let sectionInsets = UIEdgeInsets(top: 10.0,
-                                             left: 10.0,
-                                             bottom: 10.0,
-                                             right: 10.0)
     private let itemsPerRow: CGFloat = 3
     private let heightCell : CGFloat = 60
     private let arrStage = ["New", "Processing", "Escalated", "Pending", "Upcoming"]
@@ -63,7 +59,7 @@ extension CustomTicketStageView : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         //2
-        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let paddingSpace = sectionInsetsDefault.left * (itemsPerRow + 1)
         let availableWidth = cvStage.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
         
@@ -72,11 +68,11 @@ extension CustomTicketStageView : UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return sectionInsets
+        return sectionInsetsDefault
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return sectionInsets.left
+        return sectionInsetsDefault.left
     }
 }
 

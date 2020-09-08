@@ -14,16 +14,12 @@ class CustomDashLion: BaseView {
     @IBOutlet weak var vBarChart : UIView!
     @IBOutlet weak var vPieChart : UIView!
     @IBOutlet weak var vInfoUser : UIView!
-    @IBOutlet weak var lblCountNotification : UILabel!
     
     var optionsBarChart: [Option]!
 
-    
     override func layoutSubviews() {
         super.layoutSubviews()
-        lblCountNotification.layer.cornerRadius = lblCountNotification.bounds.height/2
-        lblCountNotification.clipsToBounds = true
-        Logger.info("khiemht \(vBarChart.bounds)")
+        
     }
     
     func addBartChartView() {

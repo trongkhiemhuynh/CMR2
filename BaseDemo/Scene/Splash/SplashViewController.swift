@@ -19,7 +19,7 @@ class SplashViewController: BaseViewController {
     }
     
     override func setupView() {
-        lblSlogan.addCharacterSpacing()
+        lblSlogan.addCharacterSpacing(kernValue: 4)
     }
     
     override func viewDidAppear(_ animated: Bool) {

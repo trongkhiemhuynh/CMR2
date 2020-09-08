@@ -10,18 +10,6 @@ import UIKit
 
 class CustomListView: BaseView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-    
-    private let sectionInsets = UIEdgeInsets(top: 20.0,
-                                             left: 20.0,
-                                             bottom: 20.0,
-                                             right: 20.0)
     private let itemsPerRow: CGFloat = 1
     private let heightCell : CGFloat = 80
     
@@ -80,7 +68,7 @@ extension CustomListView : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         //2
-        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let paddingSpace = sectionInsetsDefault.left * (itemsPerRow + 1)
         let availableWidth = cvList.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
         
@@ -89,10 +77,10 @@ extension CustomListView : UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return sectionInsets
+        return sectionInsetsDefault
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return sectionInsets.left
+        return sectionInsetsDefault.left
     }
 }

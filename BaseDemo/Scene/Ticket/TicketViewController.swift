@@ -38,17 +38,8 @@ class TicketViewController: BaseViewController {
         }
         
         NotificationCenter.default.addObserver(forName: .DetailTicket, object: nil, queue: nil, using: { (noti) in
-            
-            // !!!FIX ME:
-            let detailVC = TicketDetailController(nibName: "TicketDetailController", bundle: nil)
-            self.navigationController?.pushViewController(detailVC, animated: true)
-            
-            
-//            self.addChild(detailVC)
-//            self.add(detailVC, contentView: self.view)
-            
-//            self.present(detailVC, animated: false, completion: nil)
-            
+
+            RouterManager.shared.handleRouter(TicketDetailRoute())
             
         })
     }
@@ -158,13 +149,6 @@ class TicketViewController: BaseViewController {
 
 }
 
-//extension TicketViewController : CAPSPageMenuDelegate {
-//    func willMoveToPage(_ controller: UIViewController, index: Int) {
-//        print(controller.title, index)
-//    }
-//    
-//    func didMoveToPage(_ controller: UIViewController, index: Int) {
-//        
-//    }
-//
-//}
+extension TicketViewController : XibInitalization {
+    typealias Element = TicketViewController
+}
