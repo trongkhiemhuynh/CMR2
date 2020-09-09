@@ -34,7 +34,7 @@ let arrIcTicket = ["ticketowner","ticket_id", "phone", "mail_ic", "priority", "s
 let arrMenuItems = ["Profile","Ticket","Dashboards","Ticket Milestones","Notes","Open Activities","Activity History", "Articles"]
 
 enum ItemMenu : Int {
-    case ticket = 1, dashboard, email, notes, activities, activities_history, articles
+    case none = 0, ticket = 1, dashboard, email, notes, activities, activities_history, articles
     
     static subscript(n: Int) -> ItemMenu {
         return ItemMenu(rawValue: n)!

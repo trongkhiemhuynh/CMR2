@@ -95,6 +95,10 @@ class DashboardController: BaseViewController {
     
     @IBAction func didTapAlert() {
         print(#function)
+        let notiView = NotificationView.xibInstance()
+        notiView.frame = CGRect(x: 0, y: 0, width: widthScreen, height: heightScreen-70)
+        
+        view.addSubview(notiView)
     }
 
 }
@@ -131,9 +135,10 @@ extension DashboardController : SideMenuNavigationControllerDelegate {
             case .ticket:
                 nav?.pushViewController(TicketViewController(), animated: true)
             default:
-                nav?.pushViewController(TicketDetailController(), animated: true)
+                print("hello")
             }
             
+            ApplicationManager.sharedInstance.itemMenuSelected = ItemMenu.none
         }
 //        RouterManager.shared.handleRouter(TicketRoute())
     }

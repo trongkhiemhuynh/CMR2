@@ -41,6 +41,12 @@
 		224326EE2507738B005AE588 /* TicketRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224326ED2507738B005AE588 /* TicketRoute.swift */; };
 		224326F225077A81005AE588 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224326F125077A80005AE588 /* MenuViewController.swift */; };
 		224326F4250785D8005AE588 /* TicketDetailRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224326F3250785D8005AE588 /* TicketDetailRoute.swift */; };
+		224326F6250872EB005AE588 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224326F5250872EB005AE588 /* NotificationView.swift */; };
+		224326F825087378005AE588 /* NotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 224326F725087378005AE588 /* NotificationView.xib */; };
+		224326FB25087815005AE588 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224326F925087815005AE588 /* NotificationTableViewCell.swift */; };
+		224326FC25087815005AE588 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 224326FA25087815005AE588 /* NotificationTableViewCell.xib */; };
+		224326FE25088324005AE588 /* SortContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224326FD25088324005AE588 /* SortContactsView.swift */; };
+		2243270025088332005AE588 /* SortContactsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 224326FF25088332005AE588 /* SortContactsView.xib */; };
 		224346C124FCB28800CF7AA3 /* MainAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224346C024FCB28800CF7AA3 /* MainAppState.swift */; };
 		224346C324FCB30B00CF7AA3 /* TicketState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224346C224FCB30B00CF7AA3 /* TicketState.swift */; };
 		224346C524FCB38D00CF7AA3 /* TicketObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224346C424FCB38D00CF7AA3 /* TicketObj.swift */; };
@@ -240,6 +246,12 @@
 		224326ED2507738B005AE588 /* TicketRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketRoute.swift; sourceTree = "<group>"; };
 		224326F125077A80005AE588 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		224326F3250785D8005AE588 /* TicketDetailRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailRoute.swift; sourceTree = "<group>"; };
+		224326F5250872EB005AE588 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		224326F725087378005AE588 /* NotificationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationView.xib; sourceTree = "<group>"; };
+		224326F925087815005AE588 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		224326FA25087815005AE588 /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
+		224326FD25088324005AE588 /* SortContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortContactsView.swift; sourceTree = "<group>"; };
+		224326FF25088332005AE588 /* SortContactsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortContactsView.xib; sourceTree = "<group>"; };
 		224346C024FCB28800CF7AA3 /* MainAppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppState.swift; sourceTree = "<group>"; };
 		224346C224FCB30B00CF7AA3 /* TicketState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketState.swift; sourceTree = "<group>"; };
 		224346C424FCB38D00CF7AA3 /* TicketObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketObj.swift; sourceTree = "<group>"; };
@@ -888,6 +900,12 @@
 				222B5FC624F65C0300419452 /* CustomPopUpTableViewCell.xib */,
 				222B5FCF24F7A31300419452 /* PopUpSuccessful.swift */,
 				222B5FD124F7A32A00419452 /* PopUpConfirm.swift */,
+				224326F5250872EB005AE588 /* NotificationView.swift */,
+				224326F725087378005AE588 /* NotificationView.xib */,
+				224326F925087815005AE588 /* NotificationTableViewCell.swift */,
+				224326FA25087815005AE588 /* NotificationTableViewCell.xib */,
+				224326FD25088324005AE588 /* SortContactsView.swift */,
+				224326FF25088332005AE588 /* SortContactsView.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1184,12 +1202,15 @@
 				4B166C5324EF65FD0030C592 /* CustomDetailTabView.xib in Resources */,
 				4B166C3124ED0D690030C592 /* TicketDetailActivityViewController.xib in Resources */,
 				4B166C4924EE6A340030C592 /* CustomTicketCollectionViewCell.xib in Resources */,
+				224326FC25087815005AE588 /* NotificationTableViewCell.xib in Resources */,
+				224326F825087378005AE588 /* NotificationView.xib in Resources */,
 				C23F628F24EF05F100E37560 /* PopupView.xib in Resources */,
 				222B5FCC24F76CF700419452 /* CustomDashboard.xib in Resources */,
 				4B166C5924EF78CD0030C592 /* TicketDetailActivityCollectionViewCell.xib in Resources */,
 				4B2D4BF224DD02D200CABF1D /* HomeViewController.xib in Resources */,
 				4B166C5D24EF78F80030C592 /* TicketDetailInfoCollectionViewCell.xib in Resources */,
 				C23F629324EF204F00E37560 /* TicketDetailController.xib in Resources */,
+				2243270025088332005AE588 /* SortContactsView.xib in Resources */,
 				224EBAF524F5068100CB676F /* ExtendCollectionViewCell.xib in Resources */,
 				C23F628B24EEE89100E37560 /* CustomTabBarView.xib in Resources */,
 			);
@@ -1350,6 +1371,7 @@
 				C2E857DE24F368BC002960A2 /* CreatNewTicketView.swift in Sources */,
 				2270237224F8AECB002C06AC /* Storyboard+Initialization.swift in Sources */,
 				224346D224FCD49E00CF7AA3 /* FetchTicketRequest.swift in Sources */,
+				224326FB25087815005AE588 /* NotificationTableViewCell.swift in Sources */,
 				22802DF024FE1DD900429518 /* CalendarView.swift in Sources */,
 				224326F225077A81005AE588 /* MenuViewController.swift in Sources */,
 				224346D624FCE05F00CF7AA3 /* Logger.swift in Sources */,
@@ -1426,7 +1448,9 @@
 				4B166C4B24EE7DE90030C592 /* CustomTicketStageView.swift in Sources */,
 				224326E12507394E005AE588 /* MenuCollectionViewCell.swift in Sources */,
 				224346C324FCB30B00CF7AA3 /* TicketState.swift in Sources */,
+				224326FE25088324005AE588 /* SortContactsView.swift in Sources */,
 				C2E857E424F36D30002960A2 /* InfoTicketRow.swift in Sources */,
+				224326F6250872EB005AE588 /* NotificationView.swift in Sources */,
 				229A55292500E750008A0ECD /* LoginInteractor.swift in Sources */,
 				222B5FCE24F76E7800419452 /* CustomDashLion.swift in Sources */,
 				224346C724FCB5CF00CF7AA3 /* MainReducer.swift in Sources */,

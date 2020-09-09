@@ -48,25 +48,26 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qRd-Vy-lZK">
-                    <rect key="frame" x="312" y="473" width="50" height="116"/>
+                    <rect key="frame" x="312" y="486" width="50" height="103"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2u-sQ-9zF">
-                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <rect key="frame" x="-3" y="0.0" width="45" height="45"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="50" id="4HM-O7-RGZ"/>
-                                <constraint firstAttribute="width" constant="50" id="iAU-6a-zaM"/>
+                                <constraint firstAttribute="height" constant="45" id="4HM-O7-RGZ"/>
+                                <constraint firstAttribute="width" secondItem="j2u-sQ-9zF" secondAttribute="height" multiplier="1:1" id="Qqc-uI-7wl"/>
                             </constraints>
-                            <state key="normal" image="extend"/>
+                            <state key="normal" image="extension"/>
                             <connections>
                                 <action selector="actionExtend" destination="-1" eventType="touchUpInside" id="B6t-7J-CoE"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zDp-nI-9n2">
-                            <rect key="frame" x="0.0" y="66" width="50" height="50"/>
+                            <rect key="frame" x="-5.5" y="53" width="50" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="djr-d2-Mrz"/>
                                 <constraint firstAttribute="height" constant="50" id="fiG-KF-AAo"/>
                             </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                             <state key="normal" image="back"/>
                             <connections>
                                 <action selector="actionBack" destination="-1" eventType="touchUpInside" id="i8p-D0-d4I"/>
@@ -76,11 +77,11 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="j2u-sQ-9zF" firstAttribute="top" secondItem="qRd-Vy-lZK" secondAttribute="top" id="Ms1-mP-pfT"/>
-                        <constraint firstAttribute="trailing" secondItem="zDp-nI-9n2" secondAttribute="trailing" id="Rfl-Fg-0ze"/>
                         <constraint firstAttribute="bottom" secondItem="zDp-nI-9n2" secondAttribute="bottom" id="giw-o3-nRG"/>
+                        <constraint firstItem="j2u-sQ-9zF" firstAttribute="centerX" secondItem="zDp-nI-9n2" secondAttribute="centerX" id="haw-cq-Uoe"/>
                         <constraint firstAttribute="width" constant="50" id="rAy-u1-NUO"/>
-                        <constraint firstAttribute="trailing" secondItem="j2u-sQ-9zF" secondAttribute="trailing" id="rGa-4u-gkX"/>
-                        <constraint firstItem="zDp-nI-9n2" firstAttribute="top" secondItem="j2u-sQ-9zF" secondAttribute="bottom" constant="16" id="trU-cQ-BLN"/>
+                        <constraint firstAttribute="trailing" secondItem="j2u-sQ-9zF" secondAttribute="trailing" constant="8" id="rGa-4u-gkX"/>
+                        <constraint firstItem="zDp-nI-9n2" firstAttribute="top" secondItem="j2u-sQ-9zF" secondAttribute="bottom" constant="8" id="trU-cQ-BLN"/>
                     </constraints>
                 </view>
             </subviews>
@@ -108,6 +109,6 @@
     </objects>
     <resources>
         <image name="back" width="54" height="54"/>
-        <image name="extend" width="51" height="51"/>
+        <image name="extension" width="51" height="51"/>
     </resources>
 </document>
