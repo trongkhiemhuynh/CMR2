@@ -38,7 +38,7 @@ class CustomTicketCollectionViewCell: UICollectionViewCell {
         layer.masksToBounds = true
 
         layer.backgroundColor = UIColor.white.cgColor
-        layer.shadowColor = BASEColor.ShadowCellColor()?.cgColor
+        layer.shadowColor = BASEColor.CellShadowColor()?.cgColor
         layer.shadowOffset = CGSize(width: 0, height: 2.0)//CGSizeMake(0, 2.0);
         layer.shadowRadius = 1.0
         layer.shadowOpacity = 1.0

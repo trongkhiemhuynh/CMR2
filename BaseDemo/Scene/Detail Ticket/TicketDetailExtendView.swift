@@ -43,6 +43,7 @@ class TicketDetailExtendView: UIView {
     }
     
     @objc func dismissView(_ gesture : UITapGestureRecognizer) {
+        ApplicationManager.sharedInstance.mainTabbar?.customTabbar.isHidden = false
         removeFromSuperview()
     }
 
@@ -94,5 +95,9 @@ extension TicketDetailExtendView : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arrMenuItems.count - 1 // not count first item
     }
+}
+
+extension TicketDetailExtendView : XibInitalization {
+    typealias Element = TicketDetailExtendView
 }
 

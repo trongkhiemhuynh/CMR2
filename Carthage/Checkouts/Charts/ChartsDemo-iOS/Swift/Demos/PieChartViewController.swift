@@ -42,20 +42,20 @@ class PieChartViewController: DemoBaseViewController {
         
         chartView.delegate = self
         
-        let l = chartView.legend
-        l.horizontalAlignment = .right
-        l.verticalAlignment = .top
-        l.orientation = .vertical
-        l.xEntrySpace = 7
-        l.yEntrySpace = 0
-        l.yOffset = 0
+//        let l = chartView.legend
+//        l.horizontalAlignment = .right
+//        l.verticalAlignment = .top
+//        l.orientation = .vertical
+//        l.xEntrySpace = 7
+//        l.yEntrySpace = 0
+//        l.yOffset = 0
 //        chartView.legend = l
 
         // entry label styling
         chartView.entryLabelColor = .white
         chartView.entryLabelFont = .systemFont(ofSize: 12, weight: .light)
         
-        sliderX.value = 4
+        sliderX.value = 7
         sliderY.value = 100
         self.slidersValueChanged(nil)
         
@@ -72,10 +72,13 @@ class PieChartViewController: DemoBaseViewController {
     }
     
     func setDataCount(_ count: Int, range: UInt32) {
-        let entries = (0..<count).map { (i) -> PieChartDataEntry in
+        
+        let items = [10, 20, 30, 40, 50, 60, 70]
+        
+        let entries = (0..<items.count).map { (i) -> PieChartDataEntry in
             // IMPORTANT: In a PieChart, no values (Entry) should have the same xIndex (even if from different DataSets), since no values can be drawn above each other.
-            return PieChartDataEntry(value: Double(arc4random_uniform(range) + range / 5),
-                                     label: parties[i % parties.count],
+            return PieChartDataEntry(value: Double(items[i])/*Double(arc4random_uniform(range) + range / 7)*/,
+                                     label: "Com \(i)"/*parties[i % parties.count]*/,
                                      icon: #imageLiteral(resourceName: "icon"))
         }
         
@@ -104,7 +107,7 @@ class PieChartViewController: DemoBaseViewController {
         data.setValueTextColor(.white)
         
         chartView.data = data
-        chartView.highlightValues(nil)
+//        chartView.highlightValues(nil)
     }
     
     override func optionTapped(_ option: Option) {

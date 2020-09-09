@@ -9,33 +9,57 @@
 import UIKit
 import Charts
 
+protocol DBSaleChart {
+    func setupPieChartView(chartView : PieChartView)
+    func setPieDataCount(_ items : Array<Int>)
+}
+
 class CustomDashLion: BaseView {
 
     @IBOutlet weak var vBarChart : UIView!
     @IBOutlet weak var vPieChart : UIView!
     @IBOutlet weak var vInfoUser : UIView!
     
-    var optionsBarChart: [Option]!
-
+    var chartView : BarChartView!
+    var chartPieView : PieChartView!
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
     }
     
-    func addBartChartView() {
-        Logger.info(vBarChart.bounds)
-        let chart = BarChartView(frame: vBarChart.bounds)
-        chart.autoresizingMask = [.flexibleWidth, .flexibleHeight,.flexibleTopMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin]
+    private lazy var lblEmailCounts : UILabel = {
+        let label = UILabel(frame: .zero)
         
-        vBarChart.addSubview(chart)
-//        setupBarChart(chartView : chart)
+        label.font = UIFont.boldSystemFont(ofSize: 12)
+        
+        label.textColor = .darkGray
+        
+        return label
+    }()
+    
+    /// addBartChartView
+    func addBartChartView() {
+//        Logger.info(vBarChart.bounds)
+        chartView = BarChartView(frame: vBarChart.bounds)
+        chartView?.autoresizingMask = [.flexibleWidth, .flexibleHeight,.flexibleTopMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin]
+        
+        vBarChart.addSubview(chartView!)
+        
+        vBarChart.addSubview(lblEmailCounts)
+        lblEmailCounts.frame = CGRect(origin: CGPoint(x: 4, y: 0), size: CGSize(width: 200, height: 20))
+        
+        setupBarChart(chartView : chartView)
     }
     
+    /// addPieChartView
     func addPieChartView() {
-        let chart = PieChartView(frame: vPieChart.bounds)
-        chart.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        chartPieView = PieChartView(frame: vPieChart.bounds)
+        chartPieView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
-        vPieChart.addSubview(chart)
+        vPieChart.addSubview(chartPieView!)
+        
+        setupPieChartView(chartView: chartPieView)
     }
     
     /*
@@ -46,149 +70,171 @@ class CustomDashLion: BaseView {
     }
     */
     
-    func setup(barLineChartView chartView: BarLineChartViewBase) {
-        chartView.chartDescription?.enabled = false
-                
-        chartView.dragEnabled = true
-        chartView.setScaleEnabled(true)
-        chartView.pinchZoomEnabled = false
-        
-        // ChartYAxis *leftAxis = chartView.leftAxis;
-        
-        let xAxis = chartView.xAxis
-        xAxis.labelPosition = .bottom
-        
-        chartView.rightAxis.enabled = false
-    }
+//    func setup(barLineChartView chartView: BarLineChartViewBase) {
+//        chartView.chartDescription?.enabled = false
+//
+//        chartView.dragEnabled = true
+//        chartView.setScaleEnabled(true)
+//        chartView.pinchZoomEnabled = false
+//
+//        // ChartYAxis *leftAxis = chartView.leftAxis;
+//
+//        let xAxis = chartView.xAxis
+//        xAxis.labelPosition = .bottom
+//
+//        chartView.rightAxis.enabled = false
+//    }
     
     func setupBarChart(chartView : BarChartView) {
         
-        optionsBarChart = [.toggleValues,
-                           .toggleHighlight,
-                           .animateX,
-                           .animateY,
-                           .animateXY,
-                           .saveToGallery,
-                           .togglePinchZoom,
-                           .toggleData,
-                           .toggleBarBorders]
-        
-        self.setup(barLineChartView: chartView)
-        
-        //            chartView.delegate = self
-        
+        chartView.chartDescription?.enabled = false
+        chartView.maxVisibleCount = 7
+        chartView.pinchZoomEnabled = false
         chartView.drawBarShadowEnabled = false
-        chartView.drawValueAboveBarEnabled = false
-        
-        chartView.maxVisibleCount = 60
         
         let xAxis = chartView.xAxis
         xAxis.labelPosition = .bottom
-        xAxis.labelFont = .systemFont(ofSize: 10)
-        xAxis.granularity = 1
-        xAxis.labelCount = 7
-        xAxis.valueFormatter = DayAxisValueFormatter(chart: chartView)
+                
+        chartView.legend.enabled = false
         
+        self.setDataCount()
         
-        let leftAxisFormatter = NumberFormatter()
-        leftAxisFormatter.minimumFractionDigits = 100
-        leftAxisFormatter.maximumFractionDigits = 1000
-        leftAxisFormatter.negativeSuffix = " $"
-        leftAxisFormatter.positiveSuffix = " $"
-        
-        let leftAxis = chartView.leftAxis
-        leftAxis.labelFont = .systemFont(ofSize: 10)
-        leftAxis.labelCount = 8
-        leftAxis.valueFormatter = DefaultAxisValueFormatter(formatter: leftAxisFormatter)
-        leftAxis.labelPosition = .outsideChart
-        leftAxis.spaceTop = 0.15
-        leftAxis.axisMinimum = 0 // FIXME: HUH?? this replaces startAtZero = YES
-        
-                    let rightAxis = chartView.rightAxis
-                    rightAxis.enabled = true
-                    rightAxis.labelFont = .systemFont(ofSize: 10)
-                    rightAxis.labelCount = 8
-                    rightAxis.valueFormatter = leftAxis.valueFormatter
-                    rightAxis.spaceTop = 0.15
-                    rightAxis.axisMinimum = 0
-        
-        let l = chartView.legend
-        l.horizontalAlignment = .left
-        l.verticalAlignment = .bottom
-        l.orientation = .horizontal
-        l.drawInside = false
-        l.form = .circle
-        l.formSize = 9
-        l.font = UIFont(name: "HelveticaNeue-Light", size: 11)!
-        l.xEntrySpace = 4
-        //        chartView.legend = l
-        
-        let marker = XYMarkerView(color: UIColor(white: 180/250, alpha: 1),
-                                  font: .systemFont(ofSize: 12),
-                                  textColor: .white,
-                                  insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8),
-                                  xAxisValueFormatter: chartView.xAxis.valueFormatter!)
-        marker.chartView = chartView
-        marker.minimumSize = CGSize(width: 80, height: 40)
-        chartView.marker = marker
-        
-        let start = 1
-        let count = 7
-        let range : UInt32 = 1
-        
-        let yVals = (start..<start+count+1).map { (i) -> BarChartDataEntry in
-            let mult = range + 1
-            let val = Double(arc4random_uniform(mult))
-            if arc4random_uniform(100) < 25 {
-                return BarChartDataEntry(x: Double(i), y: val, icon: UIImage(named: "icon"))
-            } else {
-                return BarChartDataEntry(x: Double(i), y: val)
-            }
-        }
-        
-        var set1: BarChartDataSet! = nil
-        set1 = BarChartDataSet(entries: yVals, label: "The year 2017")
-        set1.colors = ChartColorTemplates.liberty()
-        set1.drawValuesEnabled = false
-        
-        let data = BarChartData(dataSet: set1)
-        data.setValueFont(UIFont(name: "HelveticaNeue-Light", size: 10)!)
-        data.barWidth = 0.9
-        chartView.data = data
+        //////////////////////////////////////
         
     }
     
-//    func setDataCount(_ count: Int, range: UInt32) {
-//            let start = 1
-//
-//            let yVals = (start..<start+count+1).map { (i) -> BarChartDataEntry in
-//                let mult = range + 1
-//                let val = Double(arc4random_uniform(mult))
-//                if arc4random_uniform(100) < 25 {
-//                    return BarChartDataEntry(x: Double(i), y: val, icon: UIImage(named: "icon"))
-//                } else {
-//                    return BarChartDataEntry(x: Double(i), y: val)
-//                }
-//            }
-//
-//            var set1: BarChartDataSet! = nil
-//            if let set = chartView.data?.dataSets.first as? BarChartDataSet {
-//                set1 = set
-//                set1.replaceEntries(yVals)
-//                chartView.data?.notifyDataChanged()
-//                chartView.notifyDataSetChanged()
-//            } else {
-//                set1 = BarChartDataSet(entries: yVals, label: "The year 2017")
-//                set1.colors = ChartColorTemplates.material()
-//                set1.drawValuesEnabled = false
-//
-//                let data = BarChartData(dataSet: set1)
-//                data.setValueFont(UIFont(name: "HelveticaNeue-Light", size: 10)!)
-//                data.barWidth = 0.9
-//                chartView.data = data
-//            }
-//
-//    //        chartView.setNeedsDisplay()
-//        }
+    /// BARCHART
+    func setDataCount() {
+        let items = [10,20,30,40,50,60,70]
+        
+        var emailCounts : Int = 0
+        
+        items.forEach { (val) in
+            emailCounts += val
+        }
+        
+        lblEmailCounts.text = "Number of emails: \(emailCounts)"
+        
+        let yVals = (0..<items.count).map { (i) -> BarChartDataEntry in
 
+            let val = Double(items[i])//Double(arc4random_uniform(UInt32(mult))) + mult/3
+            return BarChartDataEntry(x: Double(i), y: val)
+        }
+        
+        var set1: BarChartDataSet! = nil
+        if let set = chartView.data?.dataSets.first as? BarChartDataSet {
+            set1 = set
+            set1?.replaceEntries(yVals)
+            chartView.data?.notifyDataChanged()
+            chartView.notifyDataSetChanged()
+        } else {
+            set1 = BarChartDataSet(entries: yVals, label: "Data Set")
+            set1.colors = ChartColorTemplates.vordiplom()
+            set1.drawValuesEnabled = false
+            
+            let data = BarChartData(dataSet: set1)
+            chartView.data = data
+            chartView.fitBars = true
+        }
+        
+        chartView.setNeedsDisplay()
+    }
+}
+
+extension CustomDashLion : DBSaleChart {
+    func setupPieChartView(chartView: PieChartView) {
+        
+        chartView.usePercentValuesEnabled = true
+        chartView.drawSlicesUnderHoleEnabled = false
+        chartView.holeRadiusPercent = 0.3
+        chartView.transparentCircleRadiusPercent = 0.61
+        chartView.chartDescription?.enabled = false
+        chartView.setExtraOffsets(left: 0, top: 0, right: 0, bottom: 0)
+        
+        chartView.drawCenterTextEnabled = true
+        
+        let paragraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
+        paragraphStyle.lineBreakMode = .byTruncatingTail
+        paragraphStyle.alignment = .center
+        
+        let items = [10, 20, 30, 40, 50, 60, 70]
+
+        var saleCounts : Int = 0
+        
+        items.forEach { (val) in
+            saleCounts += val
+        }
+        
+        let centerText = NSMutableAttributedString(string: "\(saleCounts) Sales")
+        
+        centerText.setAttributes([.font : UIFont(name: "HelveticaNeue-Light", size: 7)!,
+                                  .paragraphStyle : paragraphStyle], range: NSRange(location: 0, length: centerText.length))
+        
+        chartView.centerAttributedText = centerText;
+        
+        chartView.drawHoleEnabled = true
+        chartView.rotationAngle = 0
+        chartView.rotationEnabled = true
+        chartView.highlightPerTapEnabled = true
+        
+        let l = chartView.legend
+        l.horizontalAlignment = .right
+        l.verticalAlignment = .top
+        l.orientation = .vertical
+        l.drawInside = false
+        l.xEntrySpace = 7
+        l.yEntrySpace = 0
+        l.yOffset = 0
+        
+        
+        // entry label styling
+        chartView.entryLabelColor = .white
+        chartView.entryLabelFont = .systemFont(ofSize: 10, weight: .light)
+        
+        chartView.animate(xAxisDuration: 1.4, easingOption: .easeOutBack)
+        
+        setPieDataCount(items)
+    }
+    
+    func setPieDataCount(_ items : Array<Int>) {
+
+        
+        let entries = (0..<items.count).map { (i) -> PieChartDataEntry in
+            // IMPORTANT: In a PieChart, no values (Entry) should have the same xIndex (even if from different DataSets), since no values can be drawn above each other.
+            return PieChartDataEntry(value: Double(items[i]),
+                                     label: "Bank \(i)",
+                                     icon: #imageLiteral(resourceName: "menu_dashboards"))
+        }
+        
+        let set = PieChartDataSet(entries: entries)
+        set.drawIconsEnabled = false
+        set.sliceSpace = 1
+        
+        
+        set.colors = ChartColorTemplates.vordiplom()
+            + ChartColorTemplates.joyful()
+            + ChartColorTemplates.colorful()
+            + ChartColorTemplates.liberty()
+            + ChartColorTemplates.pastel()
+            + [UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)]
+        
+        let data = PieChartData(dataSet: set)
+        
+        let pFormatter = NumberFormatter()
+        pFormatter.numberStyle = .percent
+        pFormatter.maximumFractionDigits = 1
+        pFormatter.multiplier = 1
+        pFormatter.percentSymbol = " %"
+        data.setValueFormatter(DefaultValueFormatter(formatter: pFormatter))
+        
+        data.setValueFont(.systemFont(ofSize: 11, weight: .light))
+        data.setValueTextColor(.white)
+        
+        chartPieView.data = data
+        
+        chartPieView.setNeedsDisplay()
+//        chartView.highlightValues(nil)
+    }
+    
+    
 }

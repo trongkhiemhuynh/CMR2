@@ -15,7 +15,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="scd-i2-0le">
-                    <rect key="frame" x="0.0" y="563.5" width="414" height="298.5"/>
+                    <rect key="frame" x="0.0" y="617" width="414" height="245"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MoF-zo-QQG">
                             <rect key="frame" x="176" y="8" width="62" height="9"/>
@@ -26,8 +26,11 @@
                             </constraints>
                         </imageView>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b6x-OP-NCN">
-                            <rect key="frame" x="0.0" y="30" width="414" height="198.5"/>
+                            <rect key="frame" x="0.0" y="25" width="414" height="150"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="150" id="ujv-Fe-g8k"/>
+                            </constraints>
                             <connections>
                                 <outlet property="dataSource" destination="iN0-l3-epB" id="Dqp-ge-XJ0"/>
                                 <outlet property="delegate" destination="iN0-l3-epB" id="7dd-fE-mqy"/>
@@ -37,7 +40,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="b6x-OP-NCN" secondAttribute="trailing" id="GGW-8Z-oew"/>
-                        <constraint firstItem="b6x-OP-NCN" firstAttribute="top" secondItem="scd-i2-0le" secondAttribute="top" constant="30" id="MoB-39-UMm"/>
+                        <constraint firstItem="b6x-OP-NCN" firstAttribute="top" secondItem="MoF-zo-QQG" secondAttribute="bottom" constant="8" id="Njq-gp-L8F"/>
                         <constraint firstItem="b6x-OP-NCN" firstAttribute="leading" secondItem="scd-i2-0le" secondAttribute="leading" id="ZAB-JS-Kji"/>
                         <constraint firstAttribute="bottom" secondItem="b6x-OP-NCN" secondAttribute="bottom" constant="70" id="gFs-hn-zaA"/>
                         <constraint firstItem="MoF-zo-QQG" firstAttribute="top" secondItem="scd-i2-0le" secondAttribute="top" constant="8" id="joq-s5-nz3"/>
@@ -45,13 +48,12 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SWh-6I-CXF">
-                    <rect key="frame" x="0.0" y="44" width="414" height="519.5"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="573"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="scd-i2-0le" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="1/3" id="3fR-v9-rKj"/>
                 <constraint firstItem="scd-i2-0le" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="7Uo-mu-r2L"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="scd-i2-0le" secondAttribute="trailing" id="9kI-eX-eFX"/>
                 <constraint firstItem="scd-i2-0le" firstAttribute="top" secondItem="SWh-6I-CXF" secondAttribute="bottom" id="KxN-vT-goe"/>

@@ -99,6 +99,12 @@ class DashboardController: BaseViewController {
         notiView.frame = CGRect(x: 0, y: 0, width: widthScreen, height: heightScreen-70)
         
         view.addSubview(notiView)
+        
+        UIView.animateKeyframes(withDuration: 0.35, delay: 0.1, options: .allowUserInteraction, animations: {
+            self.view.layoutIfNeeded()
+        }) { (success) in
+            Logger.info(notiView)
+        }
     }
 
 }

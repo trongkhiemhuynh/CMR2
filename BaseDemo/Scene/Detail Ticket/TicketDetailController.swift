@@ -17,7 +17,6 @@ class TicketDetailController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         vTitle.lblTitle.text = "Ticket Information"
     }
 
@@ -31,8 +30,6 @@ class TicketDetailController: BaseViewController {
         addChild(infoVC)
         
         add(infoVC, contentView: vInfo)
-        
-        print("debug --- \(vInfo.frame) -- window -- \(UIScreen.main.bounds)")
         
         NotificationCenter.default.addObserver(forName: .DetailTicketTab, object: nil, queue: nil) { (notif) in
             
@@ -57,28 +54,21 @@ class TicketDetailController: BaseViewController {
     }
     
     @IBAction func actionExtend() {
-
-        // MARK: FIXME
-        
-        let vExtend = Bundle.main.loadNibNamed("TicketDetailExtendView", owner: self, options: nil)?.first as! TicketDetailExtendView
+        let vExtend = TicketDetailExtendView.xibInstance()
         vExtend.frame = view.bounds
         
         let topViewController = UIApplication.getTopViewController()
         topViewController?.view.addSubview(vExtend)
         
-//        self.view.addSubview(vExtend)
-//        
-//        UIView.animateKeyframes(withDuration: 0.35, delay: 0.0, options: .calculationModeLinear, animations: {
-//            self.view.layoutIfNeeded()
-//        }) { (success) in
-//            print("showed")
-//        }
+        UIView.animate(withDuration: 0.35, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .transitionCurlUp, animations: {
+            self.view.layoutIfNeeded()
+        }) { (show) in
+            if show {
+                Logger.info(vExtend)
+            }
+        }
         
-        
-//        vTest.frame = CGRect(origin: view.center, size: CGSize(width: 200, height: 200))
-        
-//        view.addSubview(vTest)
-        
+        ApplicationManager.sharedInstance.mainTabbar?.customTabbar.isHidden = true
     }
     
     /*

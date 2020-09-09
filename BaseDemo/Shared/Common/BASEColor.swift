@@ -22,7 +22,7 @@ struct BASEColor {
         return UIColor(hex: "#044743")
     }
     
-    static func ShadowCellColor() -> UIColor? {
+    static func CellShadowColor() -> UIColor? {
         return UIColor(hex: "#d6d6d6")
     }
 
