@@ -139,7 +139,7 @@ extension DashboardController : SideMenuNavigationControllerDelegate {
             
             switch itemMenu {
             case .ticket:
-                nav?.pushViewController(TicketViewController(), animated: true)
+                nav?.pushViewController(TicketController(), animated: true)
             default:
                 print("hello")
             }

@@ -8,11 +8,14 @@
 
 import UIKit
 
+protocol CustomListViewOutput : class {
+    func didChangeSort(with name : String?)
+    func didSelectItem(with id : String)
+}
+
 class CustomListView: BaseView {
 
-    private let itemsPerRow: CGFloat = 1
-    private let heightCell : CGFloat = 80
-    
+    // outlet
     @IBOutlet weak var lblCount : UILabel!
 
     @IBOutlet weak var btnSorted : UIButton!
@@ -21,6 +24,19 @@ class CustomListView: BaseView {
     
     @IBOutlet weak var cvList : UICollectionView!
     @IBOutlet weak var vBgList : UIView!
+    
+    // variable
+    weak var delegate : CustomListViewOutput?
+    public var controller : TicketController?
+    
+    private let itemsPerRow: CGFloat = 1
+    private let heightCell : CGFloat = 80
+    
+    var dummyData : [String:Any] = ["New" : ["HUYNH","HUYNH","HUYNH","HUYNH","HUYNH","HUYNH","HUYNH"], "Processing": ["KHIEM","KHIEM","KHIEM","KHIEM","KHIEM","KHIEM","KHIEM"], "Escalated": ["TRONG","TRONG","TRONG","TRONG","TRONG","TRONG","TRONG"], "Pending":["DAT","DAT","DAT","DAT","DAT","DAT","DAT"], "Upcoming":["DUC","DUC","DUC","DUC","DUC","DUC","DUC"]]
+    
+    lazy var arrDummy : [String]? = {
+        return dummyData["New"] as? Array<String>
+    }()
     
     override func commonInit() {
         Bundle.main.loadNibNamed("CustomListView", owner: self, options: nil)
@@ -38,21 +54,28 @@ class CustomListView: BaseView {
         vContent.backgroundColor = BASEColor.BackgroundListColor()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        controller?.delegate = self
+    }
+    
     @IBAction func changeSort() {
-        NotificationCenter.default.post(name: .ChangeSort, object: nil)
+        delegate?.didChangeSort(with: btnSorted.titleLabel?.text)
     }
 
 }
 
 extension CustomListView : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return arrDummy?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomTicketCollectionViewCell.identifier, for: indexPath) as! CustomTicketCollectionViewCell
         
-        cell.updateData(TicketListModel(name: "Nguyen", id: "123456", status: "Support"))
+        let name = arrDummy?[indexPath.row]
+        
+        cell.updateData(TicketListModel(name: name!, id: "7878787878", status: "Done"))
         
         return cell
     }
@@ -60,7 +83,7 @@ extension CustomListView : UICollectionViewDataSource {
 
 extension CustomListView : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        NotificationCenter.default.post(name: .DetailTicket, object: nil)
+        delegate?.didSelectItem(with: "id_user")
     }
 }
 
@@ -82,5 +105,12 @@ extension CustomListView : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsetsDefault.left
+    }
+}
+
+extension CustomListView : CustomListViewInput {
+    func updateListView(with stage: String) {
+        arrDummy = dummyData[stage] as? Array
+        cvList.reloadData()
     }
 }

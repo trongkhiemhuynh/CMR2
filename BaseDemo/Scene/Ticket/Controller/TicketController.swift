@@ -9,13 +9,18 @@
 import UIKit
 import Alamofire
 
-class TicketViewController: BaseViewController {
+protocol CustomListViewInput: class {
+    func updateListView(with stage : String)
+}
 
-//    var pageMenu : CAPSPageMenu?
-
-    @IBOutlet weak var vListView : CustomListView!
+class TicketController: BaseViewController {
     
+    @IBOutlet weak var vListView : CustomListView!
+    @IBOutlet weak var vStage : CustomTicketStageView!
     @IBOutlet weak var vTicket : UIView!
+    
+    // delegate
+    weak var delegate : CustomListViewInput?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,21 +32,9 @@ class TicketViewController: BaseViewController {
         super.setupView()
         vTicket.backgroundColor = .red
         
-        NotificationCenter.default.addObserver(forName: .StageName, object: nil, queue: nil) { (notif) in
-            
-            self.addAlertLoading()
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.dismissAlertLoading()
-            }
-            
-        }
-        
-        NotificationCenter.default.addObserver(forName: .DetailTicket, object: nil, queue: nil, using: { (noti) in
-
-            RouterManager.shared.handleRouter(TicketDetailRoute())
-            
-        })
+        vListView.delegate = self
+        vStage.delegate = self
+        vListView.controller = self
     }
     
     override func initData() {
@@ -149,6 +142,39 @@ class TicketViewController: BaseViewController {
 
 }
 
-extension TicketViewController : XibInitalization {
-    typealias Element = TicketViewController
+extension TicketController : XibInitalization {
+    typealias Element = TicketController
+}
+
+extension TicketController : CustomListViewOutput {
+    func didChangeSort(with name: String?) {
+        let vSort = SortContactsView.xibInstance()
+        view.addSubview(vSort)
+        vSort.frame = view.frame
+        vSort.delegate = self
+    }
+    
+    func didSelectItem(with id: String) {
+        RouterManager.shared.handleRouter(TicketDetailRoute())
+    }
+}
+
+extension TicketController : CustomTicketStageViewOutput {
+    func didChangeStage(name: String) {
+        // reload collection view
+        self.addAlertLoading()
+        
+        delegate?.updateListView(with: name)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            
+            self.dismissAlertLoading()
+        }
+    }
+}
+
+extension TicketController : SortContactsViewOutput {
+    func didSelect(item: String) {
+        vListView.btnSorted.setTitle(item, for: .normal)
+    }
 }

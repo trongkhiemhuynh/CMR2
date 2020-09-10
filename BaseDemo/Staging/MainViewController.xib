@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -30,7 +28,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="i8K-OU-jzp"/>
                 </viewController>
-                <viewController title="Ticket" nibName="TicketViewController" id="Tag-mi-KWn" customClass="TicketViewController" customModule="BaseDemo" customModuleProvider="target">
+                <viewController title="Ticket" nibName="TicketViewController" id="Tag-mi-KWn" customClass="TicketController" customModule="BaseDemo" customModuleProvider="target">
                     <view key="view" contentMode="scaleToFill" id="zEq-ph-M5O">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

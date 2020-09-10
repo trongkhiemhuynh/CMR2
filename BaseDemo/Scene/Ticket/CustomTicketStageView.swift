@@ -8,26 +8,31 @@
 
 import UIKit
 
+protocol CustomTicketStageViewOutput: class {
+    func didChangeStage(name: String)
+}
+
 class CustomTicketStageView: BaseView {
 
+    // delegate
+    weak var delegate: CustomTicketStageViewOutput?
+    
+    // outlet
     @IBOutlet weak var cvStage: UICollectionView!
 
+    // private variable
     private let itemsPerRow: CGFloat = 3
-    private let heightCell : CGFloat = 60
+    private let heightCell: CGFloat = 60
     private let arrStage = ["New", "Processing", "Escalated", "Pending", "Upcoming"]
-    
-//    private let mockup = ["New":true, "Processing":false, "Escalated":false, "Pending":false, "Upcoming":false]
-    
     private var preIdx = IndexPath(row: 0, section: 0)
     
     override func commonInit() {
         Bundle.main.loadNibNamed("CustomTicketStageView", owner: self, options: nil)
         vContent.frame = self.bounds
         addSubview(vContent)
+        
         cvStage.backgroundColor = .white
-        
         cvStage.registerCell(CustomTicketStageCollectionViewCell.self)
-        
     }
 
 }
@@ -43,13 +48,8 @@ extension CustomTicketStageView : UICollectionViewDataSource {
         let strStage = arrStage[indexPath.row]
         
         cell.lblStage.text = strStage
-        if indexPath == preIdx {
-            cell.lblStage.font = UIFont.boldSystemFont(ofSize: 20.0)
-            cell.imgStage.isHidden = false
-        } else {
-            cell.lblStage.font = UIFont.systemFont(ofSize: 20.0, weight: .light)
-            cell.imgStage.isHidden = true
-        }
+
+        updateStatusStageTicket(cell, indexPath, indexPath == preIdx)
         
         return cell
     }
@@ -77,25 +77,39 @@ extension CustomTicketStageView : UICollectionViewDelegateFlowLayout {
 }
 
 extension CustomTicketStageView : UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        if indexPath != preIdx {
-            
-            let pCell = collectionView.cellForItem(at: preIdx) as? CustomTicketStageCollectionViewCell
-            
-            pCell?.imgStage.isHidden = true
-            pCell?.lblStage.font = UIFont.systemFont(ofSize: 20.0, weight: .light)
-            
-            preIdx = indexPath
-            
-            let cell = collectionView.cellForItem(at: indexPath) as? CustomTicketStageCollectionViewCell
-            
+    fileprivate func updateStatusStageTicket(_ cell: CustomTicketStageCollectionViewCell,_ indexPath: IndexPath,_ isSelected : Bool) {
+        if isSelected {
+            // currently selection
+
             // update title bold and image bottom line
-            cell?.imgStage.isHidden = false
-            cell?.lblStage.font = UIFont.boldSystemFont(ofSize: 20.0)
+            cell.imgStage.isHidden = false
+            cell.lblStage.font = UIFont.boldSystemFont(ofSize: 18.0)
+            cell.lblStage.textColor = BASEColor.MainAppColor()
+        } else {
+            // previously selection
+
+            cell.imgStage.isHidden = true
+            cell.lblStage.font = UIFont.systemFont(ofSize: 16.0, weight: .light)
+            cell.lblStage.textColor = BASEColor.TextTitleColor
         }
         
-        NotificationCenter.default.post(name: .StageName, object: nil)
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath != preIdx {
+            let cell = collectionView.cellForItem(at: indexPath) as! CustomTicketStageCollectionViewCell
+            
+            updateStatusStageTicket(cell,indexPath, true)
+            updateStatusStageTicket(cell,preIdx, false)
+
+            cvStage.reloadItems(at: [indexPath])
+            // update index
+            preIdx = indexPath
+            
+            let nameStage = cell.lblStage.text
+            
+            delegate?.didChangeStage(name: nameStage!)
+        }
     }
 }

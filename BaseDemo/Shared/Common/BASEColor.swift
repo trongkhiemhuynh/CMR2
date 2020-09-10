@@ -25,5 +25,9 @@ struct BASEColor {
     static func CellShadowColor() -> UIColor? {
         return UIColor(hex: "#d6d6d6")
     }
+    
+    static var TextTitleColor : UIColor {
+        return UIColor(hex: "#707070")!
+    }
 
 }

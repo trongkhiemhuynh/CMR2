@@ -9,13 +9,13 @@
 import Foundation
 
 class TicketRoute : Router {
-    typealias Element = TicketViewController
+    typealias Element = TicketController
     
-    private lazy var _viewController : TicketViewController = {
-        return TicketViewController.xibInstance()
+    private lazy var _viewController : TicketController = {
+        return TicketController.xibInstance()
     }()
     
-    var viewController: TicketViewController {
+    var viewController: TicketController {
         return _viewController
     }
     

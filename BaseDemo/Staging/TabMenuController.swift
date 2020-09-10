@@ -26,7 +26,7 @@ class TabMenuController : BaseViewController {
         
         // controller
         dashVC = DashboardController()
-        ticketVC = TicketViewController()
+        ticketVC = TicketController()
         
         self.addChild(dashVC)
         self.addChild(ticketVC)

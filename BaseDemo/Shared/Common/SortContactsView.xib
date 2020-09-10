@@ -37,6 +37,10 @@
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r6K-tT-XM7">
                             <rect key="frame" x="0.0" y="64" width="335" height="533"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <connections>
+                                <outlet property="dataSource" destination="iN0-l3-epB" id="YTS-5a-66f"/>
+                                <outlet property="delegate" destination="iN0-l3-epB" id="lqY-jr-SZa"/>
+                            </connections>
                         </tableView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNl-4H-nRq">
                             <rect key="frame" x="281" y="561" width="36" height="36"/>
@@ -45,6 +49,9 @@
                                 <constraint firstAttribute="width" constant="36" id="tzz-2Y-bvO"/>
                             </constraints>
                             <state key="normal" image="back"/>
+                            <connections>
+                                <action selector="didBack" destination="iN0-l3-epB" eventType="touchUpInside" id="tdb-9X-OxK"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -69,6 +76,9 @@
                 <constraint firstItem="QRS-iL-BcH" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="fHT-aq-49O"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="tv" destination="r6K-tT-XM7" id="8xH-OH-U9F"/>
+            </connections>
             <point key="canvasLocation" x="139" y="115"/>
         </view>
     </objects>
