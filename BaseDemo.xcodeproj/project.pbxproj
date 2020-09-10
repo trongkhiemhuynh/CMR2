@@ -67,6 +67,13 @@
 		224EBAF524F5068100CB676F /* ExtendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 224EBAF324F5068100CB676F /* ExtendCollectionViewCell.xib */; };
 		224EBAF824F50EDA00CB676F /* NewTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224EBAF624F50EDA00CB676F /* NewTicketViewController.swift */; };
 		224EBAF924F50EDA00CB676F /* NewTicketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 224EBAF724F50EDA00CB676F /* NewTicketViewController.xib */; };
+		226D933D2509FF2500457AD5 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D933B2509FF2500457AD5 /* FilterCollectionViewCell.swift */; };
+		226D933E2509FF2500457AD5 /* FilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226D933C2509FF2500457AD5 /* FilterCollectionViewCell.xib */; };
+		226D9340250A0F1100457AD5 /* MagicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D933F250A0F1100457AD5 /* MagicCollectionView.swift */; };
+		226D9343250A0F5300457AD5 /* MagicCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226D9342250A0F5300457AD5 /* MagicCollectionView.xib */; };
+		226D9345250A0FBB00457AD5 /* MagicCollectionViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D9344250A0FBB00457AD5 /* MagicCollectionViewDatasource.swift */; };
+		226D9348250A180000457AD5 /* MagicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D9346250A180000457AD5 /* MagicCollectionViewCell.swift */; };
+		226D9349250A180000457AD5 /* MagicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226D9347250A180000457AD5 /* MagicCollectionViewCell.xib */; };
 		2270236A24F8AE46002C06AC /* UICollectionView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2270236924F8AE46002C06AC /* UICollectionView+Register.swift */; };
 		2270236C24F8AE5E002C06AC /* UITableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2270236B24F8AE5E002C06AC /* UITableView+Register.swift */; };
 		2270236E24F8AE79002C06AC /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2270236D24F8AE79002C06AC /* Identifier.swift */; };
@@ -274,6 +281,13 @@
 		224EBAF324F5068100CB676F /* ExtendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExtendCollectionViewCell.xib; sourceTree = "<group>"; };
 		224EBAF624F50EDA00CB676F /* NewTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketViewController.swift; sourceTree = "<group>"; };
 		224EBAF724F50EDA00CB676F /* NewTicketViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTicketViewController.xib; sourceTree = "<group>"; };
+		226D933B2509FF2500457AD5 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		226D933C2509FF2500457AD5 /* FilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCollectionViewCell.xib; sourceTree = "<group>"; };
+		226D933F250A0F1100457AD5 /* MagicCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCollectionView.swift; sourceTree = "<group>"; };
+		226D9342250A0F5300457AD5 /* MagicCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MagicCollectionView.xib; sourceTree = "<group>"; };
+		226D9344250A0FBB00457AD5 /* MagicCollectionViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCollectionViewDatasource.swift; sourceTree = "<group>"; };
+		226D9346250A180000457AD5 /* MagicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCollectionViewCell.swift; sourceTree = "<group>"; };
+		226D9347250A180000457AD5 /* MagicCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MagicCollectionViewCell.xib; sourceTree = "<group>"; };
 		2270236924F8AE46002C06AC /* UICollectionView+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Register.swift"; sourceTree = "<group>"; };
 		2270236B24F8AE5E002C06AC /* UITableView+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Register.swift"; sourceTree = "<group>"; };
 		2270236D24F8AE79002C06AC /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
@@ -650,6 +664,17 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
+		226D9341250A0F1600457AD5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4BE6314524DA9CC000D9133C /* Info.plist */,
+				4BE6313924DA9CBB00D9133C /* AppDelegate.swift */,
+				4BE6314024DA9CC000D9133C /* Assets.xcassets */,
+				4BE6314224DA9CC000D9133C /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		2270236324F8ACAA002C06AC /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -880,14 +905,18 @@
 		4B2D4BF724DD28C000CABF1D /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				4BE6313924DA9CBB00D9133C /* AppDelegate.swift */,
-				4BE6314024DA9CC000D9133C /* Assets.xcassets */,
-				4BE6314224DA9CC000D9133C /* LaunchScreen.storyboard */,
-				4BE6314524DA9CC000D9133C /* Info.plist */,
+				226D9341250A0F1600457AD5 /* Resources */,
 				22802DE924FE049200429518 /* FilterView.swift */,
 				22802DEB24FE04A500429518 /* FilterView.xib */,
 				22802DEF24FE1DD900429518 /* CalendarView.swift */,
 				22802DF124FE1DF300429518 /* CalendarView.xib */,
+				226D933B2509FF2500457AD5 /* FilterCollectionViewCell.swift */,
+				226D933C2509FF2500457AD5 /* FilterCollectionViewCell.xib */,
+				226D933F250A0F1100457AD5 /* MagicCollectionView.swift */,
+				226D9342250A0F5300457AD5 /* MagicCollectionView.xib */,
+				226D9344250A0FBB00457AD5 /* MagicCollectionViewDatasource.swift */,
+				226D9346250A180000457AD5 /* MagicCollectionViewCell.swift */,
+				226D9347250A180000457AD5 /* MagicCollectionViewCell.xib */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1183,6 +1212,7 @@
 				224326E22507394E005AE588 /* MenuCollectionViewCell.xib in Resources */,
 				C2E857F224F3A886002960A2 /* TabNavigationMenu.xib in Resources */,
 				224EBAF924F50EDA00CB676F /* NewTicketViewController.xib in Resources */,
+				226D933E2509FF2500457AD5 /* FilterCollectionViewCell.xib in Resources */,
 				C2E857F624F3B975002960A2 /* TicketDetailExtendView.xib in Resources */,
 				4B28018924ECE830007647F8 /* TicketController.xib in Resources */,
 				4B166C2D24ED0D140030C592 /* TicketDetailInputInfoCollectionViewCell.xib in Resources */,
@@ -1194,6 +1224,7 @@
 				4B28017824ECC2B5007647F8 /* SplashViewController.xib in Resources */,
 				C2E857E224F36C06002960A2 /* InfoTicketRow.xib in Resources */,
 				4B166C2924ED07EF0030C592 /* TicketDetailInfoViewController.xib in Resources */,
+				226D9349250A180000457AD5 /* MagicCollectionViewCell.xib in Resources */,
 				C2E857F024F39CF6002960A2 /* TabbarItem.xib in Resources */,
 				C23F629B24EF25F500E37560 /* CustomDetailActionView.xib in Resources */,
 				C22FEA9E24FC1935009D9219 /* ProfileViewController.xib in Resources */,
@@ -1205,6 +1236,7 @@
 				4B166C3E24EE5C150030C592 /* CustomTitleView.xib in Resources */,
 				4B166C2324ECFD620030C592 /* TabMenuController.xib in Resources */,
 				C2E857EA24F39744002960A2 /* NavigationMenuBaseController.xib in Resources */,
+				226D9343250A0F5300457AD5 /* MagicCollectionView.xib in Resources */,
 				4B166C5324EF65FD0030C592 /* CustomDetailTabView.xib in Resources */,
 				4B166C3124ED0D690030C592 /* TicketDetailActivityViewController.xib in Resources */,
 				4B166C4924EE6A340030C592 /* CustomTicketCollectionViewCell.xib in Resources */,
@@ -1382,6 +1414,7 @@
 				22802DF024FE1DD900429518 /* CalendarView.swift in Sources */,
 				224326F225077A81005AE588 /* MenuViewController.swift in Sources */,
 				224346D624FCE05F00CF7AA3 /* Logger.swift in Sources */,
+				226D9340250A0F1100457AD5 /* MagicCollectionView.swift in Sources */,
 				C23F629924EF228100E37560 /* CustomDetailActionView.swift in Sources */,
 				C22FEA9624FC0E01009D9219 /* Constants.swift in Sources */,
 				4BE6316924DAA7ED00D9133C /* SplashViewController.swift in Sources */,
@@ -1395,11 +1428,13 @@
 				4BE6313C24DA9CBB00D9133C /* LoginController.swift in Sources */,
 				C2E857EC24F397A9002960A2 /* TabNavigationMenu.swift in Sources */,
 				224346D824FCE0C100CF7AA3 /* ApplicationManager.swift in Sources */,
+				226D9348250A180000457AD5 /* MagicCollectionViewCell.swift in Sources */,
 				222B5FCA24F76CE600419452 /* CustomDashLeopard.swift in Sources */,
 				4B166C3024ED0D690030C592 /* TicketDetailActivityViewController.swift in Sources */,
 				229A55232500E6F1008A0ECD /* FetchLoginWorker.swift in Sources */,
 				224EBAF824F50EDA00CB676F /* NewTicketViewController.swift in Sources */,
 				22802DEA24FE049200429518 /* FilterView.swift in Sources */,
+				226D9345250A0FBB00457AD5 /* MagicCollectionViewDatasource.swift in Sources */,
 				224346CF24FCD45100CF7AA3 /* Networking.swift in Sources */,
 				C2E857EE24F39CE7002960A2 /* TabbarItem.swift in Sources */,
 				224327042509C8F9005AE588 /* SortContactsViewCell.swift in Sources */,
@@ -1462,6 +1497,7 @@
 				229A55292500E750008A0ECD /* LoginInteractor.swift in Sources */,
 				222B5FCE24F76E7800419452 /* CustomDashLion.swift in Sources */,
 				224346C724FCB5CF00CF7AA3 /* MainReducer.swift in Sources */,
+				226D933D2509FF2500457AD5 /* FilterCollectionViewCell.swift in Sources */,
 				224346DA24FCF4D100CF7AA3 /* SwipeableCollectionViewCell.swift in Sources */,
 				C2E857F424F3B95F002960A2 /* TicketDetailExtendView.swift in Sources */,
 				4B166C2224ECFD620030C592 /* TabMenuController.swift in Sources */,
@@ -1642,7 +1678,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = BaseDemo/Helper/Info.plist;
+				INFOPLIST_FILE = BaseDemo/Helper/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1666,7 +1702,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = BaseDemo/Helper/Info.plist;
+				INFOPLIST_FILE = BaseDemo/Helper/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

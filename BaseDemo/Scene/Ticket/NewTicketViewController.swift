@@ -50,7 +50,6 @@ class NewTicketViewController: BaseViewController {
     }
     
     @IBAction func save() {
-
         UIView.animate(withDuration: 0.35, delay: 0.0, options: .transitionFlipFromBottom, animations: {
             if let vConfirm = Bundle.main.loadNibNamed("PopupView", owner: self, options: nil)?.last as? PopUpConfirm {
                 self.view.addSubview(vConfirm)
@@ -99,7 +98,7 @@ extension NewTicketViewController : UICollectionViewDelegate {
         guard let cell = collectionView.cellForItem(at: indexPath) as? TicketDetailInputInfoCollectionViewCell else { return }
         
         if (cell.lbl.text?.lowercased().contains("date"))! {
-            vCal = Bundle.main.loadNibNamed("CalendarView", owner: self, options: nil)?.first as? CalendarView
+            vCal = CalendarView.xibInstance()
             vCal?.fsCalendar.delegate = self
             view.addSubview(vCal!)
             vCal?.frame = view.bounds

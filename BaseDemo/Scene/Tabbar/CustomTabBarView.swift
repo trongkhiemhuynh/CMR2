@@ -9,15 +9,6 @@
 import UIKit
 
 class CustomTabBarView: UIView {
-
-    
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
     
     @IBOutlet weak var btnHome : UIButton!
     @IBOutlet weak var btnProfile : UIButton!
@@ -119,5 +110,8 @@ class CustomTabBarView: UIView {
         activeItem = tab
         itemTapped!(tab)
     }
+}
 
+extension CustomTabBarView : XibInitalization {
+    typealias Element = CustomTabBarView
 }

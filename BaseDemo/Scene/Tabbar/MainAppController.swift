@@ -25,10 +25,13 @@ class MainAppController: UITabBarController {
         
         self.selectedIndex = 0
         
-        customTabbar = Bundle.main.loadNibNamed("CustomTabBarView", owner: self, options: nil)?.first as? CustomTabBarView
+        customTabbar = CustomTabBarView.xibInstance()
         self.view.addSubview(customTabbar!)
+        
         customTabbar?.frame = CGRect(x: 0, y: heightScreen - tabBarHeight, width: widthScreen, height: tabBarHeight)
+        
         customTabbar?.itemTapped = changeTab(tab:)
+        
         // load controller
         var controllers = [UIViewController]()
         for i in 0 ..< tabItems.count {

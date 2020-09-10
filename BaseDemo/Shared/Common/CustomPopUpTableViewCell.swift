@@ -29,3 +29,7 @@ class CustomPopUpTableViewCell: UITableViewCell {
         lbl.text = title
     }
 }
+
+extension CustomPopUpTableViewCell : XibInitalization {
+    typealias Element = CustomPopUpTableViewCell
+}

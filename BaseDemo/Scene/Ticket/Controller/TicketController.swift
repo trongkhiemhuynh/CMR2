@@ -71,17 +71,9 @@ class TicketController: BaseViewController {
     }
     
     @IBAction func actionNewTicket(sender : UIButton?) {
-        
-         print("--------- ", #function)
-        
-//        let newV = Bundle.main.loadNibNamed("CreatNewTicketView", owner: self, options: nil)?.first as! CreatNewTicketView
-//        newV.frame = view.bounds
-//        view.addSubview(newV)
-        
         let vc = NewTicketViewController()
         
         navigationController?.pushViewController(vc, animated: false)
-
     }
     
     override func viewDidAppear(_ animated: Bool) {

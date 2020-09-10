@@ -26,3 +26,7 @@ class CalendarView: UIView {
     */
 
 }
+
+extension CalendarView: XibInitalization {
+    typealias Element = CalendarView
+}

@@ -21,12 +21,9 @@ class CustomTitleView: BaseView {
     @IBOutlet weak var vSearch : UIView!
     
     @IBAction func actionFilter(_ sender: UIButton) {
-        
-        let vFilter = Bundle.main.loadNibNamed("FilterView", owner: self, options: nil)?.first as? FilterView
-        
-        guard let v = vFilter else {return}
-        superview?.addSubview(v)
-        v.frame = superview!.bounds
+        let vFilter = FilterView.xibInstance()
+        superview?.addSubview(vFilter)
+        vFilter.frame = superview!.bounds
     }
 
     @IBAction func actionSearch(_ sender: UIButton) {
@@ -34,6 +31,8 @@ class CustomTitleView: BaseView {
         
         if vSearch.isHidden {
             endEditing(true)
+        } else {
+            endEditing(false)
         }
     }
     
@@ -48,17 +47,13 @@ class CustomTitleView: BaseView {
         Bundle.main.loadNibNamed("CustomTitleView", owner: self, options: nil)
         addSubview(vContent)
         vContent.frame = self.bounds
-//        vContent.autoresizingMask = [.flexibleHeight,.flexibleWidth]
-        vSearch.isHidden = true
-
-        tfSearch.placeholder = "Search ..."
         
+        vSearch.isHidden = true
+        tfSearch.placeholder = "Search ..."
     }
     
     override class func awakeFromNib() {
         super.awakeFromNib()
-        
-        print("---khiemht",#line,#function)
     }
     /*
     // Only override draw() if you perform custom drawing.
@@ -72,15 +67,15 @@ class CustomTitleView: BaseView {
 
 extension CustomTitleView : UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        print(textField.text)
+        Logger.debug(textField.text!)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        print(textField.text)
+        Logger.debug(textField.text!)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print(textField.text)
+        Logger.debug(textField.text!)
         
         return true
     }

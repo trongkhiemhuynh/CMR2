@@ -29,9 +29,7 @@ class CustomDetailActionView: BaseView {
     
     // MARK: FIXME
     @IBAction func actionMore() {
-        
-        popupView = Bundle.main.loadNibNamed("PopupView", owner: self, options: nil)?.first as? PopupView
-        
+        popupView = PopupView.xibInstance()
         popupView?.frame = CGRect(x: 0, y: 0, width: widthScreen, height: heightScreen)
         
         self.superview?.addSubview(popupView!)

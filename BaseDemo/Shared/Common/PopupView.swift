@@ -22,20 +22,15 @@ class PopupView : BaseView {
     @IBOutlet weak var tbl : UITableView!
     @IBOutlet weak var vDismiss : UIView!
     
-    
-    let ID = "popupID"
-//    override func commonInit() {
-//        Bundle.main.loadNibNamed("LoadingView", owner: self, options: nil)
-//        addSubview(vContent)
-//        vContent.frame = self.bounds
-//    }
+    // dummydata
+    private var dummy = ["Change Owner","New Child Ticket", "Email"]
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         self.iv.layer.cornerRadius = 5.0
         
-        self.tbl.register(UINib(nibName: "CustomPopUpTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: ID)
+        self.tbl.register(CustomPopUpTableViewCell.self)
         
         self.tbl.isUserInteractionEnabled = true
         
@@ -64,23 +59,30 @@ class PopupView : BaseView {
 
 extension PopupView : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return dummy.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ID, for: indexPath) as? CustomPopUpTableViewCell
-        cell?.updateData(img: UIImage(named: "setting_selected")!, title: "Change Owner")
+        let cell = tableView.dequeueReusableCell(withIdentifier: CustomPopUpTableViewCell.identifier, for: indexPath) as! CustomPopUpTableViewCell
+        let name = dummy[indexPath.row]
+        cell.updateData(img: UIImage(named: name.lowercased().replacingOccurrences(of: " ", with: "_"))!, title: name)
         
-        return cell!
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return heightDefaultCell
     }
 }
 
 extension PopupView : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("123")
+        let cell = tableView.cellForRow(at: indexPath) as! CustomPopUpTableViewCell
+        
+        Logger.debug(cell.lbl.text!)
     }
+}
+
+extension PopupView : XibInitalization {
+    typealias Element = PopupView
 }

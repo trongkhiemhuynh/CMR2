@@ -24,7 +24,7 @@ class CustomTicketStageView: BaseView {
     private let itemsPerRow: CGFloat = 3
     private let heightCell: CGFloat = 60
     private let arrStage = ["New", "Processing", "Escalated", "Pending", "Upcoming"]
-    private var preIdx = IndexPath(row: 0, section: 0)
+    private var preIndexpath = IndexPath(row: 0, section: 0)
     
     override func commonInit() {
         Bundle.main.loadNibNamed("CustomTicketStageView", owner: self, options: nil)
@@ -49,7 +49,7 @@ extension CustomTicketStageView : UICollectionViewDataSource {
         
         cell.lblStage.text = strStage
 
-        updateStatusStageTicket(cell, indexPath, indexPath == preIdx)
+        updateStatusStageTicket(cell, indexPath, indexPath == preIndexpath)
         
         return cell
     }
@@ -97,15 +97,16 @@ extension CustomTicketStageView : UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath != preIdx {
+        if indexPath != preIndexpath {
             let cell = collectionView.cellForItem(at: indexPath) as! CustomTicketStageCollectionViewCell
+            let preCell = collectionView.cellForItem(at: preIndexpath) as! CustomTicketStageCollectionViewCell
             
             updateStatusStageTicket(cell,indexPath, true)
-            updateStatusStageTicket(cell,preIdx, false)
+            updateStatusStageTicket(preCell,preIndexpath, false)
 
-            cvStage.reloadItems(at: [indexPath])
+            cvStage.reloadItems(at: [indexPath,preIndexpath])
             // update index
-            preIdx = indexPath
+            preIndexpath = indexPath
             
             let nameStage = cell.lblStage.text
             

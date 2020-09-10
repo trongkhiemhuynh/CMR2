@@ -95,8 +95,9 @@ class BaseView: UIView {
         // Drawing code
     }
     */
-    
+    // outlet
     @IBOutlet weak var vContent : UIView!
+    @IBOutlet weak var collectionView : UICollectionView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

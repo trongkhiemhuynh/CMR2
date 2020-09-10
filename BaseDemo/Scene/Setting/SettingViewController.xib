@@ -10,7 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingViewController" customModule="BaseDemo" customModuleProvider="target">
             <connections>
-                <outlet property="vTitle" destination="gIj-dH-wcP" id="896-ku-ctT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,21 +17,7 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gIj-dH-wcP" customClass="CustomTitleView" customModule="BaseDemo" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="44" width="414" height="63"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="63" id="tl3-z9-5g6"/>
-                    </constraints>
-                </view>
-            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="gIj-dH-wcP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Amd-bs-3lR"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gIj-dH-wcP" secondAttribute="trailing" id="Oo8-DP-tSa"/>
-                <constraint firstItem="gIj-dH-wcP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="m3V-tT-toT"/>
-            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="132" y="106"/>
         </view>
