@@ -74,6 +74,8 @@
 		226D9345250A0FBB00457AD5 /* MagicCollectionViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D9344250A0FBB00457AD5 /* MagicCollectionViewDatasource.swift */; };
 		226D9348250A180000457AD5 /* MagicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D9346250A180000457AD5 /* MagicCollectionViewCell.swift */; };
 		226D9349250A180000457AD5 /* MagicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226D9347250A180000457AD5 /* MagicCollectionViewCell.xib */; };
+		226D934C250A30E200457AD5 /* MagicHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D934A250A30E200457AD5 /* MagicHeaderCollectionReusableView.swift */; };
+		226D934D250A30E200457AD5 /* MagicHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226D934B250A30E200457AD5 /* MagicHeaderCollectionReusableView.xib */; };
 		2270236A24F8AE46002C06AC /* UICollectionView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2270236924F8AE46002C06AC /* UICollectionView+Register.swift */; };
 		2270236C24F8AE5E002C06AC /* UITableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2270236B24F8AE5E002C06AC /* UITableView+Register.swift */; };
 		2270236E24F8AE79002C06AC /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2270236D24F8AE79002C06AC /* Identifier.swift */; };
@@ -288,6 +290,8 @@
 		226D9344250A0FBB00457AD5 /* MagicCollectionViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCollectionViewDatasource.swift; sourceTree = "<group>"; };
 		226D9346250A180000457AD5 /* MagicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCollectionViewCell.swift; sourceTree = "<group>"; };
 		226D9347250A180000457AD5 /* MagicCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MagicCollectionViewCell.xib; sourceTree = "<group>"; };
+		226D934A250A30E200457AD5 /* MagicHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		226D934B250A30E200457AD5 /* MagicHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MagicHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		2270236924F8AE46002C06AC /* UICollectionView+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Register.swift"; sourceTree = "<group>"; };
 		2270236B24F8AE5E002C06AC /* UITableView+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Register.swift"; sourceTree = "<group>"; };
 		2270236D24F8AE79002C06AC /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
@@ -917,6 +921,8 @@
 				226D9344250A0FBB00457AD5 /* MagicCollectionViewDatasource.swift */,
 				226D9346250A180000457AD5 /* MagicCollectionViewCell.swift */,
 				226D9347250A180000457AD5 /* MagicCollectionViewCell.xib */,
+				226D934A250A30E200457AD5 /* MagicHeaderCollectionReusableView.swift */,
+				226D934B250A30E200457AD5 /* MagicHeaderCollectionReusableView.xib */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1222,6 +1228,7 @@
 				4B166C4024EE61DA0030C592 /* CustomListView.xib in Resources */,
 				4B28018424ECE5D7007647F8 /* DashboardController.xib in Resources */,
 				4B28017824ECC2B5007647F8 /* SplashViewController.xib in Resources */,
+				226D934D250A30E200457AD5 /* MagicHeaderCollectionReusableView.xib in Resources */,
 				C2E857E224F36C06002960A2 /* InfoTicketRow.xib in Resources */,
 				4B166C2924ED07EF0030C592 /* TicketDetailInfoViewController.xib in Resources */,
 				226D9349250A180000457AD5 /* MagicCollectionViewCell.xib in Resources */,
@@ -1502,6 +1509,7 @@
 				C2E857F424F3B95F002960A2 /* TicketDetailExtendView.swift in Sources */,
 				4B166C2224ECFD620030C592 /* TabMenuController.swift in Sources */,
 				229A552B2500EC49008A0ECD /* LoginObj.swift in Sources */,
+				226D934C250A30E200457AD5 /* MagicHeaderCollectionReusableView.swift in Sources */,
 				4B2D4C0524DD569100CABF1D /* Color.swift in Sources */,
 				4B28017C24ECCA17007647F8 /* MainViewController.swift in Sources */,
 				229A55342501EF7B008A0ECD /* LoginRoute.swift in Sources */,

@@ -34,6 +34,7 @@ class MagicCollectionView: BaseView {
         magicDelegate.itemsPerRow = itemsPerRow
         
         collectionView.registerCell(MagicCollectionViewCell.self)
+        collectionView.register(MagicHeaderCollectionReusableView.xib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MagicHeaderCollectionReusableView.identifier)
     }
 }
 

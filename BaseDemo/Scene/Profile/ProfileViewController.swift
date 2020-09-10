@@ -17,7 +17,7 @@ class ProfileViewController: BaseViewController {
     }
 
     override func setupView() {
-        vTitle.lblTitle.text = "Profile"
+
     }
 
     /*

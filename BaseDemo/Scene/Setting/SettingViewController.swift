@@ -27,8 +27,8 @@ class SettingViewController: BaseViewController {
         super.viewDidAppear(true)
         
         navigationController?.navigationBar.isHidden = false
-        self.title = "Settings"
         navigationItem.largeTitleDisplayMode = .always
+        self.title = "Settings"
     }
 
 }

@@ -104,7 +104,8 @@ extension CustomTicketStageView : UICollectionViewDelegate {
             updateStatusStageTicket(cell,indexPath, true)
             updateStatusStageTicket(preCell,preIndexpath, false)
 
-            cvStage.reloadItems(at: [indexPath,preIndexpath])
+//            cvStage.reloadItems(at: [indexPath,preIndexpath])
+            
             // update index
             preIndexpath = indexPath
             

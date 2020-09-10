@@ -35,6 +35,13 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
         cell.icRight.image = UIImage(named: "next")
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView  = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MagicHeaderCollectionReusableView.identifier, for: indexPath)
+        headerView.frame.size.height = 100
+        
+        return headerView
+    }
 }
 
 class MagicCollectionViewDelegate : NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
