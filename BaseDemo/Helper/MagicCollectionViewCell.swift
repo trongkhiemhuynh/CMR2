@@ -19,6 +19,7 @@ class MagicCollectionViewCell: BaseMagicCollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
 }

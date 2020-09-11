@@ -14,10 +14,20 @@ class ProfileViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
 
     override func setupView() {
-
+        let v = MagicCollectionView.xibInstance()
+        v.controller = self
+        v.dictData = ["0":["profile"]]
+        view.addSubview(v)
+        
+        v.frame = view.frame
+        
+        //show navigation bar
+        navigationController?.navigationBar.isHidden = false
+        title = "Profile"
     }
 
     /*

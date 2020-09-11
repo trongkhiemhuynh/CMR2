@@ -18,6 +18,7 @@ class SettingViewController: BaseViewController {
 
     override func setupView() {
         let v = MagicCollectionView.xibInstance()
+        v.controller = self
         v.dictData = ["0":["Notification","Privacy","About"],"1":["Preferences","Contact","Questions"],"2":["Logout"]]
         view.addSubview(v)
         v.frame = view.frame
@@ -27,7 +28,6 @@ class SettingViewController: BaseViewController {
         super.viewDidAppear(true)
         
         navigationController?.navigationBar.isHidden = false
-        navigationItem.largeTitleDisplayMode = .always
         self.title = "Settings"
     }
 

@@ -76,6 +76,10 @@
 		226D9349250A180000457AD5 /* MagicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226D9347250A180000457AD5 /* MagicCollectionViewCell.xib */; };
 		226D934C250A30E200457AD5 /* MagicHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D934A250A30E200457AD5 /* MagicHeaderCollectionReusableView.swift */; };
 		226D934D250A30E200457AD5 /* MagicHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226D934B250A30E200457AD5 /* MagicHeaderCollectionReusableView.xib */; };
+		226D9353250B227D00457AD5 /* ProfileCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D9351250B227D00457AD5 /* ProfileCollectionReusableView.swift */; };
+		226D9354250B227D00457AD5 /* ProfileCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226D9352250B227D00457AD5 /* ProfileCollectionReusableView.xib */; };
+		226D9357250B252200457AD5 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D9355250B252200457AD5 /* ProfileCollectionViewCell.swift */; };
+		226D9358250B252200457AD5 /* ProfileCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226D9356250B252200457AD5 /* ProfileCollectionViewCell.xib */; };
 		2270236A24F8AE46002C06AC /* UICollectionView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2270236924F8AE46002C06AC /* UICollectionView+Register.swift */; };
 		2270236C24F8AE5E002C06AC /* UITableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2270236B24F8AE5E002C06AC /* UITableView+Register.swift */; };
 		2270236E24F8AE79002C06AC /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2270236D24F8AE79002C06AC /* Identifier.swift */; };
@@ -292,6 +296,10 @@
 		226D9347250A180000457AD5 /* MagicCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MagicCollectionViewCell.xib; sourceTree = "<group>"; };
 		226D934A250A30E200457AD5 /* MagicHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		226D934B250A30E200457AD5 /* MagicHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MagicHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
+		226D9351250B227D00457AD5 /* ProfileCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionReusableView.swift; sourceTree = "<group>"; };
+		226D9352250B227D00457AD5 /* ProfileCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCollectionReusableView.xib; sourceTree = "<group>"; };
+		226D9355250B252200457AD5 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		226D9356250B252200457AD5 /* ProfileCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCollectionViewCell.xib; sourceTree = "<group>"; };
 		2270236924F8AE46002C06AC /* UICollectionView+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Register.swift"; sourceTree = "<group>"; };
 		2270236B24F8AE5E002C06AC /* UITableView+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Register.swift"; sourceTree = "<group>"; };
 		2270236D24F8AE79002C06AC /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
@@ -679,6 +687,33 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		226D934E250B223A00457AD5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C22FEA9B24FC1935009D9219 /* ProfileViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		226D934F250B224500457AD5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C22FEA9C24FC1935009D9219 /* ProfileViewController.xib */,
+				226D9351250B227D00457AD5 /* ProfileCollectionReusableView.swift */,
+				226D9352250B227D00457AD5 /* ProfileCollectionReusableView.xib */,
+				226D9355250B252200457AD5 /* ProfileCollectionViewCell.swift */,
+				226D9356250B252200457AD5 /* ProfileCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		226D9350250B225600457AD5 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
 		2270236324F8ACAA002C06AC /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -1057,8 +1092,9 @@
 		C22FEA9824FC18EE009D9219 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				C22FEA9B24FC1935009D9219 /* ProfileViewController.swift */,
-				C22FEA9C24FC1935009D9219 /* ProfileViewController.xib */,
+				226D9350250B225600457AD5 /* Worker */,
+				226D934F250B224500457AD5 /* View */,
+				226D934E250B223A00457AD5 /* Controller */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -1231,6 +1267,7 @@
 				226D934D250A30E200457AD5 /* MagicHeaderCollectionReusableView.xib in Resources */,
 				C2E857E224F36C06002960A2 /* InfoTicketRow.xib in Resources */,
 				4B166C2924ED07EF0030C592 /* TicketDetailInfoViewController.xib in Resources */,
+				226D9354250B227D00457AD5 /* ProfileCollectionReusableView.xib in Resources */,
 				226D9349250A180000457AD5 /* MagicCollectionViewCell.xib in Resources */,
 				C2E857F024F39CF6002960A2 /* TabbarItem.xib in Resources */,
 				C23F629B24EF25F500E37560 /* CustomDetailActionView.xib in Resources */,
@@ -1242,6 +1279,7 @@
 				4B28017D24ECCA17007647F8 /* MainViewController.xib in Resources */,
 				4B166C3E24EE5C150030C592 /* CustomTitleView.xib in Resources */,
 				4B166C2324ECFD620030C592 /* TabMenuController.xib in Resources */,
+				226D9358250B252200457AD5 /* ProfileCollectionViewCell.xib in Resources */,
 				C2E857EA24F39744002960A2 /* NavigationMenuBaseController.xib in Resources */,
 				226D9343250A0F5300457AD5 /* MagicCollectionView.xib in Resources */,
 				4B166C5324EF65FD0030C592 /* CustomDetailTabView.xib in Resources */,
@@ -1445,6 +1483,7 @@
 				224346CF24FCD45100CF7AA3 /* Networking.swift in Sources */,
 				C2E857EE24F39CE7002960A2 /* TabbarItem.swift in Sources */,
 				224327042509C8F9005AE588 /* SortContactsViewCell.swift in Sources */,
+				226D9357250B252200457AD5 /* ProfileCollectionViewCell.swift in Sources */,
 				222B5FD224F7A32A00419452 /* PopUpConfirm.swift in Sources */,
 				4B28017F24ECD6DD007647F8 /* BASEColor.swift in Sources */,
 				224346D424FCDF6300CF7AA3 /* BaseObj.swift in Sources */,
@@ -1461,6 +1500,7 @@
 				C23F628924EE9C2600E37560 /* CustomTabBarView.swift in Sources */,
 				4B166C2C24ED0D140030C592 /* TicketDetailInputInfoCollectionViewCell.swift in Sources */,
 				224346CB24FCB86200CF7AA3 /* Worker.swift in Sources */,
+				226D9353250B227D00457AD5 /* ProfileCollectionReusableView.swift in Sources */,
 				22DBF0B224F620BE00B6D992 /* Coordinator.swift in Sources */,
 				4B166C5C24EF78F80030C592 /* TicketDetailInfoCollectionViewCell.swift in Sources */,
 				C23F628D24EF05AD00E37560 /* PopupView.swift in Sources */,

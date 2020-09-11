@@ -15,11 +15,11 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.isHidden = true
+        
         setupView()
         initData()
         // Do any additional setup after loading the view.
-        
-        navigationController?.navigationBar.isHidden = true
     }
     
 

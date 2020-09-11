@@ -27,7 +27,7 @@ class CustomListView: BaseView {
     
     // variable
     weak var delegate : CustomListViewOutput?
-    public var controller : TicketController?
+    public weak var controller : TicketController?
     
     private let itemsPerRow: CGFloat = 1
     private let heightCell : CGFloat = 80

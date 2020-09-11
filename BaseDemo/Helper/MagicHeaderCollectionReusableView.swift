@@ -10,6 +10,9 @@ import UIKit
 
 class MagicHeaderCollectionReusableView: UICollectionReusableView {
 
+    // outlet
+    @IBOutlet weak var lblSection : UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

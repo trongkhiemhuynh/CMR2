@@ -23,24 +23,48 @@
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kVS-ib-lo0">
                                 <rect key="frame" x="0.0" y="0.0" width="363" height="70"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="edg-Wf-x4G">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="70"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xD2-bc-8xO">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="70"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="edg-Wf-x4G">
+                                                <rect key="frame" x="10" y="5" width="40" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="IW2-LW-cHk"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="IW2-LW-cHk"/>
+                                            <constraint firstAttribute="width" secondItem="edg-Wf-x4G" secondAttribute="height" multiplier="1:1" id="7Jp-qG-CTu"/>
+                                            <constraint firstItem="edg-Wf-x4G" firstAttribute="centerY" secondItem="xD2-bc-8xO" secondAttribute="centerY" id="LPK-pr-FRz"/>
+                                            <constraint firstAttribute="width" constant="60" id="acH-eK-Tnh"/>
+                                            <constraint firstItem="edg-Wf-x4G" firstAttribute="centerX" secondItem="xD2-bc-8xO" secondAttribute="centerX" id="bBM-Eu-NDI"/>
                                         </constraints>
-                                    </imageView>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPV-YU-JkL">
-                                        <rect key="frame" x="40" y="0.0" width="283" height="70"/>
+                                        <rect key="frame" x="60" y="0.0" width="283" height="70"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fU6-VO-BC9">
-                                        <rect key="frame" x="323" y="0.0" width="40" height="70"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ORM-PF-0gb">
+                                        <rect key="frame" x="343" y="0.0" width="20" height="70"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fU6-VO-BC9">
+                                                <rect key="frame" x="5" y="27.5" width="10" height="15"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="GLu-CO-vx2"/>
+                                                    <constraint firstAttribute="width" constant="10" id="usw-v5-OhP"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="usw-v5-OhP"/>
+                                            <constraint firstItem="fU6-VO-BC9" firstAttribute="centerX" secondItem="ORM-PF-0gb" secondAttribute="centerX" id="Umd-dn-7xW"/>
+                                            <constraint firstItem="fU6-VO-BC9" firstAttribute="centerY" secondItem="ORM-PF-0gb" secondAttribute="centerY" id="h95-Ym-hyb"/>
+                                            <constraint firstAttribute="width" constant="20" id="iIq-3s-apa"/>
                                         </constraints>
-                                    </imageView>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
