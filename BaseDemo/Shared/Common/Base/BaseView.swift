@@ -115,3 +115,21 @@ class BaseView: UIView {
         
     }
 }
+
+extension BaseView : BaseAbility {
+    func initCommon() {
+        
+    }
+    
+    func initUIs() {
+        
+    }
+    
+    func initBinding() {
+        
+    }
+    
+    func initActions() {
+        
+    }
+}

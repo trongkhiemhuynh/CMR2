@@ -71,9 +71,7 @@ class TicketController: BaseViewController {
     }
     
     @IBAction func actionNewTicket(sender : UIButton?) {
-        let vc = NewTicketViewController()
-        
-        navigationController?.pushViewController(vc, animated: false)
+        RouterManager.shared.handleRouter(NewTicketRoute())
     }
     
     override func viewDidAppear(_ animated: Bool) {

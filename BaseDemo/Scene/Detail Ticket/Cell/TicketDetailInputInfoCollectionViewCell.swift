@@ -8,11 +8,18 @@
 
 import UIKit
 
+protocol TicketDetailInputInfoCollectionViewCellOutput: class {
+    func didEndEdit(titleField: String, inputField : String)
+}
+
 class TicketDetailInputInfoCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var iv : UIImageView!
     @IBOutlet weak var lbl : UILabel!
     @IBOutlet weak var tf : UITextField!
+    
+    //delegate
+    weak var delegate : TicketDetailInputInfoCollectionViewCellOutput?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -48,5 +55,16 @@ extension TicketDetailInputInfoCollectionViewCell : XibInitalization {
 extension TicketDetailInputInfoCollectionViewCell : UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        Logger.debug(textField.text!)
+        delegate?.didEndEdit(titleField: lbl.text!, inputField: tf.text!)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        Logger.debug(textField.text!)
+        delegate?.didEndEdit(titleField: lbl.text!, inputField: tf.text!)
+        return true
     }
 }

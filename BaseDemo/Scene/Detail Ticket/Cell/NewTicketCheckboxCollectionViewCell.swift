@@ -8,10 +8,17 @@
 
 import UIKit
 
-class NewTicketCheckboxCollectionViewCell: UICollectionViewCell {
+protocol NewTicketCheckboxCollectionViewCellOutput: class {
+    func didEndEdit(titleField: String, inputField: Bool)
+}
 
+class NewTicketCheckboxCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var lblTitle : UILabel!
     @IBOutlet weak var btnCheckbox : UIButton!
+    
+    //variable
+    weak var delegate: NewTicketCheckboxCollectionViewCellOutput?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,13 +26,19 @@ class NewTicketCheckboxCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func actionCheck() {
-        btnCheckbox.setImage(UIImage(named: "checked_box"), for: .normal)
+        btnCheckbox.isSelected = !btnCheckbox.isSelected
+        
+        if btnCheckbox.isSelected {
+            btnCheckbox.setImage(UIImage(named: "checked_box"), for: .normal)
+        } else {
+            btnCheckbox.setImage(UIImage(named: "box"), for: .normal)
+        }
+        
+        delegate?.didEndEdit(titleField: lblTitle.text!, inputField: btnCheckbox.isSelected)
     }
 
 }
 
 extension NewTicketCheckboxCollectionViewCell : XibInitalization {
     typealias Element = NewTicketCheckboxCollectionViewCell
-    
-    
 }

@@ -19,6 +19,7 @@ class BaseViewController: UIViewController {
         
         setupView()
         initData()
+        initCommon()
         // Do any additional setup after loading the view.
     }
     
@@ -50,10 +51,32 @@ class BaseViewController: UIViewController {
     func dismissAlertLoading() {
         dismiss(animated: false, completion: nil)
     }
+    
+    func didPop() {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 extension BaseViewController : UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         view.endEditing(true)
+    }
+}
+
+extension BaseViewController : BaseAbility {
+    func initCommon() {
+        
+    }
+    
+    func initUIs() {
+        
+    }
+    
+    func initBinding() {
+        
+    }
+    
+    func initActions() {
+        
     }
 }

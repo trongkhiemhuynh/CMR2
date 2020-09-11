@@ -18,8 +18,7 @@ class NotificationView: UIView {
     }
     */
     
-    let dumData = ["Bill", "Steve", "John", "Ben"]
-    let formatter = DateFormatter()
+    let dumData = ["Bill Gates", "Steve Jobs", "John Lenon", "Benjamin Franklin"]
     
     @IBOutlet weak var tableView : UITableView!
     @IBOutlet weak var btnBack : UIButton!
@@ -30,9 +29,8 @@ class NotificationView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        Logger.info("steve")
+
         tableView.register(NotificationTableViewCell.self)
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         tableView.separatorColor = .clear
         tableView.backgroundColor = UIColor.init(hex: "#EBEBEB")
         tableView.rowHeight = 90.0
@@ -42,7 +40,6 @@ class NotificationView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        Logger.info("steve")
     }
 
 }
@@ -58,10 +55,10 @@ extension NotificationView : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: NotificationTableViewCell.identifier, for: indexPath) as! NotificationTableViewCell
-        cell.lblName.text = dumData[indexPath.row] + "sent you a message"
-
-        cell.lblTime.text = formatter.string(from: Date())
-        cell.imageView?.image = UIImage(named: "avatar")
+        cell.lblName.text = dumData[indexPath.row] + " sent you a message"
+        
+        cell.lblTime.text = ApplicationManager.sharedInstance.globalDateFormatter.string(from: Date())
+        cell.imageView?.image = UIImage(named: "no_image")
         
         return cell
     }

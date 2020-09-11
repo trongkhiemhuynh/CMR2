@@ -48,9 +48,7 @@ class TicketDetailController: BaseViewController {
     }
 
     @IBAction func actionBack() {
-//        dismiss(animated: false, completion: nil)
-//        remove()
-        self.navigationController?.popViewController(animated: true)
+        didPop()
     }
     
     @IBAction func actionExtend() {

@@ -18,6 +18,7 @@ class NewTicketViewController: BaseViewController {
     private let heightCellInfoDetail : CGFloat = 70
     private var selectedIdx : IndexPath?
     private var vCal : CalendarView?
+    private var dictData : NSMutableDictionary = NSMutableDictionary()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,36 +28,28 @@ class NewTicketViewController: BaseViewController {
 
     override func setupView() {
         vTitle.lblTitle.text = "Create new ticket"
+        
         cvNewTicket.layer.backgroundColor = BASEColor.BackgroundListColor()?.cgColor
         
         cvNewTicket.registerCell(TicketDetailInputInfoCollectionViewCell.self)
         
         cvNewTicket.registerCell(NewTicketCheckboxCollectionViewCell.self)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     
     @IBAction func back() {
-        self.navigationController?.popViewController(animated: false)
+        didPop()
     }
     
     @IBAction func save() {
-        UIView.animate(withDuration: 0.35, delay: 0.0, options: .transitionFlipFromBottom, animations: {
-            if let vConfirm = Bundle.main.loadNibNamed("PopupView", owner: self, options: nil)?.last as? PopUpConfirm {
-                self.view.addSubview(vConfirm)
-                vConfirm.frame = self.view.bounds
-            }
+        if let vConfirm = Bundle.main.loadNibNamed("PopupView", owner: self, options: nil)?.last as? PopUpConfirm {
+            self.view.addSubview(vConfirm)
+            vConfirm.frame = self.view.bounds
+        }
+        
+        UIView.animate(withDuration: 0.35, delay: 0.0, options: .allowAnimatedContent, animations: {
             self.view.layoutIfNeeded()
         }) { (ok) in
+            Logger.debug(self.dictData)
             print(ok)
         }
     }
@@ -77,16 +70,16 @@ extension NewTicketViewController : UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewTicketCheckboxCollectionViewCell.identifier, for: indexPath) as? NewTicketCheckboxCollectionViewCell
 
             cell?.lblTitle.text = titleName
+            cell?.delegate = self
             
             return cell!
         } else {
-            let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailInputInfoCollectionViewCell.identifier, for: indexPath) as! TicketDetailInputInfoCollectionViewCell
-            cell2.reloadData(UIImage(named: icName), titleName, "")
+            let cellInput = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailInputInfoCollectionViewCell.identifier, for: indexPath) as! TicketDetailInputInfoCollectionViewCell
+            cellInput.reloadData(UIImage(named: icName), titleName, "")
+            cellInput.delegate = self
             
-            return cell2
+            return cellInput
         }
-        
-        
     }
 }
 
@@ -122,23 +115,34 @@ extension NewTicketViewController : UICollectionViewDelegateFlowLayout {
 extension NewTicketViewController : FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd-MM-yyyy"
-        
+        let formatter = ApplicationManager.sharedInstance.globalDateFormatter
         let strDate = formatter.string(from: date)
         
         let cell = cvNewTicket.cellForItem(at: selectedIdx!) as? TicketDetailInputInfoCollectionViewCell
         cell?.tf.text = strDate
         vCal?.removeFromSuperview()
-        print("selected date :",strDate)
+        print("selected date : ",strDate)
     }
     
     func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd-MM-yyyy"
+        let strDate = ApplicationManager.sharedInstance.globalDateFormatter.string(from: date)
         
-        let strDate = formatter.string(from: date)
-        
-        print("deselected date :",strDate)
+        print("deselected date : ",strDate)
+    }
+}
+
+extension NewTicketViewController : XibInitalization {
+    typealias Element = NewTicketViewController
+}
+
+extension NewTicketViewController : TicketDetailInputInfoCollectionViewCellOutput {
+    func didEndEdit(titleField: String, inputField: String) {
+        dictData.setValue(inputField, forKey: titleField)
+    }
+}
+
+extension NewTicketViewController : NewTicketCheckboxCollectionViewCellOutput {
+    func didEndEdit(titleField: String, inputField: Bool) {
+        dictData.setValue(inputField, forKey: titleField)
     }
 }
