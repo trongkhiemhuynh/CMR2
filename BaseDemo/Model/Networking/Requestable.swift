@@ -27,7 +27,7 @@ protocol Requestable {
     
     func bodyRequest(request: inout URLRequest)
     
-    init(param: Parameters?)
+    init(param1: Parameters?)
 }
 
 extension Requestable {
@@ -42,7 +42,7 @@ extension Requestable {
     }
     
     // Param
-    var param: Parameters? {
+    var param: BaseParameters? {
         get { return nil }
     }
     

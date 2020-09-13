@@ -16,7 +16,7 @@ class NewTicketCheckboxCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var lblTitle : UILabel!
     @IBOutlet weak var btnCheckbox : UIButton!
-    
+    // creat new image
     //variable
     weak var delegate: NewTicketCheckboxCollectionViewCellOutput?
     
