@@ -10,9 +10,9 @@ import Alamofire
 import ObjectMapper
 
 struct FetchTicketRequest : Requestable {
-    var param: Self.BaseParameters
+    var param: Self.BaseParameters?
     
-    
+
     func bodyRequest(request: inout URLRequest) {
         
     }
@@ -38,7 +38,7 @@ struct FetchTicketRequest : Requestable {
     }
     
     // Init
-    init(param1: BaseParameters?) {
-        param = param1!
+    init(param: BaseParameters?) {
+        self.param = param
     }
 }

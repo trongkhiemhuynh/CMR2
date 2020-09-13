@@ -151,15 +151,8 @@ extension TicketController : CustomListViewOutput {
 
 extension TicketController : CustomTicketStageViewOutput {
     func didChangeStage(name: String) {
-        // reload collection view
-        self.addAlertLoading()
-        
+        //delegate to subview
         delegate?.updateListView(with: name)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            
-            self.dismissAlertLoading()
-        }
     }
 }
 

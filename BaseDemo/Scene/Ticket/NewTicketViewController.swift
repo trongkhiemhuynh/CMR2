@@ -37,7 +37,7 @@ class NewTicketViewController: BaseViewController {
     }
     
     @IBAction func back() {
-        didPop()
+        didPopView()
     }
     
     @IBAction func save() {

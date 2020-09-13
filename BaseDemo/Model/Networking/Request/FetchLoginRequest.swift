@@ -11,8 +11,9 @@ import ObjectMapper
 import Foundation
 
 struct FetchLoginRequest : Requestable {
-    var param: Self.BaseParameters
+    var param: Self.BaseParameters?
     
+
     func bodyRequest(request: inout URLRequest) {
         let _ = try! request.setMultipartFormData(self.param as! [String : String], encoding: .utf8)
     }
@@ -46,8 +47,8 @@ struct FetchLoginRequest : Requestable {
         return nil //["Accept":"application/json","Content-Type":"multipart/form-data"]
     }
     
-    init(param1: BaseParameters?) {
-        param = param1!
+    init(param: BaseParameters?) {
+        self.param = param
     }
 
 }

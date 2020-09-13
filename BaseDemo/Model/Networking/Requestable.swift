@@ -18,7 +18,7 @@ protocol Requestable {
     var basePath : String {get}
     var endPoint : String {get}
     var httpMethod : HTTPMethod {get}
-    var param : BaseParameters {get}
+    var param : BaseParameters? {get set}
     var addionalHeader : HeaderParameter? {get}
     var parameterEncoding: ParameterEncoding {get}
     func toPromise() -> Promise<T>
@@ -27,7 +27,7 @@ protocol Requestable {
     
     func bodyRequest(request: inout URLRequest)
     
-    init(param1: Parameters?)
+    init(param: BaseParameters?)
 }
 
 extension Requestable {
@@ -90,6 +90,8 @@ extension Requestable {
 //                .validate(contentType: ["application/json"])
                 .responseJSON(completionHandler: { (response) in
                     
+                    Logger.debug("-------\n response : \(response)")
+                    
                     switch response.result {
                     case .success(_):
                         Logger.debug(response.result)
@@ -104,10 +106,12 @@ extension Requestable {
                         seal.fulfill(result)
                         
                     case .failure(_):
-                        let error = NSError(domain: "com.basebs.crm", code: response.response!.statusCode , userInfo:[NSLocalizedDescriptionKey : response.error?.localizedDescription] )
-                        Logger.error(error)
+//                        let error = NSError(domain: "com.basebs.crm", code: response.response!.statusCode , userInfo:[NSLocalizedDescriptionKey : response.error?.localizedDescription])
+//                        Logger.error(error)
+//
+//                        seal.reject(error)
                         
-                        seal.reject(error)
+                        seal.reject(NSError.unknownError())
                     }
                     
                     
@@ -123,7 +127,7 @@ extension Requestable {
         var urlRequest = URLRequest(url: self.url)
 
         urlRequest.httpMethod = self.httpMethod.rawValue
-//        urlRequest.timeoutInterval = TimeInterval(10 * 1000)
+        urlRequest.timeoutInterval = TimeInterval(10 * 1000)
         
         // Encode param
 //        var request = try! self.parameterEncoding.encode(urlRequest, with: self.param)
@@ -136,7 +140,10 @@ extension Requestable {
             }
         }
         
-        Logger.info(urlRequest)
+        //log request
+        Logger.info(urlRequest.httpMethod!)
+        Logger.info(urlRequest.allHTTPHeaderFields!)
+        Logger.info(urlRequest.httpBody?.base64EncodedString(options: .endLineWithCarriageReturn))
         
         return urlRequest
     }

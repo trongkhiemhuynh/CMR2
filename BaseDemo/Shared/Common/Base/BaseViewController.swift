@@ -36,25 +36,7 @@ class BaseViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    func addAlertLoading() {
-        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
-
-        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
-        loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.style = UIActivityIndicatorView.Style.gray
-        loadingIndicator.startAnimating();
-
-        alert.view.addSubview(loadingIndicator)
-        present(alert, animated: true, completion: nil)
-    }
     
-    func dismissAlertLoading() {
-        dismiss(animated: false, completion: nil)
-    }
-    
-    func didPop() {
-        self.navigationController?.popViewController(animated: true)
-    }
 }
 
 extension BaseViewController : UIScrollViewDelegate {

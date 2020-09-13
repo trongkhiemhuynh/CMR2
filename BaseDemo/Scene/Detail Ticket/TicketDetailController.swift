@@ -48,7 +48,7 @@ class TicketDetailController: BaseViewController {
     }
 
     @IBAction func actionBack() {
-        didPop()
+        didPopView()
     }
     
     @IBAction func actionExtend() {
