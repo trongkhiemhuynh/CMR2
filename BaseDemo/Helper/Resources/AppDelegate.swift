@@ -18,15 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         ApplicationManager.sharedInstance.initAllSDKs()
         
         ApplicationManager.sharedInstance.initCommon()
-        
-        sleep(3)
         
         let routerManager = RouterManager.shared
         let routeSplash = SplashRoute()
