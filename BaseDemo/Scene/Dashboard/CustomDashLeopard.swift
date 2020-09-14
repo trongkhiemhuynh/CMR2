@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomDashLeopard: UIView {
+class CustomDashLeopard: BaseView {
 
     /*
     // Only override draw() if you perform custom drawing.

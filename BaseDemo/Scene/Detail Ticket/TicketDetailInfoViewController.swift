@@ -64,8 +64,8 @@ extension TicketDetailInfoViewController : UICollectionViewDataSource {
                 return cell!
             } else {
                 let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailInputInfoCollectionViewCell.identifier, for: indexPath) as? TicketDetailInputInfoCollectionViewCell
-                
-                cell2!.reloadData(UIImage(named: icName), titleName ,"Apple Inc.")
+                cell2?.isUserInteractionEnabled = false
+                cell2!.reloadData(UIImage(named: icName), titleName, titleName)
                 
                 return cell2!
             }

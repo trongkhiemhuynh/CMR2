@@ -19,7 +19,7 @@ class SettingViewController: BaseViewController {
     override func setupView() {
         let v = MagicCollectionView.xibInstance()
         v.controller = self
-        v.dictData = ["0":["Notification","Privacy","About"],"1":["Preferences","Contact","Questions"],"2":["Logout"]]
+        v.dictData = ["0":["Language"],"1":["Change Dashboard","Change Branding","Notification"],"2":["Version"]]
         view.addSubview(v)
         v.frame = view.frame
     }

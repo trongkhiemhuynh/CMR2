@@ -63,6 +63,9 @@ extension SortContactsView : UITableViewDelegate {
         selectedIdx = indexPath
         
         delegate?.didSelect(item: cell.lbl.text!)
+        
+        //remove from superview
+        didBack()
     }
     
     func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {

@@ -12,6 +12,7 @@ class BaseMagicCollectionViewCell : UICollectionViewCell {
     @IBOutlet weak var title : UILabel!
     @IBOutlet weak var img : UIImageView!
     @IBOutlet weak var icRight : UIImageView!
+    @IBOutlet weak var vImg : UIView!
 }
 
 class MagicCollectionViewCell: BaseMagicCollectionViewCell {

@@ -13,6 +13,7 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.backgroundColor = BASEColor.BackgroundListColor()
     }
 
 }

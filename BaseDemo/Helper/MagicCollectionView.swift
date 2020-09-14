@@ -20,10 +20,11 @@ class MagicCollectionView: BaseView {
     
     public var arrCells : [MagicCollectionViewCell]?
     public var heightHeader : CGFloat = 50
-    public var heightHeaderProfile : CGFloat = 180
-    public var heightContentProfile : CGFloat = 300
+    public var heightHeaderProfile : CGFloat = 170
     
-    weak var controller : UIViewController?
+    public var heightContentProfile : CGFloat {
+        return heightScreen - heightHeaderProfile
+    }
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -64,11 +65,33 @@ class MagicCollectionView: BaseView {
 
 extension MagicCollectionView : MagicCollectionViewDelegateOutput {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! MagicCollectionViewCell
-        let vc = UIViewController()
-        vc.title = cell.title.text
         
-        controller?.navigationController?.pushViewController(vc, animated: true)
+        //settings controller
+        if (controller?.isKind(of: SettingViewController.self))! {
+            let cell = collectionView.cellForItem(at: indexPath) as! MagicCollectionViewCell
+            let vc = UIViewController()
+            
+            //title label
+            let title = cell.title.text!
+            vc.title = title
+            
+            if title == "Change Dashboard" {
+                let k = ApplicationManager.sharedInstance.templateDashboard.keys
+                let kSelected = ApplicationManager.sharedInstance.selectedDashboard
+                
+                for sk in k {
+                    if sk != kSelected {
+                        ApplicationManager.sharedInstance.selectedDashboard = sk
+                        break
+                    }
+                }
+                return
+            }
+            
+            
+            
+            controller?.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 

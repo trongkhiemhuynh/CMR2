@@ -27,7 +27,7 @@ class CustomListView: BaseView {
     
     // variable
     weak var delegate : CustomListViewOutput?
-    public weak var controller : TicketController?
+    public weak var controller1 : TicketController?
     
     private let itemsPerRow: CGFloat = 1
     private let heightCell : CGFloat = 80
@@ -56,7 +56,7 @@ class CustomListView: BaseView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        controller?.delegate = self
+        controller1?.delegate = self
     }
     
     @IBAction func changeSort() {

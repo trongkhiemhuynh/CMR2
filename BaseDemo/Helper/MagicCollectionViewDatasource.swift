@@ -40,7 +40,8 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
         if type == .setting {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MagicCollectionViewCell.identifier, for: indexPath) as! MagicCollectionViewCell
             cell.img.image = UIImage(named: "avatar")
-            cell.img.isHidden = true
+            cell.vImg.isHidden = true
+
             let arr = dictData?[String(indexPath.section)] as! Array<String>
             let title = arr[indexPath.row]
             
@@ -76,7 +77,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
         if type == .setting {
             return CGSize(width: widthScreen, height: 50)
         } else {
-            return CGSize(width: widthScreen, height: 180)
+            return CGSize(width: widthScreen, height: heightScreen - 170)
         }
     }
 }

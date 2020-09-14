@@ -41,3 +41,7 @@ class ProfileViewController: BaseViewController {
     */
 
 }
+
+extension ProfileViewController : XibInitalization {
+    typealias Element = ProfileViewController
+}

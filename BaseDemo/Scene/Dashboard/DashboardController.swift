@@ -26,7 +26,7 @@ class DashboardController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        addSubView()
         // Do any additional setup after loading the view.
     }
 
@@ -36,7 +36,7 @@ class DashboardController: BaseViewController {
         lblCountNotification.clipsToBounds = true
         lblCountNotification.text = "999"
 
-        self.view.backgroundColor = BASEColor.BackgroundListColor()
+        self.view.backgroundColor = .white
 
         menu = SideMenuNavigationController(rootViewController: MenuViewController())
         menu?.leftSide = true
@@ -44,8 +44,6 @@ class DashboardController: BaseViewController {
         menu?.setNavigationBarHidden(true, animated: true)
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: view)
-        
-        addSubView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -54,21 +52,30 @@ class DashboardController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
     }
     
+    
     func addSubView() {
-        let modeLeo = Bundle.main.loadNibNamed("CustomDashboard", owner: self, options: nil)?.last as? CustomDashLion
+        let k = ApplicationManager.sharedInstance.selectedDashboard
+//        let mode = ApplicationManager.sharedInstance.templateDashboard[k]
+        let sv: BaseView?
+        
+        if k.contains("manager") {
+            sv = Bundle.main.loadNibNamed("CustomDashboard", owner: self, options: nil)?.last as? CustomDashLion
+            
+            sv?.controller = self
+            sv?.addBarChart()
+            sv?.addPieChart()
+        } else {
+            sv = Bundle.main.loadNibNamed("CustomDashboard", owner: self, options: nil)?.first as? CustomDashLeopard
+        }
         
         Logger.info("\(widthScreen) -\(heightScreen)")
         
-        vContent.addSubview(modeLeo!)
+        vContent.addSubview(sv!)
         
-//        vContent = modeLeo
-        
-        modeLeo?.frame = vContent.frame
-        
-        modeLeo?.addBartChartView()
-        modeLeo?.addPieChartView()
+        sv?.frame = vContent.bounds
         
         view.layoutIfNeeded()
     }

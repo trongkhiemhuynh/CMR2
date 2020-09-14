@@ -26,6 +26,13 @@ class CustomDashLion: BaseView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        vInfoUser.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapProfile(gesture:))))
+    }
+    
+    @objc func didTapProfile(gesture : UITapGestureRecognizer) {
+        //show profile view
+        let profileVC = ProfileViewController.xibInstance()
+        controller.navigationController?.pushViewController(profileVC, animated: true)
     }
     
     private lazy var lblEmailCounts : UILabel = {
@@ -37,9 +44,9 @@ class CustomDashLion: BaseView {
         
         return label
     }()
-    
+
     /// addBartChartView
-    func addBartChartView() {
+    override func addBarChart() {
 //        Logger.info(vBarChart.bounds)
         chartView = BarChartView(frame: vBarChart.bounds)
         chartView?.autoresizingMask = [.flexibleWidth, .flexibleHeight,.flexibleTopMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin]
@@ -53,7 +60,7 @@ class CustomDashLion: BaseView {
     }
     
     /// addPieChartView
-    func addPieChartView() {
+    override func addPieChart() {
         chartPieView = PieChartView(frame: vPieChart.bounds)
         chartPieView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         

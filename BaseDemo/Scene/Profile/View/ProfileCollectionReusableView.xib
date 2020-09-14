@@ -24,13 +24,13 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r1p-An-aTD">
                     <rect key="frame" x="12" y="63" width="427" height="75"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="A2j-jL-ZSg">
-                            <rect key="frame" x="12" y="8.5" width="58" height="58"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image" translatesAutoresizingMaskIntoConstraints="NO" id="A2j-jL-ZSg">
+                            <rect key="frame" x="12" y="12.5" width="50" height="50"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0w-cw-KsJ">
-                            <rect key="frame" x="82" y="27" width="42" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0w-cw-KsJ">
+                            <rect key="frame" x="74" y="37.5" width="0.0" height="0.0"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next" translatesAutoresizingMaskIntoConstraints="NO" id="iR2-5w-YoR">
@@ -66,12 +66,15 @@
                 <constraint firstItem="r1p-An-aTD" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="12" id="hnv-ob-fry"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <connections>
+                <outlet property="lblName" destination="P0w-cw-KsJ" id="dBs-U0-fH5"/>
+            </connections>
             <point key="canvasLocation" x="42.753623188405797" y="186.83035714285714"/>
         </collectionReusableView>
     </objects>
     <resources>
         <image name="BaseBS_04" width="74" height="25"/>
-        <image name="avatar" width="58" height="58"/>
         <image name="next" width="8.5" height="13.5"/>
+        <image name="no_image" width="50" height="50"/>
     </resources>
 </document>

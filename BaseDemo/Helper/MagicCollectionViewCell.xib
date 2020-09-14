@@ -20,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OV1-sr-bPJ">
                         <rect key="frame" x="0.0" y="0.0" width="363" height="70"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kVS-ib-lo0">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kVS-ib-lo0">
                                 <rect key="frame" x="0.0" y="0.0" width="363" height="70"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xD2-bc-8xO">
@@ -42,7 +42,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPV-YU-JkL">
-                                        <rect key="frame" x="60" y="0.0" width="283" height="70"/>
+                                        <rect key="frame" x="68" y="0.0" width="267" height="70"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -90,6 +90,7 @@
                 <outlet property="icRight" destination="fU6-VO-BC9" id="opb-Jd-rjC"/>
                 <outlet property="img" destination="edg-Wf-x4G" id="usk-3f-jQn"/>
                 <outlet property="title" destination="yPV-YU-JkL" id="Wx0-uo-Odf"/>
+                <outlet property="vImg" destination="xD2-bc-8xO" id="Z33-SI-k3Q"/>
             </connections>
             <point key="canvasLocation" x="-89.130434782608702" y="129.24107142857142"/>
         </collectionViewCell>
