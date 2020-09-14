@@ -10,60 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="wgX-et-f3N" customClass="CustomDashLeopard" customModule="BaseDemo" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-            <autoresizingMask key="autoresizingMask"/>
-            <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="PGP-Pv-tLr">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="NYA-og-Q8n">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="222.5"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HVB-mj-0mS">
-                                    <rect key="frame" x="0.0" y="0.0" width="187.5" height="222.5"/>
-                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O1U-R9-L3s">
-                                    <rect key="frame" x="187.5" y="0.0" width="187.5" height="222.5"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </view>
-                            </subviews>
-                        </stackView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aae-zo-doQ">
-                            <rect key="frame" x="0.0" y="222.5" width="375" height="222"/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="200" id="76H-Tn-tax"/>
-                            </constraints>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRB-Gj-eQ6">
-                            <rect key="frame" x="0.0" y="444.5" width="375" height="222.5"/>
-                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="200" id="A1j-LL-Ql3"/>
-                            </constraints>
-                        </view>
-                    </subviews>
-                </stackView>
-            </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-            <constraints>
-                <constraint firstItem="PGP-Pv-tLr" firstAttribute="top" secondItem="l3c-6M-qNF" secondAttribute="top" id="5wq-H1-DZQ"/>
-                <constraint firstItem="l3c-6M-qNF" firstAttribute="trailing" secondItem="PGP-Pv-tLr" secondAttribute="trailing" id="M9g-ux-wM9"/>
-                <constraint firstItem="l3c-6M-qNF" firstAttribute="bottom" secondItem="PGP-Pv-tLr" secondAttribute="bottom" id="Zx3-Mb-aFT"/>
-                <constraint firstItem="PGP-Pv-tLr" firstAttribute="leading" secondItem="l3c-6M-qNF" secondAttribute="leading" id="tzX-zI-kei"/>
-            </constraints>
-            <viewLayoutGuide key="safeArea" id="l3c-6M-qNF"/>
-            <connections>
-                <outlet property="v1" destination="HVB-mj-0mS" id="Uti-KQ-hB2"/>
-                <outlet property="v2" destination="O1U-R9-L3s" id="d3E-vI-jB7"/>
-                <outlet property="v3" destination="aae-zo-doQ" id="vFc-ed-EOs"/>
-                <outlet property="v4" destination="ZRB-Gj-eQ6" id="MaC-Q4-YCd"/>
-            </connections>
-            <point key="canvasLocation" x="-299" y="-711"/>
-        </view>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Tq5-Ji-v2a" customClass="CustomDashLion" customModule="BaseDemo" customModuleProvider="target">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Tq5-Ji-v2a" customClass="ManagerDashboard" customModule="BaseDemo" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>

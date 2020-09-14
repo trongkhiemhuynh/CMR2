@@ -61,7 +61,7 @@ class LoginController : BaseViewController {
             updateView()
         } else {
             //show loading
-            didLoading()
+//            didLoading()
             
             //fetch data
             output?.fetchAuthentication(username: tfUserName.text!, password: tfPassword.text!)
@@ -83,7 +83,7 @@ class LoginController : BaseViewController {
 extension LoginController : LoginPresenterOutput {
     func updateView() {
         // end loading
-        dismissLoading()
+//        dismissLoading()
         
         // router to main
         let routerManager = RouterManager.shared
@@ -94,7 +94,7 @@ extension LoginController : LoginPresenterOutput {
     
     func presentError(_ error: Error) {
         // end loading
-        dismissLoading()
+//        dismissLoading()
         
         // show error
         showErrorAlert(message: error.localizedDescription)

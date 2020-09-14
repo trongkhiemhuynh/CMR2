@@ -14,7 +14,7 @@ protocol DBSaleChart {
     func setPieDataCount(_ items : Array<Int>)
 }
 
-class CustomDashLion: BaseView {
+class ManagerDashboard: BaseView {
 
     @IBOutlet weak var vBarChart : UIView!
     @IBOutlet weak var vPieChart : UIView!
@@ -148,7 +148,7 @@ class CustomDashLion: BaseView {
     }
 }
 
-extension CustomDashLion : DBSaleChart {
+extension ManagerDashboard : DBSaleChart {
     func setupPieChartView(chartView: PieChartView) {
         
         chartView.usePercentValuesEnabled = true
@@ -244,4 +244,8 @@ extension CustomDashLion : DBSaleChart {
     }
     
     
+}
+
+extension ManagerDashboard : XibInitalization {
+    typealias Element = ManagerDashboard
 }

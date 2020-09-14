@@ -50,16 +50,14 @@ extension UIViewController {
     
     func showErrorAlert(message: String) {
         let alertVC = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-            
-        }))
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        alertVC.addAction(action)
         
         present(alertVC, animated: true, completion: nil)
     }
     
     func didLoading() {
-        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
-
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
         loadingIndicator.hidesWhenStopped = true
         loadingIndicator.style = UIActivityIndicatorView.Style.gray
@@ -70,7 +68,7 @@ extension UIViewController {
     }
     
     func dismissLoading() {
-        dismiss(animated: false, completion: nil)
+        alert.dismiss(animated: true, completion: nil)
     }
     
     func didPopView() {

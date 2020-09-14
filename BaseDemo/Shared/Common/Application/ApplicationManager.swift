@@ -16,8 +16,8 @@ class ApplicationManager {
     
     var mainTabbar : MainAppController?
     var itemMenuSelected : ItemMenu?
-    var templateDashboard = ["manager":"lion","leader":"leopard"]
-    var selectedDashboard : String = "leader"
+    var templateDashboard : DASHBOARDTYPE = .manager
+    
     // Global Date formatter
     lazy var globalDateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()

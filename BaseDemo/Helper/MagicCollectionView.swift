@@ -76,15 +76,7 @@ extension MagicCollectionView : MagicCollectionViewDelegateOutput {
             vc.title = title
             
             if title == "Change Dashboard" {
-                let k = ApplicationManager.sharedInstance.templateDashboard.keys
-                let kSelected = ApplicationManager.sharedInstance.selectedDashboard
-                
-                for sk in k {
-                    if sk != kSelected {
-                        ApplicationManager.sharedInstance.selectedDashboard = sk
-                        break
-                    }
-                }
+//              let index = ApplicationManager.sharedInstance.templateDashboard.hashValue
                 return
             }
             

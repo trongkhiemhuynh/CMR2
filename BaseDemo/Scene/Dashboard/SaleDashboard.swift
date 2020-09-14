@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomDashLeopard: BaseView {
+class SaleDashboard: BaseView {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -27,7 +27,7 @@ class CustomDashLeopard: BaseView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.translatesAutoresizingMaskIntoConstraints = false
+//        self.translatesAutoresizingMaskIntoConstraints = false
         print("---",frame, #function, NSStringFromClass(self.classForCoder))
     }
     
@@ -45,4 +45,8 @@ class CustomDashLeopard: BaseView {
     func setupView(){
          v1.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.handleTapped(gesture:))))
     }
+}
+
+extension SaleDashboard : XibInitalization {
+    typealias Element = SaleDashboard
 }

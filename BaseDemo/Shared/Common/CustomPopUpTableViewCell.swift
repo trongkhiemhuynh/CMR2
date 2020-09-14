@@ -24,9 +24,18 @@ class CustomPopUpTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func updateData(img : UIImage, title : String) {
-        iv.image = img
+    func updateData(nameImg : String, title : String) {
+        
         lbl.text = title
+        var img : UIImage?
+        // duplicate icon email
+        if title == "Email" {
+            img = UIImage(named: (nameImg + "_"))
+        } else {
+            img = UIImage(named: nameImg)
+        }
+        
+        iv.image = img
     }
 }
 

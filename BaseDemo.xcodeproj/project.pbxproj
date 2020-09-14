@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		222B5FC724F65C0300419452 /* CustomPopUpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222B5FC524F65C0300419452 /* CustomPopUpTableViewCell.swift */; };
 		222B5FC824F65C0300419452 /* CustomPopUpTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 222B5FC624F65C0300419452 /* CustomPopUpTableViewCell.xib */; };
-		222B5FCA24F76CE600419452 /* CustomDashLeopard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222B5FC924F76CE600419452 /* CustomDashLeopard.swift */; };
-		222B5FCC24F76CF700419452 /* CustomDashboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 222B5FCB24F76CF700419452 /* CustomDashboard.xib */; };
-		222B5FCE24F76E7800419452 /* CustomDashLion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222B5FCD24F76E7800419452 /* CustomDashLion.swift */; };
+		222B5FCA24F76CE600419452 /* SaleDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222B5FC924F76CE600419452 /* SaleDashboard.swift */; };
+		222B5FCC24F76CF700419452 /* ManagerDashboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 222B5FCB24F76CF700419452 /* ManagerDashboard.xib */; };
+		222B5FCE24F76E7800419452 /* ManagerDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222B5FCD24F76E7800419452 /* ManagerDashboard.swift */; };
 		222B5FD024F7A31300419452 /* PopUpSuccessful.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222B5FCF24F7A31300419452 /* PopUpSuccessful.swift */; };
 		222B5FD224F7A32A00419452 /* PopUpConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222B5FD124F7A32A00419452 /* PopUpConfirm.swift */; };
 		223E41D424F8E4FA0064D4C6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223E41CD24F8E4F90064D4C6 /* Alamofire.framework */; };
@@ -30,6 +30,9 @@
 		223E41E124F8E4FA0064D4C6 /* SkyFloatingLabelTextField.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 223E41D324F8E4FA0064D4C6 /* SkyFloatingLabelTextField.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		223E41E524F9002B0064D4C6 /* NewTicketCheckboxCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E41E324F9002B0064D4C6 /* NewTicketCheckboxCollectionViewCell.swift */; };
 		223E41E624F9002B0064D4C6 /* NewTicketCheckboxCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223E41E424F9002B0064D4C6 /* NewTicketCheckboxCollectionViewCell.xib */; };
+		223EF1ED250F41D400C076BF /* SaleDashboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223EF1EC250F41D400C076BF /* SaleDashboard.xib */; };
+		223EF1EF250F41E800C076BF /* AgentDashboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223EF1EE250F41E800C076BF /* AgentDashboard.xib */; };
+		223EF1F1250F465D00C076BF /* AgentDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EF1F0250F465D00C076BF /* AgentDashboard.swift */; };
 		22403025250B4DCF002509DE /* NewTicketRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22403024250B4DCF002509DE /* NewTicketRoute.swift */; };
 		224326D12505E747005AE588 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224326D02505E747005AE588 /* LoginState.swift */; };
 		224326D7250724EF005AE588 /* SplashRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224326D6250724EF005AE588 /* SplashRoute.swift */; };
@@ -235,9 +238,9 @@
 /* Begin PBXFileReference section */
 		222B5FC524F65C0300419452 /* CustomPopUpTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopUpTableViewCell.swift; sourceTree = "<group>"; };
 		222B5FC624F65C0300419452 /* CustomPopUpTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPopUpTableViewCell.xib; sourceTree = "<group>"; };
-		222B5FC924F76CE600419452 /* CustomDashLeopard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDashLeopard.swift; sourceTree = "<group>"; };
-		222B5FCB24F76CF700419452 /* CustomDashboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDashboard.xib; sourceTree = "<group>"; };
-		222B5FCD24F76E7800419452 /* CustomDashLion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDashLion.swift; sourceTree = "<group>"; };
+		222B5FC924F76CE600419452 /* SaleDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleDashboard.swift; sourceTree = "<group>"; };
+		222B5FCB24F76CF700419452 /* ManagerDashboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManagerDashboard.xib; sourceTree = "<group>"; };
+		222B5FCD24F76E7800419452 /* ManagerDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerDashboard.swift; sourceTree = "<group>"; };
 		222B5FCF24F7A31300419452 /* PopUpSuccessful.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpSuccessful.swift; sourceTree = "<group>"; };
 		222B5FD124F7A32A00419452 /* PopUpConfirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpConfirm.swift; sourceTree = "<group>"; };
 		223E41CD24F8E4F90064D4C6 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -249,6 +252,9 @@
 		223E41D324F8E4FA0064D4C6 /* SkyFloatingLabelTextField.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkyFloatingLabelTextField.framework; path = Carthage/Build/iOS/SkyFloatingLabelTextField.framework; sourceTree = "<group>"; };
 		223E41E324F9002B0064D4C6 /* NewTicketCheckboxCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketCheckboxCollectionViewCell.swift; sourceTree = "<group>"; };
 		223E41E424F9002B0064D4C6 /* NewTicketCheckboxCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTicketCheckboxCollectionViewCell.xib; sourceTree = "<group>"; };
+		223EF1EC250F41D400C076BF /* SaleDashboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SaleDashboard.xib; sourceTree = "<group>"; };
+		223EF1EE250F41E800C076BF /* AgentDashboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgentDashboard.xib; sourceTree = "<group>"; };
+		223EF1F0250F465D00C076BF /* AgentDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentDashboard.swift; sourceTree = "<group>"; };
 		22403024250B4DCF002509DE /* NewTicketRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketRoute.swift; sourceTree = "<group>"; };
 		224326D02505E747005AE588 /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
 		224326D6250724EF005AE588 /* SplashRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRoute.swift; sourceTree = "<group>"; };
@@ -460,8 +466,10 @@
 		224326D325060D4E005AE588 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				222B5FCB24F76CF700419452 /* CustomDashboard.xib */,
+				222B5FCB24F76CF700419452 /* ManagerDashboard.xib */,
 				4B28018224ECE5D7007647F8 /* DashboardController.xib */,
+				223EF1EC250F41D400C076BF /* SaleDashboard.xib */,
+				223EF1EE250F41E800C076BF /* AgentDashboard.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1084,8 +1092,9 @@
 				224326D325060D4E005AE588 /* View */,
 				224326D225060D47005AE588 /* Worker */,
 				4B28018124ECE5D7007647F8 /* DashboardController.swift */,
-				222B5FC924F76CE600419452 /* CustomDashLeopard.swift */,
-				222B5FCD24F76E7800419452 /* CustomDashLion.swift */,
+				222B5FC924F76CE600419452 /* SaleDashboard.swift */,
+				222B5FCD24F76E7800419452 /* ManagerDashboard.swift */,
+				223EF1F0250F465D00C076BF /* AgentDashboard.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -1286,11 +1295,13 @@
 				4B166C5324EF65FD0030C592 /* CustomDetailTabView.xib in Resources */,
 				4B166C3124ED0D690030C592 /* TicketDetailActivityViewController.xib in Resources */,
 				4B166C4924EE6A340030C592 /* CustomTicketCollectionViewCell.xib in Resources */,
+				223EF1ED250F41D400C076BF /* SaleDashboard.xib in Resources */,
 				224326FC25087815005AE588 /* NotificationTableViewCell.xib in Resources */,
 				224327052509C8F9005AE588 /* SortContactsViewCell.xib in Resources */,
 				224326F825087378005AE588 /* NotificationView.xib in Resources */,
 				C23F628F24EF05F100E37560 /* PopupView.xib in Resources */,
-				222B5FCC24F76CF700419452 /* CustomDashboard.xib in Resources */,
+				222B5FCC24F76CF700419452 /* ManagerDashboard.xib in Resources */,
+				223EF1EF250F41E800C076BF /* AgentDashboard.xib in Resources */,
 				4B166C5924EF78CD0030C592 /* TicketDetailActivityCollectionViewCell.xib in Resources */,
 				4B2D4BF224DD02D200CABF1D /* HomeViewController.xib in Resources */,
 				4B166C5D24EF78F80030C592 /* TicketDetailInfoCollectionViewCell.xib in Resources */,
@@ -1475,7 +1486,7 @@
 				C2E857EC24F397A9002960A2 /* TabNavigationMenu.swift in Sources */,
 				224346D824FCE0C100CF7AA3 /* ApplicationManager.swift in Sources */,
 				226D9348250A180000457AD5 /* MagicCollectionViewCell.swift in Sources */,
-				222B5FCA24F76CE600419452 /* CustomDashLeopard.swift in Sources */,
+				222B5FCA24F76CE600419452 /* SaleDashboard.swift in Sources */,
 				4B166C3024ED0D690030C592 /* TicketDetailActivityViewController.swift in Sources */,
 				229A55232500E6F1008A0ECD /* FetchLoginWorker.swift in Sources */,
 				224EBAF824F50EDA00CB676F /* NewTicketViewController.swift in Sources */,
@@ -1530,6 +1541,7 @@
 				224346CD24FCD36B00CF7AA3 /* Requestable.swift in Sources */,
 				229A552D2500EFDD008A0ECD /* FetchLoginRequest.swift in Sources */,
 				229A55272500E733008A0ECD /* LoginPresenter.swift in Sources */,
+				223EF1F1250F465D00C076BF /* AgentDashboard.swift in Sources */,
 				4B28018324ECE5D7007647F8 /* DashboardController.swift in Sources */,
 				C23F629524EF223000E37560 /* CustomDetailInfoView.swift in Sources */,
 				229A55252500E724008A0ECD /* LoginConfiguration.swift in Sources */,
@@ -1544,7 +1556,7 @@
 				C2E857E424F36D30002960A2 /* InfoTicketRow.swift in Sources */,
 				224326F6250872EB005AE588 /* NotificationView.swift in Sources */,
 				229A55292500E750008A0ECD /* LoginInteractor.swift in Sources */,
-				222B5FCE24F76E7800419452 /* CustomDashLion.swift in Sources */,
+				222B5FCE24F76E7800419452 /* ManagerDashboard.swift in Sources */,
 				224346C724FCB5CF00CF7AA3 /* MainReducer.swift in Sources */,
 				226D933D2509FF2500457AD5 /* FilterCollectionViewCell.swift in Sources */,
 				224346DA24FCF4D100CF7AA3 /* SwipeableCollectionViewCell.swift in Sources */,

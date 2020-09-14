@@ -65,7 +65,7 @@ extension PopupView : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomPopUpTableViewCell.identifier, for: indexPath) as! CustomPopUpTableViewCell
         let name = dummy[indexPath.row]
-        cell.updateData(img: UIImage(named: name.lowercased().replacingOccurrences(of: " ", with: "_"))!, title: name)
+        cell.updateData(nameImg: name.lowercased().replacingOccurrences(of: " ", with: "_"), title: name)
         
         return cell
     }

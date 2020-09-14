@@ -16,6 +16,7 @@ class DashboardController: BaseViewController {
     @IBOutlet weak var lblCountNotification : UILabel!
     
     var menu : SideMenuNavigationController?
+    
     lazy var blurView : UIView = {
         let v = UIView(frame: view.frame)
         v.backgroundColor = .black
@@ -57,27 +58,31 @@ class DashboardController: BaseViewController {
     
     
     func addSubView() {
-        let k = ApplicationManager.sharedInstance.selectedDashboard
-//        let mode = ApplicationManager.sharedInstance.templateDashboard[k]
-        let sv: BaseView?
+        var sv: BaseView? = UIView() as? BaseView
         
-        if k.contains("manager") {
-            sv = Bundle.main.loadNibNamed("CustomDashboard", owner: self, options: nil)?.last as? CustomDashLion
+        let type = ApplicationManager.sharedInstance.templateDashboard
+        
+        switch type {
+        case .manager:
+            sv = ManagerDashboard.xibInstance()
             
             sv?.controller = self
             sv?.addBarChart()
             sv?.addPieChart()
-        } else {
-            sv = Bundle.main.loadNibNamed("CustomDashboard", owner: self, options: nil)?.first as? CustomDashLeopard
+        case .sale:
+            Logger.info("sale")
+            sv = SaleDashboard.xibInstance()
+        case .agent:
+            Logger.info("agent")
+//        default:
+//            Logger.info("default")
         }
-        
-        Logger.info("\(widthScreen) -\(heightScreen)")
-        
+
         vContent.addSubview(sv!)
         
         sv?.frame = vContent.bounds
         
-        view.layoutIfNeeded()
+        Logger.info("\(widthScreen) -\(heightScreen)")
     }
     
     override func viewWillAppear(_ animated: Bool) {
