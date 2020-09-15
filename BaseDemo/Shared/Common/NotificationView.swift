@@ -58,7 +58,7 @@ extension NotificationView : UITableViewDataSource {
         cell.lblName.text = dumData[indexPath.row] + " sent you a message"
         
         cell.lblTime.text = ApplicationManager.sharedInstance.globalDateFormatter.string(from: Date())
-        cell.imageView?.image = UIImage(named: "no_image")
+        cell.imageView?.image = UIImage(named: "no_avatar")
         
         return cell
     }

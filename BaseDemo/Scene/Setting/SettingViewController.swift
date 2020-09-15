@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SettingViewController: BaseViewController {
 
@@ -17,7 +18,14 @@ class SettingViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
     }
-
+    
+    override func initData() {
+        let realm = try! Realm()
+        let element = realm.objects(LoginObject.self)
+        
+        Logger.debug(element)
+    }
+    
     override func setupView() {
         let v = MagicCollectionView.xibInstance()
         v.controller = self

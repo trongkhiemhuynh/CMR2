@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SkyFloatingLabelTextField
+import RealmSwift
 
 protocol LoginControllerOutput {
     func fetchAuthentication(username: String, password: String)
@@ -98,6 +99,18 @@ extension LoginController : LoginPresenterOutput {
         
         // show error
         showErrorAlert(message: error.localizedDescription)
+        
+        //FIXME save to realm
+        let realm = try! Realm()
+        try! realm.write {
+            let login = realm.create(LoginObject.self)
+            login.name = "steve"
+            login.token = "jslfjsalfjlkasdjfdsfhowejktrnwe93r434h3kjh53jh2k53j2k5hk"
+            login.tenant = "basebs.com"
+            //log
+            Logger.info(login)
+            realm.add(login)
+        }
     }
 }
 

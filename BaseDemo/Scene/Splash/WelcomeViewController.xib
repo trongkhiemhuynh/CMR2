@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeViewController" customModule="BaseDemo" customModuleProvider="target">
             <connections>
-                <outlet property="constraintIvUser" destination="SL3-9w-LHb" id="3RW-JL-AS8"/>
+                <outlet property="constraintCenterYIvUser" destination="4AU-0P-WWV" id="LaC-zn-6y5"/>
                 <outlet property="ivAgree" destination="37h-wv-2vw" id="SwU-zU-Ez8"/>
                 <outlet property="ivUser" destination="Yue-hs-puh" id="cSQ-ne-nEP"/>
                 <outlet property="vCircle" destination="Xpo-gC-aCR" id="mVG-mN-9Rn"/>
@@ -33,28 +33,28 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xpo-gC-aCR">
                     <rect key="frame" x="40" y="281" width="334" height="334"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image" translatesAutoresizingMaskIntoConstraints="NO" id="Yue-hs-puh">
-                            <rect key="frame" x="138" y="78" width="58" height="58"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Yue-hs-puh">
+                            <rect key="frame" x="128" y="128" width="78" height="78"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="58" id="pdf-qT-KL0"/>
-                                <constraint firstAttribute="width" constant="58" id="vNM-lI-9hO"/>
+                                <constraint firstAttribute="width" secondItem="Yue-hs-puh" secondAttribute="height" id="E4K-uc-stf"/>
+                                <constraint firstAttribute="width" constant="78" id="vNM-lI-9hO"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steve" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVw-im-Mhz">
-                            <rect key="frame" x="141.5" y="154" width="51" height="24"/>
+                            <rect key="frame" x="141.5" y="222" width="51" height="24"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manager" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uyg-Q2-j0X">
-                            <rect key="frame" x="135.5" y="193" width="63" height="19.5"/>
+                            <rect key="frame" x="135.5" y="262" width="63" height="19.5"/>
                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="37h-wv-2vw">
-                            <rect key="frame" x="142" y="232.5" width="50" height="50"/>
+                            <rect key="frame" x="142" y="297.5" width="50" height="50"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="cQ8-cD-Zso"/>
@@ -64,15 +64,15 @@
                     </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="Yue-hs-puh" firstAttribute="centerY" secondItem="Xpo-gC-aCR" secondAttribute="centerY" id="4AU-0P-WWV"/>
                         <constraint firstItem="ZVw-im-Mhz" firstAttribute="centerX" secondItem="Xpo-gC-aCR" secondAttribute="centerX" id="7Yw-Fx-EO7"/>
-                        <constraint firstItem="ZVw-im-Mhz" firstAttribute="top" secondItem="Yue-hs-puh" secondAttribute="bottom" constant="18" id="Hrg-Q7-a34"/>
-                        <constraint firstItem="Yue-hs-puh" firstAttribute="top" secondItem="Xpo-gC-aCR" secondAttribute="top" constant="78" id="SL3-9w-LHb"/>
-                        <constraint firstItem="Uyg-Q2-j0X" firstAttribute="top" secondItem="ZVw-im-Mhz" secondAttribute="bottom" constant="15" id="bCu-yr-x5w"/>
+                        <constraint firstItem="ZVw-im-Mhz" firstAttribute="top" secondItem="Yue-hs-puh" secondAttribute="bottom" constant="16" id="Hrg-Q7-a34"/>
+                        <constraint firstItem="Uyg-Q2-j0X" firstAttribute="top" secondItem="ZVw-im-Mhz" secondAttribute="bottom" constant="16" id="bCu-yr-x5w"/>
                         <constraint firstItem="Uyg-Q2-j0X" firstAttribute="centerX" secondItem="Xpo-gC-aCR" secondAttribute="centerX" id="boz-nB-m2o"/>
                         <constraint firstItem="Yue-hs-puh" firstAttribute="centerX" secondItem="Xpo-gC-aCR" secondAttribute="centerX" id="cYt-iy-8sK"/>
                         <constraint firstItem="37h-wv-2vw" firstAttribute="centerX" secondItem="Xpo-gC-aCR" secondAttribute="centerX" id="fjx-pz-Yda"/>
                         <constraint firstAttribute="width" secondItem="Xpo-gC-aCR" secondAttribute="height" multiplier="1:1" id="wz3-aX-6ht"/>
-                        <constraint firstItem="37h-wv-2vw" firstAttribute="top" secondItem="Uyg-Q2-j0X" secondAttribute="bottom" constant="20" id="ywJ-e5-c8L"/>
+                        <constraint firstItem="37h-wv-2vw" firstAttribute="top" secondItem="Uyg-Q2-j0X" secondAttribute="bottom" constant="16" id="ywJ-e5-c8L"/>
                     </constraints>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BaseBS_04" translatesAutoresizingMaskIntoConstraints="NO" id="u8R-Fc-mBV">
@@ -109,6 +109,6 @@
     <resources>
         <image name="BaseBS_04" width="74" height="25"/>
         <image name="check" width="70" height="53"/>
-        <image name="no_image" width="50" height="50"/>
+        <image name="no_avatar" width="50" height="50"/>
     </resources>
 </document>
