@@ -68,20 +68,21 @@ extension MagicCollectionView : MagicCollectionViewDelegateOutput {
         
         //settings controller
         if (controller?.isKind(of: SettingViewController.self))! {
+        
             let cell = collectionView.cellForItem(at: indexPath) as! MagicCollectionViewCell
-            let vc = UIViewController()
+            var vc = UIViewController()
             
             //title label
             let title = cell.title.text!
             vc.title = title
             
-            if title == "Change Dashboard" {
-//              let index = ApplicationManager.sharedInstance.templateDashboard.hashValue
+            if title == "Log out" {
+                RouterManager.shared.handleRouter(LoginRoute())
                 return
+            } else if title == "OCR" {
+                vc = OCRController()
             }
-            
-            
-            
+
             controller?.navigationController?.pushViewController(vc, animated: true)
         }
     }

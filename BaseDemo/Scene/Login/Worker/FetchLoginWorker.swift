@@ -9,6 +9,7 @@
 import Foundation
 import PromiseKit
 import ReSwift
+import RealmSwift
 
 struct UpdateLoginAction: Action {
     var login : LoginObj?
@@ -22,6 +23,19 @@ class FetchLoginWorker: AsyncLoginWorker {
         
         return Networking.shared.fetchLoginAuthentication(with: username, password: password).then {
             (loginObj) -> Promise<LoginObj> in
+            
+            //save to realm
+            let realm = try! Realm()
+            try! realm.write {
+                let login = realm.create(LoginObject.self)
+                login.name = loginObj.name!
+                login.token = loginObj.token!
+                login.tenant = loginObj.tenant!
+                //log
+                Logger.info(login)
+                realm.add(login)
+            }
+            
             
             // Dispatch action '
             let action = UpdateLoginAction(login: loginObj)
