@@ -164,8 +164,10 @@ extension CustomListView : UICollectionViewDelegateFlowLayout {
 }
 
 extension CustomListView : CustomListViewInput {
-    func updateListView(with stage: String) {
-        arrDummy = dummyData[stage] as? Array
-        cvList.reloadData()
+    func updateListView(with stage: String?) {
+        if let stage = stage {
+            arrDummy = dummyData[stage] as? Array
+            cvList.reloadData()
+        }
     }
 }

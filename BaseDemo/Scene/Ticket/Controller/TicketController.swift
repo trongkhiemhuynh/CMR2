@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 
 protocol CustomListViewInput: class {
-    func updateListView(with stage : String)
+    func updateListView(with stage : String?)
 }
 
 class TicketController: BaseViewController {
@@ -150,7 +150,7 @@ extension TicketController : CustomListViewOutput {
 }
 
 extension TicketController : CustomTicketStageViewOutput {
-    func didChangeStage(name: String) {
+    func didChangeStage(name: String?) {
         //delegate to subview
         delegate?.updateListView(with: name)
     }
