@@ -12,9 +12,12 @@ class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var vLarge: UIView!
     @IBOutlet weak var ivUser : UIImageView!
-    @IBOutlet weak var constraintIvUser: NSLayoutConstraint!
+    @IBOutlet weak var constraintCenterYIvUser: NSLayoutConstraint!
     @IBOutlet weak var ivAgree: UIImageView!
     @IBOutlet weak var vCircle: UIView!
+    
+    //private variable
+    private let constantRatioY : CGFloat = -0.18
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,10 +53,13 @@ class WelcomeViewController: UIViewController {
     }
     
     private func pushToMainApp() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             
             self.view.layoutIfNeeded()
-            self.constraintIvUser.constant = 68
+            
+            let constantMove = self.constantRatioY * self.vCircle.frame.height
+            
+            self.constraintCenterYIvUser.constant = constantMove
             
             UIView.animate(withDuration: 0.35, animations: {
                 
