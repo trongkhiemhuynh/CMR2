@@ -9,3 +9,6 @@
 #github "WenchaoD/FSCalendar"
 #github "danielgindi/Charts" ~> 3.5.0
 #github "jonkykong/SideMenu" ~> 6.0
+#github 	"garnele007/SwiftOCR"
+#github "gali8/Tesseract-OCR-iOS"
+github "realm/realm-cocoa"

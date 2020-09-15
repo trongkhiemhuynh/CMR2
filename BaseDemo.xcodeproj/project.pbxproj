@@ -33,6 +33,9 @@
 		223EF1ED250F41D400C076BF /* SaleDashboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223EF1EC250F41D400C076BF /* SaleDashboard.xib */; };
 		223EF1EF250F41E800C076BF /* AgentDashboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223EF1EE250F41E800C076BF /* AgentDashboard.xib */; };
 		223EF1F1250F465D00C076BF /* AgentDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EF1F0250F465D00C076BF /* AgentDashboard.swift */; };
+		223EF1FC2510929C00C076BF /* LoginObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EF1FB2510929C00C076BF /* LoginObject.swift */; };
+		223EF1FE2510987700C076BF /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223EF1FD2510987700C076BF /* Realm.framework */; };
+		223EF2002510993600C076BF /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223EF1FF2510993600C076BF /* RealmSwift.framework */; };
 		22403025250B4DCF002509DE /* NewTicketRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22403024250B4DCF002509DE /* NewTicketRoute.swift */; };
 		224326D12505E747005AE588 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224326D02505E747005AE588 /* LoginState.swift */; };
 		224326D7250724EF005AE588 /* SplashRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224326D6250724EF005AE588 /* SplashRoute.swift */; };
@@ -255,6 +258,9 @@
 		223EF1EC250F41D400C076BF /* SaleDashboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SaleDashboard.xib; sourceTree = "<group>"; };
 		223EF1EE250F41E800C076BF /* AgentDashboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgentDashboard.xib; sourceTree = "<group>"; };
 		223EF1F0250F465D00C076BF /* AgentDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentDashboard.swift; sourceTree = "<group>"; };
+		223EF1FB2510929C00C076BF /* LoginObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginObject.swift; sourceTree = "<group>"; };
+		223EF1FD2510987700C076BF /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		223EF1FF2510993600C076BF /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		22403024250B4DCF002509DE /* NewTicketRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketRoute.swift; sourceTree = "<group>"; };
 		224326D02505E747005AE588 /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
 		224326D6250724EF005AE588 /* SplashRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRoute.swift; sourceTree = "<group>"; };
@@ -427,6 +433,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				223EF2002510993600C076BF /* RealmSwift.framework in Frameworks */,
+				223EF1FE2510987700C076BF /* Realm.framework in Frameworks */,
 				224326DB25073362005AE588 /* SideMenu.framework in Frameworks */,
 				22802DEE24FE0D9200429518 /* FSCalendar.framework in Frameworks */,
 				223E41DC24F8E4FA0064D4C6 /* SwiftyBeaver.framework in Frameworks */,
@@ -456,6 +464,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		223EF1F92510926A00C076BF /* Realm  */ = {
+			isa = PBXGroup;
+			children = (
+				223EF1FA2510927C00C076BF /* Model */,
+			);
+			path = "Realm ";
+			sourceTree = "<group>";
+		};
+		223EF1FA2510927C00C076BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				223EF1FB2510929C00C076BF /* LoginObject.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		224326D225060D47005AE588 /* Worker */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,6 +558,7 @@
 		224346AE24FCAE4C00CF7AA3 /* Disk Manager */ = {
 			isa = PBXGroup;
 			children = (
+				223EF1F92510926A00C076BF /* Realm  */,
 			);
 			path = "Disk Manager";
 			sourceTree = "<group>";
@@ -888,6 +913,8 @@
 		4B1FF03A24E12DAC00E63819 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				223EF1FF2510993600C076BF /* RealmSwift.framework */,
+				223EF1FD2510987700C076BF /* Realm.framework */,
 				224326DA25073362005AE588 /* SideMenu.framework */,
 				22802DF324FE2F3200429518 /* Charts.framework */,
 				22802DED24FE0D9200429518 /* FSCalendar.framework */,
@@ -1365,6 +1392,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Charts.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SideMenu.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -1470,6 +1498,7 @@
 				224326FB25087815005AE588 /* NotificationTableViewCell.swift in Sources */,
 				22802DF024FE1DD900429518 /* CalendarView.swift in Sources */,
 				224326F225077A81005AE588 /* MenuViewController.swift in Sources */,
+				223EF1FC2510929C00C076BF /* LoginObject.swift in Sources */,
 				224346D624FCE05F00CF7AA3 /* Logger.swift in Sources */,
 				226D9340250A0F1100457AD5 /* MagicCollectionView.swift in Sources */,
 				C23F629924EF228100E37560 /* CustomDetailActionView.swift in Sources */,

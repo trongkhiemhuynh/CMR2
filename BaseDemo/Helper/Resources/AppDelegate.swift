@@ -8,6 +8,7 @@
 
 import UIKit
 import ReSwift
+import Realm
 
 // Main State
 /// mainStore
@@ -26,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         ApplicationManager.sharedInstance.initCommon()
         
-        sleep(3)
+        sleep(0)
         
         let routerManager = RouterManager.shared
         let routeSplash = SplashRoute()
