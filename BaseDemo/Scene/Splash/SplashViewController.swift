@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SplashViewController: BaseViewController {
 
@@ -25,13 +26,30 @@ class SplashViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (timer) in
-            RouterManager.shared.handleRouter(LoginRoute())
-        }
+        
         
     }
     
+    override func initData() {
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (timer) in
+            let realm = try! Realm()
+            let loginObject = realm.objects(LoginObject.self).first
+            
+            let nameObj = loginObject?.name
 
+            Logger.debug(nameObj)
+            
+            if let name = nameObj, name == "steve" {
+                
+                //route to main
+                RouterManager.shared.handleRouter(MainRoute())
+            } else {
+                //route to login
+                RouterManager.shared.handleRouter(LoginRoute())
+            }
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
