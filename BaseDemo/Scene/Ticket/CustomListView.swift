@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 protocol CustomListViewOutput : class {
     func didChangeSort(with name : String?)
@@ -52,6 +53,60 @@ class CustomListView: BaseView {
         cvList.backgroundColor = BASEColor.BackgroundListColor()
         vBgList.backgroundColor = BASEColor.BackgroundListColor()
         vContent.backgroundColor = BASEColor.BackgroundListColor()
+        
+        //FIXME read data from realm demo
+        readFile()
+        fetchVocabularyFromInitRealmDB()
+    }
+    
+    private func readFile() {
+//        let stringPath = Bundle.main.path(forResource: "demo", ofType: "realm")
+//        let urlPath = Bundle.main.url(forResource: "demo", withExtension: "realm")
+//
+//        var config = Realm.Configuration()
+//        config.fileURL = urlPath
+//        config.readOnly = true
+//
+//        let realm = try! Realm(configuration: config)
+//
+//        let obj = realm.dynamicObjects("Profile")
+//        Logger.debug(obj.count)
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+    }
+    
+    func fetchVocabularyFromInitRealmDB() {
+//        let realm = try! Realm()
+//
+////        if vocabularyList.count > 0 {
+////            return vocabularyList
+////        }
+//
+//        let dataFilePath = Bundle.main.path(forResource: "demo", ofType: "realm")
+//        let defaultPath = realm.configuration.fileURL?.path
+//        guard defaultPath != nil &&  dataFilePath != nil else {
+//            return []
+//        }
+//        do {
+//            try FileManager.default.removeItemAtPath(defaultPath!)
+//            try FileManager.default.copyItemAtPath(dataFilePath!, toPath: defaultPath!)
+//        } catch {
+//            print(error)
+//        }
+//        return vocabularyList
+        
+        let path = Bundle.main.path(forResource: "demo", ofType: "realm")
+        Logger.info(path)
+        var config = Realm.Configuration()
+        config.fileURL = URL(fileURLWithPath: path!)
+        
+        do {
+            let realm = try? Realm(configuration: config) // also tried try! Realm(path: path)
+            
+            let profiles = realm?.objects(Profile.self)
+            Logger.debug(profiles?.count)
+        } catch {
+            Logger.error(error.localizedDescription)
+        }
     }
     
     override func layoutSubviews() {

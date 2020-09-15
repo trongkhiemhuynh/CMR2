@@ -33,14 +33,13 @@
 		223EF1ED250F41D400C076BF /* SaleDashboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223EF1EC250F41D400C076BF /* SaleDashboard.xib */; };
 		223EF1EF250F41E800C076BF /* AgentDashboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223EF1EE250F41E800C076BF /* AgentDashboard.xib */; };
 		223EF1F1250F465D00C076BF /* AgentDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EF1F0250F465D00C076BF /* AgentDashboard.swift */; };
-
 		223EF1F4250F604F00C076BF /* OCRController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EF1F2250F604F00C076BF /* OCRController.swift */; };
 		223EF1F5250F604F00C076BF /* OCRController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223EF1F3250F604F00C076BF /* OCRController.xib */; };
-
 		223EF1FC2510929C00C076BF /* LoginObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EF1FB2510929C00C076BF /* LoginObject.swift */; };
 		223EF1FE2510987700C076BF /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223EF1FD2510987700C076BF /* Realm.framework */; };
 		223EF2002510993600C076BF /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223EF1FF2510993600C076BF /* RealmSwift.framework */; };
-
+		223EF2022510A8EC00C076BF /* demo.realm in Resources */ = {isa = PBXBuildFile; fileRef = 223EF2012510A8EC00C076BF /* demo.realm */; };
+		223EF2042510B26F00C076BF /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EF2032510B26F00C076BF /* Profile.swift */; };
 		22403025250B4DCF002509DE /* NewTicketRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22403024250B4DCF002509DE /* NewTicketRoute.swift */; };
 		224326D12505E747005AE588 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224326D02505E747005AE588 /* LoginState.swift */; };
 		224326D7250724EF005AE588 /* SplashRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224326D6250724EF005AE588 /* SplashRoute.swift */; };
@@ -263,15 +262,14 @@
 		223EF1EC250F41D400C076BF /* SaleDashboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SaleDashboard.xib; sourceTree = "<group>"; };
 		223EF1EE250F41E800C076BF /* AgentDashboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgentDashboard.xib; sourceTree = "<group>"; };
 		223EF1F0250F465D00C076BF /* AgentDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentDashboard.swift; sourceTree = "<group>"; };
-
 		223EF1F2250F604F00C076BF /* OCRController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRController.swift; sourceTree = "<group>"; };
 		223EF1F3250F604F00C076BF /* OCRController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OCRController.xib; sourceTree = "<group>"; };
 		223EF1F6250F6DE900C076BF /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TesseractOCR.framework; path = Carthage/Build/iOS/Static/TesseractOCR.framework; sourceTree = "<group>"; };
-
 		223EF1FB2510929C00C076BF /* LoginObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginObject.swift; sourceTree = "<group>"; };
 		223EF1FD2510987700C076BF /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		223EF1FF2510993600C076BF /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
-
+		223EF2012510A8EC00C076BF /* demo.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = demo.realm; sourceTree = "<group>"; };
+		223EF2032510B26F00C076BF /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		22403024250B4DCF002509DE /* NewTicketRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketRoute.swift; sourceTree = "<group>"; };
 		224326D02505E747005AE588 /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
 		224326D6250724EF005AE588 /* SplashRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRoute.swift; sourceTree = "<group>"; };
@@ -924,12 +922,9 @@
 		4B1FF03A24E12DAC00E63819 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-
 				223EF1F6250F6DE900C076BF /* TesseractOCR.framework */,
-
 				223EF1FF2510993600C076BF /* RealmSwift.framework */,
 				223EF1FD2510987700C076BF /* Realm.framework */,
-
 				224326DA25073362005AE588 /* SideMenu.framework */,
 				22802DF324FE2F3200429518 /* Charts.framework */,
 				22802DED24FE0D9200429518 /* FSCalendar.framework */,
@@ -977,6 +972,7 @@
 		4B2D4BF624DD289100CABF1D /* Staging */ = {
 			isa = PBXGroup;
 			children = (
+				223EF2012510A8EC00C076BF /* demo.realm */,
 				224346DB24FCF4DC00CF7AA3 /* UIView+Anchors.swift */,
 				224346D924FCF4D100CF7AA3 /* SwipeableCollectionViewCell.swift */,
 				4B2D4BEE24DD029800CABF1D /* Home */,
@@ -990,6 +986,7 @@
 				C2E857F124F3A886002960A2 /* TabNavigationMenu.xib */,
 				223EF1F2250F604F00C076BF /* OCRController.swift */,
 				223EF1F3250F604F00C076BF /* OCRController.xib */,
+				223EF2032510B26F00C076BF /* Profile.swift */,
 			);
 			path = Staging;
 			sourceTree = "<group>";
@@ -1331,6 +1328,7 @@
 				222B5FC824F65C0300419452 /* CustomPopUpTableViewCell.xib in Resources */,
 				C2E857E024F368D7002960A2 /* CreatNewTicketView.xib in Resources */,
 				223E41E624F9002B0064D4C6 /* NewTicketCheckboxCollectionViewCell.xib in Resources */,
+				223EF2022510A8EC00C076BF /* demo.realm in Resources */,
 				4B28017D24ECCA17007647F8 /* MainViewController.xib in Resources */,
 				4B166C3E24EE5C150030C592 /* CustomTitleView.xib in Resources */,
 				4B166C2324ECFD620030C592 /* TabMenuController.xib in Resources */,
@@ -1596,6 +1594,7 @@
 				224346C924FCB80200CF7AA3 /* FetchTicketWorker.swift in Sources */,
 				2270236E24F8AE79002C06AC /* Identifier.swift in Sources */,
 				2270236C24F8AE5E002C06AC /* UITableView+Register.swift in Sources */,
+				223EF2042510B26F00C076BF /* Profile.swift in Sources */,
 				4B166C3824EE16BB0030C592 /* Common.swift in Sources */,
 				4B166C4B24EE7DE90030C592 /* CustomTicketStageView.swift in Sources */,
 				224326E12507394E005AE588 /* MenuCollectionViewCell.swift in Sources */,

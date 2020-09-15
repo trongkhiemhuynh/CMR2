@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MagicCollectionView: BaseView {
     // variable
@@ -78,6 +79,14 @@ extension MagicCollectionView : MagicCollectionViewDelegateOutput {
             
             if title == "Log out" {
                 RouterManager.shared.handleRouter(LoginRoute())
+                
+                //realm
+                let realm = try! Realm()
+    
+                try! realm.write {
+                    realm.deleteAll()
+                }
+                
                 return
             } else if title == "OCR" {
                 vc = OCRController()
