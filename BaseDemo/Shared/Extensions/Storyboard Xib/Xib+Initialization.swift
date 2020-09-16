@@ -20,7 +20,6 @@ protocol XibInitalization : Identifier {
 
 extension XibInitalization {
     static func xib() -> UINib {
-        print("debug---",#function)
         return UINib(nibName: Element.identifier, bundle: nil)
     }
 }

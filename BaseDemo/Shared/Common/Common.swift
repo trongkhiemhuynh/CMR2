@@ -35,12 +35,12 @@ public extension Notification.Name {
 
 let arrInputTicket = ["Ticket owner", "Ticket ID", "Phone", "Mail", "Priority", "Status", "Subject","Escalated ?", "Done ?","Date/Time opened","Date/Time closed","Created by..., date/time","Last modifined by..., date/time","Description"]
 
-let arrIcTicket = ["ticketowner","ticket_id", "phone", "mail_ic", "priority", "status", "subject","escalated", "done","date","date","createdby","createdby","description"]
+let arrIcTicket = ["ticketowner","ticket_id", "phone", "mail_ic", "priority", "status", "subject","escalated", "done","date","date","createdby","createdby","description","description","description"]
 
-let arrMenuItems = ["Profile","Ticket","Dashboards","Ticket Milestones","Notes","Open Activities","Activity History", "Articles"]
+let arrMenuItems = ["Profile","Ticket","Dashboards","Ticket Milestones","Notes","Open Activities","Activity History", "Articles", "Account", "Contact"]
 
 enum ItemMenu : Int {
-    case none = 0, ticket = 1, dashboard, email, notes, activities, activities_history, articles
+    case none = 0, ticket = 1, dashboard, email, notes, activities, activities_history, articles, account, contact
     
     static subscript(n: Int) -> ItemMenu {
         return ItemMenu(rawValue: n)!

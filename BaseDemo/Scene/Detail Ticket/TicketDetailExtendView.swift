@@ -52,11 +52,7 @@ class TicketDetailExtendView: UIView {
 extension TicketDetailExtendView : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = collectionView.cellForItem(at: indexPath) as? ExtendCollectionViewCell
-        
-        if let it = item {
-            print(it.lblEx.text!)
-        }
-        
+
         removeFromSuperview()
     }
 }

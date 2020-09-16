@@ -45,7 +45,7 @@ class PopupView : BaseView {
             self.layoutIfNeeded()
         }) { (success) in
             if success {
-                print(#function)
+                
             }
         }
         

@@ -22,12 +22,10 @@ class CustomTabBarView: UIView {
     var activeItem : Int = 0
     
     @IBAction func tappedButton(_ sender : UIButton) {
-        print("---",#function)
         switchTab(from: self.activeItem, to: sender.tag)
     }
     
     func switchTab(from: Int, to: Int) {
-        print("---",#function)
         deactiveTab(tab: from)
         activateTab(tab: to)
         
@@ -42,8 +40,6 @@ class CustomTabBarView: UIView {
     }
     
     func setupView() {
-        print("-------",vContent.frame, #function)
-        vContent.layer.cornerRadius = 12
         vContent.backgroundColor = .white
         vContent.clipsToBounds = true
         
@@ -55,11 +51,9 @@ class CustomTabBarView: UIView {
         arrMenu = [btnHome, btnProfile, btnTicket, btnSetting]
         
         activateTab(tab: activeItem)
-
     }
     
     func deactiveTab(tab : Int) {
-        print("---",#function)
         let btn = viewWithTag(tab) as? UIButton
         
         btn?.setTitle("", for: .normal)

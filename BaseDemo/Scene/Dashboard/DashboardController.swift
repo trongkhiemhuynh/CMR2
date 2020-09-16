@@ -26,6 +26,7 @@ class DashboardController: BaseViewController {
     }()
     
     override func viewDidLoad() {
+        isHiddenNavigationBar = true
         super.viewDidLoad()
         addSubView()
         // Do any additional setup after loading the view.
@@ -101,7 +102,6 @@ class DashboardController: BaseViewController {
     
     
     @IBAction func didTapMenu() {
-        print(#function)
         present(menu!, animated: true, completion: nil)
     }
     
@@ -132,18 +132,6 @@ extension DashboardController : SideMenuNavigationControllerDelegate {
     }
     
     func sideMenuDidDisappear(menu: SideMenuNavigationController, animated: Bool) {
-        
-        print("SideMenu Disappeared! (animated: \(animated))")
-        
-//        let menuLeft = menu.popToRootViewController(animated: false) as? MenuViewController
-//
-//        if let mn = menuLeft {
-//
-//            Logger.info(mn.itemSeleted)
-//        }
-
-        
-        
         if let tabbarController = ApplicationManager.sharedInstance.mainTabbar {
             let nav = tabbarController.viewControllers?[0] as? UINavigationController
             
@@ -152,8 +140,12 @@ extension DashboardController : SideMenuNavigationControllerDelegate {
             switch itemMenu {
             case .ticket:
                 nav?.pushViewController(TicketController(), animated: true)
+            case .account:
+                nav?.pushViewController(AccountController.xibInstance(), animated: true)
+            case .contact:
+                nav?.pushViewController(ContactController.xibInstance(), animated: true)
             default:
-                print("hello")
+                print("bug")
             }
             
             ApplicationManager.sharedInstance.itemMenuSelected = ItemMenu.none

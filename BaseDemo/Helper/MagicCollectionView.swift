@@ -40,7 +40,11 @@ class MagicCollectionView: BaseView {
         
         
         // check kind controller
-        if (controller?.isKind(of: ProfileViewController.self))! {
+        guard let controller = controller else {
+            return
+        }
+        
+        if controller.isKind(of: ProfileViewController.self) {
             magicDelegate.heightCell = heightContentProfile
             magicDatasource.type = .profile
             flowLayout?.headerReferenceSize = CGSize(width: self.collectionView.frame.size.width, height: heightHeaderProfile)
@@ -71,7 +75,7 @@ extension MagicCollectionView : MagicCollectionViewDelegateOutput {
         if (controller?.isKind(of: SettingViewController.self))! {
         
             let cell = collectionView.cellForItem(at: indexPath) as! MagicCollectionViewCell
-            var vc = UIViewController()
+            let vc = UIViewController()
             
             //title label
             let title = cell.title.text!
@@ -89,7 +93,7 @@ extension MagicCollectionView : MagicCollectionViewDelegateOutput {
                 
                 return
             } else if title == "OCR" {
-                vc = OCRController()
+//                vc = OCRController()
             }
 
             controller?.navigationController?.pushViewController(vc, animated: true)

@@ -15,12 +15,10 @@ class PopUpConfirm: UIView {
     
     
     @IBAction func actionOk() {
-        print(#function)
         removeFromSuperview()
     }
     
     @IBAction func actionCancel() {
-        print(#function)
         removeFromSuperview()
     }
     /*

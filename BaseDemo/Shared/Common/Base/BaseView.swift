@@ -98,17 +98,16 @@ class BaseView: UIView, ChartSubViews {
     @IBOutlet weak var collectionView : UICollectionView!
     
     //variable
-    weak var controller: UIViewController!
+    weak var controller: UIViewController?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        print("------", #function)
+        Logger.info(frame)
         commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        print("------", #function)
         commonInit()
     }
 

@@ -99,6 +99,7 @@ extension MenuViewController : UICollectionViewDataSource {
             let item = arrMenuItems[indexPath.row]
             let nameImage = "menu_\(item.lowercased().replacingOccurrences(of: " ", with: "_"))"
             let image = UIImage(named: nameImage)
+            
             cell.imgMenu.image = image
             cell.lblMenu.text = item
             // Configure the cell
