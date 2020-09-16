@@ -79,7 +79,13 @@ class MainAppController: UITabBarController {
 //    }
     
     func changeTab(tab: Int) {
-        self.selectedIndex = tab
+        if tab == 999 {
+            //tapped the same tab
+            let nav = self.viewControllers?[self.selectedIndex] as? UINavigationController
+            nav?.popToRootViewController(animated: false)
+        } else {
+            self.selectedIndex = tab
+        }
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {

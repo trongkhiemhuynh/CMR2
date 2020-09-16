@@ -9,13 +9,16 @@
 import UIKit
 import Charts
 import SideMenu
+import RxSwift
 
 class DashboardController: BaseViewController {
     
     @IBOutlet weak var vContent : UIView!
     @IBOutlet weak var lblCountNotification : UILabel!
     
+    //variable
     var menu : SideMenuNavigationController?
+    let disposeBag = DisposeBag()
     
     lazy var blurView : UIView = {
         let v = UIView(frame: view.frame)
@@ -39,8 +42,9 @@ class DashboardController: BaseViewController {
         lblCountNotification.text = "999"
 
         self.view.backgroundColor = .white
-
-        menu = SideMenuNavigationController(rootViewController: MenuViewController())
+        let menuVC = MenuViewController()
+        controllerOwner = menuVC
+        menu = SideMenuNavigationController(rootViewController: menuVC)
         menu?.leftSide = true
         menu?.sideMenuDelegate = self
         menu?.setNavigationBarHidden(true, animated: true)
@@ -132,25 +136,28 @@ extension DashboardController : SideMenuNavigationControllerDelegate {
     }
     
     func sideMenuDidDisappear(menu: SideMenuNavigationController, animated: Bool) {
-        if let tabbarController = ApplicationManager.sharedInstance.mainTabbar {
-            let nav = tabbarController.viewControllers?[0] as? UINavigationController
-            
-            let itemMenu = ApplicationManager.sharedInstance.itemMenuSelected
-            
-            switch itemMenu {
-            case .ticket:
-                nav?.pushViewController(TicketController(), animated: true)
-            case .account:
-                nav?.pushViewController(AccountController.xibInstance(), animated: true)
-            case .contact:
-                nav?.pushViewController(ContactController.xibInstance(), animated: true)
-            default:
-                print("bug")
+        
+        let menuVC = controllerOwner as? MenuViewController
+        
+        menuVC?.rx_stringVar.subscribe(onNext: { (item) in
+            Logger.debug(item)
+            if item == "Dashboards" {
+                return
+            } else if item == "Account" {
+                RouterManager.shared.handleRouter(AccountRoute())
+            } else if item == "Contact" {
+                RouterManager.shared.handleRouter(ContactRoute())
+            } else if item == "Ticket" {
+                RouterManager.shared.handleRouter(TicketRoute())
             }
+        }, onError: { (error) in
             
-            ApplicationManager.sharedInstance.itemMenuSelected = ItemMenu.none
-        }
-//        RouterManager.shared.handleRouter(TicketRoute())
+        }, onCompleted: {
+            
+        }, onDisposed: {
+            
+        }).disposed(by: disposeBag)
+
     }
 }
 

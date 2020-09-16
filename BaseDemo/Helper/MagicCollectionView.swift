@@ -20,11 +20,11 @@ class MagicCollectionView: BaseView {
     public var itemsPerRow : CGFloat? = 1
     
     public var arrCells : [MagicCollectionViewCell]?
-    public var heightHeader : CGFloat = 50
-    public var heightHeaderProfile : CGFloat = 170
+    public var heightDefaultHeader : CGFloat = 50
+    public var heightProfileHeader : CGFloat = 170
     
     public var heightContentProfile : CGFloat {
-        return heightScreen - heightHeaderProfile
+        return heightScreen - heightProfileHeader
     }
     
     override func layoutSubviews() {
@@ -47,22 +47,28 @@ class MagicCollectionView: BaseView {
         if controller.isKind(of: ProfileViewController.self) {
             magicDelegate.heightCell = heightContentProfile
             magicDatasource.type = .profile
-            flowLayout?.headerReferenceSize = CGSize(width: self.collectionView.frame.size.width, height: heightHeaderProfile)
+            flowLayout?.headerReferenceSize = CGSize(width: self.collectionView.frame.size.width, height: heightProfileHeader)
+        } else if controller.isKind(of: AccountController.self) {
+            magicDelegate.heightCell = heightCell
+            magicDatasource.type = .account
+        
+            flowLayout?.headerReferenceSize = CGSize(width: self.collectionView.frame.size.width, height: heightDefaultHeader)
         } else {
             magicDelegate.heightCell = heightCell
-            flowLayout?.headerReferenceSize = CGSize(width: self.collectionView.frame.size.width, height: heightHeader)
+            flowLayout?.headerReferenceSize = CGSize(width: self.collectionView.frame.size.width, height: heightDefaultHeader)
         }
         
         magicDelegate.itemsPerRow = itemsPerRow
         
-        // register cell, header for settings
+        //register cell, header for settings
         collectionView.registerCell(MagicCollectionViewCell.self)
         collectionView.register(MagicHeaderCollectionReusableView.xib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MagicHeaderCollectionReusableView.identifier)
         
-        // register cell, header for profile
+        //register cell, header for profile
         collectionView.registerCell(ProfileCollectionViewCell.self)
         collectionView.register(ProfileCollectionReusableView.xib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileCollectionReusableView.identifier)
-        
+        //account cell
+        collectionView.registerCell(AccountCollectionViewCell.self)
         
         magicDelegate.delegate = self
     }

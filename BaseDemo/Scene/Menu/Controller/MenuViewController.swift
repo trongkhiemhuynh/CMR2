@@ -8,6 +8,8 @@
 
 import UIKit
 import SideMenu
+import RxSwift
+import RxCocoa
 
 private let reuseIdentifier = "Cell"
 
@@ -18,10 +20,22 @@ class MenuViewController: UIViewController {
     private let itemsPerRow: CGFloat = 1
     private let heightCellInfo : CGFloat = 100
     private let heightCellInfoDetail : CGFloat = 50
+        
+    var stringVar : String? {
+        didSet {
+            _rx_stringVar.onNext(stringVar!)
+        }
+    }
+    
+    var rx_stringVar : Observable<String> {
+        return _rx_stringVar.asObservable()
+    }
+    
+    private var _rx_stringVar = PublishSubject<String>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -85,7 +99,7 @@ class MenuViewController: UIViewController {
 extension MenuViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return arrMenuItems.count
+        return arrMenuItems.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -96,7 +110,7 @@ extension MenuViewController : UICollectionViewDataSource {
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.identifier, for: indexPath) as! MenuCollectionViewCell
-            let item = arrMenuItems[indexPath.row]
+            let item = arrMenuItems[indexPath.row - 1]
             let nameImage = "menu_\(item.lowercased().replacingOccurrences(of: " ", with: "_"))"
             let image = UIImage(named: nameImage)
             
@@ -125,10 +139,14 @@ extension MenuViewController : UICollectionViewDelegateFlowLayout {
 
 extension MenuViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        ApplicationManager.sharedInstance.itemMenuSelected = ItemMenu[indexPath.row]
-        
+//        ApplicationManager.sharedInstance.itemMenuSelected = ItemMenu[indexPath.row]
+        let nameItem = arrMenuItems[indexPath.row-1]
+        Logger.debug(nameItem)
+
+        //FIXME navigate correctly to view
         SideMenuManager.default.leftMenuNavigationController?.dismiss(animated: true, completion: {
-            Logger.debug("completed")
+//            self.menuSelectedItem.accept(nameItem)
+            self.stringVar = nameItem
         })
     }
 }

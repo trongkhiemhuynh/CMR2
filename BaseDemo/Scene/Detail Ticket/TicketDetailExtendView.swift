@@ -81,7 +81,7 @@ extension TicketDetailExtendView : UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExtendCollectionViewCell.identifier, for: indexPath) as! ExtendCollectionViewCell
         
-        let title = arrMenuItems[indexPath.row+1]
+        let title = arrExtends[indexPath.row]
         
         cell.lblEx.text = title
         
@@ -95,7 +95,7 @@ extension TicketDetailExtendView : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrMenuItems.count - 1 // not count first item
+        return arrExtends.count
     }
 }
 

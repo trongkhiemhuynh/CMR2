@@ -13,9 +13,11 @@ protocol MagicCollectionViewDelegateOutput: class {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
 }
 
-enum MAGICDATASOURCETYPE {
+enum MAGIC_VIEW_TYPE {
     case setting
     case profile
+    case account
+    case contact
 }
 
 class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
@@ -23,7 +25,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
     public var dictData: Dictionary<String, Any>?
     public var arrCells : [UICollectionViewCell]?
     private var arrData : Array<String>?
-    public var type : MAGICDATASOURCETYPE = .setting
+    public var type : MAGIC_VIEW_TYPE = .setting
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         Logger.info(dictData?.keys)
@@ -48,6 +50,16 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             cell.title.text = title
             cell.icRight.image = UIImage(named: "next")
             return cell
+        } else if type == .account {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AccountCollectionViewCell.identifier, for: indexPath) as! AccountCollectionViewCell
+            
+            let arr = dictData?[String(indexPath.section)] as! Array<String>
+            let title = arr[indexPath.row]
+            
+            cell.lblTitle.text = title
+            cell.lblName.text = "Unknown"
+            
+            return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileCollectionViewCell.identifier, for: indexPath) as! ProfileCollectionViewCell
             
@@ -56,7 +68,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if type == .setting {
+        if type == .setting || type == .account || type == .contact {
             let headerView  = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MagicHeaderCollectionReusableView.identifier, for: indexPath) as! MagicHeaderCollectionReusableView
             
             headerView.backgroundColor = BASEColor.BackgroundListColor()
@@ -74,7 +86,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
                           layout collectionViewLayout: UICollectionViewLayout,
                           referenceSizeForHeaderInSection section: Int) -> CGSize {
         
-        if type == .setting {
+        if type == .setting || type == .account || type == .contact {
             return CGSize(width: widthScreen, height: 50)
         } else {
             return CGSize(width: widthScreen, height: heightScreen - 170)

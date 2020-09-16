@@ -84,6 +84,8 @@
 		224EBAF524F5068100CB676F /* ExtendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 224EBAF324F5068100CB676F /* ExtendCollectionViewCell.xib */; };
 		224EBAF824F50EDA00CB676F /* NewTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224EBAF624F50EDA00CB676F /* NewTicketViewController.swift */; };
 		224EBAF924F50EDA00CB676F /* NewTicketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 224EBAF724F50EDA00CB676F /* NewTicketViewController.xib */; };
+		225D4E392511F2FD00664D70 /* AccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D4E372511F2FD00664D70 /* AccountCollectionViewCell.swift */; };
+		225D4E3A2511F2FD00664D70 /* AccountCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225D4E382511F2FD00664D70 /* AccountCollectionViewCell.xib */; };
 		226D933D2509FF2500457AD5 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D933B2509FF2500457AD5 /* FilterCollectionViewCell.swift */; };
 		226D933E2509FF2500457AD5 /* FilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226D933C2509FF2500457AD5 /* FilterCollectionViewCell.xib */; };
 		226D9340250A0F1100457AD5 /* MagicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D933F250A0F1100457AD5 /* MagicCollectionView.swift */; };
@@ -320,6 +322,8 @@
 		224EBAF324F5068100CB676F /* ExtendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExtendCollectionViewCell.xib; sourceTree = "<group>"; };
 		224EBAF624F50EDA00CB676F /* NewTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketViewController.swift; sourceTree = "<group>"; };
 		224EBAF724F50EDA00CB676F /* NewTicketViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTicketViewController.xib; sourceTree = "<group>"; };
+		225D4E372511F2FD00664D70 /* AccountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewCell.swift; sourceTree = "<group>"; };
+		225D4E382511F2FD00664D70 /* AccountCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountCollectionViewCell.xib; sourceTree = "<group>"; };
 		226D933B2509FF2500457AD5 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		226D933C2509FF2500457AD5 /* FilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCollectionViewCell.xib; sourceTree = "<group>"; };
 		226D933F250A0F1100457AD5 /* MagicCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCollectionView.swift; sourceTree = "<group>"; };
@@ -531,6 +535,8 @@
 		223EF2082511BDA800C076BF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				225D4E372511F2FD00664D70 /* AccountCollectionViewCell.swift */,
+				225D4E382511F2FD00664D70 /* AccountCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1367,6 +1373,7 @@
 				C22FEAA224FC1AB3009D9219 /* SettingViewController.xib in Resources */,
 				4B2D4BFD24DD2ABE00CABF1D /* LoginController.xib in Resources */,
 				4B166C4D24EE7E380030C592 /* CustomTicketStageView.xib in Resources */,
+				225D4E3A2511F2FD00664D70 /* AccountCollectionViewCell.xib in Resources */,
 				4B166C5124EE7F9A0030C592 /* CustomTicketStageCollectionViewCell.xib in Resources */,
 				224326E22507394E005AE588 /* MenuCollectionViewCell.xib in Resources */,
 				C2E857F224F3A886002960A2 /* TabNavigationMenu.xib in Resources */,
@@ -1635,6 +1642,7 @@
 				4B166C3A24EE28790030C592 /* Extention.swift in Sources */,
 				C23F629224EF204E00E37560 /* TicketDetailController.swift in Sources */,
 				229A55372501F619008A0ECD /* WelcomeRoute.swift in Sources */,
+				225D4E392511F2FD00664D70 /* AccountCollectionViewCell.swift in Sources */,
 				C22FEAA124FC1AB3009D9219 /* SettingViewController.swift in Sources */,
 				4B166C4424EE621E0030C592 /* BaseView.swift in Sources */,
 				224346C524FCB38D00CF7AA3 /* TicketObj.swift in Sources */,

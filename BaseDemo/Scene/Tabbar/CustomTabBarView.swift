@@ -26,15 +26,19 @@ class CustomTabBarView: UIView {
     }
     
     func switchTab(from: Int, to: Int) {
-        deactiveTab(tab: from)
-        activateTab(tab: to)
+        
+        if from != to {
+            deactiveTab(tab: from)
+            activateTab(tab: to)
+        } else {
+            itemTapped!(999)
+        }
         
         layoutIfNeeded()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        print("-------",#function,String(describing: self))
         
         setupView()
     }

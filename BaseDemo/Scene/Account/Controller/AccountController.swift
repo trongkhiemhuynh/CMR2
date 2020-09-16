@@ -20,8 +20,9 @@ class AccountController: BaseViewController {
     override func setupView() {
         title = "Account"
         let subView = MagicCollectionView.xibInstance()
-        subView.dictData = ["0":["one","two","three"]]
+        subView.dictData = ["0":["Account Name","Industry","Primary phone","Assign to","Street address","District","City","Country","Description"]]
         subView.controller = self
+        subView.heightCell = 70
         view.addSubview(subView)
         subView.frame = view.bounds
         

@@ -14,6 +14,7 @@ class BaseViewController: UIViewController {
     
     //variable
     var isHiddenNavigationBar = true
+    var controllerOwner : UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
