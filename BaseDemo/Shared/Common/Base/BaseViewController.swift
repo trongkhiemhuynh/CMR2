@@ -10,7 +10,8 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
-    @IBOutlet weak var vTitle : CustomTitleView!
+    @IBOutlet weak var vTitle: CustomTitleView!
+    @IBOutlet weak var vContent: UIView!
     
     //variable
     var isHiddenNavigationBar = true

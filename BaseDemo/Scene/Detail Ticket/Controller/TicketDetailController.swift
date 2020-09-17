@@ -12,7 +12,7 @@ class TicketDetailController: BaseViewController {
 
     @IBOutlet weak var vAction : CustomDetailActionView!
     @IBOutlet weak var vTab : CustomDetailTabView!
-    @IBOutlet weak var vInfo : CustomDetailInfoView!
+    @IBOutlet weak var vInfo : UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +54,7 @@ class TicketDetailController: BaseViewController {
     @IBAction func actionExtend() {
         let vExtend = TicketDetailExtendView.xibInstance()
         vExtend.frame = view.bounds
+        vExtend.delegate = self
         
         let topViewController = UIApplication.getTopViewController()
         topViewController?.view.addSubview(vExtend)
@@ -66,7 +67,8 @@ class TicketDetailController: BaseViewController {
             }
         }
         
-        ApplicationManager.sharedInstance.mainTabbar?.customTabbar.isHidden = true
+        //FIXME
+//        ApplicationManager.sharedInstance.mainTabbar?.customTabbar.isHidden = true
     }
     
     /*
@@ -81,6 +83,33 @@ class TicketDetailController: BaseViewController {
 
 }
 
-extension TicketDetailController : XibInitalization {
+extension TicketDetailController: XibInitalization {
     typealias Element = TicketDetailController
+}
+
+extension TicketDetailController: TicketDetailExtendViewOutput {
+    func didChooseExtendItem(_ item: String?) {
+        let extendRoute = ExtendRoute()
+        guard let itemEx = item else {
+            return
+        }
+        
+        var type : Extend_Type = .email
+        
+        for et in Extend_Type.allCases {
+            if itemEx == et.rawValue {
+                type = et
+            }
+        }
+        
+        extendRoute.handleData { (extendController) in
+            //FIXME
+            Logger.debug(type.rawValue)
+            extendController.extendedType = type
+        }
+        
+        //route to detail extend
+        RouterManager.shared.handleRouter(extendRoute)
+        
+    }
 }

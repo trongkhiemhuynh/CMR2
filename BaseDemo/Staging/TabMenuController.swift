@@ -9,8 +9,6 @@
 import UIKit
 
 class TabMenuController : BaseViewController {
-
-    @IBOutlet weak var vContent : UIView!
     
     var dashVC : UIViewController!
     var ticketVC : UIViewController!

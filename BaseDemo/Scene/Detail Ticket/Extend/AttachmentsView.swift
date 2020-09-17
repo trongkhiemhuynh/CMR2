@@ -1,14 +1,14 @@
 //
-//  CustomDetailInfoView.swift
+//  AttachmentsView.swift
 //  BaseDemo
 //
-//  Created by khiemht on 8/21/20.
+//  Created by macOS on 9/17/20.
 //  Copyright © 2020 BASEBS. All rights reserved.
 //
 
 import UIKit
 
-class CustomDetailInfoView: UIView {
+class AttachmentsView: BaseView {
 
     /*
     // Only override draw() if you perform custom drawing.

@@ -11,7 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TicketDetailController" customModule="BaseDemo" customModuleProvider="target">
             <connections>
                 <outlet property="vAction" destination="WIt-sg-K03" id="z3i-CW-qx5"/>
-                <outlet property="vInfo" destination="zf9-zM-K5D" id="RG2-AK-ADc"/>
+                <outlet property="vInfo" destination="zf9-zM-K5D" id="OhL-43-zPc"/>
                 <outlet property="vTab" destination="KCl-UR-xV6" id="7Ik-Pd-ydZ"/>
                 <outlet property="vTitle" destination="9v4-u7-0fD" id="Tla-8d-ubm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -43,7 +43,7 @@
                         <constraint firstAttribute="height" constant="60" id="4fo-Gj-We9"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zf9-zM-K5D" customClass="CustomDetailInfoView" customModule="BaseDemo" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zf9-zM-K5D">
                     <rect key="frame" x="0.0" y="195" width="375" height="402"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>

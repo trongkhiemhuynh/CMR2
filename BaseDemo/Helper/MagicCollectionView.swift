@@ -13,15 +13,23 @@ class MagicCollectionView: BaseView {
     // variable
     public let magicDatasource : MagicCollectionViewDatasource = MagicCollectionViewDatasource()
     public let magicDelegate : MagicCollectionViewDelegate = MagicCollectionViewDelegate()
-    public var numberSection : Int?
+    public var numberSection : Int? = 1
     public var dictData : Dictionary<String, Any>?
     
-    public var heightCell : CGFloat?
-    public var itemsPerRow : CGFloat? = 1
+    public var heightCell : CGFloat? {
+        return 70
+    }
+    public var itemsPerRow : CGFloat? {
+        return 1
+    }
     
     public var arrCells : [MagicCollectionViewCell]?
-    public var heightDefaultHeader : CGFloat = 50
-    public var heightProfileHeader : CGFloat = 170
+    public var heightDefaultHeader : CGFloat {
+        return 30
+    }
+    public var heightProfileHeader : CGFloat {
+        return 170
+    }
     
     public var heightContentProfile : CGFloat {
         return heightScreen - heightProfileHeader
@@ -31,46 +39,38 @@ class MagicCollectionView: BaseView {
         super.layoutSubviews()
         
         collectionView.dataSource = magicDatasource
-        magicDatasource.dictData = dictData
-        magicDatasource.arrCells = arrCells
-        
         collectionView.delegate = magicDelegate
         
-        let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
+        magicDatasource.dictData = dictData
+        magicDatasource.arrCells = arrCells
+        magicDelegate.delegate = self
+        magicDelegate.heightCell = heightCell
+        magicDelegate.itemsPerRow = itemsPerRow
         
+        let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
         
         // check kind controller
         guard let controller = controller else {
             return
         }
-        
+
         if controller.isKind(of: ProfileViewController.self) {
             magicDelegate.heightCell = heightContentProfile
             magicDatasource.type = .profile
             flowLayout?.headerReferenceSize = CGSize(width: self.collectionView.frame.size.width, height: heightProfileHeader)
         } else if controller.isKind(of: AccountController.self) {
-            magicDelegate.heightCell = heightCell
             magicDatasource.type = .account
-        
             flowLayout?.headerReferenceSize = CGSize(width: self.collectionView.frame.size.width, height: heightDefaultHeader)
         } else {
-            magicDelegate.heightCell = heightCell
             flowLayout?.headerReferenceSize = CGSize(width: self.collectionView.frame.size.width, height: heightDefaultHeader)
         }
-        
-        magicDelegate.itemsPerRow = itemsPerRow
-        
+
         //register cell, header for settings
         collectionView.registerCell(MagicCollectionViewCell.self)
         collectionView.register(MagicHeaderCollectionReusableView.xib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MagicHeaderCollectionReusableView.identifier)
-        
-        //register cell, header for profile
-        collectionView.registerCell(ProfileCollectionViewCell.self)
-        collectionView.register(ProfileCollectionReusableView.xib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileCollectionReusableView.identifier)
-        //account cell
-        collectionView.registerCell(AccountCollectionViewCell.self)
-        
-        magicDelegate.delegate = self
+
+        //default cell
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCellID")
     }
 }
 
@@ -103,6 +103,10 @@ extension MagicCollectionView : MagicCollectionViewDelegateOutput {
             }
 
             controller?.navigationController?.pushViewController(vc, animated: true)
+        } else if controller!.isKind(of: ContactController.self) {
+            RouterManager.shared.handleRouter(ContactDetailRoute())
+        } else {
+            
         }
     }
 }

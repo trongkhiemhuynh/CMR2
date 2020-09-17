@@ -18,6 +18,8 @@ enum MAGIC_VIEW_TYPE {
     case profile
     case account
     case contact
+    case contact_detail
+    case extend
 }
 
 class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
@@ -60,36 +62,51 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             cell.lblName.text = "Unknown"
             
             return cell
-        } else {
+        } else if type == .profile {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileCollectionViewCell.identifier, for: indexPath) as! ProfileCollectionViewCell
             
             return cell
+        } else if type == .extend {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailActivityCollectionViewCell.identifier, for: indexPath) as! TicketDetailActivityCollectionViewCell
+            
+            let arr = dictData?[String(indexPath.section)] as! Array<String>
+            let title = arr[indexPath.row]
+            cell.lblTitle.text = title
+            cell.lblTime.text = "Thu Sep 17, 14:52"
+            cell.lblDescription.isHidden = true
+            
+            return cell
         }
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCellID", for: indexPath)
+        
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if type == .setting || type == .account || type == .contact {
-            let headerView  = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MagicHeaderCollectionReusableView.identifier, for: indexPath) as! MagicHeaderCollectionReusableView
-            
-            headerView.backgroundColor = BASEColor.BackgroundListColor()
-            headerView.lblSection.text = ""
-            
-            return headerView
-        } else {
+        
+        if type == .profile {
             let headerView  = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileCollectionReusableView.identifier, for: indexPath) as! ProfileCollectionReusableView
             
             return headerView
         }
+        
+        let headerView  = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MagicHeaderCollectionReusableView.identifier, for: indexPath) as! MagicHeaderCollectionReusableView
+        
+        headerView.backgroundColor = BASEColor.BackgroundListColor()
+        headerView.lblSection.text = ""
+        
+        return headerView
     }
     
     func collectionView(_ collectionView: UICollectionView,
                           layout collectionViewLayout: UICollectionViewLayout,
                           referenceSizeForHeaderInSection section: Int) -> CGSize {
         
-        if type == .setting || type == .account || type == .contact {
-            return CGSize(width: widthScreen, height: 50)
-        } else {
+        if type == .profile {
             return CGSize(width: widthScreen, height: heightScreen - 170)
+        } else {
+            return CGSize(width: widthScreen, height: 50)
         }
     }
 }

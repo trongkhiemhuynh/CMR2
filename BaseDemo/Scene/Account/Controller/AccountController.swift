@@ -22,10 +22,11 @@ class AccountController: BaseViewController {
         let subView = MagicCollectionView.xibInstance()
         subView.dictData = ["0":["Account Name","Industry","Primary phone","Assign to","Street address","District","City","Country","Description"]]
         subView.controller = self
-        subView.heightCell = 70
+        //account cell
+        subView.collectionView.registerCell(AccountCollectionViewCell.self)
+        
         view.addSubview(subView)
         subView.frame = view.bounds
-        
     }
 
 }

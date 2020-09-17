@@ -13,7 +13,7 @@ import RxSwift
 
 class DashboardController: BaseViewController {
     
-    @IBOutlet weak var vContent : UIView!
+    //outlet
     @IBOutlet weak var lblCountNotification : UILabel!
     
     //variable

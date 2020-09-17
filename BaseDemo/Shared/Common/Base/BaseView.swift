@@ -122,6 +122,31 @@ class BaseView: UIView, ChartSubViews {
     func addPieChart() {
         
     }
+    
+    func addBack() {
+       
+        let btnBack =  UIButton()
+        btnBack.setImage(UIImage(named: "back"), for: .normal)
+        btnBack.addTarget(self, action:#selector(didBack) , for: .touchUpInside)
+        btnBack.isUserInteractionEnabled = true
+        addSubview(btnBack)
+        
+        btnBack.translatesAutoresizingMaskIntoConstraints = false
+        
+        let traillingConstraint = NSLayoutConstraint(item: btnBack, attribute: NSLayoutConstraint.Attribute.trailing, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.trailing, multiplier: 1, constant: 8)
+        
+        let bottomConstraint = NSLayoutConstraint(item: btnBack, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1, constant: 100)
+        
+        let widthConstraint = NSLayoutConstraint(item: btnBack, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 40)
+        
+        let heightConstraint = NSLayoutConstraint(item: btnBack, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 40)
+        
+        addConstraints([traillingConstraint, bottomConstraint, widthConstraint, heightConstraint])
+    }
+    
+    @IBAction func didBack() {
+        controller?.navigationController?.popViewController(animated: true)
+    }
 }
 
 extension BaseView : BaseAbility {

@@ -22,6 +22,7 @@ class ContactController: BaseViewController {
         let subView = MagicCollectionView.xibInstance()
         subView.dictData = ["0":["Contact 1"],"1":["Contact 2"],"2":["Contact 3"],"3":["Contact 4"]]
         subView.controller = self
+        
         view.addSubview(subView)
         subView.frame = view.bounds
         

@@ -11,6 +11,10 @@ import UIKit
 class TicketDetailActivityCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var vContent : UIView!
+    @IBOutlet weak var lblTitle : UILabel!
+    @IBOutlet weak var lblTime : UILabel!
+    @IBOutlet weak var lblDescription : UILabel!
+    @IBOutlet weak var iv : UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

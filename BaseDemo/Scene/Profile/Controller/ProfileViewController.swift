@@ -21,6 +21,10 @@ class ProfileViewController: BaseViewController {
         let v = MagicCollectionView.xibInstance()
         v.controller = self
         v.dictData = ["0":["profile"]]
+        //register cell, header for profile
+        v.collectionView.registerCell(ProfileCollectionViewCell.self)
+        v.collectionView.register(ProfileCollectionReusableView.xib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileCollectionReusableView.identifier)
+        
         view.addSubview(v)
         
         v.frame = view.frame

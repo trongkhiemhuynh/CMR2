@@ -8,21 +8,20 @@
 
 import UIKit
 
+protocol TicketDetailExtendViewOutput: class {
+    func didChooseExtendItem(_ item: String?)
+}
+
 class TicketDetailExtendView: UIView {
 
-    private let itemsPerRow: CGFloat = 3
-//    private let heightCell : CGFloat = 100
-    
+    //outlet
     @IBOutlet weak var cvExtend : UICollectionView!
     @IBOutlet weak var vBound : UIView!
     @IBOutlet weak var vBackground : UIView!
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    
+    //variable
+    private let itemsPerRow: CGFloat = 3
+    weak var delegate: TicketDetailExtendViewOutput?
     
     override class func awakeFromNib() {
         super.awakeFromNib()
@@ -51,8 +50,10 @@ class TicketDetailExtendView: UIView {
 
 extension TicketDetailExtendView : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let item = collectionView.cellForItem(at: indexPath) as? ExtendCollectionViewCell
-
+        let item = collectionView.cellForItem(at: indexPath) as! ExtendCollectionViewCell
+        
+        delegate?.didChooseExtendItem(item.lblEx.text)
+        
         removeFromSuperview()
     }
 }

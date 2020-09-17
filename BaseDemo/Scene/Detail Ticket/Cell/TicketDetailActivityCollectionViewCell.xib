@@ -79,6 +79,10 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="322" height="197"/>
             <connections>
+                <outlet property="iv" destination="HuO-rD-vlB" id="crV-AK-miZ"/>
+                <outlet property="lblDescription" destination="JeU-9A-NMG" id="kX5-R1-tVz"/>
+                <outlet property="lblTime" destination="l3I-hL-xbw" id="Wnz-5Q-Inf"/>
+                <outlet property="lblTitle" destination="unC-F8-oj8" id="VrE-mr-pLN"/>
                 <outlet property="vContent" destination="cvf-Ps-Vbp" id="JFq-uu-S11"/>
             </connections>
             <point key="canvasLocation" x="162.31884057971016" y="127.56696428571428"/>
