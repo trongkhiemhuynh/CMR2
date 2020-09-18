@@ -105,6 +105,8 @@
 		225D4E5F2513236800664D70 /* CustomerJourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D4E5E2513236800664D70 /* CustomerJourneyView.swift */; };
 		225D4E612513458E00664D70 /* EmailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225D4E602513458E00664D70 /* EmailView.xib */; };
 		225D4E632513490300664D70 /* NotesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225D4E622513490300664D70 /* NotesView.xib */; };
+		225D4E662514554400664D70 /* CustomerJourneyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D4E642514554400664D70 /* CustomerJourneyCollectionViewCell.swift */; };
+		225D4E672514554500664D70 /* CustomerJourneyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225D4E652514554400664D70 /* CustomerJourneyCollectionViewCell.xib */; };
 		226D933D2509FF2500457AD5 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D933B2509FF2500457AD5 /* FilterCollectionViewCell.swift */; };
 		226D933E2509FF2500457AD5 /* FilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226D933C2509FF2500457AD5 /* FilterCollectionViewCell.xib */; };
 		226D9340250A0F1100457AD5 /* MagicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D933F250A0F1100457AD5 /* MagicCollectionView.swift */; };
@@ -361,6 +363,8 @@
 		225D4E5E2513236800664D70 /* CustomerJourneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerJourneyView.swift; sourceTree = "<group>"; };
 		225D4E602513458E00664D70 /* EmailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmailView.xib; sourceTree = "<group>"; };
 		225D4E622513490300664D70 /* NotesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesView.xib; sourceTree = "<group>"; };
+		225D4E642514554400664D70 /* CustomerJourneyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerJourneyCollectionViewCell.swift; sourceTree = "<group>"; };
+		225D4E652514554400664D70 /* CustomerJourneyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerJourneyCollectionViewCell.xib; sourceTree = "<group>"; };
 		226D933B2509FF2500457AD5 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		226D933C2509FF2500457AD5 /* FilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCollectionViewCell.xib; sourceTree = "<group>"; };
 		226D933F250A0F1100457AD5 /* MagicCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCollectionView.swift; sourceTree = "<group>"; };
@@ -868,6 +872,8 @@
 				225D4E5C2513235500664D70 /* AttachmentsView.swift */,
 				225D4E5E2513236800664D70 /* CustomerJourneyView.swift */,
 				225D4E622513490300664D70 /* NotesView.xib */,
+				225D4E642514554400664D70 /* CustomerJourneyCollectionViewCell.swift */,
+				225D4E652514554400664D70 /* CustomerJourneyCollectionViewCell.xib */,
 			);
 			path = Extend;
 			sourceTree = "<group>";
@@ -1504,6 +1510,7 @@
 				223EF1EF250F41E800C076BF /* AgentDashboard.xib in Resources */,
 				4B166C5924EF78CD0030C592 /* TicketDetailActivityCollectionViewCell.xib in Resources */,
 				4B2D4BF224DD02D200CABF1D /* HomeViewController.xib in Resources */,
+				225D4E672514554500664D70 /* CustomerJourneyCollectionViewCell.xib in Resources */,
 				4B166C5D24EF78F80030C592 /* TicketDetailInfoCollectionViewCell.xib in Resources */,
 				225D4E632513490300664D70 /* NotesView.xib in Resources */,
 				C23F629324EF204F00E37560 /* TicketDetailController.xib in Resources */,
@@ -1766,6 +1773,7 @@
 				4B28018324ECE5D7007647F8 /* DashboardController.swift in Sources */,
 				229A55252500E724008A0ECD /* LoginConfiguration.swift in Sources */,
 				224346C924FCB80200CF7AA3 /* FetchTicketWorker.swift in Sources */,
+				225D4E662514554400664D70 /* CustomerJourneyCollectionViewCell.swift in Sources */,
 				223EF2142511BF4000C076BF /* AccountRoute.swift in Sources */,
 				2270236E24F8AE79002C06AC /* Identifier.swift in Sources */,
 				2270236C24F8AE5E002C06AC /* UITableView+Register.swift in Sources */,

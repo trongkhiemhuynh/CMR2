@@ -16,23 +16,20 @@ class MagicCollectionView: BaseView {
     public var numberSection : Int? = 1
     public var dictData : Dictionary<String, Any>?
     
-    public var heightCell : CGFloat? {
-        return 70
-    }
-    public var itemsPerRow : CGFloat? {
-        return 1
-    }
+    public var heightCell : CGFloat = 70 // default heightCell
+    
+    public var itemsPerRow : CGFloat = 1
     
     public var arrCells : [MagicCollectionViewCell]?
-    public var heightDefaultHeader : CGFloat {
-        return 30
-    }
-    public var heightProfileHeader : CGFloat {
-        return 170
-    }
+    public var heightDefaultHeader : CGFloat = 30
+    public var heightProfileHeader : CGFloat = 170
     
     public var heightContentProfile : CGFloat {
         return heightScreen - heightProfileHeader
+    }
+    
+    override class func awakeFromNib() {
+        super.awakeFromNib()
     }
     
     override func layoutSubviews() {

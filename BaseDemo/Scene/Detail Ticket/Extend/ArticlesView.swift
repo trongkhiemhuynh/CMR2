@@ -17,5 +17,27 @@ class ArticlesView: BaseView {
         // Drawing code
     }
     */
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        setupView()
+    }
+    
+    private func setupView() {
+        let lblCountTask = UILabel()
+        lblCountTask.text = "Number of Activities: 6"
+        lblCountTask.frame = CGRect(x: 8, y: 8, width: widthScreen, height: 20)
+
+        let vMagic = MagicCollectionView.xibInstance()
+        vMagic.frame = CGRect(x: 0, y: 50, width: widthScreen, height: heightScreen - 150)
+        vMagic.dictData = ["0":["Football","Tennis","Goft","Chess","Reading books","Listen music"]]
+        vMagic.magicDatasource.type = .extend
+        vMagic.controller = UIViewController()
+        vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
+        
+        self.addSubview(vMagic)
+        self.addSubview(lblCountTask)
+    }
 
 }

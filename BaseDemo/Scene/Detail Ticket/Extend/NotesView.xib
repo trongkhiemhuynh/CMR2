@@ -20,32 +20,36 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7p5-yP-JwH">
-                    <rect key="frame" x="183" y="481" width="70" height="70"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWH-QC-uUA">
+                    <rect key="frame" x="0.0" y="45" width="375" height="622"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6IA-Qd-hgb">
+                    <rect key="frame" x="275" y="467" width="100" height="100"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="70" id="HWl-Zq-ISY"/>
-                        <constraint firstAttribute="width" constant="70" id="LOJ-R5-fcN"/>
+                        <constraint firstAttribute="width" constant="100" id="LMB-GW-nK7"/>
+                        <constraint firstAttribute="width" secondItem="6IA-Qd-hgb" secondAttribute="height" multiplier="1:1" id="oBh-GW-7jt"/>
+                    </constraints>
+                    <state key="normal" image="add"/>
+                    <connections>
+                        <action selector="didAdd" destination="iN0-l3-epB" eventType="touchUpInside" id="xxD-OF-YYi"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7p5-yP-JwH">
+                    <rect key="frame" x="235" y="492" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="LOJ-R5-fcN"/>
+                        <constraint firstAttribute="width" secondItem="7p5-yP-JwH" secondAttribute="height" id="j47-GH-Kb1"/>
                     </constraints>
                     <state key="normal" image="back"/>
                     <connections>
                         <action selector="didBack" destination="iN0-l3-epB" eventType="touchUpInside" id="JrI-om-iu2"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6IA-Qd-hgb">
-                    <rect key="frame" x="253" y="465" width="102" height="102"/>
-                    <state key="normal" image="add"/>
-                    <connections>
-                        <action selector="didAdd" destination="iN0-l3-epB" eventType="touchUpInside" id="xxD-OF-YYi"/>
-                    </connections>
-                </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWH-QC-uUA">
-                    <rect key="frame" x="0.0" y="45" width="375" height="622"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="6IA-Qd-hgb" secondAttribute="trailing" constant="20" id="0bU-63-TtR"/>
+                <constraint firstAttribute="trailing" secondItem="6IA-Qd-hgb" secondAttribute="trailing" id="0bU-63-TtR"/>
                 <constraint firstItem="fsW-HE-Ni1" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="2WA-wZ-O3T"/>
                 <constraint firstItem="7p5-yP-JwH" firstAttribute="centerY" secondItem="6IA-Qd-hgb" secondAttribute="centerY" id="3Yi-aG-6Rq"/>
                 <constraint firstAttribute="bottom" secondItem="6IA-Qd-hgb" secondAttribute="bottom" constant="100" id="EEZ-bk-DYf"/>
@@ -53,7 +57,7 @@
                 <constraint firstItem="EWH-QC-uUA" firstAttribute="top" secondItem="fsW-HE-Ni1" secondAttribute="bottom" constant="8" id="bCo-mh-cCu"/>
                 <constraint firstItem="fsW-HE-Ni1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="jgT-xR-hf5"/>
                 <constraint firstItem="EWH-QC-uUA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ow0-Rb-b7U"/>
-                <constraint firstItem="6IA-Qd-hgb" firstAttribute="leading" secondItem="7p5-yP-JwH" secondAttribute="trailing" id="siV-7H-h7D"/>
+                <constraint firstItem="6IA-Qd-hgb" firstAttribute="leading" secondItem="7p5-yP-JwH" secondAttribute="trailing" constant="-10" id="siV-7H-h7D"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="EWH-QC-uUA" secondAttribute="trailing" id="ydu-OO-jui"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

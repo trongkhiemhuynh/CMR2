@@ -20,6 +20,7 @@ enum MAGIC_VIEW_TYPE {
     case contact
     case contact_detail
     case extend
+    case customer_journey
 }
 
 class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
@@ -35,6 +36,10 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if type == .customer_journey {
+            return 1
+        }
+        
         arrData = dictData?[String(section)] as? Array<String>
         
         return arrData?.count ?? 0
@@ -74,6 +79,21 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             cell.lblTitle.text = title
             cell.lblTime.text = "Thu Sep 17, 14:52"
             cell.lblDescription.isHidden = true
+            
+            return cell
+        } else if type == .customer_journey {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomerJourneyCollectionViewCell.identifier, for: indexPath) as! CustomerJourneyCollectionViewCell
+            let dict = dictData?[String(indexPath.section)] as! Dictionary<String, String>
+            cell.lblTime.text = dict["time"]
+            cell.lblTitle.text = dict["title"]
+            cell.lblDescription.text = dict["description"]
+            let imageType = dict["type"]
+            cell.iv.image = UIImage(named: imageType!)
+
+            
+            if indexPath.section == ((dictData?.keys.count)! - 1) {
+                cell.line.isHidden = true
+            }
             
             return cell
         }
