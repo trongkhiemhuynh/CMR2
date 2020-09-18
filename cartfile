@@ -13,3 +13,4 @@
 #github "gali8/Tesseract-OCR-iOS"
 #github "realm/realm-cocoa"
 
+github "AssistoLab/DropDown" == 2.3.13

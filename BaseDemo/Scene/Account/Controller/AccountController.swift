@@ -7,9 +7,17 @@
 //
 
 import UIKit
+import DropDown
 
 class AccountController: BaseViewController {
 
+    //variable
+    let arrSubIndustry = ["Banking","Insurance","Consumer finance","Retail","Manufacturing","Professional service"]
+    let arrSubDistrict = ["1","2","Binh Thanh","Thu Duc","Tan Phu"]
+    let arrSubCity = ["Ha Noi","Ho Chi Minh","Da Nang"]
+    let arrSubCountry = ["USA","England","France","Germany","Chinese","Viet Nam","Singapore"]
+    
+    //function
     override func viewDidLoad() {
         isHiddenNavigationBar = false
         super.viewDidLoad()
@@ -24,7 +32,7 @@ class AccountController: BaseViewController {
         subView.controller = self
         //account cell
         subView.collectionView.registerCell(AccountCollectionViewCell.self)
-        
+        subView.delegateAddSubView = self
         view.addSubview(subView)
         subView.frame = view.bounds
     }
@@ -33,4 +41,41 @@ class AccountController: BaseViewController {
 
 extension AccountController: XibInitalization {
     typealias Element = AccountController
+}
+
+extension AccountController: BaseViewOutput {
+    func didAddNew() {
+        
+    }
+    
+    func didAddPicklist(v: UIView?) {
+        guard let cell = v as? AccountCollectionViewCell else { return }
+        
+        var arrDatasource : Array<String>
+        
+        switch cell.lblTitle.text! {
+        case "Industry":
+            arrDatasource = arrSubIndustry
+        case "District":
+            arrDatasource = arrSubDistrict
+        case "City":
+            arrDatasource = arrSubCity
+        default:
+            return
+        }
+        
+        let dropDown = DropDown()
+        dropDown.anchorView = cell
+        
+        
+        dropDown.dataSource = arrDatasource
+        dropDown.direction = .any
+        dropDown.selectionAction = { (index: Int, item: String) in
+            print("Selected item: \(item) at index: \(index)")
+            cell.lblName.text = item
+            dropDown.hide()
+        }
+        
+        dropDown.show()
+    }
 }

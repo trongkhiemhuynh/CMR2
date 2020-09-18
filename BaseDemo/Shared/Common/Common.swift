@@ -39,6 +39,8 @@ let arrIcTicket = ["ticketowner","ticket_id", "phone", "mail_ic", "priority", "s
 
 let arrMenuItems = ["Dashboards","Account","Contact","Ticket"]
 let arrExtends = ["Email","Notes","Tasks","Activity History","Articles","Comments","Attachments","Event","Customer Journey"]
+let arrAccountArrowDown = ["Industry","District","City","Country"]
+let arrContactArrowDown = ["Department"]
 
 enum ItemMenu : Int {
     case none = 0, ticket = 1, dashboard, email, notes, activities, activities_history, articles, account, contact

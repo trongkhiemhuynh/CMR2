@@ -57,14 +57,19 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             cell.title.text = title
             cell.icRight.image = UIImage(named: "next")
             return cell
-        } else if type == .account {
+        } else if type == .account || type == .contact_detail {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AccountCollectionViewCell.identifier, for: indexPath) as! AccountCollectionViewCell
             
             let arr = dictData?[String(indexPath.section)] as! Array<String>
             let title = arr[indexPath.row]
             
             cell.lblTitle.text = title
-            cell.lblName.text = "Unknown"
+            cell.lblName.text = title
+            
+            //check item have picklist
+            if arrAccountArrowDown.contains(title) || arrContactArrowDown.contains(title) {
+                cell.ivDropdown.isHidden = false
+            }
             
             return cell
         } else if type == .profile {

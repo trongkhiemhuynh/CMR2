@@ -18,6 +18,7 @@ class AccountCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        ivDropdown.isHidden = true
     }
 
 }

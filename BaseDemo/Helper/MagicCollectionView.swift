@@ -102,7 +102,12 @@ extension MagicCollectionView : MagicCollectionViewDelegateOutput {
             controller?.navigationController?.pushViewController(vc, animated: true)
         } else if controller!.isKind(of: ContactController.self) {
             RouterManager.shared.handleRouter(ContactDetailRoute())
-        } else {
+        } else if controller!.isKind(of: AccountController.self) || controller!.isKind(of: ContactDetailController.self) {
+            //deleate to superview
+            let cell = collectionView.cellForItem(at: indexPath) as? AccountCollectionViewCell
+            
+            delegateAddSubView?.didAddPicklist!(v: cell)
+        }else {
             
         }
     }

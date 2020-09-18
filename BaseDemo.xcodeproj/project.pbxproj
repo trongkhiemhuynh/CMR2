@@ -109,6 +109,7 @@
 		225D4E672514554500664D70 /* CustomerJourneyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225D4E652514554400664D70 /* CustomerJourneyCollectionViewCell.xib */; };
 		225D4E692514699A00664D70 /* CreatNewNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D4E682514699A00664D70 /* CreatNewNote.swift */; };
 		225D4E6B251469AC00664D70 /* CreatNewNote.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225D4E6A251469AC00664D70 /* CreatNewNote.xib */; };
+		225D4E6D25148DE800664D70 /* DropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225D4E6C25148DE800664D70 /* DropDown.framework */; };
 		226D933D2509FF2500457AD5 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D933B2509FF2500457AD5 /* FilterCollectionViewCell.swift */; };
 		226D933E2509FF2500457AD5 /* FilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226D933C2509FF2500457AD5 /* FilterCollectionViewCell.xib */; };
 		226D9340250A0F1100457AD5 /* MagicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D933F250A0F1100457AD5 /* MagicCollectionView.swift */; };
@@ -369,6 +370,7 @@
 		225D4E652514554400664D70 /* CustomerJourneyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerJourneyCollectionViewCell.xib; sourceTree = "<group>"; };
 		225D4E682514699A00664D70 /* CreatNewNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatNewNote.swift; sourceTree = "<group>"; };
 		225D4E6A251469AC00664D70 /* CreatNewNote.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatNewNote.xib; sourceTree = "<group>"; };
+		225D4E6C25148DE800664D70 /* DropDown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DropDown.framework; path = Carthage/Build/iOS/DropDown.framework; sourceTree = "<group>"; };
 		226D933B2509FF2500457AD5 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		226D933C2509FF2500457AD5 /* FilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCollectionViewCell.xib; sourceTree = "<group>"; };
 		226D933F250A0F1100457AD5 /* MagicCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCollectionView.swift; sourceTree = "<group>"; };
@@ -502,6 +504,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				225D4E6D25148DE800664D70 /* DropDown.framework in Frameworks */,
 				223EF2002510993600C076BF /* RealmSwift.framework in Frameworks */,
 				223EF1FE2510987700C076BF /* Realm.framework in Frameworks */,
 				224326DB25073362005AE588 /* SideMenu.framework in Frameworks */,
@@ -1084,6 +1087,7 @@
 		4B1FF03A24E12DAC00E63819 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				225D4E6C25148DE800664D70 /* DropDown.framework */,
 				223EF1F6250F6DE900C076BF /* TesseractOCR.framework */,
 				223EF1FF2510993600C076BF /* RealmSwift.framework */,
 				223EF1FD2510987700C076BF /* Realm.framework */,
@@ -1581,6 +1585,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SideMenu.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/DropDown.framework",
 			);
 			outputFileListPaths = (
 			);
