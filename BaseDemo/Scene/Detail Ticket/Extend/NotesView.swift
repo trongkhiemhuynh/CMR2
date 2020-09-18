@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class NotesView: BaseView {
     @IBOutlet var vBound : UIView!
 
@@ -30,7 +32,7 @@ class NotesView: BaseView {
     }
     
     @IBAction func didAdd() {
-        
+        delegateAddSubView?.didAddNew()
     }
 
 }

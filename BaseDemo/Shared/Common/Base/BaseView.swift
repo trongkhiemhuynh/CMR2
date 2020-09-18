@@ -91,6 +91,10 @@ protocol ChartSubViews {
     func addPieChart()
 }
 
+protocol BaseViewOutput: class {
+    func didAddNew()
+}
+
 class BaseView: UIView, ChartSubViews {
     
     // outlet
@@ -99,6 +103,7 @@ class BaseView: UIView, ChartSubViews {
     
     //variable
     weak var controller: UIViewController?
+    weak var delegateAddSubView: BaseViewOutput?
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -46,6 +46,7 @@ class ExtendController: BaseViewController {
             subView = EmailView.xibInstance()
         case .notes:
             subView = NotesView.xibInstance()
+            subView.delegateAddSubView = self
         case .tasks:
             subView = TasksView(frame: vContent.bounds)
         case .activity_history:
@@ -75,4 +76,12 @@ class ExtendController: BaseViewController {
 
 extension ExtendController: XibInitalization {
     typealias Element = ExtendController
+}
+
+extension ExtendController: BaseViewOutput {
+    func didAddNew() {
+        let creatNote = CreatNewNote.xibInstance()
+        view.addSubview(creatNote)
+        creatNote.frame = view.bounds
+    }
 }

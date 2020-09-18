@@ -107,6 +107,8 @@
 		225D4E632513490300664D70 /* NotesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225D4E622513490300664D70 /* NotesView.xib */; };
 		225D4E662514554400664D70 /* CustomerJourneyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D4E642514554400664D70 /* CustomerJourneyCollectionViewCell.swift */; };
 		225D4E672514554500664D70 /* CustomerJourneyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225D4E652514554400664D70 /* CustomerJourneyCollectionViewCell.xib */; };
+		225D4E692514699A00664D70 /* CreatNewNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D4E682514699A00664D70 /* CreatNewNote.swift */; };
+		225D4E6B251469AC00664D70 /* CreatNewNote.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225D4E6A251469AC00664D70 /* CreatNewNote.xib */; };
 		226D933D2509FF2500457AD5 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D933B2509FF2500457AD5 /* FilterCollectionViewCell.swift */; };
 		226D933E2509FF2500457AD5 /* FilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226D933C2509FF2500457AD5 /* FilterCollectionViewCell.xib */; };
 		226D9340250A0F1100457AD5 /* MagicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D933F250A0F1100457AD5 /* MagicCollectionView.swift */; };
@@ -365,6 +367,8 @@
 		225D4E622513490300664D70 /* NotesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesView.xib; sourceTree = "<group>"; };
 		225D4E642514554400664D70 /* CustomerJourneyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerJourneyCollectionViewCell.swift; sourceTree = "<group>"; };
 		225D4E652514554400664D70 /* CustomerJourneyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerJourneyCollectionViewCell.xib; sourceTree = "<group>"; };
+		225D4E682514699A00664D70 /* CreatNewNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatNewNote.swift; sourceTree = "<group>"; };
+		225D4E6A251469AC00664D70 /* CreatNewNote.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatNewNote.xib; sourceTree = "<group>"; };
 		226D933B2509FF2500457AD5 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		226D933C2509FF2500457AD5 /* FilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCollectionViewCell.xib; sourceTree = "<group>"; };
 		226D933F250A0F1100457AD5 /* MagicCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCollectionView.swift; sourceTree = "<group>"; };
@@ -874,6 +878,8 @@
 				225D4E622513490300664D70 /* NotesView.xib */,
 				225D4E642514554400664D70 /* CustomerJourneyCollectionViewCell.swift */,
 				225D4E652514554400664D70 /* CustomerJourneyCollectionViewCell.xib */,
+				225D4E682514699A00664D70 /* CreatNewNote.swift */,
+				225D4E6A251469AC00664D70 /* CreatNewNote.xib */,
 			);
 			path = Extend;
 			sourceTree = "<group>";
@@ -1479,6 +1485,7 @@
 				226D934D250A30E200457AD5 /* MagicHeaderCollectionReusableView.xib in Resources */,
 				C2E857E224F36C06002960A2 /* InfoTicketRow.xib in Resources */,
 				4B166C2924ED07EF0030C592 /* TicketDetailInfoViewController.xib in Resources */,
+				225D4E6B251469AC00664D70 /* CreatNewNote.xib in Resources */,
 				226D9354250B227D00457AD5 /* ProfileCollectionReusableView.xib in Resources */,
 				226D9349250A180000457AD5 /* MagicCollectionViewCell.xib in Resources */,
 				C2E857F024F39CF6002960A2 /* TabbarItem.xib in Resources */,
@@ -1777,6 +1784,7 @@
 				223EF2142511BF4000C076BF /* AccountRoute.swift in Sources */,
 				2270236E24F8AE79002C06AC /* Identifier.swift in Sources */,
 				2270236C24F8AE5E002C06AC /* UITableView+Register.swift in Sources */,
+				225D4E692514699A00664D70 /* CreatNewNote.swift in Sources */,
 				223EF2042510B26F00C076BF /* Profile.swift in Sources */,
 				4B166C3824EE16BB0030C592 /* Common.swift in Sources */,
 				225D4E402513079800664D70 /* ContactDetailRoute.swift in Sources */,
