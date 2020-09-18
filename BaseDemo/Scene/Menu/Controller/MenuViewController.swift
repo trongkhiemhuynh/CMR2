@@ -13,14 +13,14 @@ import RxCocoa
 
 private let reuseIdentifier = "Cell"
 
-class MenuViewController: UIViewController {
+class MenuViewController: BaseViewController {
 
     @IBOutlet weak var collectionView : UICollectionView!
 
     private let itemsPerRow: CGFloat = 1
     private let heightCellInfo : CGFloat = 100
     private let heightCellInfoDetail : CGFloat = 50
-        
+    
     var stringVar : String? {
         didSet {
             _rx_stringVar.onNext(stringVar!)
@@ -146,7 +146,9 @@ extension MenuViewController : UICollectionViewDelegate {
         //FIXME navigate correctly to view
         SideMenuManager.default.leftMenuNavigationController?.dismiss(animated: true, completion: {
 //            self.menuSelectedItem.accept(nameItem)
-            self.stringVar = nameItem
+//            self.stringVar = nameItem
+            let dashboardVC = self.controllerOwner as? DashboardController
+            dashboardVC?.controllerName = nameItem
         })
     }
 }

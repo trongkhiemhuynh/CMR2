@@ -19,6 +19,7 @@ class FilterCollectionViewCell: UICollectionViewCell {
         // Initialization code
         
         iv.image = UIImage(named: "calendar")
+        iv.isHidden = true
     }
 
 }

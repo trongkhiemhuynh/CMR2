@@ -67,14 +67,14 @@ extension TicketDetailExtendView : UICollectionViewDelegateFlowLayout {
         
         return CGSize(width: widthPerItem, height: vBound.frame.size.height/itemsPerRow)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return sectionInsetsDefault.left
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return sectionInsetsDefault.left
-    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return sectionInsetsDefault.left
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        return sectionInsetsDefault.left
+//    }
 }
 
 extension TicketDetailExtendView : UICollectionViewDataSource {

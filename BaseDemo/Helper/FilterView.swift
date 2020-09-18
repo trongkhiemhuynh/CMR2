@@ -13,7 +13,6 @@ class FilterView : BaseView {
     //dummy Data
     var dummy = ["Subject","From","To","Characters","From date","To date","Search"]
     
-    
     @IBAction func didClose() {
         removeFromSuperview()
     }
@@ -44,6 +43,10 @@ extension FilterView : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FilterCollectionViewCell.identifier, for: indexPath) as! FilterCollectionViewCell
         cell.tf.placeholder = dummy[indexPath.row]
+        
+        if cell.tf.placeholder!.contains("date") {
+            cell.iv.isHidden = false
+        }
         
         return cell
     }

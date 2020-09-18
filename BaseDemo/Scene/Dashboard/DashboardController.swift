@@ -19,6 +19,16 @@ class DashboardController: BaseViewController {
     //variable
     var menu : SideMenuNavigationController?
     let disposeBag = DisposeBag()
+    var controllerName : String? {
+        willSet {
+//            Logger.debug(controllerName)
+        }
+        
+        didSet {
+//            Logger.debug(controllerName)
+            didTransitionView(controllerName)
+        }
+    }
     
     lazy var blurView : UIView = {
         let v = UIView(frame: view.frame)
@@ -35,30 +45,42 @@ class DashboardController: BaseViewController {
         // Do any additional setup after loading the view.
     }
 
-
     override func setupView() {
         lblCountNotification.layer.cornerRadius = lblCountNotification.bounds.height/2
         lblCountNotification.clipsToBounds = true
-        lblCountNotification.text = "999"
 
         self.view.backgroundColor = .white
         let menuVC = MenuViewController()
-        controllerOwner = menuVC
+        menuVC.controllerOwner = self
+//        controllerOwner = menuVC
         menu = SideMenuNavigationController(rootViewController: menuVC)
         menu?.leftSide = true
         menu?.sideMenuDelegate = self
         menu?.setNavigationBarHidden(true, animated: true)
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: view)
+        
+    }
+    
+    override func initData() {
+        super.initData()
+        
+        var numberCount = "9999"
+        
+        if Int(numberCount)! > 9 {
+            numberCount = "9+"
+        }
+        
+        lblCountNotification.text = numberCount
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+    override func viewWillAppear(_ animated: Bool) {
+        isHiddenNavigationBar = true
+        super.viewWillAppear(animated)
     }
     
     
@@ -89,12 +111,6 @@ class DashboardController: BaseViewController {
         
         Logger.info("\(widthScreen) -\(heightScreen)")
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-    }
-    
     
     @IBAction func actionClick() {
 
@@ -137,27 +153,33 @@ extension DashboardController : SideMenuNavigationControllerDelegate {
     
     func sideMenuDidDisappear(menu: SideMenuNavigationController, animated: Bool) {
         
-        let menuVC = controllerOwner as? MenuViewController
-        
-        menuVC?.rx_stringVar.subscribe(onNext: { (item) in
-            Logger.debug(item)
-            if item == "Dashboards" {
-                return
-            } else if item == "Account" {
-                RouterManager.shared.handleRouter(AccountRoute())
-            } else if item == "Contact" {
-                RouterManager.shared.handleRouter(ContactRoute())
-            } else if item == "Ticket" {
-                RouterManager.shared.handleRouter(TicketRoute())
-            }
-        }, onError: { (error) in
-            
-        }, onCompleted: {
-            
-        }, onDisposed: {
-            
-        }).disposed(by: disposeBag)
+//        let menuVC = controllerOwner as? MenuViewController
+//
+//        menuVC?.rx_stringVar.subscribe(onNext: { (item) in
+//            Logger.debug(item)
+//
+//        }, onError: { (error) in
+//
+//        }, onCompleted: {
+//
+//        }, onDisposed: {
+//
+//        }).disposed(by: disposeBag)
 
+    }
+    
+    func didTransitionView(_ name : String?) {
+        guard let vcName = name else {return}
+        
+        if vcName == "Dashboards" {
+            return
+        } else if vcName == "Account" {
+            RouterManager.shared.handleRouter(AccountRoute())
+        } else if vcName == "Contact" {
+            RouterManager.shared.handleRouter(ContactRoute())
+        } else if vcName == "Ticket" {
+            RouterManager.shared.handleRouter(TicketRoute())
+        }
     }
 }
 

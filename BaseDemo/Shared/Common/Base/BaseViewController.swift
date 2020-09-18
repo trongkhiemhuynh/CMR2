@@ -15,7 +15,7 @@ class BaseViewController: UIViewController {
     
     //variable
     var isHiddenNavigationBar = true
-    var controllerOwner : UIViewController?
+    weak var controllerOwner : UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +26,11 @@ class BaseViewController: UIViewController {
         initData()
         initCommon()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = isHiddenNavigationBar
     }
 
     func setupView() {}
