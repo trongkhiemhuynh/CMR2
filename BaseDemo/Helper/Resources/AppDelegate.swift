@@ -8,7 +8,6 @@
 
 import UIKit
 import ReSwift
-import Realm
 
 // Main State
 /// mainStore

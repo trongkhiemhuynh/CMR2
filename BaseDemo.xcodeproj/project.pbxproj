@@ -210,6 +210,8 @@
 		C23F629724EF225600E37560 /* CustomDetailTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23F629624EF225600E37560 /* CustomDetailTabView.swift */; };
 		C23F629924EF228100E37560 /* CustomDetailActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23F629824EF228100E37560 /* CustomDetailActionView.swift */; };
 		C23F629B24EF25F500E37560 /* CustomDetailActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C23F629A24EF25F500E37560 /* CustomDetailActionView.xib */; };
+		C24677D625170DCD0076812C /* BaseQueueAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24677D525170DCD0076812C /* BaseQueueAlert.swift */; };
+		C24677D82517181E0076812C /* AlertOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24677D72517181E0076812C /* AlertOperation.swift */; };
 		C2C33CC924F41612008C88B3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C2C33CC824F41612008C88B3 /* README.md */; };
 		C2E857DE24F368BC002960A2 /* CreatNewTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E857DD24F368BC002960A2 /* CreatNewTicketView.swift */; };
 		C2E857E024F368D7002960A2 /* CreatNewTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E857DF24F368D7002960A2 /* CreatNewTicketView.xib */; };
@@ -483,6 +485,8 @@
 		C23F629624EF225600E37560 /* CustomDetailTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDetailTabView.swift; sourceTree = "<group>"; };
 		C23F629824EF228100E37560 /* CustomDetailActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDetailActionView.swift; sourceTree = "<group>"; };
 		C23F629A24EF25F500E37560 /* CustomDetailActionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDetailActionView.xib; sourceTree = "<group>"; };
+		C24677D525170DCD0076812C /* BaseQueueAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseQueueAlert.swift; sourceTree = "<group>"; };
+		C24677D72517181E0076812C /* AlertOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOperation.swift; sourceTree = "<group>"; };
 		C2C33CC824F41612008C88B3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C2E857DD24F368BC002960A2 /* CreatNewTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatNewTicketView.swift; sourceTree = "<group>"; };
 		C2E857DF24F368D7002960A2 /* CreatNewTicketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatNewTicketView.xib; sourceTree = "<group>"; };
@@ -1181,6 +1185,7 @@
 		4B2D4BF824DD28D100CABF1D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C24677D425170D8E0076812C /* Queue */,
 				224346B924FCB12400CF7AA3 /* Base */,
 				224346B824FCB10700CF7AA3 /* Logger */,
 				224346B724FCB0FF00CF7AA3 /* Application */,
@@ -1347,6 +1352,15 @@
 				C22FEAA024FC1AB3009D9219 /* SettingViewController.xib */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		C24677D425170D8E0076812C /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				C24677D525170DCD0076812C /* BaseQueueAlert.swift */,
+				C24677D72517181E0076812C /* AlertOperation.swift */,
+			);
+			path = Queue;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1586,6 +1600,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SideMenu.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/DropDown.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -1731,6 +1746,7 @@
 				2270236A24F8AE46002C06AC /* UICollectionView+Register.swift in Sources */,
 				4B28018724ECE676007647F8 /* TicketController.swift in Sources */,
 				224326EC25077295005AE588 /* DashboardRoute.swift in Sources */,
+				C24677D625170DCD0076812C /* BaseQueueAlert.swift in Sources */,
 				224326D7250724EF005AE588 /* SplashRoute.swift in Sources */,
 				C23F629724EF225600E37560 /* CustomDetailTabView.swift in Sources */,
 				224346C124FCB28800CF7AA3 /* MainAppState.swift in Sources */,
@@ -1803,6 +1819,7 @@
 				222B5FCE24F76E7800419452 /* ManagerDashboard.swift in Sources */,
 				224346C724FCB5CF00CF7AA3 /* MainReducer.swift in Sources */,
 				226D933D2509FF2500457AD5 /* FilterCollectionViewCell.swift in Sources */,
+				C24677D82517181E0076812C /* AlertOperation.swift in Sources */,
 				224346DA24FCF4D100CF7AA3 /* SwipeableCollectionViewCell.swift in Sources */,
 				C2E857F424F3B95F002960A2 /* TicketDetailExtendView.swift in Sources */,
 				4B166C2224ECFD620030C592 /* TabMenuController.swift in Sources */,

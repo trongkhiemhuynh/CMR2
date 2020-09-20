@@ -26,6 +26,9 @@ protocol AsyncLoginWorker : Worker {
     func executeLogin(username: String, password: String) -> Promise<T>
 }
 
+protocol AsyncTicketListWorker: Worker {
+    func executeTicketList(id: String)
+}
 
 protocol SyncWorker : Worker {
     func excecute()

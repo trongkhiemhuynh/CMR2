@@ -22,8 +22,9 @@ class FetchLoginWorker: AsyncLoginWorker {
     func executeLogin(username: String, password: String) -> Promise<LoginObj> {
         
         return Networking.shared.fetchLoginAuthentication(with: username, password: password).then {
-            (loginObj) -> Promise<LoginObj> in
             
+            (loginObj) -> Promise<LoginObj> in
+
             //save to realm
             let realm = try! Realm()
             try! realm.write {
@@ -35,7 +36,6 @@ class FetchLoginWorker: AsyncLoginWorker {
                 Logger.info(login)
                 realm.add(login)
             }
-            
             
             // Dispatch action '
             let action = UpdateLoginAction(login: loginObj)

@@ -12,7 +12,6 @@ import ObjectMapper
 struct FetchTicketRequest : Requestable {
     var param: Self.BaseParameters?
     
-
     func bodyRequest(request: inout URLRequest) {
         
     }

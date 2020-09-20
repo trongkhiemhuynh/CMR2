@@ -9,8 +9,6 @@
 import Foundation
 import PromiseKit
 
-
-
 class Networking {
     static let shared = Networking()
     

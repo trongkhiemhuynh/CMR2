@@ -19,7 +19,7 @@ protocol Requestable {
     var endPoint : String {get}
     var httpMethod : HTTPMethod {get}
     var param : BaseParameters? {get set}
-    var addionalHeader : HeaderParameter? {get}
+    var addionalHeader : BaseHeaderParameter? {get}
     var parameterEncoding: ParameterEncoding {get}
     func toPromise() -> Promise<T>
     
@@ -33,38 +33,35 @@ protocol Requestable {
 extension Requestable {
     // Variable
     typealias BaseParameters = [String: Any]
-    typealias HeaderParameter = [String: String]
-    typealias JSONDictionary = [String: Any]
+    typealias BaseHeaderParameter = [String: String]
+//    typealias JSONDictionary = [String: Any]
     
-    // Base
+    //endpoint
     var basePath: String {
         get { return Constants.App.BaseURL}
     }
     
-    // Param
+    //param
     var param: BaseParameters? {
         get { return nil }
     }
     
-    
-    // Additional Header
-    var addionalHeader: HeaderParameter? {
+    //additional header
+    var addionalHeader: BaseHeaderParameter? {
         get { return nil }
     }
     
-    
-    // Default
-    var defaultHeader: HeaderParameter {
-        get { return ["Accept": "application/json"] }
+    //header
+    var defaultHeader: BaseHeaderParameter {
+        get { return ["ContentType": "application/json"] }
     }
     
-    
-    // Path
+    //full url
     var urlPath: String {
         return basePath + endPoint
     }
     
-    // URL
+    //urlPath
     var url: URL {
         return URL(string: urlPath)!
     }

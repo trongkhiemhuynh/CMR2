@@ -62,7 +62,7 @@ class LoginController : BaseViewController {
             updateView()
         } else {
             //show loading
-//            didLoading()
+            didLoading()
             
             //fetch data
             output?.fetchAuthentication(username: tfUserName.text!, password: tfPassword.text!)
@@ -85,7 +85,10 @@ extension LoginController : LoginPresenterOutput {
     func updateView() {
         // end loading
 //        dismissLoading()
-        
+        let op = BlockOperation {
+            self.dismissLoading()
+        }
+        BaseQueueAlert.shared.addOperation(operations: [op])
         // router to main
         let routerManager = RouterManager.shared
         let routeWelcome = WelcomeRoute()

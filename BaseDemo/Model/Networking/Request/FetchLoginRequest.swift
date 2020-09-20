@@ -11,24 +11,22 @@ import ObjectMapper
 import Foundation
 
 struct FetchLoginRequest : Requestable {
+    typealias T = LoginObj
+
     var param: Self.BaseParameters?
     
-
     func bodyRequest(request: inout URLRequest) {
         let _ = try! request.setMultipartFormData(self.param as! [String : String], encoding: .utf8)
     }
     
     func decode(data: Any) -> LoginObj {
-        
         /// After receive data from server
+        //FIXME
         let jsObj = try? JSONSerialization.jsonObject(with: data as! Data, options: [.allowFragments]) as? [String : Any]
         
         return  LoginObj(JSON: jsObj!)!
 
     }
-    
-    
-    typealias T = LoginObj
     
     var httpMethod: HTTPMethod {
         return .post
@@ -43,8 +41,8 @@ struct FetchLoginRequest : Requestable {
     }
     
     // Additional Header
-    var addionalHeader: HeaderParameter? {
-        return nil //["Accept":"application/json","Content-Type":"multipart/form-data"]
+    var addionalHeader: BaseHeaderParameter? {
+        return ["Accept":"application/json","Content-Type":"multipart/form-data"]
     }
     
     init(param: BaseParameters?) {
