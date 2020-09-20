@@ -126,22 +126,22 @@ class DashboardController: BaseViewController {
     }
     
     @IBAction func didTapAlert() {
-        print(#function)
         let notiView = NotificationView.xibInstance()
-        notiView.frame = CGRect(x: 0, y: 0, width: widthScreen, height: heightScreen-70)
+        notiView.frame = CGRect(x: CGPoint.zero.x, y: CGPoint.zero.y, width: widthScreen, height: heightScreen-tabBarHeight)
         
         view.addSubview(notiView)
         
-        UIView.animateKeyframes(withDuration: 0.35, delay: 0.1, options: .allowUserInteraction, animations: {
-            self.view.layoutIfNeeded()
-        }) { (success) in
-            Logger.info(notiView)
+        UIView.animate(withDuration: 0.35, delay: 0.0, options: .transitionCurlUp, animations: {
+            print("animated")
+            self.view.setNeedsLayout()
+        }) { (_) in
+            print("did show noti view")
         }
     }
 
 }
 
-extension DashboardController : SideMenuNavigationControllerDelegate {
+extension DashboardController: SideMenuNavigationControllerDelegate {
     
     func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool) {
         view.addSubview(blurView)

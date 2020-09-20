@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SortContactsViewOutput: class {
-    func didSelect(item : String)
+    func didSelect(item : String?)
 }
 
 class SortContactsView: UIView {
@@ -20,8 +20,9 @@ class SortContactsView: UIView {
     weak var delegate : SortContactsViewOutput?
     
     // varible
-    var dummyData : [String] = ["Last activity","Fist name","Last name","Contact owner","Create date","Lead status","Last contacted"]
-    var selectedIdx : IndexPath = IndexPath(row: 0, section: 0)
+    var dummyData : [String] = ["Last activity","First name","Last name","Contact owner","Create date","Lead status","Last contacted"]
+    var selectedIdx : IndexPath?
+    var selectedItemName : String?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,10 +42,21 @@ extension SortContactsView : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SortContactsViewCell.identifier, for: indexPath) as! SortContactsViewCell
-        cell.lbl.text = dummyData[indexPath.row]
         
-        if selectedIdx == indexPath {
-            cell.iv.isHidden = false
+        let sortType = dummyData[indexPath.row]
+        
+        cell.lbl.text = sortType
+        
+        //check icon right
+        if let sName = selectedItemName {
+            if sName == sortType {
+                cell.iv.isHidden = false
+                selectedIdx = indexPath
+            } else {
+                cell.iv.isHidden = true
+            }
+        } else {
+            cell.iv.isHidden = true
         }
         
         return cell
@@ -53,16 +65,15 @@ extension SortContactsView : UITableViewDataSource {
 
 extension SortContactsView : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //update row
         let cell = tableView.cellForRow(at: indexPath) as! SortContactsViewCell
-        cell.iv.isHidden = false
+        selectedItemName = cell.lbl.text
         
-        let cell1 = tableView.cellForRow(at: selectedIdx) as! SortContactsViewCell
-        cell1.iv.isHidden = true
+        guard let sIndexPath = selectedIdx else {return}
         
-        // update selected indexpath
-        selectedIdx = indexPath
+        tableView.reloadRows(at: [indexPath, sIndexPath], with: .fade)
         
-        delegate?.didSelect(item: cell.lbl.text!)
+        delegate?.didSelect(item: selectedItemName)
         
         //remove from superview
         didBack()

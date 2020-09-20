@@ -24,6 +24,17 @@ enum DASHBOARDTYPE: Int {
     case agent
 }
 
+enum ALERT_TYPE: String {
+    case error = "ERROR!"
+    case success = "SUCCESS"
+    case undefine = "UNDEFINE"
+}
+
+enum BUTTON_TYPE: String {
+    case ok = "OK"
+    case cancel = "CANCEL"
+}
+
 public extension Notification.Name {
     static let TabbarName = Notification.Name("TabbarName")
     static let StageName = Notification.Name("StageName")

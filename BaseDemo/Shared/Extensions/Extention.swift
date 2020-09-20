@@ -48,14 +48,7 @@ extension UIViewController {
 //        removeFromParent()
     }
     
-    func showErrorAlert(message: String) {
-        let alertVC = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-        
-        alertVC.addAction(action)
-        
-        present(alertVC, animated: true, completion: nil)
-    }
+    
     
     func didLoading() {
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
@@ -74,7 +67,20 @@ extension UIViewController {
     func didPopView() {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        alertController.addAction(action)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+}
 
+extension BaseViewController {
+    
 }
 
 extension UIButton {

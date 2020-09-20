@@ -33,7 +33,7 @@ class NotificationView: UIView {
         tableView.register(NotificationTableViewCell.self)
         tableView.separatorColor = .clear
         tableView.backgroundColor = UIColor.init(hex: "#EBEBEB")
-        tableView.rowHeight = 90.0
+        tableView.rowHeight = 80.0
         
         btnBack.centerButtonAndImageWithSpacing(spacing: 8.0)
     }
@@ -58,7 +58,7 @@ extension NotificationView : UITableViewDataSource {
         cell.lblName.text = dumData[indexPath.row] + " sent you a message"
         
         cell.lblTime.text = ApplicationManager.sharedInstance.globalDateFormatter.string(from: Date())
-        cell.imageView?.image = UIImage(named: "no_avatar")
+        cell.iv.image = UIImage(named: "no_avatar")
         
         return cell
     }

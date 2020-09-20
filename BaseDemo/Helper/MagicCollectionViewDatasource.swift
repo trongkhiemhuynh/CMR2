@@ -74,7 +74,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             return cell
         } else if type == .profile {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileCollectionViewCell.identifier, for: indexPath) as! ProfileCollectionViewCell
-            
+            cell.delegate = self
             return cell
         } else if type == .extend {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailActivityCollectionViewCell.identifier, for: indexPath) as! TicketDetailActivityCollectionViewCell
@@ -133,6 +133,12 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
         } else {
             return CGSize(width: widthScreen, height: 50)
         }
+    }
+}
+
+extension MagicCollectionViewDatasource: ProfileCollectionViewCellOutput {
+    func didUpdateProfileView(name: String) {
+        UIApplication.getTopViewController()?.showAlert(title: name, message: ALERT_TYPE.undefine.rawValue)
     }
 }
 

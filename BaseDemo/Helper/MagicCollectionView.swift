@@ -73,16 +73,22 @@ class MagicCollectionView: BaseView {
 
 extension MagicCollectionView : MagicCollectionViewDelegateOutput {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         //settings controller
-        if (controller?.isKind(of: SettingViewController.self))! {
+        
+        guard let vc = controller else {
+            return
+        }
+        
+        if vc.isKind(of: SettingViewController.self) {
         
             let cell = collectionView.cellForItem(at: indexPath) as! MagicCollectionViewCell
-            let vc = UIViewController()
+//            let vc = UIViewController()
             
             //title label
             let title = cell.title.text!
-            vc.title = title
+//            vc.title = title
+            let settingVC = vc as? SettingViewController
+            settingVC?.showAlert(title: title, message: ALERT_TYPE.undefine.rawValue)
             
             if title == "Log out" {
                 RouterManager.shared.handleRouter(LoginRoute())
@@ -98,21 +104,21 @@ extension MagicCollectionView : MagicCollectionViewDelegateOutput {
             } else if title == "OCR" {
 //                vc = OCRController()
             }
-
-            controller?.navigationController?.pushViewController(vc, animated: true)
-        } else if controller!.isKind(of: ContactController.self) {
+            
+//            vc.navigationController?.pushViewController(vc, animated: true)
+        } else if vc.isKind(of: ContactController.self) {
             RouterManager.shared.handleRouter(ContactDetailRoute())
         } else if controller!.isKind(of: AccountController.self) || controller!.isKind(of: ContactDetailController.self) {
             //deleate to superview
             let cell = collectionView.cellForItem(at: indexPath) as? AccountCollectionViewCell
             
             delegateAddSubView?.didAddPicklist!(v: cell)
-        }else {
-            
+        } else {
+            Logger.debug("dragon")
         }
     }
 }
 
-extension MagicCollectionView : XibInitalization {
+extension MagicCollectionView: XibInitalization {
     typealias Element = MagicCollectionView
 }

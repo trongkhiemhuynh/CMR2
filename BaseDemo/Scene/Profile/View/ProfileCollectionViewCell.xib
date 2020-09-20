@@ -306,6 +306,14 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="484" height="544"/>
+            <connections>
+                <outlet property="vContact" destination="A14-0x-EQl" id="gIa-cc-ODa"/>
+                <outlet property="vLogout" destination="ozT-cf-WFI" id="0j9-Mp-IWN"/>
+                <outlet property="vPrivacy" destination="cmh-hA-dGP" id="JY8-tZ-zpP"/>
+                <outlet property="vQuestion" destination="zOy-ID-Phr" id="xL6-RR-iH3"/>
+                <outlet property="vSetting" destination="7qX-LV-T0n" id="iNk-VR-qw4"/>
+                <outlet property="vShare" destination="cjY-mz-b4F" id="SyB-dt-C33"/>
+            </connections>
             <point key="canvasLocation" x="-113.04347826086958" y="273.21428571428572"/>
         </collectionViewCell>
     </objects>

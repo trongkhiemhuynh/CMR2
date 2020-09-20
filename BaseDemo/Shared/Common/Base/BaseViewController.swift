@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol BaseControllerInput: class {
+    func showAlertInfo(description: String)
+}
+
 class BaseViewController: UIViewController {
 
     @IBOutlet weak var vTitle: CustomTitleView!
@@ -16,6 +20,11 @@ class BaseViewController: UIViewController {
     //variable
     var isHiddenNavigationBar = true
     weak var controllerOwner : UIViewController?
+    weak var delegateInput: BaseControllerInput?
+    
+//    public lazy var alertController: UIAlertController = {
+//        return UIAlertController()
+//    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()

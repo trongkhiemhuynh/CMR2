@@ -101,7 +101,7 @@ extension LoginController : LoginPresenterOutput {
 //        dismissLoading()
         
         // show error
-        showErrorAlert(message: error.localizedDescription)
+        showAlert(title: ALERT_TYPE.error.rawValue, message: error.localizedDescription)
         
         //FIXME save to realm
         let realm = try! Realm()

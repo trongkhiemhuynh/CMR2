@@ -139,6 +139,7 @@ extension TicketController : XibInitalization {
 extension TicketController : CustomListViewOutput {
     func didChangeSort(with name: String?) {
         let vSort = SortContactsView.xibInstance()
+        vSort.selectedItemName = self.vListView.btnSorted.titleLabel?.text
         view.addSubview(vSort)
         vSort.frame = view.frame
         vSort.delegate = self
@@ -156,8 +157,8 @@ extension TicketController : CustomTicketStageViewOutput {
     }
 }
 
-extension TicketController : SortContactsViewOutput {
-    func didSelect(item: String) {
+extension TicketController: SortContactsViewOutput {
+    func didSelect(item: String?) {
         vListView.btnSorted.setTitle(item, for: .normal)
     }
 }
