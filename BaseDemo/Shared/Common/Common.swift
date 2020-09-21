@@ -41,7 +41,6 @@ public extension Notification.Name {
     static let ChangeSort = Notification.Name("ChangeSort")
     static let UpdateSort = Notification.Name("UpdateSort")
     static let DetailTicket = Notification.Name("DetailTicket")
-    static let DetailTicketTab = Notification.Name("DetailTicketTab")
 }
 
 let arrInputTicket = ["Ticket owner", "Ticket ID", "Phone", "Mail", "Priority", "Status", "Subject","Escalated ?", "Done ?","Date/Time opened","Date/Time closed","Created by..., date/time","Last modifined by..., date/time","Description"]

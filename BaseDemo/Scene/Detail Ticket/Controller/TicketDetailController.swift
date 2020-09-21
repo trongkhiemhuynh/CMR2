@@ -10,41 +10,35 @@ import UIKit
 
 class TicketDetailController: BaseViewController {
 
+    //outlet
     @IBOutlet weak var vAction : CustomDetailActionView!
     @IBOutlet weak var vTab : CustomDetailTabView!
     @IBOutlet weak var vInfo : UIView!
     
+    //variable
+    private lazy var infoVC: TicketDetailInfoViewController = {
+        return TicketDetailInfoViewController()
+    }()
+    
+    private lazy var activityVC: TicketDetailActivityViewController = {
+        return TicketDetailActivityViewController()
+    }()
+    
+    //function
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        vTitle.lblTitle.text = "Ticket Information"
     }
 
     override func setupView() {
         super.setupView()
-        
-        let infoVC = TicketDetailInfoViewController()
-        let activityVC = TicketDetailActivityViewController()
-        
+
         addChild(activityVC)
         addChild(infoVC)
         
         add(infoVC, contentView: vInfo)
-        
-        NotificationCenter.default.addObserver(forName: .DetailTicketTab, object: nil, queue: nil) { (notif) in
-            
-            if let userInfo = notif.userInfo {
-                
-                let strNum = userInfo["action"] as! String
-//                let test = Self
-                
-                if strNum == "0" {
-                    self.add(infoVC, contentView: self.vInfo)
-                } else {
-                    self.add(activityVC, contentView: self.vInfo)
-                }
-            }
-        }
+        vTab.delegate = self
+
+        vTitle.lblTitle.text = "Ticket Information"
     }
 
     @IBAction func actionBack() {
@@ -70,16 +64,6 @@ class TicketDetailController: BaseViewController {
         //FIXME
 //        ApplicationManager.sharedInstance.mainTabbar?.customTabbar.isHidden = true
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -111,5 +95,16 @@ extension TicketDetailController: TicketDetailExtendViewOutput {
         //route to detail extend
         RouterManager.shared.handleRouter(extendRoute)
         
+    }
+}
+
+extension TicketDetailController: TabViewOutput {
+    func onTab(_ tab: TabOption) {
+        switch tab {
+        case .info:
+            self.add(infoVC, contentView: self.vInfo)
+        case .activities:
+            self.add(activityVC, contentView: self.vInfo)
+        }
     }
 }

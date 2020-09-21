@@ -79,7 +79,24 @@ extension PopupView : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! CustomPopUpTableViewCell
         
-        Logger.debug(cell.lbl.text!)
+        guard let itemName = cell.lbl.text else {return}
+        
+        switch itemName {
+        case "Email":
+            let extendRoute = ExtendRoute()
+            RouterManager.shared.handleRouter(extendRoute)
+            extendRoute.handleData { (controller) in
+                controller.extendedType = .email
+            }
+        case "Change Owner":
+            print("Change Owner")
+        case "New Child Ticket":
+            print("New Child Ticket")
+        default:
+            print("")
+        }
+        
+        removeFromSuperview()
     }
 }
 

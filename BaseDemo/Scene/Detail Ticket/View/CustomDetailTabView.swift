@@ -8,30 +8,28 @@
 
 import UIKit
 
-enum TabDetailOption : String {
-    case ticket_detail = "Ticket details"
+enum TabOption: String {
+    case info = "Ticket details"
     case activities = "Activities"
 }
 
-class CustomDetailTabView: BaseView {
+protocol TabViewOutput: class {
+    func onTab(_ tab: TabOption)
+}
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+class CustomDetailTabView: BaseView {
     
+    /// outlet
     @IBOutlet weak var vInfo : UIView!
     @IBOutlet weak var vActivity : UIView!
     
     @IBOutlet weak var lblTicketDetail : UILabel!
     @IBOutlet weak var lblActivity : UILabel!
-    @IBOutlet weak var imgTicketDetail : UIImageView!
-    @IBOutlet weak var imgActivity : UIImageView!
+    @IBOutlet weak var ivInfoStatus : UIImageView!
+    @IBOutlet weak var ivActivitiesStatus : UIImageView!
     
-//    var selectedItem: TabDetailOption?
+    //delegate
+    weak var delegate: TabViewOutput?
     
     override func commonInit() {
         Bundle.main.loadNibNamed("CustomDetailTabView", owner: self, options: nil)
@@ -39,42 +37,40 @@ class CustomDetailTabView: BaseView {
         vContent.frame = self.bounds
         vContent.backgroundColor = BASEColor.BackgroundListColor()
         
-//        selectedItem = .ticket_detail
-        
-        updateStatus(tab: .ticket_detail)
+        updateStatus(.info)
         
         vInfo.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapInfo(gesture:))))
         vActivity.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapActivity(gesture:))))
     }
     
     @objc func handleTapInfo(gesture: UITapGestureRecognizer) {
-        NotificationCenter.default.post(name: .DetailTicketTab, object: nil, userInfo: ["action":"0"])
-        updateStatus(tab: .ticket_detail)
+//        NotificationCenter.default.post(name: .DetailTicketTab, object: nil, userInfo: ["action":"0"])
+        delegate?.onTab(.info)
+        updateStatus(.info)
     }
     
     @objc func handleTapActivity(gesture: UITapGestureRecognizer) {
-        NotificationCenter.default.post(name: .DetailTicketTab, object: nil, userInfo: ["action":"1"])
-        updateStatus(tab: .activities)
+//        NotificationCenter.default.post(name: .DetailTicketTab, object: nil, userInfo: ["action":"1"])
+        delegate?.onTab(.activities)
+        updateStatus(.activities)
     }
     
-    func updateStatus(tab : TabDetailOption) {
+    func updateStatus(_ tab: TabOption) {
         
-        let strTabName = tab.rawValue
+        ivInfoStatus.isHidden = !ivInfoStatus.isHidden
+        ivActivitiesStatus.isHidden = !ivInfoStatus.isHidden
         
-        imgTicketDetail.isHidden = !imgTicketDetail.isHidden
-        imgActivity.isHidden = !imgTicketDetail.isHidden
-        
-        switch  strTabName {
-        case lblTicketDetail.text:
+        switch tab {
+        case .info:
             lblTicketDetail.font = UIFont.systemFont(ofSize: 15, weight: .medium)
             lblActivity.font = UIFont.systemFont(ofSize: 15, weight: .light)
-            
-        case lblActivity.text:
+            ivInfoStatus.isHidden = false
+            ivActivitiesStatus.isHidden = true
+        case .activities:
             lblTicketDetail.font = UIFont.systemFont(ofSize: 15, weight: .light)
             lblActivity.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-            
-        default:
-            print("default")
+            ivActivitiesStatus.isHidden = false
+            ivInfoStatus.isHidden = true
         }
         
     }

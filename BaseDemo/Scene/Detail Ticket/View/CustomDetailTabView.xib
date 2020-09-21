@@ -10,8 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomDetailTabView" customModule="BaseDemo" customModuleProvider="target">
             <connections>
-                <outlet property="imgActivity" destination="FaY-w5-edD" id="gyV-Wy-JGO"/>
-                <outlet property="imgTicketDetail" destination="bBv-lW-YNR" id="Vd7-tg-AQx"/>
+                <outlet property="ivActivitiesStatus" destination="FaY-w5-edD" id="gyV-Wy-JGO"/>
+                <outlet property="ivInfoStatus" destination="bBv-lW-YNR" id="Vd7-tg-AQx"/>
                 <outlet property="lblActivity" destination="1iE-jx-0oD" id="U97-lx-Zla"/>
                 <outlet property="lblTicketDetail" destination="03o-qA-Pjt" id="oCN-q2-wxe"/>
                 <outlet property="vActivity" destination="x7N-Q5-CVJ" id="xfD-u1-buD"/>
