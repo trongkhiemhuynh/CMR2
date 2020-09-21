@@ -9,14 +9,13 @@
 import Foundation
 
 extension NSError {
-    
     static func unknownError() -> NSError {
         let userInfo = [NSLocalizedDescriptionKey : "Unknown error"]
         
         return NSError(domain: "com.basebs", code: 999, userInfo: userInfo)
     }
     
-    static func emptyUsernameOrPassword() -> NSError {
+    static func invalidUsernameOrPassword() -> NSError {
         let userInfo = [NSLocalizedDescriptionKey : "Invalid username or password!"]
         
         return NSError(domain: "com.basebs", code: 998, userInfo: userInfo)

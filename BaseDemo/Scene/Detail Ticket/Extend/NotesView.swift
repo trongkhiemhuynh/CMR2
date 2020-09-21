@@ -24,7 +24,7 @@ class NotesView: BaseView {
         let vMagic = MagicCollectionView.xibInstance()
         vMagic.frame = vBound.bounds
         vMagic.dictData = ["0":["Note","Note1","Note2","Note3","Note4","Note5"]]
-        vMagic.magicDatasource.type = .extend
+        vMagic.magicDatasource.type = .notes
         vMagic.controller = UIViewController()
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
         

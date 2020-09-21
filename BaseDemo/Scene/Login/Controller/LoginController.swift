@@ -40,10 +40,12 @@ class LoginController : BaseViewController {
     override func setupView() {
         tfUserName.placeholder = "Username"
         tfUserName.title = "Username"
-        
+        tfUserName.delegate = self
         tfPassword.placeholder = "Password"
         tfPassword.title = "Password"
         tfPassword.isSecureTextEntry = true
+        tfPassword.delegate = self
+        
         btnLogin.layer.cornerRadius = 8
         
         let tapRecognization = UITapGestureRecognizer(target: self, action: #selector(self.tapDismiss(gesture:)))
@@ -62,10 +64,12 @@ class LoginController : BaseViewController {
             updateView()
         } else {
             //show loading
-            didLoading()
-            
+            onLoading()
+            //check username+password
+            let isVerified = verifyLogin(username: tfUserName.text, password: tfPassword.text)
             //fetch data
-            output?.fetchAuthentication(username: tfUserName.text!, password: tfPassword.text!)
+            onLogin(isVerified)
+            
         }
     }
     
@@ -83,12 +87,14 @@ class LoginController : BaseViewController {
 
 extension LoginController : LoginPresenterOutput {
     func updateView() {
-        // end loading
-//        dismissLoading()
-        let op = BlockOperation {
-            self.dismissLoading()
-        }
-        BaseQueueAlert.shared.addOperation(operations: [op])
+        //end loading
+        onDismissLoading()
+        
+//        let op = BlockOperation {
+//            self.dismissLoading()
+//        }
+//
+//        BaseQueueAlert.shared.addOperation(operations: [op])
         // router to main
         let routerManager = RouterManager.shared
         let routeWelcome = WelcomeRoute()
@@ -97,8 +103,8 @@ extension LoginController : LoginPresenterOutput {
     }
     
     func presentError(_ error: Error) {
-        // end loading
-//        dismissLoading()
+        //end loading
+        onDismissLoading()
         
         // show error
         showAlert(title: ALERT_TYPE.error.rawValue, message: error.localizedDescription)
@@ -119,4 +125,35 @@ extension LoginController : LoginPresenterOutput {
 
 extension LoginController: XibInitalization {
     typealias Element = LoginController
+}
+
+extension LoginController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //check username+password
+        let isVerified = verifyLogin(username: tfUserName.text, password: tfPassword.text)
+        onLogin(isVerified)
+        
+        return true
+    }
+    
+    private func verifyLogin(username: String?, password: String?) -> Bool {
+        guard let user = username, let pass = password else {
+            return false
+        }
+        
+        if user.isEmpty && pass.isEmpty && !user.isValidEmail() {
+            return false
+        }
+        
+        return true
+    }
+    
+    private func onLogin(_ isVerified: Bool) {
+        if isVerified {
+            output?.fetchAuthentication(username: tfUserName.text!, password: tfPassword.text!)
+        } else {
+            // show error
+            showAlert(title: ALERT_TYPE.error.rawValue, message: NSError.invalidUsernameOrPassword().localizedDescription)
+        }
+    }
 }

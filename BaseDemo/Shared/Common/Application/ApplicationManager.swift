@@ -27,6 +27,12 @@ class ApplicationManager {
         return dateFormatter
     }()
     
+    lazy var defaultDateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd,yyyy"
+        return dateFormatter
+    }()
+    
     
     //
     // MARK: Public

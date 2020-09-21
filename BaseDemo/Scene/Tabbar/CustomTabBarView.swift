@@ -64,7 +64,6 @@ class CustomTabBarView: UIView {
         
         switch tab {
         case 0:
-            // MARK: -FIXME
             btnHome.setImage(UIImage(named: "home"), for: .normal)
             btnHome.setTitle("", for: .normal)
         case 1:

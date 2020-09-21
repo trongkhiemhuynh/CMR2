@@ -32,8 +32,8 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="RBD-eX-a6g"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                    <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fls-lw-kHb">
@@ -52,8 +52,8 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="ueL-uQ-7hn"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                    <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ilo-do-pab">
@@ -64,8 +64,9 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRo-OQ-wbN">
                                                     <rect key="frame" x="0.0" y="0.0" width="119.5" height="23"/>
-                                                    <state key="normal" title="B">
-                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <state key="normal" title="Bold">
+                                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="didBold" destination="iN0-l3-epB" eventType="touchUpInside" id="MNX-jn-oyU"/>
@@ -73,8 +74,9 @@
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2k-pC-XDZ">
                                                     <rect key="frame" x="119.5" y="0.0" width="120" height="23"/>
-                                                    <state key="normal" title="U">
-                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <state key="normal" title="Underline">
+                                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="didUnderline" destination="iN0-l3-epB" eventType="touchUpInside" id="J38-ag-398"/>
@@ -82,8 +84,9 @@
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x7E-R6-mjt">
                                                     <rect key="frame" x="239.5" y="0.0" width="119.5" height="23"/>
-                                                    <state key="normal" title="I">
-                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <state key="normal" title="Italic">
+                                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="didItalic" destination="iN0-l3-epB" eventType="touchUpInside" id="RVD-jM-3K2"/>
@@ -107,8 +110,8 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="150" id="UHO-ZR-xYx"/>
                                     </constraints>
-                                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     <connections>
                                         <outlet property="delegate" destination="iN0-l3-epB" id="8Bi-LF-5q5"/>
@@ -125,10 +128,21 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rb6-bB-Y9W">
-                    <rect key="frame" x="305" y="478" width="54" height="54"/>
+                    <rect key="frame" x="245" y="478" width="54" height="54"/>
                     <state key="normal" image="back"/>
                     <connections>
                         <action selector="back" destination="iN0-l3-epB" eventType="touchUpInside" id="0rg-6d-ef1"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGI-se-nfe">
+                    <rect key="frame" x="299" y="475" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="iGI-se-nfe" secondAttribute="height" id="8Na-vD-8kA"/>
+                        <constraint firstAttribute="width" constant="60" id="X2Y-vL-I3N"/>
+                    </constraints>
+                    <state key="normal" image="save"/>
+                    <connections>
+                        <action selector="didSave" destination="iN0-l3-epB" eventType="touchUpInside" id="uGc-4a-4rc"/>
                     </connections>
                 </button>
             </subviews>
@@ -137,8 +151,10 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Mvh-qp-hpv" secondAttribute="bottom" constant="200" id="5MJ-ij-ONr"/>
                 <constraint firstItem="fJ1-yV-zx9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="5sG-qp-Wbe"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fJ1-yV-zx9" secondAttribute="trailing" id="DE1-kz-DVM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="iGI-se-nfe" secondAttribute="trailing" constant="16" id="Hsp-bS-B6E"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Rb6-bB-Y9W" secondAttribute="bottom" constant="135" id="N9Q-Q9-byR"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Rb6-bB-Y9W" secondAttribute="trailing" constant="16" id="SAa-nb-R5x"/>
+                <constraint firstItem="iGI-se-nfe" firstAttribute="leading" secondItem="Rb6-bB-Y9W" secondAttribute="trailing" id="OWr-Mp-YIa"/>
+                <constraint firstItem="iGI-se-nfe" firstAttribute="centerY" secondItem="Rb6-bB-Y9W" secondAttribute="centerY" id="hxH-Su-yHz"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Mvh-qp-hpv" secondAttribute="trailing" id="krc-yS-ssf"/>
                 <constraint firstItem="Mvh-qp-hpv" firstAttribute="top" secondItem="fJ1-yV-zx9" secondAttribute="bottom" id="p9C-fl-Ea8"/>
                 <constraint firstItem="Mvh-qp-hpv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="pTe-Tf-KdT"/>
@@ -158,5 +174,6 @@
     </objects>
     <resources>
         <image name="back" width="54" height="54"/>
+        <image name="save" width="72" height="72"/>
     </resources>
 </document>

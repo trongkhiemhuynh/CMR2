@@ -76,11 +76,14 @@ extension Requestable {
     /// Alamofire request to webservice
     func toPromise() -> Promise<T> {
         
-        return Promise<T> {  seal in
+        return Promise<T> { seal in
             guard let urlRequest = try? self.asURLRequest() else {
                 seal.reject(NSError.unknownError())
                 return
             }
+            
+            //timeout
+            AF.sessionConfiguration.timeoutIntervalForRequest = 3
             
             AF.request(urlRequest)
                 .validate(statusCode: 200..<300)

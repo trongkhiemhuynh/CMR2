@@ -55,8 +55,8 @@ class CustomListView: BaseView {
         vContent.backgroundColor = BASEColor.BackgroundListColor()
         
         //FIXME read data from realm demo
-        readFile()
-        fetchVocabularyFromInitRealmDB()
+//        readFile()
+//        fetchVocabularyFromInitRealmDB()
     }
     
     private func readFile() {

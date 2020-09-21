@@ -143,7 +143,6 @@ extension MenuViewController : UICollectionViewDelegate {
         let nameItem = arrMenuItems[indexPath.row-1]
         Logger.debug(nameItem)
 
-        //FIXME navigate correctly to view
         SideMenuManager.default.leftMenuNavigationController?.dismiss(animated: true, completion: {
 //            self.menuSelectedItem.accept(nameItem)
 //            self.stringVar = nameItem

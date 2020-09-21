@@ -21,6 +21,8 @@ enum MAGIC_VIEW_TYPE {
     case contact_detail
     case extend
     case customer_journey
+    case notes
+    case event
 }
 
 class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
@@ -99,6 +101,17 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             if indexPath.section == ((dictData?.keys.count)! - 1) {
                 cell.line.isHidden = true
             }
+            
+            return cell
+        } else if type == .notes {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailActivityCollectionViewCell.identifier, for: indexPath) as! TicketDetailActivityCollectionViewCell
+            
+            let arr = dictData?[String(indexPath.section)] as! Array<String>
+            let title = arr[indexPath.row]
+            cell.lblTitle.text = title
+            cell.iv.image = UIImage(named: "ex_notes")
+            cell.lblTime.text = ApplicationManager.sharedInstance.defaultDateFormatter.string(from: Date())
+            cell.lblDescription.isHidden = true
             
             return cell
         }

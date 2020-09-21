@@ -53,7 +53,7 @@
                             </connections>
                         </tableView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WvT-rh-dXI">
-                            <rect key="frame" x="231" y="603" width="90" height="50"/>
+                            <rect key="frame" x="231" y="587" width="90" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="I0A-2i-TO0"/>
                                 <constraint firstAttribute="width" constant="90" id="wxD-9W-eLQ"/>
@@ -72,7 +72,7 @@
                         <constraint firstItem="7fy-Ur-BGE" firstAttribute="leading" secondItem="TMi-MO-pm0" secondAttribute="leading" id="2uY-Vc-ELz"/>
                         <constraint firstItem="IM4-1B-AAx" firstAttribute="leading" secondItem="TMi-MO-pm0" secondAttribute="leading" id="4oR-hl-GPM"/>
                         <constraint firstItem="IM4-1B-AAx" firstAttribute="top" secondItem="TMi-MO-pm0" secondAttribute="top" id="8ww-JQ-9bt"/>
-                        <constraint firstAttribute="bottom" secondItem="WvT-rh-dXI" secondAttribute="bottom" constant="14" id="C3r-Jy-8kj"/>
+                        <constraint firstAttribute="bottom" secondItem="WvT-rh-dXI" secondAttribute="bottom" constant="30" id="C3r-Jy-8kj"/>
                         <constraint firstItem="7fy-Ur-BGE" firstAttribute="top" secondItem="IM4-1B-AAx" secondAttribute="bottom" id="Hh4-4N-4TO"/>
                         <constraint firstAttribute="trailing" secondItem="7fy-Ur-BGE" secondAttribute="trailing" id="MLT-LR-ljd"/>
                         <constraint firstAttribute="trailing" secondItem="IM4-1B-AAx" secondAttribute="trailing" id="Stg-mA-06H"/>

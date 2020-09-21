@@ -9,11 +9,6 @@
 import Foundation
 
 class AlertOperation: Operation {
-    
-    override init() {
-        super.init()
-    }
-    
     override func main() {
         
     }

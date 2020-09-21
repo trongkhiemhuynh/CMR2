@@ -86,7 +86,7 @@ extension TicketDetailExtendView : UICollectionViewDataSource {
         
         cell.lblEx.text = title
         
-        let imageName = "menu_\(title.lowercased().replacingOccurrences(of: " ", with: "_"))"
+        let imageName = "ex_\(title.lowercased().replacingOccurrences(of: " ", with: "_"))"
         
         cell.imgEx.image = UIImage(named: imageName)
         

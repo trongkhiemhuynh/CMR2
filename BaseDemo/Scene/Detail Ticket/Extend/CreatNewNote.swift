@@ -28,7 +28,13 @@ class CreatNewNote: BaseView {
         removeFromSuperview()
     }
     
-    @IBAction func save() {
+    @IBAction func didSave() {
+        let dictData = NSMutableDictionary()
+        dictData.setValue(tf.text, forKey: "note_name")
+        dictData.setValue(tv.text, forKey: "note_content")
+        
+        print(dictData)
+        
         removeFromSuperview()
     }
     

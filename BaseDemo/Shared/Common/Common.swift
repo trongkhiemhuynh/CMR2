@@ -68,7 +68,6 @@ let sectionInsetsDefault = UIEdgeInsets(top: 8.0,
 let itemsPerRow: CGFloat = 1
 let heightLargeCell : CGFloat = 70
 let heightDefaultCell : CGFloat = 50
-let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
 
 public class DayAxisValueFormatter: NSObject, IAxisValueFormatter {
     weak var chart: BarLineChartViewBase?

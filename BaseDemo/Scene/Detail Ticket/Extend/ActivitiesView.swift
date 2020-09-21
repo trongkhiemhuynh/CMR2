@@ -31,7 +31,7 @@ class ActivitiesView: BaseView {
 
         let vMagic = MagicCollectionView.xibInstance()
         vMagic.frame = CGRect(x: 0, y: 50, width: widthScreen, height: heightScreen - 150)
-        vMagic.dictData = ["0":["Football","Tennis","Goft","Chess","Reading books","Listen music"]]
+        vMagic.dictData = ["0":["Football","Tennis","Chess","Reading books","Listen music"]]
         vMagic.magicDatasource.type = .extend
         vMagic.controller = UIViewController()
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)

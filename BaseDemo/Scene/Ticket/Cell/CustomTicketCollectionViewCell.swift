@@ -9,9 +9,9 @@
 import UIKit
 
 struct TicketListModel {
-    var name : String
-    var id : String
-    var status : String
+    var name: String
+    var id: String
+    var status: String
 }
 
 class CustomTicketCollectionViewCell: UICollectionViewCell {
@@ -45,6 +45,21 @@ class CustomTicketCollectionViewCell: UICollectionViewCell {
         
         layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: layer.cornerRadius).cgPath
         
+        //swipe gesture recognizer
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(onDelete(swipeToDeleteGesture:)))
+        swipe.direction = .left
+        self.addGestureRecognizer(swipe)
+        
+    }
+    
+    @objc func onDelete(swipeToDeleteGesture: UISwipeGestureRecognizer) {
+        if swipeToDeleteGesture.state == .ended {
+            print("ended")
+        }
+        
+        if swipeToDeleteGesture.state == .began {
+            print("began")
+        }
     }
     
     @objc func closePopUp(gesture : UITapGestureRecognizer) {

@@ -24,20 +24,10 @@ class LoginInteractor {
 extension LoginInteractor : LoginControllerOutput {
     
     func fetchAuthentication(username: String, password: String) {
-        
-        if username.isEmpty || password.isEmpty || !username.isValidEmail() {
-            output?.presentError(NSError.emptyUsernameOrPassword())
-        } else {
-            fetchLoginWorker.executeLogin(username: username, password: password)
+        fetchLoginWorker.executeLogin(username: username, password: password)
             .catch { error in
                 self.output?.presentError(error)
-            }
         }
-//
-//        guard let username = username, let password = password else {
-//            output?.presentError(NSError.emptyUsernameOrPassword()); return }
-//
-//
     }
     
 }
