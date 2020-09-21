@@ -12,7 +12,7 @@ import ReSwift
 import RealmSwift
 
 struct UpdateLoginAction: Action {
-    var login : LoginObj?
+    var login: LoginObj?
 }
 
 class FetchLoginWorker: AsyncLoginWorker {

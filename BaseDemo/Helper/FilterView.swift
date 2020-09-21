@@ -53,7 +53,12 @@ extension FilterView : UICollectionViewDataSource {
 }
 
 extension FilterView : UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! FilterCollectionViewCell
+        if cell.tf.placeholder!.contains("date") {
+            cell.onShowCalendar()
+        }
+    }
 }
 
 extension FilterView : UICollectionViewDelegateFlowLayout {

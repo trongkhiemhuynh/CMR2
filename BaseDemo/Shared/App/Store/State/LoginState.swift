@@ -12,6 +12,7 @@ import RxSwift
 import RxCocoa
 
 struct LoginState : StateType {
+    //FIXME
     var loginObj = BehaviorRelay<LoginObj>(value: LoginObj())
 //    var loginObj = Variable<LoginObj>(LoginObj(map: ))
 //    var strLogin = BehaviorRelay<String>(value: "hello world!")

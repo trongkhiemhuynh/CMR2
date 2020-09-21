@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class LoginObject : Object {
+class LoginObject: Object {
     @objc dynamic var token = ""
     @objc dynamic var name = ""
     @objc dynamic var tenant = ""

@@ -12,7 +12,7 @@ import PromiseKit
 class Networking {
     static let shared = Networking()
     
-    func fetchTicketList(with id : String) -> Promise<[TicketObj]>{
+    func fetchTicketList(with id: String) -> Promise<[TicketObj]>{
         
         let ticketRequest = FetchTicketRequest(param: ["id":id])
         return ticketRequest.toPromise()

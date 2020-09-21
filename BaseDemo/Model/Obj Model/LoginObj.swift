@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class LoginObj : NSObject, Mappable {
+class LoginObj: NSObject, Mappable {
     
     override init() {
         super.init()

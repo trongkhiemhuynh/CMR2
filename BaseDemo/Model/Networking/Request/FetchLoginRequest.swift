@@ -22,7 +22,7 @@ struct FetchLoginRequest : Requestable {
     func decode(data: Any) -> LoginObj {
         /// After receive data from server
         //FIXME
-        let jsObj = try? JSONSerialization.jsonObject(with: data as! Data, options: [.allowFragments]) as? [String : Any]
+        let jsObj = try? JSONSerialization.jsonObject(with: data as! Data, options: []) as? [String : Any]
         
         return  LoginObj(JSON: jsObj!)!
 

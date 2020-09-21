@@ -457,7 +457,7 @@
 		4B2D4BFF24DD4B7D00CABF1D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		4B2D4C0024DD4B7D00CABF1D /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		4B2D4C0424DD569100CABF1D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		4BE6313624DA9CBB00D9133C /* BaseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BE6313624DA9CBB00D9133C /* BASEBS CRM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BASEBS CRM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BE6313924DA9CBB00D9133C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BE6313B24DA9CBB00D9133C /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		4BE6314024DA9CC000D9133C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -1238,7 +1238,7 @@
 		4BE6313724DA9CBB00D9133C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4BE6313624DA9CBB00D9133C /* BaseDemo.app */,
+				4BE6313624DA9CBB00D9133C /* BASEBS CRM.app */,
 				4BE6314A24DA9CC000D9133C /* BaseDemoTests.xctest */,
 				4BE6315524DA9CC000D9133C /* BaseDemoUITests.xctest */,
 			);
@@ -1383,7 +1383,7 @@
 			);
 			name = BaseDemo;
 			productName = BaseDemo;
-			productReference = 4BE6313624DA9CBB00D9133C /* BaseDemo.app */;
+			productReference = 4BE6313624DA9CBB00D9133C /* BASEBS CRM.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4BE6314924DA9CC000D9133C /* BaseDemoTests */ = {
@@ -2004,8 +2004,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.basebs.BaseDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.basebs.ios.crm;
+				PRODUCT_NAME = "BASEBS CRM";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2028,8 +2028,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.basebs.BaseDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.basebs.ios.crm;
+				PRODUCT_NAME = "BASEBS CRM";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

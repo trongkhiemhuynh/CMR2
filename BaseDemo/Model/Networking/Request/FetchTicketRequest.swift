@@ -33,7 +33,9 @@ struct FetchTicketRequest : Requestable {
     }
     
     func decode(data: Any) -> Array<TicketObj> {
-        return Mapper<TicketObj>().mapArray(JSONObject: data) ?? []
+        let json = try? JSONSerialization.jsonObject(with: data as! Data, options: []) as? [String: Any]
+        
+        return Mapper<TicketObj>().mapArray(JSONObject: json) ?? []
     }
     
     // Init

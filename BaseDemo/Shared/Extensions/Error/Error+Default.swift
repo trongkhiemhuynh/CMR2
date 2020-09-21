@@ -10,7 +10,7 @@ import Foundation
 
 extension NSError {
     static func unknownError() -> NSError {
-        let userInfo = [NSLocalizedDescriptionKey : "Unknown error"]
+        let userInfo = [NSLocalizedDescriptionKey : "Try again later!"]
         
         return NSError(domain: "com.basebs", code: 999, userInfo: userInfo)
     }

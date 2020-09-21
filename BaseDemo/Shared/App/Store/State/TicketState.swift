@@ -12,7 +12,7 @@ import RxSwift
 import RxCocoa
 
 struct TicketState : StateType {
-    
+    //FIXME
     var ticketList = BehaviorRelay<[TicketObj]>(value: [])
 }
 

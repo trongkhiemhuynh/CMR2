@@ -75,7 +75,6 @@ extension Requestable {
     // Promise
     /// Alamofire request to webservice
     func toPromise() -> Promise<T> {
-        
         return Promise<T> { seal in
             guard let urlRequest = try? self.asURLRequest() else {
                 seal.reject(NSError.unknownError())
@@ -83,19 +82,19 @@ extension Requestable {
             }
             
             //timeout
-            AF.sessionConfiguration.timeoutIntervalForRequest = 3
+            AF.sessionConfiguration.timeoutIntervalForRequest = 20
             
             AF.request(urlRequest)
                 .validate(statusCode: 200..<300)
-//                .validate(contentType: ["application/json"])
+                //                .validate(contentType: ["application/json"])
                 .responseJSON(completionHandler: { (response) in
                     
-                    Logger.debug("-------\n response : \(response)")
+                    Logger.info("-------\n response : \(response)")
                     
                     switch response.result {
                     case .success(_):
                         Logger.debug(response.result)
-                        // Check Response
+                        //check response
                         guard let data = response.data else {
                             seal.reject(NSError.unknownError())
                             return
@@ -106,15 +105,13 @@ extension Requestable {
                         seal.fulfill(result)
                         
                     case .failure(_):
-//                        let error = NSError(domain: "com.basebs.crm", code: response.response!.statusCode , userInfo:[NSLocalizedDescriptionKey : response.error?.localizedDescription])
-//                        Logger.error(error)
-//
-//                        seal.reject(error)
-                        
-                        seal.reject(NSError.unknownError())
+                        if let res = response.response {
+                            let error = NSError(domain: "com.basebs.crm", code: res.statusCode , userInfo:[NSLocalizedDescriptionKey : response.error?.localizedDescription])
+                            seal.reject(error)
+                        } else {
+                            seal.reject(NSError.unknownError())
+                        }
                     }
-                    
-                    
                 })
         }
         

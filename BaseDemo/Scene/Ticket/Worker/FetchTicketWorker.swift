@@ -11,7 +11,7 @@ import ReSwift
 import PromiseKit
 
 struct UpdateTicketListAction : Action {
-    var ticketList : [TicketObj]?
+    var ticketList: [TicketObj]?
 }
 
 class FetchTicketWorker: AsyncWorker {

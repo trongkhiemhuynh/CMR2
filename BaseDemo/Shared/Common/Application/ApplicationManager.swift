@@ -29,7 +29,7 @@ class ApplicationManager {
     
     lazy var defaultDateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM dd,yyyy"
+        dateFormatter.dateFormat = "MMM dd, yyyy"
         return dateFormatter
     }()
     
