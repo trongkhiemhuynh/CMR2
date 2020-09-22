@@ -24,7 +24,8 @@ class ProfileViewController: BaseViewController {
         //register cell, header for profile
         v.collectionView.registerCell(ProfileCollectionViewCell.self)
         v.collectionView.register(ProfileCollectionReusableView.xib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileCollectionReusableView.identifier)
-        
+        view.backgroundColor = BASEColor.BackgroundListColor()
+        v.collectionView.backgroundColor = BASEColor.BackgroundListColor()
         view.addSubview(v)
         
         v.frame = view.frame

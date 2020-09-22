@@ -147,6 +147,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             return CGSize(width: widthScreen, height: 50)
         }
     }
+
 }
 
 extension MagicCollectionViewDatasource: ProfileCollectionViewCellOutput {
@@ -173,6 +174,14 @@ class MagicCollectionViewDelegate : NSObject, UICollectionViewDelegate, UICollec
         let widthPerItem = availableWidth / (itemsPerRow ?? 1)
         
         return CGSize(width: widthPerItem, height: heightCell ?? heightDefaultCell)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
     }
 }
 

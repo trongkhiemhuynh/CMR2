@@ -11,6 +11,12 @@ import UIKit
 import Charts
 import CoreGraphics
 
+public enum MultipartFormDataEncodingError: Error {
+    case characterSetName
+    case name(String)
+    case value(String, name: String)
+}
+
 enum TabMenu : String {
     case dashboard
     case profile

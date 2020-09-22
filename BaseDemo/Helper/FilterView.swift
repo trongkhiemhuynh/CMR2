@@ -32,7 +32,10 @@ class FilterView : BaseView {
         collectionView.registerCell(FilterCollectionViewCell.self)
     }
     
-    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        endEditing(true)
+    }
+
 }
 
 extension FilterView : UICollectionViewDataSource {

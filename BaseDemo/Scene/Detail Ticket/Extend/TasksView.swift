@@ -22,7 +22,6 @@ class TasksView: BaseView {
         super.awakeFromNib()
     }
     
-
     override func layoutSubviews() {
         super.layoutSubviews()
         setupView()
@@ -43,4 +42,8 @@ class TasksView: BaseView {
         self.addSubview(vMagic)
         self.addSubview(lblCountTask)
     }
+}
+
+extension TasksView: XibInitalization {
+    typealias Element = TasksView
 }

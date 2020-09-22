@@ -131,23 +131,25 @@ class BaseView: UIView, ChartSubViews {
     
     func addBack() {
        
-        let btnBack =  UIButton()
+        let btnBack = UIButton()
         btnBack.setImage(UIImage(named: "back"), for: .normal)
         btnBack.addTarget(self, action:#selector(didBack) , for: .touchUpInside)
         btnBack.isUserInteractionEnabled = true
+        btnBack.frame = CGRect(x: widthScreen - 50, y: heightScreen - tabBarHeight - 70, width: 40, height: 40)
+        
         addSubview(btnBack)
         
-        btnBack.translatesAutoresizingMaskIntoConstraints = false
-        
-        let traillingConstraint = NSLayoutConstraint(item: btnBack, attribute: NSLayoutConstraint.Attribute.trailing, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.trailing, multiplier: 1, constant: 8)
-        
-        let bottomConstraint = NSLayoutConstraint(item: btnBack, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1, constant: 100)
-        
-        let widthConstraint = NSLayoutConstraint(item: btnBack, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 40)
-        
-        let heightConstraint = NSLayoutConstraint(item: btnBack, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 40)
-        
-        addConstraints([traillingConstraint, bottomConstraint, widthConstraint, heightConstraint])
+//        btnBack.translatesAutoresizingMaskIntoConstraints = false
+//
+//        let traillingConstraint = NSLayoutConstraint(item: btnBack, attribute: NSLayoutConstraint.Attribute.trailing, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.trailing, multiplier: 1, constant: 8)
+//
+//        let bottomConstraint = NSLayoutConstraint(item: btnBack, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1, constant: 100)
+//
+//        let widthConstraint = NSLayoutConstraint(item: btnBack, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 40)
+//
+//        let heightConstraint = NSLayoutConstraint(item: btnBack, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 40)
+//
+//        addConstraints([traillingConstraint, bottomConstraint, widthConstraint, heightConstraint])
     }
     
     @IBAction func didBack() {

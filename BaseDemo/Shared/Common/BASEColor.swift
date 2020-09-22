@@ -10,20 +10,20 @@ import Foundation
 import UIKit
 
 struct BASEColor {
-    static func MainAppColor() -> UIColor? {
-        return UIColor(hex: "#0AB2A8")
+    static func MainAppColor() -> UIColor {
+        return UIColor(hex: "#0AB2A8")!
     }
     
-    static func BackgroundListColor() -> UIColor? {
-        return UIColor(hex: "#f9f9f9")
+    static func BackgroundListColor() -> UIColor {
+        return UIColor(hex: "#f9f9f9")!
     }
     
-    static func BackgroundExtendColor() -> UIColor? {
-        return UIColor(hex: "#044743")
+    static func BackgroundExtendColor() -> UIColor {
+        return UIColor(hex: "#044743")!
     }
     
-    static func CellShadowColor() -> UIColor? {
-        return UIColor(hex: "#d6d6d6")
+    static func CellShadowColor() -> UIColor {
+        return UIColor(hex: "#d6d6d6")!
     }
     
     static var TextTitleColor : UIColor {

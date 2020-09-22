@@ -39,5 +39,4 @@ class ActivitiesView: BaseView {
         self.addSubview(vMagic)
         self.addSubview(lblCountTask)
     }
-
 }

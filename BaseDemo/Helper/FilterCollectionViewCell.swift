@@ -23,6 +23,9 @@ class FilterCollectionViewCell: UICollectionViewCell {
         
         iv.image = UIImage(named: "calendar")
         iv.isHidden = true
+        tf.selectedLineColor = BASEColor.MainAppColor()
+        tf.selectedTitleColor = BASEColor.MainAppColor()
+        tf.textErrorColor = .red
     }
     
     func onShowCalendar() {
@@ -38,7 +41,7 @@ extension FilterCollectionViewCell: XibInitalization {
     typealias Element = FilterCollectionViewCell
 }
 
-extension FilterCollectionViewCell : FSCalendarDelegate {
+extension FilterCollectionViewCell: FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         
         let formatter = ApplicationManager.sharedInstance.defaultDateFormatter

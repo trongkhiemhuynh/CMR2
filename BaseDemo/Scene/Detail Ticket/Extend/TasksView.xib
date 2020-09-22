@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TasksView" customModule="BASEBS_CRM" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHE-0d-sIi">
+                    <rect key="frame" x="255" y="467" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="zHE-0d-sIi" secondAttribute="height" multiplier="1:1" id="5zH-ut-y6x"/>
+                        <constraint firstAttribute="width" constant="100" id="jvg-8c-SBV"/>
+                    </constraints>
+                    <state key="normal" image="add"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hax-8u-mud">
+                    <rect key="frame" x="205" y="492" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Hax-8u-mud" secondAttribute="height" id="OCQ-1s-OhN"/>
+                        <constraint firstAttribute="width" constant="50" id="rOQ-W8-Szw"/>
+                    </constraints>
+                    <state key="normal" image="back"/>
+                    <connections>
+                        <action selector="didBack" destination="iN0-l3-epB" eventType="touchUpInside" id="ljn-Zq-dv4"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="zHE-0d-sIi" secondAttribute="bottom" constant="100" id="6cm-7n-J55"/>
+                <constraint firstAttribute="trailing" secondItem="zHE-0d-sIi" secondAttribute="trailing" constant="20" id="b9z-VS-GoH"/>
+                <constraint firstItem="zHE-0d-sIi" firstAttribute="leading" secondItem="Hax-8u-mud" secondAttribute="trailing" id="hZM-PR-N0k"/>
+                <constraint firstItem="Hax-8u-mud" firstAttribute="centerY" secondItem="zHE-0d-sIi" secondAttribute="centerY" id="vuF-3m-FJj"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="139" y="139"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="add" width="102" height="102"/>
+        <image name="back" width="54" height="54"/>
+    </resources>
+</document>

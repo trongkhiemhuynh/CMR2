@@ -29,7 +29,7 @@ class NewTicketViewController: BaseViewController {
     override func setupView() {
         vTitle.lblTitle.text = "Create new ticket"
         
-        cvNewTicket.layer.backgroundColor = BASEColor.BackgroundListColor()?.cgColor
+        cvNewTicket.layer.backgroundColor = BASEColor.BackgroundListColor().cgColor
         
         cvNewTicket.registerCell(TicketDetailInputInfoCollectionViewCell.self)
         
@@ -115,7 +115,7 @@ extension NewTicketViewController : UICollectionViewDelegateFlowLayout {
 extension NewTicketViewController : FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         
-        let formatter = ApplicationManager.sharedInstance.globalDateFormatter
+        let formatter = ApplicationManager.sharedInstance.defaultDateFormatter
         let strDate = formatter.string(from: date)
         
         let cell = cvNewTicket.cellForItem(at: selectedIdx!) as? TicketDetailInputInfoCollectionViewCell

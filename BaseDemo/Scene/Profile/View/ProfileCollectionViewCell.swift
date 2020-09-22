@@ -12,15 +12,28 @@ protocol ProfileCollectionViewCellOutput: class {
     func didUpdateProfileView(name: String)
 }
 
+enum Profile_Item: String {
+    case setting = "Setting"
+    case share = "Share account"
+    case privacy = "Privacy"
+    case question = "Question"
+    case contact = "Contact"
+    case logout = "Log out"
+}
+
 class ProfileCollectionViewCell: UICollectionViewCell {
 
     //outlet
-    @IBOutlet weak var vSetting: UIView!
-    @IBOutlet weak var vShare: UIView!
-    @IBOutlet weak var vPrivacy: UIView!
-    @IBOutlet weak var vQuestion: UIView!
-    @IBOutlet weak var vContact: UIView!
-    @IBOutlet weak var vLogout: UIView!
+    @IBOutlet weak var vSection1: UIView!
+    @IBOutlet weak var vSection2: UIView!
+    @IBOutlet weak var vSection3: UIView!
+    
+    @IBOutlet weak var lblSetting: UILabel!
+    @IBOutlet weak var lblShare: UILabel!
+    @IBOutlet weak var lblPrivacy: UILabel!
+    @IBOutlet weak var lblQuestion: UILabel!
+    @IBOutlet weak var lblContact: UILabel!
+    @IBOutlet weak var lblLogout: UILabel!
     
     //outlet
     weak var delegate: ProfileCollectionViewCellOutput?
@@ -30,43 +43,53 @@ class ProfileCollectionViewCell: UICollectionViewCell {
         // Initialization code
         self.backgroundColor = BASEColor.BackgroundListColor()
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap(gesture:)))
-        tapGesture.cancelsTouchesInView = false
-        vSetting.tag = 1
-        vShare.tag = 2
-        vPrivacy.tag = 3
-        vQuestion.tag = 4
-        vContact.tag = 5
-        vLogout.tag = 6
+        vSection1.layer.cornerRadius = 12
+        vSection2.layer.cornerRadius = 12
+        vSection3.layer.cornerRadius = 12
+        vSection1.clipsToBounds = true
+        vSection2.clipsToBounds = true
+        vSection3.clipsToBounds = true
 
-        vSetting.addGestureRecognizer(tapGesture)
-        vShare.addGestureRecognizer(tapGesture)
-        vPrivacy.addGestureRecognizer(tapGesture)
-        vQuestion.addGestureRecognizer(tapGesture)
-        vContact.addGestureRecognizer(tapGesture)
-        vLogout.addGestureRecognizer(tapGesture)
+        addInteraction([lblSetting,lblQuestion,lblPrivacy,lblShare,lblContact,lblLogout])
     }
     
-    @objc func didTap(gesture: UITapGestureRecognizer) {
-        if let v = gesture.view {
-            switch v.tag {
-            case 1:
-                delegate?.didUpdateProfileView(name: "Setting")
-            case 2:
-                delegate?.didUpdateProfileView(name: "Share")
-            case 3:
-                delegate?.didUpdateProfileView(name: "Privacy")
-            case 4:
-                delegate?.didUpdateProfileView(name: "Question")
-            case 5:
-                delegate?.didUpdateProfileView(name: "Contact")
-            case 6:
-                delegate?.didUpdateProfileView(name: "Log out")
+    @objc func onTap(_ gesture: UITapGestureRecognizer) {
+        print(#function)
+        didTap(gesture)
+    }
+    
+    @objc func didTap(_ gesture: UITapGestureRecognizer) {
+        print(#function)
+        if let v = gesture.view as? UILabel {
+            switch v.text! {
+            case Profile_Item.setting.rawValue:
+                delegate?.didUpdateProfileView(name: Profile_Item.setting.rawValue)
+            case Profile_Item.share.rawValue:
+                delegate?.didUpdateProfileView(name: Profile_Item.share.rawValue)
+            case Profile_Item.privacy.rawValue:
+                delegate?.didUpdateProfileView(name: Profile_Item.privacy.rawValue)
+            case Profile_Item.question.rawValue:
+                delegate?.didUpdateProfileView(name: Profile_Item.question.rawValue)
+            case Profile_Item.contact.rawValue:
+                delegate?.didUpdateProfileView(name: Profile_Item.contact.rawValue)
+            case Profile_Item.logout.rawValue:
+                delegate?.didUpdateProfileView(name: Profile_Item.logout.rawValue)
             default:
-                delegate?.didUpdateProfileView(name: "Undefine")
+                delegate?.didUpdateProfileView(name: "Opps!")
             }
         }
-        
+    }
+    
+    private func addInteraction(_ arrItem: Array<UILabel>) {
+        var index = 0
+        for item in arrItem {
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTap(_:)))
+            
+            item.tag = index
+            item.isUserInteractionEnabled = true
+            item.addGestureRecognizer(tapGesture)
+            index += 1
+        }
     }
 
 }

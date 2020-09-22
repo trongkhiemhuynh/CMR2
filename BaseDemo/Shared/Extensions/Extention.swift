@@ -208,8 +208,3 @@ extension URLRequest {
     }
 }
 
-public enum MultipartFormDataEncodingError: Error {
-    case characterSetName
-    case name(String)
-    case value(String, name: String)
-}

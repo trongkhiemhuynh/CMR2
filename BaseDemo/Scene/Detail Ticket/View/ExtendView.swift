@@ -12,12 +12,12 @@ protocol TicketDetailExtendViewOutput: class {
     func didChooseExtendItem(_ item: String?)
 }
 
-class TicketDetailExtendView: UIView {
+class ExtendView: UIView {
 
     //outlet
-    @IBOutlet weak var cvExtend : UICollectionView!
-    @IBOutlet weak var vBound : UIView!
-    @IBOutlet weak var vBackground : UIView!
+    @IBOutlet weak var cvExtend: UICollectionView!
+    @IBOutlet weak var vBound: UIView!
+    @IBOutlet weak var vBackground: UIView!
     
     //variable
     private let itemsPerRow: CGFloat = 3
@@ -26,15 +26,13 @@ class TicketDetailExtendView: UIView {
     override class func awakeFromNib() {
         super.awakeFromNib()
         
-//        self.cvExtend.register(UICollectionViewCell.self, forCellWithReuseIdentifier: identifyID)
     }
-    
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
+        
         self.cvExtend.backgroundColor = BASEColor.BackgroundExtendColor()
         self.cvExtend.registerCell(ExtendCollectionViewCell.self)
-//        self.cvExtend.register(UINib(nibName: "ExtendCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: identifyID)
         self.vBound.layer.cornerRadius = 12
         self.vBound.clipsToBounds = true
         
@@ -42,13 +40,13 @@ class TicketDetailExtendView: UIView {
     }
     
     @objc func dismissView(_ gesture : UITapGestureRecognizer) {
-        ApplicationManager.sharedInstance.mainTabbar?.customTabbar.isHidden = false
+//        ApplicationManager.sharedInstance.mainTabbar?.customTabbar.isHidden = false
         removeFromSuperview()
     }
 
 }
 
-extension TicketDetailExtendView : UICollectionViewDelegate {
+extension ExtendView : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = collectionView.cellForItem(at: indexPath) as! ExtendCollectionViewCell
         
@@ -58,7 +56,7 @@ extension TicketDetailExtendView : UICollectionViewDelegate {
     }
 }
 
-extension TicketDetailExtendView : UICollectionViewDelegateFlowLayout {
+extension ExtendView : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let paddingSpace = sectionInsetsDefault.left * (itemsPerRow + 1)
@@ -77,7 +75,7 @@ extension TicketDetailExtendView : UICollectionViewDelegateFlowLayout {
 //    }
 }
 
-extension TicketDetailExtendView : UICollectionViewDataSource {
+extension ExtendView : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExtendCollectionViewCell.identifier, for: indexPath) as! ExtendCollectionViewCell
@@ -92,7 +90,7 @@ extension TicketDetailExtendView : UICollectionViewDataSource {
         
         cell.backgroundColor = .clear
 
-        return cell        
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -100,7 +98,7 @@ extension TicketDetailExtendView : UICollectionViewDataSource {
     }
 }
 
-extension TicketDetailExtendView : XibInitalization {
-    typealias Element = TicketDetailExtendView
+extension ExtendView : XibInitalization {
+    typealias Element = ExtendView
 }
 

@@ -46,7 +46,7 @@ class TicketDetailController: BaseViewController {
     }
     
     @IBAction func actionExtend() {
-        let vExtend = TicketDetailExtendView.xibInstance()
+        let vExtend = ExtendView.xibInstance()
         vExtend.frame = view.bounds
         vExtend.delegate = self
         

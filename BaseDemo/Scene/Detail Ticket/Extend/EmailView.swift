@@ -36,7 +36,7 @@ class EmailView: BaseView {
         vContent.addSubview(webView)
         webView.frame = self.bounds
         
-        let url = URL(string: "https://www.hackingwithswift.com")!
+        let url = URL(string: "https://basebs.com/en")!
         webView.load(URLRequest(url: url))
         webView.allowsBackForwardNavigationGestures = true
     }
@@ -44,7 +44,18 @@ class EmailView: BaseView {
 }
 
 extension EmailView: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        print("finish load email")
+        controller?.onDismissLoading()
+    }
     
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        controller?.onLoading()
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        controller?.onDismissLoading()
+    }
 }
 
 extension EmailView: XibInitalization {

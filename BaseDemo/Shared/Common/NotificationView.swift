@@ -57,7 +57,7 @@ extension NotificationView : UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: NotificationTableViewCell.identifier, for: indexPath) as! NotificationTableViewCell
         cell.lblName.text = dumData[indexPath.row] + " sent you a message"
         
-        cell.lblTime.text = ApplicationManager.sharedInstance.globalDateFormatter.string(from: Date())
+        cell.lblTime.text = ApplicationManager.sharedInstance.defaultDateFormatter.string(from: Date())
         cell.iv.image = UIImage(named: "no_avatar")
         
         return cell

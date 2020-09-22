@@ -44,11 +44,13 @@ class ExtendController: BaseViewController {
         switch extendedType {
         case .email:
             subView = EmailView.xibInstance()
+            subView.controller = self
         case .notes:
             subView = NotesView.xibInstance()
             subView.delegateAddSubView = self
         case .tasks:
-            subView = TasksView(frame: vContent.bounds)
+            subView = TasksView.xibInstance()
+            subView.delegateAddSubView = self
         case .activity_history:
             subView = ActivitiesView(frame: vContent.bounds)
         case .articles:

@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TicketDetailExtendView" customModule="BaseDemo" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ExtendView" customModule="BASEBS_CRM" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -32,8 +32,8 @@
                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </collectionViewFlowLayout>
                             <connections>
-                                <outlet property="dataSource" destination="iN0-l3-epB" id="YXg-Q4-aJY"/>
-                                <outlet property="delegate" destination="iN0-l3-epB" id="qQ2-l4-2jV"/>
+                                <outlet property="dataSource" destination="iN0-l3-epB" id="MYI-zz-mIR"/>
+                                <outlet property="delegate" destination="iN0-l3-epB" id="zhq-xi-Zzs"/>
                             </connections>
                         </collectionView>
                     </subviews>
@@ -60,9 +60,9 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="cvExtend" destination="PHk-nf-CN5" id="XUp-Jx-cwj"/>
-                <outlet property="vBackground" destination="RRO-Ff-d8d" id="Nbr-vT-ptS"/>
-                <outlet property="vBound" destination="I2P-Yn-nsd" id="oSe-L2-ri6"/>
+                <outlet property="cvExtend" destination="PHk-nf-CN5" id="bEU-jo-Isc"/>
+                <outlet property="vBackground" destination="RRO-Ff-d8d" id="8J4-aV-s5X"/>
+                <outlet property="vBound" destination="I2P-Yn-nsd" id="75I-ui-eSh"/>
             </connections>
             <point key="canvasLocation" x="119" y="94"/>
         </view>
