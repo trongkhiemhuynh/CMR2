@@ -34,7 +34,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         Logger.info(dictData?.keys)
-        return dictData?.keys.count ?? 0
+        return dictData?.keys.count ?? 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -124,7 +124,11 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         if type == .profile {
-            let headerView  = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileCollectionReusableView.identifier, for: indexPath) as! ProfileCollectionReusableView
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileCollectionReusableView.identifier, for: indexPath) as! ProfileCollectionReusableView
+            
+            return headerView
+        } else if type == .account {
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AccountReusableView.identifier, for: indexPath) as! AccountReusableView
             
             return headerView
         }
@@ -140,7 +144,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                           layout collectionViewLayout: UICollectionViewLayout,
                           referenceSizeForHeaderInSection section: Int) -> CGSize {
-        
+        print(#function)
         if type == .profile {
             return CGSize(width: widthScreen, height: heightScreen - 170)
         } else {
@@ -156,10 +160,10 @@ extension MagicCollectionViewDatasource: ProfileCollectionViewCellOutput {
     }
 }
 
-class MagicCollectionViewDelegate : NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class MagicCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    public var itemsPerRow : CGFloat?
-    public var heightCell : CGFloat?
+    public var itemsPerRow: CGFloat?
+    public var heightCell: CGFloat?
     
     // delegate
     weak var delegate: MagicCollectionViewDelegateOutput?

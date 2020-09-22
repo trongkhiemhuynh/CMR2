@@ -8,10 +8,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomDetailActionView" customModule="BaseDemo" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomDetailActionView" customModule="BASEBS_CRM" customModuleProvider="target">
             <connections>
+                <outlet property="btnLogCall" destination="Azj-vs-YkN" id="EU6-Vr-DUd"/>
+                <outlet property="btnPost" destination="A9O-pR-82z" id="x6h-DT-Koz"/>
                 <outlet property="vContent" destination="iN0-l3-epB" id="YQA-uI-Wz2"/>
                 <outlet property="vCustom" destination="2gx-ep-9fz" id="qOx-KN-TOL"/>
+                <outlet property="vLogCall" destination="9Bh-kF-R5v" id="YIs-P4-rAi"/>
+                <outlet property="vPost" destination="BKw-yS-hVe" id="gRA-I7-4e3"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -26,15 +30,18 @@
                             <rect key="frame" x="0.0" y="0.0" width="94" height="72"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9O-pR-82z">
-                                    <rect key="frame" x="29" y="8" width="36" height="36"/>
+                                    <rect key="frame" x="27" y="8" width="40" height="40"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="36" id="GuR-Tw-aPq"/>
-                                        <constraint firstAttribute="height" constant="36" id="x9m-mB-2UJ"/>
+                                        <constraint firstAttribute="width" secondItem="A9O-pR-82z" secondAttribute="height" multiplier="1:1" id="mF3-Xx-1Eh"/>
+                                        <constraint firstAttribute="height" constant="40" id="x9m-mB-2UJ"/>
                                     </constraints>
                                     <state key="normal" image="post"/>
+                                    <connections>
+                                        <action selector="onTap:" destination="-1" eventType="touchUpInside" id="vj6-Ye-Cqp"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTD-NU-WK7">
-                                    <rect key="frame" x="34" y="48" width="26" height="14.5"/>
+                                    <rect key="frame" x="34" y="52" width="26" height="14.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                     <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -52,10 +59,10 @@
                             <rect key="frame" x="94" y="0.0" width="93.5" height="72"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LqS-xt-wJc">
-                                    <rect key="frame" x="28.5" y="8" width="36" height="36"/>
+                                    <rect key="frame" x="26.5" y="8" width="40" height="40"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="36" id="7jr-yV-jfe"/>
-                                        <constraint firstAttribute="height" constant="36" id="TFu-VR-r5a"/>
+                                        <constraint firstAttribute="width" secondItem="LqS-xt-wJc" secondAttribute="height" id="3tj-g1-7Ak"/>
+                                        <constraint firstAttribute="height" constant="40" id="TFu-VR-r5a"/>
                                     </constraints>
                                     <state key="normal" image="edit-1"/>
                                     <connections>
@@ -63,7 +70,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oh9-rF-EAI">
-                                    <rect key="frame" x="35.5" y="48" width="22.5" height="14.5"/>
+                                    <rect key="frame" x="35.5" y="52" width="22.5" height="14.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                     <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -83,10 +90,13 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azj-vs-YkN">
                                     <rect key="frame" x="29" y="8" width="36" height="36"/>
                                     <constraints>
+                                        <constraint firstAttribute="width" secondItem="Azj-vs-YkN" secondAttribute="height" id="QCt-3n-87p"/>
                                         <constraint firstAttribute="height" constant="36" id="T5S-W5-nfl"/>
-                                        <constraint firstAttribute="width" constant="36" id="c6a-JW-8Ho"/>
                                     </constraints>
                                     <state key="normal" image="logacall"/>
+                                    <connections>
+                                        <action selector="onTap:" destination="-1" eventType="touchUpInside" id="cvf-cH-EmR"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log a call" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCp-Sn-ofO">
                                     <rect key="frame" x="19.5" y="48" width="55" height="14.5"/>
@@ -109,8 +119,8 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tI0-8Q-lEc">
                                     <rect key="frame" x="28.5" y="8" width="36" height="36"/>
                                     <constraints>
+                                        <constraint firstAttribute="width" secondItem="tI0-8Q-lEc" secondAttribute="height" id="CDN-Jd-J3I"/>
                                         <constraint firstAttribute="height" constant="36" id="ecE-AL-Hl4"/>
-                                        <constraint firstAttribute="width" constant="36" id="pVe-Mq-oPY"/>
                                     </constraints>
                                     <state key="normal" image="more"/>
                                     <connections>

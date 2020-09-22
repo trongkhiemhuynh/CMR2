@@ -34,7 +34,7 @@ class MagicCollectionView: BaseView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+        self.backgroundColor = BASEColor.BackgroundListColor()
         collectionView.dataSource = magicDatasource
         collectionView.delegate = magicDelegate
         

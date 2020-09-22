@@ -99,8 +99,9 @@ protocol ChartSubViews {
 class BaseView: UIView, ChartSubViews {
     
     // outlet
-    @IBOutlet weak var vContent : UIView!
-    @IBOutlet weak var collectionView : UICollectionView!
+    @IBOutlet weak var vContent: UIView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var vTitle: CustomTitleView!
     
     //variable
     weak var controller: UIViewController?

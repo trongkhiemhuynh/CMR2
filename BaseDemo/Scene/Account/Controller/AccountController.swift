@@ -19,22 +19,31 @@ class AccountController: BaseViewController {
     
     //function
     override func viewDidLoad() {
-        isHiddenNavigationBar = false
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
     override func setupView() {
-        title = "Account"
+        let present = PresenterView.xibInstance()
+        present.frame = view.bounds
+        present.vTitle.lblTitle.text = "Account information"
+        present.controller = self
+        view.addSubview(present)
+        
         let subView = MagicCollectionView.xibInstance()
         subView.dictData = ["0":["Account Name","Industry","Primary phone","Assign to","Street address","District","City","Country","Description"]]
         subView.controller = self
         //account cell
         subView.collectionView.registerCell(AccountCollectionViewCell.self)
+        
+        subView.collectionView.register(AccountReusableView.xib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AccountReusableView.identifier)
+
+        subView.heightDefaultHeader = 150.0
+        subView.magicDatasource.type = .account
         subView.delegateAddSubView = self
-        view.addSubview(subView)
-        subView.frame = view.bounds
+        present.vContent.addSubview(subView)
+        subView.frame = present.vContent.bounds
     }
 
 }
@@ -60,8 +69,10 @@ extension AccountController: BaseViewOutput {
             arrDatasource = arrSubDistrict
         case "City":
             arrDatasource = arrSubCity
-        default:
+        case "Country":
             arrDatasource = arrSubCountry
+        default:
+            return
         }
         
         let dropDown = DropDown()

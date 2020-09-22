@@ -89,11 +89,13 @@ extension PopupView : UITableViewDelegate {
                 controller.extendedType = .email
             }
         case "Change Owner":
-            print("Change Owner")
+            let route = ChangeOwnerRoute()
+            RouterManager.shared.handleRouter(route)
         case "New Child Ticket":
-            print("New Child Ticket")
+            let route = NewChildRoute()
+            RouterManager.shared.handleRouter(route)
         default:
-            print("")
+            print("bug!!!")
         }
         
         removeFromSuperview()

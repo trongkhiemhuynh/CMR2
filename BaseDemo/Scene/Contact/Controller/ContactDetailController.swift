@@ -16,22 +16,30 @@ class ContactDetailController: BaseViewController {
     
     //function
     override func viewDidLoad() {
-        isHiddenNavigationBar = false
         super.viewDidLoad()
-        title = "Contact Detail"
         // Do any additional setup after loading the view.
     }
-
+    
     override func setupView() {
-        let magicView = MagicCollectionView.xibInstance()
-        view.addSubview(magicView)
-        magicView.controller = self
+        let present = PresenterView.xibInstance()
+        present.frame = view.bounds
+        present.vTitle.lblTitle.text = "Contact"
+        present.controller = self
+        view.addSubview(present)
+        
+        let subView = MagicCollectionView.xibInstance()
+        subView.dictData = ["0":["First Name","Last Name","Full Name","Account Name","Office Phone","Mobile Phone","Email","Title","Department","Description"]]
+        subView.controller = self
+        //account cell
+        subView.collectionView.registerCell(AccountCollectionViewCell.self)
+        
+        subView.collectionView.register(AccountReusableView.xib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AccountReusableView.identifier)
 
-        magicView.dictData = ["0":["First Name","Last Name","Full Name","Account Name","Office Phone","Mobile Phone","Email","Title","Department","Description"]]
-        magicView.collectionView.registerCell(AccountCollectionViewCell.self)
-        magicView.delegateAddSubView = self
-        magicView.magicDatasource.type = .contact_detail
-        magicView.frame = view.bounds
+        subView.heightDefaultHeader = 150.0
+        subView.magicDatasource.type = .account
+        subView.delegateAddSubView = self
+        present.vContent.addSubview(subView)
+        subView.frame = present.vContent.bounds
     }
 
 }

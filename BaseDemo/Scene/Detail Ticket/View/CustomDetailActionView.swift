@@ -9,17 +9,16 @@
 import UIKit
 
 class CustomDetailActionView: BaseView {
-
-    @IBOutlet weak var vCustom : UIView!
-    var popupView : PopupView?
     
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    /// outlet
+    @IBOutlet weak var vCustom: UIView!
+    @IBOutlet weak var vPost: UIView!
+    @IBOutlet weak var vLogCall: UIView!
+    @IBOutlet weak var btnPost: UIButton!
+    @IBOutlet weak var btnLogCall: UIButton!
+    
+    /// variable
+    var popupView : PopupView?
 
     override func commonInit() {
         Bundle.main.loadNibNamed("CustomDetailActionView", owner: self, options: nil)
@@ -27,7 +26,16 @@ class CustomDetailActionView: BaseView {
         vContent.frame = self.bounds
     }
     
-    // MARK: FIXME
+    @IBAction func onTap(_ sender: UIButton) {
+        print(#function)
+        if sender == btnPost {
+            RouterManager.shared.handleRouter(PostRoute())
+        } else {
+            //logcall
+            RouterManager.shared.handleRouter(LogCallRoute())
+        }
+    }
+
     @IBAction func actionMore() {
         popupView = PopupView.xibInstance()
         popupView?.frame = CGRect(x: 0, y: 0, width: widthScreen, height: heightScreen)
@@ -35,7 +43,7 @@ class CustomDetailActionView: BaseView {
         self.superview?.addSubview(popupView!)
         
         UIView.animate(withDuration: 0.35, delay: 0, options: .transitionFlipFromBottom, animations: {
-            self.superview?.layoutIfNeeded()
+            self.superview?.setNeedsLayout()
         }) { (success) in
             print(success)
         }

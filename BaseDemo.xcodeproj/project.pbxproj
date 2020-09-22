@@ -145,6 +145,26 @@
 		228D564E2519A87F00CE935C /* CustomDetailActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 228D56452519A87E00CE935C /* CustomDetailActionView.xib */; };
 		228D564F2519A87F00CE935C /* TicketDetailInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 228D56462519A87E00CE935C /* TicketDetailInfoViewController.xib */; };
 		228D56502519A87F00CE935C /* CustomDetailTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D56472519A87E00CE935C /* CustomDetailTabView.swift */; };
+		228D56522519D3F400CE935C /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D56512519D3F400CE935C /* PostView.swift */; };
+		228D56542519D40000CE935C /* PostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 228D56532519D40000CE935C /* PostView.xib */; };
+		228D56562519DB1F00CE935C /* PostRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D56552519DB1F00CE935C /* PostRoute.swift */; };
+		228D56582519DBF000CE935C /* LogCallRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D56572519DBF000CE935C /* LogCallRoute.swift */; };
+		228D565B2519DC3E00CE935C /* LogCallController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D56592519DC3E00CE935C /* LogCallController.swift */; };
+		228D565C2519DC3E00CE935C /* LogCallController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 228D565A2519DC3E00CE935C /* LogCallController.xib */; };
+		228D565E2519DE1A00CE935C /* LogCallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D565D2519DE1A00CE935C /* LogCallView.swift */; };
+		228D56602519DE2B00CE935C /* LogCallView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 228D565F2519DE2B00CE935C /* LogCallView.xib */; };
+		228D56622519E2A400CE935C /* ChangeOwnerRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D56612519E2A400CE935C /* ChangeOwnerRoute.swift */; };
+		228D56642519E2B100CE935C /* NewChildRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D56632519E2B100CE935C /* NewChildRoute.swift */; };
+		228D56672519E32800CE935C /* NewChildController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D56652519E32800CE935C /* NewChildController.swift */; };
+		228D56682519E32800CE935C /* NewChildController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 228D56662519E32800CE935C /* NewChildController.xib */; };
+		228D566B2519E34200CE935C /* ChangeOwnerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D56692519E34200CE935C /* ChangeOwnerController.swift */; };
+		228D566C2519E34200CE935C /* ChangeOwnerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 228D566A2519E34200CE935C /* ChangeOwnerController.xib */; };
+		228D566E2519E39600CE935C /* PresenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D566D2519E39600CE935C /* PresenterView.swift */; };
+		228D56702519E3A100CE935C /* PresenterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 228D566F2519E3A100CE935C /* PresenterView.xib */; };
+		228D56722519E4BE00CE935C /* ChangeOwnerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 228D56712519E4BE00CE935C /* ChangeOwnerView.xib */; };
+		228D56742519E67E00CE935C /* ChangeOwnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D56732519E67E00CE935C /* ChangeOwnerView.swift */; };
+		228D56772519F7F500CE935C /* AccountReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D56752519F7F500CE935C /* AccountReusableView.swift */; };
+		228D56782519F7F500CE935C /* AccountReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 228D56762519F7F500CE935C /* AccountReusableView.xib */; };
 		229A55232500E6F1008A0ECD /* FetchLoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A55222500E6F1008A0ECD /* FetchLoginWorker.swift */; };
 		229A55252500E724008A0ECD /* LoginConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A55242500E724008A0ECD /* LoginConfiguration.swift */; };
 		229A55272500E733008A0ECD /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A55262500E733008A0ECD /* LoginPresenter.swift */; };
@@ -193,8 +213,8 @@
 		4B28018424ECE5D7007647F8 /* DashboardController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B28018224ECE5D7007647F8 /* DashboardController.xib */; };
 		4B28018724ECE676007647F8 /* TicketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B28018624ECE676007647F8 /* TicketController.swift */; };
 		4B28018924ECE830007647F8 /* TicketController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B28018824ECE830007647F8 /* TicketController.xib */; };
-		4B2D4BF124DD02D200CABF1D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2D4BEF24DD02D200CABF1D /* HomeViewController.swift */; };
-		4B2D4BF224DD02D200CABF1D /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D4BF024DD02D200CABF1D /* HomeViewController.xib */; };
+		4B2D4BF124DD02D200CABF1D /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2D4BEF24DD02D200CABF1D /* PostController.swift */; };
+		4B2D4BF224DD02D200CABF1D /* PostController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D4BF024DD02D200CABF1D /* PostController.xib */; };
 		4B2D4BFD24DD2ABE00CABF1D /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D4BFC24DD2ABE00CABF1D /* LoginController.xib */; };
 		4B2D4C0124DD4B7D00CABF1D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2D4BFF24DD4B7D00CABF1D /* WelcomeViewController.swift */; };
 		4B2D4C0224DD4B7D00CABF1D /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D4C0024DD4B7D00CABF1D /* WelcomeViewController.xib */; };
@@ -418,6 +438,26 @@
 		228D56452519A87E00CE935C /* CustomDetailActionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomDetailActionView.xib; sourceTree = "<group>"; };
 		228D56462519A87E00CE935C /* TicketDetailInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TicketDetailInfoViewController.xib; sourceTree = "<group>"; };
 		228D56472519A87E00CE935C /* CustomDetailTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDetailTabView.swift; sourceTree = "<group>"; };
+		228D56512519D3F400CE935C /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		228D56532519D40000CE935C /* PostView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostView.xib; sourceTree = "<group>"; };
+		228D56552519DB1F00CE935C /* PostRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRoute.swift; sourceTree = "<group>"; };
+		228D56572519DBF000CE935C /* LogCallRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCallRoute.swift; sourceTree = "<group>"; };
+		228D56592519DC3E00CE935C /* LogCallController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCallController.swift; sourceTree = "<group>"; };
+		228D565A2519DC3E00CE935C /* LogCallController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogCallController.xib; sourceTree = "<group>"; };
+		228D565D2519DE1A00CE935C /* LogCallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCallView.swift; sourceTree = "<group>"; };
+		228D565F2519DE2B00CE935C /* LogCallView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogCallView.xib; sourceTree = "<group>"; };
+		228D56612519E2A400CE935C /* ChangeOwnerRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeOwnerRoute.swift; sourceTree = "<group>"; };
+		228D56632519E2B100CE935C /* NewChildRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChildRoute.swift; sourceTree = "<group>"; };
+		228D56652519E32800CE935C /* NewChildController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChildController.swift; sourceTree = "<group>"; };
+		228D56662519E32800CE935C /* NewChildController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewChildController.xib; sourceTree = "<group>"; };
+		228D56692519E34200CE935C /* ChangeOwnerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeOwnerController.swift; sourceTree = "<group>"; };
+		228D566A2519E34200CE935C /* ChangeOwnerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeOwnerController.xib; sourceTree = "<group>"; };
+		228D566D2519E39600CE935C /* PresenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterView.swift; sourceTree = "<group>"; };
+		228D566F2519E3A100CE935C /* PresenterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PresenterView.xib; sourceTree = "<group>"; };
+		228D56712519E4BE00CE935C /* ChangeOwnerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeOwnerView.xib; sourceTree = "<group>"; };
+		228D56732519E67E00CE935C /* ChangeOwnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeOwnerView.swift; sourceTree = "<group>"; };
+		228D56752519F7F500CE935C /* AccountReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountReusableView.swift; sourceTree = "<group>"; };
+		228D56762519F7F500CE935C /* AccountReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountReusableView.xib; sourceTree = "<group>"; };
 		229A55222500E6F1008A0ECD /* FetchLoginWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchLoginWorker.swift; sourceTree = "<group>"; };
 		229A55242500E724008A0ECD /* LoginConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfiguration.swift; sourceTree = "<group>"; };
 		229A55262500E733008A0ECD /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
@@ -470,8 +510,8 @@
 		4B28018224ECE5D7007647F8 /* DashboardController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardController.xib; sourceTree = "<group>"; };
 		4B28018624ECE676007647F8 /* TicketController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketController.swift; sourceTree = "<group>"; };
 		4B28018824ECE830007647F8 /* TicketController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TicketController.xib; sourceTree = "<group>"; };
-		4B2D4BEF24DD02D200CABF1D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		4B2D4BF024DD02D200CABF1D /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		4B2D4BEF24DD02D200CABF1D /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
+		4B2D4BF024DD02D200CABF1D /* PostController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostController.xib; sourceTree = "<group>"; };
 		4B2D4BFC24DD2ABE00CABF1D /* LoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 		4B2D4BFF24DD4B7D00CABF1D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		4B2D4C0024DD4B7D00CABF1D /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
@@ -605,6 +645,8 @@
 			children = (
 				225D4E372511F2FD00664D70 /* AccountCollectionViewCell.swift */,
 				225D4E382511F2FD00664D70 /* AccountCollectionViewCell.xib */,
+				228D56752519F7F500CE935C /* AccountReusableView.swift */,
+				228D56762519F7F500CE935C /* AccountReusableView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -866,6 +908,12 @@
 				225D4E4425130D1C00664D70 /* ExtendController.xib */,
 				225D4E4725130D4200664D70 /* NoteController.swift */,
 				225D4E4825130D4200664D70 /* NoteController.xib */,
+				228D56592519DC3E00CE935C /* LogCallController.swift */,
+				228D565A2519DC3E00CE935C /* LogCallController.xib */,
+				228D56652519E32800CE935C /* NewChildController.swift */,
+				228D56662519E32800CE935C /* NewChildController.xib */,
+				228D56692519E34200CE935C /* ChangeOwnerController.swift */,
+				228D566A2519E34200CE935C /* ChangeOwnerController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1012,6 +1060,12 @@
 				228D56452519A87E00CE935C /* CustomDetailActionView.xib */,
 				228D56462519A87E00CE935C /* TicketDetailInfoViewController.xib */,
 				228D56472519A87E00CE935C /* CustomDetailTabView.swift */,
+				228D565D2519DE1A00CE935C /* LogCallView.swift */,
+				228D565F2519DE2B00CE935C /* LogCallView.xib */,
+				228D566D2519E39600CE935C /* PresenterView.swift */,
+				228D566F2519E3A100CE935C /* PresenterView.xib */,
+				228D56712519E4BE00CE935C /* ChangeOwnerView.xib */,
+				228D56732519E67E00CE935C /* ChangeOwnerView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1058,6 +1112,10 @@
 				223EF2152511BF4C00C076BF /* ContactRoute.swift */,
 				225D4E3F2513079800664D70 /* ContactDetailRoute.swift */,
 				225D4E4B2513130800664D70 /* ExtendRoute.swift */,
+				228D56552519DB1F00CE935C /* PostRoute.swift */,
+				228D56572519DBF000CE935C /* LogCallRoute.swift */,
+				228D56612519E2A400CE935C /* ChangeOwnerRoute.swift */,
+				228D56632519E2B100CE935C /* NewChildRoute.swift */,
 			);
 			path = Route;
 			sourceTree = "<group>";
@@ -1167,8 +1225,10 @@
 		4B2D4BEE24DD029800CABF1D /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				4B2D4BEF24DD02D200CABF1D /* HomeViewController.swift */,
-				4B2D4BF024DD02D200CABF1D /* HomeViewController.xib */,
+				4B2D4BEF24DD02D200CABF1D /* PostController.swift */,
+				4B2D4BF024DD02D200CABF1D /* PostController.xib */,
+				228D56512519D3F400CE935C /* PostView.swift */,
+				228D56532519D40000CE935C /* PostView.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1514,14 +1574,17 @@
 				4B2D4C0224DD4B7D00CABF1D /* WelcomeViewController.xib in Resources */,
 				C22FEAA224FC1AB3009D9219 /* SettingViewController.xib in Resources */,
 				4B2D4BFD24DD2ABE00CABF1D /* LoginController.xib in Resources */,
+				228D56722519E4BE00CE935C /* ChangeOwnerView.xib in Resources */,
 				4B166C4D24EE7E380030C592 /* CustomTicketStageView.xib in Resources */,
 				225D4E3A2511F2FD00664D70 /* AccountCollectionViewCell.xib in Resources */,
 				4B166C5124EE7F9A0030C592 /* CustomTicketStageCollectionViewCell.xib in Resources */,
 				224326E22507394E005AE588 /* MenuCollectionViewCell.xib in Resources */,
+				228D56782519F7F500CE935C /* AccountReusableView.xib in Resources */,
 				C2E857F224F3A886002960A2 /* TabNavigationMenu.xib in Resources */,
 				224EBAF924F50EDA00CB676F /* NewTicketViewController.xib in Resources */,
 				226D933E2509FF2500457AD5 /* FilterCollectionViewCell.xib in Resources */,
 				C2E857F624F3B975002960A2 /* ExtendView.xib in Resources */,
+				228D56602519DE2B00CE935C /* LogCallView.xib in Resources */,
 				223EF2122511BEFD00C076BF /* ContactController.xib in Resources */,
 				4B28018924ECE830007647F8 /* TicketController.xib in Resources */,
 				223EF20E2511BDCD00C076BF /* AccountController.xib in Resources */,
@@ -1532,15 +1595,18 @@
 				4B166C4024EE61DA0030C592 /* CustomListView.xib in Resources */,
 				225D4E3E2513053E00664D70 /* ContactDetailController.xib in Resources */,
 				4B28018424ECE5D7007647F8 /* DashboardController.xib in Resources */,
+				228D565C2519DC3E00CE935C /* LogCallController.xib in Resources */,
 				4B28017824ECC2B5007647F8 /* SplashViewController.xib in Resources */,
 				226D934D250A30E200457AD5 /* MagicHeaderCollectionReusableView.xib in Resources */,
 				C2E857E224F36C06002960A2 /* InfoTicketRow.xib in Resources */,
 				4B166C2924ED07EF0030C592 /* TicketDetailInfoViewController.xib in Resources */,
 				225D4E6B251469AC00664D70 /* CreatNewNote.xib in Resources */,
+				228D566C2519E34200CE935C /* ChangeOwnerController.xib in Resources */,
 				228D564B2519A87F00CE935C /* CustomDetailTabView.xib in Resources */,
 				226D9354250B227D00457AD5 /* ProfileCollectionReusableView.xib in Resources */,
 				226D9349250A180000457AD5 /* MagicCollectionViewCell.xib in Resources */,
 				C2E857F024F39CF6002960A2 /* TabbarItem.xib in Resources */,
+				228D56682519E32800CE935C /* NewChildController.xib in Resources */,
 				223EF1F5250F604F00C076BF /* OCRController.xib in Resources */,
 				C23F629B24EF25F500E37560 /* CustomDetailActionView.xib in Resources */,
 				225D4E4A25130D4200664D70 /* NoteController.xib in Resources */,
@@ -1557,6 +1623,7 @@
 				C2E857EA24F39744002960A2 /* NavigationMenuBaseController.xib in Resources */,
 				228D56482519A87F00CE935C /* TicketDetailController.xib in Resources */,
 				228D564E2519A87F00CE935C /* CustomDetailActionView.xib in Resources */,
+				228D56702519E3A100CE935C /* PresenterView.xib in Resources */,
 				226D9343250A0F5300457AD5 /* MagicCollectionView.xib in Resources */,
 				4B166C5324EF65FD0030C592 /* CustomDetailTabView.xib in Resources */,
 				4B166C3124ED0D690030C592 /* TicketDetailActivityViewController.xib in Resources */,
@@ -1570,7 +1637,8 @@
 				222B5FCC24F76CF700419452 /* ManagerDashboard.xib in Resources */,
 				223EF1EF250F41E800C076BF /* AgentDashboard.xib in Resources */,
 				4B166C5924EF78CD0030C592 /* TicketDetailActivityCollectionViewCell.xib in Resources */,
-				4B2D4BF224DD02D200CABF1D /* HomeViewController.xib in Resources */,
+				228D56542519D40000CE935C /* PostView.xib in Resources */,
+				4B2D4BF224DD02D200CABF1D /* PostController.xib in Resources */,
 				225D4E672514554500664D70 /* CustomerJourneyCollectionViewCell.xib in Resources */,
 				4B166C5D24EF78F80030C592 /* TicketDetailInfoCollectionViewCell.xib in Resources */,
 				225D4E632513490300664D70 /* NotesView.xib in Resources */,
@@ -1738,8 +1806,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				229A552F2501E4FC008A0ECD /* Router.swift in Sources */,
+				228D56622519E2A400CE935C /* ChangeOwnerRoute.swift in Sources */,
 				223E41E524F9002B0064D4C6 /* NewTicketCheckboxCollectionViewCell.swift in Sources */,
 				223EF1F4250F604F00C076BF /* OCRController.swift in Sources */,
+				228D565E2519DE1A00CE935C /* LogCallView.swift in Sources */,
 				225D4E53251322D300664D70 /* TasksView.swift in Sources */,
 				224EBAF424F5068100CB676F /* ExtendCollectionViewCell.swift in Sources */,
 				C2E857DE24F368BC002960A2 /* CreatNewTicketView.swift in Sources */,
@@ -1754,6 +1824,7 @@
 				228D56502519A87F00CE935C /* CustomDetailTabView.swift in Sources */,
 				224346D624FCE05F00CF7AA3 /* Logger.swift in Sources */,
 				226D9340250A0F1100457AD5 /* MagicCollectionView.swift in Sources */,
+				228D56562519DB1F00CE935C /* PostRoute.swift in Sources */,
 				C23F629924EF228100E37560 /* CustomDetailActionView.swift in Sources */,
 				C22FEA9624FC0E01009D9219 /* Constants.swift in Sources */,
 				4BE6316924DAA7ED00D9133C /* SplashViewController.swift in Sources */,
@@ -1773,6 +1844,7 @@
 				4B166C3024ED0D690030C592 /* TicketDetailActivityViewController.swift in Sources */,
 				223EF2112511BEFD00C076BF /* ContactController.swift in Sources */,
 				229A55232500E6F1008A0ECD /* FetchLoginWorker.swift in Sources */,
+				228D56672519E32800CE935C /* NewChildController.swift in Sources */,
 				224EBAF824F50EDA00CB676F /* NewTicketViewController.swift in Sources */,
 				223EF20D2511BDCD00C076BF /* AccountController.swift in Sources */,
 				22802DEA24FE049200429518 /* FilterView.swift in Sources */,
@@ -1803,12 +1875,15 @@
 				22DBF0B224F620BE00B6D992 /* Coordinator.swift in Sources */,
 				4B166C5C24EF78F80030C592 /* TicketDetailInfoCollectionViewCell.swift in Sources */,
 				C23F628D24EF05AD00E37560 /* PopupView.swift in Sources */,
+				228D566E2519E39600CE935C /* PresenterView.swift in Sources */,
 				225D4E51251322A100664D70 /* NotesView.swift in Sources */,
 				228D564D2519A87F00CE935C /* ExtendView.swift in Sources */,
 				4B166C3A24EE28790030C592 /* Extention.swift in Sources */,
+				228D566B2519E34200CE935C /* ChangeOwnerController.swift in Sources */,
 				225D4E4525130D1C00664D70 /* ExtendController.swift in Sources */,
 				C23F629224EF204E00E37560 /* TicketDetailController.swift in Sources */,
 				225D4E552513230000664D70 /* ActivitiesView.swift in Sources */,
+				228D56522519D3F400CE935C /* PostView.swift in Sources */,
 				229A55372501F619008A0ECD /* WelcomeRoute.swift in Sources */,
 				225D4E392511F2FD00664D70 /* AccountCollectionViewCell.swift in Sources */,
 				225D4E592513232A00664D70 /* CommentsView.swift in Sources */,
@@ -1820,18 +1895,21 @@
 				4BE6313A24DA9CBB00D9133C /* AppDelegate.swift in Sources */,
 				224326EE2507738B005AE588 /* TicketRoute.swift in Sources */,
 				4B166C2824ED07EF0030C592 /* TicketDetailInfoViewController.swift in Sources */,
+				228D56642519E2B100CE935C /* NewChildRoute.swift in Sources */,
 				225D4E5F2513236800664D70 /* CustomerJourneyView.swift in Sources */,
 				224326F4250785D8005AE588 /* TicketDetailRoute.swift in Sources */,
 				22403025250B4DCF002509DE /* NewTicketRoute.swift in Sources */,
+				228D56772519F7F500CE935C /* AccountReusableView.swift in Sources */,
 				225D4E3D2513053E00664D70 /* ContactDetailController.swift in Sources */,
 				224326D925072AE4005AE588 /* MainRoute.swift in Sources */,
+				228D56582519DBF000CE935C /* LogCallRoute.swift in Sources */,
 				2270237424F8AEDA002C06AC /* Xib+Initialization.swift in Sources */,
 				4B166C5824EF78CD0030C592 /* TicketDetailActivityCollectionViewCell.swift in Sources */,
 				4B2D4C0124DD4B7D00CABF1D /* WelcomeViewController.swift in Sources */,
 				2270237024F8AE8A002C06AC /* Error+Default.swift in Sources */,
 				224326D12505E747005AE588 /* LoginState.swift in Sources */,
 				4B166C4224EE61FB0030C592 /* CustomListView.swift in Sources */,
-				4B2D4BF124DD02D200CABF1D /* HomeViewController.swift in Sources */,
+				4B2D4BF124DD02D200CABF1D /* PostController.swift in Sources */,
 				22DBF0B624F63C5E00B6D992 /* DashboardCoordinator.swift in Sources */,
 				222B5FD024F7A31300419452 /* PopUpSuccessful.swift in Sources */,
 				224346DC24FCF4DC00CF7AA3 /* UIView+Anchors.swift in Sources */,
@@ -1852,6 +1930,7 @@
 				223EF2042510B26F00C076BF /* Profile.swift in Sources */,
 				4B166C3824EE16BB0030C592 /* Common.swift in Sources */,
 				225D4E402513079800664D70 /* ContactDetailRoute.swift in Sources */,
+				228D56742519E67E00CE935C /* ChangeOwnerView.swift in Sources */,
 				4B166C4B24EE7DE90030C592 /* CustomTicketStageView.swift in Sources */,
 				224326E12507394E005AE588 /* MenuCollectionViewCell.swift in Sources */,
 				224346C324FCB30B00CF7AA3 /* TicketState.swift in Sources */,
@@ -1866,6 +1945,7 @@
 				224346DA24FCF4D100CF7AA3 /* SwipeableCollectionViewCell.swift in Sources */,
 				4B166C2224ECFD620030C592 /* TabMenuController.swift in Sources */,
 				229A552B2500EC49008A0ECD /* LoginObj.swift in Sources */,
+				228D565B2519DC3E00CE935C /* LogCallController.swift in Sources */,
 				226D934C250A30E200457AD5 /* MagicHeaderCollectionReusableView.swift in Sources */,
 				4B2D4C0524DD569100CABF1D /* Color.swift in Sources */,
 				4B28017C24ECCA17007647F8 /* MainViewController.swift in Sources */,

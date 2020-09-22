@@ -11,14 +11,16 @@ import UIKit
 class AccountCollectionViewCell: UICollectionViewCell {
     
     //outlet
-    @IBOutlet weak var lblTitle : UILabel!
-    @IBOutlet weak var lblName : UILabel!
-    @IBOutlet weak var ivDropdown : UIImageView!
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var ivDropdown: UIImageView!
+    @IBOutlet weak var iv: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         ivDropdown.isHidden = true
+        iv.image = UIImage(named: "phone")
     }
 
 }

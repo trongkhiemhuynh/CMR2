@@ -39,6 +39,8 @@ class TicketDetailController: BaseViewController {
         vTab.delegate = self
 
         vTitle.lblTitle.text = "Ticket Information"
+        
+        vAction.controller = self
     }
 
     @IBAction func actionBack() {
