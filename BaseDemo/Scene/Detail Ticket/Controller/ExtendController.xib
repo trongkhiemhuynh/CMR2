@@ -8,10 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExtendController" customModule="BaseDemo" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExtendController" customModule="BASEBS_CRM" customModuleProvider="target">
             <connections>
                 <outlet property="vContent" destination="3PR-3w-2G8" id="YKh-WV-iQB"/>
-                <outlet property="vTitle" destination="4zp-M7-qhn" id="WOE-sv-MkM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,27 +19,17 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4zp-M7-qhn" customClass="CustomTitleView" customModule="BaseDemo" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="70" id="JhZ-wt-vw9"/>
-                    </constraints>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3PR-3w-2G8">
-                    <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="4zp-M7-qhn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="6il-B5-VKL"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4zp-M7-qhn" secondAttribute="trailing" id="Ta8-lp-JDe"/>
-                <constraint firstItem="4zp-M7-qhn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cC3-XI-xCG"/>
-                <constraint firstItem="3PR-3w-2G8" firstAttribute="top" secondItem="4zp-M7-qhn" secondAttribute="bottom" id="dWs-aQ-cBd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="3PR-3w-2G8" secondAttribute="bottom" id="i3e-Sh-pTV"/>
                 <constraint firstItem="3PR-3w-2G8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lac-2u-eWz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3PR-3w-2G8" secondAttribute="trailing" id="wut-d9-a1I"/>
+                <constraint firstItem="3PR-3w-2G8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="yMV-Kv-VrX"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="113"/>

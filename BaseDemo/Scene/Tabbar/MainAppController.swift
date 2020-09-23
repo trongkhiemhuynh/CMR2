@@ -28,7 +28,7 @@ class MainAppController: UITabBarController {
         customTabbar = CustomTabBarView.xibInstance()
         self.view.addSubview(customTabbar!)
         
-        customTabbar?.frame = CGRect(x: 0, y: heightScreen - tabBarHeight, width: widthScreen, height: tabBarHeight)
+        customTabbar?.frame = CGRect(x: 0, y: heightScreen - heightTabbar, width: widthScreen, height: heightTabbar)
         
         customTabbar?.itemTapped = changeTab(tab:)
         

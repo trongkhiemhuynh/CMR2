@@ -38,7 +38,6 @@ class ExtendController: BaseViewController {
     }
 
     override func setupView() {
-        
         var subView : BaseView
         
         switch extendedType {
@@ -66,12 +65,10 @@ class ExtendController: BaseViewController {
         default:
             subView = EmailView(frame: vContent.bounds)
         }
-        
-        vTitle.lblTitle.text = extendedType?.rawValue
+
         subView.frame = vContent.bounds
         subView.controller = self
         vContent.addSubview(subView)
-//        subView.addBack()
     }
 
 }

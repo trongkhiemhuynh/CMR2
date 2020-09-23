@@ -20,30 +20,34 @@ class TasksView: BaseView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupView()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        setupView()
     }
     
     private func setupView() {
-        let lblCountTask = UILabel()
-        lblCountTask.text = "Number of tasks: 6"
-        lblCountTask.frame = CGRect(x: 8, y: 8, width: widthScreen, height: 20)
-
         let vMagic = MagicCollectionView.xibInstance()
-        vMagic.frame = CGRect(x: 0, y: 50, width: widthScreen, height: heightScreen - 150)
+        let presenter = getPresenterView(title: "Tasks")
+        self.addSubview(presenter)
+        presenter.vContent.addSubview(vMagic)
+        presenter.delegate = self
+        
+        vMagic.frame = presenter.vContent.bounds
         vMagic.dictData = ["0":["Task1","Task2","Task3","Task4","Task5","Task6"]]
         vMagic.magicDatasource.type = .extend
         vMagic.controller = UIViewController()
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
-        
-        self.addSubview(vMagic)
-        self.addSubview(lblCountTask)
     }
 }
 
 extension TasksView: XibInitalization {
     typealias Element = TasksView
+}
+
+extension TasksView: PresenterViewOutput {
+    func onAddNew() {
+        delegateAddSubView?.didAddNew()
+    }
 }

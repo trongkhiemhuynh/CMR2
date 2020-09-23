@@ -15,7 +15,7 @@ protocol DBSaleChart {
 }
 
 class ManagerDashboard: BaseView {
-
+    /// outlet
     @IBOutlet weak var vBarChart : UIView!
     @IBOutlet weak var vPieChart : UIView!
     @IBOutlet weak var vInfoUser : UIView!

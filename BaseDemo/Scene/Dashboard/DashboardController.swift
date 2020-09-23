@@ -127,7 +127,7 @@ class DashboardController: BaseViewController {
     
     @IBAction func didTapAlert() {
         let notiView = NotificationView.xibInstance()
-        notiView.frame = CGRect(x: CGPoint.zero.x, y: CGPoint.zero.y, width: widthScreen, height: heightScreen-tabBarHeight)
+        notiView.frame = CGRect(x: CGPoint.zero.x, y: CGPoint.zero.y, width: widthScreen, height: heightScreen-heightTabbar)
         
         view.addSubview(notiView)
         

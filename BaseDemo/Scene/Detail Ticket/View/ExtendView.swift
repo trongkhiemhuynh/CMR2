@@ -46,7 +46,7 @@ class ExtendView: UIView {
 
 }
 
-extension ExtendView : UICollectionViewDelegate {
+extension ExtendView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = collectionView.cellForItem(at: indexPath) as! ExtendCollectionViewCell
         
@@ -56,39 +56,26 @@ extension ExtendView : UICollectionViewDelegate {
     }
 }
 
-extension ExtendView : UICollectionViewDelegateFlowLayout {
+extension ExtendView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let paddingSpace = sectionInsetsDefault.left * (itemsPerRow + 1)
         let availableWidth = cvExtend.frame.width - paddingSpace
-        let widthPerItem = availableWidth / itemsPerRow
+        let widthPerItem = availableWidth/itemsPerRow
+        let heightPerItem = cvExtend.bounds.height/itemsPerRow - sectionInsetsDefault.left
         
-        return CGSize(width: widthPerItem, height: vBound.frame.size.height/itemsPerRow)
+        return CGSize(width: widthPerItem, height: heightPerItem)
     }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return sectionInsetsDefault.left
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return sectionInsetsDefault.left
-//    }
 }
 
-extension ExtendView : UICollectionViewDataSource {
+extension ExtendView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExtendCollectionViewCell.identifier, for: indexPath) as! ExtendCollectionViewCell
         
         let title = arrExtends[indexPath.row]
         
-        cell.lblEx.text = title
-        
-        let imageName = "ex_\(title.lowercased().replacingOccurrences(of: " ", with: "_"))"
-        
-        cell.imgEx.image = UIImage(named: imageName)
-        
-        cell.backgroundColor = .clear
+        cell.onUpdate(text: title)
 
         return cell
     }
@@ -98,7 +85,7 @@ extension ExtendView : UICollectionViewDataSource {
     }
 }
 
-extension ExtendView : XibInitalization {
+extension ExtendView: XibInitalization {
     typealias Element = ExtendView
 }
 

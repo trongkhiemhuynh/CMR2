@@ -16,8 +16,18 @@ class ExtendCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.backgroundColor = .clear
     }
-
+    
+    func onUpdate(text: String?) {
+        guard let t = text else {return}
+        
+        self.lblEx.text = t
+        
+        let imageName = "ex_\(t.lowercased().replacingOccurrences(of: " ", with: "_"))"
+        
+        self.imgEx.image = UIImage(named: imageName)
+    }
 }
 
 extension ExtendCollectionViewCell : XibInitalization {

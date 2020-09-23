@@ -8,35 +8,39 @@
 
 import UIKit
 
-
-
 class NotesView: BaseView {
     @IBOutlet var vBound : UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         print("NotesView",#line)
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        print("NotesView",#line)
+        
+        let presenter = getPresenterView(title: "Notes")
+        
         let vMagic = MagicCollectionView.xibInstance()
-        vMagic.frame = vBound.bounds
+        vMagic.frame = presenter.vContent.bounds
         vMagic.dictData = ["0":["Note","Note1","Note2","Note3","Note4","Note5"]]
         vMagic.magicDatasource.type = .notes
         vMagic.controller = UIViewController()
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
         
-        vBound.addSubview(vMagic)
+        presenter.vContent.addSubview(vMagic)
+        presenter.delegate = self
+        
+        vBound.addSubview(presenter)
     }
     
-    @IBAction func didAdd() {
-        delegateAddSubView?.didAddNew()
+    override func layoutSubviews() {
+        super.layoutSubviews()
     }
-
 }
 
 extension NotesView: XibInitalization {
     typealias Element = NotesView
+}
+
+extension NotesView: PresenterViewOutput {
+    func onAddNew() {
+        delegateAddSubView?.didAddNew()
+    }
 }

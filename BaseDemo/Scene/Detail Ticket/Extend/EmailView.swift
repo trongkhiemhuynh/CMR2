@@ -9,18 +9,10 @@
 import UIKit
 import WebKit
 
-class EmailView: BaseView {
+let urlEmail = "https://basebs.com/en"
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-    
+class EmailView: BaseView {
     //variable
-    //add webview
     var webView: WKWebView!
     
     override func awakeFromNib() {
@@ -28,17 +20,24 @@ class EmailView: BaseView {
         Logger.debug("awakeFromNib")
     }
     
+    /// setup view
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        let presenter = getPresenterView(title: "Email")
+        
+        //body
         webView = WKWebView()
         webView.navigationDelegate = self
-        vContent.addSubview(webView)
-        webView.frame = self.bounds
-        
-        let url = URL(string: "https://basebs.com/en")!
+
+        let url = URL(string: urlEmail)!
         webView.load(URLRequest(url: url))
         webView.allowsBackForwardNavigationGestures = true
+        
+        //add subview
+        vContent.addSubview(presenter)
+        presenter.vContent.addSubview(webView)
+        webView.frame = CGRect(origin: .zero, size: CGSize(width: widthScreen, height: heightScreen - presenter.vTitle.bounds.height - heightTabbar))
     }
 
 }

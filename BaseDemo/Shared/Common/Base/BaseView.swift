@@ -97,7 +97,6 @@ protocol ChartSubViews {
 }
 
 class BaseView: UIView, ChartSubViews {
-    
     // outlet
     @IBOutlet weak var vContent: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -121,22 +120,14 @@ class BaseView: UIView, ChartSubViews {
     func commonInit() {
         
     }
-    
-    func addBarChart() {
-        
-    }
-    
-    func addPieChart() {
-        
-    }
-    
+
     func addBack() {
        
         let btnBack = UIButton()
         btnBack.setImage(UIImage(named: "back"), for: .normal)
         btnBack.addTarget(self, action:#selector(didBack) , for: .touchUpInside)
         btnBack.isUserInteractionEnabled = true
-        btnBack.frame = CGRect(x: widthScreen - 50, y: heightScreen - tabBarHeight - 70, width: 40, height: 40)
+        btnBack.frame = CGRect(x: widthScreen - 50, y: heightScreen - heightTabbar - 70, width: 40, height: 40)
         
         addSubview(btnBack)
         
@@ -153,10 +144,38 @@ class BaseView: UIView, ChartSubViews {
 //        addConstraints([traillingConstraint, bottomConstraint, widthConstraint, heightConstraint])
     }
     
+    func getPresenterView(title: String) -> PresenterView {
+        let presenter = PresenterView.xibInstance()
+        presenter.frame = CGRect(x: CGPoint.zero.x, y: CGPoint.zero.y, width: widthScreen, height: heightScreen)
+        //header
+        presenter.vTitle.lblTitle.text = title
+        presenter.controller = controller
+        
+        return presenter
+    }
+    
     @IBAction func didBack() {
         controller?.navigationController?.popViewController(animated: true)
     }
+    
+    func addBarChart() {
+        
+    }
+    
+    func addPieChart() {
+        
+    }
 }
+
+//extension BaseView: ChartSubViews {
+//    func addBarChart() {
+//
+//    }
+//
+//    func addPieChart() {
+//
+//    }
+//}
 
 extension BaseView : BaseAbility {
     func initCommon() {
