@@ -34,10 +34,10 @@ class EmailView: BaseView {
         webView.load(URLRequest(url: url))
         webView.allowsBackForwardNavigationGestures = true
         
-        //add subview
-        vContent.addSubview(presenter)
         presenter.vContent.addSubview(webView)
         webView.frame = CGRect(origin: .zero, size: CGSize(width: widthScreen, height: heightScreen - presenter.vTitle.bounds.height - heightTabbar))
+        //add subview
+        vContent.addSubview(presenter)
     }
 
 }

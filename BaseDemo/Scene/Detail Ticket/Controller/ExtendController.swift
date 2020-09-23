@@ -36,14 +36,24 @@ class ExtendController: BaseViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        Logger.info("khiemht")
+//        setupSubView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupSubView()
+    }
 
-    override func setupView() {
+    func setupSubView() {
         var subView : BaseView
         
         switch extendedType {
         case .email:
             subView = EmailView.xibInstance()
-            subView.controller = self
         case .notes:
             subView = NotesView.xibInstance()
             subView.delegateAddSubView = self

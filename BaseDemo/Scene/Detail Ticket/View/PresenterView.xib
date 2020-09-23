@@ -18,7 +18,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pY6-sd-6SK">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="410"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sAt-OF-83q" customClass="CustomTitleView" customModule="BASEBS_CRM" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
@@ -28,7 +28,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DkK-ce-Em2">
-                                    <rect key="frame" x="0.0" y="68" width="320" height="412"/>
+                                    <rect key="frame" x="0.0" y="68" width="320" height="342"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </view>
                             </subviews>
@@ -37,7 +37,7 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstItem="pY6-sd-6SK" firstAttribute="leading" secondItem="bXs-Tg-eWM" secondAttribute="leading" id="AmE-H9-iT0"/>
-                        <constraint firstAttribute="bottom" secondItem="pY6-sd-6SK" secondAttribute="bottom" id="M3v-8n-eJx"/>
+                        <constraint firstAttribute="bottom" secondItem="pY6-sd-6SK" secondAttribute="bottom" constant="70" id="M3v-8n-eJx"/>
                         <constraint firstAttribute="trailing" secondItem="pY6-sd-6SK" secondAttribute="trailing" id="RZ9-Vi-BKq"/>
                         <constraint firstItem="pY6-sd-6SK" firstAttribute="top" secondItem="bXs-Tg-eWM" secondAttribute="top" id="Yv2-XX-qOi"/>
                     </constraints>

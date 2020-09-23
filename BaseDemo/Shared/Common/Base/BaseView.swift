@@ -146,7 +146,8 @@ class BaseView: UIView, ChartSubViews {
     
     func getPresenterView(title: String, isAddNew: Bool) -> PresenterView {
         let presenter = PresenterView.xibInstance()
-        presenter.frame = CGRect(x: CGPoint.zero.x, y: CGPoint.zero.y, width: widthScreen, height: heightScreen)
+//        presenter.frame = CGRect(x: CGPoint.zero.x, y: CGPoint.zero.y, width: widthScreen, height: heightScreen)
+        presenter.frame = self.bounds
         //header
         if title.isEmpty {
             presenter.vTitle.isHidden = true
