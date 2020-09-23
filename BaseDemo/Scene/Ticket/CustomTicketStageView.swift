@@ -21,10 +21,10 @@ class CustomTicketStageView: BaseView {
     @IBOutlet weak var cvStage: UICollectionView!
 
     // private variable
-    private let itemsPerRow: CGFloat = 3
-    private let heightCell: CGFloat = 60
-    private let arrStage = ["New", "Processing", "Escalated", "Pending", "Upcoming"]
-    private var preIndexpath = IndexPath(row: 0, section: 0)
+    var itemsPerRow: CGFloat = 3
+    var heightCell: CGFloat = 60
+    var arrStage = ["New", "Processing", "Escalated", "Pending", "Upcoming"]
+    var preIndexpath = IndexPath(row: 0, section: 0)
     
     override func commonInit() {
         Bundle.main.loadNibNamed("CustomTicketStageView", owner: self, options: nil)
@@ -94,7 +94,7 @@ extension CustomTicketStageView : UICollectionViewDelegate {
             
             let cell = collectionView.cellForItem(at: indexPath) as? CustomTicketStageCollectionViewCell
             let nameStage = cell?.lblStage.text
-            
+            print(nameStage)
             delegate?.didChangeStage(name: nameStage)
         }
     }

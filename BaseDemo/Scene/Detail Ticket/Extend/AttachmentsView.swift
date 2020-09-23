@@ -16,7 +16,7 @@ class AttachmentsView: BaseView {
 
     private func setupView() {
         let vMagic = MagicCollectionView.xibInstance()
-        let presenter = getPresenterView(title: "Attachments")
+        let presenter = getPresenterView(title: "Attachments", isAddNew: false)
         self.addSubview(presenter)
         presenter.vContent.addSubview(vMagic)
         

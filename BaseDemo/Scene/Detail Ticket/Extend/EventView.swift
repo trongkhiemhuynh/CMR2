@@ -17,7 +17,7 @@ class EventView: BaseView {
 
     private func setupView() {
         let vMagic = MagicCollectionView.xibInstance()
-        let presenter = getPresenterView(title: "Events")
+        let presenter = getPresenterView(title: "Events", isAddNew: true)
         self.addSubview(presenter)
         presenter.vContent.addSubview(vMagic)
         

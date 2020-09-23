@@ -20,24 +20,25 @@ class TasksView: BaseView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupView()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        setupView()
     }
     
     private func setupView() {
         let vMagic = MagicCollectionView.xibInstance()
-        let presenter = getPresenterView(title: "Tasks")
+        let presenter = getPresenterView(title: "Tasks", isAddNew: true)
         self.addSubview(presenter)
         presenter.vContent.addSubview(vMagic)
         presenter.delegate = self
+        presenter.controller = controller
         
         vMagic.frame = presenter.vContent.bounds
         vMagic.dictData = ["0":["Task1","Task2","Task3","Task4","Task5","Task6"]]
         vMagic.magicDatasource.type = .extend
-        vMagic.controller = UIViewController()
+        vMagic.controller = controller
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
     }
 }

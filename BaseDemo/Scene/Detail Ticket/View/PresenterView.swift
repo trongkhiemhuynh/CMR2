@@ -15,6 +15,7 @@ protocol PresenterViewOutput: class {
 class PresenterView: BaseView {
     
     @IBOutlet weak var btnAddNew: UIButton!
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     weak var delegate: PresenterViewOutput?
     

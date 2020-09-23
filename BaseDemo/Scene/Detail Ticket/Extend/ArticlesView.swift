@@ -26,7 +26,7 @@ class ArticlesView: BaseView {
     
     private func setupView() {
         let vMagic = MagicCollectionView.xibInstance()
-        let presenter = getPresenterView(title: "Articles")
+        let presenter = getPresenterView(title: "Articles", isAddNew: false)
         self.addSubview(presenter)
         presenter.vContent.addSubview(vMagic)
 

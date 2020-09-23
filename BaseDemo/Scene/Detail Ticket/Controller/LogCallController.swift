@@ -21,6 +21,7 @@ class LogCallController: BaseViewController {
         let v = LogCallView.xibInstance()
         vContent.addSubview(v)
         v.frame = vContent.bounds
+        v.controller = self
     }
 }
 

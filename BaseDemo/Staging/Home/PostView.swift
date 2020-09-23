@@ -9,15 +9,30 @@
 import UIKit
 
 class PostView: BaseView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBOutlet weak var vShared: UIView!
+    @IBOutlet weak var lblRole: UILabel!
+    
+    override class func awakeFromNib() {
+        
     }
-    */
-
+    
+    override func layoutSubviews() {
+        vShared.layer.borderWidth = 1
+        vShared.layer.borderColor = UIColor.lightGray.cgColor
+        vShared.layer.cornerRadius = 8
+    }
+    
+    @IBAction func onAttach() {
+        let bottomView = PopupView.xibInstance()
+        self.addSubview(bottomView)
+        bottomView.frame = self.bounds
+        bottomView.arrItems = ["Attach File","Attach Image","Add Tag"]
+        bottomView.isLeftIc = true
+        
+        UIView.animate(withDuration: 0.35) {
+            self.setNeedsLayout()
+        }
+    }
 }
 
 extension PostView: XibInitalization {

@@ -65,9 +65,6 @@ class MagicCollectionView: BaseView {
         //register cell, header for settings
         collectionView.registerCell(MagicCollectionViewCell.self)
         collectionView.register(MagicHeaderCollectionReusableView.xib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MagicHeaderCollectionReusableView.identifier)
-
-        //default cell
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCellID")
     }
 }
 

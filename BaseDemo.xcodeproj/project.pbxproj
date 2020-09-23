@@ -165,6 +165,8 @@
 		228D56742519E67E00CE935C /* ChangeOwnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D56732519E67E00CE935C /* ChangeOwnerView.swift */; };
 		228D56772519F7F500CE935C /* AccountReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D56752519F7F500CE935C /* AccountReusableView.swift */; };
 		228D56782519F7F500CE935C /* AccountReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 228D56762519F7F500CE935C /* AccountReusableView.xib */; };
+		228D567B251B23D700CE935C /* LogCallViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D5679251B23D600CE935C /* LogCallViewCell.swift */; };
+		228D567C251B23D700CE935C /* LogCallViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 228D567A251B23D700CE935C /* LogCallViewCell.xib */; };
 		229A55232500E6F1008A0ECD /* FetchLoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A55222500E6F1008A0ECD /* FetchLoginWorker.swift */; };
 		229A55252500E724008A0ECD /* LoginConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A55242500E724008A0ECD /* LoginConfiguration.swift */; };
 		229A55272500E733008A0ECD /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A55262500E733008A0ECD /* LoginPresenter.swift */; };
@@ -458,6 +460,8 @@
 		228D56732519E67E00CE935C /* ChangeOwnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeOwnerView.swift; sourceTree = "<group>"; };
 		228D56752519F7F500CE935C /* AccountReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountReusableView.swift; sourceTree = "<group>"; };
 		228D56762519F7F500CE935C /* AccountReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountReusableView.xib; sourceTree = "<group>"; };
+		228D5679251B23D600CE935C /* LogCallViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCallViewCell.swift; sourceTree = "<group>"; };
+		228D567A251B23D700CE935C /* LogCallViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogCallViewCell.xib; sourceTree = "<group>"; };
 		229A55222500E6F1008A0ECD /* FetchLoginWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchLoginWorker.swift; sourceTree = "<group>"; };
 		229A55242500E724008A0ECD /* LoginConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfiguration.swift; sourceTree = "<group>"; };
 		229A55262500E733008A0ECD /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
@@ -1066,6 +1070,8 @@
 				228D566F2519E3A100CE935C /* PresenterView.xib */,
 				228D56712519E4BE00CE935C /* ChangeOwnerView.xib */,
 				228D56732519E67E00CE935C /* ChangeOwnerView.swift */,
+				228D5679251B23D600CE935C /* LogCallViewCell.swift */,
+				228D567A251B23D700CE935C /* LogCallViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1572,6 +1578,7 @@
 				225D4E612513458E00664D70 /* EmailView.xib in Resources */,
 				22802DEC24FE04A500429518 /* FilterView.xib in Resources */,
 				4B2D4C0224DD4B7D00CABF1D /* WelcomeViewController.xib in Resources */,
+				228D567C251B23D700CE935C /* LogCallViewCell.xib in Resources */,
 				C22FEAA224FC1AB3009D9219 /* SettingViewController.xib in Resources */,
 				4B2D4BFD24DD2ABE00CABF1D /* LoginController.xib in Resources */,
 				228D56722519E4BE00CE935C /* ChangeOwnerView.xib in Resources */,
@@ -1824,6 +1831,7 @@
 				228D56502519A87F00CE935C /* CustomDetailTabView.swift in Sources */,
 				224346D624FCE05F00CF7AA3 /* Logger.swift in Sources */,
 				226D9340250A0F1100457AD5 /* MagicCollectionView.swift in Sources */,
+				228D567B251B23D700CE935C /* LogCallViewCell.swift in Sources */,
 				228D56562519DB1F00CE935C /* PostRoute.swift in Sources */,
 				C23F629924EF228100E37560 /* CustomDetailActionView.swift in Sources */,
 				C22FEA9624FC0E01009D9219 /* Constants.swift in Sources */,

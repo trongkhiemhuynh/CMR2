@@ -144,11 +144,18 @@ class BaseView: UIView, ChartSubViews {
 //        addConstraints([traillingConstraint, bottomConstraint, widthConstraint, heightConstraint])
     }
     
-    func getPresenterView(title: String) -> PresenterView {
+    func getPresenterView(title: String, isAddNew: Bool) -> PresenterView {
         let presenter = PresenterView.xibInstance()
         presenter.frame = CGRect(x: CGPoint.zero.x, y: CGPoint.zero.y, width: widthScreen, height: heightScreen)
         //header
-        presenter.vTitle.lblTitle.text = title
+        if title.isEmpty {
+            presenter.vTitle.isHidden = true
+        } else {
+            presenter.vTitle.lblTitle.text = title
+        }
+        
+        presenter.btnAddNew.isHidden = !isAddNew
+        
         presenter.controller = controller
         
         return presenter

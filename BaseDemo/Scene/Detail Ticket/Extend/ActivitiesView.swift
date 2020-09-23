@@ -26,7 +26,7 @@ class ActivitiesView: BaseView {
     
     private func setupView() {
         let vMagic = MagicCollectionView.xibInstance()
-        let presenter = getPresenterView(title: "Activities")
+        let presenter = getPresenterView(title: "Activities", isAddNew: false)
         self.addSubview(presenter)
         presenter.vContent.addSubview(vMagic)
         

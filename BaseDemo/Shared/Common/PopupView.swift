@@ -23,7 +23,9 @@ class PopupView : BaseView {
     @IBOutlet weak var vDismiss : UIView!
     
     // dummydata
-    private var dummy = ["Change Owner","New Child Ticket", "Email"]
+    var arrItems = ["Change Owner","New Child Ticket", "Email"]
+    
+    var isLeftIc: Bool = true
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -59,13 +61,13 @@ class PopupView : BaseView {
 
 extension PopupView : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dummy.count
+        return arrItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomPopUpTableViewCell.identifier, for: indexPath) as! CustomPopUpTableViewCell
-        let name = dummy[indexPath.row]
-        cell.updateData(nameImg: name.lowercased().replacingOccurrences(of: " ", with: "_"), title: name)
+        let name = arrItems[indexPath.row]
+        cell.updateData(nameImg: name.lowercased().replacingOccurrences(of: " ", with: "_"), title: name, isLeftIc: isLeftIc)
         
         return cell
     }

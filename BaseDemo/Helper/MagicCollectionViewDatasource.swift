@@ -23,6 +23,7 @@ enum MAGIC_VIEW_TYPE {
     case customer_journey
     case notes
     case event
+    case logcall
 }
 
 class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
@@ -114,6 +115,12 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             cell.lblDescription.isHidden = true
             
             return cell
+        } else if type == .logcall {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LogCallViewCell.identifier, for: indexPath) as! LogCallViewCell
+            cell.lblName.text = arrData![indexPath.row]
+            cell.lblCompany.text = arrData![indexPath.row]
+            
+            return cell
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCellID", for: indexPath)
@@ -156,7 +163,25 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
 
 extension MagicCollectionViewDatasource: ProfileCollectionViewCellOutput {
     func didUpdateProfileView(name: String) {
-        UIApplication.getTopViewController()?.showAlert(title: name, message: ALERT_TYPE.undefine.rawValue)
+        let topController = UIApplication.getTopViewController()
+        let vc = UIViewController()
+        let presenter = PresenterView.xibInstance()
+        let content = UILabel(frame: presenter.vContent.bounds)
+        
+        presenter.vTitle.lblTitle.text = name
+        presenter.btnAddNew.isHidden = true
+        
+        content.text = "Opps!!!"
+        content.contentMode = .center
+        content.font = UIFont(name: content.font.fontName, size: 30)
+        
+        presenter.frame = vc.view.bounds
+        presenter.vContent.addSubview(content)
+        presenter.controller = topController
+        
+        vc.view.addSubview(presenter)
+        presenter.layoutIfNeeded()
+        topController?.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -178,14 +203,6 @@ class MagicCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollect
         let widthPerItem = availableWidth / (itemsPerRow ?? 1)
         
         return CGSize(width: widthPerItem, height: heightCell ?? heightDefaultCell)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 8
     }
 }
 

@@ -24,7 +24,7 @@ class EmailView: BaseView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let presenter = getPresenterView(title: "Email")
+        let presenter = getPresenterView(title: "Email", isAddNew: false)
         
         //body
         webView = WKWebView()

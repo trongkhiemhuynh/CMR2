@@ -14,24 +14,28 @@ class NotesView: BaseView {
     override func awakeFromNib() {
         super.awakeFromNib()
         print("NotesView",#line)
-        
-        let presenter = getPresenterView(title: "Notes")
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setupView()
+    }
+    
+    private func setupView() {
+        let presenter = getPresenterView(title: "Notes",isAddNew: true)
         
         let vMagic = MagicCollectionView.xibInstance()
         vMagic.frame = presenter.vContent.bounds
         vMagic.dictData = ["0":["Note","Note1","Note2","Note3","Note4","Note5"]]
         vMagic.magicDatasource.type = .notes
-        vMagic.controller = UIViewController()
+        vMagic.controller = controller
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
         
         presenter.vContent.addSubview(vMagic)
         presenter.delegate = self
+        presenter.controller = controller
         
         vBound.addSubview(presenter)
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
     }
 }
 

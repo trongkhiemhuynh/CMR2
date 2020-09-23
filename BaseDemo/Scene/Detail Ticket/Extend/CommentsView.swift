@@ -16,7 +16,7 @@ class CommentsView: BaseView {
 
     private func setupView() {
         let vMagic = MagicCollectionView.xibInstance()
-        let presenter = getPresenterView(title: "Comments")
+        let presenter = getPresenterView(title: "Comments", isAddNew: true)
         self.addSubview(presenter)
         presenter.vContent.addSubview(vMagic)
         

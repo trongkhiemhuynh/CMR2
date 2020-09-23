@@ -18,7 +18,7 @@ class CustomerJourneyView: BaseView {
     
     private func setupView() {
         let vMagic = MagicCollectionView.xibInstance()
-        let presenter = getPresenterView(title: "Customer Journey")
+        let presenter = getPresenterView(title: "Customer Journey", isAddNew: false)
         presenter.vContent.addSubview(vMagic)
         self.addSubview(presenter)
         
