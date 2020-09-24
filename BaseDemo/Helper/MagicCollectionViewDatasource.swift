@@ -24,6 +24,7 @@ enum MAGIC_VIEW_TYPE {
     case notes
     case event
     case logcall
+    case address_pager
 }
 
 class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
@@ -121,6 +122,10 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             cell.lblCompany.text = arrData![indexPath.row]
             
             return cell
+        } else if type == .address_pager {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddressPagerCollectionViewCell.identifier, for: indexPath) as! AddressPagerCollectionViewCell
+            cell.onUpdate()
+            return cell
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCellID", for: indexPath)
@@ -163,6 +168,13 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
 
 extension MagicCollectionViewDatasource: ProfileCollectionViewCellOutput {
     func didUpdateProfileView(name: String) {
+        
+        if name == Profile_Item.contact.rawValue {
+            RouterManager.shared.handleRouter(AddressRoute())
+            
+            return
+        }
+        
         let topController = UIApplication.getTopViewController()
         let vc = UIViewController()
         let presenter = PresenterView.xibInstance()
@@ -189,6 +201,7 @@ class MagicCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollect
     
     public var itemsPerRow: CGFloat?
     public var heightCell: CGFloat?
+    public var collectionView: UICollectionView?
     
     // delegate
     weak var delegate: MagicCollectionViewDelegateOutput?
@@ -204,6 +217,34 @@ class MagicCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollect
         
         return CGSize(width: widthPerItem, height: heightCell ?? heightDefaultCell)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let yOffset = collectionView.contentOffset.x
+        let yCell = cell.frame.origin.x
+        let percent = (yOffset - yCell)/cell.bounds.width
+        if percent > 0.5 {
+            Logger.info(indexPath.row)
+        }
+    }
+    
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        Logger.info(scrollView.contentOffset.x)
+    }
+    
 }
 
 
+//  Outside the implementation block:
+//let kNewPageLoadScrollPercentageThreshold: CGFloat = 0.66
+//
+//func ShouldLoadNextPage(collectionView: UICollectionView) -> Bool {
+//    let xOffset = collectionView.contentOffset.x
+//    let height = collectionView.contentSize.width - collectionView.frame.width
+//
+//  return (yOffset / height) > kNewPageLoadScrollPercentageThreshold
+//}

@@ -23,14 +23,14 @@ class NotesView: BaseView {
     
     private func setupView() {
         let presenter = getPresenterView(title: "Notes",isAddNew: true)
-
+        
         let vMagic = MagicCollectionView.xibInstance()
         vMagic.frame = presenter.vContent.bounds
         vMagic.dictData = ["0":["Note","Note1","Note2","Note3","Note4","Note5"]]
         vMagic.magicDatasource.type = .notes
         vMagic.controller = controller
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
-        
+        vMagic.delegateAddSubView = self
         presenter.vContent.addSubview(vMagic)
         presenter.delegate = self
         presenter.controller = controller
@@ -46,5 +46,15 @@ extension NotesView: XibInitalization {
 extension NotesView: PresenterViewOutput {
     func onAddNew() {
         delegateAddSubView?.didAddNew()
+    }
+}
+
+extension NotesView: BaseViewOutput {
+    func didAddNew() {
+        
+    }
+    
+    func onDetailView() {
+        
     }
 }

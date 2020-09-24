@@ -94,6 +94,7 @@ protocol ChartSubViews {
 @objc protocol BaseViewOutput: class {
     func didAddNew()
     @objc optional func didAddPicklist(v: UIView?)
+    @objc optional func onDetailView()
 }
 
 class BaseView: UIView, ChartSubViews {

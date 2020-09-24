@@ -23,6 +23,7 @@ class MagicCollectionView: BaseView {
     public var arrCells : [MagicCollectionViewCell]?
     public var heightDefaultHeader : CGFloat = 30
     public var heightProfileHeader : CGFloat = 170
+    public var scrollDirection: UICollectionView.ScrollDirection = .vertical
     
     public var heightContentProfile : CGFloat {
         return heightScreen - heightProfileHeader
@@ -45,7 +46,7 @@ class MagicCollectionView: BaseView {
         magicDelegate.itemsPerRow = itemsPerRow
         
         let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
-        
+        flowLayout?.scrollDirection = scrollDirection
         // check kind controller
         guard let controller = controller else {
             return
@@ -111,7 +112,9 @@ extension MagicCollectionView : MagicCollectionViewDelegateOutput {
             
             delegateAddSubView?.didAddPicklist!(v: cell)
         } else {
-            Logger.debug("dragon")
+            Logger.info(controller?.nibName)
+            
+            delegateAddSubView?.onDetailView?()
         }
     }
 }
