@@ -17,7 +17,6 @@ class MapView: BaseView {
     override func awakeFromNib() {
         super.awakeFromNib()
         initView()
-        
     }
     
     func initView() {
@@ -25,10 +24,9 @@ class MapView: BaseView {
         self.addSubview(mapView)
     }
     
-    func setCamera() {
-        let oahuCenter = BASEBS_HCM
+    func setCamera(on location: CLLocation) {
         let region = MKCoordinateRegion(
-          center: oahuCenter.coordinate,
+          center: location.coordinate,
           latitudinalMeters: 50_000,
           longitudinalMeters: 60_000)
         
@@ -40,13 +38,13 @@ class MapView: BaseView {
         mapView.setCameraZoomRange(zoomRange, animated: true)
     }
     
-    func addAnnotation() {
+    func addAnnotation(on location: CLLocation) {
         // Show artwork on map
         let artwork = Artwork(
           title: "BASE BS",
           locationName: "HCM",
           discipline: "SE",
-          coordinate: CLLocationCoordinate2D(latitude: BASEBS_HCM.coordinate.latitude, longitude: BASEBS_HCM.coordinate.longitude))
+          coordinate: CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
         mapView.addAnnotation(artwork)
     }
     
@@ -56,12 +54,14 @@ class MapView: BaseView {
         // Set initial location in Honolulu
         if mapView != nil {
             Logger.info("debug \(mapView.bounds)")
-            let initialLocation = BASEBS_HCM
-            
-            mapView.centerToLocation(initialLocation)
-            setCamera()
-            addAnnotation()
+            onUpdateLocation(BASEBS_HCM)
         }
+    }
+    
+    func onUpdateLocation(_ location: CLLocation) {
+        mapView.centerToLocation(location)
+        setCamera(on: location)
+        addAnnotation(on: location)
     }
 
 }

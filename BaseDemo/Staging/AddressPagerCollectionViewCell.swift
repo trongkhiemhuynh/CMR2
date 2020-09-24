@@ -22,6 +22,7 @@ class AddressPagerCollectionViewCell: UICollectionViewCell {
         // Initialization code
         self.layer.cornerRadius = 12.0
         self.clipsToBounds = true
+        self.backgroundColor = .white
     }
     
     func onUpdate() {

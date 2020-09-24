@@ -29,7 +29,13 @@ class CustomDetailActionView: BaseView {
     @IBAction func onTap(_ sender: UIButton) {
         print(#function)
         if sender == btnPost {
-            RouterManager.shared.handleRouter(PostRoute())
+            //RouterManager.shared.handleRouter(PostRoute())
+            let extendRoute = ExtendRoute()
+            RouterManager.shared.handleRouter(extendRoute)
+            
+            extendRoute.handleData { (controller) in
+                controller.extendedType = .email
+            }
         } else {
             //logcall
             RouterManager.shared.handleRouter(LogCallRoute())

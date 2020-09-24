@@ -125,6 +125,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
         } else if type == .address_pager {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddressPagerCollectionViewCell.identifier, for: indexPath) as! AddressPagerCollectionViewCell
             cell.onUpdate()
+            
             return cell
         }
         
@@ -137,6 +138,8 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
         
         if type == .profile {
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileCollectionReusableView.identifier, for: indexPath) as! ProfileCollectionReusableView
+            
+            headerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTapHeader)))
             
             return headerView
         } else if type == .account {
@@ -163,6 +166,10 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             return CGSize(width: widthScreen, height: 50)
         }
     }
+    
+    @objc func onTapHeader() {
+        didUpdateProfileView(name: "ProfileHeader")
+    }
 
 }
 
@@ -171,7 +178,11 @@ extension MagicCollectionViewDatasource: ProfileCollectionViewCellOutput {
         
         if name == Profile_Item.contact.rawValue {
             RouterManager.shared.handleRouter(AddressRoute())
-            
+            return
+        }
+        
+        if name == "ProfileHeader" {
+            RouterManager.shared.handleRouter(AccountRoute())
             return
         }
         
@@ -202,6 +213,8 @@ class MagicCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollect
     public var itemsPerRow: CGFloat?
     public var heightCell: CGFloat?
     public var collectionView: UICollectionView?
+    public var minimumSpacingSection: CGFloat = 30
+    public var minimumInterItem: CGFloat = 30
     
     // delegate
     weak var delegate: MagicCollectionViewDelegateOutput?
@@ -234,6 +247,14 @@ class MagicCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollect
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         Logger.info(scrollView.contentOffset.x)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return minimumSpacingSection
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return minimumInterItem
     }
     
 }

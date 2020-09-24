@@ -29,13 +29,21 @@ class MagicCollectionView: BaseView {
         return heightScreen - heightProfileHeader
     }
     
+    public var isClearBackground: Bool = false
+    
     override class func awakeFromNib() {
         super.awakeFromNib()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.backgroundColor = BASEColor.BackgroundListColor()
+        
+        if isClearBackground {
+            self.collectionView.backgroundColor = .clear
+        } else {
+            self.collectionView.backgroundColor = BASEColor.BackgroundListColor()
+        }
+        
         collectionView.dataSource = magicDatasource
         collectionView.delegate = magicDelegate
         
@@ -113,7 +121,7 @@ extension MagicCollectionView : MagicCollectionViewDelegateOutput {
             delegateAddSubView?.didAddPicklist!(v: cell)
         } else {
             Logger.info(controller?.nibName)
-            
+            delegateAddSubView?.didAddNew()
             delegateAddSubView?.onDetailView?()
         }
     }
