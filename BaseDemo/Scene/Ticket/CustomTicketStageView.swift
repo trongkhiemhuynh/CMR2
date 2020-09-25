@@ -81,6 +81,8 @@ extension CustomTicketStageView : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath != preIndexpath {
             // update index
+            let cell = collectionView.cellForItem(at: indexPath) as? CustomTicketStageCollectionViewCell
+            
             preIndexpath = indexPath
 //            let preCell = collectionView.cellForItem(at: preIndexpath) as? CustomTicketStageCollectionViewCell
             
@@ -92,10 +94,11 @@ extension CustomTicketStageView : UICollectionViewDelegate {
 //                print(isUpdate)
 //            }
             
-            let cell = collectionView.cellForItem(at: indexPath) as? CustomTicketStageCollectionViewCell
-            let nameStage = cell?.lblStage.text
-            print(nameStage)
-            delegate?.didChangeStage(name: nameStage)
+            
+            if let nameStage = cell?.lblStage.text {
+                print(nameStage)
+                delegate?.didChangeStage(name: nameStage)
+            }
         }
     }
 }

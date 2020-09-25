@@ -25,6 +25,7 @@ class ContactDetailController: BaseViewController {
         present.frame = view.bounds
         present.vTitle.lblTitle.text = "Contact"
         present.controller = self
+        present.hideAddNewBtn(on: true)
         view.addSubview(present)
         
         let subView = MagicCollectionView.xibInstance()

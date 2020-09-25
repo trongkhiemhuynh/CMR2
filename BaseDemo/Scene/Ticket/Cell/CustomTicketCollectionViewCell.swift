@@ -9,9 +9,9 @@
 import UIKit
 
 struct TicketListModel {
-    var name: String
+    var name: String?
     var id: String
-    var status: String
+    var status: String?
 }
 
 class CustomTicketCollectionViewCell: UICollectionViewCell {
@@ -21,7 +21,7 @@ class CustomTicketCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var lblID : UILabel!
     @IBOutlet weak var vPopup : UIView!
     @IBOutlet weak var vBound : UIView!
-    
+    @IBOutlet weak var ivLineStatus: UIImageView!
     
     
     override func awakeFromNib() {
@@ -84,7 +84,20 @@ class CustomTicketCollectionViewCell: UICollectionViewCell {
         lblName.text = data.name
         lblID.text = data.id
         lblStatus.text = data.status
-
+        
+        var statusLine: String = "red_rectangle"
+        
+        guard let status = data.status else {return}
+        
+        if status == "Processing" {
+            statusLine = "brown_rectangle"
+        } else if status == "Escalated" {
+            statusLine = "red_rectangle"
+        } else if status == "Pending" {
+            statusLine = "green_rectangle"
+        }
+        
+        ivLineStatus.image = UIImage(named: statusLine)
     }
 }
 

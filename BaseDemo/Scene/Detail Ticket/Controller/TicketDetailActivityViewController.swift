@@ -59,7 +59,14 @@ extension TicketDetailActivityViewController : UICollectionViewDelegateFlowLayou
 }
 
 extension TicketDetailActivityViewController : UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let route = ExtendRoute()
+        RouterManager.shared.handleRouter(route)
+        
+        route.handleData { (controller) in
+            controller.extendedType = .email
+        }
+    }
 }
 
 extension TicketDetailActivityViewController : UICollectionViewDataSource {

@@ -60,13 +60,14 @@ extension TicketDetailInfoViewController : UICollectionViewDataSource {
             if titleName.contains("Escalated") || titleName.contains("Done") {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewTicketCheckboxCollectionViewCell.identifier, for: indexPath) as? NewTicketCheckboxCollectionViewCell
                 cell?.lblTitle.text = titleName
-                
+                cell?.vContent.backgroundColor = BASEColor.BackgroundListColor()
+                cell?.btnCheckbox.isEnabled = false
                 return cell!
             } else {
                 let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailInputInfoCollectionViewCell.identifier, for: indexPath) as? TicketDetailInputInfoCollectionViewCell
                 cell2?.isUserInteractionEnabled = false
                 cell2!.reloadData(UIImage(named: icName), titleName, titleName)
-                
+                cell2?.tf.backgroundColor = BASEColor.BackgroundListColor()
                 return cell2!
             }
             

@@ -156,7 +156,7 @@ class BaseView: UIView, ChartSubViews {
             presenter.vTitle.lblTitle.text = title
         }
         
-        presenter.btnAddNew.isHidden = !isAddNew
+        presenter.hideAddNewBtn(on: !isAddNew)
         
         presenter.controller = controller
         

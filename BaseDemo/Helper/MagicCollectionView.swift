@@ -40,6 +40,7 @@ class MagicCollectionView: BaseView {
         
         if isClearBackground {
             self.collectionView.backgroundColor = .clear
+            self.backgroundColor = .clear
         } else {
             self.collectionView.backgroundColor = BASEColor.BackgroundListColor()
         }

@@ -46,6 +46,8 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
         
         arrData = dictData?[String(section)] as? Array<String>
         
+        Logger.info(arrData?.count)
+        
         return arrData?.count ?? 0
     }
     
@@ -192,7 +194,7 @@ extension MagicCollectionViewDatasource: ProfileCollectionViewCellOutput {
         let content = UILabel(frame: presenter.vContent.bounds)
         
         presenter.vTitle.lblTitle.text = name
-        presenter.btnAddNew.isHidden = true
+        presenter.hideAddNewBtn(on: true)
         
         content.text = "Opps!!!"
         content.contentMode = .center

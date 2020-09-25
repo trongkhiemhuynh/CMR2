@@ -14,7 +14,7 @@ protocol PresenterViewOutput: class {
 
 class PresenterView: BaseView {
     
-    @IBOutlet weak var btnAddNew: UIButton!
+    @IBOutlet private weak var btnAddNew: UIButton!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     weak var delegate: PresenterViewOutput?
@@ -25,6 +25,10 @@ class PresenterView: BaseView {
     
     @IBAction func addNew() {
         delegate?.onAddNew()
+    }
+    
+    func hideAddNewBtn(on hide: Bool) -> Void {
+        btnAddNew.isHidden = hide
     }
 }
 

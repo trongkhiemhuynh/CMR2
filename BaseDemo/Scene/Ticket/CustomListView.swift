@@ -28,10 +28,11 @@ class CustomListView: BaseView {
     
     // variable
     weak var delegate : CustomListViewOutput?
-    public weak var controller1 : TicketController?
     
     private let itemsPerRow: CGFloat = 1
     private let heightCell : CGFloat = 80
+    
+    private var status: String?
     
     var dummyData : [String:Any] = ["New" : ["HUYNH","HUYNH","HUYNH","HUYNH","HUYNH","HUYNH","HUYNH"], "Processing": ["KHIEM","KHIEM","KHIEM","KHIEM","KHIEM","KHIEM","KHIEM"], "Escalated": ["TRONG","TRONG","TRONG","TRONG","TRONG","TRONG","TRONG"], "Pending":["DAT","DAT","DAT","DAT","DAT","DAT","DAT"], "Upcoming":["DUC","DUC","DUC","DUC","DUC","DUC","DUC"]]
     
@@ -111,7 +112,10 @@ class CustomListView: BaseView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        controller1?.delegate = self
+        
+        if let ticket = controller as? TicketController {
+            ticket.delegate = self
+        }
     }
     
     @IBAction func changeSort() {
@@ -122,6 +126,7 @@ class CustomListView: BaseView {
 
 extension CustomListView : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return arrDummy?.count ?? 0
     }
     
@@ -130,7 +135,7 @@ extension CustomListView : UICollectionViewDataSource {
         
         let name = arrDummy?[indexPath.row]
         
-        cell.updateData(TicketListModel(name: name!, id: "7878787878", status: "Done"))
+        cell.updateData(TicketListModel(name: name, id: "7878787878", status: status))
         
         return cell
     }
@@ -167,6 +172,7 @@ extension CustomListView : CustomListViewInput {
     func updateListView(with stage: String?) {
         if let stage = stage {
             arrDummy = dummyData[stage] as? Array
+            status = stage
             cvList.reloadData()
         }
     }

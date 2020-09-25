@@ -29,6 +29,7 @@ class AccountController: BaseViewController {
         present.frame = view.bounds
         present.vTitle.lblTitle.text = "Account information"
         present.controller = self
+        present.hideAddNewBtn(on: true)
         view.addSubview(present)
         
         let subView = MagicCollectionView.xibInstance()
