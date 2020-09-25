@@ -63,8 +63,6 @@ class LoginController : BaseViewController {
         if isCheck {
             updateView()
         } else {
-            //show loading
-            onLoading()
             //check username+password
             let isVerified = verifyLogin(username: tfUserName.text, password: tfPassword.text)
             //fetch data
@@ -150,6 +148,7 @@ extension LoginController: UITextFieldDelegate {
     
     private func onLogin(_ isVerified: Bool) {
         if isVerified {
+            onLoading()
             output?.fetchAuthentication(username: tfUserName.text!, password: tfPassword.text!)
         } else {
             // show error

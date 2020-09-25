@@ -9,11 +9,12 @@
 import UIKit
 import CoreLocation
 
+let BASEBS_HN = CLLocation(latitude: 21.0086301, longitude: 105.8376027)
+let BASEBS_HCM = CLLocation(latitude: 10.7646238, longitude: 106.700588)
+
 //protocol AddressControllerOutput: class {
 //    func changeLocation(_ location: CLLocation?)
 //}
-
-let BASEBS_HN_LOCATION = CLLocation(latitude: 21.0086301, longitude: 105.8376027)
 
 class AddressController: BaseViewController {
     
@@ -21,6 +22,7 @@ class AddressController: BaseViewController {
     @IBOutlet weak var vMap: MapView!
     
 //    weak var delegate: AddressControllerOutput?
+    let arrLocation = [BASEBS_HCM, BASEBS_HN]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +32,16 @@ class AddressController: BaseViewController {
     override func setupView() {
         vTitle.btnFilter.isHidden = true
         vTitle.btnSearch.isHidden = true
-        vTitle.lblTitle.text = "Contact"
+        vTitle.lblTitle.text = "Location"
         
         vPager.delegateAddSubView = self
         vPager.controller = self
+        vPager.arrLocation = arrLocation
+        vPager.delegate = self
+        
         vMap.controller = self
+        vMap.onUpdateLocation(arrLocation.first!)
+        vPager.setupView()
     }
     
     @IBAction func onBack() {
@@ -50,6 +57,12 @@ extension AddressController: BaseViewOutput {
     func didAddNew() {
         //change pager view
 //        delegate?.changeLocation(BASEBS_HN_LOCATION)
-        vMap.onUpdateLocation(BASEBS_HN_LOCATION)
+//        vMap.onUpdateLocation(BASEBS_HN_LOCATION)
+    }
+}
+
+extension AddressController: BASEPagerOutput {
+    func onChangedAt(index: Int) {
+        vMap.onUpdateLocation(arrLocation[index])
     }
 }

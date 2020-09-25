@@ -7,10 +7,26 @@
 //
 
 import UIKit
+import MapKit
+
+protocol BASEPagerOutput: class {
+    func onChangedAt(index: Int)
+}
 
 class BASEPager: BaseView {
 
     @IBOutlet weak var pagerControl: UIPageControl!
+    
+    //variable
+    var arrLocation: Array<CLLocation>?
+    weak var delegate: BASEPagerOutput?
+    
+    override func commonInit() {
+        Bundle.main.loadNibNamed("BASEPager", owner: self, options: nil)
+        addSubview(vContent)
+        vContent.frame = self.bounds
+        vContent.backgroundColor = .clear
+    }
     
     override func awakeFromNib() {
         self.backgroundColor = .clear
@@ -18,30 +34,19 @@ class BASEPager: BaseView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        setupView()
+
     }
     
     func setupView() {
-        Logger.info(self.bounds)
-        let v = MagicCollectionView.xibInstance()
-        self.addSubview(v)
+        let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
+        flowLayout?.scrollDirection = .horizontal
         
-        v.dictData = ["0":["Ho Chi Minh","Ha Noi"]]
-        v.scrollDirection = .horizontal
-        v.controller = controller
-        v.heightHeader = 4
-        v.collectionView.registerCell(AddressPagerCollectionViewCell.self)
-        v.magicDatasource.type = .address_pager
-        v.frame = self.bounds
-        v.heightCell = self.bounds.height
-        v.delegateAddSubView = self
-        v.isClearBackground = true
+        collectionView.backgroundColor = .clear
+        collectionView.registerCell(AddressPagerCollectionViewCell.self)
+        pagerControl.numberOfPages = arrLocation!.count
+        pagerControl.currentPage = 0
         
-//        v.collectionView.decelerationRate = 0.
-//        pagerControl.numberOfPages = 5
-//        pagerControl.currentPage = 0
-        
+        collectionView.reloadData()
     }
 }
 
@@ -49,5 +54,47 @@ extension BASEPager: BaseViewOutput {
     func didAddNew() {
         //FIXME detect current pager
         self.delegateAddSubView?.didAddNew()
+    }
+}
+
+extension BASEPager: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return arrLocation?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddressPagerCollectionViewCell.identifier, for: indexPath) as! AddressPagerCollectionViewCell
+        cell.onUpdate(indexPath.row)
+        
+        return cell
+    }
+
+}
+
+extension BASEPager: UICollectionViewDelegate {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        var visibleRect = CGRect()
+
+        visibleRect.origin = collectionView.contentOffset
+        visibleRect.size = collectionView.bounds.size
+
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+
+        guard let indexPath = collectionView.indexPathForItem(at: visiblePoint) else { return }
+        
+        //update map
+        delegate?.onChangedAt(index: indexPath.row)
+        
+        pagerControl.currentPage = indexPath.row
+    }
+}
+
+extension BASEPager: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return collectionView.bounds.size
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
     }
 }

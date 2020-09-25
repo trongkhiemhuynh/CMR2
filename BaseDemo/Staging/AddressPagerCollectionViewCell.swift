@@ -25,13 +25,24 @@ class AddressPagerCollectionViewCell: UICollectionViewCell {
         self.backgroundColor = .white
     }
     
-    func onUpdate() {
-        lblCompany.text = "CÔNG TY CỔ PHẦN GIẢI PHÁP KINH DOANH NỀN TẢNG (BASEBS)"
-        lblAddress.text = "Lầu 18, Tòa Nhà VCCI, 9 Đào Duy Anh, P. Phương Mai,Q. Đống Đa, HN"
-        lblDirection.text = "Chỉ đường"
-        lblPhone.text = "1900 633 568"
-        lblMail.text = "info@basebs.com/marketing@basebs.com"
-        lblWebsite.text = "basebs.com"
+    func onUpdate(_ index: Int) {
+        
+        if index == 0 {
+            lblCompany.text = "BASE Business Solution CORPORATION Head Quarter"
+            lblAddress.text = "Floor 12B, Doan Van Bo street, 4 district, Ho Chi Minh city"
+            lblDirection.text = "Direction"
+            lblPhone.text = "1900 633 568"
+            lblMail.text = "info@basebs.com/marketing@basebs.com"
+            lblWebsite.text = "basebs.com"
+        } else {
+            lblCompany.text = "BASE Business Solution CORPORATION Sub Quarter"
+            lblAddress.text = "Ha Noi"
+            lblDirection.text = "Direction"
+            lblPhone.text = "1900 633 568"
+            lblMail.text = "info@basebs.com/marketing@basebs.com"
+            lblWebsite.text = "basebs.com"
+        }
+        
     }
 
 }

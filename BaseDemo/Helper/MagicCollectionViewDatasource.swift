@@ -127,11 +127,6 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             cell.lblCompany.text = arrData![indexPath.row]
             
             return cell
-        } else if type == .address_pager {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddressPagerCollectionViewCell.identifier, for: indexPath) as! AddressPagerCollectionViewCell
-            cell.onUpdate()
-            
-            return cell
         } else if type == .contact {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LogCallViewCell.identifier, for: indexPath) as! LogCallViewCell
             cell.onUpdate()

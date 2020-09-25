@@ -8,8 +8,6 @@
 import UIKit
 import MapKit
 
-let BASEBS_HCM = CLLocation(latitude: 10.7646238, longitude: 106.700588)
-
 class MapView: BaseView {
     
     private var mapView: MKMapView!
@@ -22,6 +20,25 @@ class MapView: BaseView {
     func initView() {
         mapView = MKMapView()
         self.addSubview(mapView)
+        mapView.delegate = self
+    }
+    
+    override func layoutSubviews() {
+        mapView.frame = self.bounds
+        
+        // Set initial location in Honolulu
+        if mapView != nil {
+            Logger.info("debug \(mapView.bounds)")
+//            onUpdateLocation(BASEBS_HCM)
+        }
+    }
+    
+    func onUpdateLocation(_ location: CLLocation) {
+        mapView.centerToLocation(location)
+//        setCamera(on: location)
+        addAnnotation(on: location)
+        
+        layoutIfNeeded()
     }
     
     func setCamera(on location: CLLocation) {
@@ -42,26 +59,10 @@ class MapView: BaseView {
         // Show artwork on map
         let artwork = Artwork(
           title: "BASE BS",
-          locationName: "HCM",
+          locationName: "VN",
           discipline: "SE",
           coordinate: CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
         mapView.addAnnotation(artwork)
-    }
-    
-    override func layoutSubviews() {
-        mapView.frame = self.bounds
-        
-        // Set initial location in Honolulu
-        if mapView != nil {
-            Logger.info("debug \(mapView.bounds)")
-            onUpdateLocation(BASEBS_HCM)
-        }
-    }
-    
-    func onUpdateLocation(_ location: CLLocation) {
-        mapView.centerToLocation(location)
-        setCamera(on: location)
-        addAnnotation(on: location)
     }
 
 }
@@ -74,6 +75,33 @@ extension MKMapView {
             longitudinalMeters: regionRadius)
         
         setRegion(coordinateRegion, animated: true)
+    }
+}
+
+extension MapView: MKMapViewDelegate {
+    public func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        // 2
+        guard let annotation = annotation as? Artwork else {
+          return nil
+        }
+        // 3
+        let identifier = "artwork"
+        var view: MKMarkerAnnotationView
+        // 4
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(
+          withIdentifier: identifier) as? MKMarkerAnnotationView {
+          dequeuedView.annotation = annotation
+          view = dequeuedView
+        } else {
+          // 5
+          view = MKMarkerAnnotationView(
+            annotation: annotation,
+            reuseIdentifier: identifier)
+          view.canShowCallout = true
+          view.calloutOffset = CGPoint(x: -5, y: 5)
+          view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        }
+        return view
     }
 }
 
