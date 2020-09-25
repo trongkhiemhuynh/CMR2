@@ -10,6 +10,12 @@ import UIKit
 
 class ProfileViewController: BaseViewController {
 
+    public var heightHeader : CGFloat = 170
+    
+    public var heightCell : CGFloat {
+        return heightScreen - heightHeader
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,9 +27,14 @@ class ProfileViewController: BaseViewController {
         let v = MagicCollectionView.xibInstance()
         v.controller = self
         v.dictData = ["0":["profile"]]
+        v.magicDatasource.type = .profile
+        v.heightHeader = heightHeader
+        v.heightCell = heightCell
+        
         //register cell, header for profile
         v.collectionView.registerCell(ProfileCollectionViewCell.self)
         v.collectionView.register(ProfileCollectionReusableView.xib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileCollectionReusableView.identifier)
+        
         view.backgroundColor = BASEColor.BackgroundListColor()
         v.collectionView.backgroundColor = BASEColor.BackgroundListColor()
         view.addSubview(v)

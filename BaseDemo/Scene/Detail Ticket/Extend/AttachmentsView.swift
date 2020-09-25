@@ -23,7 +23,7 @@ class AttachmentsView: BaseView {
         vMagic.frame = presenter.vContent.bounds
         vMagic.dictData = ["0":["Attachments1","Attachments2","Attachments3","Attachments4","Attachments5","Attachments6"]]
         vMagic.magicDatasource.type = .extend
-        vMagic.controller = UIViewController()
+
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
     }
 }

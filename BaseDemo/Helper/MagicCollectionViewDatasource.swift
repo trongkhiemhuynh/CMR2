@@ -68,10 +68,13 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             
             let arr = dictData?[String(indexPath.section)] as! Array<String>
             let title = arr[indexPath.row]
+            var postFix = ""
+            if type == .contact_detail {
+                postFix = "contact_"
+            }
             
-            cell.lblTitle.text = title
-            cell.lblName.text = title
-            
+            cell.onUpdate(title, postFix)
+
             //check item have picklist
             if arrAccountArrowDown.contains(title) || arrContactArrowDown.contains(title) {
                 cell.ivDropdown.isHidden = false
@@ -128,6 +131,10 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddressPagerCollectionViewCell.identifier, for: indexPath) as! AddressPagerCollectionViewCell
             cell.onUpdate()
             
+            return cell
+        } else if type == .contact {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LogCallViewCell.identifier, for: indexPath) as! LogCallViewCell
+            cell.onUpdate()
             return cell
         }
         
@@ -215,8 +222,8 @@ class MagicCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollect
     public var itemsPerRow: CGFloat?
     public var heightCell: CGFloat?
     public var collectionView: UICollectionView?
-    public var minimumSpacingSection: CGFloat = 30
-    public var minimumInterItem: CGFloat = 30
+    public var minimumSpacingSection: CGFloat = 10
+    public var minimumInterItem: CGFloat = 10
     
     // delegate
     weak var delegate: MagicCollectionViewDelegateOutput?
@@ -245,7 +252,6 @@ class MagicCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollect
             Logger.info(indexPath.row)
         }
     }
-    
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         Logger.info(scrollView.contentOffset.x)

@@ -20,9 +20,17 @@ class AccountCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         ivDropdown.isHidden = true
-        iv.image = UIImage(named: "phone")
     }
 
+    func onUpdate(_ name: String?,_ postFix: String?) {
+        lblTitle.text = name
+        lblName.text = name
+        
+        if let n = name, let p = postFix {
+            let nameImage = p + n.lowercased().replacingOccurrences(of: " ", with: "_")
+            iv.image = UIImage(named: nameImage)
+        }
+    }
 }
 
 extension AccountCollectionViewCell : XibInitalization {

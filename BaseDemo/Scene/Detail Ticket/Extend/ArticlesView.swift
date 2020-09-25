@@ -33,7 +33,6 @@ class ArticlesView: BaseView {
         vMagic.frame = CGRect(x: 0, y: 50, width: widthScreen, height: heightScreen - 150)
         vMagic.dictData = ["0":["Articles1","Articles2","Articles3","Articles4","Articles5","Articles6"]]
         vMagic.magicDatasource.type = .extend
-        vMagic.controller = UIViewController()
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
     }
 

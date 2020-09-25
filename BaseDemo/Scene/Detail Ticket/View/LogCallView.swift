@@ -47,8 +47,8 @@ class LogCallView: BaseView {
         
         v.dictData = ["0":["Bill Sr","Bill Jr"]]
         v.controller = controller
-        v.heightCell = 80
-        v.heightDefaultHeader = 8
+        v.heightCell = 70
+        v.heightHeader = 10
         v.magicDatasource.type = .logcall
         
         v.collectionView.registerCell(LogCallViewCell.self)

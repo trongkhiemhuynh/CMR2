@@ -11,24 +11,19 @@ import RealmSwift
 
 class MagicCollectionView: BaseView {
     // variable
-    public let magicDatasource : MagicCollectionViewDatasource = MagicCollectionViewDatasource()
-    public let magicDelegate : MagicCollectionViewDelegate = MagicCollectionViewDelegate()
-    public var numberSection : Int? = 1
-    public var dictData : Dictionary<String, Any>?
+    public let magicDatasource: MagicCollectionViewDatasource = MagicCollectionViewDatasource()
+    public let magicDelegate: MagicCollectionViewDelegate = MagicCollectionViewDelegate()
+    public var numberSection: Int? = 1
+    public var dictData: Dictionary<String, Any>?
     
-    public var heightCell : CGFloat = 70 // default heightCell
+    public var heightCell: CGFloat = 0 // default heightCell
+    public var heightHeader: CGFloat = 0
+    public var itemsPerRow: CGFloat = 1
     
-    public var itemsPerRow : CGFloat = 1
+    public var arrCells: [MagicCollectionViewCell]?
     
-    public var arrCells : [MagicCollectionViewCell]?
-    public var heightDefaultHeader : CGFloat = 30
-    public var heightProfileHeader : CGFloat = 170
     public var scrollDirection: UICollectionView.ScrollDirection = .vertical
-    
-    public var heightContentProfile : CGFloat {
-        return heightScreen - heightProfileHeader
-    }
-    
+
     public var isClearBackground: Bool = false
     
     override class func awakeFromNib() {
@@ -47,30 +42,16 @@ class MagicCollectionView: BaseView {
         
         collectionView.dataSource = magicDatasource
         collectionView.delegate = magicDelegate
+        magicDelegate.delegate = self
         
         magicDatasource.dictData = dictData
         magicDatasource.arrCells = arrCells
-        magicDelegate.delegate = self
         magicDelegate.heightCell = heightCell
         magicDelegate.itemsPerRow = itemsPerRow
         
         let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
         flowLayout?.scrollDirection = scrollDirection
-        // check kind controller
-        guard let controller = controller else {
-            return
-        }
-
-        if controller.isKind(of: ProfileViewController.self) {
-            magicDelegate.heightCell = heightContentProfile
-            magicDatasource.type = .profile
-            flowLayout?.headerReferenceSize = CGSize(width: self.collectionView.frame.size.width, height: heightProfileHeader)
-        } else if controller.isKind(of: AccountController.self) {
-            magicDatasource.type = .account
-            flowLayout?.headerReferenceSize = CGSize(width: self.collectionView.frame.size.width, height: heightDefaultHeader)
-        } else {
-            flowLayout?.headerReferenceSize = CGSize(width: self.collectionView.frame.size.width, height: heightDefaultHeader)
-        }
+        flowLayout?.headerReferenceSize = CGSize(width: self.collectionView.frame.size.width, height: heightHeader)
 
         //register cell, header for settings
         collectionView.registerCell(MagicCollectionViewCell.self)

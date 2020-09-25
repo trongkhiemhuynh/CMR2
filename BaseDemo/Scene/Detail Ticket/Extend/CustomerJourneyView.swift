@@ -32,8 +32,7 @@ class CustomerJourneyView: BaseView {
                            "6":["type":"email","title":"Sent an message quickly","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","time":"Oct 8, 2020"]]
         
         vMagic.magicDatasource.type = .customer_journey
-        vMagic.controller = UIViewController()
-        vMagic.heightDefaultHeader = 0
+        vMagic.heightHeader = 10
         vMagic.heightCell = 120
         vMagic.collectionView.registerCell(CustomerJourneyCollectionViewCell.self)
     }

@@ -19,6 +19,13 @@ class LogCallViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func onUpdate() {
+        lblName.text = "Bill Gates"
+        lblCompany.text = "Microsoft"
+        ivAvatar.image = UIImage(named: "no_avatar")
+        ivStatus.isHidden = true
+    }
 
 }
 

@@ -27,7 +27,7 @@ class PresenterView: BaseView {
         delegate?.onAddNew()
     }
     
-    func hideAddNewBtn(on hide: Bool) -> Void {
+    public func hideAddNewBtn(on hide: Bool) -> Void {
         btnAddNew.isHidden = hide
     }
 }

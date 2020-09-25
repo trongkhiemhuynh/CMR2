@@ -30,7 +30,7 @@ class BASEPager: BaseView {
         v.dictData = ["0":["Ho Chi Minh","Ha Noi"]]
         v.scrollDirection = .horizontal
         v.controller = controller
-        v.heightDefaultHeader = 0.0
+        v.heightHeader = 4
         v.collectionView.registerCell(AddressPagerCollectionViewCell.self)
         v.magicDatasource.type = .address_pager
         v.frame = self.bounds

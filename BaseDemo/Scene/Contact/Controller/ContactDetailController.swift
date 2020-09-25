@@ -29,15 +29,16 @@ class ContactDetailController: BaseViewController {
         view.addSubview(present)
         
         let subView = MagicCollectionView.xibInstance()
-        subView.dictData = ["0":["First Name","Last Name","Full Name","Account Name","Office Phone","Mobile Phone","Email","Title","Department","Description"]]
+        subView.dictData = ["0":["First Name","Last Name","Full Name","Office Phone","Mobile Phone","Email","Title","Department","Description"]]
         subView.controller = self
         //account cell
         subView.collectionView.registerCell(AccountCollectionViewCell.self)
         
         subView.collectionView.register(AccountReusableView.xib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AccountReusableView.identifier)
 
-        subView.heightDefaultHeader = 150.0
-        subView.magicDatasource.type = .account
+        subView.heightHeader = 150.0
+        subView.heightCell = 70.0
+        subView.magicDatasource.type = .contact_detail
         subView.delegateAddSubView = self
         present.vContent.addSubview(subView)
         subView.frame = present.vContent.bounds

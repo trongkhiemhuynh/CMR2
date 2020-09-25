@@ -40,7 +40,8 @@ class AccountController: BaseViewController {
         
         subView.collectionView.register(AccountReusableView.xib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AccountReusableView.identifier)
 
-        subView.heightDefaultHeader = 150.0
+        subView.heightHeader = 150.0
+        subView.heightCell = 70.0
         subView.magicDatasource.type = .account
         subView.delegateAddSubView = self
         present.vContent.addSubview(subView)

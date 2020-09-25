@@ -32,7 +32,7 @@ class CustomListView: BaseView {
     private let itemsPerRow: CGFloat = 1
     private let heightCell : CGFloat = 80
     
-    private var status: String?
+    private var status: String? = "New"
     
     var dummyData : [String:Any] = ["New" : ["HUYNH","HUYNH","HUYNH","HUYNH","HUYNH","HUYNH","HUYNH"], "Processing": ["KHIEM","KHIEM","KHIEM","KHIEM","KHIEM","KHIEM","KHIEM"], "Escalated": ["TRONG","TRONG","TRONG","TRONG","TRONG","TRONG","TRONG"], "Pending":["DAT","DAT","DAT","DAT","DAT","DAT","DAT"], "Upcoming":["DUC","DUC","DUC","DUC","DUC","DUC","DUC"]]
     
@@ -135,7 +135,7 @@ extension CustomListView : UICollectionViewDataSource {
         
         let name = arrDummy?[indexPath.row]
         
-        cell.updateData(TicketListModel(name: name, id: "7878787878", status: status))
+        cell.updateData(TicketListModel(name: name!, id: "7878787878", status: status!))
         
         return cell
     }

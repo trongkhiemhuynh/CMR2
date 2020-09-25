@@ -27,9 +27,10 @@ class ContactController: BaseViewController {
         subView.dictData = ["0":["Contact 1"],"1":["Contact 2"],"2":["Contact 3"],"3":["Contact 4"]]
         subView.controller = self
         //account cell
-        subView.heightDefaultHeader = 4.0
+        subView.heightHeader = 4.0
         subView.heightCell = 70.0
-
+        subView.magicDatasource.type = .contact
+        subView.collectionView.registerCell(LogCallViewCell.self)
 //        subView.delegateAddSubView = self
         present.vContent.addSubview(subView)
         subView.frame = present.vContent.bounds
