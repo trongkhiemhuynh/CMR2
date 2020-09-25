@@ -68,15 +68,8 @@ extension MagicCollectionView : MagicCollectionViewDelegateOutput {
         }
         
         if vc.isKind(of: SettingViewController.self) {
-        
             let cell = collectionView.cellForItem(at: indexPath) as! MagicCollectionViewCell
-//            let vc = UIViewController()
-            
-            //title label
             let title = cell.title.text!
-//            vc.title = title
-            let settingVC = vc as? SettingViewController
-            settingVC?.showAlert(title: title, message: ALERT_TYPE.undefine.rawValue)
             
             if title == "Log out" {
                 RouterManager.shared.handleRouter(LoginRoute())
@@ -92,7 +85,10 @@ extension MagicCollectionView : MagicCollectionViewDelegateOutput {
             } else if title == "OCR" {
 //                vc = OCRController()
             }
+
+            let settingVC = vc as? SettingViewController
             
+            settingVC?.showAlert(title: title, message: ALERT_TYPE.undefine.rawValue)
 //            vc.navigationController?.pushViewController(vc, animated: true)
         } else if vc.isKind(of: ContactController.self) {
             RouterManager.shared.handleRouter(ContactDetailRoute())
@@ -102,7 +98,7 @@ extension MagicCollectionView : MagicCollectionViewDelegateOutput {
             
             delegateAddSubView?.didAddPicklist!(v: cell)
         } else {
-            Logger.info(controller?.nibName)
+//            Logger.info(controller?.nibName)
             delegateAddSubView?.didAddNew()
             delegateAddSubView?.onDetailView?()
         }

@@ -84,6 +84,7 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="btnAddNew" destination="TWl-jz-vS4" id="bw0-61-Ged"/>
+                <outlet property="btnBack" destination="nC1-je-u0x" id="KFI-Lc-z46"/>
                 <outlet property="heightConstraint" destination="oN7-dA-b1N" id="kFg-wC-dnW"/>
                 <outlet property="vContent" destination="DkK-ce-Em2" id="BFa-fH-AKJ"/>
                 <outlet property="vTitle" destination="sAt-OF-83q" id="d7k-zE-4Qy"/>

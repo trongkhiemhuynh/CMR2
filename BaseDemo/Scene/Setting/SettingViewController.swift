@@ -12,8 +12,6 @@ import RealmSwift
 class SettingViewController: BaseViewController {
 
     override func viewDidLoad() {
-        isHiddenNavigationBar = false
-        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -27,16 +25,26 @@ class SettingViewController: BaseViewController {
     }
     
     override func setupView() {
+        
+        let present = PresenterView.xibInstance()
         let v = MagicCollectionView.xibInstance()
+        
+        view.addSubview(present)
+        present.frame = view.bounds
+        present.vTitle.lblTitle.text = "Settings"
+        present.vContent.addSubview(v)
+        present.hideAddNewBtn(on: true)
+        present.hideBackBtn(on: true)
+        v.frame = present.vContent.bounds
+        
         v.controller = self
-        v.dictData = ["0":["Cached"],"1":["Push Notification","Feedback","Privacy","OCR"],"2":["Log out"]]
-        view.addSubview(v)
-        v.frame = view.frame
+        v.dictData = ["0":["Cached"],"1":["Push Notification","Feedback","Privacy"/*,"OCR"*/],"2":["Log out"]]
+        v.heightCell = 70.0
+        v.heightHeader = 10.0
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        self.title = "Settings"
     }
 
 }
