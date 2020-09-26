@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,14 +32,14 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUH-5J-HYZ" customClass="BASEPager" customModule="BASEBS_CRM" customModuleProvider="target">
-                    <rect key="frame" x="30" y="367" width="315" height="200"/>
+                    <rect key="frame" x="30" y="397" width="315" height="200"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="200" id="2Ly-mu-S2C"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrF-4d-kZe">
-                    <rect key="frame" x="291" y="303" width="54" height="54"/>
+                    <rect key="frame" x="301" y="343" width="54" height="54"/>
                     <state key="normal" image="back"/>
                     <connections>
                         <action selector="onBack" destination="-1" eventType="touchUpInside" id="hI1-ta-sdP"/>
@@ -50,16 +49,16 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="3Fs-Ig-JAu" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="0hZ-3V-BRA"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UrF-4d-kZe" secondAttribute="trailing" constant="30" id="0mb-fM-c4j"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UrF-4d-kZe" secondAttribute="trailing" constant="20" id="0mb-fM-c4j"/>
                 <constraint firstItem="9tn-qw-oDQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="2vr-2f-Ndu"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dUH-5J-HYZ" secondAttribute="bottom" constant="100" id="3fS-qD-OdF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dUH-5J-HYZ" secondAttribute="bottom" constant="70" id="3fS-qD-OdF"/>
                 <constraint firstItem="9tn-qw-oDQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3v5-k5-aEa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9tn-qw-oDQ" secondAttribute="bottom" id="8su-G9-NBA"/>
                 <constraint firstItem="3Fs-Ig-JAu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Bb5-O5-YhC"/>
                 <constraint firstItem="3Fs-Ig-JAu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Pzz-kY-D1G"/>
                 <constraint firstItem="dUH-5J-HYZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QJg-R2-bJq"/>
                 <constraint firstItem="dUH-5J-HYZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="WNJ-p5-mms"/>
-                <constraint firstItem="dUH-5J-HYZ" firstAttribute="top" secondItem="UrF-4d-kZe" secondAttribute="bottom" constant="10" id="Wmz-mW-6WP"/>
+                <constraint firstItem="dUH-5J-HYZ" firstAttribute="top" secondItem="UrF-4d-kZe" secondAttribute="bottom" id="Wmz-mW-6WP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9tn-qw-oDQ" secondAttribute="trailing" id="vuF-K5-b8S"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

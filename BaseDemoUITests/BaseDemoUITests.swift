@@ -27,8 +27,19 @@ class BaseDemoUITests: XCTestCase {
     }
 
     func testExample() {
+        
+        let app = XCUIApplication()
+        app.buttons["Keep me logged in"].tap()
+        app.buttons["LOGIN"].tap()
+        app.buttons["ticket"].tap()
+        app.collectionViews.containing(.other, identifier:"Horizontal scroll bar, 1 page").children(matching: .cell).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.tap()
+        app.collectionViews.children(matching: .cell).element(boundBy: 4).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element(boundBy: 1).children(matching: .textField).element.swipeUp()
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+    func testUI() {
+        
     }
 
 }

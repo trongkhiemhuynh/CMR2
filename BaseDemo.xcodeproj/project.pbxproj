@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -271,14 +271,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4BE6314B24DA9CC000D9133C /* PBXContainerItemProxy */ = {
+		C2042EC6251F2E2E00648C3A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4BE6312E24DA9CBB00D9133C /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 4BE6313524DA9CBB00D9133C;
 			remoteInfo = BaseDemo;
 		};
-		4BE6315624DA9CC000D9133C /* PBXContainerItemProxy */ = {
+		C2042EC8251F2E3500648C3A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4BE6312E24DA9CBB00D9133C /* Project object */;
 			proxyType = 1;
@@ -1532,7 +1532,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				4BE6314C24DA9CC000D9133C /* PBXTargetDependency */,
+				C2042EC7251F2E2E00648C3A /* PBXTargetDependency */,
 			);
 			name = BaseDemoTests;
 			productName = BaseDemoTests;
@@ -1552,7 +1552,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				4BE6315724DA9CC000D9133C /* PBXTargetDependency */,
+				C2042EC9251F2E3500648C3A /* PBXTargetDependency */,
 			);
 			name = BaseDemoUITests;
 			productName = BaseDemoUITests;
@@ -1720,15 +1720,13 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BaseDemo-BaseDemoUITests/Pods-BaseDemo-BaseDemoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BaseDemo-BaseDemoUITests/Pods-BaseDemo-BaseDemoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BaseDemo-BaseDemoUITests/Pods-BaseDemo-BaseDemoUITests-frameworks.sh\"\n";
+			shellScript = "#\"${PODS_ROOT}/Target Support Files/Pods-BaseDemo-BaseDemoUITests/Pods-BaseDemo-BaseDemoUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		223E41CC24F8E2A20064D4C6 /* ShellScript */ = {
@@ -1770,18 +1768,15 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BaseDemo-BaseDemoUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "#diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\n#if [ $? != 0 ] ; then\n    # print error to STDERR\n#    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n#    exit 1\n#fi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\n#echo \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8695470C84A76A292ECC015A /* [CP] Check Pods Manifest.lock */ = {
@@ -1792,18 +1787,15 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BaseDemoTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "#diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\n#if [ $? != 0 ] ; then\n    # print error to STDERR\n#    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n#    exit 1\n#fi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\n#echo \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B79FAD0082A4062570DD02F2 /* [CP] Embed Pods Frameworks */ = {
@@ -2024,15 +2016,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4BE6314C24DA9CC000D9133C /* PBXTargetDependency */ = {
+		C2042EC7251F2E2E00648C3A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4BE6313524DA9CBB00D9133C /* BaseDemo */;
-			targetProxy = 4BE6314B24DA9CC000D9133C /* PBXContainerItemProxy */;
+			targetProxy = C2042EC6251F2E2E00648C3A /* PBXContainerItemProxy */;
 		};
-		4BE6315724DA9CC000D9133C /* PBXTargetDependency */ = {
+		C2042EC9251F2E3500648C3A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4BE6313524DA9CBB00D9133C /* BaseDemo */;
-			targetProxy = 4BE6315624DA9CC000D9133C /* PBXContainerItemProxy */;
+			targetProxy = C2042EC8251F2E3500648C3A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2099,7 +2091,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2154,7 +2146,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -2230,7 +2222,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BaseDemo.app/BaseDemo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BASEBS CRM.app/BaseDemo";
 			};
 			name = Debug;
 		};
@@ -2250,7 +2242,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BaseDemo.app/BaseDemo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BASEBS CRM.app/BaseDemo";
 			};
 			name = Release;
 		};

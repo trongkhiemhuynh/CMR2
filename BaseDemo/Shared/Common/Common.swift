@@ -73,6 +73,13 @@ let sectionInsetsDefault = UIEdgeInsets(top: 8.0,
 let itemsPerRow: CGFloat = 1
 let heightLargeCell : CGFloat = 70
 let heightDefaultCell : CGFloat = 50
+let paddingTop: CGFloat = {
+   return 8
+}()
+
+let heightHeaderProfile: CGFloat = {
+    return 150.0
+}()
 
 public class DayAxisValueFormatter: NSObject, IAxisValueFormatter {
     weak var chart: BarLineChartViewBase?
