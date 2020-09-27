@@ -14,9 +14,9 @@ class ApplicationManager {
     // MARK: - Variable
     static let sharedInstance = ApplicationManager()
     
-    var mainTabbar : MainAppController?
-    var itemMenuSelected : ItemMenu?
-    var templateDashboard : DASHBOARDTYPE = .manager
+    var mainTabbar: MainAppController?
+    var itemMenuSelected: ItemMenu?
+    var templateDashboard: DASHBOARDTYPE = .manager
     
     // Global Date formatter
     lazy var globalDateFormatter: DateFormatter = {

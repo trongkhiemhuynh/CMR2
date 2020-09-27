@@ -17,8 +17,8 @@ public enum MultipartFormDataEncodingError: Error {
     case value(String, name: String)
 }
 
-enum TabMenu : String {
-    case dashboard
+enum TabMenu : Int {
+    case dashboard = 0
     case profile
     case ticket
     case more
@@ -53,7 +53,7 @@ let arrInputTicket = ["Ticket owner", "Ticket ID", "Phone", "Mail", "Priority", 
 
 let arrIcTicket = ["ticketowner","ticket_id", "phone", "mail_ic", "priority", "status", "subject","escalated", "done","date","date","createdby","createdby","description","description","description"]
 
-let arrMenuItems = ["Dashboards","Account","Contact","Ticket"]
+let arrMenuItems = ["Profile","Dashboards","Account","Contact","Ticket"]
 let arrExtends = ["Email","Notes","Tasks","Activity History","Articles","Comments","Attachments","Event","Customer Journey"]
 let arrAccountArrowDown = ["Industry","District","City","Country"]
 let arrContactArrowDown = ["Department"]

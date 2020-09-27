@@ -124,7 +124,7 @@ extension Requestable {
         var urlRequest = URLRequest(url: self.url)
 
         urlRequest.httpMethod = self.httpMethod.rawValue
-        urlRequest.timeoutInterval = TimeInterval(10 * 1000)
+        urlRequest.timeoutInterval = TimeInterval(10)
         
         // Encode param
 //        var request = try! self.parameterEncoding.encode(urlRequest, with: self.param)

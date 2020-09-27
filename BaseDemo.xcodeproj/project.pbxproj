@@ -241,6 +241,8 @@
 		4BE6314F24DA9CC000D9133C /* BaseDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6314E24DA9CC000D9133C /* BaseDemoTests.swift */; };
 		4BE6315A24DA9CC000D9133C /* BaseDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6315924DA9CC000D9133C /* BaseDemoUITests.swift */; };
 		4BE6316924DAA7ED00D9133C /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6316824DAA7ED00D9133C /* SplashViewController.swift */; };
+		C2042ECB251FCA1000648C3A /* GuideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2042ECA251FCA1000648C3A /* GuideController.swift */; };
+		C2042ECD251FCA5C00648C3A /* GuideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2042ECC251FCA5C00648C3A /* GuideCollectionViewCell.swift */; };
 		C22FEA9624FC0E01009D9219 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22FEA9524FC0E01009D9219 /* Constants.swift */; };
 		C22FEA9D24FC1935009D9219 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22FEA9B24FC1935009D9219 /* ProfileViewController.swift */; };
 		C22FEA9E24FC1935009D9219 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C22FEA9C24FC1935009D9219 /* ProfileViewController.xib */; };
@@ -557,6 +559,8 @@
 		4BE6315924DA9CC000D9133C /* BaseDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDemoUITests.swift; sourceTree = "<group>"; };
 		4BE6315B24DA9CC000D9133C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BE6316824DAA7ED00D9133C /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		C2042ECA251FCA1000648C3A /* GuideController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideController.swift; sourceTree = "<group>"; };
+		C2042ECC251FCA5C00648C3A /* GuideCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideCollectionViewCell.swift; sourceTree = "<group>"; };
 		C22FEA9524FC0E01009D9219 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C22FEA9B24FC1935009D9219 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C22FEA9C24FC1935009D9219 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
@@ -1417,6 +1421,8 @@
 				4B28017724ECC2B5007647F8 /* SplashViewController.xib */,
 				4B2D4BFF24DD4B7D00CABF1D /* WelcomeViewController.swift */,
 				4B2D4C0024DD4B7D00CABF1D /* WelcomeViewController.xib */,
+				C2042ECA251FCA1000648C3A /* GuideController.swift */,
+				C2042ECC251FCA5C00648C3A /* GuideCollectionViewCell.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -1870,6 +1876,7 @@
 				4B166C4824EE6A340030C592 /* CustomTicketCollectionViewCell.swift in Sources */,
 				4B166C5024EE7F9A0030C592 /* CustomTicketStageCollectionViewCell.swift in Sources */,
 				4B166C3C24EE5BFB0030C592 /* CustomTitleView.swift in Sources */,
+				C2042ECB251FCA1000648C3A /* GuideController.swift in Sources */,
 				C22FEA9D24FC1935009D9219 /* ProfileViewController.swift in Sources */,
 				4BE6313C24DA9CBB00D9133C /* LoginController.swift in Sources */,
 				C2E857EC24F397A9002960A2 /* TabNavigationMenu.swift in Sources */,
@@ -1931,6 +1938,7 @@
 				4B166C4424EE621E0030C592 /* BaseView.swift in Sources */,
 				225D4E572513231500664D70 /* ArticlesView.swift in Sources */,
 				224346C524FCB38D00CF7AA3 /* TicketObj.swift in Sources */,
+				C2042ECD251FCA5C00648C3A /* GuideCollectionViewCell.swift in Sources */,
 				4BE6313A24DA9CBB00D9133C /* AppDelegate.swift in Sources */,
 				228D5695251C72ED00CE935C /* AddressPagerCollectionViewCell.swift in Sources */,
 				224326EE2507738B005AE588 /* TicketRoute.swift in Sources */,

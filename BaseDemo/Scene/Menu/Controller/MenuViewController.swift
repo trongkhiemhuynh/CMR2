@@ -99,7 +99,7 @@ class MenuViewController: BaseViewController {
 extension MenuViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return arrMenuItems.count + 1
+        return arrMenuItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -110,7 +110,7 @@ extension MenuViewController : UICollectionViewDataSource {
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.identifier, for: indexPath) as! MenuCollectionViewCell
-            let item = arrMenuItems[indexPath.row - 1]
+            let item = arrMenuItems[indexPath.row]
             let nameImage = "menu_\(item.lowercased().replacingOccurrences(of: " ", with: "_"))"
             let image = UIImage(named: nameImage)
             
@@ -140,8 +140,9 @@ extension MenuViewController : UICollectionViewDelegateFlowLayout {
 extension MenuViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        ApplicationManager.sharedInstance.itemMenuSelected = ItemMenu[indexPath.row]
-        let nameItem = arrMenuItems[indexPath.row-1]
-        Logger.debug(nameItem)
+        
+        let nameItem = arrMenuItems[indexPath.row]
+//        Logger.debug(nameItem)
 
         SideMenuManager.default.leftMenuNavigationController?.dismiss(animated: true, completion: {
 //            self.menuSelectedItem.accept(nameItem)

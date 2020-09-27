@@ -178,7 +178,9 @@ extension DashboardController: SideMenuNavigationControllerDelegate {
         } else if vcName == "Contact" {
             RouterManager.shared.handleRouter(ContactRoute())
         } else if vcName == "Ticket" {
-            RouterManager.shared.handleRouter(TicketRoute())
+            ApplicationManager.sharedInstance.mainTabbar?.customTabbar.switchTab(from: TabMenu.dashboard.rawValue, to: TabMenu.ticket.rawValue)
+        } else {
+            ApplicationManager.sharedInstance.mainTabbar?.customTabbar.switchTab(from: TabMenu.dashboard.rawValue, to: TabMenu.profile.rawValue)
         }
     }
 }

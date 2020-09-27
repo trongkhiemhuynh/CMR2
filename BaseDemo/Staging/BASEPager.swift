@@ -42,6 +42,7 @@ class BASEPager: BaseView {
         flowLayout?.scrollDirection = .horizontal
         
         collectionView.backgroundColor = .clear
+        collectionView.isPagingEnabled = true
         collectionView.registerCell(AddressPagerCollectionViewCell.self)
         pagerControl.numberOfPages = arrLocation!.count
         pagerControl.currentPage = 0
