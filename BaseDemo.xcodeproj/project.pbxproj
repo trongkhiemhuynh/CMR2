@@ -243,6 +243,7 @@
 		4BE6316924DAA7ED00D9133C /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6316824DAA7ED00D9133C /* SplashViewController.swift */; };
 		C2042ECB251FCA1000648C3A /* GuideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2042ECA251FCA1000648C3A /* GuideController.swift */; };
 		C2042ECD251FCA5C00648C3A /* GuideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2042ECC251FCA5C00648C3A /* GuideCollectionViewCell.swift */; };
+		C2042ED02520BA7000648C3A /* HTKAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2042ECF2520BA7000648C3A /* HTKAnimation.swift */; };
 		C22FEA9624FC0E01009D9219 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22FEA9524FC0E01009D9219 /* Constants.swift */; };
 		C22FEA9D24FC1935009D9219 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22FEA9B24FC1935009D9219 /* ProfileViewController.swift */; };
 		C22FEA9E24FC1935009D9219 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C22FEA9C24FC1935009D9219 /* ProfileViewController.xib */; };
@@ -561,6 +562,7 @@
 		4BE6316824DAA7ED00D9133C /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		C2042ECA251FCA1000648C3A /* GuideController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideController.swift; sourceTree = "<group>"; };
 		C2042ECC251FCA5C00648C3A /* GuideCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideCollectionViewCell.swift; sourceTree = "<group>"; };
+		C2042ECF2520BA7000648C3A /* HTKAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTKAnimation.swift; sourceTree = "<group>"; };
 		C22FEA9524FC0E01009D9219 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C22FEA9B24FC1935009D9219 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C22FEA9C24FC1935009D9219 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
@@ -1301,6 +1303,7 @@
 		4B2D4BF724DD28C000CABF1D /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				C2042ECE2520BA5300648C3A /* Animation */,
 				226D9341250A0F1600457AD5 /* Resources */,
 				22802DE924FE049200429518 /* FilterView.swift */,
 				22802DEB24FE04A500429518 /* FilterView.xib */,
@@ -1425,6 +1428,14 @@
 				C2042ECC251FCA5C00648C3A /* GuideCollectionViewCell.swift */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		C2042ECE2520BA5300648C3A /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				C2042ECF2520BA7000648C3A /* HTKAnimation.swift */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 		C22FEA9424FC0DA8009D9219 /* Configuration */ = {
@@ -1883,6 +1894,7 @@
 				224346D824FCE0C100CF7AA3 /* ApplicationManager.swift in Sources */,
 				226D9348250A180000457AD5 /* MagicCollectionViewCell.swift in Sources */,
 				222B5FCA24F76CE600419452 /* SaleDashboard.swift in Sources */,
+				C2042ED02520BA7000648C3A /* HTKAnimation.swift in Sources */,
 				228D5688251C50CA00CE935C /* AddressController.swift in Sources */,
 				225D4E4C2513130800664D70 /* ExtendRoute.swift in Sources */,
 				228D568A251C546F00CE935C /* MapView.swift in Sources */,

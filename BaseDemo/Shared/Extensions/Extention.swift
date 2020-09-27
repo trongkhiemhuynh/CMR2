@@ -80,8 +80,13 @@ extension UIViewController {
     }
 }
 
-extension BaseViewController {
-    
+extension UIView {
+    func addConstraint(top: CGFloat, leading: CGFloat, bottom: CGFloat, trailing: CGFloat, superView: UIView) {
+        leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: leading).isActive = true
+        topAnchor.constraint(equalTo: superView.topAnchor, constant: top).isActive = true
+        trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: trailing).isActive = true
+        bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: bottom).isActive = true
+    }
 }
 
 extension UIButton {

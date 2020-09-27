@@ -11,9 +11,58 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 let arrGuide = [0,1,2,3,4]
+let arrInfomation = ["Established in 2005, Base is currently an expert in implementing Call Center & Contact Center with more than 12 years in this industry. Our hosted solutions firstly are affordable for organizations in Vietnam and secondly provides the world’s best customer experience platform. We learn from our clients business operation to provide exceptional customer experiences while meeting key business metrics.", "Base 2", "Base 3", "Base 4", "Base 5"]
+
 
 class GuideController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
+    var indexPathSelected: IndexPath?
+    
+    lazy var btnSkip: UIButton = {
+        let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.backgroundColor = BASEColor.BackgroundExtendColor()
+        btn.layer.cornerRadius = 15
+        btn.setTitle("Skip", for: .normal)
+        btn.setTitleColor(.white, for: .normal)
+        btn.addTarget(self, action: #selector(onSkip), for: .touchUpInside)
+        
+        return btn
+    }()
+    
+    lazy var btnPrevious: UIButton = {
+       let previousBtn = UIButton()
+        previousBtn.translatesAutoresizingMaskIntoConstraints = false
+        previousBtn.backgroundColor = BASEColor.BackgroundExtendColor()
+        previousBtn.layer.cornerRadius = 15
+        previousBtn.setTitle("Previous", for: .normal)
+        previousBtn.setTitleColor(.white, for: .normal)
+        previousBtn.addTarget(self, action: #selector(onPrevious), for: .touchUpInside)
+        return previousBtn
+    }()
+    
+    @objc func onSkip() {
+        Logger.info(self.navigationController)
+        RouterManager.shared.handleRouter(WelcomeRoute())
+    }
+    
+    @objc func onPrevious() {
+        let cell = collectionView.visibleCells.first as? GuideCollectionViewCell
+        
+        guard let c = cell else {
+            return
+        }
+        let indexPath = collectionView.indexPath(for: c)
+        
+        guard let idxPath = indexPath, idxPath.row != 0 else {
+            return
+        }
+        
+        
+        collectionView.scrollToItem(at: IndexPath(row: idxPath.row - 1, section: idxPath.section), at: [.centeredVertically,.centeredHorizontally], animated: true)
+        view.layoutIfNeeded()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,7 +72,20 @@ class GuideController: UICollectionViewController, UICollectionViewDelegateFlowL
         // Register cell classes
         self.collectionView.isPagingEnabled = true
         self.collectionView!.register(GuideCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
+        
+        self.view.addSubview(btnSkip)
+        self.view.addSubview(btnPrevious)
+        
+        btnSkip.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        btnSkip.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+        btnSkip.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        btnSkip.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        btnPrevious.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        btnPrevious.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+        btnPrevious.widthAnchor.constraint(equalToConstant: 90).isActive = true
+        btnPrevious.heightAnchor.constraint(equalToConstant: 30).isActive = true
+//        btnSkip
         // Do any additional setup after loading the view.
     }
 
@@ -51,17 +113,23 @@ class GuideController: UICollectionViewController, UICollectionViewDelegateFlowL
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        
-        cell.backgroundColor = UIColor.red
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GuideCollectionViewCell
+        cell.onUpdate(arrInfomation[indexPath.row])
+        cell.backgroundColor = .white
         // Configure the cell
-    
+        indexPathSelected = indexPath
+        
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: widthScreen - 30, height: heightScreen)
+        return CGSize(width: widthScreen, height: heightScreen)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+
     // MARK: UICollectionViewDelegate
 
     /*
