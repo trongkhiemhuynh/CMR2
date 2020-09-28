@@ -10,13 +10,11 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-let arrGuide = [0,1,2,3,4]
-let arrInfomation = ["Established in 2005, Base is currently an expert in implementing Call Center & Contact Center with more than 12 years in this industry. Our hosted solutions firstly are affordable for organizations in Vietnam and secondly provides the world’s best customer experience platform. We learn from our clients business operation to provide exceptional customer experiences while meeting key business metrics.", "Base 2", "Base 3", "Base 4", "Base 5"]
-
+let arrGuide = ["guide0","guide1","guide2","guide3"]
 
 class GuideController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
-    var indexPathSelected: IndexPath?
+//    var indexPathSelected: IndexPath?
     
     lazy var btnSkip: UIButton = {
         let btn = UIButton()
@@ -41,8 +39,17 @@ class GuideController: UICollectionViewController, UICollectionViewDelegateFlowL
         return previousBtn
     }()
     
+    lazy var pagerControl: UIPageControl = {
+       let pc = UIPageControl()
+        pc.numberOfPages = arrGuide.count
+        pc.tintColor = .white
+        pc.currentPageIndicatorTintColor = .black
+        pc.translatesAutoresizingMaskIntoConstraints = false
+        return pc
+    }()
+    
     @objc func onSkip() {
-        Logger.info(self.navigationController)
+//        Logger.info(self.navigationController)
         RouterManager.shared.handleRouter(WelcomeRoute())
     }
     
@@ -66,27 +73,33 @@ class GuideController: UICollectionViewController, UICollectionViewDelegateFlowL
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
+        setupLayout()
+    }
+    
+    func setupLayout() {
+        self.collectionView.backgroundColor = .white
         self.collectionView.isPagingEnabled = true
         self.collectionView!.register(GuideCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView.showsHorizontalScrollIndicator = false
         
         self.view.addSubview(btnSkip)
         self.view.addSubview(btnPrevious)
+        self.view.addSubview(pagerControl)
         
         btnSkip.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        btnSkip.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+        btnSkip.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
         btnSkip.widthAnchor.constraint(equalToConstant: 70).isActive = true
         btnSkip.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         btnPrevious.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        btnPrevious.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+        btnPrevious.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
         btnPrevious.widthAnchor.constraint(equalToConstant: 90).isActive = true
         btnPrevious.heightAnchor.constraint(equalToConstant: 30).isActive = true
-//        btnSkip
-        // Do any additional setup after loading the view.
+        
+        pagerControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        pagerControl.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
+        pagerControl.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        pagerControl.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
 
     /*
@@ -111,19 +124,28 @@ class GuideController: UICollectionViewController, UICollectionViewDelegateFlowL
         // #warning Incomplete implementation, return the number of items
         return arrGuide.count
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let cell = cell as! GuideCollectionViewCell
+        cell.onUpdate(arrGuide[indexPath.row])
+        pagerControl.currentPage = indexPath.row
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+    }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GuideCollectionViewCell
-        cell.onUpdate(arrInfomation[indexPath.row])
         cell.backgroundColor = .white
         // Configure the cell
-        indexPathSelected = indexPath
+//        indexPathSelected = indexPath
         
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: widthScreen, height: heightScreen)
+        return CGSize(width: widthScreen, height: heightScreen - heightTabbar)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

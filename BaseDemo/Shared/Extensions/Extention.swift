@@ -82,9 +82,9 @@ extension UIViewController {
 
 extension UIView {
     func addConstraint(top: CGFloat, leading: CGFloat, bottom: CGFloat, trailing: CGFloat, superView: UIView) {
-        leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: leading).isActive = true
+        leftAnchor.constraint(equalTo: superView.leftAnchor, constant: leading).isActive = true
         topAnchor.constraint(equalTo: superView.topAnchor, constant: top).isActive = true
-        trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: trailing).isActive = true
+        rightAnchor.constraint(equalTo: superView.rightAnchor, constant: trailing).isActive = true
         bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: bottom).isActive = true
     }
 }

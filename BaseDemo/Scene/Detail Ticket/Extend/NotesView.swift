@@ -78,7 +78,7 @@ extension UIViewController: PresenterViewOutput {
         let vc = UIViewController()
         let presenter = PresenterView.xibInstance()
         let creatNote = CreatNewNote.xibInstance()
-        creatNote.vTitle.isHidden = true
+        presenter.vTitle.isHidden = true
         creatNote.hideSave()
         creatNote.hideBack()
         vc.view.addSubview(presenter)

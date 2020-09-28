@@ -11,7 +11,7 @@ import Charts
 
 protocol DBSaleChart {
     func setupPieChartView(chartView : PieChartView)
-    func setPieDataCount(_ items : Array<Int>)
+    func setPieDataCount(_ items : Array<Double>)
 }
 
 class ManagerDashboard: BaseView {
@@ -98,9 +98,11 @@ class ManagerDashboard: BaseView {
         chartView.maxVisibleCount = 7
         chartView.pinchZoomEnabled = false
         chartView.drawBarShadowEnabled = false
+        chartView.pinchZoomEnabled = false
         
         let xAxis = chartView.xAxis
         xAxis.labelPosition = .bottom
+        xAxis.valueFormatter = DayWeekAxisValueFormatter(chart: chartView)
                 
         chartView.legend.enabled = false
         
@@ -142,6 +144,8 @@ class ManagerDashboard: BaseView {
             let data = BarChartData(dataSet: set1)
             chartView.data = data
             chartView.fitBars = true
+            
+            Logger.info(set1)
         }
         
         chartView.setNeedsDisplay()
@@ -149,6 +153,7 @@ class ManagerDashboard: BaseView {
 }
 
 extension ManagerDashboard : DBSaleChart {
+    
     func setupPieChartView(chartView: PieChartView) {
         
         chartView.usePercentValuesEnabled = true
@@ -164,15 +169,15 @@ extension ManagerDashboard : DBSaleChart {
         paragraphStyle.lineBreakMode = .byTruncatingTail
         paragraphStyle.alignment = .center
         
-        let items = [10, 20, 30, 40, 50, 60, 70]
-
-        var saleCounts : Int = 0
+        let items = [254.82, 112.28, 3095.13, 482.88, 1444.96]
+        
+        var saleCounts: Double = 0
         
         items.forEach { (val) in
             saleCounts += val
         }
         
-        let centerText = NSMutableAttributedString(string: "\(saleCounts) Sales")
+        let centerText = NSMutableAttributedString(string: "\(saleCounts) stocks")
         
         centerText.setAttributes([.font : UIFont(name: "HelveticaNeue-Light", size: 7)!,
                                   .paragraphStyle : paragraphStyle], range: NSRange(location: 0, length: centerText.length))
@@ -203,20 +208,19 @@ extension ManagerDashboard : DBSaleChart {
         setPieDataCount(items)
     }
     
-    func setPieDataCount(_ items : Array<Int>) {
-
+    func setPieDataCount(_ items : Array<Double>) {
+        let company = ["Facebook","Apple","Amazon","Netflix","Google"]
         
         let entries = (0..<items.count).map { (i) -> PieChartDataEntry in
             // IMPORTANT: In a PieChart, no values (Entry) should have the same xIndex (even if from different DataSets), since no values can be drawn above each other.
             return PieChartDataEntry(value: Double(items[i]),
-                                     label: "Bank \(i)",
-                                     icon: #imageLiteral(resourceName: "menu_dashboards"))
+                                     label: company[i],
+                                     icon: nil)
         }
         
         let set = PieChartDataSet(entries: entries)
         set.drawIconsEnabled = false
         set.sliceSpace = 1
-        
         
         set.colors = ChartColorTemplates.vordiplom()
             + ChartColorTemplates.joyful()
@@ -248,4 +252,17 @@ extension ManagerDashboard : DBSaleChart {
 
 extension ManagerDashboard : XibInitalization {
     typealias Element = ManagerDashboard
+}
+
+class DayWeekAxisValueFormatter: NSObject, IAxisValueFormatter {
+    weak var chart: BarLineChartViewBase?
+    let date = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+    
+    init(chart: BarLineChartViewBase) {
+        self.chart = chart
+    }
+    
+    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        return date[Int(value)]
+    }
 }
