@@ -36,7 +36,7 @@ class ContactDetailController: BaseViewController {
         
         subView.collectionView.register(AccountReusableView.xib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AccountReusableView.identifier)
 
-        subView.heightHeader = 150.0
+        subView.heightHeader = heightHeaderProfile
         subView.heightCell = 70.0
         subView.magicDatasource.type = .contact_detail
         subView.delegateAddSubView = self

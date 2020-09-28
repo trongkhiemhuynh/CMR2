@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -241,6 +241,9 @@
 		4BE6314F24DA9CC000D9133C /* BaseDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6314E24DA9CC000D9133C /* BaseDemoTests.swift */; };
 		4BE6315A24DA9CC000D9133C /* BaseDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6315924DA9CC000D9133C /* BaseDemoUITests.swift */; };
 		4BE6316924DAA7ED00D9133C /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6316824DAA7ED00D9133C /* SplashViewController.swift */; };
+		C2042ECB251FCA1000648C3A /* GuideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2042ECA251FCA1000648C3A /* GuideController.swift */; };
+		C2042ECD251FCA5C00648C3A /* GuideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2042ECC251FCA5C00648C3A /* GuideCollectionViewCell.swift */; };
+		C2042ED02520BA7000648C3A /* HTKAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2042ECF2520BA7000648C3A /* HTKAnimation.swift */; };
 		C22FEA9624FC0E01009D9219 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22FEA9524FC0E01009D9219 /* Constants.swift */; };
 		C22FEA9D24FC1935009D9219 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22FEA9B24FC1935009D9219 /* ProfileViewController.swift */; };
 		C22FEA9E24FC1935009D9219 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C22FEA9C24FC1935009D9219 /* ProfileViewController.xib */; };
@@ -271,14 +274,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4BE6314B24DA9CC000D9133C /* PBXContainerItemProxy */ = {
+		C2042EC6251F2E2E00648C3A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4BE6312E24DA9CBB00D9133C /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 4BE6313524DA9CBB00D9133C;
 			remoteInfo = BaseDemo;
 		};
-		4BE6315624DA9CC000D9133C /* PBXContainerItemProxy */ = {
+		C2042EC8251F2E3500648C3A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4BE6312E24DA9CBB00D9133C /* Project object */;
 			proxyType = 1;
@@ -557,6 +560,9 @@
 		4BE6315924DA9CC000D9133C /* BaseDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDemoUITests.swift; sourceTree = "<group>"; };
 		4BE6315B24DA9CC000D9133C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BE6316824DAA7ED00D9133C /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		C2042ECA251FCA1000648C3A /* GuideController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideController.swift; sourceTree = "<group>"; };
+		C2042ECC251FCA5C00648C3A /* GuideCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideCollectionViewCell.swift; sourceTree = "<group>"; };
+		C2042ECF2520BA7000648C3A /* HTKAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTKAnimation.swift; sourceTree = "<group>"; };
 		C22FEA9524FC0E01009D9219 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C22FEA9B24FC1935009D9219 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C22FEA9C24FC1935009D9219 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
@@ -1297,6 +1303,7 @@
 		4B2D4BF724DD28C000CABF1D /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				C2042ECE2520BA5300648C3A /* Animation */,
 				226D9341250A0F1600457AD5 /* Resources */,
 				22802DE924FE049200429518 /* FilterView.swift */,
 				22802DEB24FE04A500429518 /* FilterView.xib */,
@@ -1417,8 +1424,18 @@
 				4B28017724ECC2B5007647F8 /* SplashViewController.xib */,
 				4B2D4BFF24DD4B7D00CABF1D /* WelcomeViewController.swift */,
 				4B2D4C0024DD4B7D00CABF1D /* WelcomeViewController.xib */,
+				C2042ECA251FCA1000648C3A /* GuideController.swift */,
+				C2042ECC251FCA5C00648C3A /* GuideCollectionViewCell.swift */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		C2042ECE2520BA5300648C3A /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				C2042ECF2520BA7000648C3A /* HTKAnimation.swift */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 		C22FEA9424FC0DA8009D9219 /* Configuration */ = {
@@ -1532,7 +1549,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				4BE6314C24DA9CC000D9133C /* PBXTargetDependency */,
+				C2042EC7251F2E2E00648C3A /* PBXTargetDependency */,
 			);
 			name = BaseDemoTests;
 			productName = BaseDemoTests;
@@ -1552,7 +1569,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				4BE6315724DA9CC000D9133C /* PBXTargetDependency */,
+				C2042EC9251F2E3500648C3A /* PBXTargetDependency */,
 			);
 			name = BaseDemoUITests;
 			productName = BaseDemoUITests;
@@ -1720,15 +1737,13 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BaseDemo-BaseDemoUITests/Pods-BaseDemo-BaseDemoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BaseDemo-BaseDemoUITests/Pods-BaseDemo-BaseDemoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BaseDemo-BaseDemoUITests/Pods-BaseDemo-BaseDemoUITests-frameworks.sh\"\n";
+			shellScript = "#\"${PODS_ROOT}/Target Support Files/Pods-BaseDemo-BaseDemoUITests/Pods-BaseDemo-BaseDemoUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		223E41CC24F8E2A20064D4C6 /* ShellScript */ = {
@@ -1770,18 +1785,15 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BaseDemo-BaseDemoUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "#diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\n#if [ $? != 0 ] ; then\n    # print error to STDERR\n#    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n#    exit 1\n#fi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\n#echo \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8695470C84A76A292ECC015A /* [CP] Check Pods Manifest.lock */ = {
@@ -1792,18 +1804,15 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BaseDemoTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "#diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\n#if [ $? != 0 ] ; then\n    # print error to STDERR\n#    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n#    exit 1\n#fi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\n#echo \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B79FAD0082A4062570DD02F2 /* [CP] Embed Pods Frameworks */ = {
@@ -1878,12 +1887,14 @@
 				4B166C4824EE6A340030C592 /* CustomTicketCollectionViewCell.swift in Sources */,
 				4B166C5024EE7F9A0030C592 /* CustomTicketStageCollectionViewCell.swift in Sources */,
 				4B166C3C24EE5BFB0030C592 /* CustomTitleView.swift in Sources */,
+				C2042ECB251FCA1000648C3A /* GuideController.swift in Sources */,
 				C22FEA9D24FC1935009D9219 /* ProfileViewController.swift in Sources */,
 				4BE6313C24DA9CBB00D9133C /* LoginController.swift in Sources */,
 				C2E857EC24F397A9002960A2 /* TabNavigationMenu.swift in Sources */,
 				224346D824FCE0C100CF7AA3 /* ApplicationManager.swift in Sources */,
 				226D9348250A180000457AD5 /* MagicCollectionViewCell.swift in Sources */,
 				222B5FCA24F76CE600419452 /* SaleDashboard.swift in Sources */,
+				C2042ED02520BA7000648C3A /* HTKAnimation.swift in Sources */,
 				228D5688251C50CA00CE935C /* AddressController.swift in Sources */,
 				225D4E4C2513130800664D70 /* ExtendRoute.swift in Sources */,
 				228D568A251C546F00CE935C /* MapView.swift in Sources */,
@@ -1939,6 +1950,7 @@
 				4B166C4424EE621E0030C592 /* BaseView.swift in Sources */,
 				225D4E572513231500664D70 /* ArticlesView.swift in Sources */,
 				224346C524FCB38D00CF7AA3 /* TicketObj.swift in Sources */,
+				C2042ECD251FCA5C00648C3A /* GuideCollectionViewCell.swift in Sources */,
 				4BE6313A24DA9CBB00D9133C /* AppDelegate.swift in Sources */,
 				228D5695251C72ED00CE935C /* AddressPagerCollectionViewCell.swift in Sources */,
 				224326EE2507738B005AE588 /* TicketRoute.swift in Sources */,
@@ -2024,15 +2036,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4BE6314C24DA9CC000D9133C /* PBXTargetDependency */ = {
+		C2042EC7251F2E2E00648C3A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4BE6313524DA9CBB00D9133C /* BaseDemo */;
-			targetProxy = 4BE6314B24DA9CC000D9133C /* PBXContainerItemProxy */;
+			targetProxy = C2042EC6251F2E2E00648C3A /* PBXContainerItemProxy */;
 		};
-		4BE6315724DA9CC000D9133C /* PBXTargetDependency */ = {
+		C2042EC9251F2E3500648C3A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4BE6313524DA9CBB00D9133C /* BaseDemo */;
-			targetProxy = 4BE6315624DA9CC000D9133C /* PBXContainerItemProxy */;
+			targetProxy = C2042EC8251F2E3500648C3A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2099,7 +2111,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2154,7 +2166,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -2230,7 +2242,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BaseDemo.app/BaseDemo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BASEBS CRM.app/BaseDemo";
 			};
 			name = Debug;
 		};
@@ -2250,7 +2262,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BaseDemo.app/BaseDemo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BASEBS CRM.app/BaseDemo";
 			};
 			name = Release;
 		};

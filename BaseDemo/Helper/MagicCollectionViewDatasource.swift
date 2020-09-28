@@ -146,7 +146,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             headerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTapHeader)))
             
             return headerView
-        } else if type == .account {
+        } else if type == .account || type == .contact_detail {
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AccountReusableView.identifier, for: indexPath) as! AccountReusableView
             
             return headerView

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import BaseDemo
+@testable import BASEBS_CRM
 
 class BaseDemoTests: XCTestCase {
 

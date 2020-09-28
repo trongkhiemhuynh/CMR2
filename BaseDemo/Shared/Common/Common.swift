@@ -17,8 +17,8 @@ public enum MultipartFormDataEncodingError: Error {
     case value(String, name: String)
 }
 
-enum TabMenu : String {
-    case dashboard
+enum TabMenu : Int {
+    case dashboard = 0
     case profile
     case ticket
     case more
@@ -53,7 +53,7 @@ let arrInputTicket = ["Ticket owner", "Ticket ID", "Phone", "Mail", "Priority", 
 
 let arrIcTicket = ["ticketowner","ticket_id", "phone", "mail_ic", "priority", "status", "subject","escalated", "done","date","date","createdby","createdby","description","description","description"]
 
-let arrMenuItems = ["Dashboards","Account","Contact","Ticket"]
+let arrMenuItems = ["Profile","Dashboards","Account","Contact","Ticket"]
 let arrExtends = ["Email","Notes","Tasks","Activity History","Articles","Comments","Attachments","Event","Customer Journey"]
 let arrAccountArrowDown = ["Industry","District","City","Country"]
 let arrContactArrowDown = ["Department"]
@@ -73,6 +73,13 @@ let sectionInsetsDefault = UIEdgeInsets(top: 8.0,
 let itemsPerRow: CGFloat = 1
 let heightLargeCell : CGFloat = 70
 let heightDefaultCell : CGFloat = 50
+let paddingTop: CGFloat = {
+   return 8
+}()
+
+let heightHeaderProfile: CGFloat = {
+    return 150.0
+}()
 
 public class DayAxisValueFormatter: NSObject, IAxisValueFormatter {
     weak var chart: BarLineChartViewBase?

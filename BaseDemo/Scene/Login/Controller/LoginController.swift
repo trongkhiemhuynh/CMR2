@@ -94,10 +94,15 @@ extension LoginController : LoginPresenterOutput {
 //
 //        BaseQueueAlert.shared.addOperation(operations: [op])
         // router to main
-        let routerManager = RouterManager.shared
-        let routeWelcome = WelcomeRoute()
-        
-        routerManager.handleRouter(routeWelcome)
+//        let routerManager = RouterManager.shared
+//        let routeWelcome = WelcomeRoute()
+//
+//        routerManager.handleRouter(routeWelcome)
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+        let vc = GuideController(collectionViewLayout: flowLayout)
+        present(vc, animated: true, completion: nil)
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func presentError(_ error: Error) {
@@ -139,7 +144,7 @@ extension LoginController: UITextFieldDelegate {
             return false
         }
         
-        if user.isEmpty && pass.isEmpty && !user.isValidEmail() {
+        if user.isEmpty || pass.isEmpty || !user.isValidEmail() {
             return false
         }
         
