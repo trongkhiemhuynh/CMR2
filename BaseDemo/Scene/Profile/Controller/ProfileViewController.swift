@@ -27,7 +27,7 @@ class ProfileViewController: BaseViewController {
         let v = MagicCollectionView.xibInstance()
         v.controller = self
         v.dictData = ["0":["profile"]]
-        v.magicDatasource.type = .profile
+        v.viewType = .profile
         v.heightHeader = heightHeader
         v.heightCell = heightCell
         

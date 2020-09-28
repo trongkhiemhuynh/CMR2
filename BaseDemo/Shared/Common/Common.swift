@@ -74,11 +74,15 @@ let itemsPerRow: CGFloat = 1
 let heightLargeCell : CGFloat = 70
 let heightDefaultCell : CGFloat = 50
 let paddingTop: CGFloat = {
-   return 8
+    return 8.0
 }()
 
 let heightHeaderProfile: CGFloat = {
     return 150.0
+}()
+
+let heightHeaderDefault: CGFloat = {
+    return 8.0
 }()
 
 public class DayAxisValueFormatter: NSObject, IAxisValueFormatter {

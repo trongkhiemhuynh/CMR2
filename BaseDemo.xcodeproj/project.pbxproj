@@ -130,6 +130,7 @@
 		2270237224F8AECB002C06AC /* Storyboard+Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2270237124F8AECB002C06AC /* Storyboard+Initialization.swift */; };
 		2270237424F8AEDA002C06AC /* Xib+Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2270237324F8AEDA002C06AC /* Xib+Initialization.swift */; };
 		2270237624F8AEF5002C06AC /* BaseAbility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2270237524F8AEF5002C06AC /* BaseAbility.swift */; };
+		22748DF125218C1C00599DD5 /* NotesDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22748DF025218C1C00599DD5 /* NotesDetailView.xib */; };
 		22802DEA24FE049200429518 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22802DE924FE049200429518 /* FilterView.swift */; };
 		22802DEC24FE04A500429518 /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22802DEB24FE04A500429518 /* FilterView.xib */; };
 		22802DEE24FE0D9200429518 /* FSCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22802DED24FE0D9200429518 /* FSCalendar.framework */; };
@@ -438,6 +439,7 @@
 		2270237124F8AECB002C06AC /* Storyboard+Initialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Initialization.swift"; sourceTree = "<group>"; };
 		2270237324F8AEDA002C06AC /* Xib+Initialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Xib+Initialization.swift"; sourceTree = "<group>"; };
 		2270237524F8AEF5002C06AC /* BaseAbility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAbility.swift; sourceTree = "<group>"; };
+		22748DF025218C1C00599DD5 /* NotesDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesDetailView.xib; sourceTree = "<group>"; };
 		22802DE924FE049200429518 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		22802DEB24FE04A500429518 /* FilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterView.xib; sourceTree = "<group>"; };
 		22802DED24FE0D9200429518 /* FSCalendar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FSCalendar.framework; path = Carthage/Build/iOS/FSCalendar.framework; sourceTree = "<group>"; };
@@ -985,6 +987,7 @@
 				228D567D251C4B5E00CE935C /* NotesDetailView.swift */,
 				228D567F251C4CCF00CE935C /* TaskDetailController.swift */,
 				228D5680251C4CCF00CE935C /* TaskDetailController.xib */,
+				22748DF025218C1C00599DD5 /* NotesDetailView.xib */,
 			);
 			path = Extend;
 			sourceTree = "<group>";
@@ -1667,6 +1670,7 @@
 				226D9349250A180000457AD5 /* MagicCollectionViewCell.xib in Resources */,
 				C2E857F024F39CF6002960A2 /* TabbarItem.xib in Resources */,
 				228D56682519E32800CE935C /* NewChildController.xib in Resources */,
+				22748DF125218C1C00599DD5 /* NotesDetailView.xib in Resources */,
 				223EF1F5250F604F00C076BF /* OCRController.xib in Resources */,
 				228D5685251C4E2D00CE935C /* CustomDetailActionView.xib in Resources */,
 				225D4E4A25130D4200664D70 /* NoteController.xib in Resources */,

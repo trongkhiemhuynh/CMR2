@@ -52,9 +52,8 @@ class BASEPager: BaseView {
 }
 
 extension BASEPager: BaseViewOutput {
-    func didAddNew() {
-        //FIXME detect current pager
-        self.delegateAddSubView?.didAddNew()
+    func didAddNew(type: String) {
+        self.delegateAddSubView?.didAddNew(type: "pager")
     }
 }
 

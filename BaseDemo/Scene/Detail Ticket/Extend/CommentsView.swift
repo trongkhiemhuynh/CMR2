@@ -22,7 +22,7 @@ class CommentsView: BaseView {
         
         vMagic.frame = presenter.vContent.bounds
         vMagic.dictData = ["0":["Comments 1","Comments 2","Comments 3","Comments 4","Comments 5","Comments 6"]]
-        vMagic.magicDatasource.type = .extend
+        vMagic.viewType = .extend
 
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
     }

@@ -49,7 +49,7 @@ class LogCallView: BaseView {
         v.controller = controller
         v.heightCell = 70
         v.heightHeader = 10
-        v.magicDatasource.type = .logcall
+        v.viewType = .logcall
         
         v.collectionView.registerCell(LogCallViewCell.self)
     }

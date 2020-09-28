@@ -42,7 +42,7 @@ class AccountController: BaseViewController {
 
         subView.heightHeader = heightHeaderProfile
         subView.heightCell = heightLargeCell
-        subView.magicDatasource.type = .account
+        subView.viewType = .account
         subView.delegateAddSubView = self
         present.vContent.addSubview(subView)
         subView.frame = present.vContent.bounds
@@ -55,7 +55,7 @@ extension AccountController: XibInitalization {
 }
 
 extension AccountController: BaseViewOutput {
-    func didAddNew() {
+    func didAddNew(type: String) {
         
     }
     

@@ -28,8 +28,8 @@ class TasksView: BaseView {
     }
     
     private func setupView() {
-        let vMagic = MagicCollectionView.xibInstance()
         let presenter = getPresenterView(title: "Tasks", isAddNew: true)
+        let vMagic = MagicCollectionView.xibInstance()
         self.addSubview(presenter)
         presenter.vContent.addSubview(vMagic)
         presenter.delegate = self
@@ -37,9 +37,11 @@ class TasksView: BaseView {
         
         vMagic.frame = presenter.vContent.bounds
         vMagic.dictData = ["0":["Task1","Task2","Task3","Task4","Task5","Task6"]]
-        vMagic.magicDatasource.type = .extend
+        vMagic.viewType = .extend
         vMagic.controller = controller
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
+        vMagic.heightHeader = heightHeaderDefault
+        vMagic.heightCell = heightLargeCell
     }
 }
 
@@ -49,6 +51,6 @@ extension TasksView: XibInitalization {
 
 extension TasksView: PresenterViewOutput {
     func onAddNew() {
-        delegateAddSubView?.didAddNew()
+        delegateAddSubView?.didAddNew(type: "tasks")
     }
 }

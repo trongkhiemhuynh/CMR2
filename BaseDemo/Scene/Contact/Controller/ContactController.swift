@@ -29,7 +29,7 @@ class ContactController: BaseViewController {
         //account cell
         subView.heightHeader = 4.0
         subView.heightCell = 70.0
-        subView.magicDatasource.type = .contact
+        subView.viewType = .contact
         subView.collectionView.registerCell(LogCallViewCell.self)
 //        subView.delegateAddSubView = self
         present.vContent.addSubview(subView)

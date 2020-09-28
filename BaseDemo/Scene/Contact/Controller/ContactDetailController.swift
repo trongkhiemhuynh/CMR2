@@ -38,7 +38,7 @@ class ContactDetailController: BaseViewController {
 
         subView.heightHeader = heightHeaderProfile
         subView.heightCell = 70.0
-        subView.magicDatasource.type = .contact_detail
+        subView.viewType = .contact_detail
         subView.delegateAddSubView = self
         present.vContent.addSubview(subView)
         subView.frame = present.vContent.bounds
@@ -51,7 +51,7 @@ extension ContactDetailController: XibInitalization {
 }
 
 extension ContactDetailController: BaseViewOutput {
-    func didAddNew() {
+    func didAddNew(type: String) {
         
     }
     

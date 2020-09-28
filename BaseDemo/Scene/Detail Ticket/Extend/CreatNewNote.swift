@@ -18,6 +18,9 @@ class CreatNewNote: BaseView {
     @IBOutlet weak var btnItalic : UIButton!
     @IBOutlet weak var btnBold : UIButton!
     
+    @IBOutlet weak var btnSave: UIButton!
+    @IBOutlet weak var btnBack: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         tf.placeholder = "Typing..."
@@ -48,6 +51,14 @@ class CreatNewNote: BaseView {
     
     @IBAction func didUnderline() {
         
+    }
+    
+    public func hideBack() {
+        btnBack.isHidden = true
+    }
+    
+    public func hideSave() {
+        btnSave.isHidden = true
     }
 }
 

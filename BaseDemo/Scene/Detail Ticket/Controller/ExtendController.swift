@@ -88,9 +88,13 @@ extension ExtendController: XibInitalization {
 }
 
 extension ExtendController: BaseViewOutput {
-    func didAddNew() {
-        let creatNote = CreatNewNote.xibInstance()
-        view.addSubview(creatNote)
-        creatNote.frame = view.bounds
+    func didAddNew(type: String) {
+        if type == "notes" {
+            let creatNote = CreatNewNote.xibInstance()
+            view.addSubview(creatNote)
+            creatNote.frame = view.bounds
+        } else {
+            
+        }
     }
 }

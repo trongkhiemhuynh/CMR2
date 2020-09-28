@@ -11,15 +11,15 @@ import RealmSwift
 
 class MagicCollectionView: BaseView {
     // variable
-    public let magicDatasource: MagicCollectionViewDatasource = MagicCollectionViewDatasource()
-    public let magicDelegate: MagicCollectionViewDelegate = MagicCollectionViewDelegate()
+    private let magicDatasource: MagicCollectionViewDatasource = MagicCollectionViewDatasource()
+    private let magicDelegate: MagicCollectionViewDelegate = MagicCollectionViewDelegate()
     public var numberSection: Int? = 1
     public var dictData: Dictionary<String, Any>?
     
     public var heightCell: CGFloat = 0 // default heightCell
     public var heightHeader: CGFloat = 0
     public var itemsPerRow: CGFloat = 1
-    
+    public var viewType: MAGIC_VIEW_TYPE = .setting
     public var arrCells: [MagicCollectionViewCell]?
     
     public var scrollDirection: UICollectionView.ScrollDirection = .vertical
@@ -32,7 +32,10 @@ class MagicCollectionView: BaseView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+        setupLayout()
+    }
+    
+    func setupLayout() {
         if isClearBackground {
             self.collectionView.backgroundColor = .clear
             self.backgroundColor = .clear
@@ -46,6 +49,7 @@ class MagicCollectionView: BaseView {
         
         magicDatasource.dictData = dictData
         magicDatasource.arrCells = arrCells
+        magicDatasource.type = viewType
         magicDelegate.heightCell = heightCell
         magicDelegate.itemsPerRow = itemsPerRow
         
@@ -95,13 +99,12 @@ extension MagicCollectionView : MagicCollectionViewDelegateOutput {
         } else if controller!.isKind(of: AccountController.self) || controller!.isKind(of: ContactDetailController.self) {
             //deleate to superview
             let cell = collectionView.cellForItem(at: indexPath) as? AccountCollectionViewCell
-            
             delegateAddSubView?.didAddPicklist!(v: cell)
         } else {
-//            Logger.info(controller?.nibName)
-            delegateAddSubView?.didAddNew()
+            delegateAddSubView?.didAddNew(type: "magic")
             delegateAddSubView?.onDetailView?()
         }
+        
     }
 }
 

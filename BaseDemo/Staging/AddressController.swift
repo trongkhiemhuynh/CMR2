@@ -54,10 +54,8 @@ extension AddressController: XibInitalization {
 }
 
 extension AddressController: BaseViewOutput {
-    func didAddNew() {
-        //change pager view
-//        delegate?.changeLocation(BASEBS_HN_LOCATION)
-//        vMap.onUpdateLocation(BASEBS_HN_LOCATION)
+    func didAddNew(type: String) {
+        
     }
 }
 

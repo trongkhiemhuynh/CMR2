@@ -11,3 +11,7 @@ import UIKit
 class NotesDetailView: BaseView {
 
 }
+
+extension NotesDetailView: XibInitalization {
+    typealias Element = NotesDetailView
+}

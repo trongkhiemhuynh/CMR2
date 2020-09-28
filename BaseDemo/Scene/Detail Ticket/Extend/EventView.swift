@@ -23,7 +23,11 @@ class EventView: BaseView {
         
         vMagic.frame = presenter.vContent.bounds
         vMagic.dictData = ["0":["Events","Events","Events","Events","Events","Events"]]
-        vMagic.magicDatasource.type = .extend
+        vMagic.viewType = .extend
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
+        vMagic.heightCell = heightTabbar
+        vMagic.heightHeader = heightHeaderDefault
+        
+//        presenter.delegate = controller
     }
 }

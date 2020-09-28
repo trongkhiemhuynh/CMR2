@@ -32,8 +32,7 @@ class ActivitiesView: BaseView {
         
         vMagic.frame = presenter.vContent.bounds
         vMagic.dictData = ["0":["Football","Tennis","Chess","Reading books","Listen music"]]
-        vMagic.magicDatasource.type = .extend
-
+        vMagic.viewType = .extend
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
     }
 }

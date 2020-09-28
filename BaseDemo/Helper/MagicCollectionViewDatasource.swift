@@ -30,9 +30,9 @@ enum MAGIC_VIEW_TYPE {
 class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
     //variable
     public var dictData: Dictionary<String, Any>?
-    public var arrCells : [UICollectionViewCell]?
-    private var arrData : Array<String>?
-    public var type : MAGIC_VIEW_TYPE = .setting
+    public var arrCells: [UICollectionViewCell]?
+    private var arrData: Array<String>?
+    public var type: MAGIC_VIEW_TYPE = .setting
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         Logger.info(dictData?.keys)
@@ -92,7 +92,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             let title = arr[indexPath.row]
             cell.lblTitle.text = title
             cell.lblTime.text = "Thu Sep 17, 14:52"
-            cell.lblDescription.isHidden = true
+            cell.lblDescription.text = ""
             
             return cell
         } else if type == .customer_journey {
@@ -118,7 +118,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             cell.lblTitle.text = title
             cell.iv.image = UIImage(named: "ex_notes")
             cell.lblTime.text = ApplicationManager.sharedInstance.defaultDateFormatter.string(from: Date())
-            cell.lblDescription.isHidden = true
+            cell.lblDescription.text = ""
             
             return cell
         } else if type == .logcall {
