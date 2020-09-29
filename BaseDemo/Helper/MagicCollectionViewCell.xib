@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MagicCollectionViewCell" customModule="BaseDemo" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MagicCollectionViewCell" customModule="BASEBS_CRM" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="363" height="70"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -75,6 +74,11 @@
                             <constraint firstItem="kVS-ib-lo0" firstAttribute="top" secondItem="OV1-sr-bPJ" secondAttribute="top" id="Rwc-Jc-Zp5"/>
                             <constraint firstAttribute="bottom" secondItem="kVS-ib-lo0" secondAttribute="bottom" id="tbi-WL-NAG"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>
@@ -90,6 +94,7 @@
                 <outlet property="icRight" destination="fU6-VO-BC9" id="opb-Jd-rjC"/>
                 <outlet property="img" destination="edg-Wf-x4G" id="usk-3f-jQn"/>
                 <outlet property="title" destination="yPV-YU-JkL" id="Wx0-uo-Odf"/>
+                <outlet property="vBound" destination="OV1-sr-bPJ" id="ERX-7S-ELc"/>
                 <outlet property="vImg" destination="xD2-bc-8xO" id="Z33-SI-k3Q"/>
             </connections>
             <point key="canvasLocation" x="-89.130434782608702" y="129.24107142857142"/>

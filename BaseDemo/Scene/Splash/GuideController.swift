@@ -21,7 +21,8 @@ class GuideController: UICollectionViewController, UICollectionViewDelegateFlowL
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.backgroundColor = BASEColor.BackgroundExtendColor()
         btn.layer.cornerRadius = 15
-        btn.setTitle("Skip", for: .normal)
+        btn.titleLabel?.font = .boldSystemFont(ofSize: 13)
+        btn.setTitle("SKIP", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.addTarget(self, action: #selector(onSkip), for: .touchUpInside)
         
@@ -33,7 +34,8 @@ class GuideController: UICollectionViewController, UICollectionViewDelegateFlowL
         previousBtn.translatesAutoresizingMaskIntoConstraints = false
         previousBtn.backgroundColor = BASEColor.BackgroundExtendColor()
         previousBtn.layer.cornerRadius = 15
-        previousBtn.setTitle("Previous", for: .normal)
+        previousBtn.titleLabel?.font = .boldSystemFont(ofSize: 13)
+        previousBtn.setTitle("PREV", for: .normal)
         previousBtn.setTitleColor(.white, for: .normal)
         previousBtn.addTarget(self, action: #selector(onPrevious), for: .touchUpInside)
         return previousBtn

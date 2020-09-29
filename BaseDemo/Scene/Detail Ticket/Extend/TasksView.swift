@@ -18,13 +18,22 @@ class TasksView: BaseView {
     }
     */
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//    }
+    
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        setupView()
+//    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        setupView()
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     private func setupView() {

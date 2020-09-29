@@ -164,7 +164,8 @@ class BaseView: UIView, ChartSubViews {
     }
     
     @IBAction func didBack() {
-        controller?.navigationController?.popViewController(animated: true)
+        let topController = UIApplication.getTopViewController()
+        topController?.navigationController?.popViewController(animated: true)
     }
     
     func addBarChart() {

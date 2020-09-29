@@ -13,6 +13,7 @@ class BaseMagicCollectionViewCell : UICollectionViewCell {
     @IBOutlet weak var img : UIImageView!
     @IBOutlet weak var icRight : UIImageView!
     @IBOutlet weak var vImg : UIView!
+    @IBOutlet weak var vBound : UIView!
 }
 
 class MagicCollectionViewCell: BaseMagicCollectionViewCell {
@@ -20,7 +21,8 @@ class MagicCollectionViewCell: BaseMagicCollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+        vBound.layer.cornerRadius = 12
+        vBound.clipsToBounds = true
     }
 
 }

@@ -14,11 +14,20 @@ class NotesView: BaseView {
     override func awakeFromNib() {
         super.awakeFromNib()
         print("NotesView",#line)
+        setupView()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        setupView()
     }
     
     private func setupView() {
@@ -38,7 +47,7 @@ class NotesView: BaseView {
         presenter.delegate = self
         presenter.controller = controller
         
-        vBound.addSubview(presenter)
+        self.addSubview(presenter)
     }
 }
 
@@ -52,7 +61,7 @@ extension NotesView: PresenterViewOutput {
     }
     
     func onAddNew() {
-        delegateAddSubView?.didAddNew(type: "notes")
+        delegateAddSubView?.didAddNew(type: Extend_Type.notes.rawValue)
     }
 }
 

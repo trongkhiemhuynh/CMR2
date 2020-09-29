@@ -102,7 +102,8 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             let arr = dictData?[String(indexPath.section)] as! Array<String>
             let title = arr[indexPath.row]
             cell.lblTitle.text = title
-            cell.iv.image = UIImage(named: "ex_notes")
+            let imageName = Extend_Type.notes.rawValue.lowercased()
+            cell.iv.image = UIImage(named: imageName)
             cell.lblTime.text = ApplicationManager.sharedInstance.defaultDateFormatter.string(from: Date())
             cell.lblDescription.text = ""
             
@@ -177,6 +178,11 @@ extension MagicCollectionViewDatasource: ProfileCollectionViewCellOutput {
         
         if name == Profile_Item.contact.rawValue {
             RouterManager.shared.handleRouter(AddressRoute())
+            return
+        }
+        
+        if name == Profile_Item.logout.rawValue {
+            RouterManager.shared.handleRouter(LoginRoute())
             return
         }
         

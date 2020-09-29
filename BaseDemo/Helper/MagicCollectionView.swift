@@ -66,8 +66,10 @@ class MagicCollectionView: BaseView {
 extension MagicCollectionView : MagicCollectionViewDelegateOutput {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //settings controller
+
+        let topVC = UIApplication.getTopViewController()
         
-        guard let vc = controller else {
+        guard let vc = topVC else {
             return
         }
         
@@ -80,23 +82,23 @@ extension MagicCollectionView : MagicCollectionViewDelegateOutput {
                 
                 //realm
                 let realm = try! Realm()
-    
+                
                 try! realm.write {
                     realm.deleteAll()
                 }
                 
                 return
             } else if title == "OCR" {
-//                vc = OCRController()
+                //                vc = OCRController()
             }
-
+            
             let settingVC = vc as? SettingViewController
             
             settingVC?.showAlert(title: title, message: Alert_Type.undefine.rawValue)
-//            vc.navigationController?.pushViewController(vc, animated: true)
+            //            vc.navigationController?.pushViewController(vc, animated: true)
         } else if vc.isKind(of: ContactController.self) {
             RouterManager.shared.handleRouter(ContactDetailRoute())
-        } else if controller!.isKind(of: AccountController.self) || controller!.isKind(of: ContactDetailController.self) {
+        } else if vc.isKind(of: AccountController.self) || vc.isKind(of: ContactDetailController.self) {
             //deleate to superview
             let cell = collectionView.cellForItem(at: indexPath) as? AccountCollectionViewCell
             delegateAddSubView?.didAddPicklist!(v: cell)

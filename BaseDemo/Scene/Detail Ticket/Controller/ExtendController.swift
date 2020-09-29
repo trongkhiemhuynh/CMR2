@@ -54,16 +54,17 @@ class ExtendController: BaseViewController {
     func setupSubView() {
         
         var subView : BaseView
+        
         let frame = CGRect(origin: CGPoint.zero, size: CGSize(width: widthScreen, height: heightScreen))
         
         switch extendedType {
         case .email:
             subView = EmailView.xibInstance()
         case .notes:
-            subView = NotesView.xibInstance()
+            subView = NotesView()
             subView.delegateAddSubView = self
         case .tasks:
-            subView = TasksView.xibInstance()
+            subView = TasksView()
             subView.delegateAddSubView = self
         case .chat:
             subView = ArticlesView()
@@ -82,9 +83,11 @@ class ExtendController: BaseViewController {
         Logger.info(frame)
         Logger.info(self.view.bounds)
         
-        subView.frame = frame
+        subView.frame = self.view.bounds
         subView.controller = self
-        vContent.addSubview(subView)
+        self.view.addSubview(subView)
+        
+        Logger.info(vContent.bounds)
     }
 
 }
