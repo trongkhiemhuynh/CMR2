@@ -18,22 +18,31 @@ class ArticlesView: BaseView {
     }
     */
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        setupView()
     }
     
     private func setupView() {
         let vMagic = MagicCollectionView.xibInstance()
-        let presenter = getPresenterView(title: "Articles", isAddNew: false)
+        let presenter = getPresenterView(title: "Chat", isAddNew: false)
         self.addSubview(presenter)
         presenter.vContent.addSubview(vMagic)
 
-        vMagic.frame = CGRect(x: 0, y: paddingTop, width: widthScreen, height: heightScreen - heightHeaderProfile)
-        vMagic.dictData = ["0":["Articles1","Articles2","Articles3","Articles4","Articles5","Articles6"]]
+        vMagic.frame = CGRect(x: 0, y: paddingTop, width: presenter.vContent.bounds.width, height: presenter.vContent.bounds.height)
+        vMagic.dictData = ["0":["Messenger","Whatsapp","Line","Zalo","Snap Chat","Instagram"]]
         vMagic.viewType = .extend
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
+        vMagic.heightHeader = heightHeaderDefault
+        vMagic.heightCell = heightDefaultCell
     }
 
 }

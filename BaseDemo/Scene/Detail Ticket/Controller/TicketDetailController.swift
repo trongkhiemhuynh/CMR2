@@ -80,14 +80,16 @@ extension TicketDetailController: TicketDetailExtendViewOutput {
             return
         }
         
-        var type : Extend_Type = .email
+        var type : Extend_Type = .notes
         
+        //find type for item
         for et in Extend_Type.allCases {
             if itemEx == et.rawValue {
                 type = et
             }
         }
         
+        //route
         extendRoute.handleData { (extendController) in
             //FIXME
             Logger.debug(type.rawValue)

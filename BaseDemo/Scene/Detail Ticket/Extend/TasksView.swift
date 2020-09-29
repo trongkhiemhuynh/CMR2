@@ -36,12 +36,12 @@ class TasksView: BaseView {
         presenter.controller = controller
         
         vMagic.frame = presenter.vContent.bounds
-        vMagic.dictData = ["0":["Task1","Task2","Task3","Task4","Task5","Task6"]]
+        vMagic.dictData = ["0":["Phone call","Facebook channel","Hubspot channel"]]
         vMagic.viewType = .extend
         vMagic.controller = controller
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
         vMagic.heightHeader = heightHeaderDefault
-        vMagic.heightCell = heightLargeCell
+        vMagic.heightCell = heightDefaultCell
     }
 }
 
@@ -50,7 +50,11 @@ extension TasksView: XibInitalization {
 }
 
 extension TasksView: PresenterViewOutput {
+    func onComplete() {
+        
+    }
+    
     func onAddNew() {
-        delegateAddSubView?.didAddNew(type: "tasks")
+        delegateAddSubView?.didAddNew(type: Extend_Type.tasks.rawValue)
     }
 }

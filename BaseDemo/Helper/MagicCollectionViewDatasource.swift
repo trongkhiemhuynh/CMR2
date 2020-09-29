@@ -13,26 +13,12 @@ protocol MagicCollectionViewDelegateOutput: class {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
 }
 
-enum MAGIC_VIEW_TYPE {
-    case setting
-    case profile
-    case account
-    case contact
-    case contact_detail
-    case extend
-    case customer_journey
-    case notes
-    case event
-    case logcall
-    case address_pager
-}
-
 class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
     //variable
     public var dictData: Dictionary<String, Any>?
     public var arrCells: [UICollectionViewCell]?
     private var arrData: Array<String>?
-    public var type: MAGIC_VIEW_TYPE = .setting
+    public var type: Magic_View = .setting
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         Logger.info(dictData?.keys)
@@ -130,6 +116,15 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
         } else if type == .contact {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LogCallViewCell.identifier, for: indexPath) as! LogCallViewCell
             cell.onUpdate()
+            return cell
+        } else if type == .auto {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailInputInfoCollectionViewCell.identifier, for: indexPath) as! TicketDetailInputInfoCollectionViewCell
+            
+            let arr = dictData?[String(indexPath.section)] as! Array<String>
+            let title = arr[indexPath.row]
+            let imageName = title.lowercased().replacingOccurrences(of: " ", with: "_")
+            cell.onUpdate(UIImage(named: imageName), title, title)
+
             return cell
         }
         

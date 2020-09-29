@@ -23,17 +23,17 @@ class CustomerJourneyView: BaseView {
         self.addSubview(presenter)
         
         vMagic.frame = presenter.vContent.bounds
-        vMagic.dictData = ["0":["type":"email","title":"Sent an email","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","time":"Oct 5, 2020"],
-                           "1":["type":"email","title":"Sent an message","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","time":"Oct 6, 2020"],
-                           "2":["type":"email","title":"Sent an email","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","time":"Oct 7, 2020"],
-                           "3":["type":"email","title":"Sent an message quickly","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","time":"Oct 8, 2020"],
-                           "4":["type":"email","title":"Sent an message quickly","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","time":"Oct 8, 2020"],
-                           "5":["type":"email","title":"Sent an message quickly","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","time":"Oct 8, 2020"],
-                           "6":["type":"email","title":"Sent an message quickly","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","time":"Oct 8, 2020"]]
+        vMagic.dictData = ["0":["type":"email_closed_dark","title":"Sent an email","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","time":"Oct 5, 2020"],
+                           "1":["type":"email_closed_dark","title":"Sent an message","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","time":"Oct 6, 2020"],
+                           "2":["type":"chat_closed","title":"Sent an email","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","time":"Oct 7, 2020"],
+                           "3":["type":"email_closed_dark","title":"Sent an message quickly","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","time":"Oct 8, 2020"],
+                           "4":["type":"chat_closed","title":"Sent an message quickly","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","time":"Oct 8, 2020"],
+                           "5":["type":"email_closed_dark","title":"Sent an message quickly","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","time":"Oct 8, 2020"],
+                           "6":["type":"chat_closed","title":"Sent an message quickly","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","time":"Oct 8, 2020"]]
         
         vMagic.viewType = .customer_journey
-        vMagic.heightHeader = 10
-        vMagic.heightCell = 120
+        vMagic.heightHeader = heightHeaderDefault
+        vMagic.heightCell = heightHeaderProfile
         vMagic.collectionView.registerCell(CustomerJourneyCollectionViewCell.self)
     }
 

@@ -19,7 +19,7 @@ class MagicCollectionView: BaseView {
     public var heightCell: CGFloat = 0 // default heightCell
     public var heightHeader: CGFloat = 0
     public var itemsPerRow: CGFloat = 1
-    public var viewType: MAGIC_VIEW_TYPE = .setting
+    public var viewType: Magic_View = .setting
     public var arrCells: [MagicCollectionViewCell]?
     
     public var scrollDirection: UICollectionView.ScrollDirection = .vertical
@@ -92,7 +92,7 @@ extension MagicCollectionView : MagicCollectionViewDelegateOutput {
 
             let settingVC = vc as? SettingViewController
             
-            settingVC?.showAlert(title: title, message: ALERT_TYPE.undefine.rawValue)
+            settingVC?.showAlert(title: title, message: Alert_Type.undefine.rawValue)
 //            vc.navigationController?.pushViewController(vc, animated: true)
         } else if vc.isKind(of: ContactController.self) {
             RouterManager.shared.handleRouter(ContactDetailRoute())
@@ -101,7 +101,7 @@ extension MagicCollectionView : MagicCollectionViewDelegateOutput {
             let cell = collectionView.cellForItem(at: indexPath) as? AccountCollectionViewCell
             delegateAddSubView?.didAddPicklist!(v: cell)
         } else {
-            delegateAddSubView?.didAddNew(type: "magic")
+            delegateAddSubView?.didAddNew(type: Extend_Type.notes.rawValue)
             delegateAddSubView?.onDetailView?()
         }
         

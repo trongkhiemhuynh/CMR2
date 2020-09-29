@@ -66,7 +66,7 @@ extension TicketDetailInfoViewController : UICollectionViewDataSource {
             } else {
                 let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailInputInfoCollectionViewCell.identifier, for: indexPath) as? TicketDetailInputInfoCollectionViewCell
                 cell2?.isUserInteractionEnabled = false
-                cell2!.reloadData(UIImage(named: icName), titleName, titleName)
+                cell2!.onUpdate(UIImage(named: icName), titleName, titleName)
                 cell2?.tf.backgroundColor = BASEColor.BackgroundListColor()
                 return cell2!
             }

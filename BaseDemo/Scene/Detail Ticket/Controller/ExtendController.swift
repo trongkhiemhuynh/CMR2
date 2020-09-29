@@ -9,18 +9,17 @@
 import UIKit
 
 enum Extend_Type : String, CaseIterable {
-    case email = "Email"
     case notes = "Notes"
     case tasks = "Tasks"
-    case activity_history = "Activity History"
-    case articles = "Articles"
+    case activities = "Historical Activities"
+    case chat = "Chat"
     case comments = "Comments"
     case attachments = "Attachments"
     case event = "Event"
-    case customer_journey = "Customer Journey"
+    case email = "Email"
     
     static var allCases: [Extend_Type] {
-        return [.email, .notes, .tasks, .activity_history, .articles, .comments, .attachments, .event, .customer_journey]
+        return [.notes, .tasks, .chat, .comments, .attachments, .event, .activities]
     }
 }
 
@@ -43,13 +42,19 @@ class ExtendController: BaseViewController {
 //        setupSubView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupSubView()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        setupSubView()
     }
 
     func setupSubView() {
+        
         var subView : BaseView
+        let frame = CGRect(origin: CGPoint.zero, size: CGSize(width: widthScreen, height: heightScreen))
         
         switch extendedType {
         case .email:
@@ -60,23 +65,24 @@ class ExtendController: BaseViewController {
         case .tasks:
             subView = TasksView.xibInstance()
             subView.delegateAddSubView = self
-        case .activity_history:
-            subView = ActivitiesView(frame: vContent.bounds)
-        case .articles:
-            subView = ArticlesView(frame: vContent.bounds)
+        case .chat:
+            subView = ArticlesView()
         case .comments:
-            subView = CommentsView(frame: vContent.bounds)
+            subView = CommentsView()
         case .attachments:
-            subView = AttachmentsView(frame: vContent.bounds)
+            subView = AttachmentsView()
         case .event:
-            subView = EventView(frame: vContent.bounds)
-        case .customer_journey:
-            subView = CustomerJourneyView(frame: vContent.bounds)
+            subView = EventView()
+        case .activities:
+            subView = CustomerJourneyView()
         default:
-            subView = EmailView(frame: vContent.bounds)
+            subView = EmailView()
         }
 
-        subView.frame = vContent.bounds
+        Logger.info(frame)
+        Logger.info(self.view.bounds)
+        
+        subView.frame = frame
         subView.controller = self
         vContent.addSubview(subView)
     }
@@ -89,12 +95,39 @@ extension ExtendController: XibInitalization {
 
 extension ExtendController: BaseViewOutput {
     func didAddNew(type: String) {
-        if type == "notes" {
-            let creatNote = CreatNewNote.xibInstance()
-            view.addSubview(creatNote)
-            creatNote.frame = view.bounds
-        } else {
+        if type == Extend_Type.notes.rawValue {
+
+            let vc = UIViewController()
+            let presenter = PresenterView.xibInstance()
+            presenter.vTitle.lblTitle.text = "Create new note"
             
+            let creatNote = CreatNewNote.xibInstance()
+            creatNote.hideSave()
+            creatNote.hideBack()
+            creatNote.vTitleView.isHidden = true
+            creatNote.frame = CGRect(x: sectionInsetsDefault.left, y: CGPoint.zero.y, width: presenter.vContent.bounds.width, height: presenter.vContent.bounds.height)
+                
+            vc.view.addSubview(presenter)
+            presenter.frame = vc.view.bounds
+            
+            presenter.onChangeAction(type: .save)
+            presenter.vContent.addSubview(creatNote)
+            
+            presenter.controller = self
+            presenter.delegate = vc
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else if type == Extend_Type.tasks.rawValue {
+            let arrData = ["Assign to","Subject","Date/Time","Priority","Status","Name","Related to","Reminder set?","Description"]
+            let vMagic = MagicCollectionView.xibInstance()
+            vMagic.collectionView.registerCell(TicketDetailInputInfoCollectionViewCell.self)
+            vMagic.heightCell = heightLargeCell
+            vMagic.heightHeader = heightHeaderDefault
+            vMagic.dictData = ["0": arrData]
+            vMagic.controller = self
+            vMagic.viewType = .auto
+            //config
+            generateView(subView: vMagic, title: "New task")
         }
     }
+
 }

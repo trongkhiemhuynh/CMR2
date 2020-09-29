@@ -42,7 +42,7 @@
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFl-Tg-pZ2">
-                    <rect key="frame" x="212" y="340" width="100" height="50"/>
+                    <rect key="frame" x="212" y="310" width="100" height="50"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nC1-je-u0x">
                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -72,7 +72,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="bXs-Tg-eWM" secondAttribute="bottom" id="7AU-RM-kvr"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="nFl-Tg-pZ2" secondAttribute="bottom" constant="90" id="aV5-t2-29l"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="nFl-Tg-pZ2" secondAttribute="bottom" constant="120" id="aV5-t2-29l"/>
                 <constraint firstItem="bXs-Tg-eWM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="baE-d6-OcY"/>
                 <constraint firstItem="bXs-Tg-eWM" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="kqx-0O-Gxs"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bXs-Tg-eWM" secondAttribute="trailing" id="tja-HK-oGf"/>

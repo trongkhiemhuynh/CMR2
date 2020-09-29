@@ -24,7 +24,7 @@ class ExtendCollectionViewCell: UICollectionViewCell {
         
         self.lblEx.text = t
         
-        let imageName = "ex_\(t.lowercased().replacingOccurrences(of: " ", with: "_"))"
+        let imageName = t.lowercased().replacingOccurrences(of: " ", with: "_")
         
         self.imgEx.image = UIImage(named: imageName)
     }

@@ -9,7 +9,13 @@
 import UIKit
 
 class NotesDetailView: BaseView {
+    @IBOutlet weak var tv: UITextView!
 
+    override func awakeFromNib() {
+//        super.awakeFromNib()
+        
+        tv.isUserInteractionEnabled = false
+    }
 }
 
 extension NotesDetailView: XibInitalization {

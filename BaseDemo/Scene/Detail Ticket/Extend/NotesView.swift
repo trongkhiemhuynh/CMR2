@@ -26,13 +26,14 @@ class NotesView: BaseView {
         
         let vMagic = MagicCollectionView.xibInstance()
         vMagic.frame = presenter.vContent.bounds
-        vMagic.dictData = ["0":["Note","Note 1","Note 2","Note 3","Note 4","Note 5"]]
+        vMagic.dictData = ["0":["Meeting","Meeting 1","Meeting 2","Meeting 3","Meeting 4","Meeting 5"]]
         vMagic.viewType = .notes
         vMagic.controller = controller
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
         vMagic.delegateAddSubView = self
-        vMagic.heightCell = 100.0
-        vMagic.heightHeader = 20.0
+        vMagic.heightCell = heightDefaultCell
+        vMagic.heightHeader = heightHeaderDefault
+        
         presenter.vContent.addSubview(vMagic)
         presenter.delegate = self
         presenter.controller = controller
@@ -46,6 +47,10 @@ extension NotesView: XibInitalization {
 }
 
 extension NotesView: PresenterViewOutput {
+    func onComplete() {
+        
+    }
+    
     func onAddNew() {
         delegateAddSubView?.didAddNew(type: "notes")
     }
@@ -60,9 +65,10 @@ extension NotesView: BaseViewOutput {
         vc.view.addSubview(presenter)
         presenter.frame = vc.view.bounds
         presenter.vTitle.lblTitle.text = "Note detail"
+        presenter.onChangeAction(type: .edit)
         presenter.vContent.addSubview(notesDetail)
-        notesDetail.frame = presenter.vContent.bounds
-        
+        notesDetail.frame = CGRect(x: sectionInsetsDefault.left, y: CGPoint.zero.y, width: presenter.vContent.bounds.width, height: presenter.vContent.bounds.height)
+    
         presenter.controller = controller
         presenter.delegate = vc
         controller?.navigationController?.pushViewController(vc, animated: true)
@@ -74,18 +80,58 @@ extension NotesView: BaseViewOutput {
 }
 
 extension UIViewController: PresenterViewOutput {
+    func onComplete() {
+        //show qa
+        let vSuccess = Bundle.main.loadNibNamed("PopupView", owner: self, options: nil)?[1] as! PopUpSuccessful
+        
+        self.view.addSubview(vSuccess)
+        vSuccess.frame = self.view.bounds
+        
+        UIView.animate(withDuration: 0.35, delay: 0.0, options: .allowAnimatedContent, animations: {
+            self.view.layoutIfNeeded()
+        }) { (_) in
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+1.0) {
+            vSuccess.removeFromSuperview()
+            self.didPopView()
+        }
+    }
+    
     func onAddNew() {
         let vc = UIViewController()
         let presenter = PresenterView.xibInstance()
+        presenter.vTitle.lblTitle.text = "Edit note"
+        
         let creatNote = CreatNewNote.xibInstance()
-        presenter.vTitle.isHidden = true
         creatNote.hideSave()
         creatNote.hideBack()
+        creatNote.vTitleView.isHidden = true
+        creatNote.frame = CGRect(x: sectionInsetsDefault.left, y: CGPoint.zero.y, width: presenter.vContent.bounds.width, height: presenter.vContent.bounds.height)
+            
         vc.view.addSubview(presenter)
         presenter.frame = vc.view.bounds
-        presenter.vTitle.lblTitle.text = "Edit note"
+        
+        presenter.onChangeAction(type: .save)
         presenter.vContent.addSubview(creatNote)
-        creatNote.frame = presenter.vContent.bounds
+        
+        presenter.controller = self
+        presenter.delegate = vc
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func generateView(subView: UIView, title: String) {
+        let vc = UIViewController()
+        let presenter = PresenterView.xibInstance()
+        presenter.vTitle.lblTitle.text = title
+        
+        subView.frame = CGRect(x: CGPoint.zero.x, y: CGPoint.zero.y, width: presenter.vContent.bounds.width, height: presenter.vContent.bounds.height)
+            
+        vc.view.addSubview(presenter)
+        presenter.frame = vc.view.bounds
+        
+        presenter.onChangeAction(type: .save)
+        presenter.vContent.addSubview(subView)
         
         presenter.controller = self
         presenter.delegate = vc

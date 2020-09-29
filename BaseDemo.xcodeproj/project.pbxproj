@@ -184,6 +184,8 @@
 		229A55312501E50C008A0ECD /* RouterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A55302501E50C008A0ECD /* RouterManager.swift */; };
 		229A55342501EF7B008A0ECD /* LoginRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A55332501EF7B008A0ECD /* LoginRoute.swift */; };
 		229A55372501F619008A0ECD /* WelcomeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A55362501F619008A0ECD /* WelcomeRoute.swift */; };
+		22C6F351252313B300AE91F4 /* NewTask.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22C6F350252313B300AE91F4 /* NewTask.xib */; };
+		22C6F353252313CC00AE91F4 /* NewTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C6F352252313CC00AE91F4 /* NewTask.swift */; };
 		22DBF0B224F620BE00B6D992 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF0B124F620BE00B6D992 /* Coordinator.swift */; };
 		22DBF0B424F620CD00B6D992 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF0B324F620CD00B6D992 /* AppCoordinator.swift */; };
 		22DBF0B624F63C5E00B6D992 /* DashboardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF0B524F63C5E00B6D992 /* DashboardCoordinator.swift */; };
@@ -487,6 +489,8 @@
 		229A55302501E50C008A0ECD /* RouterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterManager.swift; sourceTree = "<group>"; };
 		229A55332501EF7B008A0ECD /* LoginRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRoute.swift; sourceTree = "<group>"; };
 		229A55362501F619008A0ECD /* WelcomeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRoute.swift; sourceTree = "<group>"; };
+		22C6F350252313B300AE91F4 /* NewTask.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTask.xib; sourceTree = "<group>"; };
+		22C6F352252313CC00AE91F4 /* NewTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTask.swift; sourceTree = "<group>"; };
 		22DBF0B124F620BE00B6D992 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		22DBF0B324F620CD00B6D992 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		22DBF0B524F63C5E00B6D992 /* DashboardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCoordinator.swift; sourceTree = "<group>"; };
@@ -974,6 +978,8 @@
 				228D567F251C4CCF00CE935C /* TaskDetailController.swift */,
 				228D5680251C4CCF00CE935C /* TaskDetailController.xib */,
 				22748DF025218C1C00599DD5 /* NotesDetailView.xib */,
+				22C6F350252313B300AE91F4 /* NewTask.xib */,
+				22C6F352252313CC00AE91F4 /* NewTask.swift */,
 			);
 			path = Extend;
 			sourceTree = "<group>";
@@ -1620,6 +1626,7 @@
 				228D567C251B23D700CE935C /* LogCallViewCell.xib in Resources */,
 				C22FEAA224FC1AB3009D9219 /* SettingViewController.xib in Resources */,
 				4B2D4BFD24DD2ABE00CABF1D /* LoginController.xib in Resources */,
+				22C6F351252313B300AE91F4 /* NewTask.xib in Resources */,
 				228D56722519E4BE00CE935C /* ChangeOwnerView.xib in Resources */,
 				4B166C4D24EE7E380030C592 /* CustomTicketStageView.xib in Resources */,
 				225D4E3A2511F2FD00664D70 /* AccountCollectionViewCell.xib in Resources */,
@@ -1919,6 +1926,7 @@
 				C23F628924EE9C2600E37560 /* CustomTabBarView.swift in Sources */,
 				4B166C2C24ED0D140030C592 /* TicketDetailInputInfoCollectionViewCell.swift in Sources */,
 				224346CB24FCB86200CF7AA3 /* Worker.swift in Sources */,
+				22C6F353252313CC00AE91F4 /* NewTask.swift in Sources */,
 				226D9353250B227D00457AD5 /* ProfileCollectionReusableView.swift in Sources */,
 				22DBF0B224F620BE00B6D992 /* Coordinator.swift in Sources */,
 				4B166C5C24EF78F80030C592 /* TicketDetailInfoCollectionViewCell.swift in Sources */,

@@ -24,21 +24,43 @@ enum TabMenu : Int {
     case more
 }
 
-enum DASHBOARDTYPE: Int {
+enum Dashboard_Type: Int {
     case manager
     case sale
     case agent
 }
 
-enum ALERT_TYPE: String {
+enum Alert_Type: String {
     case error = "ERROR!"
     case success = "SUCCESS"
     case undefine = "UNDEFINE"
 }
 
-enum BUTTON_TYPE: String {
+enum Button_View: String {
     case ok = "OK"
     case cancel = "CANCEL"
+}
+
+enum Magic_View {
+    case setting
+    case profile
+    case account
+    case contact
+    case contact_detail
+    case extend
+    case customer_journey
+    case notes
+    case event
+    case logcall
+    case address_pager
+    case auto
+}
+
+enum Extend_View {
+    case notes
+    case tasks
+    case events
+    case historical_customer
 }
 
 public extension Notification.Name {
@@ -54,7 +76,7 @@ let arrInputTicket = ["Ticket owner", "Ticket ID", "Phone", "Mail", "Priority", 
 let arrIcTicket = ["ticketowner","ticket_id", "phone", "mail_ic", "priority", "status", "subject","escalated", "done","date","date","createdby","createdby","description","description","description"]
 
 let arrMenuItems = ["Profile","Dashboards","Account","Contact","Ticket"]
-let arrExtends = ["Email","Notes","Tasks","Activity History","Articles","Comments","Attachments","Event","Customer Journey"]
+let arrExtends = ["Notes","Tasks","Chat","Comments","Attachments","Event","Historical Activities"]
 let arrAccountArrowDown = ["Industry","District","City","Country"]
 let arrContactArrowDown = ["Department"]
 

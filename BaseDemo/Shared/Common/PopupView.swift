@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PopupView : BaseView {
+class PopupView: BaseView {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -23,7 +23,7 @@ class PopupView : BaseView {
     @IBOutlet weak var vDismiss : UIView!
     
     // dummydata
-    var arrItems = ["Change Owner","New Child Ticket", "Email"]
+    var arrItems = ["Change Owner","New Child Ticket"]
     
     var isLeftIc: Bool = true
     
@@ -39,7 +39,7 @@ class PopupView : BaseView {
         vDismiss.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissView(gesture:))))
     }
     
-    @objc func dismissView( gesture : UITapGestureRecognizer) {
+    @objc func dismissView(gesture: UITapGestureRecognizer) {
 
         removeFromSuperview()
         
@@ -59,7 +59,7 @@ class PopupView : BaseView {
 
 }
 
-extension PopupView : UITableViewDataSource {
+extension PopupView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrItems.count
     }
@@ -77,19 +77,19 @@ extension PopupView : UITableViewDataSource {
     }
 }
 
-extension PopupView : UITableViewDelegate {
+extension PopupView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! CustomPopUpTableViewCell
         
         guard let itemName = cell.lbl.text else {return}
         
         switch itemName {
-        case "Email":
-            let extendRoute = ExtendRoute()
-            RouterManager.shared.handleRouter(extendRoute)
-            extendRoute.handleData { (controller) in
-                controller.extendedType = .email
-            }
+//        case "Email":
+//            let extendRoute = ExtendRoute()
+//            RouterManager.shared.handleRouter(extendRoute)
+//            extendRoute.handleData { (controller) in
+//                controller.extendedType = .email
+//            }
         case "Change Owner":
             let route = ChangeOwnerRoute()
             RouterManager.shared.handleRouter(route)
@@ -104,6 +104,6 @@ extension PopupView : UITableViewDelegate {
     }
 }
 
-extension PopupView : XibInitalization {
+extension PopupView: XibInitalization {
     typealias Element = PopupView
 }

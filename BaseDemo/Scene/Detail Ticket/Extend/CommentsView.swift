@@ -9,9 +9,18 @@
 import UIKit
 
 class CommentsView: BaseView {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
-        setupView()
     }
 
     private func setupView() {
@@ -21,9 +30,11 @@ class CommentsView: BaseView {
         presenter.vContent.addSubview(vMagic)
         
         vMagic.frame = presenter.vContent.bounds
-        vMagic.dictData = ["0":["Comments 1","Comments 2","Comments 3","Comments 4","Comments 5","Comments 6"]]
+        vMagic.dictData = ["0":["Very good","Good","Bad","Very bad"]]
         vMagic.viewType = .extend
 
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
+        vMagic.heightHeader = heightHeaderDefault
+        vMagic.heightCell = heightDefaultCell
     }
 }

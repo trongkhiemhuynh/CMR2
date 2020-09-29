@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 //import TesseractOCR
 //import MobileCoreServices
 
@@ -30,6 +32,26 @@ class OCRController: BaseViewController {
 //            Logger.debug(tesseract.recognizedText)
 ////            textView.text = tesseract.recognizedText
 //        }
+    }
+    
+    func alphaTest() {
+        let p = PublishSubject<String>()
+        let b = BehaviorSubject<String>(value: "htk")
+//        let r = ReplaySubject<Any>()
+        let br = BehaviorRelay<String>(value: "")
+        
+        p.onNext("kkk")
+        p.asObservable().subscribe(onNext: { (element) in
+            
+        }, onError: { (error) in
+            
+        }, onCompleted: {
+            
+            }).disposed(by: DisposeBag())
+    }
+    
+    func alphaTestRedux(){
+        
     }
 
 

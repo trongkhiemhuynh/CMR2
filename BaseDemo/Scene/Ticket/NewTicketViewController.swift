@@ -14,8 +14,6 @@ class NewTicketViewController: BaseViewController {
     @IBOutlet weak var cvNewTicket : UICollectionView!
     
     // variable
-    private let itemsPerRow: CGFloat = 1
-    private let heightCellInfoDetail : CGFloat = 70
     private var selectedIdx : IndexPath?
     private var vCal : CalendarView?
     private var dictData : NSMutableDictionary = NSMutableDictionary()
@@ -75,7 +73,7 @@ extension NewTicketViewController : UICollectionViewDataSource {
             return cell!
         } else {
             let cellInput = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailInputInfoCollectionViewCell.identifier, for: indexPath) as! TicketDetailInputInfoCollectionViewCell
-            cellInput.reloadData(UIImage(named: icName), titleName, "")
+            cellInput.onUpdate(UIImage(named: icName), titleName, "")
             cellInput.delegate = self
             
             return cellInput
@@ -107,7 +105,7 @@ extension NewTicketViewController : UICollectionViewDelegateFlowLayout {
         let availableWidth = cvNewTicket.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
         
-        return CGSize(width: widthPerItem, height: heightCellInfoDetail)
+        return CGSize(width: widthPerItem, height: heightLargeCell)
     }
     
 }

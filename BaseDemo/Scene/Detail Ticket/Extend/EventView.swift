@@ -22,12 +22,10 @@ class EventView: BaseView {
         presenter.vContent.addSubview(vMagic)
         
         vMagic.frame = presenter.vContent.bounds
-        vMagic.dictData = ["0":["Events","Events","Events","Events","Events","Events"]]
+        vMagic.dictData = ["0":["WWDC 2020","Google I/0","Amazon Prime 2020"]]
         vMagic.viewType = .extend
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
-        vMagic.heightCell = heightTabbar
+        vMagic.heightCell = heightDefaultCell
         vMagic.heightHeader = heightHeaderDefault
-        
-//        presenter.delegate = controller
     }
 }
