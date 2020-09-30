@@ -118,7 +118,7 @@ extension ExtendController: BaseViewOutput {
             presenter.delegate = vc
             self.navigationController?.pushViewController(vc, animated: true)
         } else if type == Extend_Type.tasks.rawValue {
-            let arrData = ["Assign to","Subject","Date/Time","Priority","Status","Name","Related to","Reminder set?","Description"]
+            let arrData = ["Assign to","Subject","Date Time","Priority","Status","Name","Related to","Reminder set?","Description"]
             let vMagic = MagicCollectionView.xibInstance()
             vMagic.collectionView.registerCell(TicketDetailInputInfoCollectionViewCell.self)
             vMagic.heightCell = heightLargeCell
@@ -129,7 +129,7 @@ extension ExtendController: BaseViewOutput {
             //config
             generateView(subView: vMagic, title: "New task")
         } else if type == Extend_Type.comments.rawValue {
-            let arrData = ["Assign to","Subject","Date/Time","Priority","Status","Name","Related to","Reminder set?","Description"]
+            let arrData = ["Assign to","Subject","Date Time","Priority","Status","Name","Related to","Reminder set?","Description"]
             let vMagic = MagicCollectionView.xibInstance()
             vMagic.collectionView.registerCell(TicketDetailInputInfoCollectionViewCell.self)
             vMagic.heightCell = heightLargeCell
@@ -140,7 +140,7 @@ extension ExtendController: BaseViewOutput {
             //config
             generateView(subView: vMagic, title: "New ticket comment")
         } else if type == Extend_Type.event.rawValue {
-            let arrData = ["Assign to","Subject","Date/Time","Priority","Status","Name","Related to","Reminder set?","Description"]
+            let arrData = ["Assign to","Subject","Date Time","Priority","Status","Name","Related to","Reminder set?","Description"]
             let vMagic = MagicCollectionView.xibInstance()
             vMagic.collectionView.registerCell(TicketDetailInputInfoCollectionViewCell.self)
             vMagic.heightCell = heightLargeCell

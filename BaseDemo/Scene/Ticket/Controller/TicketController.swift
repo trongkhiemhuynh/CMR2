@@ -30,8 +30,7 @@ class TicketController: BaseViewController {
     
     override func setupView() {
         super.setupView()
-        vTicket.backgroundColor = .red
-        
+
         vListView.delegate = self
         vStage.delegate = self
         vListView.controller = self

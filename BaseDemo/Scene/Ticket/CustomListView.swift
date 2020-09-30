@@ -52,8 +52,6 @@ class CustomListView: BaseView {
         cvList.registerCell(CustomTicketCollectionViewCell.self)
         
         cvList.backgroundColor = BASEColor.BackgroundListColor()
-        vBgList.backgroundColor = BASEColor.BackgroundListColor()
-        vContent.backgroundColor = BASEColor.BackgroundListColor()
         
         //FIXME read data from realm demo
 //        readFile()
@@ -161,10 +159,6 @@ extension CustomListView : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return sectionInsetsDefault
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return sectionInsetsDefault.left
     }
 }
 

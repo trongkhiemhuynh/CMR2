@@ -19,7 +19,7 @@ class CustomTicketCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var lblName : UILabel!
     @IBOutlet weak var lblStatus : UILabel!
     @IBOutlet weak var lblID : UILabel!
-    @IBOutlet weak var vPopup : UIView!
+
     @IBOutlet weak var vBound : UIView!
     @IBOutlet weak var ivLineStatus: UIImageView!
     
@@ -32,24 +32,23 @@ class CustomTicketCollectionViewCell: UICollectionViewCell {
 //        let tap = UITapGestureRecognizer(target: self, action: #selector(closePopUp(gesture: )))
         
 //        vBound.addGestureRecognizer(tap)
-        layer.cornerRadius = 12.0
-        layer.borderWidth = 4.0
-        layer.borderColor = UIColor.clear.cgColor
-        layer.masksToBounds = true
-
-        layer.backgroundColor = UIColor.white.cgColor
-        layer.shadowColor = BASEColor.CellShadowColor().cgColor
-        layer.shadowOffset = CGSize(width: 0, height: 2.0)//CGSizeMake(0, 2.0);
-        layer.shadowRadius = 1.0
-        layer.shadowOpacity = 1.0
-        
-        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: layer.cornerRadius).cgPath
+//        layer.cornerRadius = 12.0
+//        layer.borderWidth = 4.0
+//        layer.borderColor = UIColor.clear.cgColor
+//        layer.masksToBounds = true
+//
+//        layer.backgroundColor = UIColor.white.cgColor
+//        layer.shadowColor = BASEColor.CellShadowColor().cgColor
+//        layer.shadowOffset = CGSize(width: 0, height: 2.0)//CGSizeMake(0, 2.0);
+//        layer.shadowRadius = 1.0
+//        layer.shadowOpacity = 1.0
+//
+//        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: layer.cornerRadius).cgPath
         
         //swipe gesture recognizer
         let swipe = UISwipeGestureRecognizer(target: self, action: #selector(onDelete(swipeToDeleteGesture:)))
         swipe.direction = .left
         self.addGestureRecognizer(swipe)
-        
     }
     
     @objc func onDelete(swipeToDeleteGesture: UISwipeGestureRecognizer) {
@@ -63,7 +62,6 @@ class CustomTicketCollectionViewCell: UICollectionViewCell {
     }
     
     @objc func closePopUp(gesture : UITapGestureRecognizer) {
-        self.vPopup.isHidden = !self.vPopup.isHidden
         
         UIView.animate(withDuration: 0.35) {
             self.layoutIfNeeded()
@@ -71,8 +69,6 @@ class CustomTicketCollectionViewCell: UICollectionViewCell {
     }
 
     @IBAction func actionMoreCell() {
-        
-        self.vPopup.isHidden = !self.vPopup.isHidden
         
         UIView.animate(withDuration: 0.35) {
             self.layoutIfNeeded()
@@ -98,6 +94,7 @@ class CustomTicketCollectionViewCell: UICollectionViewCell {
         }
         
         ivLineStatus.image = UIImage(named: statusLine)
+        self.dropShadow(color: .black)
     }
 }
 
