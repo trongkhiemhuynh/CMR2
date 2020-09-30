@@ -16,7 +16,7 @@ class ProfileCollectionReusableView: UICollectionReusableView {
         super.awakeFromNib()
         // Initialization code
         self.backgroundColor = BASEColor.BackgroundListColor()
-        lblName.text = "Steve Huynh"
+        lblName.text = nameDevice
     }
     
 }

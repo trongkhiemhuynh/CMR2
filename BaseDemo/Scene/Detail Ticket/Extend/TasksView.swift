@@ -46,11 +46,11 @@ class TasksView: BaseView {
         
         vMagic.frame = presenter.vContent.bounds
         vMagic.dictData = ["0":["Phone call","Facebook channel","Hubspot channel"]]
-        vMagic.viewType = .extend
+        vMagic.viewType = .extend_task
         vMagic.controller = controller
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
         vMagic.heightHeader = heightHeaderDefault
-        vMagic.heightCell = heightDefaultCell
+        vMagic.heightCell = heightLargeCell
     }
 }
 

@@ -12,6 +12,8 @@
                 <outlet property="constraintCenterYIvUser" destination="4AU-0P-WWV" id="LaC-zn-6y5"/>
                 <outlet property="ivAgree" destination="37h-wv-2vw" id="SwU-zU-Ez8"/>
                 <outlet property="ivUser" destination="Yue-hs-puh" id="cSQ-ne-nEP"/>
+                <outlet property="lblJob" destination="Uyg-Q2-j0X" id="fJh-Aa-Wv1"/>
+                <outlet property="lblName" destination="ZVw-im-Mhz" id="6ys-ha-O1t"/>
                 <outlet property="vCircle" destination="Xpo-gC-aCR" id="mVG-mN-9Rn"/>
                 <outlet property="vLarge" destination="bNK-fV-poc" id="TM4-OO-0ey"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

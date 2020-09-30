@@ -95,6 +95,7 @@ protocol ChartSubViews {
     func didAddNew(type: String)
     @objc optional func didAddPicklist(v: UIView?)
     @objc optional func onDetailView()
+    @objc optional func onPopView()
 }
 
 class BaseView: UIView, ChartSubViews {
@@ -111,6 +112,7 @@ class BaseView: UIView, ChartSubViews {
         super.init(frame: frame)
         Logger.info(frame)
         commonInit()
+        initBaseAbility()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -177,17 +179,7 @@ class BaseView: UIView, ChartSubViews {
     }
 }
 
-//extension BaseView: ChartSubViews {
-//    func addBarChart() {
-//
-//    }
-//
-//    func addPieChart() {
-//
-//    }
-//}
-
-extension BaseView : BaseAbility {
+extension BaseView: BaseAbility {
     func initCommon() {
         
     }
@@ -203,4 +195,6 @@ extension BaseView : BaseAbility {
     func initActions() {
         
     }
+    
+    
 }

@@ -49,11 +49,16 @@ enum Magic_View {
     case contact_detail
     case extend
     case customer_journey
-    case notes
+    case extend_notes
     case event
     case logcall
     case address_pager
     case auto
+    case extend_task
+    case extend_attach
+    case extend_event
+    case extend_comment
+    case extend_chat
 }
 
 enum Extend_View {
@@ -105,6 +110,33 @@ let heightHeaderProfile: CGFloat = {
 
 let heightHeaderDefault: CGFloat = {
     return 8.0
+}()
+
+var nameDevice: String? = {
+    return UIDevice.current.name
+}()
+
+var job2Device: Dictionary? = {
+    return ["STEVE":"Software Engineer","Hanh":"Finance","Thanh":"Director","Thanh Nguyen":"Marketing"]
+}()
+
+var jobTitle: String? = {
+    let name = nameDevice?.lowercased()
+    
+    for k in job2Device!.keys{
+        if name!.contains(k.lowercased()) {
+            return job2Device![k]
+        }
+    }
+    
+    return "Engineer"
+}()
+
+var versionApp: String = {
+    let dictionary = Bundle.main.infoDictionary!
+    let version = dictionary["CFBundleShortVersionString"] as! String
+    let build = dictionary["CFBundleVersion"] as! String
+    return "\(version).\(build)"
 }()
 
 public class DayAxisValueFormatter: NSObject, IAxisValueFormatter {

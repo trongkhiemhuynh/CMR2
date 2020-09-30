@@ -91,7 +91,7 @@
 		225D4E51251322A100664D70 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D4E50251322A100664D70 /* NotesView.swift */; };
 		225D4E53251322D300664D70 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D4E52251322D300664D70 /* TasksView.swift */; };
 		225D4E552513230000664D70 /* ActivitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D4E542513230000664D70 /* ActivitiesView.swift */; };
-		225D4E572513231500664D70 /* ArticlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D4E562513231500664D70 /* ArticlesView.swift */; };
+		225D4E572513231500664D70 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D4E562513231500664D70 /* ChatView.swift */; };
 		225D4E592513232A00664D70 /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D4E582513232A00664D70 /* CommentsView.swift */; };
 		225D4E5B2513234400664D70 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D4E5A2513234400664D70 /* EventView.swift */; };
 		225D4E5D2513235500664D70 /* AttachmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D4E5C2513235500664D70 /* AttachmentsView.swift */; };
@@ -186,6 +186,7 @@
 		229A55372501F619008A0ECD /* WelcomeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A55362501F619008A0ECD /* WelcomeRoute.swift */; };
 		22C6F351252313B300AE91F4 /* NewTask.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22C6F350252313B300AE91F4 /* NewTask.xib */; };
 		22C6F353252313CC00AE91F4 /* NewTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C6F352252313CC00AE91F4 /* NewTask.swift */; };
+		22C6F3552524272D00AE91F4 /* NewComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C6F3542524272D00AE91F4 /* NewComment.swift */; };
 		22DBF0B224F620BE00B6D992 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF0B124F620BE00B6D992 /* Coordinator.swift */; };
 		22DBF0B424F620CD00B6D992 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF0B324F620CD00B6D992 /* AppCoordinator.swift */; };
 		22DBF0B624F63C5E00B6D992 /* DashboardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF0B524F63C5E00B6D992 /* DashboardCoordinator.swift */; };
@@ -395,7 +396,7 @@
 		225D4E50251322A100664D70 /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
 		225D4E52251322D300664D70 /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
 		225D4E542513230000664D70 /* ActivitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesView.swift; sourceTree = "<group>"; };
-		225D4E562513231500664D70 /* ArticlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesView.swift; sourceTree = "<group>"; };
+		225D4E562513231500664D70 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		225D4E582513232A00664D70 /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
 		225D4E5A2513234400664D70 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		225D4E5C2513235500664D70 /* AttachmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentsView.swift; sourceTree = "<group>"; };
@@ -491,6 +492,7 @@
 		229A55362501F619008A0ECD /* WelcomeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRoute.swift; sourceTree = "<group>"; };
 		22C6F350252313B300AE91F4 /* NewTask.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTask.xib; sourceTree = "<group>"; };
 		22C6F352252313CC00AE91F4 /* NewTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTask.swift; sourceTree = "<group>"; };
+		22C6F3542524272D00AE91F4 /* NewComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewComment.swift; sourceTree = "<group>"; };
 		22DBF0B124F620BE00B6D992 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		22DBF0B324F620CD00B6D992 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		22DBF0B524F63C5E00B6D992 /* DashboardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCoordinator.swift; sourceTree = "<group>"; };
@@ -965,7 +967,7 @@
 				225D4E52251322D300664D70 /* TasksView.swift */,
 				228D56382519A2FC00CE935C /* TasksView.xib */,
 				225D4E542513230000664D70 /* ActivitiesView.swift */,
-				225D4E562513231500664D70 /* ArticlesView.swift */,
+				225D4E562513231500664D70 /* ChatView.swift */,
 				225D4E582513232A00664D70 /* CommentsView.swift */,
 				225D4E5A2513234400664D70 /* EventView.swift */,
 				225D4E5C2513235500664D70 /* AttachmentsView.swift */,
@@ -980,6 +982,7 @@
 				22748DF025218C1C00599DD5 /* NotesDetailView.xib */,
 				22C6F350252313B300AE91F4 /* NewTask.xib */,
 				22C6F352252313CC00AE91F4 /* NewTask.swift */,
+				22C6F3542524272D00AE91F4 /* NewComment.swift */,
 			);
 			path = Extend;
 			sourceTree = "<group>";
@@ -1946,7 +1949,7 @@
 				C22FEAA124FC1AB3009D9219 /* SettingViewController.swift in Sources */,
 				225D4E5D2513235500664D70 /* AttachmentsView.swift in Sources */,
 				4B166C4424EE621E0030C592 /* BaseView.swift in Sources */,
-				225D4E572513231500664D70 /* ArticlesView.swift in Sources */,
+				225D4E572513231500664D70 /* ChatView.swift in Sources */,
 				224346C524FCB38D00CF7AA3 /* TicketObj.swift in Sources */,
 				C2042ECD251FCA5C00648C3A /* GuideCollectionViewCell.swift in Sources */,
 				4BE6313A24DA9CBB00D9133C /* AppDelegate.swift in Sources */,
@@ -2009,6 +2012,7 @@
 				229A552B2500EC49008A0ECD /* LoginObj.swift in Sources */,
 				228D565B2519DC3E00CE935C /* LogCallController.swift in Sources */,
 				226D934C250A30E200457AD5 /* MagicHeaderCollectionReusableView.swift in Sources */,
+				22C6F3552524272D00AE91F4 /* NewComment.swift in Sources */,
 				4B2D4C0524DD569100CABF1D /* Color.swift in Sources */,
 				4B28017C24ECCA17007647F8 /* MainViewController.swift in Sources */,
 				229A55342501EF7B008A0ECD /* LoginRoute.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewTask: BaseView {
+class DummyView: BaseView {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -17,5 +17,7 @@ class NewTask: BaseView {
         // Drawing code
     }
     */
+    
+
 
 }

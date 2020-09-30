@@ -37,7 +37,7 @@ class EmailView: BaseView {
         presenter.vContent.addSubview(webView)
         webView.frame = CGRect(origin: .zero, size: CGSize(width: widthScreen, height: heightScreen - presenter.vTitle.bounds.height - heightTabbar))
         //add subview
-        vContent.addSubview(presenter)
+        self.addSubview(presenter)
     }
 
 }

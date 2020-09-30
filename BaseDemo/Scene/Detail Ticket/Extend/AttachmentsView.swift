@@ -22,10 +22,10 @@ class AttachmentsView: BaseView {
         
         vMagic.frame = presenter.vContent.bounds
         vMagic.dictData = ["0":["Word","Excel","Power point","Key note","Page","Number"]]
-        vMagic.viewType = .extend
+        vMagic.viewType = .extend_attach
 
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
         vMagic.heightHeader = heightHeaderDefault
-        vMagic.heightCell = heightDefaultCell
+        vMagic.heightCell = heightLargeCell
     }
 }

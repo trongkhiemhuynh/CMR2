@@ -15,7 +15,8 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var constraintCenterYIvUser: NSLayoutConstraint!
     @IBOutlet weak var ivAgree: UIImageView!
     @IBOutlet weak var vCircle: UIView!
-    
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblJob: UILabel!
     //private variable
     private let constantRatioY : CGFloat = -0.18
 
@@ -44,6 +45,10 @@ class WelcomeViewController: UIViewController {
         
         ivUser.layer.cornerRadius = ivUser.bounds.height/2
         ivAgree.layer.cornerRadius = ivAgree.bounds.height/2
+        
+        lblName.text = nameDevice
+        
+        lblJob.text = jobTitle
     }
     
     override func viewDidAppear(_ animated: Bool) {

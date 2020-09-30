@@ -38,7 +38,7 @@ class SettingViewController: BaseViewController {
         v.frame = present.vContent.bounds
         
         v.controller = self
-        v.dictData = ["0":["Cached"],"1":["Push Notification","Feedback","Privacy"]/*,"OCR"],"2":["Log out"]*/]
+        v.dictData = ["0":["Cached"],"1":["Push Notification", "Version: \(versionApp)"]/*,"OCR"],"2":["Log out"]*/]
         v.heightCell = 70.0
         v.heightHeader = 10.0
     }

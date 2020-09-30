@@ -39,16 +39,24 @@ class NewTicketViewController: BaseViewController {
     }
     
     @IBAction func save() {
-        if let vConfirm = Bundle.main.loadNibNamed("PopupView", owner: self, options: nil)?.last as? PopUpConfirm {
-            self.view.addSubview(vConfirm)
-            vConfirm.frame = self.view.bounds
-        }
+        onSave()
+    }
+    
+    func onSave() {
+        //show qa
+        let vSuccess = Bundle.main.loadNibNamed("PopupView", owner: self, options: nil)?[1] as! PopUpSuccessful
+        
+        self.view.addSubview(vSuccess)
+        vSuccess.frame = self.view.bounds
         
         UIView.animate(withDuration: 0.35, delay: 0.0, options: .allowAnimatedContent, animations: {
             self.view.layoutIfNeeded()
-        }) { (ok) in
-            Logger.debug(self.dictData)
-            print(ok)
+        }) { (_) in
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+1.0) {
+            vSuccess.removeFromSuperview()
+            self.didPopView()
         }
     }
     
@@ -142,5 +150,15 @@ extension NewTicketViewController : TicketDetailInputInfoCollectionViewCellOutpu
 extension NewTicketViewController : NewTicketCheckboxCollectionViewCellOutput {
     func didEndEdit(titleField: String, inputField: Bool) {
         dictData.setValue(inputField, forKey: titleField)
+    }
+}
+
+extension NewTicketViewController: BaseViewOutput {
+    func didAddNew(type: String) {
+        
+    }
+    
+    func onPopView() {
+        didPopView()
     }
 }

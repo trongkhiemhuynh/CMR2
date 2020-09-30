@@ -20,8 +20,13 @@ class NewChildController: BaseViewController {
         super.setupView()
         
         let present = PresenterView.xibInstance()
+        present.vTitle.lblTitle.text = "New child ticket"
         present.frame = view.bounds
         view.addSubview(present)
+        
+        let changeOwner = ChangeOwnerView.xibInstance()
+        present.vContent.addSubview(changeOwner)
+        changeOwner.frame = present.vContent.bounds
     }
 
 }

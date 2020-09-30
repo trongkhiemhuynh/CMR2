@@ -62,12 +62,10 @@ class ExtendController: BaseViewController {
             subView = EmailView.xibInstance()
         case .notes:
             subView = NotesView()
-            subView.delegateAddSubView = self
         case .tasks:
             subView = TasksView()
-            subView.delegateAddSubView = self
         case .chat:
-            subView = ArticlesView()
+            subView = ChatView()
         case .comments:
             subView = CommentsView()
         case .attachments:
@@ -82,9 +80,9 @@ class ExtendController: BaseViewController {
 
         Logger.info(frame)
         Logger.info(self.view.bounds)
-        
         subView.frame = self.view.bounds
         subView.controller = self
+        subView.delegateAddSubView = self
         self.view.addSubview(subView)
         
         Logger.info(vContent.bounds)
@@ -130,6 +128,28 @@ extension ExtendController: BaseViewOutput {
             vMagic.viewType = .auto
             //config
             generateView(subView: vMagic, title: "New task")
+        } else if type == Extend_Type.comments.rawValue {
+            let arrData = ["Assign to","Subject","Date/Time","Priority","Status","Name","Related to","Reminder set?","Description"]
+            let vMagic = MagicCollectionView.xibInstance()
+            vMagic.collectionView.registerCell(TicketDetailInputInfoCollectionViewCell.self)
+            vMagic.heightCell = heightLargeCell
+            vMagic.heightHeader = heightHeaderDefault
+            vMagic.dictData = ["0": arrData]
+            vMagic.controller = self
+            vMagic.viewType = .auto
+            //config
+            generateView(subView: vMagic, title: "New ticket comment")
+        } else if type == Extend_Type.event.rawValue {
+            let arrData = ["Assign to","Subject","Date/Time","Priority","Status","Name","Related to","Reminder set?","Description"]
+            let vMagic = MagicCollectionView.xibInstance()
+            vMagic.collectionView.registerCell(TicketDetailInputInfoCollectionViewCell.self)
+            vMagic.heightCell = heightLargeCell
+            vMagic.heightHeader = heightHeaderDefault
+            vMagic.dictData = ["0": arrData]
+            vMagic.controller = self
+            vMagic.viewType = .auto
+            //config
+            generateView(subView: vMagic, title: "New event")
         }
     }
 

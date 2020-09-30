@@ -81,6 +81,51 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             cell.lblDescription.text = ""
             
             return cell
+        } else if type == .extend_task {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailActivityCollectionViewCell.identifier, for: indexPath) as! TicketDetailActivityCollectionViewCell
+            
+            let arr = dictData?[String(indexPath.section)] as! Array<String>
+            let title = arr[indexPath.row]
+            
+            cell.onUpdate(item: ExtendModel(title: title, time: "30/9/2020", description: "", imageName: "tasks"))
+            
+            return cell
+        } else if type == .extend_attach {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailActivityCollectionViewCell.identifier, for: indexPath) as! TicketDetailActivityCollectionViewCell
+            
+            let arr = dictData?[String(indexPath.section)] as! Array<String>
+            let title = arr[indexPath.row]
+            
+            cell.onUpdate(item: ExtendModel(title: title, time: "30/9/2020", description: "", imageName: "attachments"))
+            
+            return cell
+        } else if type == .extend_event {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailActivityCollectionViewCell.identifier, for: indexPath) as! TicketDetailActivityCollectionViewCell
+            
+            let arr = dictData?[String(indexPath.section)] as! Array<String>
+            let title = arr[indexPath.row]
+            
+            cell.onUpdate(item: ExtendModel(title: title, time: "30/9/2020", description: "", imageName: "event"))
+            
+            return cell
+        } else if type == .extend_comment {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailActivityCollectionViewCell.identifier, for: indexPath) as! TicketDetailActivityCollectionViewCell
+            
+            let arr = dictData?[String(indexPath.section)] as! Array<String>
+            let title = arr[indexPath.row]
+            
+            cell.onUpdate(item: ExtendModel(title: title, time: "30/9/2020", description: "", imageName: "comments"))
+            
+            return cell
+        } else if type == .extend_chat {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailActivityCollectionViewCell.identifier, for: indexPath) as! TicketDetailActivityCollectionViewCell
+            
+            let arr = dictData?[String(indexPath.section)] as! Array<String>
+            let title = arr[indexPath.row]
+            
+            cell.onUpdate(item: ExtendModel(title: title, time: "30/9/2020", description: "", imageName: "chat"))
+            
+            return cell
         } else if type == .customer_journey {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomerJourneyCollectionViewCell.identifier, for: indexPath) as! CustomerJourneyCollectionViewCell
             let dict = dictData?[String(indexPath.section)] as! Dictionary<String, String>
@@ -96,16 +141,15 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             }
             
             return cell
-        } else if type == .notes {
+        } else if type == .extend_notes {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailActivityCollectionViewCell.identifier, for: indexPath) as! TicketDetailActivityCollectionViewCell
             
             let arr = dictData?[String(indexPath.section)] as! Array<String>
             let title = arr[indexPath.row]
             cell.lblTitle.text = title
             let imageName = Extend_Type.notes.rawValue.lowercased()
-            cell.iv.image = UIImage(named: imageName)
-            cell.lblTime.text = ApplicationManager.sharedInstance.defaultDateFormatter.string(from: Date())
-            cell.lblDescription.text = ""
+            
+            cell.onUpdate(item: ExtendModel(title: title, time: "13/10/2020", description: "", imageName: imageName))
             
             return cell
         } else if type == .logcall {

@@ -20,8 +20,16 @@ class ManagerDashboard: BaseView {
     @IBOutlet weak var vPieChart : UIView!
     @IBOutlet weak var vInfoUser : UIView!
     
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblJob: UILabel!
+    
     var chartView : BarChartView!
     var chartPieView : PieChartView!
+    
+    override func awakeFromNib() {
+        lblName.text = nameDevice
+        lblJob.text = jobTitle
+    }
     
     override func layoutSubviews() {
         super.layoutSubviews()

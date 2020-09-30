@@ -28,13 +28,24 @@ class CommentsView: BaseView {
         let presenter = getPresenterView(title: "Comments", isAddNew: true)
         self.addSubview(presenter)
         presenter.vContent.addSubview(vMagic)
-        
+        presenter.delegate = self
         vMagic.frame = presenter.vContent.bounds
         vMagic.dictData = ["0":["Very good","Good","Bad","Very bad"]]
-        vMagic.viewType = .extend
+        vMagic.viewType = .extend_comment
 
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
         vMagic.heightHeader = heightHeaderDefault
-        vMagic.heightCell = heightDefaultCell
+        vMagic.heightCell = heightLargeCell
+    }
+
+}
+
+extension CommentsView: PresenterViewOutput {
+    func onComplete() {
+        
+    }
+    
+    func onAddNew() {
+        delegateAddSubView?.didAddNew(type: Extend_Type.comments.rawValue)
     }
 }

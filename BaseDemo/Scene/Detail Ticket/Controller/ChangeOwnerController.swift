@@ -19,6 +19,7 @@ class ChangeOwnerController: BaseViewController {
     override func setupView() {
         super.setupView()
         let present = PresenterView.xibInstance()
+        present.vTitle.lblTitle.text = "Change owner"
         present.frame = view.bounds
         view.addSubview(present)
         

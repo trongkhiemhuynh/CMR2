@@ -91,6 +91,8 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="U24-Jp-x4y"/>
             <connections>
+                <outlet property="lblJob" destination="R52-w1-Z0y" id="Ji3-yv-ahD"/>
+                <outlet property="lblName" destination="lXl-kE-EhL" id="Nli-Fd-ije"/>
                 <outlet property="vBarChart" destination="RZk-cd-GrG" id="rEq-Pk-Tf2"/>
                 <outlet property="vInfoUser" destination="Tmm-A7-Aua" id="PbB-7n-48F"/>
                 <outlet property="vPieChart" destination="uXZ-Fd-zaa" id="kFb-ZA-f0F"/>

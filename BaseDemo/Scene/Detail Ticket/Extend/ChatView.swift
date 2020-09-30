@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArticlesView: BaseView {
+class ChatView: BaseView {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -38,11 +38,11 @@ class ArticlesView: BaseView {
         presenter.vContent.addSubview(vMagic)
 
         vMagic.frame = CGRect(x: 0, y: paddingTop, width: presenter.vContent.bounds.width, height: presenter.vContent.bounds.height)
-        vMagic.dictData = ["0":["Messenger","Whatsapp","Line","Zalo","Snap Chat","Instagram"]]
-        vMagic.viewType = .extend
+        vMagic.dictData = ["0":["Messenger","Whatsapp","Line","Zalo","Snapchat","Instagram"]]
+        vMagic.viewType = .extend_chat
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
         vMagic.heightHeader = heightHeaderDefault
-        vMagic.heightCell = heightDefaultCell
+        vMagic.heightCell = heightLargeCell
     }
 
 }

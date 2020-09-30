@@ -8,14 +8,18 @@
 
 import UIKit
 
-class PopUpConfirm: UIView {
+class PopUpConfirm: BaseView {
 
     @IBOutlet weak var btnOk : UIButton!
     @IBOutlet weak var btnCancel : UIButton!
     
+    override func awakeFromNib() {
+        btnOk.layer.borderWidth = 1
+        btnOk.layer.borderColor = BASEColor.MainAppColor().cgColor
+    }
     
     @IBAction func actionOk() {
-        removeFromSuperview()
+        delegateAddSubView?.onPopView?()
     }
     
     @IBAction func actionCancel() {

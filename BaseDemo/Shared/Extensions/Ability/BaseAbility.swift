@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol BaseAbility : class {
+protocol BaseAbility: class {
     
     func initBaseAbility()
     

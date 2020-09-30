@@ -20,12 +20,24 @@ class EventView: BaseView {
         let presenter = getPresenterView(title: "Events", isAddNew: true)
         self.addSubview(presenter)
         presenter.vContent.addSubview(vMagic)
-        
+        presenter.delegate = self
         vMagic.frame = presenter.vContent.bounds
-        vMagic.dictData = ["0":["WWDC 2020","Google I/0","Amazon Prime 2020"]]
-        vMagic.viewType = .extend
+        vMagic.dictData = ["0":["WWDC 2020","Google I/O"]]
+        vMagic.viewType = .extend_event
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
-        vMagic.heightCell = heightDefaultCell
+        vMagic.heightCell = heightLargeCell
         vMagic.heightHeader = heightHeaderDefault
     }
+}
+
+extension EventView: PresenterViewOutput {
+    func onAddNew() {
+        delegateAddSubView?.didAddNew(type: Extend_Type.event.rawValue)
+    }
+    
+    func onComplete() {
+        
+    }
+    
+    
 }

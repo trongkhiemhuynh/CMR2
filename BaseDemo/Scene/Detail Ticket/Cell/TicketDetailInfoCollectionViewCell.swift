@@ -10,9 +10,16 @@ import UIKit
 
 class TicketDetailInfoCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblJob: UILabel!
+    @IBOutlet weak var lblID: UILabel!
+    @IBOutlet weak var iv: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        lblName.text = nameDevice
+        lblJob.text = jobTitle
     }
 
 }

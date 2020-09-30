@@ -8,6 +8,13 @@
 
 import UIKit
 
+struct ExtendModel {
+    let title: String?
+    let time: String?
+    let description: String?
+    let imageName: String?
+}
+
 class TicketDetailActivityCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var vContent : UIView!
@@ -21,6 +28,13 @@ class TicketDetailActivityCollectionViewCell: UICollectionViewCell {
         // Initialization code
         
         vContent.layer.cornerRadius = 8
+    }
+    
+    func onUpdate(item: ExtendModel) {
+        lblTitle.text = item.title
+        lblTime.text = item.title
+        lblDescription.text = item.description
+        iv.image = UIImage(named: item.imageName!)
     }
 
 }

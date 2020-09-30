@@ -36,11 +36,11 @@ class NotesView: BaseView {
         let vMagic = MagicCollectionView.xibInstance()
         vMagic.frame = presenter.vContent.bounds
         vMagic.dictData = ["0":["Meeting","Meeting 1","Meeting 2","Meeting 3","Meeting 4","Meeting 5"]]
-        vMagic.viewType = .notes
+        vMagic.viewType = .extend_notes
         vMagic.controller = controller
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
         vMagic.delegateAddSubView = self
-        vMagic.heightCell = heightDefaultCell
+        vMagic.heightCell = heightLargeCell
         vMagic.heightHeader = heightHeaderDefault
         
         presenter.vContent.addSubview(vMagic)

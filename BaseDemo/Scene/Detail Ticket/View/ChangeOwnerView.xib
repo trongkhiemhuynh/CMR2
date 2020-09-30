@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,31 +13,71 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c3M-CZ-pdb">
-                    <rect key="frame" x="40" y="30" width="240" height="60"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="z0U-BV-9e2">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhT-ho-Yx0">
-                            <rect key="frame" x="0.0" y="0.0" width="240" height="60"/>
-                            <connections>
-                                <action selector="onChangeOwner:" destination="iN0-l3-epB" eventType="touchUpInside" id="i53-Nt-VEE"/>
-                            </connections>
-                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type new owner name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ry8-uc-HyQ">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c3M-CZ-pdb">
+                            <rect key="frame" x="0.0" y="18" width="320" height="60"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhT-ho-Yx0">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                    <state key="normal" title="Search...">
+                                        <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onChangeOwner:" destination="iN0-l3-epB" eventType="touchUpInside" id="i53-Nt-VEE"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="DhT-ho-Yx0" secondAttribute="trailing" id="6Us-9z-psN"/>
+                                <constraint firstItem="DhT-ho-Yx0" firstAttribute="leading" secondItem="c3M-CZ-pdb" secondAttribute="leading" id="9sa-lt-zQA"/>
+                                <constraint firstItem="DhT-ho-Yx0" firstAttribute="top" secondItem="c3M-CZ-pdb" secondAttribute="top" id="H6L-ao-kgt"/>
+                                <constraint firstAttribute="height" constant="60" id="Snq-pn-OZw"/>
+                                <constraint firstAttribute="bottom" secondItem="DhT-ho-Yx0" secondAttribute="bottom" id="UOY-Pp-0Wl"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLF-fB-wlj">
+                            <rect key="frame" x="0.0" y="78" width="320" height="70"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check_box" translatesAutoresizingMaskIntoConstraints="NO" id="LL2-qA-OcW">
+                                    <rect key="frame" x="16" y="23" width="24" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="24" id="8dm-U6-Zr7"/>
+                                        <constraint firstAttribute="height" constant="24" id="H5S-Gs-rDu"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send notification to mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7p-8v-lrm">
+                                    <rect key="frame" x="56" y="26" width="165.5" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="LL2-qA-OcW" firstAttribute="centerY" secondItem="JLF-fB-wlj" secondAttribute="centerY" id="B0l-d3-UwP"/>
+                                <constraint firstItem="s7p-8v-lrm" firstAttribute="leading" secondItem="LL2-qA-OcW" secondAttribute="trailing" constant="16" id="Cf9-dW-8ti"/>
+                                <constraint firstAttribute="height" constant="70" id="SYg-7Q-Dxm"/>
+                                <constraint firstItem="s7p-8v-lrm" firstAttribute="centerY" secondItem="JLF-fB-wlj" secondAttribute="centerY" id="hxH-nu-0tL"/>
+                                <constraint firstItem="LL2-qA-OcW" firstAttribute="leading" secondItem="JLF-fB-wlj" secondAttribute="leading" constant="16" id="xSi-tq-IUz"/>
+                            </constraints>
+                        </view>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="DhT-ho-Yx0" secondAttribute="trailing" id="6Us-9z-psN"/>
-                        <constraint firstItem="DhT-ho-Yx0" firstAttribute="leading" secondItem="c3M-CZ-pdb" secondAttribute="leading" id="9sa-lt-zQA"/>
-                        <constraint firstItem="DhT-ho-Yx0" firstAttribute="top" secondItem="c3M-CZ-pdb" secondAttribute="top" id="H6L-ao-kgt"/>
-                        <constraint firstAttribute="height" constant="60" id="Snq-pn-OZw"/>
-                        <constraint firstAttribute="bottom" secondItem="DhT-ho-Yx0" secondAttribute="bottom" id="UOY-Pp-0Wl"/>
-                    </constraints>
-                </view>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="c3M-CZ-pdb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="Y4q-Eb-TZi"/>
-                <constraint firstItem="c3M-CZ-pdb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="kf1-5Y-dOY"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="c3M-CZ-pdb" secondAttribute="trailing" constant="40" id="vxd-1g-Goz"/>
+                <constraint firstAttribute="trailing" secondItem="z0U-BV-9e2" secondAttribute="trailing" id="JYg-Pa-R35"/>
+                <constraint firstItem="z0U-BV-9e2" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="YRd-dT-uMb"/>
+                <constraint firstItem="z0U-BV-9e2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="f6M-zw-fYo"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
@@ -48,4 +87,7 @@
             <point key="canvasLocation" x="139" y="139"/>
         </view>
     </objects>
+    <resources>
+        <image name="check_box" width="11" height="11"/>
+    </resources>
 </document>
