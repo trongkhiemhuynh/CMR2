@@ -21,8 +21,9 @@ class MagicCollectionViewCell: BaseMagicCollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        vBound.layer.cornerRadius = 12
+        vBound.layer.cornerRadius = 8
         vBound.clipsToBounds = true
+        vBound.dropShadow(color: .lightGray)
     }
 
 }

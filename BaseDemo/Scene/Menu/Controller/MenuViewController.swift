@@ -21,17 +21,17 @@ class MenuViewController: BaseViewController {
     private let heightCellInfo : CGFloat = 100
     private let heightCellInfoDetail : CGFloat = 50
     
-    var stringVar : String? {
-        didSet {
-            _rx_stringVar.onNext(stringVar!)
+    var itemVar : String {
+        get {
+            return _rx_ItemVar.value
+        }
+        
+        set {
+            _rx_ItemVar.accept(newValue)
         }
     }
     
-    var rx_stringVar : Observable<String> {
-        return _rx_stringVar.asObservable()
-    }
-    
-    private var _rx_stringVar = PublishSubject<String>()
+    var _rx_ItemVar = BehaviorRelay<String>(value: HamburgerMenu.dashboard.rawValue)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -143,12 +143,16 @@ extension MenuViewController : UICollectionViewDelegate {
         
         let nameItem = arrMenuItems[indexPath.row]
 //        Logger.debug(nameItem)
-
+        
+        self.itemVar = nameItem
+        
         SideMenuManager.default.leftMenuNavigationController?.dismiss(animated: true, completion: {
 //            self.menuSelectedItem.accept(nameItem)
 //            self.stringVar = nameItem
-            let dashboardVC = self.controllerOwner as? DashboardController
-            dashboardVC?.controllerName = nameItem
+//            let dashboardVC = self.controllerOwner as? DashboardController
+//            dashboardVC?.controllerName = nameItem
+            
+            
         })
     }
 }

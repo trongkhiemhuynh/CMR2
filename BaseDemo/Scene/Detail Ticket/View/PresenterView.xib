@@ -41,13 +41,12 @@
                         <constraint firstItem="pY6-sd-6SK" firstAttribute="top" secondItem="bXs-Tg-eWM" secondAttribute="top" id="Yv2-XX-qOi"/>
                     </constraints>
                 </view>
-                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFl-Tg-pZ2">
-                    <rect key="frame" x="212" y="350" width="100" height="50"/>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="-10" translatesAutoresizingMaskIntoConstraints="NO" id="nFl-Tg-pZ2">
+                    <rect key="frame" x="202" y="340" width="110" height="60"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nC1-je-u0x">
-                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="50" id="Ok1-Rr-0kq"/>
                                 <constraint firstAttribute="width" secondItem="nC1-je-u0x" secondAttribute="height" multiplier="1:1" id="drc-5F-O5z"/>
                             </constraints>
                             <state key="normal" image="back"/>
@@ -56,17 +55,20 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWl-jz-vS4">
-                            <rect key="frame" x="50" y="0.0" width="50" height="50"/>
+                            <rect key="frame" x="50" y="0.0" width="60" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="TWl-jz-vS4" secondAttribute="height" multiplier="1:1" id="DMo-jm-FGp"/>
-                                <constraint firstAttribute="height" constant="50" id="FkU-aE-Va3"/>
+                                <constraint firstAttribute="height" constant="60" id="FkU-aE-Va3"/>
                             </constraints>
-                            <state key="normal" image="add"/>
+                            <state key="normal" image="addticket"/>
                             <connections>
                                 <action selector="addNew" destination="iN0-l3-epB" eventType="touchUpInside" id="SZo-79-dwP"/>
                             </connections>
                         </button>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="TWl-jz-vS4" firstAttribute="height" secondItem="nC1-je-u0x" secondAttribute="height" id="SWC-T4-h4G"/>
+                    </constraints>
                 </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -90,7 +92,7 @@
         </view>
     </objects>
     <resources>
-        <image name="add" width="102" height="102"/>
+        <image name="addticket" width="84" height="84"/>
         <image name="back" width="54" height="54"/>
     </resources>
 </document>

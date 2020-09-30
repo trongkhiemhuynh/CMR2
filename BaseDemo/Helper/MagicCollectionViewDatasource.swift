@@ -18,7 +18,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
     public var dictData: Dictionary<String, Any>?
     public var arrCells: [UICollectionViewCell]?
     private var arrData: Array<String>?
-    public var type: Magic_View = .setting
+    public var type: MagicView = .setting
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         Logger.info(dictData?.keys)
@@ -47,7 +47,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             let title = arr[indexPath.row]
             
             cell.title.text = title
-            cell.icRight.image = UIImage(named: "next")
+//            cell.icRight.image = UIImage(named: "next")
             return cell
         } else if type == .account || type == .contact_detail {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AccountCollectionViewCell.identifier, for: indexPath) as! AccountCollectionViewCell

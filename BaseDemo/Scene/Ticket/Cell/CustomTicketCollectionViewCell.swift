@@ -94,7 +94,7 @@ class CustomTicketCollectionViewCell: UICollectionViewCell {
         }
         
         ivLineStatus.image = UIImage(named: statusLine)
-        self.dropShadow(color: .black)
+        self.dropShadow(color: .darkGray)
     }
 }
 

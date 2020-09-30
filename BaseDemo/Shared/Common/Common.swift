@@ -24,24 +24,24 @@ enum TabMenu : Int {
     case more
 }
 
-enum Dashboard_Type: Int {
+enum DashboardType: Int {
     case manager
     case sale
     case agent
 }
 
-enum Alert_Type: String {
+enum AlertType: String {
     case error = "ERROR!"
     case success = "SUCCESS"
-    case undefine = "UNDEFINE"
+    case undefine = "UNDEFINE!"
 }
 
-enum Button_View: String {
+enum ButtonView: String {
     case ok = "OK"
     case cancel = "CANCEL"
 }
 
-enum Magic_View {
+enum MagicView {
     case setting
     case profile
     case account
@@ -61,11 +61,18 @@ enum Magic_View {
     case extend_chat
 }
 
-enum Extend_View {
-    case notes
-    case tasks
-    case events
-    case historical_customer
+//enum ExtendViews {
+//    case notes
+//    case tasks
+//    case events
+//    case historical_customer
+//}
+
+enum HamburgerMenu: String {
+    case dashboard = "Dashboards"
+    case account = "Account"
+    case contact = "Contact"
+    case ticket = "Ticket"
 }
 
 public extension Notification.Name {

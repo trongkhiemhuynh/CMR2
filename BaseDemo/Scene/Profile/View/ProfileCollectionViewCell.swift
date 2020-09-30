@@ -49,7 +49,10 @@ class ProfileCollectionViewCell: UICollectionViewCell {
         vSection1.clipsToBounds = true
         vSection2.clipsToBounds = true
         vSection3.clipsToBounds = true
-
+        vSection1.dropShadow(color: .lightGray)
+        vSection2.dropShadow(color: .lightGray)
+        vSection3.dropShadow(color: .lightGray)
+        
         addInteraction([lblSetting,lblQuestion,lblPrivacy,lblShare,lblContact,lblLogout])
     }
     

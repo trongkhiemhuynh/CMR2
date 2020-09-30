@@ -110,7 +110,7 @@ extension LoginController : LoginPresenterOutput {
         onDismissLoading()
         
         // show error
-        showAlert(title: Alert_Type.error.rawValue, message: error.localizedDescription)
+        showAlert(title: AlertType.error.rawValue, message: error.localizedDescription)
         
         //FIXME save to realm
         let realm = try! Realm()
@@ -157,7 +157,7 @@ extension LoginController: UITextFieldDelegate {
             output?.fetchAuthentication(username: tfUserName.text!, password: tfPassword.text!)
         } else {
             // show error
-            showAlert(title: Alert_Type.error.rawValue, message: NSError.invalidUsernameOrPassword().localizedDescription)
+            showAlert(title: AlertType.error.rawValue, message: NSError.invalidUsernameOrPassword().localizedDescription)
         }
     }
 }

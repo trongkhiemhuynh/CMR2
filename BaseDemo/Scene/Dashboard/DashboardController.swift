@@ -19,16 +19,16 @@ class DashboardController: BaseViewController {
     //variable
     var menu : SideMenuNavigationController?
     let disposeBag = DisposeBag()
-    var controllerName : String? {
-        willSet {
-//            Logger.debug(controllerName)
-        }
-        
-        didSet {
-//            Logger.debug(controllerName)
-            didTransitionView(controllerName)
-        }
-    }
+//    var controllerName : String? {
+//        willSet {
+////            Logger.debug(controllerName)
+//        }
+//
+//        didSet {
+////            Logger.debug(controllerName)
+//            didTransitionView(controllerName)
+//        }
+//    }
     
     lazy var blurView : UIView = {
         let v = UIView(frame: view.frame)
@@ -72,6 +72,8 @@ class DashboardController: BaseViewController {
         }
         
         lblCountNotification.text = numberCount
+        
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -153,7 +155,17 @@ extension DashboardController: SideMenuNavigationControllerDelegate {
     
     func sideMenuDidDisappear(menu: SideMenuNavigationController, animated: Bool) {
         
-//        let menuVC = controllerOwner as? MenuViewController
+        let menuVC = menu.viewControllers.first as! MenuViewController
+        
+        menuVC._rx_ItemVar.subscribe(onNext: { (menuItem) in
+            self.onPushView(menuItem)
+        }, onError: { (error) in
+            
+        }, onCompleted: {
+            
+        }, onDisposed: {
+            
+            }).disposed(by: disposeBag)
 //
 //        menuVC?.rx_stringVar.subscribe(onNext: { (item) in
 //            Logger.debug(item)
@@ -165,22 +177,20 @@ extension DashboardController: SideMenuNavigationControllerDelegate {
 //        }, onDisposed: {
 //
 //        }).disposed(by: disposeBag)
+        
+        
 
     }
     
-    func didTransitionView(_ name : String?) {
+    func onPushView(_ name : String?) {
         guard let vcName = name else {return}
         
-        if vcName == "Dashboards" {
-            return
-        } else if vcName == "Account" {
+        if vcName == HamburgerMenu.account.rawValue {
             RouterManager.shared.handleRouter(AccountRoute())
-        } else if vcName == "Contact" {
+        } else if vcName == HamburgerMenu.contact.rawValue {
             RouterManager.shared.handleRouter(ContactRoute())
-        } else if vcName == "Ticket" {
+        } else if vcName == HamburgerMenu.ticket.rawValue {
             ApplicationManager.sharedInstance.mainTabbar?.customTabbar.switchTab(from: TabMenu.dashboard.rawValue, to: TabMenu.ticket.rawValue)
-        } else {
-            ApplicationManager.sharedInstance.mainTabbar?.customTabbar.switchTab(from: TabMenu.dashboard.rawValue, to: TabMenu.profile.rawValue)
         }
     }
 }

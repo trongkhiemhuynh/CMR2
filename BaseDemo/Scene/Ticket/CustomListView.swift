@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import RxSwift
 
 protocol CustomListViewOutput : class {
     func didChangeSort(with name : String?)
@@ -111,6 +112,7 @@ class CustomListView: BaseView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        //FIXME
         if let ticket = controller as? TicketController {
             ticket.delegate = self
         }
