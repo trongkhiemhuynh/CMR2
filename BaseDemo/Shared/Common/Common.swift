@@ -123,6 +123,10 @@ var nameDevice: String? = {
     return UIDevice.current.name
 }()
 
+var uuidDevice: String = {
+    return UUID().uuidString.lowercased()
+}()
+
 var job2Device: Dictionary? = {
     return ["STEVE":"Software Engineer","Hanh":"Finance","Thanh":"Director","Thanh Nguyen":"Marketing"]
 }()

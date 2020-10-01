@@ -16,9 +16,10 @@ enum Profile_Item: String {
     case setting = "Setting"
     case share = "Share account"
     case privacy = "Privacy"
-    case question = "Question"
+    case question = "Questions"
     case contact = "Contact"
     case logout = "Log out"
+    case profileHeader = "PHeader"
 }
 
 class ProfileCollectionViewCell: UICollectionViewCell {

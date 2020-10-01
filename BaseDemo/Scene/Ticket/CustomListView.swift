@@ -135,7 +135,7 @@ extension CustomListView : UICollectionViewDataSource {
         
         let name = arrDummy?[indexPath.row]
         
-        cell.updateData(TicketListModel(name: name!, id: "7878787878", status: status!))
+        cell.updateData(TicketListModel(name: name!, id: uuidDevice, status: status!))
         
         return cell
     }

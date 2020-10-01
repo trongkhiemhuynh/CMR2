@@ -9,11 +9,7 @@
 import UIKit
 
 class TicketDetailInfoViewController: BaseViewController {
-    
-    private let itemsPerRow: CGFloat = 1
-    private let heightCellInfo : CGFloat = 120
-    private let heightCellInfoDetail : CGFloat = 70
-    
+
     @IBOutlet weak var cvInfoDetail : UICollectionView!
     
     override func viewDidLoad() {
@@ -88,9 +84,9 @@ extension TicketDetailInfoViewController : UICollectionViewDelegateFlowLayout {
         let widthPerItem = availableWidth / itemsPerRow
         
         if indexPath.row == 0 {
-            return CGSize(width: widthPerItem, height: heightCellInfo)
+            return CGSize(width: widthPerItem, height: heightHeaderProfile)
         } else {
-            return CGSize(width: widthPerItem, height: heightCellInfoDetail)
+            return CGSize(width: widthPerItem, height: heightLargeCell)
         }
 
     }

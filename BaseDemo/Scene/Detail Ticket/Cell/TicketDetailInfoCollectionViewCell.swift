@@ -20,7 +20,7 @@ class TicketDetailInfoCollectionViewCell: UICollectionViewCell {
         // Initialization code
         lblName.text = nameDevice
         lblJob.text = jobTitle
-        lblID.text = "ID: " + UUID().uuidString.lowercased()
+        lblID.text = "ID: " + uuidDevice
     }
 
 }

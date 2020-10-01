@@ -28,14 +28,14 @@ class AddressPagerCollectionViewCell: UICollectionViewCell {
     func onUpdate(_ index: Int) {
         
         if index == 0 {
-            lblCompany.text = "BASE Business Solution CORPORATION Head Quarter"
+            lblCompany.text = "BASE Business Solution CORPORATION Ho Chi Minh"
             lblAddress.text = "Floor 12B, Doan Van Bo street, 4 district, Ho Chi Minh city"
             lblDirection.text = "Direction"
             lblPhone.text = "1900 633 568"
             lblMail.text = "info@basebs.com/marketing@basebs.com"
             lblWebsite.text = "basebs.com"
         } else {
-            lblCompany.text = "BASE Business Solution CORPORATION Sub Quarter"
+            lblCompany.text = "BASE Business Solution CORPORATION Ha Noi"
             lblAddress.text = "Ha Noi"
             lblDirection.text = "Direction"
             lblPhone.text = "1900 633 568"

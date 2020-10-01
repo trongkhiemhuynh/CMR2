@@ -209,7 +209,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
     }
     
     @objc func onTapHeader() {
-        didUpdateProfileView(name: "ProfileHeader")
+        didUpdateProfileView(name: Profile_Item.profileHeader.rawValue)
     }
 
 }
@@ -227,7 +227,7 @@ extension MagicCollectionViewDatasource: ProfileCollectionViewCellOutput {
             return
         }
         
-        if name == "ProfileHeader" {
+        if name == Profile_Item.profileHeader.rawValue {
             RouterManager.shared.handleRouter(AccountRoute())
             return
         }
@@ -235,22 +235,23 @@ extension MagicCollectionViewDatasource: ProfileCollectionViewCellOutput {
         let topController = UIApplication.getTopViewController()
         let vc = UIViewController()
         let presenter = PresenterView.xibInstance()
-        let content = UILabel(frame: presenter.vContent.bounds)
+        let content = UIImageView(image: UIImage(named: "sand_timer"))//UILabel(frame: presenter.vContent.bounds)
         
         presenter.vTitle.lblTitle.text = name
         presenter.hideAddNewBtn(on: true)
         
-        content.text = "Opps!!!"
-        content.contentMode = .center
-        content.font = UIFont(name: content.font.fontName, size: 30)
-        
+        content.contentMode = .scaleAspectFit
+
         presenter.frame = vc.view.bounds
-        presenter.vContent.addSubview(content)
+
         presenter.controller = topController
-        
-        vc.view.addSubview(presenter)
+
         presenter.layoutIfNeeded()
+        
         topController?.navigationController?.pushViewController(vc, animated: true)
+        presenter.vContent.addSubview(content)
+        vc.view.addSubview(presenter)
+        content.center = CGPoint(x: presenter.vContent.bounds.width/2, y: presenter.vContent.bounds.height/2)
     }
 }
 
