@@ -40,14 +40,11 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if type == .setting {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MagicCollectionViewCell.identifier, for: indexPath) as! MagicCollectionViewCell
-            cell.img.image = UIImage(named: "no_avatar")
-            cell.vImg.isHidden = true
-
             let arr = dictData?[String(indexPath.section)] as! Array<String>
             let title = arr[indexPath.row]
             
-            cell.title.text = title
-//            cell.icRight.image = UIImage(named: "next")
+            cell.onUpdate(title: title)
+
             return cell
         } else if type == .account || type == .contact_detail {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AccountCollectionViewCell.identifier, for: indexPath) as! AccountCollectionViewCell

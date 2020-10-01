@@ -38,7 +38,8 @@ class AccountController: BaseViewController {
         //account cell
         subView.collectionView.registerCell(AccountCollectionViewCell.self)
         
-        subView.collectionView.register(AccountReusableView.xib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AccountReusableView.identifier)
+        let accountView = AccountReusableView.xib()
+        subView.collectionView.register(accountView, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AccountReusableView.identifier)
 
         subView.heightHeader = heightHeaderProfile
         subView.heightCell = heightLargeCell

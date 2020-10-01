@@ -17,13 +17,34 @@ class BaseMagicCollectionViewCell : UICollectionViewCell {
 }
 
 class MagicCollectionViewCell: BaseMagicCollectionViewCell {
-
+    
+    @IBOutlet weak var sw: UISwitch!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        vBound.layer.cornerRadius = 8
-        vBound.clipsToBounds = true
-        vBound.dropShadow(color: .lightGray)
+//        vBound.layer.cornerRadius = 8
+//        vBound.clipsToBounds = true
+//        vBound.dropShadow(color: .lightGray)
+        isHideSwitch(true)
+    }
+    
+    func isHideSwitch(_ hide: Bool) {
+        sw.isHidden = hide
+    }
+    
+    func onUpdate(title: String) {
+        self.img.image = UIImage(named: "no_avatar")
+        self.vImg.isHidden = true
+        self.title.text = title
+        
+        if title.contains("Push") {
+            isHideSwitch(false)
+        }
+    }
+    
+    override func prepareForReuse() {
+        isHideSwitch(true)
     }
 
 }

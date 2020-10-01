@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,6 +27,9 @@
                             <state key="normal" title="Add/Edit your image">
                                 <color key="titleColor" white="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="onChangeImage" destination="U6b-Vx-4bR" eventType="touchUpInside" id="eEj-bw-i90"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>
@@ -37,6 +39,9 @@
                 <constraint firstItem="jUJ-pi-VUa" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="F38-Ec-jgc"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <connections>
+                <outlet property="iv" destination="aXH-7s-4jy" id="2Bb-AP-qRe"/>
+            </connections>
             <point key="canvasLocation" x="51.449275362318843" y="150.33482142857142"/>
         </collectionReusableView>
     </objects>

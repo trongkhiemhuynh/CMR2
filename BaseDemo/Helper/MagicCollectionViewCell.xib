@@ -41,27 +41,37 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPV-YU-JkL">
-                                        <rect key="frame" x="68" y="0.0" width="267" height="70"/>
+                                        <rect key="frame" x="68" y="0.0" width="207" height="70"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ORM-PF-0gb">
-                                        <rect key="frame" x="343" y="0.0" width="20" height="70"/>
+                                        <rect key="frame" x="283" y="0.0" width="80" height="70"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fU6-VO-BC9">
-                                                <rect key="frame" x="5" y="27.5" width="10" height="15"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="15" id="GLu-CO-vx2"/>
-                                                    <constraint firstAttribute="width" constant="10" id="usw-v5-OhP"/>
-                                                </constraints>
-                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yVp-mf-Wig">
+                                                <rect key="frame" x="0.0" y="19.5" width="80" height="31"/>
+                                                <subviews>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x7z-o8-nJc">
+                                                        <rect key="frame" x="0.0" y="0.0" width="72" height="31"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="70" id="tqq-3I-aXo"/>
+                                                        </constraints>
+                                                    </switch>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fU6-VO-BC9">
+                                                        <rect key="frame" x="70" y="0.0" width="10" height="31"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="10" id="usw-v5-OhP"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="fU6-VO-BC9" firstAttribute="centerX" secondItem="ORM-PF-0gb" secondAttribute="centerX" id="Umd-dn-7xW"/>
-                                            <constraint firstItem="fU6-VO-BC9" firstAttribute="centerY" secondItem="ORM-PF-0gb" secondAttribute="centerY" id="h95-Ym-hyb"/>
-                                            <constraint firstAttribute="width" constant="20" id="iIq-3s-apa"/>
+                                            <constraint firstItem="yVp-mf-Wig" firstAttribute="centerY" secondItem="ORM-PF-0gb" secondAttribute="centerY" id="62F-50-WT0"/>
+                                            <constraint firstAttribute="trailing" secondItem="yVp-mf-Wig" secondAttribute="trailing" id="F8j-SY-2Ts"/>
+                                            <constraint firstItem="yVp-mf-Wig" firstAttribute="leading" secondItem="ORM-PF-0gb" secondAttribute="leading" id="o47-lt-aHm"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -93,6 +103,7 @@
             <connections>
                 <outlet property="icRight" destination="fU6-VO-BC9" id="opb-Jd-rjC"/>
                 <outlet property="img" destination="edg-Wf-x4G" id="usk-3f-jQn"/>
+                <outlet property="sw" destination="x7z-o8-nJc" id="4gI-mp-0gz"/>
                 <outlet property="title" destination="yPV-YU-JkL" id="Wx0-uo-Odf"/>
                 <outlet property="vBound" destination="OV1-sr-bPJ" id="ERX-7S-ELc"/>
                 <outlet property="vImg" destination="xD2-bc-8xO" id="Z33-SI-k3Q"/>
