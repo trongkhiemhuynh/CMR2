@@ -74,6 +74,12 @@ class DashboardController: BaseViewController {
         lblCountNotification.text = numberCount
         
         
+        /// subcrible
+        let menuVC = menu!.viewControllers.first as! MenuViewController
+        
+        menuVC._rx_ItemVar.subscribe(onNext: { (menuItem) in
+            self.onPushView(menuItem)
+        }, onCompleted: {}, onDisposed: {}).disposed(by: disposeBag)
     }
     
     override func viewDidLayoutSubviews() {
@@ -155,11 +161,7 @@ extension DashboardController: SideMenuNavigationControllerDelegate {
     
     func sideMenuDidDisappear(menu: SideMenuNavigationController, animated: Bool) {
         Logger.info(menu)
-        let menuVC = menu.viewControllers.first as! MenuViewController
         
-        menuVC._rx_ItemVar.subscribe(onNext: { (menuItem) in
-            self.onPushView(menuItem)
-        }, onCompleted: {}, onDisposed: {}).disposed(by: disposeBag)
 //
 //        menuVC?.rx_stringVar.subscribe(onNext: { (item) in
 //            Logger.debug(item)
@@ -177,6 +179,7 @@ extension DashboardController: SideMenuNavigationControllerDelegate {
     }
     
     func onPushView(_ name : String?) {
+//        Thread.sleep(forTimeInterval: 0.3)
         Logger.info(name)
         guard let vcName = name else {return}
         

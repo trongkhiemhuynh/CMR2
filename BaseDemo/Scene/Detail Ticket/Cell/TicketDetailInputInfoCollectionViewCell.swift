@@ -10,11 +10,12 @@ import UIKit
 
 protocol TicketDetailInputInfoCollectionViewCellOutput: class {
     func didEndEdit(titleField: String, inputField : String)
+    func onFrameCell(_ cell: UICollectionViewCell)
 }
 
 class TicketDetailInputInfoCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var iv : UIImageView!
+    @IBOutlet weak var iv:UIImageView!
     @IBOutlet weak var lbl : UILabel!
     @IBOutlet weak var tf : UITextField!
     
@@ -54,7 +55,7 @@ extension TicketDetailInputInfoCollectionViewCell : XibInitalization {
 
 extension TicketDetailInputInfoCollectionViewCell : UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        
+        delegate?.onFrameCell(self)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {

@@ -11,7 +11,7 @@ import UIKit
 class SortContactsViewCell: UITableViewCell {
 
     @IBOutlet weak var lbl : UILabel!
-    @IBOutlet weak var iv : UIImageView!
+    @IBOutlet weak var iv:UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

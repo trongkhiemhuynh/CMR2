@@ -20,7 +20,7 @@ class AddressPagerCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.layer.cornerRadius = 12.0
+        self.layer.cornerRadius = cornerRadius
         self.clipsToBounds = true
         self.backgroundColor = .white
     }

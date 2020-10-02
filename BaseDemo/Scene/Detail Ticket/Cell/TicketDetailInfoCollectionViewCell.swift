@@ -21,10 +21,18 @@ class TicketDetailInfoCollectionViewCell: UICollectionViewCell {
         lblName.text = nameDevice
         lblJob.text = jobTitle
         lblID.text = "ID: " + uuidDevice
+        
+        iv.layer.cornerRadius = cornerRadius
+        iv.clipsToBounds = true
     }
 
+    override func layoutSubviews() {
+        if let imgData = ApplicationManager.sharedInstance.getValueUserDefault(key: kAvatarImage) as? Data {
+            iv.image = UIImage(data: imgData)
+        }
+    }
 }
 
-extension TicketDetailInfoCollectionViewCell : XibInitalization {
+extension TicketDetailInfoCollectionViewCell: XibInitalization {
     typealias Element = TicketDetailInfoCollectionViewCell
 }

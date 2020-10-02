@@ -22,6 +22,17 @@ class AccountReusableView: UICollectionReusableView {
         super.awakeFromNib()
         // Initialization code
         self.backgroundColor = BASEColor.BackgroundListColor()
+        iv.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onChangeImage)))
+        iv.isUserInteractionEnabled = true
+        iv.layer.cornerRadius = iv.frame.size.height/2
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if let imgData = ApplicationManager.sharedInstance.getValueUserDefault(key: kAvatarImage) as? Data {
+            iv.image = UIImage(data: imgData)
+        }
     }
     
     @IBAction func onChangeImage() {
@@ -61,6 +72,9 @@ extension AccountReusableView: UIImagePickerControllerDelegate, UINavigationCont
         let image = info[.editedImage] as? UIImage
         iv.contentMode = .scaleAspectFit
         iv.image = image
+        
+        let imageData = image!.pngData()
+        ApplicationManager.sharedInstance.saveUserDefault(value: imageData, key: kAvatarImage)
         picker.dismiss(animated: true, completion: nil)
     }
 }

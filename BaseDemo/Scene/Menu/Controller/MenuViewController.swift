@@ -16,10 +16,6 @@ private let reuseIdentifier = "Cell"
 class MenuViewController: BaseViewController {
 
     @IBOutlet weak var collectionView : UICollectionView!
-
-    private let itemsPerRow: CGFloat = 1
-    private let heightCellInfo : CGFloat = 100
-    private let heightCellInfoDetail : CGFloat = 50
     
     var itemVar : String {
         get {
@@ -27,6 +23,7 @@ class MenuViewController: BaseViewController {
         }
         
         set {
+            Logger.info(newValue)
             _rx_ItemVar.accept(newValue)
         }
     }
@@ -130,9 +127,9 @@ extension MenuViewController : UICollectionViewDelegateFlowLayout {
         let widthPerItem = availableWidth / itemsPerRow
         
         if indexPath.row == 0 {
-            return CGSize(width: widthPerItem, height: heightCellInfo)
+            return CGSize(width: widthPerItem, height: heightHeaderDetailTicket)
         } else {
-            return CGSize(width: widthPerItem, height: heightCellInfoDetail)
+            return CGSize(width: widthPerItem, height: heightDefaultCell)
         }
     }
 }
@@ -144,7 +141,7 @@ extension MenuViewController : UICollectionViewDelegate {
 //        Logger.debug(nameItem)
         Logger.info(nameItem)
         
-        self.itemVar = nameItem
+        
         
         SideMenuManager.default.leftMenuNavigationController?.dismiss(animated: true, completion: {
 //            self.menuSelectedItem.accept(nameItem)
@@ -152,7 +149,7 @@ extension MenuViewController : UICollectionViewDelegate {
 //            let dashboardVC = self.controllerOwner as? DashboardController
 //            dashboardVC?.controllerName = nameItem
             
-            
+            self.itemVar = nameItem
         })
     }
 }

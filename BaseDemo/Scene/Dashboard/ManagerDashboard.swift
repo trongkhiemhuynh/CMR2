@@ -23,18 +23,26 @@ class ManagerDashboard: BaseView {
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblJob: UILabel!
     
+    @IBOutlet weak var iv:UIImageView!
+    
     var chartView : BarChartView!
     var chartPieView : PieChartView!
     
     override func awakeFromNib() {
         lblName.text = nameDevice
         lblJob.text = jobTitle
+        
+        iv.layer.cornerRadius = iv.frame.size.width/2
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
         vInfoUser.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapProfile(gesture:))))
+        
+        if let imgData = ApplicationManager.sharedInstance.getValueUserDefault(key: kAvatarImage) as? Data {
+            iv.image = UIImage(data: imgData)
+        }
     }
     
     @objc func didTapProfile(gesture : UITapGestureRecognizer) {

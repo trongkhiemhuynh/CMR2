@@ -25,13 +25,60 @@ class NewTicketViewController: BaseViewController {
     }
 
     override func setupView() {
-        vTitle.lblTitle.text = "Create new ticket"
-        
+
         cvNewTicket.layer.backgroundColor = BASEColor.BackgroundListColor().cgColor
         
         cvNewTicket.registerCell(TicketDetailInputInfoCollectionViewCell.self)
         
         cvNewTicket.registerCell(NewTicketCheckboxCollectionViewCell.self)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_ :)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_ :)), name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(_ notification: NSNotification) {
+        //FIXME
+//        let cell = cvNewTicket.visibleCells[cvNewTicket.visibleCells.count - 3]
+//
+//        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+//
+//            let heightFromCell2Top = cell.frame.origin.y - cvNewTicket.contentOffset.y
+//            let heightFromKeyboard2Top = heightScreen - keyboardSize.size.height
+//
+//            if heightFromCell2Top > heightFromKeyboard2Top {
+//                // adjust content offset
+//                var contentOffset = self.cvNewTicket.contentOffset
+//
+//                contentOffset.y = heightFromCell2Top - heightFromKeyboard2Top + 10
+//
+//                cvNewTicket.setContentOffset(contentOffset, animated: true)
+//
+//                UIView.animate(withDuration: 0.35) {
+//                    self.cvNewTicket.layoutIfNeeded()
+//                    self.view.layoutIfNeeded()
+//                }
+//            } else {
+//                // do nothing
+//            }
+//
+////            self.cvNewTicket.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height + 10, right: 0)
+//        }
+
+    }
+    
+    @objc func keyboardWillHide(_ notification: NSNotification) {
+
+        self.cvNewTicket.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        UIView.animate(withDuration: 0.35) {
+            self.cvNewTicket.layoutIfNeeded()
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func setTitleView(_ title: String) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
+            self.vTitle.lblTitle.text = title
+        }
     }
     
     @IBAction func back() {
@@ -142,6 +189,10 @@ extension NewTicketViewController : XibInitalization {
 }
 
 extension NewTicketViewController : TicketDetailInputInfoCollectionViewCellOutput {
+    func onFrameCell(_ cell: UICollectionViewCell) {
+        
+    }
+    
     func didEndEdit(titleField: String, inputField: String) {
         dictData.setValue(inputField, forKey: titleField)
     }

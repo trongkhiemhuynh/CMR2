@@ -12,7 +12,7 @@ import FSCalendar
 
 class FilterCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var iv : UIImageView!
+    @IBOutlet weak var iv:UIImageView!
     @IBOutlet weak var tf : SkyFloatingLabelTextField!
     
     private var vCal : CalendarView?

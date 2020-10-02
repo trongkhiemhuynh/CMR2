@@ -63,7 +63,7 @@ class MagicCollectionView: BaseView {
     }
 }
 
-extension MagicCollectionView : MagicCollectionViewDelegateOutput {
+extension MagicCollectionView: MagicCollectionViewDelegateOutput {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //settings controller
 

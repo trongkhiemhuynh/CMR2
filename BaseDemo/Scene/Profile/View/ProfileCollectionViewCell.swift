@@ -44,9 +44,9 @@ class ProfileCollectionViewCell: UICollectionViewCell {
         // Initialization code
         self.backgroundColor = BASEColor.BackgroundListColor()
         
-        vSection1.layer.cornerRadius = 12
-        vSection2.layer.cornerRadius = 12
-        vSection3.layer.cornerRadius = 12
+        vSection1.layer.cornerRadius = cornerRadius
+        vSection2.layer.cornerRadius = cornerRadius
+        vSection3.layer.cornerRadius = cornerRadius
         vSection1.clipsToBounds = true
         vSection2.clipsToBounds = true
         vSection3.clipsToBounds = true

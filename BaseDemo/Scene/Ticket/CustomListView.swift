@@ -47,8 +47,8 @@ class CustomListView: BaseView {
         
         vContent.frame = self.bounds
 
-        vSorted.layer.cornerRadius = 12
-        vCounted.layer.cornerRadius = 12
+        vSorted.layer.cornerRadius = cornerRadius
+        vCounted.layer.cornerRadius = cornerRadius
 
         cvList.registerCell(CustomTicketCollectionViewCell.self)
         

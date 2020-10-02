@@ -34,6 +34,8 @@ class TicketController: BaseViewController {
         vListView.delegate = self
         vStage.delegate = self
         vListView.controller = self
+        
+        vTitle.lblTitle.text = "Ticket list"
     }
     
     override func initData() {
@@ -70,7 +72,12 @@ class TicketController: BaseViewController {
     }
     
     @IBAction func actionNewTicket(sender : UIButton?) {
-        RouterManager.shared.handleRouter(NewTicketRoute())
+        let newRoute = NewTicketRoute()
+        RouterManager.shared.handleRouter(newRoute)
+        
+        newRoute.handleData { (controller) in
+            controller.setTitleView("Create new ticket")
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

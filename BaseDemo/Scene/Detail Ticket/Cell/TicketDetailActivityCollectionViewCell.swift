@@ -21,7 +21,7 @@ class TicketDetailActivityCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var lblTitle : UILabel!
     @IBOutlet weak var lblTime : UILabel!
     @IBOutlet weak var lblDescription : UILabel!
-    @IBOutlet weak var iv : UIImageView!
+    @IBOutlet weak var iv:UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

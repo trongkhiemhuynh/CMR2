@@ -25,6 +25,9 @@ class CreatNewNote: BaseView {
         super.awakeFromNib()
         tf.placeholder = "Typing..."
         vTitleView.lblTitle.text = "Create new note"
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(onDismissKeyboard))
+        self.addGestureRecognizer(tapRecognizer)
     }
     
     @IBAction func back() {

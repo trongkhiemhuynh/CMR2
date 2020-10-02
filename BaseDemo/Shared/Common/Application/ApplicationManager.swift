@@ -33,6 +33,20 @@ class ApplicationManager {
         return dateFormatter
     }()
     
+    func saveUserDefault(value: Any?, key: String) {
+        let userDefault = UserDefaults.standard
+        userDefault.set(value, forKey: key)
+        
+        userDefault.synchronize()
+    }
+    
+    func getValueUserDefault(key: String) -> Any? {
+        let userDefault = UserDefaults.standard
+        let value = userDefault.value(forKey: key)
+        
+        return value
+    }
+    
     
     //
     // MARK: Public

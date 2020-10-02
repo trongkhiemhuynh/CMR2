@@ -50,6 +50,9 @@ class CustomTitleView: BaseView {
         
         vSearch.isHidden = true
         tfSearch.placeholder = "Search ..."
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(onDismissKeyboard))
+        self.addGestureRecognizer(tapRecognizer)
     }
     
     override class func awakeFromNib() {

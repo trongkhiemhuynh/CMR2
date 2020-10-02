@@ -119,6 +119,11 @@ class BaseView: UIView, ChartSubViews {
         super.init(coder: aDecoder)
         commonInit()
     }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
 
     func commonInit() {
         
@@ -176,6 +181,10 @@ class BaseView: UIView, ChartSubViews {
     
     func addPieChart() {
         
+    }
+    
+    @objc func onDismissKeyboard() {
+        self.endEditing(true)
     }
 }
 

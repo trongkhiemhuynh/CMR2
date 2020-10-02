@@ -86,13 +86,15 @@ public extension Notification.Name {
 
 let arrInputTicket = ["Ticket owner", "Ticket ID", "Phone", "Mail", "Priority", "Status", "Subject","Escalated ?", "Done ?","Date Time opened","Date Time closed","Created by..., date time","Last modifined by..., date time","Description"]
 
-let arrIcTicket = ["ticketowner","ticket_id", "phone", "mail_ic", "priority", "status", "subject","escalated", "done","date","date","createdby","createdby","description","description","description"]
+let arrIcTicket = ["ticket_owner","ticket_id", "phone", "mail_ic", "priority", "status", "subject","escalated", "done","date","date","createdby","createdby","description","description","description"]
 
 let arrMenuItems = ["Profile","Dashboards","Account","Contact","Ticket"]
 let arrExtends = ["Notes","Tasks","Chat","Comments","Attachments","Event","Historical Activities"]
 let arrAccountArrowDown = ["Industry","District","City","Country"]
 let arrContactArrowDown = ["Department"]
 let arrNewChildArrowDown = ["Contact name","Status"]
+
+let kAvatarImage = "kAvatarImage"
 
 enum ItemMenu : Int {
     case none = 0, ticket = 1, dashboard, email, notes, activities, activities_history, articles, account, contact
@@ -112,9 +114,16 @@ let heightDefaultCell : CGFloat = 50
 let paddingTop: CGFloat = {
     return 8.0
 }()
+let cornerRadius: CGFloat = {
+    return 12.0
+}()
 
 let heightHeaderProfile: CGFloat = {
     return 150.0
+}()
+
+let heightHeaderDetailTicket: CGFloat = {
+    return 100.0
 }()
 
 let heightHeaderDefault: CGFloat = {

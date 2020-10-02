@@ -311,7 +311,9 @@ class MagicCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollect
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        Logger.info(scrollView.contentOffset.x)
+//        Logger.info(scrollView.contentOffset.x)
+        //hide keyboard
+        collectionView?.endEditing(true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

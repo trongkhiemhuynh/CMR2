@@ -18,7 +18,7 @@ class PopupView: BaseView {
     }
     */
     
-    @IBOutlet weak var iv : UIImageView!
+    @IBOutlet weak var iv:UIImageView!
     @IBOutlet weak var tbl : UITableView!
     @IBOutlet weak var vDismiss : UIView!
     

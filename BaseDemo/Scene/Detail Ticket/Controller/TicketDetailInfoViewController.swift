@@ -84,7 +84,7 @@ extension TicketDetailInfoViewController : UICollectionViewDelegateFlowLayout {
         let widthPerItem = availableWidth / itemsPerRow
         
         if indexPath.row == 0 {
-            return CGSize(width: widthPerItem, height: heightHeaderProfile)
+            return CGSize(width: widthPerItem, height: heightHeaderDetailTicket)
         } else {
             return CGSize(width: widthPerItem, height: heightLargeCell)
         }

@@ -14,29 +14,32 @@
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jUJ-pi-VUa">
-                    <rect key="frame" x="150" y="20.5" width="139" height="100"/>
+                    <rect key="frame" x="184.5" y="35.5" width="70" height="70"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="aXH-7s-4jy">
-                            <rect key="frame" x="0.0" y="0.0" width="139" height="70"/>
+                            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                             <constraints>
+                                <constraint firstAttribute="width" secondItem="aXH-7s-4jy" secondAttribute="height" multiplier="1:1" id="RoI-Jv-Tex"/>
                                 <constraint firstAttribute="height" constant="70" id="eLB-Bq-SzB"/>
                             </constraints>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgh-1H-BLd">
-                            <rect key="frame" x="0.0" y="70" width="139" height="30"/>
-                            <state key="normal" title="Add/Edit your image">
-                                <color key="titleColor" white="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <connections>
-                                <action selector="onChangeImage" destination="U6b-Vx-4bR" eventType="touchUpInside" id="eEj-bw-i90"/>
-                            </connections>
-                        </button>
                     </subviews>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgh-1H-BLd">
+                    <rect key="frame" x="150" y="105.5" width="139" height="30"/>
+                    <state key="normal" title="Add/Edit your image">
+                        <color key="titleColor" white="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="onChangeImage" destination="U6b-Vx-4bR" eventType="touchUpInside" id="eEj-bw-i90"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="jUJ-pi-VUa" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="3FD-BS-irY"/>
                 <constraint firstItem="jUJ-pi-VUa" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="F38-Ec-jgc"/>
+                <constraint firstItem="cgh-1H-BLd" firstAttribute="top" secondItem="aXH-7s-4jy" secondAttribute="bottom" id="FQM-Cy-O2A"/>
+                <constraint firstItem="cgh-1H-BLd" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="yO9-lv-iVo"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <connections>

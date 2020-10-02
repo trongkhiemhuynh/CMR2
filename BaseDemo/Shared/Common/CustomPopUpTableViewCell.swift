@@ -10,7 +10,7 @@ import UIKit
 
 class CustomPopUpTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var iv : UIImageView!
+    @IBOutlet weak var iv:UIImageView!
     @IBOutlet weak var lbl : UILabel!
     
     override func awakeFromNib() {
