@@ -66,6 +66,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             return cell
         } else if type == .profile {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileCollectionViewCell.identifier, for: indexPath) as! ProfileCollectionViewCell
+            cell.onUpdate()
             cell.delegate = self
             return cell
         } else if type == .extend {
@@ -167,6 +168,24 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             let imageName = title.lowercased().replacingOccurrences(of: " ", with: "_")
             cell.onUpdate(UIImage(named: imageName), title, title)
 
+            return cell
+        } else if type == .new_child {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AccountCollectionViewCell.identifier, for: indexPath) as! AccountCollectionViewCell
+            
+            let arr = dictData?[String(indexPath.section)] as! Array<String>
+            let title = arr[indexPath.row]
+            var postFix = ""
+            if type == .contact_detail {
+                postFix = "contact_"
+            }
+            
+            cell.onUpdate(title, postFix)
+
+            //check item have picklist
+            if arrNewChildArrowDown.contains(title) {
+                cell.ivDropdown.isHidden = false
+            }
+            
             return cell
         }
         

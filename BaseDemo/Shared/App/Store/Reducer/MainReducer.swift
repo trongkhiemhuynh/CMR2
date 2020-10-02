@@ -9,17 +9,22 @@
 import Foundation
 import ReSwift
 
-struct MainReducer {
-    
-}
 
-func appReducer(action : Action, state : MainAppState?) -> MainAppState {
+
+//struct AppReducer: Reducer<Any> {
+//    
+//    func handleAction(action: Action, state: AppState?) -> AppState {
+//        return AppState(ticketState: TicketState.reducer(action: action, state: state?.ticketState), loginState: LoginState.reducer(action: action, state: state?.loginState))
+//    }
+//}
+
+func appReducer(action : Action, state : AppState?) -> AppState {
 
     let ticketState = TicketState.reducer(action: action, state: state?.ticketState)
     let loginState = LoginState.reducer(action: action, state: state?.loginState)
     
     // return
-    return MainAppState(ticketState: ticketState, loginState: loginState)
+    return AppState(ticketState: ticketState, loginState: loginState)
 }
 
 //extension MainReducer : Reducer<Any> {

@@ -12,6 +12,8 @@ import RealmSwift
 class SplashViewController: BaseViewController {
 
     @IBOutlet weak var lblSlogan : UILabel!
+    @IBOutlet weak var iv: UIImageView!
+    @IBOutlet weak var lblWelcome : UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +27,10 @@ class SplashViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        
-        
     }
     
     override func initData() {
+        
         Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (timer) in
             let realm = try! Realm()
             let loginObject = realm.objects(LoginObject.self).first
@@ -47,6 +47,32 @@ class SplashViewController: BaseViewController {
                 //route to login
                 RouterManager.shared.handleRouter(LoginRoute())
             }
+        }
+        
+//        animation(view: iv)
+//        flipAnimation(view: iv)
+    }
+    
+    func animation(view: UIView) {
+        let keyFrameAnimation = CAKeyframeAnimation(keyPath: "bounds")
+        keyFrameAnimation.duration = 1
+        keyFrameAnimation.timingFunctions = [CAMediaTimingFunction(name: .linear), CAMediaTimingFunction(name: .easeInEaseOut)]
+        let initalBounds = NSValue(cgRect: view.bounds)
+        let secondBounds = NSValue(cgRect: CGRect(x: 0, y: 0, width: view.frame.size.width/2, height: view.frame.size.height/2))
+        let finalBounds = NSValue(cgRect: CGRect(x: 0, y: 0, width: view.frame.size.width*2 , height: view.frame.size.height*2))
+        keyFrameAnimation.values = [initalBounds, secondBounds, finalBounds]
+        keyFrameAnimation.keyTimes = [0, 1, 2]
+        
+        view.layer.add(keyFrameAnimation, forKey: "bounds")
+    }
+    
+    func flipAnimation(view: UIView) {
+        let label = view
+        
+        UIView.transition(with: label, duration: 2.0, options: [.transitionFlipFromLeft], animations: {
+//            label.textColor = .black
+        }) { (done) in
+            print(done)
         }
     }
     

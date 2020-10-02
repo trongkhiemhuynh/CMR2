@@ -12,7 +12,7 @@ class GuideCollectionViewCell: UICollectionViewCell {
     
     lazy var iv: UIImageView = {
        let imv = UIImageView()
-        imv.contentMode = .scaleAspectFill
+        imv.contentMode = .scaleAspectFit
 //        imv.translatesAutoresizingMaskIntoConstraints = false
 
         return imv
@@ -23,6 +23,7 @@ class GuideCollectionViewCell: UICollectionViewCell {
         
         self.addSubview(iv)
         iv.frame = self.bounds
+        Logger.info(bounds)
 //        iv.addConstraint(top: 0, leading: 0, bottom: 0, trailing: 0, superView: self)
     }
     

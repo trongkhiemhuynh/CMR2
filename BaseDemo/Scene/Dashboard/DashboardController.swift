@@ -154,18 +154,12 @@ extension DashboardController: SideMenuNavigationControllerDelegate {
     }
     
     func sideMenuDidDisappear(menu: SideMenuNavigationController, animated: Bool) {
-        
+        Logger.info(menu)
         let menuVC = menu.viewControllers.first as! MenuViewController
         
         menuVC._rx_ItemVar.subscribe(onNext: { (menuItem) in
             self.onPushView(menuItem)
-        }, onError: { (error) in
-            
-        }, onCompleted: {
-            
-        }, onDisposed: {
-            
-            }).disposed(by: disposeBag)
+        }, onCompleted: {}, onDisposed: {}).disposed(by: disposeBag)
 //
 //        menuVC?.rx_stringVar.subscribe(onNext: { (item) in
 //            Logger.debug(item)
@@ -183,6 +177,7 @@ extension DashboardController: SideMenuNavigationControllerDelegate {
     }
     
     func onPushView(_ name : String?) {
+        Logger.info(name)
         guard let vcName = name else {return}
         
         if vcName == HamburgerMenu.account.rawValue {

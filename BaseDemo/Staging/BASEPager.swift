@@ -67,6 +67,7 @@ extension BASEPager: UICollectionViewDataSource {
         
         cell.onUpdate(indexPath.row)
         
+        
         return cell
     }
 
@@ -81,16 +82,16 @@ extension BASEPager: UICollectionViewDelegate {
 
         let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
 
-        guard let indexPath = collectionView.indexPathForItem(at: visiblePoint) else { return }
-        
+        guard let indexPath = collectionView.indexPathForItem(at: visiblePoint) else { return}
         //update map
         delegate?.onChangedAt(index: indexPath.row)
-        collectionView.scrollToItem(at: indexPath, at: .bottom, animated: true)
+//        collectionView.scrollToItem(at: indexPath, at: .bottom, animated: true)
+        collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
         pagerControl.currentPage = indexPath.row
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        var visibleR = CGRect()
+//        var visibleR = CGRect()
         
 //        visibleR.origin = collectionView.contentOffset
 //        visibleR.size = collectionView.bounds.size
@@ -109,6 +110,6 @@ extension BASEPager: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return heightDefaultCell
     }
 }

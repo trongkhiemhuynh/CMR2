@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 let BASEBS_HN = CLLocation(latitude: 21.0086301, longitude: 105.8376027)
-let BASEBS_HCM = CLLocation(latitude: 10.7646238, longitude: 106.700588)
+let BASEBS_HCM = CLLocation(latitude: 10.7648, longitude: 106.7025)
 
 //protocol AddressControllerOutput: class {
 //    func changeLocation(_ location: CLLocation?)

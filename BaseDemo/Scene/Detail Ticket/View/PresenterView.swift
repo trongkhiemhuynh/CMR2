@@ -27,7 +27,7 @@ class PresenterView: BaseView {
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     weak var delegate: PresenterViewOutput?
-    var actionType: PresenterActionType = .add
+    private var actionType: PresenterActionType = .add
     
     override func awakeFromNib() {
         super.awakeFromNib()

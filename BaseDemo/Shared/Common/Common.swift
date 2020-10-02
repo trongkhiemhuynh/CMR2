@@ -59,6 +59,7 @@ enum MagicView {
     case extend_event
     case extend_comment
     case extend_chat
+    case new_child
 }
 
 //enum ExtendViews {
@@ -91,6 +92,7 @@ let arrMenuItems = ["Profile","Dashboards","Account","Contact","Ticket"]
 let arrExtends = ["Notes","Tasks","Chat","Comments","Attachments","Event","Historical Activities"]
 let arrAccountArrowDown = ["Industry","District","City","Country"]
 let arrContactArrowDown = ["Department"]
+let arrNewChildArrowDown = ["Contact name","Status"]
 
 enum ItemMenu : Int {
     case none = 0, ticket = 1, dashboard, email, notes, activities, activities_history, articles, account, contact

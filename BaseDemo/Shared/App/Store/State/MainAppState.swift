@@ -9,7 +9,7 @@
 import Foundation
 import ReSwift
 
-struct MainAppState : StateType {
+struct AppState: StateType {
     let ticketState: TicketState?
     let loginState: LoginState?
 }

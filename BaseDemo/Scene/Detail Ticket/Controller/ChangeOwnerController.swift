@@ -26,6 +26,8 @@ class ChangeOwnerController: BaseViewController {
         let changeOwner = ChangeOwnerView.xibInstance()
         present.vContent.addSubview(changeOwner)
         changeOwner.frame = present.vContent.bounds
+        present.delegate = self
+        present.onChangeAction(type: .save)
     }
 
 }

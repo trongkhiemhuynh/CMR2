@@ -16,15 +16,15 @@ class GuideController: UICollectionViewController, UICollectionViewDelegateFlowL
 
 //    var indexPathSelected: IndexPath?
     
-    lazy var btnSkip: UIButton = {
+    lazy var btnNext: UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.backgroundColor = BASEColor.BackgroundExtendColor()
         btn.layer.cornerRadius = 15
         btn.titleLabel?.font = .boldSystemFont(ofSize: 13)
-        btn.setTitle("SKIP", for: .normal)
+        btn.setTitle("NEXT", for: .normal)
         btn.setTitleColor(.white, for: .normal)
-        btn.addTarget(self, action: #selector(onSkip), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(onNext), for: .touchUpInside)
         
         return btn
     }()
@@ -39,6 +39,18 @@ class GuideController: UICollectionViewController, UICollectionViewDelegateFlowL
         previousBtn.setTitleColor(.white, for: .normal)
         previousBtn.addTarget(self, action: #selector(onPrevious), for: .touchUpInside)
         return previousBtn
+    }()
+    
+    lazy var btnSkip: UIButton = {
+       let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.backgroundColor = BASEColor.BackgroundExtendColor()
+        btn.layer.cornerRadius = 15
+        btn.titleLabel?.font = .boldSystemFont(ofSize: 13)
+        btn.setTitle("SKIP", for: .normal)
+        btn.setTitleColor(.white, for: .normal)
+        btn.addTarget(self, action: #selector(onSkip), for: .touchUpInside)
+        return btn
     }()
     
     lazy var pagerControl: UIPageControl = {
@@ -67,9 +79,26 @@ class GuideController: UICollectionViewController, UICollectionViewDelegateFlowL
             return
         }
         
-        
         collectionView.scrollToItem(at: IndexPath(row: idxPath.row - 1, section: idxPath.section), at: [.centeredVertically,.centeredHorizontally], animated: true)
-        view.layoutIfNeeded()
+        
+        pagerControl.currentPage = idxPath.row - 1
+    }
+    
+    @objc func onNext() {
+        let cell = collectionView.visibleCells.first as? GuideCollectionViewCell
+        
+        guard let c = cell else {
+            return
+        }
+        let indexPath = collectionView.indexPath(for: c)
+        
+        guard let idxPath = indexPath, idxPath.row < arrGuide.count-1 else {
+            return
+        }
+        
+        collectionView.scrollToItem(at: IndexPath(row: idxPath.row + 1, section: idxPath.section), at: [.centeredVertically,.centeredHorizontally], animated: true)
+        
+        pagerControl.currentPage = idxPath.row + 1
     }
     
     override func viewDidLoad() {
@@ -87,11 +116,12 @@ class GuideController: UICollectionViewController, UICollectionViewDelegateFlowL
         self.view.addSubview(btnSkip)
         self.view.addSubview(btnPrevious)
         self.view.addSubview(pagerControl)
+        self.view.addSubview(btnNext)
         
-        btnSkip.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        btnSkip.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
-        btnSkip.widthAnchor.constraint(equalToConstant: 70).isActive = true
-        btnSkip.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        btnNext.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        btnNext.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
+        btnNext.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        btnNext.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         btnPrevious.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         btnPrevious.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
@@ -102,17 +132,25 @@ class GuideController: UICollectionViewController, UICollectionViewDelegateFlowL
         pagerControl.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
         pagerControl.widthAnchor.constraint(equalToConstant: 100).isActive = true
         pagerControl.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        btnSkip.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        btnSkip.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true
+        btnSkip.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        btnSkip.heightAnchor.constraint(equalToConstant: 30).isActive = true
     }
 
-    /*
-    // MARK: - Navigation
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        var visibleRect = CGRect()
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        visibleRect.origin = collectionView.contentOffset
+        visibleRect.size = collectionView.bounds.size
+        
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+
+        guard let indexPath = collectionView.indexPathForItem(at: visiblePoint) else { return}
+        
+        pagerControl.currentPage = indexPath.row
     }
-    */
 
     // MARK: UICollectionViewDataSource
 
@@ -128,9 +166,8 @@ class GuideController: UICollectionViewController, UICollectionViewDelegateFlowL
     }
     
     override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let cell = cell as! GuideCollectionViewCell
-        cell.onUpdate(arrGuide[indexPath.row])
-        pagerControl.currentPage = indexPath.row
+        let cellG = cell as! GuideCollectionViewCell
+        cellG.onUpdate(arrGuide[indexPath.row])
     }
     
     override func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {

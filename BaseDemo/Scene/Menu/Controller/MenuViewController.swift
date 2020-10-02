@@ -140,9 +140,9 @@ extension MenuViewController : UICollectionViewDelegateFlowLayout {
 extension MenuViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        ApplicationManager.sharedInstance.itemMenuSelected = ItemMenu[indexPath.row]
-        
         let nameItem = arrMenuItems[indexPath.row]
 //        Logger.debug(nameItem)
+        Logger.info(nameItem)
         
         self.itemVar = nameItem
         
