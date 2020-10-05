@@ -19,7 +19,7 @@ class GuideController: UICollectionViewController, UICollectionViewDelegateFlowL
     lazy var btnNext: UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.backgroundColor = BASEColor.BackgroundExtendColor()
+        btn.backgroundColor = Color.BackgroundExtendColor()
         btn.layer.cornerRadius = 15
         btn.titleLabel?.font = .boldSystemFont(ofSize: 13)
         btn.setTitle("NEXT", for: .normal)
@@ -32,7 +32,7 @@ class GuideController: UICollectionViewController, UICollectionViewDelegateFlowL
     lazy var btnPrevious: UIButton = {
        let previousBtn = UIButton()
         previousBtn.translatesAutoresizingMaskIntoConstraints = false
-        previousBtn.backgroundColor = BASEColor.BackgroundExtendColor()
+        previousBtn.backgroundColor = Color.BackgroundExtendColor()
         previousBtn.layer.cornerRadius = 15
         previousBtn.titleLabel?.font = .boldSystemFont(ofSize: 13)
         previousBtn.setTitle("PREV", for: .normal)
@@ -44,7 +44,7 @@ class GuideController: UICollectionViewController, UICollectionViewDelegateFlowL
     lazy var btnSkip: UIButton = {
        let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.backgroundColor = BASEColor.BackgroundExtendColor()
+        btn.backgroundColor = Color.BackgroundExtendColor()
         btn.layer.cornerRadius = 15
         btn.titleLabel?.font = .boldSystemFont(ofSize: 13)
         btn.setTitle("SKIP", for: .normal)
@@ -56,8 +56,8 @@ class GuideController: UICollectionViewController, UICollectionViewDelegateFlowL
     lazy var pagerControl: UIPageControl = {
        let pc = UIPageControl()
         pc.numberOfPages = arrGuide.count
-        pc.tintColor = .white
-        pc.currentPageIndicatorTintColor = .black
+        pc.pageIndicatorTintColor = Color.TextTitleColor
+        pc.currentPageIndicatorTintColor = Color.MainAppColor()
         pc.translatesAutoresizingMaskIntoConstraints = false
         return pc
     }()

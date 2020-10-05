@@ -23,8 +23,8 @@ class FilterCollectionViewCell: UICollectionViewCell {
         
         iv.image = UIImage(named: "calendar")
         iv.isHidden = true
-        tf.selectedLineColor = BASEColor.MainAppColor()
-        tf.selectedTitleColor = BASEColor.MainAppColor()
+        tf.selectedLineColor = Color.MainAppColor()
+        tf.selectedTitleColor = Color.MainAppColor()
         tf.textErrorColor = .red
     }
     

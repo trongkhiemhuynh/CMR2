@@ -33,7 +33,7 @@ class WelcomeViewController: UIViewController {
     func setupView(){
         ivAgree.isHidden = true
         
-        let color = BASEColor.MainAppColor()
+        let color = Color.MainAppColor()
         
         vCircle.backgroundColor = color
         vCircle.layer.cornerRadius = vCircle.bounds.width/2

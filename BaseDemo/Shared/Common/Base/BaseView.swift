@@ -186,6 +186,12 @@ class BaseView: UIView, ChartSubViews {
     @objc func onDismissKeyboard() {
         self.endEditing(true)
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        Logger.info(self.frame)
+    }
 }
 
 extension BaseView: BaseAbility {

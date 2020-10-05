@@ -33,6 +33,12 @@ class ApplicationManager {
         return dateFormatter
     }()
     
+    lazy var VNDateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        return dateFormatter
+    }()
+    
     func saveUserDefault(value: Any?, key: String) {
         let userDefault = UserDefaults.standard
         userDefault.set(value, forKey: key)

@@ -31,7 +31,7 @@ class ExtendView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.cvExtend.backgroundColor = BASEColor.BackgroundExtendColor()
+        self.cvExtend.backgroundColor = Color.BackgroundExtendColor()
         self.cvExtend.registerCell(ExtendCollectionViewCell.self)
         self.vBound.layer.cornerRadius = 12
         self.vBound.clipsToBounds = true

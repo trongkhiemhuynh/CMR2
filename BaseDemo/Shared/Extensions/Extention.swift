@@ -87,6 +87,16 @@ extension UIView {
         rightAnchor.constraint(equalTo: superView.rightAnchor, constant: trailing).isActive = true
         bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: bottom).isActive = true
     }
+    
+    func addTapDismissKeyboard() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onDismiss(_ :)))
+        tapGesture.cancelsTouchesInView = false
+        self.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func onDismiss(_ gestureRecognizer: UIGestureRecognizer) {
+        self.endEditing(true)
+    }
 }
 
 extension UIButton {

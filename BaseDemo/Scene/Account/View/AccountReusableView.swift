@@ -21,7 +21,7 @@ class AccountReusableView: UICollectionReusableView {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.backgroundColor = BASEColor.BackgroundListColor()
+        self.backgroundColor = Color.BackgroundListColor()
         iv.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onChangeImage)))
         iv.isUserInteractionEnabled = true
         iv.layer.cornerRadius = iv.frame.size.height/2

@@ -29,8 +29,8 @@ class TicketDetailInputInfoCollectionViewCell: UICollectionViewCell {
         tf.leftViewMode = .always
     }
     
-    public func onUpdate(_ im : UIImage?,_ title : String?,_ detail : String?) {
-        iv.image = im
+    public func onUpdate( image: UIImage?, title: String?, detail: String?) {
+        iv.image = image
         lbl.text = title
         tf.text = detail
     }

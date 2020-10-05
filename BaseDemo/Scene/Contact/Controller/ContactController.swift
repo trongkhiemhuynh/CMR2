@@ -24,11 +24,11 @@ class ContactController: BaseViewController {
         view.addSubview(present)
         
         let subView = MagicCollectionView.xibInstance()
-        subView.dictData = ["0":["Contact 1"],"1":["Contact 2"],"2":["Contact 3"],"3":["Contact 4"]]
+        subView.dictData = ["0":["Apple"],"1":["Amazon"],"2":["Netflix"],"3":["Google"],"4":["Facebook"]]
         subView.controller = self
         //account cell
-        subView.heightHeader = 4.0
-        subView.heightCell = 70.0
+        subView.heightHeader = heightHeaderDefault
+        subView.heightCell = heightLargeCell
         subView.viewType = .contact
         subView.collectionView.registerCell(LogCallViewCell.self)
 //        subView.delegateAddSubView = self

@@ -23,7 +23,7 @@ class TicketDetailInfoViewController: BaseViewController {
         cvInfoDetail.registerCell(TicketDetailInfoCollectionViewCell.self)
         cvInfoDetail.registerCell(TicketDetailInputInfoCollectionViewCell.self)
         cvInfoDetail.registerCell(NewTicketCheckboxCollectionViewCell.self)
-        cvInfoDetail.backgroundColor = BASEColor.BackgroundListColor()
+        cvInfoDetail.backgroundColor = Color.BackgroundListColor()
     }
 
     /*
@@ -56,14 +56,14 @@ extension TicketDetailInfoViewController : UICollectionViewDataSource {
             if titleName.contains("Escalated") || titleName.contains("Done") {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewTicketCheckboxCollectionViewCell.identifier, for: indexPath) as? NewTicketCheckboxCollectionViewCell
                 cell?.lblTitle.text = titleName
-                cell?.vContent.backgroundColor = BASEColor.BackgroundListColor()
+                cell?.vContent.backgroundColor = Color.BackgroundListColor()
                 cell?.btnCheckbox.isEnabled = false
                 return cell!
             } else {
                 let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailInputInfoCollectionViewCell.identifier, for: indexPath) as? TicketDetailInputInfoCollectionViewCell
                 cell2?.isUserInteractionEnabled = false
-                cell2!.onUpdate(UIImage(named: icName), titleName, titleName)
-                cell2?.tf.backgroundColor = BASEColor.BackgroundListColor()
+                cell2!.onUpdate(image: UIImage(named: icName), title: titleName, detail: titleName)
+                cell2?.tf.backgroundColor = Color.BackgroundListColor()
                 return cell2!
             }
             

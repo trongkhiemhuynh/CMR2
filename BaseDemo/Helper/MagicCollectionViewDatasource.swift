@@ -158,7 +158,9 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             return cell
         } else if type == .contact {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LogCallViewCell.identifier, for: indexPath) as! LogCallViewCell
-            cell.onUpdate()
+            let name = dictData!["\(indexPath.section)"] as! Array<String>
+            cell.onUpdate(name: name.first!, company: name.first!, imageName: "no_avatar")
+            
             return cell
         } else if type == .auto {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailInputInfoCollectionViewCell.identifier, for: indexPath) as! TicketDetailInputInfoCollectionViewCell
@@ -166,7 +168,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             let arr = dictData?[String(indexPath.section)] as! Array<String>
             let title = arr[indexPath.row]
             let imageName = title.lowercased().replacingOccurrences(of: " ", with: "_")
-            cell.onUpdate(UIImage(named: imageName), title, title)
+            cell.onUpdate(image: UIImage(named: imageName), title: title, detail: "")
 
             return cell
         } else if type == .new_child {
@@ -185,6 +187,11 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             if arrNewChildArrowDown.contains(title) {
                 cell.ivDropdown.isHidden = false
             }
+            
+            return cell
+        } else if type == .account_list {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LogCallViewCell.identifier, for: indexPath) as! LogCallViewCell
+            cell.onUpdate(name: "Apple", company: "US", imageName: "no_avatar")
             
             return cell
         }
@@ -210,7 +217,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
         
         let headerView  = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MagicHeaderCollectionReusableView.identifier, for: indexPath) as! MagicHeaderCollectionReusableView
         
-        headerView.backgroundColor = BASEColor.BackgroundListColor()
+        headerView.backgroundColor = Color.BackgroundListColor()
         headerView.lblSection.text = ""
         
         return headerView

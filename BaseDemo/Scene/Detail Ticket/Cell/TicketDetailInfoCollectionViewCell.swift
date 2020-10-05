@@ -22,7 +22,7 @@ class TicketDetailInfoCollectionViewCell: UICollectionViewCell {
         lblJob.text = jobTitle
         lblID.text = "ID: " + uuidDevice
         
-        iv.layer.cornerRadius = cornerRadius
+        iv.layer.cornerRadius = iv.frame.size.height/2
         iv.clipsToBounds = true
     }
 

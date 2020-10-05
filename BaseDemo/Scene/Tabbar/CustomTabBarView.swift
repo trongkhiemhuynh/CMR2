@@ -85,7 +85,7 @@ class CustomTabBarView: UIView {
         case 0:
             strName = "Home"
             btnHome.setTitle(strName, for: .normal)
-            btnHome.setTitleColor(BASEColor.MainAppColor(), for: .normal)
+            btnHome.setTitleColor(Color.MainAppColor(), for: .normal)
             btnHome.setImage(UIImage(named: "\(strName.lowercased())_selected"), for: .normal)
         case 1:
             strName = "Profile"
@@ -101,7 +101,7 @@ class CustomTabBarView: UIView {
         let btn = viewWithTag(tab) as? UIButton
         
         btn?.setTitle(strName, for: .normal)
-        btn?.setTitleColor(BASEColor.MainAppColor(), for: .normal)
+        btn?.setTitleColor(Color.MainAppColor(), for: .normal)
         btn?.setImage(UIImage(named: "\(strName.lowercased())_selected"), for: .normal)
         
         activeItem = tab

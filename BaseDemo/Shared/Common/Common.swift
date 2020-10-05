@@ -60,6 +60,7 @@ enum MagicView {
     case extend_comment
     case extend_chat
     case new_child
+    case account_list
 }
 
 //enum ExtendViews {
@@ -108,27 +109,26 @@ let sectionInsetsDefault = UIEdgeInsets(top: 8.0,
                                         left: 8.0,
                                         bottom: 8.0,
                                         right: 8.0)
-let itemsPerRow: CGFloat = 1
-let heightLargeCell : CGFloat = 70
-let heightDefaultCell : CGFloat = 50
-let paddingTop: CGFloat = {
-    return 8.0
-}()
-let cornerRadius: CGFloat = {
-    return 12.0
-}()
+let paddingInsetsLarge = UIEdgeInsets(top: 16.0,
+                                      left: 16.0,
+                                      bottom: 16.0,
+                                      right: 16.0)
 
-let heightHeaderProfile: CGFloat = {
-    return 150.0
-}()
+let itemsPerRow: CGFloat = 1.0
+let heightLargeCell: CGFloat = 70.0
+let heightMediumCell: CGFloat = 60.0
+let heightDefaultCell: CGFloat = 50.0
+let paddingTop: CGFloat = 8.0
 
-let heightHeaderDetailTicket: CGFloat = {
-    return 100.0
-}()
+let corner8Radius: CGFloat = 8.0
 
-let heightHeaderDefault: CGFloat = {
-    return 8.0
-}()
+let corner12Radius: CGFloat = 12.0
+
+let heightHeaderProfile: CGFloat = 150.0
+
+let heightHeaderDetailTicket: CGFloat = 100.0
+
+let heightHeaderDefault: CGFloat = 8.0
 
 var nameDevice: String? = {
     return UIDevice.current.name

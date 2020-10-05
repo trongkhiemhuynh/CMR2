@@ -22,16 +22,21 @@ class CustomTicketStageCollectionViewCell: UICollectionViewCell {
         isChoosen = false
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        Logger.info(self.frame)
+    }
+    
     func didUpdate(_ isSelected : Bool) {
         if isSelected {
             imgStage.isHidden = false
             lblStage.font = UIFont.boldSystemFont(ofSize: 18.0)
-            lblStage.textColor = BASEColor.MainAppColor()
+            lblStage.textColor = Color.MainAppColor()
         } else {
             // previously selection
             imgStage.isHidden = true
             lblStage.font = UIFont.systemFont(ofSize: 16.0, weight: .light)
-            lblStage.textColor = BASEColor.TextTitleColor
+            lblStage.textColor = Color.TextTitleColor
         }
         
 //        layoutIfNeeded()

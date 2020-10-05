@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct BASEColor {
+struct Color {
     static func MainAppColor() -> UIColor {
         return UIColor(hex: "#0AB2A8")!
     }
@@ -22,11 +22,11 @@ struct BASEColor {
         return UIColor(hex: "#044743")!
     }
     
-    static func CellShadowColor() -> UIColor {
+    static var CellShadowColor: UIColor {
         return UIColor(hex: "#d6d6d6")!
     }
     
-    static var TextTitleColor : UIColor {
+    static var TextTitleColor: UIColor {
         return UIColor(hex: "#707070")!
     }
 

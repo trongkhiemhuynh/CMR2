@@ -31,6 +31,7 @@ class PresenterView: BaseView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.vContent.backgroundColor = Color.BackgroundListColor()
     }
     
     @IBAction func addNew() {

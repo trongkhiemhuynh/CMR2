@@ -15,7 +15,7 @@ class PopUpConfirm: BaseView {
     
     override func awakeFromNib() {
         btnOk.layer.borderWidth = 1
-        btnOk.layer.borderColor = BASEColor.MainAppColor().cgColor
+        btnOk.layer.borderColor = Color.MainAppColor().cgColor
     }
     
     @IBAction func actionOk() {

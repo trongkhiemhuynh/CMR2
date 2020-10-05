@@ -40,7 +40,7 @@ class MagicCollectionView: BaseView {
             self.collectionView.backgroundColor = .clear
             self.backgroundColor = .clear
         } else {
-            self.collectionView.backgroundColor = BASEColor.BackgroundListColor()
+            self.collectionView.backgroundColor = Color.BackgroundListColor()
         }
         
         collectionView.dataSource = magicDatasource
@@ -52,6 +52,7 @@ class MagicCollectionView: BaseView {
         magicDatasource.type = viewType
         magicDelegate.heightCell = heightCell
         magicDelegate.itemsPerRow = itemsPerRow
+        magicDelegate.collectionView = collectionView
         
         let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
         flowLayout?.scrollDirection = scrollDirection
@@ -60,53 +61,41 @@ class MagicCollectionView: BaseView {
         //register cell, header for settings
         collectionView.registerCell(MagicCollectionViewCell.self)
         collectionView.register(MagicHeaderCollectionReusableView.xib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MagicHeaderCollectionReusableView.identifier)
+        
+        self.addTapDismissKeyboard()
     }
 }
 
 extension MagicCollectionView: MagicCollectionViewDelegateOutput {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //settings controller
-
-        let topVC = UIApplication.getTopViewController()
         
-        guard let vc = topVC else {
+        switch viewType {
+        case .account_list:
+            RouterManager.shared.handleRouter(AccountRoute())
             return
-        }
-        
-        if vc.isKind(of: SettingViewController.self) {
+        case .setting:
             let cell = collectionView.cellForItem(at: indexPath) as! MagicCollectionViewCell
             let title = cell.title.text!
             
-            if title == "Log out" {
-                RouterManager.shared.handleRouter(LoginRoute())
-                
-                //realm
-                let realm = try! Realm()
-                
-                try! realm.write {
-                    realm.deleteAll()
-                }
-                
-                return
-            } else if title == "OCR" {
+            if title == SettingType.ocr.rawValue {
                 //                vc = OCRController()
+            } else if title == SettingType.jabber.rawValue {
+                Logger.info(title)
             }
-            
-//            let settingVC = vc as? SettingViewController
-//
-//            settingVC?.showAlert(title: title, message: AlertType.undefine.rawValue)
-            //            vc.navigationController?.pushViewController(vc, animated: true)
-        } else if vc.isKind(of: ContactController.self) {
-            RouterManager.shared.handleRouter(ContactDetailRoute())
-        } else if vc.isKind(of: AccountController.self) || vc.isKind(of: ContactDetailController.self) || vc.isKind(of: NewChildController.self) {
-            //deleate to superview
+            return
+        case .account,.contact_detail,.new_child:
             let cell = collectionView.cellForItem(at: indexPath) as? AccountCollectionViewCell
             delegateAddSubView?.didAddPicklist!(v: cell)
-        } else {
+            return
+        case .contact:
+            RouterManager.shared.handleRouter(ContactDetailRoute())
+            return
+        default:
+            print(viewType)
             delegateAddSubView?.didAddNew(type: Extend_Type.notes.rawValue)
             delegateAddSubView?.onDetailView?()
         }
-        
     }
 }
 

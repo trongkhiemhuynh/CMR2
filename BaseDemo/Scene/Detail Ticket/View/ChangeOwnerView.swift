@@ -19,8 +19,8 @@ class ChangeOwnerView: BaseView {
     /// function
     override func awakeFromNib() {
         super.awakeFromNib()
-        backgroundColor = BASEColor.BackgroundListColor()
-        vSearchOwner.layer.cornerRadius = cornerRadius
+        backgroundColor = Color.BackgroundListColor()
+        vSearchOwner.layer.cornerRadius = corner12Radius
 //        vSearchOwner.layer.borderWidth = 1
 //        vSearchOwner.layer.borderColor = UIColor.lightGray.cgColor
         vSearchOwner.clipsToBounds = true

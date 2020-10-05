@@ -17,6 +17,7 @@ class NewTicketViewController: BaseViewController {
     private var selectedIdx : IndexPath?
     private var vCal : CalendarView?
     private var dictData : NSMutableDictionary = NSMutableDictionary()
+    private var cellDateSelected: TicketDetailInputInfoCollectionViewCell?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,7 @@ class NewTicketViewController: BaseViewController {
 
     override func setupView() {
 
-        cvNewTicket.layer.backgroundColor = BASEColor.BackgroundListColor().cgColor
+        cvNewTicket.layer.backgroundColor = Color.BackgroundListColor().cgColor
         
         cvNewTicket.registerCell(TicketDetailInputInfoCollectionViewCell.self)
         
@@ -34,6 +35,8 @@ class NewTicketViewController: BaseViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_ :)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_ :)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        cvNewTicket.addTapDismissKeyboard()
     }
     
     @objc func keyboardWillShow(_ notification: NSNotification) {
@@ -128,7 +131,7 @@ extension NewTicketViewController : UICollectionViewDataSource {
             return cell!
         } else {
             let cellInput = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailInputInfoCollectionViewCell.identifier, for: indexPath) as! TicketDetailInputInfoCollectionViewCell
-            cellInput.onUpdate(UIImage(named: icName), titleName, "")
+            cellInput.onUpdate(image: UIImage(named: icName), title: titleName, detail: "")
             cellInput.delegate = self
             
             return cellInput
@@ -138,18 +141,7 @@ extension NewTicketViewController : UICollectionViewDataSource {
 
 extension NewTicketViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         selectedIdx = indexPath
-        
-        guard let cell = collectionView.cellForItem(at: indexPath) as? TicketDetailInputInfoCollectionViewCell else { return }
-        
-        if (cell.lbl.text?.lowercased().contains("date"))! {
-            vCal = CalendarView.xibInstance()
-            vCal?.fsCalendar.delegate = self
-            view.addSubview(vCal!)
-            vCal?.frame = view.bounds
-        }
-        
     }
 }
 
@@ -167,20 +159,19 @@ extension NewTicketViewController : UICollectionViewDelegateFlowLayout {
 
 extension NewTicketViewController : FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        
-        let formatter = ApplicationManager.sharedInstance.defaultDateFormatter
-        let strDate = formatter.string(from: date)
-        
-        let cell = cvNewTicket.cellForItem(at: selectedIdx!) as? TicketDetailInputInfoCollectionViewCell
-        cell?.tf.text = strDate
-        vCal?.removeFromSuperview()
-        print("selected date : ",strDate)
+        if let cell = cellDateSelected {
+            let formatter = ApplicationManager.sharedInstance.VNDateFormatter
+            let strDate = formatter.string(from: date)
+            cell.tf.text = strDate
+            vCal?.removeFromSuperview()
+//            print("selected date : ",strDate)
+        }
     }
     
     func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        let strDate = ApplicationManager.sharedInstance.globalDateFormatter.string(from: date)
+//        let strDate = ApplicationManager.sharedInstance.globalDateFormatter.string(from: date)
         
-        print("deselected date : ",strDate)
+//        print("deselected date : ",date)
     }
 }
 
@@ -190,7 +181,17 @@ extension NewTicketViewController : XibInitalization {
 
 extension NewTicketViewController : TicketDetailInputInfoCollectionViewCellOutput {
     func onFrameCell(_ cell: UICollectionViewCell) {
-        
+        if let cell = cell as? TicketDetailInputInfoCollectionViewCell {
+//            guard let cell = collectionView.cellForItem(at: indexPath) as? TicketDetailInputInfoCollectionViewCell else { return }
+            cellDateSelected = cell
+            
+            if (cell.lbl.text?.lowercased().contains("date"))! {
+                vCal = CalendarView.xibInstance()
+                vCal?.fsCalendar.delegate = self
+                view.addSubview(vCal!)
+                vCal?.frame = view.bounds
+            }
+        }
     }
     
     func didEndEdit(titleField: String, inputField: String) {

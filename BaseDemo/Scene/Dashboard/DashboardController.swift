@@ -184,7 +184,16 @@ extension DashboardController: SideMenuNavigationControllerDelegate {
         guard let vcName = name else {return}
         
         if vcName == HamburgerMenu.account.rawValue {
-            RouterManager.shared.handleRouter(AccountRoute())
+            let vMagic = MagicCollectionView.xibInstance()
+            vMagic.collectionView.registerCell(LogCallViewCell.self)
+            vMagic.heightCell = heightLargeCell
+            vMagic.heightHeader = heightHeaderDefault
+            vMagic.dictData = ["0":["Apple"],"1":["Amazon"],"2":["Netflix"],"3":["Google"],"4":["Facebook"]]
+            vMagic.controller = self
+            vMagic.viewType = .account_list
+            //config
+            generateView(subView: vMagic, title: "Account list", actionType: .add)
+            
         } else if vcName == HamburgerMenu.contact.rawValue {
             RouterManager.shared.handleRouter(ContactRoute())
         } else if vcName == HamburgerMenu.ticket.rawValue {

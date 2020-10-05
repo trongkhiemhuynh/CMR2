@@ -12,8 +12,8 @@ class CreatNewNote: BaseView {
 
     //outlet
     @IBOutlet weak var vTitleView : CustomTitleView!
-    @IBOutlet weak var tf : UITextField!
-    @IBOutlet weak var tv : UITextView!
+    @IBOutlet weak var tf: UITextField!
+    @IBOutlet weak var tv: UITextView!
     @IBOutlet weak var btnUnderline : UIButton!
     @IBOutlet weak var btnItalic : UIButton!
     @IBOutlet weak var btnBold : UIButton!
@@ -23,12 +23,26 @@ class CreatNewNote: BaseView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        tf.placeholder = "Typing..."
-        vTitleView.lblTitle.text = "Create new note"
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(onDismissKeyboard))
         self.addGestureRecognizer(tapRecognizer)
+        
+        tv.layer.cornerRadius = corner8Radius
+        tf.layer.cornerRadius = corner8Radius
+        
+        self.backgroundColor = Color.BackgroundListColor()
+//        tf.layer.borderWidth = 1.0
+//        tf.layer.borderColor = Color.BackgroundListColor().cgColor
+        
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+//        tv.dropShadow(color: Color.CellShadowColor)
+//        tf.dropShadow(color: Color.CellShadowColor)
+    }
+    
     
     @IBAction func back() {
         removeFromSuperview()

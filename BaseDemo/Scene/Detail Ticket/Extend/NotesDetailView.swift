@@ -12,12 +12,18 @@ class NotesDetailView: BaseView {
     @IBOutlet weak var tv: UITextView!
 
     override func awakeFromNib() {
-//        super.awakeFromNib()
-        
-        tv.isUserInteractionEnabled = false
+        tv.layer.cornerRadius = corner8Radius
+        self.backgroundColor = Color.BackgroundListColor()
+    }
+}
+
+extension NotesDetailView: UITextViewDelegate {
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        return false
     }
 }
 
 extension NotesDetailView: XibInitalization {
     typealias Element = NotesDetailView
 }
+

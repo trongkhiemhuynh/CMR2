@@ -40,7 +40,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTD-NU-WK7">
-                                    <rect key="frame" x="31" y="52" width="31.5" height="14.5"/>
+                                    <rect key="frame" x="31" y="49.5" width="31.5" height="14.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                     <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -49,9 +49,9 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="A9O-pR-82z" firstAttribute="centerX" secondItem="BKw-yS-hVe" secondAttribute="centerX" id="4ec-ZX-EJt"/>
-                                <constraint firstItem="xTD-NU-WK7" firstAttribute="top" secondItem="A9O-pR-82z" secondAttribute="bottom" constant="4" id="e5y-Pe-1TE"/>
                                 <constraint firstItem="A9O-pR-82z" firstAttribute="top" secondItem="BKw-yS-hVe" secondAttribute="top" constant="8" id="hfm-cZ-uJb"/>
                                 <constraint firstItem="xTD-NU-WK7" firstAttribute="centerX" secondItem="BKw-yS-hVe" secondAttribute="centerX" id="iLV-Wc-L9M"/>
+                                <constraint firstAttribute="bottom" secondItem="xTD-NU-WK7" secondAttribute="bottom" constant="8" id="uSz-9a-iO8"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2gx-ep-9fz">
@@ -69,7 +69,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oh9-rF-EAI">
-                                    <rect key="frame" x="35.5" y="52" width="22.5" height="14.5"/>
+                                    <rect key="frame" x="35.5" y="49.5" width="22.5" height="14.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                     <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -80,7 +80,7 @@
                                 <constraint firstItem="oh9-rF-EAI" firstAttribute="centerX" secondItem="2gx-ep-9fz" secondAttribute="centerX" id="0K2-1m-u92"/>
                                 <constraint firstItem="LqS-xt-wJc" firstAttribute="top" secondItem="2gx-ep-9fz" secondAttribute="top" constant="8" id="NTN-4T-SG1"/>
                                 <constraint firstItem="LqS-xt-wJc" firstAttribute="centerX" secondItem="2gx-ep-9fz" secondAttribute="centerX" id="QbA-gU-USf"/>
-                                <constraint firstItem="oh9-rF-EAI" firstAttribute="top" secondItem="LqS-xt-wJc" secondAttribute="bottom" constant="4" id="eo3-HV-hA4"/>
+                                <constraint firstAttribute="bottom" secondItem="oh9-rF-EAI" secondAttribute="bottom" constant="8" id="gWk-HT-eeH"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Bh-kF-R5v">
@@ -98,7 +98,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log a call" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCp-Sn-ofO">
-                                    <rect key="frame" x="19.5" y="48" width="55" height="14.5"/>
+                                    <rect key="frame" x="19.5" y="49.5" width="55" height="14.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                     <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -106,8 +106,8 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="RCp-Sn-ofO" firstAttribute="top" secondItem="Azj-vs-YkN" secondAttribute="bottom" constant="4" id="K40-n3-lWV"/>
                                 <constraint firstItem="Azj-vs-YkN" firstAttribute="top" secondItem="9Bh-kF-R5v" secondAttribute="top" constant="8" id="S9A-Bb-zYC"/>
+                                <constraint firstAttribute="bottom" secondItem="RCp-Sn-ofO" secondAttribute="bottom" constant="8" id="caH-MB-ucd"/>
                                 <constraint firstItem="RCp-Sn-ofO" firstAttribute="centerX" secondItem="9Bh-kF-R5v" secondAttribute="centerX" id="jiV-FA-EqP"/>
                                 <constraint firstItem="Azj-vs-YkN" firstAttribute="centerX" secondItem="9Bh-kF-R5v" secondAttribute="centerX" id="n2g-mn-Woz"/>
                             </constraints>
@@ -127,7 +127,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEp-eO-DnL">
-                                    <rect key="frame" x="35" y="48" width="23.5" height="14.5"/>
+                                    <rect key="frame" x="35" y="49.5" width="23.5" height="14.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                     <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -136,8 +136,8 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="sEp-eO-DnL" firstAttribute="centerX" secondItem="5FK-La-qdb" secondAttribute="centerX" id="7Ml-FY-dY8"/>
-                                <constraint firstItem="sEp-eO-DnL" firstAttribute="top" secondItem="tI0-8Q-lEc" secondAttribute="bottom" constant="4" id="Mau-hI-KFX"/>
                                 <constraint firstItem="tI0-8Q-lEc" firstAttribute="centerX" secondItem="5FK-La-qdb" secondAttribute="centerX" id="TcP-1v-2E5"/>
+                                <constraint firstAttribute="bottom" secondItem="sEp-eO-DnL" secondAttribute="bottom" constant="8" id="X3j-IC-B9W"/>
                                 <constraint firstItem="tI0-8Q-lEc" firstAttribute="top" secondItem="5FK-La-qdb" secondAttribute="top" constant="8" id="dYR-Kh-Myt"/>
                             </constraints>
                         </view>

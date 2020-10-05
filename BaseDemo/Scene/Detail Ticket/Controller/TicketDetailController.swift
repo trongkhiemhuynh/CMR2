@@ -41,6 +41,8 @@ class TicketDetailController: BaseViewController {
         vTitle.lblTitle.text = "Ticket Information"
         
         vAction.controller = self
+        
+        self.view.setNeedsLayout()
     }
 
     @IBAction func actionBack() {

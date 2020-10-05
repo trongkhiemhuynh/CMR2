@@ -42,16 +42,21 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.backgroundColor = BASEColor.BackgroundListColor()
+        self.backgroundColor = Color.BackgroundListColor()
         
-        vSection1.layer.cornerRadius = cornerRadius
-        vSection2.layer.cornerRadius = cornerRadius
-        vSection3.layer.cornerRadius = cornerRadius
+        addInteraction([lblSetting,lblQuestion,lblPrivacy,lblShare,lblContact,lblLogout])
+    }
+    
+    override func layoutSubviews() {
+        vSection1.dropShadow(color: Color.BackgroundListColor())
+        vSection2.dropShadow(color: Color.BackgroundListColor())
+        vSection3.dropShadow(color: Color.BackgroundListColor())
+        vSection1.layer.cornerRadius = corner12Radius
+        vSection2.layer.cornerRadius = corner12Radius
+        vSection3.layer.cornerRadius = corner12Radius
         vSection1.clipsToBounds = true
         vSection2.clipsToBounds = true
         vSection3.clipsToBounds = true
-        
-        addInteraction([lblSetting,lblQuestion,lblPrivacy,lblShare,lblContact,lblLogout])
     }
     
     @objc func onTap(_ gesture: UITapGestureRecognizer) {
@@ -94,9 +99,7 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     }
     
     func onUpdate() {
-        vSection1.dropShadow(color: .lightGray)
-        vSection2.dropShadow(color: .lightGray)
-        vSection3.dropShadow(color: .lightGray)
+        layoutIfNeeded()
     }
 
 }

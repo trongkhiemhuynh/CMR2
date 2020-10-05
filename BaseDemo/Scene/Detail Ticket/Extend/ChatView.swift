@@ -42,7 +42,7 @@ class ChatView: BaseView {
         vMagic.viewType = .extend_chat
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
         vMagic.heightHeader = heightHeaderDefault
-        vMagic.heightCell = heightLargeCell
+        vMagic.heightCell = heightMediumCell
     }
 
 }

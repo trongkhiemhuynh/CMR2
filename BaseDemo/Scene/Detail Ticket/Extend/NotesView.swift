@@ -40,7 +40,7 @@ class NotesView: BaseView {
         vMagic.controller = controller
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
         vMagic.delegateAddSubView = self
-        vMagic.heightCell = heightLargeCell
+        vMagic.heightCell = heightMediumCell
         vMagic.heightHeader = heightHeaderDefault
         
         presenter.vContent.addSubview(vMagic)
@@ -76,7 +76,7 @@ extension NotesView: BaseViewOutput {
         presenter.vTitle.lblTitle.text = "Note detail"
         presenter.onChangeAction(type: .edit)
         presenter.vContent.addSubview(notesDetail)
-        notesDetail.frame = CGRect(x: sectionInsetsDefault.left, y: CGPoint.zero.y, width: presenter.vContent.bounds.width, height: presenter.vContent.bounds.height)
+        notesDetail.frame = CGRect(x: paddingInsetsLarge.left, y: CGPoint.zero.y, width: presenter.vContent.bounds.width - paddingInsetsLarge.left*2, height: presenter.vContent.bounds.height)
     
         presenter.controller = controller
         presenter.delegate = vc
@@ -129,7 +129,7 @@ extension UIViewController: PresenterViewOutput {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func generateView(subView: UIView, title: String) {
+    func generateView(subView: UIView, title: String, actionType: PresenterActionType) {
         let vc = UIViewController()
         let presenter = PresenterView.xibInstance()
         presenter.vTitle.lblTitle.text = title
@@ -139,7 +139,7 @@ extension UIViewController: PresenterViewOutput {
         vc.view.addSubview(presenter)
         presenter.frame = vc.view.bounds
         
-        presenter.onChangeAction(type: .save)
+        presenter.onChangeAction(type: actionType)
         presenter.vContent.addSubview(subView)
         
         presenter.controller = self

@@ -106,7 +106,7 @@ extension ExtendController: BaseViewOutput {
             creatNote.hideSave()
             creatNote.hideBack()
             creatNote.vTitleView.isHidden = true
-            creatNote.frame = CGRect(x: sectionInsetsDefault.left, y: CGPoint.zero.y, width: presenter.vContent.bounds.width, height: presenter.vContent.bounds.height)
+            creatNote.frame = CGRect(x: paddingInsetsLarge.left, y: CGPoint.zero.y, width: presenter.vContent.bounds.width - paddingInsetsLarge.left*2, height: presenter.vContent.bounds.height)
                 
             vc.view.addSubview(presenter)
             presenter.frame = vc.view.bounds
@@ -116,6 +116,7 @@ extension ExtendController: BaseViewOutput {
             
             presenter.controller = self
             presenter.delegate = vc
+            presenter.layoutIfNeeded()
             self.navigationController?.pushViewController(vc, animated: true)
         } else if type == Extend_Type.tasks.rawValue {
             let arrData = ["Assign to","Subject","Date Time","Priority","Status","Name","Related to","Reminder set?","Description"]
@@ -127,7 +128,7 @@ extension ExtendController: BaseViewOutput {
             vMagic.controller = self
             vMagic.viewType = .auto
             //config
-            generateView(subView: vMagic, title: "New task")
+            generateView(subView: vMagic, title: "New task", actionType: .save)
         } else if type == Extend_Type.comments.rawValue {
             let arrData = ["Assign to","Subject","Date Time","Priority","Status","Name","Related to","Reminder set?","Description"]
             let vMagic = MagicCollectionView.xibInstance()
@@ -138,7 +139,7 @@ extension ExtendController: BaseViewOutput {
             vMagic.controller = self
             vMagic.viewType = .auto
             //config
-            generateView(subView: vMagic, title: "New ticket comment")
+            generateView(subView: vMagic, title: "New ticket comment", actionType: .save)
         } else if type == Extend_Type.event.rawValue {
             let arrData = ["Assign to","Subject","Date Time","Priority","Status","Name","Related to","Reminder set?","Description"]
             let vMagic = MagicCollectionView.xibInstance()
@@ -149,7 +150,7 @@ extension ExtendController: BaseViewOutput {
             vMagic.controller = self
             vMagic.viewType = .auto
             //config
-            generateView(subView: vMagic, title: "New event")
+            generateView(subView: vMagic, title: "New event", actionType: .save)
         }
     }
 

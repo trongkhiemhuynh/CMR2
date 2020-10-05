@@ -50,7 +50,7 @@ class TasksView: BaseView {
         vMagic.controller = controller
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
         vMagic.heightHeader = heightHeaderDefault
-        vMagic.heightCell = heightLargeCell
+        vMagic.heightCell = heightMediumCell
     }
 }
 

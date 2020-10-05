@@ -20,10 +20,10 @@ class LogCallViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func onUpdate() {
-        lblName.text = "Bill Gates"
-        lblCompany.text = "Microsoft"
-        ivAvatar.image = UIImage(named: "no_avatar")
+    func onUpdate(name: String?, company: String, imageName: String) {
+        lblName.text = name
+        lblCompany.text = company
+        ivAvatar.image = UIImage(named: imageName)
         ivStatus.isHidden = true
     }
 

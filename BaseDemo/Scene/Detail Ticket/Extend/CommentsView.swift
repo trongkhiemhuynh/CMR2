@@ -35,7 +35,7 @@ class CommentsView: BaseView {
 
         vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
         vMagic.heightHeader = heightHeaderDefault
-        vMagic.heightCell = heightLargeCell
+        vMagic.heightCell = heightMediumCell
     }
 
 }

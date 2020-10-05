@@ -24,8 +24,8 @@ class TicketDetailActivityViewController: BaseViewController {
     }
     
     override func setupView() {
-        view.backgroundColor = BASEColor.BackgroundListColor()
-        cvActivity.backgroundColor = BASEColor.BackgroundListColor()
+        view.backgroundColor = Color.BackgroundListColor()
+        cvActivity.backgroundColor = Color.BackgroundListColor()
 
         cvActivity.registerCell(TicketDetailActivityCollectionViewCell.self)
         vActivity.layer.cornerRadius = 8

@@ -47,12 +47,12 @@ class CustomListView: BaseView {
         
         vContent.frame = self.bounds
 
-        vSorted.layer.cornerRadius = cornerRadius
-        vCounted.layer.cornerRadius = cornerRadius
+        vSorted.layer.cornerRadius = corner12Radius
+        vCounted.layer.cornerRadius = corner12Radius
 
         cvList.registerCell(CustomTicketCollectionViewCell.self)
         
-        cvList.backgroundColor = BASEColor.BackgroundListColor()
+        cvList.backgroundColor = Color.BackgroundListColor()
         
         //FIXME read data from realm demo
 //        readFile()
