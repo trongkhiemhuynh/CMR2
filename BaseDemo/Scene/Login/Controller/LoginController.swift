@@ -65,7 +65,7 @@ class LoginController : BaseViewController {
         } else {
             //check username+password
             let isVerified = verifyLogin(username: tfUserName.text, password: tfPassword.text)
-            //fetch data
+            //fetch
             onLogin(isVerified)
             
         }
@@ -110,7 +110,9 @@ extension LoginController : LoginPresenterOutput {
         onDismissLoading()
         
         // show error
-        showAlert(title: AlertType.error.rawValue, message: error.localizedDescription)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.showAlert(title: AlertType.error.rawValue, message: error.localizedDescription)
+        }
         
         //FIXME save to realm
         let realm = try! Realm()

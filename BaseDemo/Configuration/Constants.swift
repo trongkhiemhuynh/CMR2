@@ -17,11 +17,11 @@ var heightTabbar: CGFloat = 70.0
 struct Constants {
     struct App {
         
-        static let isHTTPS = false
+        static let isHTTPS = true
         
         static let BaseURL : String = {
             if Constants.App.isHTTPS {
-                return "https://172.23.90.170:8000/api"
+                return "https://103.39.93.202/api"
             } else {
                 return "http://10.189.189.72:8000/api"
             }

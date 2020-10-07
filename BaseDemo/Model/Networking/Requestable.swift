@@ -82,9 +82,17 @@ extension Requestable {
             }
             
             //timeout
-            AF.sessionConfiguration.timeoutIntervalForRequest = 20
+//            AF.sessionConfiguration.timeoutIntervalForRequest = 20
+
+            let urlSessionConfiguration = URLSessionConfiguration.default
+            urlSessionConfiguration.timeoutIntervalForRequest = 20
             
-            AF.request(urlRequest)
+            let serverTrustManager = ServerTrustManager(evaluators: [Constants.App.BaseURL: DisabledTrustEvaluator()])
+            
+            let session = Session(configuration: urlSessionConfiguration, delegate: SessionDelegate(), rootQueue: DispatchQueue.global(), startRequestsImmediately: true, requestQueue: nil, serializationQueue: nil, interceptor: nil, serverTrustManager: serverTrustManager, redirectHandler: nil, cachedResponseHandler: nil, eventMonitors: [])
+            
+//            session.serverTrustManager = ServerTrustManager(evaluators: [Constants.App.BaseURL: DisabledTrustEvaluator()])
+            session.request(urlRequest)
                 .validate(statusCode: 200..<300)
                 //                .validate(contentType: ["application/json"])
                 .responseJSON(completionHandler: { (response) in
