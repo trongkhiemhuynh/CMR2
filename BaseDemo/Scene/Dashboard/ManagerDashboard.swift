@@ -24,6 +24,7 @@ class ManagerDashboard: BaseView {
     @IBOutlet weak var lblJob: UILabel!
     
     @IBOutlet weak var iv:UIImageView!
+    @IBOutlet weak var vWrapBarChart: UIView!
     
     var chartView : BarChartView!
     var chartPieView : PieChartView!
@@ -69,8 +70,8 @@ class ManagerDashboard: BaseView {
         
         vBarChart.addSubview(chartView!)
         
-        vBarChart.addSubview(lblEmailCounts)
-        lblEmailCounts.frame = CGRect(origin: CGPoint(x: 4, y: 0), size: CGSize(width: 200, height: 20))
+        vWrapBarChart.addSubview(lblEmailCounts)
+        lblEmailCounts.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: vWrapBarChart.frame.width, height: 30))
         
         setupBarChart(chartView : chartView)
     }
@@ -272,7 +273,7 @@ extension ManagerDashboard : XibInitalization {
 
 class DayWeekAxisValueFormatter: NSObject, IAxisValueFormatter {
     weak var chart: BarLineChartViewBase?
-    let date = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+    let date = ["MON","TUE","WED","THU","FRI","SAT","SUN"]
     
     init(chart: BarLineChartViewBase) {
         self.chart = chart

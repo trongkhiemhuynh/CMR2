@@ -10,10 +10,10 @@ import UIKit
 
 class ProfileViewController: BaseViewController {
 
-    public var heightHeader : CGFloat = 170
+    public var heightHeader: CGFloat = 170
     
-    public var heightCell : CGFloat {
-        return heightScreen - heightHeader
+    public var heightCell: CGFloat {
+        return 450.0
     }
     
     override func viewDidLoad() {
@@ -34,12 +34,11 @@ class ProfileViewController: BaseViewController {
         //register cell, header for profile
         v.collectionView.registerCell(ProfileCollectionViewCell.self)
         v.collectionView.register(ProfileCollectionReusableView.xib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileCollectionReusableView.identifier)
-        
-        view.backgroundColor = Color.BackgroundListColor()
+
         v.collectionView.backgroundColor = Color.BackgroundListColor()
         view.addSubview(v)
         
-        v.frame = view.frame
+        v.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: view.frame.size.width, height: view.frame.size.height - heightTabbar))
         
         //show navigation bar
         navigationController?.navigationBar.isHidden = false

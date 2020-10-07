@@ -47,12 +47,22 @@ class MapView: BaseView {
           latitudinalMeters: 50_000,
           longitudinalMeters: 60_000)
         
-        mapView.setCameraBoundary(
-          MKMapView.CameraBoundary(coordinateRegion: region),
-          animated: true)
+        if #available(iOS 13.0, *) {
+            mapView.setCameraBoundary(
+                MKMapView.CameraBoundary(coordinateRegion: region),
+                animated: true)
+        } else {
+            // Fallback on earlier versions
+            
+        }
         
-        let zoomRange = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 200_000)
-        mapView.setCameraZoomRange(zoomRange, animated: true)
+        if #available(iOS 13.0, *) {
+            let zoomRange = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 200_000)
+            mapView.setCameraZoomRange(zoomRange, animated: true)
+        } else {
+            // Fallback on earlier versions
+        }
+        
     }
     
     func addAnnotation(on location: CLLocation) {

@@ -73,6 +73,8 @@
 		224346D824FCE0C100CF7AA3 /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224346D724FCE0C100CF7AA3 /* ApplicationManager.swift */; };
 		224346DA24FCF4D100CF7AA3 /* SwipeableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224346D924FCF4D100CF7AA3 /* SwipeableCollectionViewCell.swift */; };
 		224346DC24FCF4DC00CF7AA3 /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224346DB24FCF4DC00CF7AA3 /* UIView+Anchors.swift */; };
+		22439BD3252D726400E6077F /* ExtendedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22439BD1252D726400E6077F /* ExtendedCollectionViewCell.swift */; };
+		22439BD4252D726400E6077F /* ExtendedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22439BD2252D726400E6077F /* ExtendedCollectionViewCell.xib */; };
 		224EBAF424F5068100CB676F /* ExtendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224EBAF224F5068100CB676F /* ExtendCollectionViewCell.swift */; };
 		224EBAF524F5068100CB676F /* ExtendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 224EBAF324F5068100CB676F /* ExtendCollectionViewCell.xib */; };
 		224EBAF824F50EDA00CB676F /* NewTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224EBAF624F50EDA00CB676F /* NewTicketViewController.swift */; };
@@ -167,7 +169,6 @@
 		228D5682251C4CCF00CE935C /* TaskDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 228D5680251C4CCF00CE935C /* TaskDetailController.xib */; };
 		228D5685251C4E2D00CE935C /* CustomDetailActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 228D5683251C4E2B00CE935C /* CustomDetailActionView.xib */; };
 		228D5686251C4E2D00CE935C /* CustomDetailActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D5684251C4E2C00CE935C /* CustomDetailActionView.swift */; };
-		228D5688251C50CA00CE935C /* AddressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D5687251C50C900CE935C /* AddressController.swift */; };
 		228D568A251C546F00CE935C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D5689251C546F00CE935C /* MapView.swift */; };
 		228D568C251C548300CE935C /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 228D568B251C548300CE935C /* MapView.xib */; };
 		228D568E251C54C200CE935C /* BASEPager.xib in Resources */ = {isa = PBXBuildFile; fileRef = 228D568D251C54C200CE935C /* BASEPager.xib */; };
@@ -379,6 +380,8 @@
 		224346D724FCE0C100CF7AA3 /* ApplicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
 		224346D924FCF4D100CF7AA3 /* SwipeableCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeableCollectionViewCell.swift; sourceTree = "<group>"; };
 		224346DB24FCF4DC00CF7AA3 /* UIView+Anchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchors.swift"; sourceTree = "<group>"; };
+		22439BD1252D726400E6077F /* ExtendedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedCollectionViewCell.swift; sourceTree = "<group>"; };
+		22439BD2252D726400E6077F /* ExtendedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExtendedCollectionViewCell.xib; sourceTree = "<group>"; };
 		224EBAF224F5068100CB676F /* ExtendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendCollectionViewCell.swift; sourceTree = "<group>"; };
 		224EBAF324F5068100CB676F /* ExtendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExtendCollectionViewCell.xib; sourceTree = "<group>"; };
 		224EBAF624F50EDA00CB676F /* NewTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketViewController.swift; sourceTree = "<group>"; };
@@ -474,7 +477,6 @@
 		228D5680251C4CCF00CE935C /* TaskDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskDetailController.xib; sourceTree = "<group>"; };
 		228D5683251C4E2B00CE935C /* CustomDetailActionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomDetailActionView.xib; sourceTree = "<group>"; };
 		228D5684251C4E2C00CE935C /* CustomDetailActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDetailActionView.swift; sourceTree = "<group>"; };
-		228D5687251C50C900CE935C /* AddressController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressController.swift; sourceTree = "<group>"; };
 		228D5689251C546F00CE935C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		228D568B251C548300CE935C /* MapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
 		228D568D251C54C200CE935C /* BASEPager.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BASEPager.xib; sourceTree = "<group>"; };
@@ -543,7 +545,7 @@
 		4B2D4BFF24DD4B7D00CABF1D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		4B2D4C0024DD4B7D00CABF1D /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		4B2D4C0424DD569100CABF1D /* HTK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTK.swift; sourceTree = "<group>"; };
-		4BE6313624DA9CBB00D9133C /* BASEBS CRM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BASEBS CRM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BE6313624DA9CBB00D9133C /* BaseBS CRM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BaseBS CRM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BE6313924DA9CBB00D9133C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BE6313B24DA9CBB00D9133C /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		4BE6314024DA9CC000D9133C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -926,6 +928,21 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
+		22439BD0252D6CE200E6077F /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				4B166C2024ECFD620030C592 /* AddressController.swift */,
+				4B166C2124ECFD620030C592 /* AddressController.xib */,
+				228D5689251C546F00CE935C /* MapView.swift */,
+				228D568B251C548300CE935C /* MapView.xib */,
+				228D568D251C54C200CE935C /* BASEPager.xib */,
+				228D568F251C54D800CE935C /* BASEPager.swift */,
+				228D5693251C72ED00CE935C /* AddressPagerCollectionViewCell.swift */,
+				228D5694251C72ED00CE935C /* AddressPagerCollectionViewCell.xib */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		225D4E4125130C1000664D70 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -1103,6 +1120,8 @@
 				228D56732519E67E00CE935C /* ChangeOwnerView.swift */,
 				228D5679251B23D600CE935C /* LogCallViewCell.swift */,
 				228D567A251B23D700CE935C /* LogCallViewCell.xib */,
+				22439BD1252D726400E6077F /* ExtendedCollectionViewCell.swift */,
+				22439BD2252D726400E6077F /* ExtendedCollectionViewCell.xib */,
 			);
 			name = Extend;
 			sourceTree = "<group>";
@@ -1162,6 +1181,7 @@
 		22DBF0B024F6206800B6D992 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				22439BD0252D6CE200E6077F /* Map */,
 				223EF2062511BD9800C076BF /* Contact */,
 				223EF2052511BD8900C076BF /* Account */,
 				224326DC25073914005AE588 /* Menu */,
@@ -1276,15 +1296,12 @@
 			isa = PBXGroup;
 			children = (
 				4B2D4C0424DD569100CABF1D /* HTK.swift */,
-				228D5687251C50C900CE935C /* AddressController.swift */,
 				223EF2012510A8EC00C076BF /* demo.realm */,
 				224346DB24FCF4DC00CF7AA3 /* UIView+Anchors.swift */,
 				224346D924FCF4D100CF7AA3 /* SwipeableCollectionViewCell.swift */,
 				4B2D4BEE24DD029800CABF1D /* Home */,
 				4B28017A24ECCA17007647F8 /* MainViewController.swift */,
 				4B28017B24ECCA17007647F8 /* MainViewController.xib */,
-				4B166C2024ECFD620030C592 /* AddressController.swift */,
-				4B166C2124ECFD620030C592 /* AddressController.xib */,
 				C2E857ED24F39CE7002960A2 /* TabbarItem.swift */,
 				C2E857EF24F39CF6002960A2 /* TabbarItem.xib */,
 				C2E857EB24F397A9002960A2 /* TabNavigationMenu.swift */,
@@ -1292,12 +1309,6 @@
 				223EF1F2250F604F00C076BF /* OCRController.swift */,
 				223EF1F3250F604F00C076BF /* OCRController.xib */,
 				223EF2032510B26F00C076BF /* Profile.swift */,
-				228D5689251C546F00CE935C /* MapView.swift */,
-				228D568B251C548300CE935C /* MapView.xib */,
-				228D568D251C54C200CE935C /* BASEPager.xib */,
-				228D568F251C54D800CE935C /* BASEPager.swift */,
-				228D5693251C72ED00CE935C /* AddressPagerCollectionViewCell.swift */,
-				228D5694251C72ED00CE935C /* AddressPagerCollectionViewCell.xib */,
 			);
 			path = Staging;
 			sourceTree = "<group>";
@@ -1380,7 +1391,7 @@
 		4BE6313724DA9CBB00D9133C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4BE6313624DA9CBB00D9133C /* BASEBS CRM.app */,
+				4BE6313624DA9CBB00D9133C /* BaseBS CRM.app */,
 				4BE6314A24DA9CC000D9133C /* BaseDemoTests.xctest */,
 				4BE6315524DA9CC000D9133C /* BaseDemoUITests.xctest */,
 			);
@@ -1535,7 +1546,7 @@
 			);
 			name = BaseDemo;
 			productName = BaseDemo;
-			productReference = 4BE6313624DA9CBB00D9133C /* BASEBS CRM.app */;
+			productReference = 4BE6313624DA9CBB00D9133C /* BaseBS CRM.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4BE6314924DA9CC000D9133C /* BaseDemoTests */ = {
@@ -1630,6 +1641,7 @@
 				22802DEC24FE04A500429518 /* FilterView.xib in Resources */,
 				4B2D4C0224DD4B7D00CABF1D /* WelcomeViewController.xib in Resources */,
 				228D567C251B23D700CE935C /* LogCallViewCell.xib in Resources */,
+				22439BD4252D726400E6077F /* ExtendedCollectionViewCell.xib in Resources */,
 				C22FEAA224FC1AB3009D9219 /* SettingViewController.xib in Resources */,
 				4B2D4BFD24DD2ABE00CABF1D /* LoginController.xib in Resources */,
 				22C6F351252313B300AE91F4 /* NewTask.xib in Resources */,
@@ -1899,10 +1911,10 @@
 				226D9348250A180000457AD5 /* MagicCollectionViewCell.swift in Sources */,
 				222B5FCA24F76CE600419452 /* SaleDashboard.swift in Sources */,
 				C2042ED02520BA7000648C3A /* HTKAnimation.swift in Sources */,
-				228D5688251C50CA00CE935C /* AddressController.swift in Sources */,
 				225D4E4C2513130800664D70 /* ExtendRoute.swift in Sources */,
 				228D568A251C546F00CE935C /* MapView.swift in Sources */,
 				4B166C3024ED0D690030C592 /* TicketDetailActivityViewController.swift in Sources */,
+				22439BD3252D726400E6077F /* ExtendedCollectionViewCell.swift in Sources */,
 				223EF2112511BEFD00C076BF /* ContactController.swift in Sources */,
 				229A55232500E6F1008A0ECD /* FetchLoginWorker.swift in Sources */,
 				228D56672519E32800CE935C /* NewChildController.swift in Sources */,
@@ -2196,13 +2208,13 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS/Static",
 				);
 				INFOPLIST_FILE = BaseDemo/Helper/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.basebs.ios.crm;
-				PRODUCT_NAME = "BASEBS CRM";
+				PRODUCT_NAME = "BaseBS CRM";
 				PROVISIONING_PROFILE_SPECIFIER = "BASE BS CRM";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2223,13 +2235,13 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS/Static",
 				);
 				INFOPLIST_FILE = BaseDemo/Helper/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.basebs.ios.crm;
-				PRODUCT_NAME = "BASEBS CRM";
+				PRODUCT_NAME = "BaseBS CRM";
 				PROVISIONING_PROFILE_SPECIFIER = "BASE BS CRM";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

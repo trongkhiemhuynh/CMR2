@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-let urlEmail = "https://basebs.com/en"
+let urlEmail = "https://www.apple.com/apple-events/"
 
 class EmailView: BaseView {
     //variable

@@ -12,10 +12,10 @@ import FSCalendar
 
 class FilterCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var iv:UIImageView!
-    @IBOutlet weak var tf : SkyFloatingLabelTextField!
+    @IBOutlet weak var iv: UIImageView!
+    @IBOutlet weak var tf: SkyFloatingLabelTextField!
     
-    private var vCal : CalendarView?
+    private var vCal: CalendarView?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +26,7 @@ class FilterCollectionViewCell: UICollectionViewCell {
         tf.selectedLineColor = Color.MainAppColor()
         tf.selectedTitleColor = Color.MainAppColor()
         tf.textErrorColor = .red
+        tf.titleFont = UIFont.systemFont(ofSize: 12.0, weight: .light)
     }
     
     func onShowCalendar() {

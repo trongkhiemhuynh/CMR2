@@ -70,26 +70,25 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             cell.delegate = self
             return cell
         } else if type == .extend {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailActivityCollectionViewCell.identifier, for: indexPath) as! TicketDetailActivityCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExtendedCollectionViewCell.identifier, for: indexPath) as! ExtendedCollectionViewCell
             
             let arr = dictData?[String(indexPath.section)] as! Array<String>
             let title = arr[indexPath.row]
-            cell.lblTitle.text = title
-            cell.lblTime.text = "Thu Sep 17, 14:52"
-            cell.lblDescription.text = ""
+            
+            cell.onUpdate(item: ExtendModel(title: title, time: "", description: title, imageName: ""))
             
             return cell
         } else if type == .extend_task {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailActivityCollectionViewCell.identifier, for: indexPath) as! TicketDetailActivityCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExtendedCollectionViewCell.identifier, for: indexPath) as! ExtendedCollectionViewCell
             
             let arr = dictData?[String(indexPath.section)] as! Array<String>
             let title = arr[indexPath.row]
             
-            cell.onUpdate(item: ExtendModel(title: title, time: "30/9/2020", description: "", imageName: "tasks"))
+            cell.onUpdate(item: ExtendModel(title: title, time: "", description: "30/9/2020", imageName: "tasks"))
             
             return cell
         } else if type == .extend_attach {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailActivityCollectionViewCell.identifier, for: indexPath) as! TicketDetailActivityCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExtendedCollectionViewCell.identifier, for: indexPath) as! ExtendedCollectionViewCell
             
             let arr = dictData?[String(indexPath.section)] as! Array<String>
             let title = arr[indexPath.row]
@@ -98,7 +97,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             
             return cell
         } else if type == .extend_event {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailActivityCollectionViewCell.identifier, for: indexPath) as! TicketDetailActivityCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExtendedCollectionViewCell.identifier, for: indexPath) as! ExtendedCollectionViewCell
             
             let arr = dictData?[String(indexPath.section)] as! Array<String>
             let title = arr[indexPath.row]
@@ -107,7 +106,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             
             return cell
         } else if type == .extend_comment {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailActivityCollectionViewCell.identifier, for: indexPath) as! TicketDetailActivityCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExtendedCollectionViewCell.identifier, for: indexPath) as! ExtendedCollectionViewCell
             
             let arr = dictData?[String(indexPath.section)] as! Array<String>
             let title = arr[indexPath.row]
@@ -116,7 +115,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             
             return cell
         } else if type == .extend_chat {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailActivityCollectionViewCell.identifier, for: indexPath) as! TicketDetailActivityCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExtendedCollectionViewCell.identifier, for: indexPath) as! ExtendedCollectionViewCell
             
             let arr = dictData?[String(indexPath.section)] as! Array<String>
             let title = arr[indexPath.row]
@@ -140,7 +139,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             
             return cell
         } else if type == .extend_notes {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailActivityCollectionViewCell.identifier, for: indexPath) as! TicketDetailActivityCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExtendedCollectionViewCell.identifier, for: indexPath) as! ExtendedCollectionViewCell
             
             let arr = dictData?[String(indexPath.section)] as! Array<String>
             let title = arr[indexPath.row]

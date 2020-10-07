@@ -116,8 +116,10 @@ extension ExtendController: BaseViewOutput {
             
             presenter.controller = self
             presenter.delegate = vc
-            presenter.layoutIfNeeded()
+            
             self.navigationController?.pushViewController(vc, animated: true)
+            
+            presenter.layoutIfNeeded()
         } else if type == Extend_Type.tasks.rawValue {
             let arrData = ["Assign to","Subject","Date Time","Priority","Status","Name","Related to","Reminder set?","Description"]
             let vMagic = MagicCollectionView.xibInstance()

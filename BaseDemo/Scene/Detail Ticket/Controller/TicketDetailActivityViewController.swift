@@ -10,9 +10,6 @@ import UIKit
 
 
 class TicketDetailActivityViewController: BaseViewController {
-
-    private let itemsPerRow: CGFloat = 1
-    private let heightCell : CGFloat = 142
     
     @IBOutlet weak var lblActivity : UILabel!
     @IBOutlet weak var vActivity : UIView!
@@ -28,20 +25,8 @@ class TicketDetailActivityViewController: BaseViewController {
         cvActivity.backgroundColor = Color.BackgroundListColor()
 
         cvActivity.registerCell(TicketDetailActivityCollectionViewCell.self)
-        vActivity.layer.cornerRadius = 8
-        
+        vActivity.layer.cornerRadius = corner8Radius
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -53,7 +38,7 @@ extension TicketDetailActivityViewController : UICollectionViewDelegateFlowLayou
         let availableWidth = cvActivity.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
         
-        return CGSize(width: widthPerItem, height: heightCell)
+        return CGSize(width: widthPerItem, height: heightHeaderDetailTicket)
     }
     
 }

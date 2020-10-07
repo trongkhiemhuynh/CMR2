@@ -40,7 +40,7 @@ class ChatView: BaseView {
         vMagic.frame = CGRect(x: 0, y: paddingTop, width: presenter.vContent.bounds.width, height: presenter.vContent.bounds.height)
         vMagic.dictData = ["0":["Messenger","Whatsapp","Line","Zalo","Snapchat","Instagram"]]
         vMagic.viewType = .extend_chat
-        vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
+        vMagic.collectionView.registerCell(ExtendedCollectionViewCell.self)
         vMagic.heightHeader = heightHeaderDefault
         vMagic.heightCell = heightMediumCell
     }

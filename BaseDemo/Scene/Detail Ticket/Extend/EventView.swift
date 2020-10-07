@@ -24,7 +24,7 @@ class EventView: BaseView {
         vMagic.frame = presenter.vContent.bounds
         vMagic.dictData = ["0":["WWDC 2020","Google I/O"]]
         vMagic.viewType = .extend_event
-        vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
+        vMagic.collectionView.registerCell(ExtendedCollectionViewCell.self)
         vMagic.heightCell = heightMediumCell
         vMagic.heightHeader = heightHeaderDefault
     }

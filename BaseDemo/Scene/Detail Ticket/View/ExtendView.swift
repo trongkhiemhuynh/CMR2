@@ -62,7 +62,8 @@ extension ExtendView: UICollectionViewDelegateFlowLayout {
         let paddingSpace = sectionInsetsDefault.left * (itemsPerRow + 1)
         let availableWidth = cvExtend.frame.width - paddingSpace
         let widthPerItem = availableWidth/itemsPerRow
-        let heightPerItem = cvExtend.bounds.height/itemsPerRow - sectionInsetsDefault.left
+        let availableHeight = cvExtend.frame.height - paddingSpace
+        let heightPerItem = availableHeight/itemsPerRow
         
         return CGSize(width: widthPerItem, height: heightPerItem)
     }

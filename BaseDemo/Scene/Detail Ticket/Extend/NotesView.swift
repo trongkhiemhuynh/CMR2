@@ -38,7 +38,7 @@ class NotesView: BaseView {
         vMagic.dictData = ["0":["Meeting","Meeting 1","Meeting 2","Meeting 3","Meeting 4","Meeting 5"]]
         vMagic.viewType = .extend_notes
         vMagic.controller = controller
-        vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
+        vMagic.collectionView.registerCell(ExtendedCollectionViewCell.self)
         vMagic.delegateAddSubView = self
         vMagic.heightCell = heightMediumCell
         vMagic.heightHeader = heightHeaderDefault
@@ -116,7 +116,7 @@ extension UIViewController: PresenterViewOutput {
         creatNote.hideSave()
         creatNote.hideBack()
         creatNote.vTitleView.isHidden = true
-        creatNote.frame = CGRect(x: sectionInsetsDefault.left, y: CGPoint.zero.y, width: presenter.vContent.bounds.width, height: presenter.vContent.bounds.height)
+        creatNote.frame = CGRect(x: sectionInsetsDefault.left, y: CGPoint.zero.y, width: presenter.vContent.bounds.width - sectionInsetsDefault.left*2, height: presenter.vContent.bounds.height)
             
         vc.view.addSubview(presenter)
         presenter.frame = vc.view.bounds

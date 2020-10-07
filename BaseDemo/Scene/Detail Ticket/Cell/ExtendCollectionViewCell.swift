@@ -10,8 +10,8 @@ import UIKit
 
 class ExtendCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var imgEx : UIImageView!
-    @IBOutlet weak var lblEx : UILabel!
+    @IBOutlet weak var imgEx: UIImageView!
+    @IBOutlet weak var lblEx: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

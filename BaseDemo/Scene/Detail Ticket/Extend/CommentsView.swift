@@ -33,7 +33,7 @@ class CommentsView: BaseView {
         vMagic.dictData = ["0":["Very good","Good","Bad","Very bad"]]
         vMagic.viewType = .extend_comment
 
-        vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
+        vMagic.collectionView.registerCell(ExtendedCollectionViewCell.self)
         vMagic.heightHeader = heightHeaderDefault
         vMagic.heightCell = heightMediumCell
     }

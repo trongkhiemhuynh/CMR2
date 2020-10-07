@@ -11,14 +11,14 @@ import UIKit
 class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var vLarge: UIView!
-    @IBOutlet weak var ivUser : UIImageView!
+    @IBOutlet weak var ivUser: UIImageView!
     @IBOutlet weak var constraintCenterYIvUser: NSLayoutConstraint!
     @IBOutlet weak var ivAgree: UIImageView!
     @IBOutlet weak var vCircle: UIView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblJob: UILabel!
     //private variable
-    private let constantRatioY : CGFloat = -0.18
+    private let constantRatioY: CGFloat = -0.25
 
     override func viewDidLoad() {
         super.viewDidLoad()

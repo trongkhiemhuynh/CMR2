@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4BE6313524DA9CBB00D9133C"
-               BuildableName = "BASEBS CRM.app"
+               BuildableName = "BaseBS CRM.app"
                BlueprintName = "BaseDemo"
                ReferencedContainer = "container:BaseDemo.xcodeproj">
             </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4BE6313524DA9CBB00D9133C"
-            BuildableName = "BASEBS CRM.app"
+            BuildableName = "BaseBS CRM.app"
             BlueprintName = "BaseDemo"
             ReferencedContainer = "container:BaseDemo.xcodeproj">
          </BuildableReference>
@@ -82,7 +82,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4BE6313524DA9CBB00D9133C"
-            BuildableName = "BASEBS CRM.app"
+            BuildableName = "BaseBS CRM.app"
             BlueprintName = "BaseDemo"
             ReferencedContainer = "container:BaseDemo.xcodeproj">
          </BuildableReference>

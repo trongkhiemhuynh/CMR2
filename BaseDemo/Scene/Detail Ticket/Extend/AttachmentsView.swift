@@ -24,7 +24,7 @@ class AttachmentsView: BaseView {
         vMagic.dictData = ["0":["Word","Excel","Power point","Key note","Page","Number"]]
         vMagic.viewType = .extend_attach
 
-        vMagic.collectionView.registerCell(TicketDetailActivityCollectionViewCell.self)
+        vMagic.collectionView.registerCell(ExtendedCollectionViewCell.self)
         vMagic.heightHeader = heightHeaderDefault
         vMagic.heightCell = heightMediumCell
     }

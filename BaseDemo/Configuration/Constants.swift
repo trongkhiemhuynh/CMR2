@@ -23,7 +23,7 @@ struct Constants {
             if Constants.App.isHTTPS {
                 return "https://172.23.90.170:8000/api"
             } else {
-                return "http://172.23.90.170:8000/api"
+                return "http://10.189.189.72:8000/api"
             }
         }()
         
