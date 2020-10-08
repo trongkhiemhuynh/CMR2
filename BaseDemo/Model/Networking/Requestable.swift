@@ -12,7 +12,7 @@ import Alamofire
 import ObjectMapper
 
 /// Requestable function
-protocol Requestable {
+protocol Requestable/*: URLSessionDelegate*/ {
     associatedtype T
     
     var basePath : String {get}
@@ -23,7 +23,7 @@ protocol Requestable {
     var parameterEncoding: ParameterEncoding {get}
     func toPromise() -> Promise<T>
     
-    func decode(data: Any) -> T
+    func decode(data: Any) -> T?
     
     func bodyRequest(request: inout URLRequest)
     
@@ -82,46 +82,79 @@ extension Requestable {
             }
             
             //timeout
-//            AF.sessionConfiguration.timeoutIntervalForRequest = 20
-
-            let urlSessionConfiguration = URLSessionConfiguration.default
-            urlSessionConfiguration.timeoutIntervalForRequest = 20
+            //            AF.sessionConfiguration.timeoutIntervalForRequest = 20
             
-            let serverTrustManager = ServerTrustManager(evaluators: [Constants.App.BaseURL: DisabledTrustEvaluator()])
+            //            let urlSessionConfiguration = URLSessionConfiguration.default
+            //            urlSessionConfiguration.timeoutIntervalForRequest = 20
+            //
+            //            let serverTrustManager = ServerTrustManager(evaluators: [Constants.App.BaseURL: DisabledTrustEvaluator()])
+            //
+            //            let session = Session(configuration: urlSessionConfiguration, delegate: SessionDelegate(), rootQueue: DispatchQueue.global(), startRequestsImmediately: true, requestQueue: nil, serializationQueue: nil, interceptor: nil, serverTrustManager: serverTrustManager, redirectHandler: nil, cachedResponseHandler: nil, eventMonitors: [])
             
-            let session = Session(configuration: urlSessionConfiguration, delegate: SessionDelegate(), rootQueue: DispatchQueue.global(), startRequestsImmediately: true, requestQueue: nil, serializationQueue: nil, interceptor: nil, serverTrustManager: serverTrustManager, redirectHandler: nil, cachedResponseHandler: nil, eventMonitors: [])
+            //            session.serverTrustManager = ServerTrustManager(evaluators: [Constants.App.BaseURL: DisabledTrustEvaluator()])
             
-//            session.serverTrustManager = ServerTrustManager(evaluators: [Constants.App.BaseURL: DisabledTrustEvaluator()])
-            session.request(urlRequest)
-                .validate(statusCode: 200..<300)
-                //                .validate(contentType: ["application/json"])
-                .responseJSON(completionHandler: { (response) in
+            
+            
+            
+            //            session.request(urlRequest)
+            //                .validate(statusCode: 200..<300)
+            //                //                .validate(contentType: ["application/json"])
+            //                .responseJSON(completionHandler: { (response) in
+            //
+            //                    Logger.info("-------\n response : \(response)")
+            //                    let result = response.result
+            //
+            //                    switch response.result {
+            //                    case .success(_):
+            //
+            //                        Logger.debug(response.result)
+            //                        //check response
+            //
+            //                        guard let data = response.data else {
+            //                            seal.reject(NSError.unknownError())
+            //                            return
+            //                        }
+            //
+            //                        let result = self.decode(data: data)
+            //
+            //                        seal.fulfill(result)
+            //
+            //                    case .failure(_):
+            //
+            //                        if let res = response.response {
+            //                            let error = NSError(domain: "com.basebs.crm", code: res.statusCode , userInfo:[NSLocalizedDescriptionKey : response.error?.localizedDescription])
+            //                            seal.reject(error)
+            //                        } else {
+            //                            seal.reject(NSError.unknownError())
+            //                        }
+            //
+            //                    }
+            //
+            //                })
+            
+            let session = URLSession(configuration: URLSessionConfiguration.default, delegate: nil, delegateQueue: nil)
+            
+            session.dataTask(with: urlRequest) {
+                (data: Data?, response: URLResponse?, error: Error?) in
+                
+                if(error != nil) {
+                    print("Error: \(error)")
+                    let error = NSError(domain: "com.basebs.crm", code: 1234, userInfo:[NSLocalizedDescriptionKey : error?.localizedDescription])
+                    seal.reject(error)
+                } else {
                     
-                    Logger.info("-------\n response : \(response)")
+                    //                          let outputStr  = String(data: data!, encoding: String.Encoding.utf8) as String?
+                    //
+                    //                            print(outputStr)
+                    let result = self.decode(data: data)
                     
-                    switch response.result {
-                    case .success(_):
-                        Logger.debug(response.result)
-                        //check response
-                        guard let data = response.data else {
-                            seal.reject(NSError.unknownError())
-                            return
-                        }
-                        
-                        let result = self.decode(data: data)
-                        
-                        seal.fulfill(result)
-                        
-                    case .failure(_):
-                        if let res = response.response {
-                            let error = NSError(domain: "com.basebs.crm", code: res.statusCode , userInfo:[NSLocalizedDescriptionKey : response.error?.localizedDescription])
-                            seal.reject(error)
-                        } else {
-                            seal.reject(NSError.unknownError())
-                        }
-                    }
-                })
+                    seal.fulfill(result!)
+                }
+            }.resume()
+            
         }
+        
+        
         
     }
     
@@ -152,6 +185,12 @@ extension Requestable {
         
         return urlRequest
     }
+    
+//    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+//        let urlCredential = URLCredential(trust: challenge.protectionSpace.serverTrust!)
+//
+//        completionHandler(.useCredential, urlCredential)
+//    }
 }
 
 // MARK: - Conform URLConvitible from Alamofire

@@ -10,6 +10,10 @@ import Alamofire
 import ObjectMapper
 
 struct FetchTicketRequest : Requestable {
+    func decode(data: Any) -> [TicketObj]? {
+        return nil
+    }
+    
     var param: Self.BaseParameters?
     
     func bodyRequest(request: inout URLRequest) {

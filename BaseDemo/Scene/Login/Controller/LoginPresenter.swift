@@ -10,9 +10,9 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-protocol LoginPresenterOutput : class {
+protocol LoginPresenterOutput: class {
     func presentError(_ error: Error)
-    func updateView()
+    func pushView()
 }
 
 class LoginPresenter {
@@ -30,7 +30,7 @@ class LoginPresenter {
             // Reload
             
             Logger.info(loginObj)
-            self.output?.updateView()
+            self.output?.pushView()
             
         }.disposed(by: self.disposeBag)
     }

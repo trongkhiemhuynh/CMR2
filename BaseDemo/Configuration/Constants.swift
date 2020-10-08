@@ -32,6 +32,7 @@ struct Constants {
     struct APIEndPoint {
         static let Login = "/login/"
         static let Tenant = "/tenants/"
+        static let Menu = "/menu"
     }
     
     // MARK:

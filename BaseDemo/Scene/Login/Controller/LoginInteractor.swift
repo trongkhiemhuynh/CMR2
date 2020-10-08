@@ -22,7 +22,7 @@ class LoginInteractor {
 }
 
 extension LoginInteractor : LoginControllerOutput {
-    
+    //network
     func fetchAuthentication(username: String, password: String) {
         fetchLoginWorker.executeLogin(username: username, password: password)
             .catch { error in

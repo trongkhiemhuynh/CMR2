@@ -31,22 +31,25 @@ class SplashViewController: BaseViewController {
     
     override func initData() {
         
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (timer) in
-            let realm = try! Realm()
-            let loginObject = realm.objects(LoginObject.self).first
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
             
-            let nameObj = loginObject?.name
-
-            Logger.debug(nameObj)
+            RouterManager.shared.handleRouter(LoginRoute())
             
-            if let name = nameObj, name == "steve" {
-                
-                //route to main
-                RouterManager.shared.handleRouter(MainRoute())
-            } else {
-                //route to login
-                RouterManager.shared.handleRouter(LoginRoute())
-            }
+//            let realm = try! Realm()
+//            let loginObject = realm.objects(LoginObject.self).first
+//
+//            let nameObj = loginObject?.name
+//
+////            Logger.debug(nameObj)
+//
+//            if let name = nameObj, name == "steve" {
+//
+//                //route to main
+//                RouterManager.shared.handleRouter(MainRoute())
+//            } else {
+//                //route to login
+//                RouterManager.shared.handleRouter(LoginRoute())
+//            }
         }
         
 //        animation(view: iv)

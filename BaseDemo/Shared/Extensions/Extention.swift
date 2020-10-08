@@ -178,7 +178,7 @@ extension URLRequest {
 //     - Seealso: https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#multipart-form-data
 //     */
     public mutating func setMultipartFormData(_ parameters: [String: String], encoding: String.Encoding) throws {
-
+        Logger.info(parameters)
         let makeRandom = { UInt32.random(in: (.min)...(.max)) }
         let boundary = String(format: "------------------------%08X%08X", makeRandom(), makeRandom())
 

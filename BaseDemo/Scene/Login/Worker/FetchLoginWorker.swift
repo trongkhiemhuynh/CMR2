@@ -26,18 +26,18 @@ class FetchLoginWorker: AsyncLoginWorker {
             (loginObj) -> Promise<LoginObj> in
 
             //save to realm
-            let realm = try! Realm()
-            try! realm.write {
-                let login = realm.create(LoginObject.self)
-                login.name = loginObj.name!
-                login.token = loginObj.token!
-                login.tenant = loginObj.tenant!
-                //log
-                Logger.info(login)
-                realm.add(login)
-            }
+//            let realm = try! Realm()
+//            try! realm.write {
+//                let login = realm.create(LoginObject.self)
+//                login.name = loginObj.name!
+//                login.token = loginObj.token!
+//                login.tenant = loginObj.tenant!
+//                //log
+//                Logger.info(login)
+//                realm.add(login)
+//            }
             
-            // Dispatch action '
+            // Dispatch action
             let action = UpdateLoginAction(login: loginObj)
             
             mainStore.dispatch(action)

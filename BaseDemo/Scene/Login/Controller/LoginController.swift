@@ -61,7 +61,7 @@ class LoginController : BaseViewController {
 
     @IBAction func loginAction(_ sender : AnyObject) {
         if isCheck {
-            updateView()
+            pushView()
         } else {
             //check username+password
             let isVerified = verifyLogin(username: tfUserName.text, password: tfPassword.text)
@@ -84,7 +84,7 @@ class LoginController : BaseViewController {
 }
 
 extension LoginController : LoginPresenterOutput {
-    func updateView() {
+    func pushView() {
         //end loading
         onDismissLoading()
         
@@ -98,10 +98,13 @@ extension LoginController : LoginPresenterOutput {
 //        let routeWelcome = WelcomeRoute()
 //
 //        routerManager.handleRouter(routeWelcome)
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .horizontal
-        let vc = GuideController(collectionViewLayout: flowLayout)
-        present(vc, animated: true, completion: nil)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            let flowLayout = UICollectionViewFlowLayout()
+            flowLayout.scrollDirection = .horizontal
+            let vc = GuideController(collectionViewLayout: flowLayout)
+            self.present(vc, animated: true, completion: nil)
+        }
 //        self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -110,21 +113,21 @@ extension LoginController : LoginPresenterOutput {
         onDismissLoading()
         
         // show error
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.showAlert(title: AlertType.error.rawValue, message: error.localizedDescription)
         }
         
         //FIXME save to realm
-        let realm = try! Realm()
-        try! realm.write {
-            let login = realm.create(LoginObject.self)
-            login.name = "steve"
-            login.token = "jslfjsalfjlkasdjfdsfhowejktrnwe93r434h3kjh53jh2k53j2k5hk"
-            login.tenant = "basebs.com"
-            //log
-            Logger.info(login)
-            realm.add(login)
-        }
+//        let realm = try! Realm()
+//        try! realm.write {
+//            let login = realm.create(LoginObject.self)
+//            login.name = "steve"
+//            login.token = "jslfjsalfjlkasdjfdsfhowejktrnwe93r434h3kjh53jh2k53j2k5hk"
+//            login.tenant = "basebs.com"
+//            //log
+//            Logger.info(login)
+//            realm.add(login)
+//        }
     }
 }
 
@@ -141,25 +144,32 @@ extension LoginController: UITextFieldDelegate {
         return true
     }
     
-    private func verifyLogin(username: String?, password: String?) -> Bool {
-        guard let user = username, let pass = password else {
-            return false
-        }
-        
-        if user.isEmpty || pass.isEmpty || !user.isValidEmail() {
-            return false
-        }
-        
-        return true
-    }
     
-    private func onLogin(_ isVerified: Bool) {
-        if isVerified {
-            onLoading()
-            output?.fetchAuthentication(username: tfUserName.text!, password: tfPassword.text!)
-        } else {
-            // show error
-            showAlert(title: AlertType.error.rawValue, message: NSError.invalidUsernameOrPassword().localizedDescription)
+}
+
+extension LoginController {
+    private func verifyLogin(username: String?, password: String?) -> Bool {
+            guard let user = username, let pass = password else {
+                return false
+            }
+            
+            if user.isEmpty || pass.isEmpty || !user.isValidEmail() {
+                return false
+            }
+            
+            return true
         }
-    }
+        
+        private func onLogin(_ isVerified: Bool) {
+            if isVerified {
+                //FIXME
+                onLoading()
+    //            output?.fetchAuthentication(username: tfUserName.text!, password: tfPassword.text!)
+                Networking.shared.fetchLogin(userName: tfUserName.text!, password: tfPassword.text!)
+                Networking.shared.delegate = self
+            } else {
+                // show error
+                showAlert(title: AlertType.error.rawValue, message: NSError.invalidUsernameOrPassword().localizedDescription)
+            }
+        }
 }

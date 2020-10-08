@@ -96,6 +96,7 @@ let arrContactArrowDown = ["Department"]
 let arrNewChildArrowDown = ["Contact name","Status"]
 
 let kAvatarImage = "kAvatarImage"
+let kTokenLoginUser = "kTokenLoginUser"
 
 enum ItemMenu : Int {
     case none = 0, ticket = 1, dashboard, email, notes, activities, activities_history, articles, account, contact
