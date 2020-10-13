@@ -99,7 +99,7 @@ extension LoginController : LoginPresenterOutput {
 //
 //        routerManager.handleRouter(routeWelcome)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + delayTime) {
             let flowLayout = UICollectionViewFlowLayout()
             flowLayout.scrollDirection = .horizontal
             let vc = GuideController(collectionViewLayout: flowLayout)
@@ -113,7 +113,7 @@ extension LoginController : LoginPresenterOutput {
         onDismissLoading()
         
         // show error
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + delayTime) {
             self.showAlert(title: AlertType.error.rawValue, message: error.localizedDescription)
         }
         
@@ -164,9 +164,17 @@ extension LoginController {
             if isVerified {
                 //FIXME
                 onLoading()
-    //            output?.fetchAuthentication(username: tfUserName.text!, password: tfPassword.text!)
-                Networking.shared.fetchLogin(userName: tfUserName.text!, password: tfPassword.text!)
-                Networking.shared.delegate = self
+    //            output?.fetchAuthentication(username: , password: )
+//                Networking.shared.fetchLogin(userName: tfUserName.text!, password: tfPassword.text!,
+                    
+//                Networking.shared.delegate = self
+                Networking.shared.fetchLogin(userName: tfUserName.text!, password: tfPassword.text!) { (arrData, err) in
+                    if err != nil {
+                        self.presentError(err!)
+                    } else {
+                        self.pushView()
+                    }
+                }
             } else {
                 // show error
                 showAlert(title: AlertType.error.rawValue, message: NSError.invalidUsernameOrPassword().localizedDescription)

@@ -25,6 +25,8 @@ class LogCallViewCell: UICollectionViewCell {
         lblCompany.text = company
         ivAvatar.image = UIImage(named: imageName)
         ivStatus.isHidden = true
+        lblCompany.isHidden = company == ""
+        lblName.isHidden = name == ""
     }
 
 }

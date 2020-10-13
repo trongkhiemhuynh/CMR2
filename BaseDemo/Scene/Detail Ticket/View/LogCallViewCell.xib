@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="LogCallViewCell" customModule="BASEBS_CRM" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="LogCallViewCell" customModule="BaseBS_CRM" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="470" height="129"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -24,6 +24,23 @@
                             <constraint firstAttribute="height" constant="50" id="O23-9J-OsJ"/>
                         </constraints>
                     </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wI4-Yd-19x">
+                        <rect key="frame" x="82" y="0.0" width="342" height="128"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Khiem Huynh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5f-Wp-rZX">
+                                <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HTK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Pj-Ez-rs9">
+                                <rect key="frame" x="0.0" y="64" width="342" height="64"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="log_phone" translatesAutoresizingMaskIntoConstraints="NO" id="73X-z8-Dog">
                         <rect key="frame" x="424" y="49.5" width="30" height="30"/>
                         <constraints>
@@ -31,12 +48,6 @@
                             <constraint firstAttribute="width" secondItem="73X-z8-Dog" secondAttribute="height" multiplier="1:1" id="p4X-MD-ZGJ"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HTK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Pj-Ez-rs9">
-                        <rect key="frame" x="74" y="92" width="33.5" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="enM-mR-GCm">
                         <rect key="frame" x="0.0" y="128" width="470" height="1"/>
                         <color key="backgroundColor" white="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -44,24 +55,18 @@
                             <constraint firstAttribute="height" constant="1" id="MSx-cZ-RxX"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Khiem Huynh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5f-Wp-rZX">
-                        <rect key="frame" x="74" y="16" width="102.5" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="g5f-Wp-rZX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="0Rr-rg-ujE"/>
                 <constraint firstItem="73X-z8-Dog" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="6Bt-9q-NRX"/>
-                <constraint firstItem="g5f-Wp-rZX" firstAttribute="leading" secondItem="1WU-UG-hm4" secondAttribute="trailing" constant="8" id="Fd2-Jb-B9u"/>
+                <constraint firstItem="enM-mR-GCm" firstAttribute="top" secondItem="wI4-Yd-19x" secondAttribute="bottom" id="B4C-gU-iqY"/>
+                <constraint firstItem="wI4-Yd-19x" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="CO3-RF-DBQ"/>
                 <constraint firstAttribute="trailing" secondItem="73X-z8-Dog" secondAttribute="trailing" constant="16" id="G8i-VU-pfm"/>
                 <constraint firstItem="1WU-UG-hm4" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="SoV-Sr-GtD"/>
+                <constraint firstItem="wI4-Yd-19x" firstAttribute="leading" secondItem="1WU-UG-hm4" secondAttribute="trailing" constant="16" id="X0D-jQ-rrr"/>
+                <constraint firstItem="73X-z8-Dog" firstAttribute="leading" secondItem="wI4-Yd-19x" secondAttribute="trailing" id="aug-JT-Egs"/>
                 <constraint firstItem="1WU-UG-hm4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="axo-fM-aPc"/>
-                <constraint firstItem="5Pj-Ez-rs9" firstAttribute="leading" secondItem="1WU-UG-hm4" secondAttribute="trailing" constant="8" id="ePq-u6-Xye"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="enM-mR-GCm" secondAttribute="trailing" id="hQs-ue-SgQ"/>
-                <constraint firstAttribute="bottom" secondItem="5Pj-Ez-rs9" secondAttribute="bottom" constant="16" id="l3b-yp-v5B"/>
                 <constraint firstAttribute="bottom" secondItem="enM-mR-GCm" secondAttribute="bottom" id="ns8-EX-2dz"/>
                 <constraint firstItem="enM-mR-GCm" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="rlJ-m6-KyT"/>
             </constraints>

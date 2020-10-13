@@ -38,6 +38,7 @@ class GuideController: UICollectionViewController, UICollectionViewDelegateFlowL
         previousBtn.setTitle("PREV", for: .normal)
         previousBtn.setTitleColor(.white, for: .normal)
         previousBtn.addTarget(self, action: #selector(onPrevious), for: .touchUpInside)
+        previousBtn.isMultipleTouchEnabled = false
         return previousBtn
     }()
     
@@ -50,6 +51,7 @@ class GuideController: UICollectionViewController, UICollectionViewDelegateFlowL
         btn.setTitle("SKIP", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.addTarget(self, action: #selector(onSkip), for: .touchUpInside)
+        btn.isMultipleTouchEnabled = false
         return btn
     }()
     
@@ -59,6 +61,7 @@ class GuideController: UICollectionViewController, UICollectionViewDelegateFlowL
         pc.pageIndicatorTintColor = Color.TextTitleColor
         pc.currentPageIndicatorTintColor = Color.MainAppColor()
         pc.translatesAutoresizingMaskIntoConstraints = false
+        pc.isUserInteractionEnabled = false
         return pc
     }()
     

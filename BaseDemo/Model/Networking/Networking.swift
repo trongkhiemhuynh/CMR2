@@ -8,12 +8,21 @@
 
 import Foundation
 import PromiseKit
+import Alamofire
 
-typealias Handler = (_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void
+typealias Handler = (_ data: [Any]?,_ error: Error?) -> Void
 
-class Networking: NSObject {
+protocol AppAPIList {
+    func checkToken()
+}
+
+class Networking: NSObject, AppAPIList {
+    func checkToken() {
+        
+    }
+    
     static let shared = Networking()
-    weak var delegate: LoginPresenterOutput?
+//    weak var delegate: LoginPresenterOutput?
     
 
     func fetchTicketList(with id: String) -> Promise<[TicketObj]>{
@@ -32,24 +41,50 @@ class Networking: NSObject {
         let requestURL = URL(string: strUrl)
         var request = URLRequest(url: requestURL!)
         
-        request.httpMethod = "GET"
+        request.httpMethod = HTTPMethod.get.rawValue
+        
         if let token = ApplicationManager.sharedInstance.getValueUserDefault(key: kTokenLoginUser) as? String {
             let authorization = "Bearer " + token
             request.setValue(authorization, forHTTPHeaderField: "Authorization")
             
-            onUrlSession(request, completion: completion)
+            onUrlSession(request: request) { (dict, error) in
+                if error != nil {
+                    completion(nil, NSError.unknownError())
+                } else {
+                    
+                    guard let dict = dict else { completion(nil, NSError.unknownError()); return }
+                    
+                    guard let d = dict["data"] as? [String: Any]  else { completion(nil, NSError.unknownError()); return }
+                    
+                    let arrKeys = d.keys
+                    var arrMenu: Array<[String:String]> = []
+                    
+                    for key in arrKeys {
+                        let value = d[key]
+                        
+                        if let val = value as? String {
+                            let dict = [key:val]
+                            arrMenu.append(dict)
+                        }
+                    }
+                    
+                    //handler array of dictionary
+                    completion(arrMenu,nil)
+                }
+            }
         } else {
-            self.delegate?.presentError(NSError.sessionExpired())
+            completion(nil, NSError.sessionExpired())
+            //            self.delegate?.presentError(NSError.sessionExpired())
         }
     }
     
-    func fetchLogin(userName: String, password: String) {
+    func fetchLogin(userName: String, password: String, completion: @escaping Handler) {
         let strUrl = Constants.App.BaseURL + Constants.APIEndPoint.Login
         
         let requestURL = URL(string: strUrl)
         var request = URLRequest(url: requestURL!)
         
-        request.httpMethod = "POST"
+        request.httpMethod = HTTPMethod.post.rawValue
         
         do {
             try! request.setMultipartFormData(["email":userName, "pass":password], encoding: .utf8)
@@ -58,47 +93,102 @@ class Networking: NSObject {
         }
         //        request.httpBody = //qMes.data(using: .utf8)
         
-        onUrlSession(request, completion: nil)
+        onUrlSession(request: request) { (dict, error) in
+            if error != nil {
+                completion(nil, NSError.unknownError())
+            } else {
+                guard let dict = dict else { completion(nil, NSError.unknownError()); return}
+                
+                if let token = dict["Token"] {
+                    ApplicationManager.sharedInstance.saveUserDefault(value: token, key: kTokenLoginUser)
+                    completion([kTokenLoginUser], nil)
+                } else {
+                    completion(nil, NSError.unknownError())
+                }
+            }
+        }
+                                    
     }
     
-    private func onUrlSession(_ request: URLRequest, completion: Handler?) {
+    func fetchObjectList(id: String, completion: @escaping Handler) {
+        let strUrl = Constants.App.BaseURL + Constants.APIEndPoint.Menu_ListView
+        
+        let requestURL = URL(string: strUrl)
+        var request = URLRequest(url: requestURL!)
+        
+        request.httpMethod = HTTPMethod.get.rawValue
+        
+        if let token = ApplicationManager.sharedInstance.getValueUserDefault(key: kTokenLoginUser) as? String {
+            let authorization = "Bearer " + token
+            request.setValue(authorization, forHTTPHeaderField: "Authorization")
+            request.setValue(id, forHTTPHeaderField: "ID")
+            
+            request.setValue(String(1), forHTTPHeaderField: "CurrentPage")
+            request.setValue(String(20), forHTTPHeaderField: "RecordPerPage")
+            
+            onUrlSession(request: request) { (dict, err) in
+                print(dict)
+                var arrItem: Array<String> = []
+                guard let dic = dict else { return }
+                
+                guard let data = dic["data"] as? [String:Any] else {return}
+                
+                guard let key_list = data["key_list"] as? Array<[String:String]> else {return}
+                var accountNameKey: String?
+                
+                for kl in key_list {
+                    if (kl.values.first?.contains("Account"))! {
+                        accountNameKey = kl.keys.first
+                    }
+                }
+                
+                guard let accKey = accountNameKey else {return}
+                
+                guard let result_query = data["result_query"] as? Array<[String:Any]> else {return}
+                
+                for it in result_query {
+                    guard let data = it["Data"] as? Array<[String: Any]> else {return}
+                    guard let dicData = data.first else {return}
+                    
+                    guard let accName = dicData[accKey] as? String else {return}
+                    
+                    arrItem.append(accName)
+                }
+                
+                completion(arrItem, nil)
+            }
+        }
+    }
+    
+    /// call api
+    /// - Parameters:
+    ///   - request: api request
+    ///   - completion: completion handler
+    private func onUrlSession(request: URLRequest, completion: @escaping (_ js: [String:Any]?, _ err: Error?) -> Void) {
         let session = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: nil)
         
-        session.dataTask(with: request) {
-            (data: Data?, response: URLResponse?, error: Error?) in
+        session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
             
             DispatchQueue.main.async {
                 if error != nil {
-                    //                    print("Error: \(error)")
-                    self.delegate?.presentError(NSError.unknownError())
+                    completion(nil, NSError.unknownError())
+//                    self.delegate?.presentError(NSError.unknownError())
                 } else {
-                    //
-                    //                    let outputStr  = String(data: data!, encoding: String.Encoding.utf8) as String?
-                    //
-                    //                     print(outputStr)
-                    //                completionBlock(outputStr!);
-                    
-                    if let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any] {
-                        Logger.info(json)
-                        
-                        if let token = json["Token"] {
-                            ApplicationManager.sharedInstance.saveUserDefault(value: token, key: kTokenLoginUser)
-                            self.delegate?.pushView()
+                    if let dat = data {
+                        if let json = try? JSONSerialization.jsonObject(with: dat, options: []) as? [String: Any] {
+                            Logger.info(json)
+                            
+                            completion(json, nil)
+                            
                         } else {
-                            self.delegate?.presentError(NSError.unknownError())
+                            completion(nil, NSError.unknownError())
+//                            self.delegate?.presentError(NSError.unknownError())
                         }
-                        
-                        if let com = completion {
-                            com(data, response, error)
-                        }
-                        
                     } else {
-                        self.delegate?.presentError(NSError.unknownError())
+                        completion(nil, NSError.unknownError())
+//                        self.delegate?.presentError(NSError.unknownError())
                     }
-                    
-                    //                    print("khiemht : \(json?["Name"])")
                 }
-                
             }
         }.resume()
     }

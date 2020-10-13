@@ -178,22 +178,34 @@ extension DashboardController: SideMenuNavigationControllerDelegate {
 
     }
     
-    func onPushView(_ name : String?) {
+    func onPushView(_ name : [String:String]?) {
 //        Thread.sleep(forTimeInterval: 0.3)
         Logger.info(name)
-        guard let vcName = name else {return}
+        guard let vcName = name?.values.first else {return}
         
         if vcName == HamburgerMenu.account.rawValue {
-            let vMagic = MagicCollectionView.xibInstance()
-            vMagic.collectionView.registerCell(LogCallViewCell.self)
-            vMagic.heightCell = heightLargeCell
-            vMagic.heightHeader = heightHeaderDefault
-            vMagic.dictData = ["0":["Apple"],"1":["Amazon"],"2":["Netflix"],"3":["Google"],"4":["Facebook"]]
-            vMagic.controller = self
-            vMagic.viewType = .account_list
-            //config
-            generateView(subView: vMagic, title: "Account list", actionType: .add)
             
+            //FIXME call object view
+            if let keyObj = name?.keys.first {
+                Networking.shared.fetchObjectList(id: keyObj) { (arr, err) in
+                    //                print("success")
+                    if err != nil {
+                        self.showAlert(title: "ERROR!", message: NSError.unknownError().localizedDescription)
+                    } else {
+                        let vMagic = MagicCollectionView.xibInstance()
+                        vMagic.collectionView.registerCell(LogCallViewCell.self)
+                        vMagic.heightCell = heightDefaultCell
+                        vMagic.heightHeader = heightHeaderDefault
+                        
+                        vMagic.dictData = ["0":arr!]
+                        vMagic.controller = self
+                        vMagic.viewType = .account_list
+                        //config
+                        self.generateView(subView: vMagic, title: "Account list", actionType: .add)
+                    }
+                    
+                }
+            }
         } else if vcName == HamburgerMenu.contact.rawValue {
             RouterManager.shared.handleRouter(ContactRoute())
         } else if vcName == HamburgerMenu.ticket.rawValue {

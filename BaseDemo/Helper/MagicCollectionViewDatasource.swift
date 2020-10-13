@@ -190,7 +190,9 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             return cell
         } else if type == .account_list {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LogCallViewCell.identifier, for: indexPath) as! LogCallViewCell
-            cell.onUpdate(name: "Apple", company: "US", imageName: "no_avatar")
+            let name = arrData![indexPath.row]
+            cell.backgroundColor = .white
+            cell.onUpdate(name: name, company: "", imageName: "no_avatar")
             
             return cell
         }

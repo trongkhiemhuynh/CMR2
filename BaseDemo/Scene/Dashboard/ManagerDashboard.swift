@@ -39,7 +39,7 @@ class ManagerDashboard: BaseView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        vInfoUser.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapProfile(gesture:))))
+        iv.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapProfile(gesture:))))
         
         if let imgData = ApplicationManager.sharedInstance.getValueUserDefault(key: kAvatarImage) as? Data {
             iv.image = UIImage(data: imgData)

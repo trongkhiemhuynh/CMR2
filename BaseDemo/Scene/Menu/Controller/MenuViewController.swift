@@ -15,9 +15,9 @@ private let reuseIdentifier = "Cell"
 
 class MenuViewController: BaseViewController {
 
-    @IBOutlet weak var collectionView : UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
-    var itemVar : String {
+    var itemVar: [String:String] {
         get {
             return _rx_ItemVar.value
         }
@@ -30,7 +30,7 @@ class MenuViewController: BaseViewController {
     
     var arrMenu: Array<Any> = []
     
-    var _rx_ItemVar = BehaviorRelay<String>(value: HamburgerMenu.dashboard.rawValue)
+    var _rx_ItemVar = BehaviorRelay<[String:String]>(value: ["menu":HamburgerMenu.dashboard.rawValue])
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,23 +51,14 @@ class MenuViewController: BaseViewController {
     }
     
     override func initData() {
-        Networking.shared.fetchMenu { (data, response, error) in
-            if let d = data {
-                if let json = try? JSONSerialization.jsonObject(with: d, options: []) as? [String: Any] {
-                    if let dict = json["data"] as? [String: Any] {
-                        let arrKeys = dict.keys
-                        
-                        for key in arrKeys {
-                            let value = dict[key]
-                            if let val = value as? String {
-                                self.arrMenu.append(val)
-                            }
-                            
-                            self.collectionView.reloadData()
-                        }
-                    }
-                    
-                }
+        Networking.shared.fetchMenu { (arrData, err) in
+            if err != nil {
+                
+            } else {
+                self.arrMenu.removeAll()
+                
+                self.arrMenu = arrData!
+                self.collectionView.reloadData()
             }
         }
     }
@@ -76,7 +67,7 @@ class MenuViewController: BaseViewController {
 extension MenuViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return arrMenu.count
+        return arrMenu.count + 1 // for top cell
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -87,12 +78,13 @@ extension MenuViewController: UICollectionViewDataSource {
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.identifier, for: indexPath) as! MenuCollectionViewCell
-            let item = arrMenu[indexPath.row] as! String
+            let dict = arrMenu[indexPath.row - 1] as! [String:String]
+            let item = dict.values.first!
             
             let nameImage = "menu_\(item.lowercased().replacingOccurrences(of: " ", with: "_"))"
             let image = UIImage(named: nameImage)
             
-            cell.imgMenu.image = image
+            cell.imgMenu.image = image ?? UIImage(named: "menu_account")
             cell.lblMenu.text = item
             // Configure the cell
             
@@ -118,7 +110,7 @@ extension MenuViewController : UICollectionViewDelegateFlowLayout {
 extension MenuViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        ApplicationManager.sharedInstance.itemMenuSelected = ItemMenu[indexPath.row]
-        let nameItem = arrMenu[indexPath.row]
+        let nameItem = arrMenu[indexPath.row - 1]
 //        Logger.debug(nameItem)
         Logger.info(nameItem)
         
@@ -130,7 +122,7 @@ extension MenuViewController : UICollectionViewDelegate {
 //            let dashboardVC = self.controllerOwner as? DashboardController
 //            dashboardVC?.controllerName = nameItem
             
-            self.itemVar = nameItem as! String
+            self.itemVar = nameItem as! [String:String]
         })
     }
 }

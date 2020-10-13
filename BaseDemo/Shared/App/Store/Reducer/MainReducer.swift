@@ -19,7 +19,6 @@ import ReSwift
 //}
 
 func appReducer(action : Action, state : AppState?) -> AppState {
-
     let ticketState = TicketState.reducer(action: action, state: state?.ticketState)
     let loginState = LoginState.reducer(action: action, state: state?.loginState)
     

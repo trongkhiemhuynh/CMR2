@@ -13,7 +13,7 @@ let heightScreen = UIScreen.main.bounds.size.height
 let widthScreen = UIScreen.main.bounds.size.width
 
 var heightTabbar: CGFloat = 70.0
-
+let delayTime: Double = 0.35
 struct Constants {
     struct App {
         
@@ -33,6 +33,8 @@ struct Constants {
         static let Login = "/login/"
         static let Tenant = "/tenants/"
         static let Menu = "/menu"
+        static let CheckToken = "/check-token"
+        static let Menu_ListView = "/object/view"
     }
     
     // MARK:
