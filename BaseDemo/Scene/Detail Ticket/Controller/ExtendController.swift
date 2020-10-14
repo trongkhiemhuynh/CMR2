@@ -116,8 +116,7 @@ extension ExtendController: BaseViewOutput {
             
             presenter.controller = self
             presenter.delegate = vc
-            
-            self.navigationController?.pushViewController(vc, animated: true)
+            onPushController(vc)
             
             presenter.layoutIfNeeded()
         } else if type == Extend_Type.tasks.rawValue {

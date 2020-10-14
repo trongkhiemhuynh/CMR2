@@ -72,7 +72,7 @@ extension NewChildController: BaseViewOutput {
         dropDown.direction = .any
         dropDown.selectionAction = { (index: Int, item: String) in
             print("Selected item: \(item) at index: \(index)")
-            cell.lblName.text = item
+            cell.tf.text = item
             dropDown.hide()
         }
         

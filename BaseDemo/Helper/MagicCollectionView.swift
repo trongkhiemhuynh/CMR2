@@ -19,8 +19,10 @@ class MagicCollectionView: BaseView {
     public var heightCell: CGFloat = heightDefaultCell // default heightCell
     public var heightHeader: CGFloat = heightHeaderDefault
     public var itemsPerRow: CGFloat = 1
-    public var viewType: MagicView = .setting
+    public var viewType: MagicViewType = .setting
     public var arrCells: [MagicCollectionViewCell]?
+    public var arrObj: Array<Dictionary<String, String>>?
+    public var dictVal: Dictionary<String, String>?
     
     public var scrollDirection: UICollectionView.ScrollDirection = .vertical
 
@@ -46,6 +48,7 @@ class MagicCollectionView: BaseView {
         collectionView.dataSource = magicDatasource
         collectionView.delegate = magicDelegate
         magicDelegate.delegate = self
+        magicDatasource.dictVal = dictVal
         
         magicDatasource.dictData = dictData
         magicDatasource.arrCells = arrCells
@@ -72,7 +75,12 @@ extension MagicCollectionView: MagicCollectionViewDelegateOutput {
         
         switch viewType {
         case .account_list:
-            RouterManager.shared.handleRouter(AccountRoute())
+            let route = AccountRoute()
+            RouterManager.shared.handleRouter(route)
+            route.handleData { (vc) in
+                vc.viewType = .account_detail
+                vc.dictObj = arrObj?[indexPath.row]
+            }
             return
         case .setting:
             let cell = collectionView.cellForItem(at: indexPath) as! MagicCollectionViewCell
@@ -84,13 +92,20 @@ extension MagicCollectionView: MagicCollectionViewDelegateOutput {
                 Logger.info(title)
             }
             return
-        case .account,.contact_detail,.new_child:
+        case .account_detail,.contact_detail,.new_child:
+            Logger.info(viewType)
+            return
+        case .account_new, .contact_new:
             let cell = collectionView.cellForItem(at: indexPath) as? AccountCollectionViewCell
             delegateAddSubView?.didAddPicklist!(v: cell)
             return
         case .contact:
             RouterManager.shared.handleRouter(ContactDetailRoute())
             return
+//        case .account_new:
+//            print(viewType)
+//        case .contact_new:
+//            print(viewType)
         default:
             print(viewType)
             delegateAddSubView?.didAddNew(type: Extend_Type.notes.rawValue)

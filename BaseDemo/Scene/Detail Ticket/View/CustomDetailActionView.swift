@@ -60,7 +60,7 @@ class CustomDetailActionView: BaseView {
         let newVC = NewTicketViewController()
 
         let topViewController = UIApplication.getTopViewController()
-        topViewController?.navigationController?.pushViewController(newVC, animated: true)
+        topViewController?.onPushController(newVC)
         newVC.setTitleView("Edit ticket")
     }
     

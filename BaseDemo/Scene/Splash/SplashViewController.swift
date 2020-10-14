@@ -33,7 +33,15 @@ class SplashViewController: BaseViewController {
         
         Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
             
-            RouterManager.shared.handleRouter(LoginRoute())
+            Networking.shared.checkToken { (data, error) in
+                if error != nil {
+                    RouterManager.shared.handleRouter(LoginRoute())
+                } else {
+                    RouterManager.shared.handleRouter(MainRoute())
+                }
+            }
+            
+            
             
 //            let realm = try! Realm()
 //            let loginObject = realm.objects(LoginObject.self).first

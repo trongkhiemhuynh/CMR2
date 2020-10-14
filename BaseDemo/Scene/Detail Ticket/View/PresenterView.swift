@@ -8,15 +8,19 @@
 
 import UIKit
 
-protocol PresenterViewOutput: class {
+@objc protocol PresenterViewOutput: class {
     func onAddNew()
     func onComplete()
+    @objc optional func addNewAccount()
+    @objc optional func addNewContact()
 }
 
 enum PresenterActionType {
     case add
     case save
     case edit
+    case add_account
+    case add_contact
 }
 
 class PresenterView: BaseView {
@@ -42,6 +46,10 @@ class PresenterView: BaseView {
             delegate?.onComplete()
         case .edit:
             delegate?.onAddNew()
+        case .add_account:
+            delegate?.addNewAccount!()
+        case .add_contact:
+            delegate?.addNewContact!()
         }
     }
     
@@ -64,6 +72,10 @@ class PresenterView: BaseView {
         case .save:
             btnAddNew.setImage(UIImage(named: "save"), for: .normal)
 //        default:
+        case .add_account:
+            btnAddNew.setImage(UIImage(named: "add_new"), for: .normal)
+        case .add_contact:
+            btnAddNew.setImage(UIImage(named: "add_new"), for: .normal)
         }
     }
 }

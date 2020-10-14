@@ -41,10 +41,11 @@ enum ButtonView: String {
     case cancel = "CANCEL"
 }
 
-enum MagicView {
+enum MagicViewType {
+    case none
     case setting
     case profile
-    case account
+    case account_detail
     case contact
     case contact_detail
     case extend
@@ -61,6 +62,8 @@ enum MagicView {
     case extend_chat
     case new_child
     case account_list
+    case account_new
+    case contact_new
 }
 
 //enum ExtendViews {

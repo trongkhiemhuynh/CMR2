@@ -18,8 +18,9 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
     public var dictData: Dictionary<String, Any>?
     public var arrCells: [UICollectionViewCell]?
     private var arrData: Array<String>?
-    public var type: MagicView = .setting
-
+    public var type: MagicViewType = .setting
+    public var dictVal: Dictionary<String, String>?
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         Logger.info(dictData?.keys)
         return dictData?.keys.count ?? 1
@@ -46,22 +47,32 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             cell.onUpdate(title: title)
 
             return cell
-        } else if type == .account || type == .contact_detail {
+        } else if type == .account_detail || type == .contact_detail {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AccountCollectionViewCell.identifier, for: indexPath) as! AccountCollectionViewCell
             
             let arr = dictData?[String(indexPath.section)] as! Array<String>
             let title = arr[indexPath.row]
-            var postFix = ""
-            if type == .contact_detail {
-                postFix = "contact_"
-            }
             
-            cell.onUpdate(title, postFix)
+            //check is contact detail
+            let postFix = (type == .contact_detail) ? "contact_" : ""
+            cell.onUpdate(title, postFix, dictVal)
 
+            return cell
+        } else if type == .account_new || type == .contact_new {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AccountCollectionViewCell.identifier, for: indexPath) as! AccountCollectionViewCell
+            let arr = dictData?[String(indexPath.section)] as! Array<String>
+            let title = arr[indexPath.row]
+            
+            //check is contact detail
+            let postFix = (type == .contact_new) ? "contact_" : ""
+            cell.onUpdate(title, postFix, nil)
+            
             //check item have picklist
             if arrAccountArrowDown.contains(title) || arrContactArrowDown.contains(title) {
                 cell.ivDropdown.isHidden = false
             }
+            
+            cell.tf.isUserInteractionEnabled = true
             
             return cell
         } else if type == .profile {
@@ -180,7 +191,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
                 postFix = "contact_"
             }
             
-            cell.onUpdate(title, postFix)
+            cell.onUpdate(title, postFix, nil)
 
             //check item have picklist
             if arrNewChildArrowDown.contains(title) {
@@ -191,6 +202,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
         } else if type == .account_list {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LogCallViewCell.identifier, for: indexPath) as! LogCallViewCell
             let name = arrData![indexPath.row]
+            
             cell.backgroundColor = .white
             cell.onUpdate(name: name, company: "", imageName: "no_avatar")
             
@@ -210,7 +222,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             headerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTapHeader)))
             
             return headerView
-        } else if type == .account || type == .contact_detail {
+        } else if type == .account_detail || type == .contact_detail || type == .account_new || type == .contact_new {
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AccountReusableView.identifier, for: indexPath) as! AccountReusableView
             
             return headerView
@@ -275,7 +287,8 @@ extension MagicCollectionViewDatasource: ProfileCollectionViewCellOutput {
 
         presenter.layoutIfNeeded()
         
-        topController?.navigationController?.pushViewController(vc, animated: true)
+        topController?.onPushController(vc)
+        
         presenter.vContent.addSubview(content)
         vc.view.addSubview(presenter)
         content.center = CGPoint(x: presenter.vContent.bounds.width/2, y: presenter.vContent.bounds.height/2)

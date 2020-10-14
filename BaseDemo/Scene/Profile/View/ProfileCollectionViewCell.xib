@@ -41,7 +41,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cwd-kx-4CU">
-                                                <rect key="frame" x="44" y="22.5" width="168" height="20.5"/>
+                                                <rect key="frame" x="44" y="0.0" width="168" height="65"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -50,8 +50,10 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="SO7-MP-Cm2" firstAttribute="leading" secondItem="7qX-LV-T0n" secondAttribute="leading" constant="12" id="1f4-xW-Zoh"/>
+                                            <constraint firstItem="Cwd-kx-4CU" firstAttribute="top" secondItem="7qX-LV-T0n" secondAttribute="top" id="2To-Ya-rUl"/>
                                             <constraint firstItem="SO7-MP-Cm2" firstAttribute="centerY" secondItem="7qX-LV-T0n" secondAttribute="centerY" id="G4S-p9-qXy"/>
                                             <constraint firstAttribute="height" constant="65" id="KkG-dO-JHV"/>
+                                            <constraint firstAttribute="bottom" secondItem="Cwd-kx-4CU" secondAttribute="bottom" id="S8A-iZ-xq3"/>
                                             <constraint firstItem="I2q-K8-fxC" firstAttribute="leading" secondItem="Cwd-kx-4CU" secondAttribute="trailing" id="WrU-wP-m99"/>
                                             <constraint firstItem="Cwd-kx-4CU" firstAttribute="centerY" secondItem="7qX-LV-T0n" secondAttribute="centerY" id="Yrz-8r-E8b"/>
                                             <constraint firstAttribute="trailing" secondItem="I2q-K8-fxC" secondAttribute="trailing" constant="12" id="luJ-s0-yLM"/>
@@ -77,7 +79,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhd-Ko-grs">
-                                                <rect key="frame" x="44" y="22.5" width="168" height="20.5"/>
+                                                <rect key="frame" x="44" y="0.0" width="168" height="65"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -86,6 +88,8 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="Yhd-Ko-grs" firstAttribute="leading" secondItem="wfW-TM-lYS" secondAttribute="trailing" constant="12" id="08C-uc-COf"/>
+                                            <constraint firstItem="Yhd-Ko-grs" firstAttribute="top" secondItem="cjY-mz-b4F" secondAttribute="top" id="27n-Ur-32T"/>
+                                            <constraint firstAttribute="bottom" secondItem="Yhd-Ko-grs" secondAttribute="bottom" id="6Ym-Ao-aHG"/>
                                             <constraint firstItem="wfW-TM-lYS" firstAttribute="leading" secondItem="cjY-mz-b4F" secondAttribute="leading" constant="12" id="7FG-oX-sOu"/>
                                             <constraint firstItem="3vo-hJ-1LV" firstAttribute="leading" secondItem="Yhd-Ko-grs" secondAttribute="trailing" id="NBu-9r-FHM"/>
                                             <constraint firstAttribute="trailing" secondItem="3vo-hJ-1LV" secondAttribute="trailing" constant="12" id="QRR-XC-CFs"/>
@@ -134,7 +138,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J35-GB-fvM">
-                                                <rect key="frame" x="44" y="22.5" width="168" height="20.5"/>
+                                                <rect key="frame" x="44" y="0.0" width="168" height="65"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -146,7 +150,9 @@
                                             <constraint firstItem="hxV-6u-7sh" firstAttribute="centerY" secondItem="cOa-iU-Oim" secondAttribute="centerY" id="Ehp-8a-0sU"/>
                                             <constraint firstAttribute="trailing" secondItem="hxV-6u-7sh" secondAttribute="trailing" constant="12" id="GRc-Un-dtM"/>
                                             <constraint firstAttribute="height" constant="65" id="H4X-2F-3wY"/>
+                                            <constraint firstAttribute="bottom" secondItem="J35-GB-fvM" secondAttribute="bottom" id="Myh-7a-c4f"/>
                                             <constraint firstItem="svh-li-1W9" firstAttribute="centerY" secondItem="cOa-iU-Oim" secondAttribute="centerY" id="Nm2-yB-Ovg"/>
+                                            <constraint firstItem="J35-GB-fvM" firstAttribute="top" secondItem="cOa-iU-Oim" secondAttribute="top" id="OMZ-pJ-5AF"/>
                                             <constraint firstItem="J35-GB-fvM" firstAttribute="centerY" secondItem="cOa-iU-Oim" secondAttribute="centerY" id="aeO-BW-bpZ"/>
                                             <constraint firstItem="hxV-6u-7sh" firstAttribute="leading" secondItem="J35-GB-fvM" secondAttribute="trailing" id="h7w-OV-Ian"/>
                                             <constraint firstItem="svh-li-1W9" firstAttribute="leading" secondItem="cOa-iU-Oim" secondAttribute="leading" constant="12" id="z5B-Ew-9c3"/>
@@ -192,7 +198,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ahf-0r-Hgj">
-                                                <rect key="frame" x="44" y="22.5" width="168" height="20.5"/>
+                                                <rect key="frame" x="44" y="0.0" width="168" height="65"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -208,6 +214,8 @@
                                             <constraint firstItem="GNq-Gz-C9L" firstAttribute="centerY" secondItem="cmh-hA-dGP" secondAttribute="centerY" id="agS-Oi-a7K"/>
                                             <constraint firstItem="GNq-Gz-C9L" firstAttribute="leading" secondItem="cmh-hA-dGP" secondAttribute="leading" constant="12" id="fhS-IW-cB5"/>
                                             <constraint firstAttribute="trailing" secondItem="YAF-RP-8Wo" secondAttribute="trailing" constant="12" id="goB-RX-W62"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ahf-0r-Hgj" secondAttribute="bottom" id="j6G-Kk-X9N"/>
+                                            <constraint firstItem="Ahf-0r-Hgj" firstAttribute="top" secondItem="cmh-hA-dGP" secondAttribute="top" id="v8J-iP-Ghq"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zOy-ID-Phr">
@@ -228,7 +236,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Questions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Eu-Do-4RL">
-                                                <rect key="frame" x="44" y="22.5" width="168" height="20.5"/>
+                                                <rect key="frame" x="44" y="0.0" width="168" height="65"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -237,6 +245,8 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="teX-xp-cj9" firstAttribute="leading" secondItem="5Eu-Do-4RL" secondAttribute="trailing" id="55t-SW-7rh"/>
+                                            <constraint firstItem="5Eu-Do-4RL" firstAttribute="top" secondItem="zOy-ID-Phr" secondAttribute="top" id="802-9C-Cnp"/>
+                                            <constraint firstAttribute="bottom" secondItem="5Eu-Do-4RL" secondAttribute="bottom" id="RPJ-Vr-jgY"/>
                                             <constraint firstItem="NIh-Bq-Nnz" firstAttribute="centerY" secondItem="zOy-ID-Phr" secondAttribute="centerY" id="ZI5-SN-ZO1"/>
                                             <constraint firstItem="NIh-Bq-Nnz" firstAttribute="leading" secondItem="zOy-ID-Phr" secondAttribute="leading" constant="12" id="fNR-bO-tzo"/>
                                             <constraint firstItem="5Eu-Do-4RL" firstAttribute="centerY" secondItem="zOy-ID-Phr" secondAttribute="centerY" id="h0L-HS-LDv"/>
@@ -263,7 +273,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfg-68-e8g">
-                                                <rect key="frame" x="44" y="22.5" width="168" height="20.5"/>
+                                                <rect key="frame" x="44" y="0.0" width="168" height="65"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -271,11 +281,13 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
+                                            <constraint firstItem="Pfg-68-e8g" firstAttribute="top" secondItem="A14-0x-EQl" secondAttribute="top" id="DB2-mP-IUG"/>
                                             <constraint firstAttribute="trailing" secondItem="6S1-2j-vrK" secondAttribute="trailing" constant="12" id="G72-77-tV6"/>
                                             <constraint firstItem="90M-ci-NDR" firstAttribute="centerY" secondItem="A14-0x-EQl" secondAttribute="centerY" id="KXs-5m-Ufj"/>
                                             <constraint firstItem="Pfg-68-e8g" firstAttribute="centerY" secondItem="A14-0x-EQl" secondAttribute="centerY" id="NmQ-7I-Zal"/>
                                             <constraint firstItem="6S1-2j-vrK" firstAttribute="centerY" secondItem="A14-0x-EQl" secondAttribute="centerY" id="bp6-CI-on9"/>
                                             <constraint firstItem="6S1-2j-vrK" firstAttribute="leading" secondItem="Pfg-68-e8g" secondAttribute="trailing" id="haA-s7-nOP"/>
+                                            <constraint firstAttribute="bottom" secondItem="Pfg-68-e8g" secondAttribute="bottom" id="k5S-3f-P87"/>
                                             <constraint firstItem="90M-ci-NDR" firstAttribute="leading" secondItem="A14-0x-EQl" secondAttribute="leading" constant="12" id="vLC-J4-PfT"/>
                                             <constraint firstItem="Pfg-68-e8g" firstAttribute="leading" secondItem="90M-ci-NDR" secondAttribute="trailing" constant="12" id="vbf-eB-bE1"/>
                                         </constraints>

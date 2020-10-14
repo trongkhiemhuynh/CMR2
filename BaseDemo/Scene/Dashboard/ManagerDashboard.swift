@@ -49,7 +49,7 @@ class ManagerDashboard: BaseView {
     @objc func didTapProfile(gesture : UITapGestureRecognizer) {
         //show profile view
         let profileVC = ProfileViewController.xibInstance()
-        controller?.navigationController?.pushViewController(profileVC, animated: true)
+        controller?.onPushController(profileVC)
     }
     
     private lazy var lblEmailCounts : UILabel = {

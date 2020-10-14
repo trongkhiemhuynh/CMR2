@@ -22,14 +22,14 @@ class ContactController: BaseViewController {
         present.vTitle.lblTitle.text = "Contact list"
         present.controller = self
         view.addSubview(present)
-        
+
         let subView = MagicCollectionView.xibInstance()
         subView.dictData = ["0":["Apple"],"1":["Amazon"],"2":["Netflix"],"3":["Google"],"4":["Facebook"]]
         subView.controller = self
         //account cell
         subView.heightHeader = heightHeaderDefault
-        subView.heightCell = heightLargeCell
-        subView.viewType = .contact
+        subView.heightCell = heightMediumCell
+        subView.viewType = viewType
         subView.collectionView.registerCell(LogCallViewCell.self)
 //        subView.delegateAddSubView = self
         present.vContent.addSubview(subView)

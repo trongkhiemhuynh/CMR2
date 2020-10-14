@@ -33,8 +33,8 @@
 		223EF2002510993600C076BF /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223EF1FF2510993600C076BF /* RealmSwift.framework */; };
 		223EF2022510A8EC00C076BF /* demo.realm in Resources */ = {isa = PBXBuildFile; fileRef = 223EF2012510A8EC00C076BF /* demo.realm */; };
 		223EF2042510B26F00C076BF /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EF2032510B26F00C076BF /* Profile.swift */; };
-		223EF20D2511BDCD00C076BF /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EF20B2511BDCD00C076BF /* AccountController.swift */; };
-		223EF20E2511BDCD00C076BF /* AccountController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223EF20C2511BDCD00C076BF /* AccountController.xib */; };
+		223EF20D2511BDCD00C076BF /* AccountDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EF20B2511BDCD00C076BF /* AccountDetailController.swift */; };
+		223EF20E2511BDCD00C076BF /* AccountDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223EF20C2511BDCD00C076BF /* AccountDetailController.xib */; };
 		223EF2112511BEFD00C076BF /* ContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EF20F2511BEFD00C076BF /* ContactController.swift */; };
 		223EF2122511BEFD00C076BF /* ContactController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223EF2102511BEFD00C076BF /* ContactController.xib */; };
 		223EF2142511BF4000C076BF /* AccountRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EF2132511BF4000C076BF /* AccountRoute.swift */; };
@@ -264,7 +264,7 @@
 		C2E857E424F36D30002960A2 /* InfoTicketRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E857E324F36D30002960A2 /* InfoTicketRow.swift */; };
 		C2E857E624F39501002960A2 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E857E524F39501002960A2 /* TabItem.swift */; };
 		C2E857E924F39744002960A2 /* MainAppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E857E724F39744002960A2 /* MainAppController.swift */; };
-		C2E857EA24F39744002960A2 /* NavigationMenuBaseController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E857E824F39744002960A2 /* NavigationMenuBaseController.xib */; };
+		C2E857EA24F39744002960A2 /* MainAppController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E857E824F39744002960A2 /* MainAppController.xib */; };
 		C2E857EC24F397A9002960A2 /* TabNavigationMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E857EB24F397A9002960A2 /* TabNavigationMenu.swift */; };
 		C2E857EE24F39CE7002960A2 /* TabbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E857ED24F39CE7002960A2 /* TabbarItem.swift */; };
 		C2E857F024F39CF6002960A2 /* TabbarItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E857EF24F39CF6002960A2 /* TabbarItem.xib */; };
@@ -340,8 +340,8 @@
 		223EF1FF2510993600C076BF /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		223EF2012510A8EC00C076BF /* demo.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = demo.realm; sourceTree = "<group>"; };
 		223EF2032510B26F00C076BF /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		223EF20B2511BDCD00C076BF /* AccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
-		223EF20C2511BDCD00C076BF /* AccountController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountController.xib; sourceTree = "<group>"; };
+		223EF20B2511BDCD00C076BF /* AccountDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailController.swift; sourceTree = "<group>"; };
+		223EF20C2511BDCD00C076BF /* AccountDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountDetailController.xib; sourceTree = "<group>"; };
 		223EF20F2511BEFD00C076BF /* ContactController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactController.swift; sourceTree = "<group>"; };
 		223EF2102511BEFD00C076BF /* ContactController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactController.xib; sourceTree = "<group>"; };
 		223EF2132511BF4000C076BF /* AccountRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRoute.swift; sourceTree = "<group>"; };
@@ -582,7 +582,7 @@
 		C2E857E324F36D30002960A2 /* InfoTicketRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTicketRow.swift; sourceTree = "<group>"; };
 		C2E857E524F39501002960A2 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		C2E857E724F39744002960A2 /* MainAppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppController.swift; sourceTree = "<group>"; };
-		C2E857E824F39744002960A2 /* NavigationMenuBaseController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationMenuBaseController.xib; sourceTree = "<group>"; };
+		C2E857E824F39744002960A2 /* MainAppController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainAppController.xib; sourceTree = "<group>"; };
 		C2E857EB24F397A9002960A2 /* TabNavigationMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNavigationMenu.swift; sourceTree = "<group>"; };
 		C2E857ED24F39CE7002960A2 /* TabbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarItem.swift; sourceTree = "<group>"; };
 		C2E857EF24F39CF6002960A2 /* TabbarItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabbarItem.xib; sourceTree = "<group>"; };
@@ -664,8 +664,8 @@
 		223EF2072511BDA000C076BF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				223EF20B2511BDCD00C076BF /* AccountController.swift */,
-				223EF20C2511BDCD00C076BF /* AccountController.xib */,
+				223EF20B2511BDCD00C076BF /* AccountDetailController.swift */,
+				223EF20C2511BDCD00C076BF /* AccountDetailController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -758,7 +758,7 @@
 				C23F628824EE9C2600E37560 /* CustomTabBarView.swift */,
 				C2E857E524F39501002960A2 /* TabItem.swift */,
 				C2E857E724F39744002960A2 /* MainAppController.swift */,
-				C2E857E824F39744002960A2 /* NavigationMenuBaseController.xib */,
+				C2E857E824F39744002960A2 /* MainAppController.xib */,
 			);
 			path = Tabbar;
 			sourceTree = "<group>";
@@ -1659,7 +1659,7 @@
 				223EF2122511BEFD00C076BF /* ContactController.xib in Resources */,
 				228D5682251C4CCF00CE935C /* TaskDetailController.xib in Resources */,
 				4B28018924ECE830007647F8 /* TicketController.xib in Resources */,
-				223EF20E2511BDCD00C076BF /* AccountController.xib in Resources */,
+				223EF20E2511BDCD00C076BF /* AccountDetailController.xib in Resources */,
 				4B166C2D24ED0D140030C592 /* TicketDetailInputInfoCollectionViewCell.xib in Resources */,
 				4BE6314424DA9CC000D9133C /* LaunchScreen.storyboard in Resources */,
 				224326EA250740CE005AE588 /* MenuViewController.xib in Resources */,
@@ -1695,7 +1695,7 @@
 				4B166C3E24EE5C150030C592 /* CustomTitleView.xib in Resources */,
 				4B166C2324ECFD620030C592 /* AddressController.xib in Resources */,
 				226D9358250B252200457AD5 /* ProfileCollectionViewCell.xib in Resources */,
-				C2E857EA24F39744002960A2 /* NavigationMenuBaseController.xib in Resources */,
+				C2E857EA24F39744002960A2 /* MainAppController.xib in Resources */,
 				228D56482519A87F00CE935C /* TicketDetailController.xib in Resources */,
 				228D564E2519A87F00CE935C /* CustomDetailActionView.xib in Resources */,
 				228D56702519E3A100CE935C /* PresenterView.xib in Resources */,
@@ -1919,7 +1919,7 @@
 				229A55232500E6F1008A0ECD /* FetchLoginWorker.swift in Sources */,
 				228D56672519E32800CE935C /* NewChildController.swift in Sources */,
 				224EBAF824F50EDA00CB676F /* NewTicketViewController.swift in Sources */,
-				223EF20D2511BDCD00C076BF /* AccountController.swift in Sources */,
+				223EF20D2511BDCD00C076BF /* AccountDetailController.swift in Sources */,
 				22802DEA24FE049200429518 /* FilterView.swift in Sources */,
 				226D9345250A0FBB00457AD5 /* MagicCollectionViewDatasource.swift in Sources */,
 				224346CF24FCD45100CF7AA3 /* Networking.swift in Sources */,
@@ -2200,7 +2200,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = ULAYXARLG5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2227,7 +2227,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = ULAYXARLG5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

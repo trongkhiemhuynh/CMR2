@@ -12,7 +12,7 @@ class AccountCollectionViewCell: UICollectionViewCell {
     
     //outlet
     @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var tf: UITextField!
     @IBOutlet weak var ivDropdown: UIImageView!
     @IBOutlet weak var iv: UIImageView!
     
@@ -20,19 +20,27 @@ class AccountCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         ivDropdown.isHidden = true
+        tf.isUserInteractionEnabled = false
     }
 
-    func onUpdate(_ name: String?,_ postFix: String?) {
+    func onUpdate(_ name: String?,_ postFix: String?,_ dictVal: Dictionary<String, String>?) {
         lblTitle.text = name
-        lblName.text = name
+        tf.text = ""
         
-        if let n = name, let p = postFix {
-            let nameImage = p + n.lowercased().replacingOccurrences(of: " ", with: "_")
-            iv.image = UIImage(named: nameImage)
+        guard let n = name, let p = postFix else {return}
+        let nameImage = p + n.lowercased().replacingOccurrences(of: " ", with: "_")
+        iv.image = UIImage(named: nameImage)
+        
+        guard let dictV = dictVal else {return}
+        
+        for key in dictV.keys {
+            if key.lowercased().contains(n.lowercased()) {
+                tf.text = dictV[key]
+            }
         }
     }
 }
 
-extension AccountCollectionViewCell : XibInitalization {
+extension AccountCollectionViewCell: XibInitalization {
     typealias Element = AccountCollectionViewCell
 }

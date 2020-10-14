@@ -12,19 +12,53 @@ import Alamofire
 
 typealias Handler = (_ data: [Any]?,_ error: Error?) -> Void
 
+let arrKeyLst = ["Opportunity name","Company Name"]
+
 protocol AppAPIList {
-    func checkToken()
+    func checkToken(completion: @escaping Handler)
 }
 
 class Networking: NSObject, AppAPIList {
-    func checkToken() {
-        
-    }
-    
     static let shared = Networking()
 //    weak var delegate: LoginPresenterOutput?
     
 
+    func checkToken(completion: @escaping Handler) {
+        let strUrl = Constants.App.BaseURL + Constants.APIEndPoint.CheckToken
+        
+        let requestURL = URL(string: strUrl)
+        var request = URLRequest(url: requestURL!)
+        
+        request.httpMethod = HTTPMethod.get.rawValue
+        
+        if let token = ApplicationManager.sharedInstance.getValueUserDefault(key: kTokenLoginUser) as? String {
+            let authorization = "Bearer " + token
+            request.setValue(authorization, forHTTPHeaderField: "Authorization")
+            
+            onUrlSession(request: request) { (dict, error) in
+                if error != nil {
+                    completion(nil, NSError.sessionExpired())
+                } else {
+                    guard let dict = dict else { completion(nil, NSError.unknownError()); return }
+//                    guard let d = dict["data"] as? [String: Any]  else { completion(nil, NSError.unknownError()); return }
+                    
+                    if let data = dict["data"] as? String {
+                        if !data.isEmpty {
+                            completion([data], nil)
+                        } else {
+                            completion(nil, NSError.sessionExpired())
+                        }
+                    } else {
+                        completion(nil, NSError.sessionExpired())
+                    }
+                }
+            }
+            
+        } else {
+            completion(nil, NSError.sessionExpired())
+        }
+    }
+    
     func fetchTicketList(with id: String) -> Promise<[TicketObj]>{
         
         let ticketRequest = FetchTicketRequest(param: ["id":id])
@@ -110,6 +144,47 @@ class Networking: NSObject, AppAPIList {
                                     
     }
     
+    //{
+    //    "data": {
+    //        "total_page": 1,
+    //        "total_record": 1,
+    //        "result_query": [
+    //            {
+    //                "_id": {
+    //                    "$oid": "5f8668be02a1bd7d9e1ee314"
+    //                },
+    //                "Info": {
+    //                    "Created_Date": "2020-10-14 09:55:58",
+    //                    "Created_By": "thanhnchi@gmail.com",
+    //                    "Modify_Time": "2020-10-14 09:55:58",
+    //                    "Modify_By": "thanhnchi@gmail.com",
+    //                    "Active": true,
+    //                    "Owner": "thanhnchi@gmail.com"
+    //                },
+    //                "Data": [
+    //                    {
+    //                        "FLD5f8668a702a1bd7d9e1ee30f": "NT&T",
+    //                        "FLD5f8668a702a1bd7d9e1ee310": "Singapore",
+    //                        "FLD5f8668a702a1bd7d9e1ee311": "Orchard road"
+    //                    }
+    //                ]
+    //            }
+    //        ],
+    //        "key_list": [
+    //            {
+    //                "FLD5f8668a702a1bd7d9e1ee30f": "Company Name"
+    //            },
+    //            {
+    //                "FLD5f8668a702a1bd7d9e1ee310": "Country"
+    //            },
+    //            {
+    //                "FLD5f8668a702a1bd7d9e1ee311": "Address"
+    //            }
+    //        ]
+    //    },
+    //    "mess": "",
+    //    "status": ""
+    //}
     func fetchObjectList(id: String, completion: @escaping Handler) {
         let strUrl = Constants.App.BaseURL + Constants.APIEndPoint.Menu_ListView
         
@@ -127,35 +202,38 @@ class Networking: NSObject, AppAPIList {
             request.setValue(String(20), forHTTPHeaderField: "RecordPerPage")
             
             onUrlSession(request: request) { (dict, err) in
-                print(dict)
-                var arrItem: Array<String> = []
-                guard let dic = dict else { return }
+//                print(dict)
                 
-                guard let data = dic["data"] as? [String:Any] else {return}
+                var arrResult: Array<Dictionary<String,String>> = []
                 
-                guard let key_list = data["key_list"] as? Array<[String:String]> else {return}
-                var accountNameKey: String?
+                guard let dic = dict else { completion([], nil); return }
                 
-                for kl in key_list {
-                    if (kl.values.first?.contains("Account"))! {
-                        accountNameKey = kl.keys.first
-                    }
-                }
+                guard let data = dic["data"] as? [String:Any] else {completion([], nil); return}
                 
-                guard let accKey = accountNameKey else {return}
+                guard let key_list = data["key_list"] as? Array<[String:String]> else {completion([], nil); return}
+
+                guard let result_query = data["result_query"] as? Array<[String:Any]> else {completion([], nil); return}
                 
-                guard let result_query = data["result_query"] as? Array<[String:Any]> else {return}
+                //convertible to dictionary [["":"","":""],[]]
                 
                 for it in result_query {
-                    guard let data = it["Data"] as? Array<[String: Any]> else {return}
-                    guard let dicData = data.first else {return}
+                    guard let data = it["Data"] as? Array<[String: Any]> else {completion([], nil); return}
+                    guard let dicData = data.first else {completion([], nil); return}
                     
-                    guard let accName = dicData[accKey] as? String else {return}
+                    var dictItem: Dictionary<String, String> = [:]
+                    for di in dicData.keys {
+                        for kl in key_list {
+                            if di == kl.keys.first! {
+                                dictItem[kl.values.first!] = dicData[di] as? String
+//                                arrItem.append(dictItem)
+                            }
+                        }
+                    }
                     
-                    arrItem.append(accName)
+                    arrResult.append(dictItem)
                 }
                 
-                completion(arrItem, nil)
+                completion(arrResult, nil)
             }
         }
     }

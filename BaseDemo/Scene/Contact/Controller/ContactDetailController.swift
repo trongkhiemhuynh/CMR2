@@ -21,12 +21,16 @@ class ContactDetailController: BaseViewController {
     }
     
     override func setupView() {
+        let isHideBtnSave = viewType == .account_detail ? true : false
         let present = PresenterView.xibInstance()
         present.frame = view.bounds
         present.vTitle.lblTitle.text = "Contact"
         present.controller = self
         present.hideAddNewBtn(on: true)
         view.addSubview(present)
+        present.hideAddNewBtn(on: isHideBtnSave)
+        present.delegate = self
+        present.onChangeAction(type: .save)
         
         let subView = MagicCollectionView.xibInstance()
         subView.dictData = ["0":["First Name","Last Name","Full Name","Office Phone","Mobile Phone","Email","Title","Department","Description"]]
@@ -35,10 +39,10 @@ class ContactDetailController: BaseViewController {
         subView.collectionView.registerCell(AccountCollectionViewCell.self)
         
         subView.collectionView.register(AccountReusableView.xib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AccountReusableView.identifier)
-
+        
         subView.heightHeader = heightHeaderProfile
-        subView.heightCell = 70.0
-        subView.viewType = .contact_detail
+        subView.heightCell = heightMediumCell
+        subView.viewType = viewType
         subView.delegateAddSubView = self
         present.vContent.addSubview(subView)
         subView.frame = present.vContent.bounds
@@ -75,10 +79,10 @@ extension ContactDetailController: BaseViewOutput {
         
         
         dropDown.dataSource = arrDatasource
-        dropDown.direction = .any
+        dropDown.direction = .bottom
         dropDown.selectionAction = { (index: Int, item: String) in
             print("Selected item: \(item) at index: \(index)")
-            cell.lblName.text = item
+            cell.tf.text = item
             dropDown.hide()
         }
         

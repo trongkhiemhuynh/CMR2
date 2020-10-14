@@ -9,17 +9,17 @@
 import Foundation
 
 class AccountRoute : Router {
-    typealias Element = AccountController
+    typealias Element = AccountDetailController
     
     var routerType: RouterType {
         return .push
     }
     
-    fileprivate lazy var _viewController: AccountController = {
-        return AccountController.xibInstance()
+    fileprivate lazy var _viewController: AccountDetailController = {
+        return AccountDetailController.xibInstance()
     }()
 
-    var viewController: AccountController {
+    var viewController: AccountDetailController {
         return self._viewController
     }
 }

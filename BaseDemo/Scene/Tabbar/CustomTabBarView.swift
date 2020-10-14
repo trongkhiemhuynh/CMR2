@@ -10,16 +10,16 @@ import UIKit
 
 class CustomTabBarView: UIView {
     
-    @IBOutlet weak var btnHome : UIButton!
-    @IBOutlet weak var btnProfile : UIButton!
-    @IBOutlet weak var btnTicket : UIButton!
-    @IBOutlet weak var btnSetting : UIButton!
-    @IBOutlet weak var vContent : UIView!
+    @IBOutlet weak var btnHome: UIButton!
+    @IBOutlet weak var btnProfile: UIButton!
+    @IBOutlet weak var btnTicket: UIButton!
+    @IBOutlet weak var btnSetting: UIButton!
+    @IBOutlet weak var vContent: UIView!
     
-    var arrMenu : [UIButton]!
+    var arrMenu: [UIButton]!
     
-    var itemTapped : ((_ tab : Int) -> Void)?
-    var activeItem : Int = 0
+    var itemTapped: ((_ tab : Int) -> Void)?
+    var activeItem: Int = 0
     
     @IBAction func tappedButton(_ sender : UIButton) {
         switchTab(from: self.activeItem, to: sender.tag)

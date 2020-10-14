@@ -64,7 +64,7 @@ class RouterManager {
                 visibleNav.pushViewController(viewController, animated: true)
             } else {
                 let topController = UIApplication.getTopViewController()
-                topController?.navigationController?.pushViewController(viewController, animated: true)
+                topController?.onPushController(viewController)
             }
         }
     }

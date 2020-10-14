@@ -21,14 +21,14 @@ class LoginController : BaseViewController {
     
     @IBOutlet weak var tfPassword: SkyFloatingLabelTextField!
     
-    @IBOutlet weak var btnLogin : UIButton!
+    @IBOutlet weak var btnLogin: UIButton!
     
-    @IBOutlet weak var btnCheckbox : UIButton!
+    @IBOutlet weak var btnCheckbox: UIButton!
     
     ///  MARK: - Output
-    var output : LoginControllerOutput?
+    var output: LoginControllerOutput?
     
-    var isCheck = false
+    var isCheck: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,15 +60,15 @@ class LoginController : BaseViewController {
     }
 
     @IBAction func loginAction(_ sender : AnyObject) {
-        if isCheck {
-            pushView()
-        } else {
-            //check username+password
-            let isVerified = verifyLogin(username: tfUserName.text, password: tfPassword.text)
-            //fetch
-            onLogin(isVerified)
-            
-        }
+        //        if isCheck {
+        //            pushView()
+        //        } else {
+        //check username+password
+        let isVerified = verifyLogin(username: tfUserName.text, password: tfPassword.text)
+        //fetch
+        onLogin(isVerified)
+        
+        //        }
     }
     
     @IBAction func actionCheck() {

@@ -22,6 +22,8 @@ class BaseViewController: UIViewController {
     weak var controllerOwner : UIViewController?
     weak var delegateInput: BaseControllerInput?
     
+    var viewType: MagicViewType!
+    
 //    public lazy var alertController: UIAlertController = {
 //        return UIAlertController()
 //    }()

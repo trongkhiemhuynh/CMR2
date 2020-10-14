@@ -80,12 +80,13 @@ extension NotesView: BaseViewOutput {
     
         presenter.controller = controller
         presenter.delegate = vc
-        controller?.navigationController?.pushViewController(vc, animated: true)
+        controller?.onPushController(vc)
     }
     
     func onDetailView() {
         
     }
+
 }
 
 extension UIViewController: PresenterViewOutput {
@@ -126,10 +127,10 @@ extension UIViewController: PresenterViewOutput {
         
         presenter.controller = self
         presenter.delegate = vc
-        self.navigationController?.pushViewController(vc, animated: true)
+        onPushController(vc)
     }
     
-    func generateView(subView: UIView, title: String, actionType: PresenterActionType) {
+    func generateView(subView: UIView, title: String?, actionType: PresenterActionType) {
         let vc = UIViewController()
         let presenter = PresenterView.xibInstance()
         presenter.vTitle.lblTitle.text = title
@@ -144,6 +145,31 @@ extension UIViewController: PresenterViewOutput {
         
         presenter.controller = self
         presenter.delegate = vc
-        self.navigationController?.pushViewController(vc, animated: true)
+        
+        onPushController(vc)
+    }
+    
+    func addNewAccount() {
+        let route = AccountRoute()
+        RouterManager.shared.handleRouter(route)
+        
+        route.handleData { (vc) in
+            vc.viewType = .account_new
+        }
+    }
+    
+    func addNewContact() {
+        let route = ContactDetailRoute()
+        RouterManager.shared.handleRouter(route)
+        
+        route.handleData { (vc) in
+            vc.viewType = .contact_new
+        }
+    }
+    
+    public func onPushController(_ controller: UIViewController) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + delayTime) {
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
     }
 }

@@ -30,7 +30,7 @@ class MenuViewController: BaseViewController {
     
     var arrMenu: Array<Any> = []
     
-    var _rx_ItemVar = BehaviorRelay<[String:String]>(value: ["menu":HamburgerMenu.dashboard.rawValue])
+    var _rx_ItemVar = BehaviorRelay<[String:String]>(value: ["init":HamburgerMenu.dashboard.rawValue])
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,16 +51,44 @@ class MenuViewController: BaseViewController {
     }
     
     override func initData() {
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        onLoading()
+        //FIXME memory check
         Networking.shared.fetchMenu { (arrData, err) in
+            self.onDismissLoading()
             if err != nil {
                 
             } else {
                 self.arrMenu.removeAll()
+                var arrResult = arrData
                 
-                self.arrMenu = arrData!
+                arrResult?.sort(by: { (x, y) -> Bool in
+                    let x1 = x as! Dictionary<String, String>
+                    let y1 = y as! Dictionary<String, String>
+                    
+                    return x1.values.first! < y1.values.first!
+                })
+                
+//                arrResult?.sort(by: { (a: [String: String], b:[String: String]) -> Bool in
+//                    return a.values.first! > b.values.first!
+////                    return self.equals(a.values.first!, a.values.first!)
+//                    } as! (Any, Any) -> Bool)
+                
+                self.arrMenu = arrResult!
                 self.collectionView.reloadData()
             }
         }
+    }
+    
+    func equals(_ x : Any, _ y : Any) -> Bool {
+        guard x is AnyHashable else { return false }
+        guard y is AnyHashable else { return false }
+        return (x as! AnyHashable) == (y as! AnyHashable)
     }
 }
 

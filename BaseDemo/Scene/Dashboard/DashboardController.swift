@@ -179,37 +179,75 @@ extension DashboardController: SideMenuNavigationControllerDelegate {
     }
     
     func onPushView(_ name : [String:String]?) {
-//        Thread.sleep(forTimeInterval: 0.3)
         Logger.info(name)
         guard let vcName = name?.values.first else {return}
         
-        if vcName == HamburgerMenu.account.rawValue {
+        //handle for tabbar ticket
+        if vcName == HamburgerMenu.ticket.rawValue {
+            ApplicationManager.sharedInstance.mainTabbar?.customTabbar.switchTab(from: TabMenu.dashboard.rawValue, to: TabMenu.ticket.rawValue)
+        }
+        
+//        if vcName == HamburgerMenu.account.rawValue {
             
             //FIXME call object view
-            if let keyObj = name?.keys.first {
-                Networking.shared.fetchObjectList(id: keyObj) { (arr, err) in
-                    //                print("success")
-                    if err != nil {
-                        self.showAlert(title: "ERROR!", message: NSError.unknownError().localizedDescription)
+
+        if let keyObj = name?.keys.first {
+            //FIXME bypass the first
+            if keyObj == "init" {
+                return
+            }
+            
+            onLoading()
+            
+            Networking.shared.fetchObjectList(id: keyObj) { (arrData, err) in
+                self.onDismissLoading()
+                
+                if err != nil {
+                    self.showAlert(title: "ERROR!", message: NSError.unknownError().localizedDescription)
+                } else {
+                    
+                    var arrResult: Array<String> = []
+                    
+                    if let arrDat = arrData as? Array<Dictionary<String, String>> {
+                        //loop for array objects
+                        for item in arrDat {
+                            for i in item.keys {
+                                if arrKeyLst.contains(i) {
+                                    arrResult.append(item[i]!)
+                                }
+                            }
+                        }
                     } else {
-                        let vMagic = MagicCollectionView.xibInstance()
-                        vMagic.collectionView.registerCell(LogCallViewCell.self)
-                        vMagic.heightCell = heightDefaultCell
-                        vMagic.heightHeader = heightHeaderDefault
-                        
-                        vMagic.dictData = ["0":arr!]
-                        vMagic.controller = self
-                        vMagic.viewType = .account_list
-                        //config
-                        self.generateView(subView: vMagic, title: "Account list", actionType: .add)
+
                     }
                     
+                    let vMagic = MagicCollectionView.xibInstance()
+                    vMagic.collectionView.registerCell(LogCallViewCell.self)
+                    vMagic.heightCell = heightDefaultCell
+                    vMagic.heightHeader = heightHeaderDefault
+                    
+                    vMagic.dictData = ["0": arrResult]
+                    vMagic.controller = self
+                    vMagic.arrObj = arrData as? Array<Dictionary<String, String>>
+                    
+                    var type: MagicViewType = .account_list
+                    var actionType: PresenterActionType = .add
+                    
+                    //check type
+                    if (name?.values.first?.lowercased().contains("account"))! {
+                        type = .account_list
+                        actionType = .add_account
+                    } else if (name?.values.first?.lowercased().contains("contact"))! {
+                        type = .contact
+                        actionType = .add_contact
+                    }
+                    
+                    vMagic.viewType = type
+
+                    self.generateView(subView: vMagic, title: name?.values.first, actionType: actionType)
                 }
+                
             }
-        } else if vcName == HamburgerMenu.contact.rawValue {
-            RouterManager.shared.handleRouter(ContactRoute())
-        } else if vcName == HamburgerMenu.ticket.rawValue {
-            ApplicationManager.sharedInstance.mainTabbar?.customTabbar.switchTab(from: TabMenu.dashboard.rawValue, to: TabMenu.ticket.rawValue)
         }
     }
 }

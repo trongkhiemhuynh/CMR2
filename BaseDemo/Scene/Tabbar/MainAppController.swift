@@ -27,8 +27,14 @@ class MainAppController: UITabBarController {
         
         customTabbar = CustomTabBarView.xibInstance()
         self.view.addSubview(customTabbar!)
+        customTabbar.translatesAutoresizingMaskIntoConstraints = false
         
-        customTabbar?.frame = CGRect(x: 0, y: heightScreen - heightTabbar, width: widthScreen, height: heightTabbar)
+        NSLayoutConstraint.activate([
+            customTabbar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            customTabbar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            customTabbar.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            customTabbar.heightAnchor.constraint(equalToConstant: heightTabbar),
+        ])
         
         customTabbar?.itemTapped = changeTab(tab:)
         

@@ -15,10 +15,9 @@ class AccountDetailController: BaseViewController {
     let arrSubIndustry = ["Banking","Insurance","Consumer finance","Retail","Manufacturing","Professional service"]
     let arrSubDistrict = ["1","2","Binh Thanh","Thu Duc","Tan Phu"]
     let arrSubCity = ["Ha Noi","Ho Chi Minh","Da Nang"]
-    let arrSubCountry = ["USA","England","France","Germany","Chinese","Viet Nam","Singapore"]
-    
-    
-    
+    let arrSubCountry = ["Lao","Campuchia","Viet Nam","Singapore"]
+
+    var dictObj: Dictionary<String, String>?
     //function
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +25,7 @@ class AccountDetailController: BaseViewController {
     }
     
     override func setupView() {
-        let isHideBtnSave = viewType == .account ? true : false
+        let isHideBtnSave = viewType == .account_detail ? true : false
         let present = PresenterView.xibInstance()
         present.frame = view.bounds
         present.vTitle.lblTitle.text = "Account information"
@@ -40,6 +39,7 @@ class AccountDetailController: BaseViewController {
         
         let subView = MagicCollectionView.xibInstance()
         subView.dictData = ["0":["Account Name","Industry","Primary phone","Assign to","Street address","District","City","Country","Description"]]
+        subView.dictVal = dictObj
         subView.controller = self
         //account cell
         subView.collectionView.registerCell(AccountCollectionViewCell.self)
@@ -70,7 +70,7 @@ extension AccountDetailController: BaseViewOutput {
     func didAddPicklist(v: UIView?) {
         guard let cell = v as? AccountCollectionViewCell else { return }
         
-        var arrDatasource : Array<String>
+        var arrDatasource: Array<String> = []
         
         switch cell.lblTitle.text! {
         case "Industry":
@@ -82,21 +82,23 @@ extension AccountDetailController: BaseViewOutput {
         case "Country":
             arrDatasource = arrSubCountry
         default:
-            return
+            print("fill text ")
         }
         
-        let dropDown = DropDown()
-        dropDown.anchorView = cell
-        
-        
-        dropDown.dataSource = arrDatasource
-        dropDown.direction = .any
-        dropDown.selectionAction = { (index: Int, item: String) in
-            print("Selected item: \(item) at index: \(index)")
-            cell.lblName.text = item
-            dropDown.hide()
+        if arrDatasource.count > 0 {
+            let dropDown = DropDown()
+            dropDown.anchorView = cell
+
+            dropDown.dataSource = arrDatasource
+            dropDown.direction = .any
+            dropDown.selectionAction = { (index: Int, item: String) in
+                print("Selected item: \(item) at index: \(index)")
+                cell.tf.text = item
+                dropDown.hide()
+            }
+            
+            dropDown.show()
         }
         
-        dropDown.show()
     }
 }
