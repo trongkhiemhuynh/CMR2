@@ -13,8 +13,8 @@ enum SettingType: String {
     case cached = "Cached"
     case push_notification = "Push Notification"
     case version = "Version"
-    case ocr = "OCR Beta"
-    case jabber = "Jabber Guest Beta"
+//    case ocr = "OCR Beta"
+//    case jabber = " Beta"
 }
 
 class SettingViewController: BaseViewController {
@@ -46,7 +46,7 @@ class SettingViewController: BaseViewController {
         v.frame = present.vContent.bounds
         
         v.controller = self
-        v.dictData = ["0":[SettingType.cached.rawValue, SettingType.push_notification.rawValue],"1":[SettingType.version.rawValue + " " + (versionApp)],"2":[SettingType.ocr.rawValue, SettingType.jabber.rawValue]]
+        v.dictData = ["0":[SettingType.cached.rawValue, SettingType.push_notification.rawValue],"1":[SettingType.version.rawValue + " " + (versionApp)]]
         
         v.heightCell = 70.0
         v.heightHeader = 10.0

@@ -13,6 +13,7 @@ import UIKit
     func onComplete()
     @objc optional func addNewAccount()
     @objc optional func addNewContact()
+    @objc optional func addNewObject()
 }
 
 enum PresenterActionType {
@@ -21,6 +22,7 @@ enum PresenterActionType {
     case edit
     case add_account
     case add_contact
+    case add_object
 }
 
 class PresenterView: BaseView {
@@ -50,6 +52,8 @@ class PresenterView: BaseView {
             delegate?.addNewAccount!()
         case .add_contact:
             delegate?.addNewContact!()
+        case .add_object:
+            delegate?.addNewObject?()
         }
     }
     
@@ -75,6 +79,8 @@ class PresenterView: BaseView {
         case .add_account:
             btnAddNew.setImage(UIImage(named: "add_new"), for: .normal)
         case .add_contact:
+            btnAddNew.setImage(UIImage(named: "add_new"), for: .normal)
+        case .add_object:
             btnAddNew.setImage(UIImage(named: "add_new"), for: .normal)
         }
     }

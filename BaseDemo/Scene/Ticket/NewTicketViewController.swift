@@ -37,6 +37,8 @@ class NewTicketViewController: BaseViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_ :)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
         cvNewTicket.addTapDismissKeyboard()
+        
+        vTitle.lblTitle.text = titleLabel
     }
     
     @objc func keyboardWillShow(_ notification: NSNotification) {
@@ -79,9 +81,7 @@ class NewTicketViewController: BaseViewController {
     }
     
     func setTitleView(_ title: String) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
-            self.vTitle.lblTitle.text = title
-        }
+        titleLabel = title
     }
     
     @IBAction func back() {

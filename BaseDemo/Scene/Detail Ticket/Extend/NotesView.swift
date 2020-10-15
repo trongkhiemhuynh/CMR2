@@ -109,6 +109,7 @@ extension UIViewController: PresenterViewOutput {
     }
     
     func onAddNew() {
+        //FIXME
         let vc = UIViewController()
         let presenter = PresenterView.xibInstance()
         presenter.vTitle.lblTitle.text = "Edit note"
@@ -165,6 +166,11 @@ extension UIViewController: PresenterViewOutput {
         route.handleData { (vc) in
             vc.viewType = .contact_new
         }
+    }
+    
+    func addNewObject() {
+        print("New Object")
+        generateView(subView: UIView(), title: "New Object", actionType: .save)
     }
     
     public func onPushController(_ controller: UIViewController) {

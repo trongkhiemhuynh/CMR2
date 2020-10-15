@@ -231,7 +231,7 @@ extension DashboardController: SideMenuNavigationControllerDelegate {
                     vMagic.arrObj = arrData as? Array<Dictionary<String, String>>
                     
                     var type: MagicViewType = .account_list
-                    var actionType: PresenterActionType = .add
+                    var actionType: PresenterActionType = .add_object
                     
                     //check type
                     if (name?.values.first?.lowercased().contains("account"))! {

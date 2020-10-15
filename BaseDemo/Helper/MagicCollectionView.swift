@@ -83,14 +83,14 @@ extension MagicCollectionView: MagicCollectionViewDelegateOutput {
             }
             return
         case .setting:
-            let cell = collectionView.cellForItem(at: indexPath) as! MagicCollectionViewCell
-            let title = cell.title.text!
+//            let cell = collectionView.cellForItem(at: indexPath) as! MagicCollectionViewCell
+//            let title = cell.title.text!
             
-            if title == SettingType.ocr.rawValue {
-                //                vc = OCRController()
-            } else if title == SettingType.jabber.rawValue {
-                Logger.info(title)
-            }
+//            if title == SettingType.ocr.rawValue {
+//                //                vc = OCRController()
+//            } else if title == SettingType.jabber.rawValue {
+//                Logger.info(title)
+//            }
             return
         case .account_detail,.contact_detail,.new_child:
             Logger.info(viewType)

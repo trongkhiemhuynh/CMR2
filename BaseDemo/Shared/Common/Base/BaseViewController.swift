@@ -23,6 +23,7 @@ class BaseViewController: UIViewController {
     weak var delegateInput: BaseControllerInput?
     
     var viewType: MagicViewType!
+    var titleLabel: String?
     
 //    public lazy var alertController: UIAlertController = {
 //        return UIAlertController()
