@@ -23,13 +23,14 @@ class AccountCollectionViewCell: UICollectionViewCell {
         tf.isUserInteractionEnabled = false
     }
 
-    func onUpdate(_ name: String?,_ postFix: String?,_ dictVal: Dictionary<String, String>?) {
+    func onUpdate(_ name: String?,_ postFix: String?,_ dictVal: Dictionary<String, String>?, isHiddenIv: Bool = true) {
         lblTitle.text = name
         tf.text = ""
         
         guard let n = name, let p = postFix else {return}
         let nameImage = p + n.lowercased().replacingOccurrences(of: " ", with: "_")
         iv.image = UIImage(named: nameImage)
+        iv.isHidden = isHiddenIv
         
         guard let dictV = dictVal else {return}
         

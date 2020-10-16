@@ -13,8 +13,18 @@ class LoginObject: Object {
     @objc dynamic var token = ""
     @objc dynamic var name = ""
     @objc dynamic var tenant = ""
+    @objc dynamic var id = 0
     
-//    override class func primaryKey() -> String? {
-//        
-//    }
+    override class func primaryKey() -> String? {
+        return "id"
+    }
+}
+
+class MenuObject: Object {
+    @objc dynamic var key = ""
+    @objc dynamic var value = ""
+    
+    override class func primaryKey() -> String? {
+        return "key"
+    }
 }

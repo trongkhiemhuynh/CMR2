@@ -16,7 +16,7 @@ class LoginInteractor {
     /// Output
     var output : LoginInteractorOutput?
     
-    fileprivate lazy var fetchLoginWorker : FetchLoginWorker = {
+    fileprivate lazy var fetchLoginWorker: FetchLoginWorker = {
         return FetchLoginWorker()
     }()
 }

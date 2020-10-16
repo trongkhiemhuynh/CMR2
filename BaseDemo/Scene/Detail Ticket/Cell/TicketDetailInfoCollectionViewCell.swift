@@ -18,9 +18,12 @@ class TicketDetailInfoCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        lblName.text = nameDevice
-        lblJob.text = jobTitle
-        lblID.text = "ID: " + uuidDevice
+        
+        let loginObj = RealmManager.shared.onGetLoginObject() as? LoginObject
+        
+        lblName.text = loginObj?.name
+        lblJob.text = loginObj?.tenant
+        lblID.text = "ID: " + (loginObj?.tenant ?? "")
         
         iv.layer.cornerRadius = iv.frame.size.height/2
         iv.clipsToBounds = true

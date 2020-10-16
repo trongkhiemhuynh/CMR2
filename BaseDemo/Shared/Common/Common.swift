@@ -64,6 +64,8 @@ enum MagicViewType {
     case account_list
     case account_new
     case contact_new
+    case object_detail
+    case object_list
 }
 
 //enum ExtendViews {

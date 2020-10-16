@@ -75,7 +75,7 @@ extension MagicCollectionView: MagicCollectionViewDelegateOutput {
         
         switch viewType {
         case .account_list:
-            let route = AccountRoute()
+            let route = AccountDetailRoute()
             RouterManager.shared.handleRouter(route)
             route.handleData { (vc) in
                 vc.viewType = .account_detail
@@ -106,6 +106,14 @@ extension MagicCollectionView: MagicCollectionViewDelegateOutput {
 //            print(viewType)
 //        case .contact_new:
 //            print(viewType)
+        case .object_list:
+            let route = ObjectDetailRoute()
+            RouterManager.shared.handleRouter(route)
+            
+            route.handleData { (vc) in
+                vc.viewType = .object_detail
+                vc.dictObj = arrObj?[indexPath.row]
+            }
         default:
             print(viewType)
             delegateAddSubView?.didAddNew(type: Extend_Type.notes.rawValue)

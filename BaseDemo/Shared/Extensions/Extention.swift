@@ -62,7 +62,9 @@ extension UIViewController {
     }
     
     func onDismissLoading() {
-        UIApplication.getTopViewController()?.dismiss(animated: true, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+            UIApplication.getTopViewController()?.dismiss(animated: true, completion: nil)
+        }
     }
     
     func didPopView() {

@@ -9,8 +9,11 @@
 import Foundation
 import PromiseKit
 import Alamofire
+import RealmSwift
+import ObjectMapper
 
 typealias Handler = (_ data: [Any]?,_ error: Error?) -> Void
+typealias MappableHandler = (Mappable?) -> Void
 
 let arrKeyLst = ["Opportunity name","Company Name"]
 
@@ -96,8 +99,20 @@ class Networking: NSObject, AppAPIList {
                     for key in arrKeys {
                         let value = d[key]
                         
+                        let realm = try! Realm()
+                        
+                        
                         if let val = value as? String {
                             let dict = [key:val]
+                            
+                            //save to local
+                            try! realm.write {
+                                let obj = MenuObject()
+                                obj.key = val
+                                obj.value = key
+                                realm.add(obj, update: .modified)
+                            }
+                            
                             arrMenu.append(dict)
                         }
                     }
@@ -136,6 +151,14 @@ class Networking: NSObject, AppAPIList {
                 if let token = dict["Token"] {
                     ApplicationManager.sharedInstance.saveUserDefault(value: token, key: kTokenLoginUser)
                     completion([kTokenLoginUser], nil)
+                    
+                    let objLogin = LoginObject()
+                    objLogin.name = dict["Name"] as? String ?? ""
+                    objLogin.token = dict["Token"] as? String ?? ""
+                    objLogin.tenant = dict["Tenant"] as? String ?? ""
+                    
+                    RealmManager.shared.onModifiedObject(object: objLogin)
+                    
                 } else {
                     completion(nil, NSError.unknownError())
                 }
@@ -236,6 +259,62 @@ class Networking: NSObject, AppAPIList {
                 completion(arrResult, nil)
             }
         }
+    }
+    
+    func onCreatedForm(id: String, completion: @escaping MappableHandler) {
+        let strUrl = Constants.App.BaseURL + Constants.APIEndPoint.CreatedForm
+                
+                let requestURL = URL(string: strUrl)
+                var request = URLRequest(url: requestURL!)
+                
+                request.httpMethod = HTTPMethod.get.rawValue
+                
+                if let token = ApplicationManager.sharedInstance.getValueUserDefault(key: kTokenLoginUser) as? String {
+                    let authorization = "Bearer " + token
+                    request.setValue(authorization, forHTTPHeaderField: "Authorization")
+                    request.setValue(id, forHTTPHeaderField: "ID")
+                    
+//                    request.setValue(String(1), forHTTPHeaderField: "CurrentPage")
+//                    request.setValue(String(20), forHTTPHeaderField: "RecordPerPage")
+                    
+                    onUrlSession(request: request) { (dictJson, err) in
+        //                print(dict)
+                        
+//                        var arrResult: Array<Dictionary<String,String>> = []
+                        
+                        guard let dic = dictJson else { completion(nil); return }
+                        let formObj = Mapper<LoadFormObj>().map(JSONObject: dic)
+                        Logger.info(formObj?.data)
+                        completion(formObj)
+                        
+//                        guard let data = dic["data"] as? [String:Any] else {completion([], nil); return}
+//
+//                        guard let key_list = data["key_list"] as? Array<[String:String]> else {completion([], nil); return}
+//
+//                        guard let result_query = data["result_query"] as? Array<[String:Any]> else {completion([], nil); return}
+//
+//                        //convertible to dictionary [["":"","":""],[]]
+//
+//                        for it in result_query {
+//                            guard let data = it["Data"] as? Array<[String: Any]> else {completion([], nil); return}
+//                            guard let dicData = data.first else {completion([], nil); return}
+//
+//                            var dictItem: Dictionary<String, String> = [:]
+//                            for di in dicData.keys {
+//                                for kl in key_list {
+//                                    if di == kl.keys.first! {
+//                                        dictItem[kl.values.first!] = dicData[di] as? String
+//        //                                arrItem.append(dictItem)
+//                                    }
+//                                }
+//                            }
+//
+//                            arrResult.append(dictItem)
+//                        }
+//
+//                        completion(arrResult, nil)
+                    }
+                }
     }
     
     /// call api

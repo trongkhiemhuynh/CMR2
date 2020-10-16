@@ -18,7 +18,10 @@ class ProfileCollectionReusableView: UICollectionReusableView {
         super.awakeFromNib()
         // Initialization code
         self.backgroundColor = Color.BackgroundListColor()
-        lblName.text = nameDevice
+        
+        let loginObj = RealmManager.shared.onGetLoginObject() as? LoginObject
+        
+        lblName.text = loginObj?.name
         iv.layer.cornerRadius = iv.frame.size.height/2
         
     }

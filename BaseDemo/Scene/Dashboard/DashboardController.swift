@@ -230,21 +230,21 @@ extension DashboardController: SideMenuNavigationControllerDelegate {
                     vMagic.controller = self
                     vMagic.arrObj = arrData as? Array<Dictionary<String, String>>
                     
-                    var type: MagicViewType = .account_list
-                    var actionType: PresenterActionType = .add_object
+                    let type: MagicViewType = .object_list
+                    let actionType: PresenterActionType = .add_object
                     
                     //check type
-                    if (name?.values.first?.lowercased().contains("account"))! {
-                        type = .account_list
-                        actionType = .add_account
-                    } else if (name?.values.first?.lowercased().contains("contact"))! {
-                        type = .contact
-                        actionType = .add_contact
-                    }
+//                    if (name?.values.first?.lowercased().contains("account"))! {
+//                        type = .account_list
+//                        actionType = .add_account
+//                    } else if (name?.values.first?.lowercased().contains("contact"))! {
+//                        type = .contact
+//                        actionType = .add_contact
+//                    }
                     
                     vMagic.viewType = type
 
-                    self.generateView(subView: vMagic, title: name?.values.first, actionType: actionType)
+                    self.generateView(subView: vMagic, title: (name?.values.first)! + " list", actionType: actionType)
                 }
                 
             }

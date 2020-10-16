@@ -46,9 +46,11 @@ class WelcomeViewController: UIViewController {
         ivUser.layer.cornerRadius = ivUser.bounds.height/2
         ivAgree.layer.cornerRadius = ivAgree.bounds.height/2
         
-        lblName.text = nameDevice
+        let loginObj = RealmManager.shared.onGetLoginObject() as? LoginObject
         
-        lblJob.text = jobTitle
+        lblName.text = loginObj?.name
+        
+        lblJob.text = loginObj?.tenant
     }
     
     override func viewDidAppear(_ animated: Bool) {

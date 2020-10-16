@@ -30,8 +30,11 @@ class ManagerDashboard: BaseView {
     var chartPieView : PieChartView!
     
     override func awakeFromNib() {
-        lblName.text = nameDevice
-        lblJob.text = jobTitle
+        
+        let loginObj = RealmManager.shared.onGetLoginObject() as? LoginObject
+        
+        lblName.text = loginObj?.name
+        lblJob.text = loginObj?.tenant
         
         iv.layer.cornerRadius = iv.frame.size.width/2
     }

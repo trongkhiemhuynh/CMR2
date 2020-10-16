@@ -12,7 +12,7 @@ import DropDown
 class ContactDetailController: BaseViewController {
 
     //variable
-    var arrSubDepartment = ["Sales","Marketing","Support","Implementation","Accounting"]
+//    var arrSubDepartment = ["Sales","Marketing","Support","Implementation","Accounting"]
     
     //function
     override func viewDidLoad() {
@@ -38,9 +38,9 @@ class ContactDetailController: BaseViewController {
         //account cell
         subView.collectionView.registerCell(AccountCollectionViewCell.self)
         
-        subView.collectionView.register(AccountReusableView.xib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AccountReusableView.identifier)
+//        subView.collectionView.register(AccountReusableView.xib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AccountReusableView.identifier)
         
-        subView.heightHeader = heightHeaderProfile
+        subView.heightHeader = heightHeaderDefault
         subView.heightCell = heightMediumCell
         subView.viewType = viewType
         subView.delegateAddSubView = self
@@ -59,33 +59,33 @@ extension ContactDetailController: BaseViewOutput {
         
     }
     
-    func didAddPicklist(v: UIView?) {
-        guard let cell = v as? AccountCollectionViewCell else { return }
-        
-        var arrDatasource : Array<String>
-        
-        switch cell.lblTitle.text! {
-        case "Department":
-            arrDatasource = arrSubDepartment
-        case "Account Name":
-            RouterManager.shared.handleRouter(AccountRoute())
-            return
-        default:
-            return
-        }
-        
-        let dropDown = DropDown()
-        dropDown.anchorView = cell
-        
-        
-        dropDown.dataSource = arrDatasource
-        dropDown.direction = .bottom
-        dropDown.selectionAction = { (index: Int, item: String) in
-            print("Selected item: \(item) at index: \(index)")
-            cell.tf.text = item
-            dropDown.hide()
-        }
-        
-        dropDown.show()
-    }
+//    func didAddPicklist(v: UIView?) {
+//        guard let cell = v as? AccountCollectionViewCell else { return }
+//        
+//        var arrDatasource : Array<String>
+//        
+//        switch cell.lblTitle.text! {
+//        case "Department":
+//            arrDatasource = arrSubDepartment
+//        case "Account Name":
+//            RouterManager.shared.handleRouter(AccountDetailRoute())
+//            return
+//        default:
+//            return
+//        }
+//        
+//        let dropDown = DropDown()
+//        dropDown.anchorView = cell
+//        
+//        
+//        dropDown.dataSource = arrDatasource
+//        dropDown.direction = .bottom
+//        dropDown.selectionAction = { (index: Int, item: String) in
+//            print("Selected item: \(item) at index: \(index)")
+//            cell.tf.text = item
+//            dropDown.hide()
+//        }
+//        
+//        dropDown.show()
+//    }
 }

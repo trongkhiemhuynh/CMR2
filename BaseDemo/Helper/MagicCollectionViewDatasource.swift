@@ -47,7 +47,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             cell.onUpdate(title: title)
 
             return cell
-        } else if type == .account_detail || type == .contact_detail {
+        } else if type == .account_detail || type == .contact_detail || type == .object_detail {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AccountCollectionViewCell.identifier, for: indexPath) as! AccountCollectionViewCell
             
             let arr = dictData?[String(indexPath.section)] as! Array<String>
@@ -64,13 +64,13 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             let title = arr[indexPath.row]
             
             //check is contact detail
-            let postFix = (type == .contact_new) ? "contact_" : ""
-            cell.onUpdate(title, postFix, nil)
+//            let postFix = (type == .contact_new) ? "contact_" : ""
+            cell.onUpdate(title, "postFix", nil)
             
-            //check item have picklist
-            if arrAccountArrowDown.contains(title) || arrContactArrowDown.contains(title) {
-                cell.ivDropdown.isHidden = false
-            }
+//            //check item have picklist
+//            if arrAccountArrowDown.contains(title) || arrContactArrowDown.contains(title) {
+//                cell.ivDropdown.isHidden = false
+//            }
             
             cell.tf.isUserInteractionEnabled = true
             
@@ -191,7 +191,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
                 postFix = "contact_"
             }
             
-            cell.onUpdate(title, postFix, nil)
+            cell.onUpdate(title, postFix, nil, isHiddenIv: false)
 
             //check item have picklist
             if arrNewChildArrowDown.contains(title) {
@@ -199,7 +199,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             }
             
             return cell
-        } else if type == .account_list {
+        } else if type == .account_list || type == .object_list {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LogCallViewCell.identifier, for: indexPath) as! LogCallViewCell
             let name = arrData![indexPath.row]
             
@@ -222,11 +222,12 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             headerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTapHeader)))
             
             return headerView
-        } else if type == .account_detail || type == .contact_detail || type == .account_new || type == .contact_new {
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AccountReusableView.identifier, for: indexPath) as! AccountReusableView
-            
-            return headerView
         }
+//        else if type == .account_detail || type == .contact_detail || type == .account_new || type == .contact_new {
+//            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AccountReusableView.identifier, for: indexPath) as! AccountReusableView
+//
+//            return headerView
+//        }
         
         let headerView  = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MagicHeaderCollectionReusableView.identifier, for: indexPath) as! MagicHeaderCollectionReusableView
         
@@ -267,7 +268,7 @@ extension MagicCollectionViewDatasource: ProfileCollectionViewCellOutput {
         }
         
         if name == Profile_Item.profileHeader.rawValue {
-            RouterManager.shared.handleRouter(AccountRoute())
+//            RouterManager.shared.handleRouter(AccountRoute())
             return
         }
         

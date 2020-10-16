@@ -8,7 +8,7 @@
 
 import Foundation
 
-class AccountRoute : Router {
+class AccountDetailRoute: Router {
     typealias Element = AccountDetailController
     
     var routerType: RouterType {

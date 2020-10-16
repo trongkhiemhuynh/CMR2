@@ -131,27 +131,27 @@ extension UIViewController: PresenterViewOutput {
         onPushController(vc)
     }
     
-    func generateView(subView: UIView, title: String?, actionType: PresenterActionType) {
-        let vc = UIViewController()
+    func generateView(subView: UIView, title: String?, actionType: PresenterActionType, controller: UIViewController = UIViewController()) {
+//        let vc = UIViewController()
         let presenter = PresenterView.xibInstance()
         presenter.vTitle.lblTitle.text = title
         
         subView.frame = CGRect(x: CGPoint.zero.x, y: CGPoint.zero.y, width: presenter.vContent.bounds.width, height: presenter.vContent.bounds.height)
             
-        vc.view.addSubview(presenter)
-        presenter.frame = vc.view.bounds
+        controller.view.addSubview(presenter)
+        presenter.frame = controller.view.bounds
         
         presenter.onChangeAction(type: actionType)
         presenter.vContent.addSubview(subView)
         
         presenter.controller = self
-        presenter.delegate = vc
+        presenter.delegate = controller
         
-        onPushController(vc)
+        onPushController(controller)
     }
     
     func addNewAccount() {
-        let route = AccountRoute()
+        let route = AccountDetailRoute()
         RouterManager.shared.handleRouter(route)
         
         route.handleData { (vc) in
@@ -170,7 +170,10 @@ extension UIViewController: PresenterViewOutput {
     
     func addNewObject() {
         print("New Object")
-        generateView(subView: UIView(), title: "New Object", actionType: .save)
+        let detailController = ObjectDetailController()
+        self.navigationController?.pushViewController(detailController, animated: true)
+        
+        generateView(subView: UIView(), title: "Creat New", actionType: .save)
     }
     
     public func onPushController(_ controller: UIViewController) {
