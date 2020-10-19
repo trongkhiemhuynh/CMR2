@@ -126,6 +126,7 @@
 		2270237224F8AECB002C06AC /* Storyboard+Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2270237124F8AECB002C06AC /* Storyboard+Initialization.swift */; };
 		2270237424F8AEDA002C06AC /* Xib+Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2270237324F8AEDA002C06AC /* Xib+Initialization.swift */; };
 		2270237624F8AEF5002C06AC /* BaseAbility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2270237524F8AEF5002C06AC /* BaseAbility.swift */; };
+		2272A238253D4A5C00D35C9A /* ObjectNewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2272A237253D4A5C00D35C9A /* ObjectNewController.swift */; };
 		22748DF125218C1C00599DD5 /* NotesDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22748DF025218C1C00599DD5 /* NotesDetailView.xib */; };
 		22802DEA24FE049200429518 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22802DE924FE049200429518 /* FilterView.swift */; };
 		22802DEC24FE04A500429518 /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22802DEB24FE04A500429518 /* FilterView.xib */; };
@@ -435,6 +436,7 @@
 		2270237124F8AECB002C06AC /* Storyboard+Initialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Initialization.swift"; sourceTree = "<group>"; };
 		2270237324F8AEDA002C06AC /* Xib+Initialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Xib+Initialization.swift"; sourceTree = "<group>"; };
 		2270237524F8AEF5002C06AC /* BaseAbility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAbility.swift; sourceTree = "<group>"; };
+		2272A237253D4A5C00D35C9A /* ObjectNewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectNewController.swift; sourceTree = "<group>"; };
 		22748DF025218C1C00599DD5 /* NotesDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesDetailView.xib; sourceTree = "<group>"; };
 		22802DE924FE049200429518 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		22802DEB24FE04A500429518 /* FilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterView.xib; sourceTree = "<group>"; };
@@ -1322,6 +1324,7 @@
 				223EF1F2250F604F00C076BF /* OCRController.swift */,
 				223EF1F3250F604F00C076BF /* OCRController.xib */,
 				223EF2032510B26F00C076BF /* Profile.swift */,
+				2272A237253D4A5C00D35C9A /* ObjectNewController.swift */,
 			);
 			path = Staging;
 			sourceTree = "<group>";
@@ -1960,6 +1963,7 @@
 				229A55312501E50C008A0ECD /* RouterManager.swift in Sources */,
 				C23F628924EE9C2600E37560 /* CustomTabBarView.swift in Sources */,
 				4B166C2C24ED0D140030C592 /* TicketDetailInputInfoCollectionViewCell.swift in Sources */,
+				2272A238253D4A5C00D35C9A /* ObjectNewController.swift in Sources */,
 				224346CB24FCB86200CF7AA3 /* Worker.swift in Sources */,
 				22C6F353252313CC00AE91F4 /* NewTask.swift in Sources */,
 				226D9353250B227D00457AD5 /* ProfileCollectionReusableView.swift in Sources */,
