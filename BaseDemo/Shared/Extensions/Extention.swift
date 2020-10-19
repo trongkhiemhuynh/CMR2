@@ -47,9 +47,7 @@ extension UIViewController {
         view.removeFromSuperview()
 //        removeFromParent()
     }
-    
-    
-    
+
     func onLoading() {
         let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
@@ -62,9 +60,7 @@ extension UIViewController {
     }
     
     func onDismissLoading() {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
-            UIApplication.getTopViewController()?.dismiss(animated: true, completion: nil)
-        }
+        UIApplication.getTopViewController()?.dismiss(animated: true, completion: nil)
     }
     
     func didPopView() {
@@ -225,3 +221,96 @@ extension URLRequest {
     }
 }
 
+extension UIViewController: PresenterViewOutput {    
+    func onComplete(info dictObject: Dictionary<String, String>) {
+        //FIXME
+        let vSuccess = Bundle.main.loadNibNamed("PopupView", owner: self, options: nil)?[1] as! PopUpSuccessful
+        
+        self.view.addSubview(vSuccess)
+        vSuccess.frame = self.view.bounds
+        
+//        UIView.animate(withDuration: delayTime, delay: 0.0, options: .allowAnimatedContent, animations: {
+//            self.view.layoutIfNeeded()
+//        }) { (_) in
+//        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + delayTime) {
+            vSuccess.removeFromSuperview()
+            self.didPopView()
+        }
+    }
+    
+    func onAddNew() {
+        //FIXME
+        let vc = UIViewController()
+        let presenter = PresenterView.xibInstance()
+        presenter.vTitle.lblTitle.text = "Edit note"
+        
+        let creatNote = CreatNewNote.xibInstance()
+        creatNote.hideSave()
+        creatNote.hideBack()
+        creatNote.vTitleView.isHidden = true
+        creatNote.frame = CGRect(x: sectionInsetsDefault.left, y: CGPoint.zero.y, width: presenter.vContent.bounds.width - sectionInsetsDefault.left*2, height: presenter.vContent.bounds.height)
+            
+        vc.view.addSubview(presenter)
+        presenter.frame = vc.view.bounds
+        
+        presenter.onChangeAction(type: .save)
+        presenter.vContent.addSubview(creatNote)
+        
+        presenter.controller = self
+        presenter.delegate = vc
+        onPushController(vc)
+    }
+    
+    func generateView(subView: UIView, title: String?, actionType: PresenterActionType, controller: UIViewController = UIViewController()) {
+//        let vc = UIViewController()
+        let presenter = PresenterView.xibInstance()
+        presenter.vTitle.lblTitle.text = title
+        
+        subView.frame = CGRect(x: CGPoint.zero.x, y: CGPoint.zero.y, width: presenter.vContent.bounds.width, height: presenter.vContent.bounds.height)
+            
+        controller.view.addSubview(presenter)
+        presenter.frame = controller.view.bounds
+        
+        presenter.onChangeAction(type: actionType)
+        presenter.vContent.addSubview(subView)
+        
+        presenter.controller = self
+        presenter.delegate = controller
+        
+        onPushController(controller)
+    }
+    
+    func addNewAccount() {
+//        let route = AccountDetailRoute()
+//        RouterManager.shared.handleRouter(route)
+//
+//        route.handleData { (vc) in
+//            vc.viewType = .account_new
+//        }
+    }
+    
+    func addNewContact() {
+//        let route = ContactDetailRoute()
+//        RouterManager.shared.handleRouter(route)
+//
+//        route.handleData { (vc) in
+//            vc.viewType = .contact_new
+//        }
+    }
+    
+    func addNewObject() {
+        print("New Object")
+        let newObjectController = ObjectNewController()
+//        self.navigationController?.pushViewController(detailController, animated: true)
+        newObjectController.viewType = .object_new
+        generateView(subView: UIView(), title: "Creat New", actionType: .save, controller: newObjectController)
+    }
+    
+    public func onPushController(_ controller: UIViewController) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + delayTime) {
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+}

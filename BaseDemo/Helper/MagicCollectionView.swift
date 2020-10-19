@@ -74,14 +74,14 @@ extension MagicCollectionView: MagicCollectionViewDelegateOutput {
         //settings controller
         
         switch viewType {
-        case .account_list:
-            let route = AccountDetailRoute()
-            RouterManager.shared.handleRouter(route)
-            route.handleData { (vc) in
-                vc.viewType = .account_detail
-                vc.dictObj = arrObj?[indexPath.row]
-            }
-            return
+//        case .account_list:
+//            let route = AccountDetailRoute()
+//            RouterManager.shared.handleRouter(route)
+//            route.handleData { (vc) in
+//                vc.viewType = .account_detail
+//                vc.dictObj = arrObj?[indexPath.row]
+//            }
+//            return
         case .setting:
 //            let cell = collectionView.cellForItem(at: indexPath) as! MagicCollectionViewCell
 //            let title = cell.title.text!
@@ -92,16 +92,16 @@ extension MagicCollectionView: MagicCollectionViewDelegateOutput {
 //                Logger.info(title)
 //            }
             return
-        case .account_detail,.contact_detail,.new_child:
-            Logger.info(viewType)
-            return
-        case .account_new, .contact_new:
-            let cell = collectionView.cellForItem(at: indexPath) as? AccountCollectionViewCell
-            delegateAddSubView?.didAddPicklist!(v: cell)
-            return
-        case .contact:
-            RouterManager.shared.handleRouter(ContactDetailRoute())
-            return
+//        case .account_detail,.contact_detail,.new_child:
+//            Logger.info(viewType)
+//            return
+//        case .account_new, .contact_new:
+//            let cell = collectionView.cellForItem(at: indexPath) as? AccountCollectionViewCell
+//            delegateAddSubView?.didAddPicklist!(v: cell)
+//            return
+//        case .contact:
+//            RouterManager.shared.handleRouter(ContactDetailRoute())
+//            return
 //        case .account_new:
 //            print(viewType)
 //        case .contact_new:

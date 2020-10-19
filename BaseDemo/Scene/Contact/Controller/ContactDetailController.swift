@@ -21,14 +21,14 @@ class ContactDetailController: BaseViewController {
     }
     
     override func setupView() {
-        let isHideBtnSave = viewType == .account_detail ? true : false
+//        let isHideBtnSave = viewType == .account_detail ? true : false
         let present = PresenterView.xibInstance()
         present.frame = view.bounds
         present.vTitle.lblTitle.text = "Contact"
         present.controller = self
         present.hideAddNewBtn(on: true)
         view.addSubview(present)
-        present.hideAddNewBtn(on: isHideBtnSave)
+//        present.hideAddNewBtn(on: isHideBtnSave)
         present.delegate = self
         present.onChangeAction(type: .save)
         

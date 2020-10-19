@@ -45,9 +45,9 @@ enum MagicViewType {
     case none
     case setting
     case profile
-    case account_detail
-    case contact
-    case contact_detail
+//    case account_detail
+//    case contact
+//    case contact_detail
     case extend
     case customer_journey
     case extend_notes
@@ -61,11 +61,12 @@ enum MagicViewType {
     case extend_comment
     case extend_chat
     case new_child
-    case account_list
-    case account_new
-    case contact_new
+//    case account_list
+//    case account_new
+//    case contact_new
     case object_detail
     case object_list
+    case object_new
 }
 
 //enum ExtendViews {

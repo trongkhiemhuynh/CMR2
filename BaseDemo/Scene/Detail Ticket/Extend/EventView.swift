@@ -31,13 +31,11 @@ class EventView: BaseView {
 }
 
 extension EventView: PresenterViewOutput {
+    func onComplete(info dictObject: Dictionary<String, String>) {
+        print(dictObject)
+    }
+    
     func onAddNew() {
         delegateAddSubView?.didAddNew(type: Extend_Type.event.rawValue)
     }
-    
-    func onComplete() {
-        
-    }
-    
-    
 }

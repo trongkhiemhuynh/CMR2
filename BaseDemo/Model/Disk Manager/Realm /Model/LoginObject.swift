@@ -23,6 +23,7 @@ class LoginObject: Object {
 class MenuObject: Object {
     @objc dynamic var key = ""
     @objc dynamic var value = ""
+    @objc dynamic var isSelected = false
     
     override class func primaryKey() -> String? {
         return "key"

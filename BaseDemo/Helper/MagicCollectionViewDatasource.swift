@@ -47,26 +47,31 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             cell.onUpdate(title: title)
 
             return cell
-        } else if type == .account_detail || type == .contact_detail || type == .object_detail {
+        } else if /*type == .account_detail || type == .contact_detail ||*/ type == .object_detail {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AccountCollectionViewCell.identifier, for: indexPath) as! AccountCollectionViewCell
             
             let arr = dictData?[String(indexPath.section)] as! Array<String>
             let title = arr[indexPath.row]
             
             //check is contact detail
-            let postFix = (type == .contact_detail) ? "contact_" : ""
+            let postFix = /*(type == .contact_detail) ? "contact_" :*/ ""
             cell.onUpdate(title, postFix, dictVal)
 
             return cell
-        } else if type == .account_new || type == .contact_new {
+        }
+        else if type == .object_new { //== .account_new || type == .contact_new {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AccountCollectionViewCell.identifier, for: indexPath) as! AccountCollectionViewCell
-            let arr = dictData?[String(indexPath.section)] as! Array<String>
-            let title = arr[indexPath.row]
+            let arr = dictData?[String(indexPath.section)] as! Array<DatObj>
+            let obj = arr[indexPath.row]
             
             //check is contact detail
 //            let postFix = (type == .contact_new) ? "contact_" : ""
-            cell.onUpdate(title, "postFix", nil)
+            let isShowArrownDown = obj.option != nil
             
+            cell.onUpdate(obj.name, "", nil, isHiddenIv: isShowArrownDown)
+            
+            let controller = UIApplication.getTopViewController()
+            cell.delegate = controller as? TicketDetailInputInfoCollectionViewCellOutput
 //            //check item have picklist
 //            if arrAccountArrowDown.contains(title) || arrContactArrowDown.contains(title) {
 //                cell.ivDropdown.isHidden = false
@@ -75,7 +80,8 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             cell.tf.isUserInteractionEnabled = true
             
             return cell
-        } else if type == .profile {
+        }
+        else if type == .profile {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileCollectionViewCell.identifier, for: indexPath) as! ProfileCollectionViewCell
             cell.onUpdate()
             cell.delegate = self
@@ -166,13 +172,15 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             cell.lblCompany.text = arrData![indexPath.row]
             
             return cell
-        } else if type == .contact {
+        }
+        /*else if type == .contact {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LogCallViewCell.identifier, for: indexPath) as! LogCallViewCell
             let name = dictData!["\(indexPath.section)"] as! Array<String>
             cell.onUpdate(name: name.first!, company: name.first!, imageName: "no_avatar")
             
             return cell
-        } else if type == .auto {
+        }*/
+        else if type == .auto {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TicketDetailInputInfoCollectionViewCell.identifier, for: indexPath) as! TicketDetailInputInfoCollectionViewCell
             
             let arr = dictData?[String(indexPath.section)] as! Array<String>
@@ -187,9 +195,9 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             let arr = dictData?[String(indexPath.section)] as! Array<String>
             let title = arr[indexPath.row]
             var postFix = ""
-            if type == .contact_detail {
-                postFix = "contact_"
-            }
+//            if type == .contact_detail {
+//                postFix = "contact_"
+//            }
             
             cell.onUpdate(title, postFix, nil, isHiddenIv: false)
 
@@ -199,7 +207,7 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             }
             
             return cell
-        } else if type == .account_list || type == .object_list {
+        } else if /*type == .account_list || */ type == .object_list {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LogCallViewCell.identifier, for: indexPath) as! LogCallViewCell
             let name = arrData![indexPath.row]
             

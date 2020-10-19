@@ -16,14 +16,16 @@ class AccountCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var ivDropdown: UIImageView!
     @IBOutlet weak var iv: UIImageView!
     
+    weak var delegate: TicketDetailInputInfoCollectionViewCellOutput?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        ivDropdown.isHidden = true
+        
         tf.isUserInteractionEnabled = false
     }
 
-    func onUpdate(_ name: String?,_ postFix: String?,_ dictVal: Dictionary<String, String>?, isHiddenIv: Bool = true) {
+    func onUpdate(_ name: String?,_ postFix: String?,_ dictVal: Dictionary<String, String>?, isHiddenIv: Bool = true, isDropDown: Bool = true) {
         lblTitle.text = name
         tf.text = ""
         
@@ -31,6 +33,8 @@ class AccountCollectionViewCell: UICollectionViewCell {
         let nameImage = p + n.lowercased().replacingOccurrences(of: " ", with: "_")
         iv.image = UIImage(named: nameImage)
         iv.isHidden = isHiddenIv
+        ivDropdown.isHidden = isDropDown
+        tf.isUserInteractionEnabled = isDropDown
         
         guard let dictV = dictVal else {return}
         
@@ -44,4 +48,18 @@ class AccountCollectionViewCell: UICollectionViewCell {
 
 extension AccountCollectionViewCell: XibInitalization {
     typealias Element = AccountCollectionViewCell
+}
+
+extension AccountCollectionViewCell: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        delegate?.didEndEdit(titleField: lblTitle.text!, inputField: tf.text!)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        //check is show dropdown icon
+        if !textField.isUserInteractionEnabled {
+            delegate?.onFrameCell(self)
+        }
+    }
 }

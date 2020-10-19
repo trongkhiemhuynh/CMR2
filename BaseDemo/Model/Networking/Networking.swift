@@ -15,7 +15,7 @@ import ObjectMapper
 typealias Handler = (_ data: [Any]?,_ error: Error?) -> Void
 typealias MappableHandler = (Mappable?) -> Void
 
-let arrKeyLst = ["Opportunity name","Company Name"]
+//let arrKeyLst = ["Opportunity name","Company Name","Full Name"]
 
 protocol AppAPIList {
     func checkToken(completion: @escaping Handler)
@@ -98,21 +98,16 @@ class Networking: NSObject, AppAPIList {
                     
                     for key in arrKeys {
                         let value = d[key]
-                        
-                        let realm = try! Realm()
-                        
-                        
+
                         if let val = value as? String {
                             let dict = [key:val]
                             
-                            //save to local
-                            try! realm.write {
-                                let obj = MenuObject()
-                                obj.key = val
-                                obj.value = key
-                                realm.add(obj, update: .modified)
-                            }
-                            
+                            let obj = MenuObject()
+                            obj.key = val
+                            obj.value = key
+                            //save all object menu
+                            RealmManager.shared.onModifiedObject(object: obj)
+
                             arrMenu.append(dict)
                         }
                     }

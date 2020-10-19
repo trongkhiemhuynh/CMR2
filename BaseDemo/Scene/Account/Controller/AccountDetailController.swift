@@ -28,46 +28,46 @@ class AccountDetailController: BaseViewController {
     override func setupView() {
         var arrData: Array<String> = []
         
-        switch viewType {
-        case .account_detail:
-            print("")
-            if let arrKey = dictObj?.keys {
-                for key in arrKey {
-                    arrData.append(key)
-                }
-            } else {
-                
-            }
-        case .account_new:
-//            onLoading()
-            
-            guard let idObject = RealmManager.shared.onGetValue(with: "Account") else {return}
-            
-            Networking.shared.onCreatedForm(id: idObject) { (formObj) in
-                
-                Logger.info(Thread.isMainThread)
-                if let formO = formObj as? LoadFormObj {
-                    guard let arrField = formO.data?.first?.dat else {self.onDismissLoading(); return}
-        
-                    Logger.info(arrField.count)
-                    for f in arrField {
-                        Logger.info(f.name)
-                        Logger.info(f.option?.count)
-                        arrData.append(f.name ?? "#fixme")
-                    }
-
-                } else {
-                    arrData = ["Account Name","Industry","Primary phone","Assign to","Street address","District","City","Country","Description"]
-                }
-                
-                self.onDisplayView(arrData)
-                
-//                self.onDismissLoading()
-            }
-
-        default:
-            print("say something")
-        }
+//        switch viewType {
+////        case .account_detail:
+////            print("")
+////            if let arrKey = dictObj?.keys {
+////                for key in arrKey {
+////                    arrData.append(key)
+////                }
+////            } else {
+////
+////            }
+//        case .account_new:
+////            onLoading()
+//
+//            guard let idObject = RealmManager.shared.onGetValue(with: "Account") else {return}
+//
+//            Networking.shared.onCreatedForm(id: idObject) { (formObj) in
+//
+//                Logger.info(Thread.isMainThread)
+//                if let formO = formObj as? LoadFormObj {
+//                    guard let arrField = formO.data?.first?.dat else {self.onDismissLoading(); return}
+//
+//                    Logger.info(arrField.count)
+//                    for f in arrField {
+//                        Logger.info(f.name)
+//                        Logger.info(f.option?.count)
+//                        arrData.append(f.name ?? "#fixme")
+//                    }
+//
+//                } else {
+//                    arrData = ["Account Name","Industry","Primary phone","Assign to","Street address","District","City","Country","Description"]
+//                }
+//
+//                self.onDisplayView(arrData)
+//
+////                self.onDismissLoading()
+//            }
+//
+//        default:
+//            print("say something")
+//        }
         
         
     }
@@ -75,22 +75,22 @@ class AccountDetailController: BaseViewController {
     private func onDisplayView(_ arrData: Array<String>) {
         Logger.info(arrData.count)
         
-        let isHideBtnSave = viewType == .account_detail ? true : false
+//        let isHideBtnSave = viewType == .account_detail ? true : false
         let present = PresenterView.xibInstance()
         present.frame = view.bounds
         
-        switch viewType {
-        case .account_detail:
-            present.vTitle.lblTitle.text = "Account information"
-        case .account_new:
-            present.vTitle.lblTitle.text = "Creat new account"
-        default:
-            print("out of range")
-        }
+//        switch viewType {
+//        case .account_detail:
+//            present.vTitle.lblTitle.text = "Account information"
+//        case .account_new:
+//            present.vTitle.lblTitle.text = "Creat new account"
+//        default:
+//            print("out of range")
+//        }
         
         present.controller = self
         
-        present.hideAddNewBtn(on: isHideBtnSave)
+//        present.hideAddNewBtn(on: isHideBtnSave)
         present.delegate = self
         present.onChangeAction(type: .save)
         

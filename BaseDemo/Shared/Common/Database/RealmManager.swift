@@ -31,16 +31,47 @@ class RealmManager {
         return obj.first
     }
     
-    func onGetValue(with key: String) -> String? {
+    func onGetIDObject() -> String? {
         let realm = try! Realm()
         let objs = realm.objects(MenuObject.self)
         
         for obj in objs {
-            if obj.key == key {
+            if obj.isSelected == true {
                 return obj.value
             }
         }
         
         return nil
     }
+    
+    func onUpdateSelectedObject(nameObject: String) {
+        let realm = try! Realm()
+        let objs = realm.objects(MenuObject.self)
+        //            let o: MenuObject?
+        
+        for obj in objs {
+            if obj.key == nameObject {
+                
+                try! realm.write {
+                    obj.isSelected = true
+                }
+                
+                break
+            }
+        }
+    }
+    
+    func resetAllStateObject() {
+        let realm = try! Realm()
+        let objs = realm.objects(MenuObject.self)
+        
+        for obj in objs {
+            obj.isSelected = false
+            
+            try! realm.write {
+                realm.add(obj, update: .modified)
+            }
+        }
+    }
+    
 }

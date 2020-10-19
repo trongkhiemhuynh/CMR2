@@ -60,8 +60,8 @@ class ApplicationManager {
     
     /// SDK
     func initAllSDKs() {
-        var configuration = Realm.Configuration(
-            schemaVersion: 1,
+        let configuration = Realm.Configuration(
+            schemaVersion: 2,
             migrationBlock: { migration, oldSchemaVersion in
                 if oldSchemaVersion < 1 {
 
@@ -83,7 +83,7 @@ class ApplicationManager {
         Realm.Configuration.defaultConfiguration = configuration
 
         // opening the Realm file now makes sure that the migration is performed
-        let realm = try! Realm()
+//        let realm = try! Realm()
     }
     
     

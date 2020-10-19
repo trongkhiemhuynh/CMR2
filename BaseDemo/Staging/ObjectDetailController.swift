@@ -11,6 +11,8 @@ import UIKit
 class ObjectDetailController: BaseViewController {
     
     var dictObj: Dictionary<String, String>?
+    var presenter: PresenterView!
+    var subView: MagicCollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,19 +21,22 @@ class ObjectDetailController: BaseViewController {
 
     override func setupView() {
 //        let isHideBtnSave = viewType == .account_detail ? true : false
-        let present = PresenterView.xibInstance()
-        present.frame = view.bounds
-        present.vTitle.lblTitle.text = "Information detail"
-        present.controller = self
-        
-        present.hideAddNewBtn(on: true)
-        present.delegate = self
-        present.onChangeAction(type: .save)
-        
-        view.addSubview(present)
-        
-        let subView = MagicCollectionView.xibInstance()
         var arrData: Array<String> = []
+
+        presenter = PresenterView.xibInstance()
+        presenter.frame = view.bounds
+        presenter.vTitle.lblTitle.text = "Information detail"
+        presenter.controller = self
+        
+        presenter.hideAddNewBtn(on: false)
+        presenter.delegate = self
+//        present.hideAddNewBtn(on: true)
+        presenter.onChangeAction(type: .edit)
+        
+        view.addSubview(presenter)
+        
+        subView = MagicCollectionView.xibInstance()
+        
         
         if let arrKey = dictObj?.keys {
             for key in arrKey {
@@ -72,8 +77,20 @@ class ObjectDetailController: BaseViewController {
         subView.viewType = viewType
 //        subView.delegateAddSubView = self
         
-        present.vContent.addSubview(subView)
-        subView.frame = present.vContent.bounds
+        presenter.vContent.addSubview(subView)
+        subView.frame = presenter.vContent.bounds
     }
     
+}
+
+extension ObjectDetailController {
+    func onEdit() {
+        presenter.onChangeAction(type: .save)
+        subView.viewType = .object_new
+        subView.collectionView.reloadData()
+    }
+    
+    override func onComplete(info dictObject: Dictionary<String, String>) {
+        print(#file, #line, #function)
+    }
 }

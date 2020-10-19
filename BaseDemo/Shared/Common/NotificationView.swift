@@ -18,10 +18,10 @@ class NotificationView: UIView {
     }
     */
     
-    let dumData = ["Bill Gates", "Steve Jobs", "John Lenon", "Benjamin Franklin"]
+    let dumData = ["Nguyen Van Teo", "Le Thi Mit", "Tran Van Ti", "Tran Thi Buoi"]
     
-    @IBOutlet weak var tableView : UITableView!
-    @IBOutlet weak var btnBack : UIButton!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var btnBack: UIButton!
     
     @IBAction func didBack() {
         removeFromSuperview()
@@ -33,7 +33,7 @@ class NotificationView: UIView {
         tableView.register(NotificationTableViewCell.self)
         tableView.separatorColor = .clear
         tableView.backgroundColor = UIColor.init(hex: "#EBEBEB")
-        tableView.rowHeight = 80.0
+        tableView.rowHeight = heightMediumCell
         
         btnBack.centerButtonAndImageWithSpacing(spacing: 8.0)
     }
@@ -57,7 +57,7 @@ extension NotificationView : UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: NotificationTableViewCell.identifier, for: indexPath) as! NotificationTableViewCell
         cell.lblName.text = dumData[indexPath.row] + " sent you a message"
         
-        cell.lblTime.text = ApplicationManager.sharedInstance.defaultDateFormatter.string(from: Date())
+        cell.lblTime.text = "\(indexPath.row) minutes ago"
         cell.iv.image = UIImage(named: "no_avatar")
         
         return cell

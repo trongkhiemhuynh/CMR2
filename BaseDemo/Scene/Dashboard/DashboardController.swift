@@ -10,6 +10,7 @@ import UIKit
 import Charts
 import SideMenu
 import RxSwift
+import RealmSwift
 
 class DashboardController: BaseViewController {
     
@@ -134,17 +135,22 @@ class DashboardController: BaseViewController {
     }
     
     @IBAction func didTapAlert() {
+        
+        
+        
         let notiView = NotificationView.xibInstance()
-        notiView.frame = CGRect(x: CGPoint.zero.x, y: CGPoint.zero.y, width: widthScreen, height: heightScreen-heightTabbar)
+//        notiView.frame = CGRect(x: CGPoint.zero.x, y: CGPoint.zero.y, width: widthScreen, height: heightScreen-heightTabbar)
         
-        view.addSubview(notiView)
+//        view.addSubview(notiView)
         
-        UIView.animate(withDuration: 0.35, delay: 0.0, options: .transitionCurlUp, animations: {
-            print("animated")
-            self.view.setNeedsLayout()
-        }) { (_) in
-            print("did show noti view")
-        }
+//        UIView.animate(withDuration: 0.35, delay: 0.0, options: .transitionCurlUp, animations: {
+//            print("animated")
+//            self.view.setNeedsLayout()
+//        }) { (_) in
+//            print("did show noti view")
+//        }
+        
+        generateView(subView: notiView, title: "Notification", actionType: .none)
     }
 
 }
@@ -186,10 +192,6 @@ extension DashboardController: SideMenuNavigationControllerDelegate {
         if vcName == HamburgerMenu.ticket.rawValue {
             ApplicationManager.sharedInstance.mainTabbar?.customTabbar.switchTab(from: TabMenu.dashboard.rawValue, to: TabMenu.ticket.rawValue)
         }
-        
-//        if vcName == HamburgerMenu.account.rawValue {
-            
-            //FIXME call object view
 
         if let keyObj = name?.keys.first {
             //FIXME bypass the first
@@ -197,8 +199,10 @@ extension DashboardController: SideMenuNavigationControllerDelegate {
                 return
             }
             
-            onLoading()
+            //flag selected for object
+            RealmManager.shared.onUpdateSelectedObject(nameObject: vcName)
             
+            onLoading()
             Networking.shared.fetchObjectList(id: keyObj) { (arrData, err) in
                 self.onDismissLoading()
                 
@@ -212,8 +216,9 @@ extension DashboardController: SideMenuNavigationControllerDelegate {
                         //loop for array objects
                         for item in arrDat {
                             for i in item.keys {
-                                if arrKeyLst.contains(i) {
+                                if i.lowercased().contains("name") {
                                     arrResult.append(item[i]!)
+                                    break
                                 }
                             }
                         }
@@ -231,7 +236,7 @@ extension DashboardController: SideMenuNavigationControllerDelegate {
                     vMagic.arrObj = arrData as? Array<Dictionary<String, String>>
                     
                     let type: MagicViewType = .object_list
-                    let actionType: PresenterActionType = .add_object
+                    let actionType: PresenterActionType = .object_add
                     
                     //check type
 //                    if (name?.values.first?.lowercased().contains("account"))! {

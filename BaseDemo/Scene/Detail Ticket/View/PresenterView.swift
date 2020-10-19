@@ -10,19 +10,22 @@ import UIKit
 
 @objc protocol PresenterViewOutput: class {
     func onAddNew()
-    func onComplete()
+    func onComplete(info dictObject: Dictionary<String, String>)
+    
+    @objc optional func onEdit()
     @objc optional func addNewAccount()
     @objc optional func addNewContact()
     @objc optional func addNewObject()
 }
 
 enum PresenterActionType {
+    case none
     case add
     case save
     case edit
-    case add_account
-    case add_contact
-    case add_object
+//    case add_account
+//    case add_contact
+    case object_add
 }
 
 class PresenterView: BaseView {
@@ -34,10 +37,13 @@ class PresenterView: BaseView {
     
     weak var delegate: PresenterViewOutput?
     private var actionType: PresenterActionType = .add
+    public var dictDataCollect: Dictionary<String, String>?
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        //init
         self.vContent.backgroundColor = Color.BackgroundListColor()
+        dictDataCollect = Dictionary()
     }
     
     @IBAction func addNew() {
@@ -45,15 +51,17 @@ class PresenterView: BaseView {
         case .add:
             delegate?.onAddNew()
         case .save:
-            delegate?.onComplete()
+            delegate?.onComplete(info: dictDataCollect!)
         case .edit:
-            delegate?.onAddNew()
-        case .add_account:
-            delegate?.addNewAccount!()
-        case .add_contact:
-            delegate?.addNewContact!()
-        case .add_object:
+            delegate?.onEdit?()
+//        case .add_account:
+//            delegate?.addNewAccount!()
+//        case .add_contact:
+//            delegate?.addNewContact!()
+        case .object_add:
             delegate?.addNewObject?()
+        case .none:
+            print("do not disturb")
         }
     }
     
@@ -76,12 +84,14 @@ class PresenterView: BaseView {
         case .save:
             btnAddNew.setImage(UIImage(named: "save"), for: .normal)
 //        default:
-        case .add_account:
+//        case .add_account:
+//            btnAddNew.setImage(UIImage(named: "add_new"), for: .normal)
+//        case .add_contact:
+//            btnAddNew.setImage(UIImage(named: "add_new"), for: .normal)
+        case .object_add:
             btnAddNew.setImage(UIImage(named: "add_new"), for: .normal)
-        case .add_contact:
-            btnAddNew.setImage(UIImage(named: "add_new"), for: .normal)
-        case .add_object:
-            btnAddNew.setImage(UIImage(named: "add_new"), for: .normal)
+        case .none:
+            btnAddNew.isHidden = true
         }
     }
 }

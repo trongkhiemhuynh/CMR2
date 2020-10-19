@@ -41,8 +41,8 @@ class CommentsView: BaseView {
 }
 
 extension CommentsView: PresenterViewOutput {
-    func onComplete() {
-        
+    func onComplete(info dictObject: Dictionary<String, String>) {
+        print(dictObject)
     }
     
     func onAddNew() {

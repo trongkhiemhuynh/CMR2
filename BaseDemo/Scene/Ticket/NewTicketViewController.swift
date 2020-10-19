@@ -11,12 +11,12 @@ import FSCalendar
 
 class NewTicketViewController: BaseViewController {
     
-    @IBOutlet weak var cvNewTicket : UICollectionView!
+    @IBOutlet weak var cvNewTicket: UICollectionView!
     
     // variable
-    private var selectedIdx : IndexPath?
-    private var vCal : CalendarView?
-    private var dictData : NSMutableDictionary = NSMutableDictionary()
+    private var selectedIdx: IndexPath?
+    private var vCal: CalendarView?
+    private var dictData: NSMutableDictionary = NSMutableDictionary()
     private var cellDateSelected: TicketDetailInputInfoCollectionViewCell?
     
     override func viewDidLoad() {
@@ -139,13 +139,13 @@ extension NewTicketViewController : UICollectionViewDataSource {
     }
 }
 
-extension NewTicketViewController : UICollectionViewDelegate {
+extension NewTicketViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIdx = indexPath
     }
 }
 
-extension NewTicketViewController : UICollectionViewDelegateFlowLayout {
+extension NewTicketViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let paddingSpace = sectionInsetsDefault.left * (itemsPerRow + 1)
@@ -157,7 +157,7 @@ extension NewTicketViewController : UICollectionViewDelegateFlowLayout {
     
 }
 
-extension NewTicketViewController : FSCalendarDelegate {
+extension NewTicketViewController: FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         if let cell = cellDateSelected {
             let formatter = ApplicationManager.sharedInstance.VNDateFormatter
@@ -175,11 +175,11 @@ extension NewTicketViewController : FSCalendarDelegate {
     }
 }
 
-extension NewTicketViewController : XibInitalization {
+extension NewTicketViewController: XibInitalization {
     typealias Element = NewTicketViewController
 }
 
-extension NewTicketViewController : TicketDetailInputInfoCollectionViewCellOutput {
+extension NewTicketViewController: TicketDetailInputInfoCollectionViewCellOutput {
     func onFrameCell(_ cell: UICollectionViewCell) {
         if let cell = cell as? TicketDetailInputInfoCollectionViewCell {
 //            guard let cell = collectionView.cellForItem(at: indexPath) as? TicketDetailInputInfoCollectionViewCell else { return }
