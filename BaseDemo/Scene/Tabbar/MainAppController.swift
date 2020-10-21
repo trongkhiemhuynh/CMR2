@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import SideMenu
 
 class MainAppController: UITabBarController {
 
-    public var customTabbar : CustomTabBarView!
+    public var customTabbar: CustomTabBarView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +21,10 @@ class MainAppController: UITabBarController {
     
     func loadTabBar() {
         // We'll create and load our custom tab bar here
+        var controllers = [UIViewController]()
+        
         tabBar.isHidden = true
-        let tabItems: [TabItem] = [.dashboard, .profile, .ticket, .setting]
+//        let tabItems: [TabItem] = [.dashboard, .profile, .ticket, .setting]
         
         self.selectedIndex = 0
         
@@ -37,11 +40,9 @@ class MainAppController: UITabBarController {
         ])
         
         customTabbar?.itemTapped = changeTab(tab:)
-        
-        // load controller
-        var controllers = [UIViewController]()
-        for i in 0 ..< tabItems.count {
-            controllers.append(tabItems[i].viewController) // we fetch the matching view controller and append here
+
+        TabItem.allCases.forEach {
+            controllers.append($0.viewController)
         }
         
         self.viewControllers = controllers

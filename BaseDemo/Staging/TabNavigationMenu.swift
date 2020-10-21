@@ -106,7 +106,7 @@ class TabNavigationMenu: UIView {
         itemTitleLabel.isHidden = true
         itemTitleLabel.font = UIFont.systemFont(ofSize: 14)
         
-        itemIconView.image = item.icon
+//        itemIconView.image = item.icon
         itemIconView.contentMode = .scaleAspectFill
         itemIconView.translatesAutoresizingMaskIntoConstraints = false
         itemIconView.clipsToBounds = true

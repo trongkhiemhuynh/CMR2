@@ -142,7 +142,9 @@ extension MenuViewController : UICollectionViewDelegate {
 //        Logger.debug(nameItem)
         Logger.info(nameItem)
         
-        
+        //FIXME reset to home controller
+        ApplicationManager.sharedInstance.mainTabbar?.selectedIndex = 0
+        ApplicationManager.sharedInstance.mainTabbar?.customTabbar.activeItem = 0
         
         SideMenuManager.default.leftMenuNavigationController?.dismiss(animated: true, completion: {
 //            self.menuSelectedItem.accept(nameItem)
