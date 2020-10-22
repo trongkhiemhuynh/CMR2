@@ -268,7 +268,7 @@ extension UIViewController: PresenterViewOutput {
         let presenter = PresenterView.xibInstance()
         presenter.vTitle.lblTitle.text = title
         
-        subView.frame = CGRect(x: CGPoint.zero.x, y: CGPoint.zero.y, width: presenter.vContent.bounds.width, height: presenter.vContent.bounds.height)
+        subView.frame = presenter.vContent.bounds
             
         controller.view.addSubview(presenter)
         presenter.frame = controller.view.bounds

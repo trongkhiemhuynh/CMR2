@@ -14,5 +14,15 @@ class DashboardTicketCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    override func layoutSubviews() {
+        self.layer.cornerRadius = 12.0
+        self.clipsToBounds = true
+        Logger.info(self.bounds)
+    }
 
+}
+
+extension DashboardTicketCollectionViewCell: XibInitalization {
+    typealias Element = DashboardTicketCollectionViewCell
 }

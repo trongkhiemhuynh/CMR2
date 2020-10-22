@@ -22,22 +22,53 @@ enum TabItem: String, CaseIterable {
             return UINavigationController(rootViewController: DashboardController())
         case .menu:
 //            return UINavigationController(rootViewController: ProfileViewController())
-            let controller = UIViewController()
-            let menu = MenuViewController()
-            controller.addChild(menu)
-            controller.view.addSubview(menu.view)
-            menu.view.frame = CGRect(origin: .zero, size: CGSize(width: controller.view.frame.width - heightTabbar, height: controller.view.frame.height))
-            
-            menu.didMove(toParent: controller)
+            let controller = CustomMenuController()
             
             
+//            let menu = MenuLeft.shared.onMenu()
+        
+//            controller.present(menu!, animated: true, completion: nil)
             return controller
         case .search:
-            return UINavigationController(rootViewController: TicketController())
+            let searchView = UIView()
+            let controller = UIViewController()
+            let presenter = PresenterView.xibInstance()
+            controller.view.addSubview(presenter)
+            presenter.vContent.addSubview(searchView)
+            
+            presenter.frame = controller.view.bounds
+            searchView.frame = presenter.vContent.bounds
+//            searchView.backgroundColor = .red
+            
+            presenter.hideAddNewBtn(on: true)
+            presenter.hideBackBtn(on: true)
+            
+            presenter.vTitle.lblTitle.text = "Search"
+
+            let nav = UINavigationController(rootViewController: controller)
+            nav.isNavigationBarHidden = true
+            return nav
         case .notification:
-            return UINavigationController(rootViewController: SettingViewController())
+            let notiView = NotificationView.xibInstance()
+            let controller = UIViewController()
+            let presenter = PresenterView.xibInstance()
+            controller.view.addSubview(presenter)
+            presenter.vContent.addSubview(notiView)
+
+            notiView.frame = presenter.vContent.bounds
+                
+            presenter.frame = controller.view.bounds
+            
+            presenter.hideAddNewBtn(on: true)
+            presenter.hideBackBtn(on: true)
+            presenter.vTitle.lblTitle.text = "Notification"
+            
+            let nav = UINavigationController(rootViewController: controller)
+            nav.isNavigationBarHidden = true
+            return nav
         case .personal:
-            return UINavigationController(rootViewController: SettingViewController())
+            let profileController = ProfileViewController.xibInstance()
+            return UINavigationController(rootViewController: profileController)
         }
     }
     

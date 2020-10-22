@@ -17,7 +17,7 @@ class ApplicationManager {
     
     var mainTabbar: MainAppController?
     var itemMenuSelected: ItemMenu?
-    var templateDashboard: DashboardType = .manager
+    var templateDashboard: DashboardType = .sale
     
     // Global Date formatter
     lazy var globalDateFormatter: DateFormatter = {

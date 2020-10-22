@@ -46,7 +46,10 @@ class MenuViewController: BaseViewController {
 
         self.collectionView.registerCell(MenuCollectionViewCell.self)
         self.collectionView.registerCell(TicketDetailInfoCollectionViewCell.self)
-        // Do any additional setup after loading the view.
+
+        if let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.headerReferenceSize = CGSize(width: 100, height: 20)
+        }
         
     }
     
@@ -138,21 +141,28 @@ extension MenuViewController : UICollectionViewDelegateFlowLayout {
 extension MenuViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        ApplicationManager.sharedInstance.itemMenuSelected = ItemMenu[indexPath.row]
+        
+        if indexPath.row == 0 {
+            return
+        }
+        
         let nameItem = arrMenu[indexPath.row - 1]
 //        Logger.debug(nameItem)
         Logger.info(nameItem)
         
         //FIXME reset to home controller
         ApplicationManager.sharedInstance.mainTabbar?.selectedIndex = 0
-        ApplicationManager.sharedInstance.mainTabbar?.customTabbar.activeItem = 0
-        
+        let currentPosition = ApplicationManager.sharedInstance.mainTabbar?.customTabbar.activeItem
+        let nextPostion = 0
+        ApplicationManager.sharedInstance.mainTabbar?.customTabbar.switchTab(from: currentPosition!, to: nextPostion)
+        self.itemVar = nameItem as! [String:String]
         SideMenuManager.default.leftMenuNavigationController?.dismiss(animated: true, completion: {
 //            self.menuSelectedItem.accept(nameItem)
 //            self.stringVar = nameItem
 //            let dashboardVC = self.controllerOwner as? DashboardController
 //            dashboardVC?.controllerName = nameItem
             
-            self.itemVar = nameItem as! [String:String]
+            
         })
     }
 }

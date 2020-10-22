@@ -133,7 +133,7 @@ let corner12Radius: CGFloat = 12.0
 
 let heightHeaderProfile: CGFloat = 150.0
 
-let heightHeaderDetailTicket: CGFloat = 100.0
+let heightHeaderDetailTicket: CGFloat = 120.0
 
 let heightHeaderDefault: CGFloat = 8.0
 

@@ -18,7 +18,7 @@ class NotificationView: UIView {
     }
     */
     
-    let dumData = ["Nguyen Van Teo", "Le Thi Mit", "Tran Van Ti", "Tran Thi Buoi"]
+    let dumData = ["Nguyen Van Teo", "Le Thi Mit", "Tran Van Ti", "Nguyen Thi Man"]
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnBack: UIButton!
