@@ -27,14 +27,15 @@
                                         <rect key="frame" x="0.0" y="0.0" width="494" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traffic analysis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugl-8k-oJW">
-                                                <rect key="frame" x="190" y="5" width="114" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="16" y="6" width="462" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                <color key="textColor" red="0.039215686274509803" green="0.69803921568627447" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
+                                            <constraint firstItem="ugl-8k-oJW" firstAttribute="leading" secondItem="r4z-rg-CCr" secondAttribute="leading" constant="16" id="5wU-XF-GxF"/>
                                             <constraint firstAttribute="height" constant="30" id="UXb-Yq-jRx"/>
                                             <constraint firstItem="ugl-8k-oJW" firstAttribute="centerY" secondItem="r4z-rg-CCr" secondAttribute="centerY" id="pfs-eJ-hgR"/>
                                             <constraint firstItem="ugl-8k-oJW" firstAttribute="centerX" secondItem="r4z-rg-CCr" secondAttribute="centerX" id="xdh-lU-wHF"/>
@@ -60,11 +61,16 @@
                                                                     <constraint firstAttribute="width" constant="50" id="Nbv-lK-M5C"/>
                                                                     <constraint firstAttribute="height" constant="8" id="cfE-QJ-Ywk"/>
                                                                 </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="4"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Web: 34" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISm-wr-BPC">
                                                                 <rect key="frame" x="56" y="17.5" width="47" height="14.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -86,11 +92,16 @@
                                                                     <constraint firstAttribute="width" constant="50" id="clM-vp-4VF"/>
                                                                     <constraint firstAttribute="height" constant="8" id="sXc-8O-dm2"/>
                                                                 </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="4"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email: 60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYu-no-01T">
                                                                 <rect key="frame" x="54" y="17.5" width="51.5" height="14.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -112,11 +123,16 @@
                                                                     <constraint firstAttribute="width" constant="50" id="cxR-hc-za6"/>
                                                                     <constraint firstAttribute="height" constant="8" id="gZ5-gr-N7s"/>
                                                                 </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="4"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat: 40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lte-hj-YjS">
                                                                 <rect key="frame" x="55.5" y="17.5" width="48.5" height="14.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>

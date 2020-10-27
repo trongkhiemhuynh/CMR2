@@ -27,15 +27,15 @@
                                         <rect key="frame" x="0.0" y="0.0" width="360" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due tickets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pof-rq-5GD">
-                                                <rect key="frame" x="137" y="15" width="86" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="16" y="16" width="79" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                <color key="textColor" red="0.039215686274509803" green="0.69803921568627447" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="Pof-rq-5GD" firstAttribute="centerX" secondItem="Ldl-nj-k6o" secondAttribute="centerX" id="bPj-Sg-K2M"/>
+                                            <constraint firstItem="Pof-rq-5GD" firstAttribute="leading" secondItem="Ldl-nj-k6o" secondAttribute="leading" constant="16" id="XWF-Vr-VVO"/>
                                             <constraint firstItem="Pof-rq-5GD" firstAttribute="centerY" secondItem="Ldl-nj-k6o" secondAttribute="centerY" id="bcZ-d7-Gei"/>
                                             <constraint firstAttribute="height" constant="50" id="bsv-1t-W4x"/>
                                         </constraints>
@@ -46,7 +46,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3N-WX-scF">
                                                 <rect key="frame" x="131.5" y="13" width="97" height="95.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="80"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" red="0.90196078431372551" green="0.078431372549019607" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -60,9 +60,9 @@
                                         <rect key="frame" x="0.0" y="171" width="360" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tickets are coming" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ch-dK-2fd">
-                                                <rect key="frame" x="117" y="16" width="126" height="18"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="118.5" y="16" width="123.5" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                                <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>

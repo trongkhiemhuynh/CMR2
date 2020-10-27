@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DashboardController" customModule="BaseDemo" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DashboardController" customModule="BaseBS_CRM" customModuleProvider="target">
             <connections>
                 <outlet property="lblCountNotification" destination="UvP-mC-qap" id="e6E-A5-1Ky"/>
                 <outlet property="vContent" destination="WBY-B3-oJo" id="u3f-Wt-WVY"/>
@@ -77,6 +77,18 @@
                         <action selector="didTapMenu" destination="-1" eventType="touchUpInside" id="hA8-QA-K3G"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKX-Bx-jzk">
+                    <rect key="frame" x="334" y="596" width="70" height="70"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="BT1-mf-t9z"/>
+                        <constraint firstAttribute="width" secondItem="OKX-Bx-jzk" secondAttribute="height" multiplier="1:1" id="NEc-et-Agq"/>
+                    </constraints>
+                    <state key="normal" image="add_new"/>
+                    <connections>
+                        <action selector="onAddMore" destination="-1" eventType="touchUpInside" id="YXa-Fw-NfD"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
@@ -87,13 +99,16 @@
                 <constraint firstItem="eVg-Cn-TgM" firstAttribute="leading" secondItem="i74-L8-Ksq" secondAttribute="leading" constant="20" id="aNT-oe-MiQ"/>
                 <constraint firstItem="eVg-Cn-TgM" firstAttribute="top" secondItem="i74-L8-Ksq" secondAttribute="top" constant="20" id="b6b-ol-zHn"/>
                 <constraint firstItem="WBY-B3-oJo" firstAttribute="leading" secondItem="i74-L8-Ksq" secondAttribute="leading" id="bOG-Hd-mkM"/>
+                <constraint firstItem="i74-L8-Ksq" firstAttribute="trailing" secondItem="OKX-Bx-jzk" secondAttribute="trailing" constant="10" id="dxn-TI-62M"/>
                 <constraint firstItem="amo-Wd-Jxv" firstAttribute="top" secondItem="i74-L8-Ksq" secondAttribute="top" constant="20" id="fML-Za-quY"/>
+                <constraint firstItem="i74-L8-Ksq" firstAttribute="bottom" secondItem="OKX-Bx-jzk" secondAttribute="bottom" constant="70" id="xF3-To-UKx"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="i74-L8-Ksq"/>
             <point key="canvasLocation" x="55" y="102"/>
         </view>
     </objects>
     <resources>
+        <image name="add_new" width="102" height="102"/>
         <image name="alert" width="22" height="22"/>
         <image name="hamburgermenu" width="24" height="15.666666984558105"/>
     </resources>

@@ -20,7 +20,7 @@ class DashboardLayout: UICollectionViewLayout {
     private let oneColumns = 1
     private let twoColums = 2
     private let cellPadding: CGFloat = 8
-    private var cache: [UICollectionViewLayoutAttributes] = []
+    public var cache: [UICollectionViewLayoutAttributes] = []
     private var contentHeight: CGFloat = 0
     private var contentWidth: CGFloat {
         guard let cv = collectionView else {

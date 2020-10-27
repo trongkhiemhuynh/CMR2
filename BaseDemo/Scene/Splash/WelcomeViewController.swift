@@ -60,28 +60,22 @@ class WelcomeViewController: UIViewController {
     }
     
     private func pushToMainApp() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            
-            self.view.layoutIfNeeded()
-            
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             let constantMove = self.constantRatioY * self.vCircle.frame.height
-            
-            self.constraintCenterYIvUser.constant = constantMove
-            
+
             UIView.animate(withDuration: 0.35, animations: {
-                
+                self.constraintCenterYIvUser.constant = constantMove
                 self.view.layoutIfNeeded()
-            
             }, completion: { (success) in
                 
                 self.ivAgree.isHidden = false
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.35, execute: {
                     RouterManager.shared.handleRouter(MainRoute())
                 })
                 
             })
-        }
+//        }
     }
 
     deinit {

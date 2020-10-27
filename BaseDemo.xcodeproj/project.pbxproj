@@ -209,6 +209,7 @@
 		22DBF0B224F620BE00B6D992 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF0B124F620BE00B6D992 /* Coordinator.swift */; };
 		22DBF0B424F620CD00B6D992 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF0B324F620CD00B6D992 /* AppCoordinator.swift */; };
 		22DBF0B624F63C5E00B6D992 /* DashboardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF0B524F63C5E00B6D992 /* DashboardCoordinator.swift */; };
+		22F7435F2547F3B4002B830D /* ItemAddDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7435E2547F3B4002B830D /* ItemAddDashboardView.swift */; };
 		4B166C2224ECFD620030C592 /* AddressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B166C2024ECFD620030C592 /* AddressController.swift */; };
 		4B166C2324ECFD620030C592 /* AddressController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B166C2124ECFD620030C592 /* AddressController.xib */; };
 		4B166C2524ED05D40030C592 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B166C2424ED05D40030C592 /* BaseViewController.swift */; };
@@ -533,6 +534,7 @@
 		22DBF0B124F620BE00B6D992 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		22DBF0B324F620CD00B6D992 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		22DBF0B524F63C5E00B6D992 /* DashboardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCoordinator.swift; sourceTree = "<group>"; };
+		22F7435E2547F3B4002B830D /* ItemAddDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAddDashboardView.swift; sourceTree = "<group>"; };
 		4B166C2024ECFD620030C592 /* AddressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressController.swift; sourceTree = "<group>"; };
 		4B166C2124ECFD620030C592 /* AddressController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressController.xib; sourceTree = "<group>"; };
 		4B166C2424ED05D40030C592 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -747,6 +749,7 @@
 				223EF1EC250F41D400C076BF /* SaleDashboard.xib */,
 				223EF1EE250F41E800C076BF /* AgentDashboard.xib */,
 				2272A252253DAE3100D35C9A /* DashboardLayout.swift */,
+				22F7435E2547F3B4002B830D /* ItemAddDashboardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2003,6 +2006,7 @@
 				222B5FD224F7A32A00419452 /* PopUpConfirm.swift in Sources */,
 				4B28017F24ECD6DD007647F8 /* Color.swift in Sources */,
 				224346D424FCDF6300CF7AA3 /* BaseObj.swift in Sources */,
+				22F7435F2547F3B4002B830D /* ItemAddDashboardView.swift in Sources */,
 				22C638FC2538264D0038CF65 /* RealmManager.swift in Sources */,
 				2270236A24F8AE46002C06AC /* UICollectionView+Register.swift in Sources */,
 				4B28018724ECE676007647F8 /* TicketController.swift in Sources */,

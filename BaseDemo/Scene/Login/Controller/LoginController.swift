@@ -60,15 +60,13 @@ class LoginController : BaseViewController {
     }
 
     @IBAction func loginAction(_ sender : AnyObject) {
-        //        if isCheck {
-        //            pushView()
-        //        } else {
-        //check username+password
-        let isVerified = verifyLogin(username: tfUserName.text, password: tfPassword.text)
-        //fetch
-        onLogin(isVerified)
-        
-        //        }
+        #if DEBUG
+            onTransition()
+        #else
+            let isVerified = verifyLogin(username: tfUserName.text, password: tfPassword.text)
+            //fetch
+            onLogin(isVerified)
+        #endif
     }
     
     @IBAction func actionCheck() {
@@ -85,27 +83,20 @@ class LoginController : BaseViewController {
 
 extension LoginController : LoginPresenterOutput {
     func pushView() {
-        //end loading
         onDismissLoading()
-        
-//        let op = BlockOperation {
-//            self.dismissLoading()
-//        }
-//
-//        BaseQueueAlert.shared.addOperation(operations: [op])
-        // router to main
-//        let routerManager = RouterManager.shared
-//        let routeWelcome = WelcomeRoute()
-//
-//        routerManager.handleRouter(routeWelcome)
-        
+        onTransition()
+    }
+    
+    private func onTransition() {
         DispatchQueue.main.asyncAfter(deadline: .now() + delayTime) {
             let flowLayout = UICollectionViewFlowLayout()
             flowLayout.scrollDirection = .horizontal
             let vc = GuideController(collectionViewLayout: flowLayout)
-            self.present(vc, animated: true, completion: nil)
+            if let w = UIApplication.shared.delegate?.window {
+                w?.rootViewController = vc
+            }
+//            self.present(vc, animated: true, completion: nil)
         }
-//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func presentError(_ error: Error) {

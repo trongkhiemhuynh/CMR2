@@ -27,7 +27,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="456" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open tickets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wau-o7-JMu">
-                                                <rect key="frame" x="183.5" y="16" width="89" height="18"/>
+                                                <rect key="frame" x="16" y="16" width="424" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                 <color key="textColor" red="0.039215686274509803" green="0.69803921568627447" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -37,6 +37,7 @@
                                         <constraints>
                                             <constraint firstItem="wau-o7-JMu" firstAttribute="centerX" secondItem="VdG-aM-gyV" secondAttribute="centerX" id="1fc-ao-ldR"/>
                                             <constraint firstAttribute="height" constant="50" id="bi5-Ts-aoB"/>
+                                            <constraint firstItem="wau-o7-JMu" firstAttribute="leading" secondItem="VdG-aM-gyV" secondAttribute="leading" constant="16" id="ooJ-7J-AM7"/>
                                             <constraint firstItem="wau-o7-JMu" firstAttribute="centerY" secondItem="VdG-aM-gyV" secondAttribute="centerY" id="xTY-6z-rou"/>
                                         </constraints>
                                     </view>

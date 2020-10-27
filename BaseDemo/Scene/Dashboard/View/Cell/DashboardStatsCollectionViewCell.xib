@@ -27,7 +27,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="470" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This week: Current tickets stats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z69-i7-ah3">
-                                                <rect key="frame" x="31" y="0.0" width="439" height="50"/>
+                                                <rect key="frame" x="16" y="0.0" width="454" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                 <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -37,7 +37,7 @@
                                         <constraints>
                                             <constraint firstItem="z69-i7-ah3" firstAttribute="top" secondItem="aZm-XY-Baf" secondAttribute="top" id="LAt-Xv-VxD"/>
                                             <constraint firstAttribute="trailing" secondItem="z69-i7-ah3" secondAttribute="trailing" id="UEg-qL-X0j"/>
-                                            <constraint firstItem="z69-i7-ah3" firstAttribute="leading" secondItem="aZm-XY-Baf" secondAttribute="leading" constant="31" id="Zvz-8a-oSW"/>
+                                            <constraint firstItem="z69-i7-ah3" firstAttribute="leading" secondItem="aZm-XY-Baf" secondAttribute="leading" constant="16" id="Zvz-8a-oSW"/>
                                             <constraint firstAttribute="bottom" secondItem="z69-i7-ah3" secondAttribute="bottom" id="dmm-za-w5r"/>
                                             <constraint firstAttribute="height" constant="50" id="iYU-ae-rRc"/>
                                         </constraints>

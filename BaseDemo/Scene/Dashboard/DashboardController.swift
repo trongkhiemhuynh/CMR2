@@ -12,6 +12,10 @@ import SideMenu
 import RxSwift
 import RealmSwift
 
+protocol DashboardControllerOutput: class {
+    func addNewWatchItem()
+}
+
 class DashboardController: BaseViewController {
     
     //outlet
@@ -19,6 +23,7 @@ class DashboardController: BaseViewController {
     
     //variable
     let menu = MenuLeft.shared.onMenu()
+    var sv: BaseView? = UIView() as? BaseView
     
     var menuVC: MenuViewController? {
         let sideMenu = MenuLeft.shared.onMenu()
@@ -92,8 +97,6 @@ class DashboardController: BaseViewController {
     
     
     func addSubView() {
-        var sv: BaseView? = UIView() as? BaseView
-        
         let type = ApplicationManager.sharedInstance.templateDashboard
         
         switch type {
@@ -243,8 +246,17 @@ extension DashboardController: SideMenuNavigationControllerDelegate {
     }
 }
 
-extension DashboardController : XibInitalization {
+extension DashboardController: XibInitalization {
     typealias Element = DashboardController
+}
+
+extension DashboardController {
+    @IBAction func onAddMore() {
+        print("onAddMore")
+        if let v = sv as? SaleDashboard {
+            v.addNewWatchItem()
+        }
+    }
 }
 
 class MenuLeft {
