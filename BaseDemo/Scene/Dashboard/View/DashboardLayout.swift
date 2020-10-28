@@ -48,7 +48,6 @@ class DashboardLayout: UICollectionViewLayout {
 //          xOffset.append(CGFloat(column) * columnWidth)
 //        }
         
-        var column = 0
         var yOffset: CGFloat = 0.0
         
         // 3

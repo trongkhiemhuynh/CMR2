@@ -89,19 +89,19 @@ class CustomTabBarView: UIView {
         switch tab {
         case 0:
             lbl1.textColor = Color.TextTitleColor
-            btn1.tintColor = Color.TextTitleColor
+            btn1.imageView?.image = UIImage(named: "home_unselect_1")
         case 1:
             lbl2.textColor = Color.TextTitleColor
-            btn2.tintColor = Color.TextTitleColor
+            btn2.imageView?.image = UIImage(named: "menu_unselect_1")
         case 2:
             lbl3.textColor = Color.TextTitleColor
-            btn3.tintColor = Color.TextTitleColor
+            btn3.imageView?.image = UIImage(named: "search_unselect_1")
         case 3:
             lbl4.textColor = Color.TextTitleColor
-            btn4.tintColor = Color.TextTitleColor
+            btn4.imageView?.image = UIImage(named: "noti_unselect_1")
         case 4:
             lbl5.textColor = Color.TextTitleColor
-            btn5.tintColor = Color.TextTitleColor
+            btn5.imageView?.image = UIImage(named: "personal_unselect_1")
         default:
             print("out of range")
         }
@@ -114,19 +114,19 @@ class CustomTabBarView: UIView {
         switch tab {
         case 0:
             lbl1.textColor = Color.MainAppColor()
+            btn1.setImage(UIImage(named: "home_select_1"), for: .normal)
         case 1:
             lbl2.textColor = Color.MainAppColor()
-            
-//            btn2.imageView?.tintColor = Color.MainAppColor()
+            btn2.setImage(UIImage(named: "menu_select_1"), for: .normal)
         case 2:
             lbl3.textColor = Color.MainAppColor()
-//            btn3.imageView?.tintColor = Color.MainAppColor()
+            btn3.setImage(UIImage(named: "search_select_1"), for: .normal)
         case 3:
             lbl4.textColor = Color.MainAppColor()
-//            btn4.imageView?.tintColor = Color.MainAppColor()
+            btn4.setImage(UIImage(named: "notification_select_1"), for: .normal)
         case 4:
             lbl5.textColor = Color.MainAppColor()
-//            btn5.imageView?.tintColor = Color.MainAppColor()
+            btn5.imageView?.image = UIImage(named: "personal_select_1")
             //        case 5:
             //            lbl1.textColor = Color.MainAppColor()
         //            btn1.tintColor = Color.MainAppColor()

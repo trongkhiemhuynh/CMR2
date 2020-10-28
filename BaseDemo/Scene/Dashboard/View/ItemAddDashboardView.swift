@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ItemAddDashboardViewDelegate: class {
+    func onFinishSelectedItem()
+}
+
 class ItemAddDashboardView: BaseView {
 
     /*
@@ -19,8 +23,9 @@ class ItemAddDashboardView: BaseView {
     */
     
     //variable
-    private let arrItems = ["Newly created articles","Active users"]
+    private var arrItems = ["Newly created articles","Active users"]
     private let cellID = "cellID"
+    public weak var delegate: ItemAddDashboardViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -92,7 +97,7 @@ class ItemAddDashboardView: BaseView {
 
 extension ItemAddDashboardView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(arrItems[indexPath.row])
+        self.delegate?.onFinishSelectedItem()
     }
 }
 

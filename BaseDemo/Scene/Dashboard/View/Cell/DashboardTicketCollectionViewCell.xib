@@ -11,48 +11,48 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DashboardTicketCollectionViewCell" customModule="BaseBS_CRM" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="492" height="236"/>
+            <rect key="frame" x="0.0" y="0.0" width="492" height="150"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="492" height="236"/>
+                <rect key="frame" x="0.0" y="0.0" width="492" height="150"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4GK-fq-D6e">
-                        <rect key="frame" x="0.0" y="0.0" width="492" height="236"/>
+                        <rect key="frame" x="0.0" y="0.0" width="492" height="150"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DGt-9Y-6gk">
-                                <rect key="frame" x="0.0" y="0.0" width="492" height="236"/>
+                                <rect key="frame" x="0.0" y="0.0" width="492" height="150"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="IqI-hY-mGs">
-                                        <rect key="frame" x="0.0" y="0.0" width="492" height="118"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="492" height="75"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3N-qz-iDI">
-                                                <rect key="frame" x="0.0" y="0.0" width="246" height="118"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="246" height="75"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="totalnewticket" translatesAutoresizingMaskIntoConstraints="NO" id="Ac0-hd-kAf">
-                                                        <rect key="frame" x="8" y="40" width="38" height="38"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tickettotal" translatesAutoresizingMaskIntoConstraints="NO" id="Ac0-hd-kAf">
+                                                        <rect key="frame" x="8" y="18.5" width="38" height="38"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Ac0-hd-kAf" secondAttribute="height" multiplier="1:1" id="aId-nE-Tb3"/>
                                                             <constraint firstAttribute="width" constant="38" id="vag-yy-e2B"/>
                                                         </constraints>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kE5-EI-UY8">
-                                                        <rect key="frame" x="54" y="0.0" width="192" height="118"/>
+                                                        <rect key="frame" x="54" y="0.0" width="192" height="75"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total new ticket" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFZ-j1-5Gj">
-                                                                <rect key="frame" x="0.0" y="0.0" width="192" height="39.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="192" height="25"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
                                                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="567" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alX-gc-Ba1">
-                                                                <rect key="frame" x="0.0" y="39.5" width="192" height="39"/>
+                                                                <rect key="frame" x="0.0" y="25" width="192" height="25"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This month 123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4A-Wg-kIP">
-                                                                <rect key="frame" x="0.0" y="78.5" width="192" height="39.5"/>
+                                                                <rect key="frame" x="0.0" y="50" width="192" height="25"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="7"/>
                                                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -71,32 +71,32 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k8s-ft-7Oz">
-                                                <rect key="frame" x="246" y="0.0" width="246" height="118"/>
+                                                <rect key="frame" x="246" y="0.0" width="246" height="75"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="totalticketinprocessing" translatesAutoresizingMaskIntoConstraints="NO" id="onq-zJ-A2G">
-                                                        <rect key="frame" x="8" y="40" width="38" height="38"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ticketprocessing" translatesAutoresizingMaskIntoConstraints="NO" id="onq-zJ-A2G">
+                                                        <rect key="frame" x="8" y="18.5" width="38" height="38"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="38" id="40r-8e-ud2"/>
                                                             <constraint firstAttribute="width" secondItem="onq-zJ-A2G" secondAttribute="height" multiplier="1:1" id="ZNy-7l-zCc"/>
                                                         </constraints>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="L39-O1-JPE">
-                                                        <rect key="frame" x="54" y="0.0" width="192" height="118"/>
+                                                        <rect key="frame" x="54" y="0.0" width="192" height="75"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total ticket in processing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTh-1Q-Ast">
-                                                                <rect key="frame" x="0.0" y="0.0" width="192" height="39.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="192" height="25"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPJ-Df-rlb">
-                                                                <rect key="frame" x="0.0" y="39.5" width="192" height="39"/>
+                                                                <rect key="frame" x="0.0" y="25" width="192" height="25"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LyB-XK-R1I">
-                                                                <rect key="frame" x="0.0" y="78.5" width="192" height="39.5"/>
+                                                                <rect key="frame" x="0.0" y="50" width="192" height="25"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="7"/>
                                                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -117,35 +117,35 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gAf-uL-kfK">
-                                        <rect key="frame" x="0.0" y="118" width="492" height="118"/>
+                                        <rect key="frame" x="0.0" y="75" width="492" height="75"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJ5-AD-ZLi">
-                                                <rect key="frame" x="0.0" y="0.0" width="246" height="118"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="246" height="75"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="totalticketescalated" translatesAutoresizingMaskIntoConstraints="NO" id="ItB-1B-jDZ">
-                                                        <rect key="frame" x="8" y="40" width="38" height="38"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ticketescalated" translatesAutoresizingMaskIntoConstraints="NO" id="ItB-1B-jDZ">
+                                                        <rect key="frame" x="8" y="18.5" width="38" height="38"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="38" id="BSL-al-0Ya"/>
                                                             <constraint firstAttribute="width" secondItem="ItB-1B-jDZ" secondAttribute="height" multiplier="1:1" id="JSq-nS-gGz"/>
                                                         </constraints>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="3x6-Bv-Jy3">
-                                                        <rect key="frame" x="54" y="0.0" width="192" height="118"/>
+                                                        <rect key="frame" x="54" y="0.0" width="192" height="75"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total ticket escalated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1II-9j-uB7">
-                                                                <rect key="frame" x="0.0" y="0.0" width="192" height="39.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="192" height="25"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4w-y3-nj6">
-                                                                <rect key="frame" x="0.0" y="39.5" width="192" height="39"/>
+                                                                <rect key="frame" x="0.0" y="25" width="192" height="25"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This month 12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGL-15-2rP">
-                                                                <rect key="frame" x="0.0" y="78.5" width="192" height="39.5"/>
+                                                                <rect key="frame" x="0.0" y="50" width="192" height="25"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="7"/>
                                                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -164,32 +164,32 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xLZ-55-hga">
-                                                <rect key="frame" x="246" y="0.0" width="246" height="118"/>
+                                                <rect key="frame" x="246" y="0.0" width="246" height="75"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="totalticketclosed" translatesAutoresizingMaskIntoConstraints="NO" id="YGU-Cg-spe">
-                                                        <rect key="frame" x="8" y="40" width="38" height="38"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ticketclosed" translatesAutoresizingMaskIntoConstraints="NO" id="YGU-Cg-spe">
+                                                        <rect key="frame" x="8" y="18.5" width="38" height="38"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="38" id="UYA-kr-pe1"/>
                                                             <constraint firstAttribute="width" secondItem="YGU-Cg-spe" secondAttribute="height" multiplier="1:1" id="kKg-Ei-eok"/>
                                                         </constraints>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WCD-Zh-DoN">
-                                                        <rect key="frame" x="54" y="0.0" width="192" height="118"/>
+                                                        <rect key="frame" x="54" y="0.0" width="192" height="75"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total ticket closed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bR-bP-LlY">
-                                                                <rect key="frame" x="0.0" y="0.0" width="192" height="39.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="192" height="25"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pR5-Ma-gEl">
-                                                                <rect key="frame" x="0.0" y="39.5" width="192" height="39"/>
+                                                                <rect key="frame" x="0.0" y="25" width="192" height="25"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This month 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jyb-Vf-Bcq">
-                                                                <rect key="frame" x="0.0" y="78.5" width="192" height="39.5"/>
+                                                                <rect key="frame" x="0.0" y="50" width="192" height="25"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="7"/>
                                                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -234,9 +234,9 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="totalnewticket" width="122" height="122"/>
-        <image name="totalticketclosed" width="122" height="122"/>
-        <image name="totalticketescalated" width="122" height="122"/>
-        <image name="totalticketinprocessing" width="122" height="122"/>
+        <image name="ticketclosed" width="38" height="38"/>
+        <image name="ticketescalated" width="38" height="38"/>
+        <image name="ticketprocessing" width="38" height="38"/>
+        <image name="tickettotal" width="38" height="38"/>
     </resources>
 </document>

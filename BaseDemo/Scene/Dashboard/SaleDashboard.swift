@@ -162,24 +162,19 @@ extension SaleDashboard: UICollectionViewDataSource {
 
 extension SaleDashboard: DashboardControllerOutput {
     func addNewWatchItem() {
-//        let cell1 = DashboardTicketCollectionViewCell.xibInstance()
-//        cell1.frame = CGRect(origin: .zero, size: CGSize(width: widthFull, height: totalHeight))
-//        arrView.append(cell1)
-//        dashboardLayout?.cache.removeAll()
-//
-//        collectionView.reloadData()
         vAddItem = UIView(frame: self.bounds)
         vAddItem?.backgroundColor = .clear
-        
-        let v = ItemAddDashboardView(frame: CGRect(origin: .zero, size: CGSize(width: widthScreen*2/3, height: heightScreen/2)))
-        let gestureTap = UITapGestureRecognizer(target: self, action: #selector(dismissView))
+
+        let v = ItemAddDashboardView(frame: CGRect(origin: .zero, size: CGSize(width: widthScreen - 60, height: 200)))
+//        let gestureTap = UITapGestureRecognizer(target: self, action: #selector(dismissView))
         v.center = vAddItem!.center
-        gestureTap.cancelsTouchesInView = false
-        
-        vAddItem?.addGestureRecognizer(gestureTap)
+//        gestureTap.cancelsTouchesInView = false
+
+//        vAddItem?.addGestureRecognizer(gestureTap)
         vAddItem?.addSubview(v)
         self.addSubview(vAddItem!)
-        gestureTap.delegate = self
+//        gestureTap.delegate = self
+        v.delegate = self
     }
 
     
@@ -194,4 +189,19 @@ extension SaleDashboard: UIGestureRecognizerDelegate {
     }
 }
 
+extension SaleDashboard: ItemAddDashboardViewDelegate {
+    func onFinishSelectedItem() {
+        vAddItem?.removeFromSuperview()
+        onAdd()
+    }
+    
+    private func onAdd() {
+        let cell1 = DashboardTicketCollectionViewCell.xibInstance()
+        cell1.frame = CGRect(origin: .zero, size: CGSize(width: widthFull, height: totalHeight))
+        arrView.append(cell1)
+        dashboardLayout?.cache.removeAll()
+        
+        collectionView.reloadData()
+    }
+}
 
