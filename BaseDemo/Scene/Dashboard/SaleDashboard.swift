@@ -36,8 +36,10 @@ class SaleDashboard: BaseView {
     }
     */
 
-    @IBOutlet weak var v3 : UIView!
-    @IBOutlet weak var v4 : UIView!
+    @IBOutlet weak var v3: UIView!
+    @IBOutlet weak var v4: UIView!
+    @IBOutlet weak var iv: UIImageView!
+    @IBOutlet weak var vReport: UIView!
     
     //properties
     var arrView: [UIView] = []
@@ -45,11 +47,10 @@ class SaleDashboard: BaseView {
     let widthHalf = widthScreen/2 - sectionInsetsDefault.left*2
     private var dashboardLayout: DashboardLayout?
     private var vAddItem: UIView?
+    public var isReportView = false
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-//        self.translatesAutoresizingMaskIntoConstraints = false
-        print("---",frame, #function, NSStringFromClass(self.classForCoder))
+    fileprivate func setupLayout() {
+        iv.layer.cornerRadius = iv.bounds.height/2
         
         if let layout = collectionView.collectionViewLayout as? DashboardLayout {
             dashboardLayout = layout
@@ -62,7 +63,7 @@ class SaleDashboard: BaseView {
         collectionView.registerCell(DashboardTrafficCollectionViewCell.self)
         collectionView.registerCell(DashboardDueTicketsCollectionViewCell.self)
         collectionView.registerCell(DashboardTicketsAssignCollectionViewCell.self)
-//        collectionView.registerCell(DashboardTicketCollectionViewCell.self)
+        //        collectionView.registerCell(DashboardTicketCollectionViewCell.self)
         collectionView.backgroundColor = Color.BackgroundListColor()
         
         let cell1 = DashboardTicketCollectionViewCell.xibInstance()
@@ -72,7 +73,7 @@ class SaleDashboard: BaseView {
         
         let cell5 = DashboardDueTicketsCollectionViewCell.xibInstance()
         let cell6 = DashboardTicketsAssignCollectionViewCell.xibInstance()
-
+        
         cell1.frame = CGRect(origin: .zero, size: CGSize(width: widthFull, height: totalHeight))
         cell2.frame = CGRect(origin: .zero, size: CGSize(width: widthFull, height: statsHeight))
         cell3.frame = CGRect(origin: .zero, size: CGSize(width: widthFull, height: openHeight))
@@ -88,6 +89,14 @@ class SaleDashboard: BaseView {
         arrView.append(cell6)
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+//        self.translatesAutoresizingMaskIntoConstraints = false
+        print("---",frame, #function, NSStringFromClass(self.classForCoder))
+        
+        setupLayout()
+    }
+    
     @objc func handleTapped( gesture : UITapGestureRecognizer){
         print("tapped !!!")
     }
@@ -95,12 +104,6 @@ class SaleDashboard: BaseView {
     override func layoutSubviews() {
         super.layoutSubviews()
         print("-------",#function,String(describing: self))
-        
-        setupView()
-    }
-    
-    func setupView(){
-//         v1.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.handleTapped(gesture:))))
     }
 }
 

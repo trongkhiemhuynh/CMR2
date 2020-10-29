@@ -51,6 +51,7 @@ class WelcomeViewController: UIViewController {
         lblName.text = loginObj?.name
         
         lblJob.text = loginObj?.tenant
+        ivUser.image = UIImage(named: "ivanka_trump")
     }
     
     override func viewDidAppear(_ animated: Bool) {

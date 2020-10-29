@@ -24,7 +24,6 @@ class MainAppController: UITabBarController {
         var controllers = [UIViewController]()
         
         tabBar.isHidden = true
-//        let tabItems: [TabItem] = [.dashboard, .profile, .ticket, .setting]
         
         self.selectedIndex = 0
         
@@ -46,16 +45,6 @@ class MainAppController: UITabBarController {
         }
         
         self.viewControllers = controllers
-        
-        
-        //        self.setupCustomTabMenu(tabItems) { (controllers) in
-        //            self.viewControllers = controllers
-        //        }
-        
-        
-        
-        // default our selected index to the first item
-        
     }
     
 //    func setupCustomTabMenu(_ items : [TabItem], completion: @escaping ([UIViewController]) -> Void) {

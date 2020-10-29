@@ -27,7 +27,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="44"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 tickets assign to you" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ota-yl-3WW">
-                                                <rect key="frame" x="16" y="13" width="163.5" height="18"/>
+                                                <rect key="frame" x="16" y="13" width="321" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                 <color key="textColor" red="0.039215686274509803" green="0.69803921568627447" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -35,6 +35,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ota-yl-3WW" secondAttribute="trailing" constant="16" id="BtA-nk-iLD"/>
                                             <constraint firstItem="ota-yl-3WW" firstAttribute="centerY" secondItem="UKT-Jq-z3b" secondAttribute="centerY" id="MxY-9A-XNr"/>
                                             <constraint firstItem="ota-yl-3WW" firstAttribute="leading" secondItem="UKT-Jq-z3b" secondAttribute="leading" constant="16" id="vhS-mn-Gt2"/>
                                         </constraints>

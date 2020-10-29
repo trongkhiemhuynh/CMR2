@@ -18,6 +18,7 @@ class NotificationTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         self.contentView.backgroundColor = UIColor.init(hex: "#EBEBEB")
+        iv.layer.cornerRadius = iv.bounds.height/2
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -28,6 +29,6 @@ class NotificationTableViewCell: UITableViewCell {
     
 }
 
-extension NotificationTableViewCell : XibInitalization {
+extension NotificationTableViewCell: XibInitalization {
     typealias Element = NotificationTableViewCell
 }

@@ -217,9 +217,11 @@ class MagicCollectionViewDatasource: NSObject, UICollectionViewDataSource {
             return cell
         }
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCellID", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReportCollectionViewCell.identifier, for: indexPath) as? ReportCollectionViewCell
+        let title = arrData![indexPath.row]
+        cell?.lblTitle.text = title
         
-        return cell
+        return cell!
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

@@ -24,6 +24,8 @@ class DashboardController: BaseViewController {
     //variable
     let menu = MenuLeft.shared.onMenu()
     var sv: BaseView? = UIView() as? BaseView
+    var controller: ReportController?
+    var isReport: Bool = false
     
     var menuVC: MenuViewController? {
         let sideMenu = MenuLeft.shared.onMenu()
@@ -138,8 +140,15 @@ class DashboardController: BaseViewController {
     }
     
     @IBAction func didTapAlert() {
-        let notiView = NotificationView.xibInstance()
-        generateView(subView: notiView, title: "Notification", actionType: .none)
+//        let notiView = NotificationView.xibInstance()
+//        generateView(subView: notiView, title: "Notification", actionType: .none)
+        isReport = !isReport
+        
+        if isReport {
+            onShowReport()
+        } else {
+            hideReport()
+        }
     }
 
 }
@@ -255,6 +264,26 @@ extension DashboardController {
         print("onAddMore")
         if let v = sv as? SaleDashboard {
             v.addNewWatchItem()
+        }
+    }
+    
+    public func onShowReport() {
+        if let saleView = sv as? SaleDashboard {
+            controller = ReportController()
+
+            saleView.vReport.isHidden = false
+            self.addChild(controller!)
+            saleView.vReport.addSubview(controller!.view)
+            controller?.didMove(toParent: self)
+        }
+    }
+    
+    public func hideReport() {
+        if let saleView = sv as? SaleDashboard {
+            controller?.willMove(toParent: nil)
+            controller?.removeFromParent()
+            controller?.view.removeFromSuperview()
+            saleView.vReport.isHidden = true
         }
     }
 }

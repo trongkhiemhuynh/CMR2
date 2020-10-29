@@ -106,7 +106,10 @@ extension ApplicationManager {
     
     // Logger
     fileprivate func initGlobalAppearance() {
-        
+        let routerManager = RouterManager.shared
+        let routeSplash = SplashRoute()
+
+        routerManager.handleRouter(routeSplash)
     }
 }
 

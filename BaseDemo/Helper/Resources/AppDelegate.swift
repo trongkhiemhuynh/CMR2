@@ -25,15 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         ApplicationManager.sharedInstance.initCommon()
 
-        let routerManager = RouterManager.shared
-        let routeSplash = SplashRoute()
-//        routeLogin.handleData { (vc) in
-//            vc.tfPassword.text = ""
-//            vc.tfUserName.text = ""
-//            Logger.error("error")
-//        }
-        routerManager.handleRouter(routeSplash)
-        
         return true
     }
 

@@ -27,10 +27,18 @@ class CustomTicketStageView: BaseView {
     var preIndexpath = IndexPath(row: 0, section: 0)
     
     override func commonInit() {
-        Bundle.main.loadNibNamed("CustomTicketStageView", owner: self, options: nil)
-        vContent.frame = self.bounds
-        addSubview(vContent)
-        cvStage.indicatorStyle = .white
+//        Bundle.main.loadNibNamed("CustomTicketStageView", owner: self, options: nil)
+//        addSubview(vContent)
+        
+    }
+    
+    override func layoutSubviews() {
+        Logger.info(self.bounds)
+//        vContent.frame = self.bounds
+    }
+    
+    public func setupLayout() {
+        cvStage.indicatorStyle = .black
         cvStage.backgroundColor = .white
         cvStage.registerCell(CustomTicketStageCollectionViewCell.self)
     }
@@ -68,13 +76,13 @@ extension CustomTicketStageView : UICollectionViewDelegateFlowLayout {
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return sectionInsetsDefault
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return sectionInsetsDefault.left
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return sectionInsetsDefault
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return sectionInsetsDefault.left
+//    }
 }
 
 extension CustomTicketStageView : UICollectionViewDelegate {

@@ -30,23 +30,24 @@ enum TabItem: String, CaseIterable {
 //            controller.present(menu!, animated: true, completion: nil)
             return controller
         case .search:
-            let searchView = UIView()
-            let controller = UIViewController()
-            let presenter = PresenterView.xibInstance()
-            controller.view.addSubview(presenter)
-            presenter.vContent.addSubview(searchView)
-            
-            presenter.frame = controller.view.bounds
-            searchView.frame = presenter.vContent.bounds
-//            searchView.backgroundColor = .red
-            
-            presenter.hideAddNewBtn(on: true)
-            presenter.hideBackBtn(on: true)
-            
-            presenter.vTitle.lblTitle.text = "Search"
+//            let searchView = UIView()
+//            let controller = UIViewController()
+//            let presenter = PresenterView.xibInstance()
+//            controller.view.addSubview(presenter)
+//            presenter.vContent.addSubview(searchView)
+//
+//            presenter.frame = controller.view.bounds
+//            searchView.frame = presenter.vContent.bounds
+//
+//            presenter.hideAddNewBtn(on: true)
+//            presenter.hideBackBtn(on: true)
+//
+//            presenter.vTitle.lblTitle.text = "Search"
 
+            let controller = ReportController()
+            controller.title = "Report"
             let nav = UINavigationController(rootViewController: controller)
-            nav.isNavigationBarHidden = true
+            nav.isNavigationBarHidden = false
             return nav
         case .notification:
             let notiView = NotificationView.xibInstance()

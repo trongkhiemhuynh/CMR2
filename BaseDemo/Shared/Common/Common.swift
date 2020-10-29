@@ -67,6 +67,7 @@ enum MagicViewType {
     case object_detail
     case object_list
     case object_new
+    case report
 }
 
 //enum ExtendViews {
@@ -125,6 +126,7 @@ let itemsPerRow: CGFloat = 1.0
 let heightLargeCell: CGFloat = 70.0
 let heightMediumCell: CGFloat = 60.0
 let heightDefaultCell: CGFloat = 50.0
+let height100Cell: CGFloat = 100.0
 let paddingTop: CGFloat = 8.0
 
 let corner8Radius: CGFloat = 8.0
