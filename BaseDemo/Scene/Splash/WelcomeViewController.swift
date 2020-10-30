@@ -48,7 +48,7 @@ class WelcomeViewController: UIViewController {
         
         let loginObj = RealmManager.shared.onGetLoginObject() as? LoginObject
         
-        lblName.text = loginObj?.name
+        lblName.text = loginObj?.name != nil ? loginObj?.name : "Ivanka"
         
         lblJob.text = loginObj?.tenant
         ivUser.image = UIImage(named: "ivanka_trump")

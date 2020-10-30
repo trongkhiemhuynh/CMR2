@@ -51,6 +51,7 @@ class MenuViewController: BaseViewController {
             layout.headerReferenceSize = CGSize(width: 100, height: 20)
         }
         
+        dumDataTest()
     }
     
     override func initData() {
@@ -60,6 +61,15 @@ class MenuViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+    }
+    
+    func equals(_ x : Any, _ y : Any) -> Bool {
+        guard x is AnyHashable else { return false }
+        guard y is AnyHashable else { return false }
+        return (x as! AnyHashable) == (y as! AnyHashable)
+    }
+    
+    private func onRequest() {
         onLoading()
         //FIXME memory check
         Networking.shared.fetchMenu { (arrData, err) in
@@ -77,21 +87,16 @@ class MenuViewController: BaseViewController {
                     return x1.values.first! < y1.values.first!
                 })
                 
-//                arrResult?.sort(by: { (a: [String: String], b:[String: String]) -> Bool in
-//                    return a.values.first! > b.values.first!
-////                    return self.equals(a.values.first!, a.values.first!)
-//                    } as! (Any, Any) -> Bool)
-                
                 self.arrMenu = arrResult!
                 self.collectionView.reloadData()
             }
         }
     }
     
-    func equals(_ x : Any, _ y : Any) -> Bool {
-        guard x is AnyHashable else { return false }
-        guard y is AnyHashable else { return false }
-        return (x as! AnyHashable) == (y as! AnyHashable)
+    private func dumDataTest() {
+        arrMenu.append(["khiemht":"Report"])
+        arrMenu.append(["khiemht1":"Dashboard"])
+        self.collectionView.reloadData()
     }
 }
 

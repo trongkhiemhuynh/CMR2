@@ -25,7 +25,7 @@ class ReportController: BaseViewController {
         magic.heightCell = height100Cell
         magic.collectionView.registerCell(ReportCollectionViewCell.self)
         magic.viewType = .report
-        magic.frame = CGRect(origin: .zero, size: CGSize(width: magic.bounds.width, height: magic.bounds.height - heightTabbar))
+        magic.frame = vContent.bounds
         
         vContent.addSubview(magic)
         
@@ -42,6 +42,7 @@ class ReportController: BaseViewController {
         customStage?.arrStage = ["All report","Organization report","Activities report"]
         customStage?.itemsPerRow = 2
 //        customStage?.cvStage.isPagingEnabled = true
+        
         customStage?.cvStage.isScrollEnabled = true
         customStage?.cvStage.reloadData()
     }

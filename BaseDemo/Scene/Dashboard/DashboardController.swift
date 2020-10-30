@@ -84,7 +84,8 @@ class DashboardController: BaseViewController {
         
         
         menuVC?._rx_ItemVar.subscribe(onNext: { (menuItem) in
-            self.onPushView(menuItem)
+//            self.onPushView(menuItem)
+            self.onPushLocal(menuItem)
         }, onCompleted: {}, onDisposed: {}).disposed(by: disposeBag)
     }
     
@@ -274,6 +275,7 @@ extension DashboardController {
             saleView.vReport.isHidden = false
             self.addChild(controller!)
             saleView.vReport.addSubview(controller!.view)
+            controller?.view.frame =  saleView.vReport.bounds
             controller?.didMove(toParent: self)
         }
     }
@@ -285,6 +287,24 @@ extension DashboardController {
             controller?.view.removeFromSuperview()
             saleView.vReport.isHidden = true
         }
+    }
+    
+    private func onPushLocal(_ name : [String:String]?) {
+        guard let vcName = name?.values.first else {return}
+        
+        if let keyObj = name?.keys.first {
+        //FIXME bypass the first
+            if keyObj == "init" {
+                return
+            }
+            
+            if vcName == "Dashboard" {
+                hideReport()
+            } else {
+                onShowReport()
+            }
+        }
+            
     }
 }
 

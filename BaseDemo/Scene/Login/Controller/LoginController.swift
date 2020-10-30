@@ -60,13 +60,13 @@ class LoginController : BaseViewController {
     }
 
     @IBAction func loginAction(_ sender : AnyObject) {
-        #if RELEASE
+//        #if RELEASE
             onTransition()
-        #else
-            let isVerified = verifyLogin(username: tfUserName.text, password: tfPassword.text)
-            //fetch
-            onLogin(isVerified)
-        #endif
+//        #else
+//            let isVerified = verifyLogin(username: tfUserName.text, password: tfPassword.text)
+//            //fetch
+//            onLogin(isVerified)
+//        #endif
     }
     
     @IBAction func actionCheck() {
