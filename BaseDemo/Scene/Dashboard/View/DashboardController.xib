@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DashboardController" customModule="BaseBS_CRM" customModuleProvider="target">
             <connections>
+                <outlet property="btnAddMoreItem" destination="OKX-Bx-jzk" id="sWo-u3-RPK"/>
                 <outlet property="lblCountNotification" destination="UvP-mC-qap" id="e6E-A5-1Ky"/>
                 <outlet property="vContent" destination="WBY-B3-oJo" id="u3f-Wt-WVY"/>
                 <outlet property="view" destination="Rzn-lP-3Bj" id="xuz-Sc-rdE"/>

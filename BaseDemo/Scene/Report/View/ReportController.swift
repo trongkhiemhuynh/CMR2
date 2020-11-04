@@ -12,6 +12,8 @@ class ReportController: BaseViewController {
 
     @IBOutlet weak var vStage: UIView!
     
+    var customStage: CustomTicketStageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,28 +30,29 @@ class ReportController: BaseViewController {
         magic.frame = vContent.bounds
         
         vContent.addSubview(magic)
-        
-        let customStage = Bundle.main.loadNibNamed("CustomTicketStageView", owner: self, options: nil)?.first as? CustomTicketStageView
+    }
+    
+    func setupStageView() {
+        customStage = Bundle.main.loadNibNamed("CustomTicketStageView", owner: self, options: nil)?.first as? CustomTicketStageView
         Logger.info(customStage!.frame)
         vStage.addSubview(customStage!)
-        customStage?.frame = CGRect(origin: .zero, size: CGSize(width: widthScreen, height: vStage.bounds.height))
         
-//        vStage.addSubview(customStage!)
         customStage?.setupLayout()
-//        customStage?.frame = vStage.bounds
         customStage?.backgroundColor = .red
-////
+
         customStage?.arrStage = ["All report","Organization report","Activities report"]
         customStage?.itemsPerRow = 2
-//        customStage?.cvStage.isPagingEnabled = true
         
         customStage?.cvStage.isScrollEnabled = true
+        customStage?.frame = CGRect(origin: .zero, size: CGSize(width: vStage.bounds.width, height: vStage.bounds.height))
+        
         customStage?.cvStage.reloadData()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         Logger.info(self.view.bounds)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,7 +60,7 @@ class ReportController: BaseViewController {
 //        Logger.info(self.vStage.bounds)
 //        self.vStage.frame = CGRect(origin: .zero, size: CGSize(width: self.view.bounds.width, height: 60))
 //        self.view.layoutIfNeeded()
-        
+        setupStageView()
     }
     
     override func viewDidAppear(_ animated: Bool) {

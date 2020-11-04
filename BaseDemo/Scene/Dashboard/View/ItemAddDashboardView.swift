@@ -8,8 +8,13 @@
 
 import UIKit
 
+enum DashboardItemAdded: String {
+    case newly_article = "Newly created articles"
+    case active_user = "Active users"
+}
+
 protocol ItemAddDashboardViewDelegate: class {
-    func onFinishSelectedItem()
+    func onFinishSelectedItem(name: String)
 }
 
 class ItemAddDashboardView: BaseView {
@@ -23,7 +28,7 @@ class ItemAddDashboardView: BaseView {
     */
     
     //variable
-    private var arrItems = ["Newly created articles","Active users"]
+    private var arrItems = [DashboardItemAdded.newly_article.rawValue, DashboardItemAdded.active_user.rawValue]
     private let cellID = "cellID"
     public weak var delegate: ItemAddDashboardViewDelegate?
     
@@ -97,7 +102,7 @@ class ItemAddDashboardView: BaseView {
 
 extension ItemAddDashboardView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.delegate?.onFinishSelectedItem()
+        self.delegate?.onFinishSelectedItem(name: arrItems[indexPath.row])
     }
 }
 

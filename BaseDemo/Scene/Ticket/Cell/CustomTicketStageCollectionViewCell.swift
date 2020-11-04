@@ -29,12 +29,12 @@ class CustomTicketStageCollectionViewCell: UICollectionViewCell {
     
     func didUpdate(_ isSelected : Bool) {
         if isSelected {
-            imgStage.isHidden = false
+            imgStage.backgroundColor = Color.MainAppColor()
             lblStage.font = UIFont.boldSystemFont(ofSize: 18.0)
             lblStage.textColor = Color.MainAppColor()
         } else {
             // previously selection
-            imgStage.isHidden = true
+            imgStage.backgroundColor = .white
             lblStage.font = UIFont.systemFont(ofSize: 16.0, weight: .light)
             lblStage.textColor = Color.TextTitleColor
         }

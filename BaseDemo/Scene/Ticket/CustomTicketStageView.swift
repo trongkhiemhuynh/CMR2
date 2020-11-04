@@ -69,7 +69,7 @@ extension CustomTicketStageView : UICollectionViewDelegateFlowLayout {
         
         //2
         let paddingSpace = sectionInsetsDefault.left * (itemsPerRow + 1)
-        let availableWidth = cvStage.frame.width - paddingSpace
+        let availableWidth = self.bounds.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
         
         return CGSize(width: widthPerItem, height: heightCell)

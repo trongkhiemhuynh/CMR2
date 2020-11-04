@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginController" customModule="BaseDemo" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginController" customModule="BaseBS_CRM" customModuleProvider="target">
             <connections>
                 <outlet property="btnCheckbox" destination="00h-t9-F0y" id="1Ch-ey-6HN"/>
                 <outlet property="btnLogin" destination="hAc-TF-Iu7" id="ahd-wR-oEc"/>
@@ -35,7 +35,7 @@
                                 <constraint firstAttribute="width" constant="163" id="od9-zc-jeM"/>
                             </constraints>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvQ-0X-YN3">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvQ-0X-YN3">
                             <rect key="frame" x="56" y="384" width="104" height="27"/>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                             <state key="normal" title="Keep me logged in">
@@ -115,14 +115,14 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMG-F9-DJ7">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMG-F9-DJ7">
                             <rect key="frame" x="177" y="384" width="103" height="27"/>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                             <state key="normal" title="Forgot password? ">
                                 <color key="titleColor" red="0.039215686270000001" green="0.69803921570000005" blue="0.6588235294" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                             </state>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00h-t9-F0y">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00h-t9-F0y">
                             <rect key="frame" x="38" y="390.5" width="14" height="14"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="14" id="H46-rV-erE"/>

@@ -21,9 +21,8 @@ class MainAppController: UITabBarController {
     
     func loadTabBar() {
         // We'll create and load our custom tab bar here
-        var controllers = [UIViewController]()
-        
         tabBar.isHidden = true
+        var controllers = [UIViewController]()
         
         self.selectedIndex = 0
         

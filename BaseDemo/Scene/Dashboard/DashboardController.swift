@@ -20,6 +20,7 @@ class DashboardController: BaseViewController {
     
     //outlet
     @IBOutlet weak var lblCountNotification : UILabel!
+    @IBOutlet weak var btnAddMoreItem: UIButton!
     
     //variable
     let menu = MenuLeft.shared.onMenu()
@@ -91,6 +92,22 @@ class DashboardController: BaseViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
+        Logger.info(view.bounds)
+        
+        let topSafeArea: CGFloat
+        let bottomSafeArea: CGFloat
+        
+        if #available(iOS 11.0, *) {
+            topSafeArea = view.safeAreaInsets.top
+            bottomSafeArea = view.safeAreaInsets.bottom
+        } else {
+            topSafeArea = topLayoutGuide.length
+            bottomSafeArea = bottomLayoutGuide.length
+        }
+        
+        sv?.frame = CGRect(origin: .zero, size: CGSize(width: widthScreen, height: heightScreen - heightTabbar - bottomSafeArea - topSafeArea))
+        Logger.info(sv?.bounds)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -120,8 +137,8 @@ class DashboardController: BaseViewController {
 
         vContent.addSubview(sv!)
         
-        sv?.frame = CGRect(origin: .zero, size: CGSize(width: widthScreen, height: heightScreen - heightTabbar - sectionInsetsDefault.left*2))
         
+        sv?.backgroundColor = .red
         Logger.info("\(widthScreen) -\(heightScreen)")
         Logger.info(sv?.frame)
     }
@@ -148,7 +165,7 @@ class DashboardController: BaseViewController {
         if isReport {
             onShowReport()
         } else {
-            hideReport()
+            onHideReport()
         }
     }
 
@@ -277,15 +294,17 @@ extension DashboardController {
             saleView.vReport.addSubview(controller!.view)
             controller?.view.frame =  saleView.vReport.bounds
             controller?.didMove(toParent: self)
+            btnAddMoreItem.isHidden = true
         }
     }
     
-    public func hideReport() {
+    public func onHideReport() {
         if let saleView = sv as? SaleDashboard {
             controller?.willMove(toParent: nil)
             controller?.removeFromParent()
             controller?.view.removeFromSuperview()
             saleView.vReport.isHidden = true
+            btnAddMoreItem.isHidden = false
         }
     }
     
@@ -299,7 +318,7 @@ extension DashboardController {
             }
             
             if vcName == "Dashboard" {
-                hideReport()
+                onHideReport()
             } else {
                 onShowReport()
             }

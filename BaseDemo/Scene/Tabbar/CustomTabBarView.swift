@@ -70,7 +70,6 @@ class CustomTabBarView: UIView {
     }
     
     func setupView() {
-        vContent.backgroundColor = .gray
         vContent.clipsToBounds = true
         
 //        btnHome.centerButtonAndImageWithSpacing(spacing: 8.0)

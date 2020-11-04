@@ -16,7 +16,7 @@ enum Profile_Item: String {
     case setting = "Setting"
     case share = "Share account"
     case privacy = "Privacy"
-    case question = "Questions"
+    case question = "Jabber Guest"
     case contact = "Contact"
     case logout = "Log out"
     case profileHeader = "PHeader"
@@ -43,7 +43,7 @@ class ProfileCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         self.backgroundColor = Color.BackgroundListColor()
-        
+        self.lblQuestion.text = Profile_Item.question.rawValue
         addInteraction([lblSetting,lblQuestion,lblPrivacy,lblShare,lblContact,lblLogout])
     }
     

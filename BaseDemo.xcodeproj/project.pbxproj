@@ -210,6 +210,28 @@
 		22C6F351252313B300AE91F4 /* NewTask.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22C6F350252313B300AE91F4 /* NewTask.xib */; };
 		22C6F353252313CC00AE91F4 /* NewTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C6F352252313CC00AE91F4 /* NewTask.swift */; };
 		22C6F3552524272D00AE91F4 /* NewComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C6F3542524272D00AE91F4 /* NewComment.swift */; };
+		22CCB0EA254FF20100C10AF7 /* JabberGuest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CCB0E9254FF20100C10AF7 /* JabberGuest.framework */; };
+		22CCB0EC254FF24700C10AF7 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CCB0EB254FF24700C10AF7 /* libresolv.tbd */; };
+		22CCB0F0254FF26E00C10AF7 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CCB0EF254FF26D00C10AF7 /* VideoToolbox.framework */; };
+		22CCB0F2254FF27A00C10AF7 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CCB0F1254FF27A00C10AF7 /* libc++.tbd */; };
+		22CCB0F4254FF28F00C10AF7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CCB0F3254FF28F00C10AF7 /* CoreGraphics.framework */; };
+		22CCB0F7254FF2A700C10AF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CCB0F5254FF2A600C10AF7 /* Foundation.framework */; };
+		22CCB0F8254FF2A700C10AF7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CCB0F6254FF2A600C10AF7 /* AVFoundation.framework */; };
+		22CCB0F9254FF2AE00C10AF7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1FF03D24E12DAC00E63819 /* UIKit.framework */; };
+		22CCB0FB254FF2BC00C10AF7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CCB0FA254FF2BC00C10AF7 /* AudioToolbox.framework */; };
+		22CCB0FD254FF2C900C10AF7 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CCB0FC254FF2C800C10AF7 /* CoreMedia.framework */; };
+		22CCB0FF254FF2D100C10AF7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CCB0FE254FF2D000C10AF7 /* QuartzCore.framework */; };
+		22CCB101254FF2D800C10AF7 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CCB100254FF2D700C10AF7 /* CoreText.framework */; };
+		22CCB103254FF2E700C10AF7 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CCB102254FF2E600C10AF7 /* MessageUI.framework */; };
+		22CCB105254FF2EE00C10AF7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CCB104254FF2EE00C10AF7 /* SystemConfiguration.framework */; };
+		22CCB107254FF30D00C10AF7 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CCB106254FF30D00C10AF7 /* MediaPlayer.framework */; };
+		22CCB109254FF31C00C10AF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CCB108254FF31C00C10AF7 /* Security.framework */; };
+		22CCB10C254FF83D00C10AF7 /* JabberGuest.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 22CCB10B254FF83C00C10AF7 /* JabberGuest.bundle */; };
+		22CCB10E254FF90900C10AF7 /* libiconv.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CCB10D254FF90800C10AF7 /* libiconv.2.tbd */; };
+		22CCB111255292C200C10AF7 /* DashboardActiveUsersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CCB10F255292C200C10AF7 /* DashboardActiveUsersCollectionViewCell.swift */; };
+		22CCB112255292C200C10AF7 /* DashboardActiveUsersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22CCB110255292C200C10AF7 /* DashboardActiveUsersCollectionViewCell.xib */; };
+		22CCB116255292F600C10AF7 /* DashboardNewlyCreatedArticlesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22CCB114255292F600C10AF7 /* DashboardNewlyCreatedArticlesCollectionViewCell.xib */; };
+		22CCB11C2552964000C10AF7 /* DashboardNewlyCreatedArticlesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CCB11B2552964000C10AF7 /* DashboardNewlyCreatedArticlesCollectionViewCell.swift */; };
 		22DBF0B224F620BE00B6D992 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF0B124F620BE00B6D992 /* Coordinator.swift */; };
 		22DBF0B424F620CD00B6D992 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF0B324F620CD00B6D992 /* AppCoordinator.swift */; };
 		22DBF0B624F63C5E00B6D992 /* DashboardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF0B524F63C5E00B6D992 /* DashboardCoordinator.swift */; };
@@ -539,6 +561,29 @@
 		22C6F350252313B300AE91F4 /* NewTask.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTask.xib; sourceTree = "<group>"; };
 		22C6F352252313CC00AE91F4 /* NewTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTask.swift; sourceTree = "<group>"; };
 		22C6F3542524272D00AE91F4 /* NewComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewComment.swift; sourceTree = "<group>"; };
+		22CCB0E9254FF20100C10AF7 /* JabberGuest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JabberGuest.framework; path = sdk/JabberGuest.framework; sourceTree = "<group>"; };
+		22CCB0EB254FF24700C10AF7 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		22CCB0ED254FF25F00C10AF7 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		22CCB0EF254FF26D00C10AF7 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		22CCB0F1254FF27A00C10AF7 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		22CCB0F3254FF28F00C10AF7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		22CCB0F5254FF2A600C10AF7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		22CCB0F6254FF2A600C10AF7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		22CCB0FA254FF2BC00C10AF7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		22CCB0FC254FF2C800C10AF7 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		22CCB0FE254FF2D000C10AF7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		22CCB100254FF2D700C10AF7 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		22CCB102254FF2E600C10AF7 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		22CCB104254FF2EE00C10AF7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		22CCB106254FF30D00C10AF7 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		22CCB108254FF31C00C10AF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		22CCB10A254FF3DF00C10AF7 /* BaseDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BaseDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		22CCB10B254FF83C00C10AF7 /* JabberGuest.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = JabberGuest.bundle; path = sdk/JabberGuest.framework/Versions/A/Resources/JabberGuest.bundle; sourceTree = "<group>"; };
+		22CCB10D254FF90800C10AF7 /* libiconv.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.tbd; path = usr/lib/libiconv.2.tbd; sourceTree = SDKROOT; };
+		22CCB10F255292C200C10AF7 /* DashboardActiveUsersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardActiveUsersCollectionViewCell.swift; sourceTree = "<group>"; };
+		22CCB110255292C200C10AF7 /* DashboardActiveUsersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardActiveUsersCollectionViewCell.xib; sourceTree = "<group>"; };
+		22CCB114255292F600C10AF7 /* DashboardNewlyCreatedArticlesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardNewlyCreatedArticlesCollectionViewCell.xib; sourceTree = "<group>"; };
+		22CCB11B2552964000C10AF7 /* DashboardNewlyCreatedArticlesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNewlyCreatedArticlesCollectionViewCell.swift; sourceTree = "<group>"; };
 		22DBF0B124F620BE00B6D992 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		22DBF0B324F620CD00B6D992 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		22DBF0B524F63C5E00B6D992 /* DashboardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCoordinator.swift; sourceTree = "<group>"; };
@@ -637,6 +682,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22CCB10E254FF90900C10AF7 /* libiconv.2.tbd in Frameworks */,
+				22CCB109254FF31C00C10AF7 /* Security.framework in Frameworks */,
+				22CCB107254FF30D00C10AF7 /* MediaPlayer.framework in Frameworks */,
+				22CCB105254FF2EE00C10AF7 /* SystemConfiguration.framework in Frameworks */,
+				22CCB103254FF2E700C10AF7 /* MessageUI.framework in Frameworks */,
+				22CCB101254FF2D800C10AF7 /* CoreText.framework in Frameworks */,
+				22CCB0FF254FF2D100C10AF7 /* QuartzCore.framework in Frameworks */,
+				22CCB0FD254FF2C900C10AF7 /* CoreMedia.framework in Frameworks */,
+				22CCB0FB254FF2BC00C10AF7 /* AudioToolbox.framework in Frameworks */,
+				22CCB0F9254FF2AE00C10AF7 /* UIKit.framework in Frameworks */,
+				22CCB0F7254FF2A700C10AF7 /* Foundation.framework in Frameworks */,
+				22CCB0F8254FF2A700C10AF7 /* AVFoundation.framework in Frameworks */,
+				22CCB0F4254FF28F00C10AF7 /* CoreGraphics.framework in Frameworks */,
+				22CCB0F2254FF27A00C10AF7 /* libc++.tbd in Frameworks */,
+				22CCB0F0254FF26E00C10AF7 /* VideoToolbox.framework in Frameworks */,
+				22CCB0EC254FF24700C10AF7 /* libresolv.tbd in Frameworks */,
+				22CCB0EA254FF20100C10AF7 /* JabberGuest.framework in Frameworks */,
 				225D4E6D25148DE800664D70 /* DropDown.framework in Frameworks */,
 				223EF2002510993600C076BF /* RealmSwift.framework in Frameworks */,
 				223EF1FE2510987700C076BF /* Realm.framework in Frameworks */,
@@ -1193,6 +1255,10 @@
 				2272A24B253D907C00D35C9A /* DashboardDueTicketsCollectionViewCell.xib */,
 				2272A24E253D909B00D35C9A /* DashboardTicketsAssignCollectionViewCell.swift */,
 				2272A24F253D909B00D35C9A /* DashboardTicketsAssignCollectionViewCell.xib */,
+				22CCB10F255292C200C10AF7 /* DashboardActiveUsersCollectionViewCell.swift */,
+				22CCB110255292C200C10AF7 /* DashboardActiveUsersCollectionViewCell.xib */,
+				22CCB114255292F600C10AF7 /* DashboardNewlyCreatedArticlesCollectionViewCell.xib */,
+				22CCB11B2552964000C10AF7 /* DashboardNewlyCreatedArticlesCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1352,6 +1418,24 @@
 		4B1FF03A24E12DAC00E63819 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22CCB10D254FF90800C10AF7 /* libiconv.2.tbd */,
+				22CCB10B254FF83C00C10AF7 /* JabberGuest.bundle */,
+				22CCB108254FF31C00C10AF7 /* Security.framework */,
+				22CCB106254FF30D00C10AF7 /* MediaPlayer.framework */,
+				22CCB104254FF2EE00C10AF7 /* SystemConfiguration.framework */,
+				22CCB102254FF2E600C10AF7 /* MessageUI.framework */,
+				22CCB100254FF2D700C10AF7 /* CoreText.framework */,
+				22CCB0FE254FF2D000C10AF7 /* QuartzCore.framework */,
+				22CCB0FC254FF2C800C10AF7 /* CoreMedia.framework */,
+				22CCB0FA254FF2BC00C10AF7 /* AudioToolbox.framework */,
+				22CCB0F6254FF2A600C10AF7 /* AVFoundation.framework */,
+				22CCB0F5254FF2A600C10AF7 /* Foundation.framework */,
+				22CCB0F3254FF28F00C10AF7 /* CoreGraphics.framework */,
+				22CCB0F1254FF27A00C10AF7 /* libc++.tbd */,
+				22CCB0EF254FF26D00C10AF7 /* VideoToolbox.framework */,
+				22CCB0ED254FF25F00C10AF7 /* libiconv.tbd */,
+				22CCB0EB254FF24700C10AF7 /* libresolv.tbd */,
+				22CCB0E9254FF20100C10AF7 /* JabberGuest.framework */,
 				225D4E6C25148DE800664D70 /* DropDown.framework */,
 				223EF1F6250F6DE900C076BF /* TesseractOCR.framework */,
 				223EF1FF2510993600C076BF /* RealmSwift.framework */,
@@ -1441,6 +1525,7 @@
 				226D9347250A180000457AD5 /* MagicCollectionViewCell.xib */,
 				226D934A250A30E200457AD5 /* MagicHeaderCollectionReusableView.swift */,
 				226D934B250A30E200457AD5 /* MagicHeaderCollectionReusableView.xib */,
+				22CCB10A254FF3DF00C10AF7 /* BaseDemo-Bridging-Header.h */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1769,6 +1854,7 @@
 				C2E857F624F3B975002960A2 /* ExtendView.xib in Resources */,
 				2272A23D253D8FB400D35C9A /* DashboardTicketCollectionViewCell.xib in Resources */,
 				228D56602519DE2B00CE935C /* LogCallView.xib in Resources */,
+				22CCB112255292C200C10AF7 /* DashboardActiveUsersCollectionViewCell.xib in Resources */,
 				223EF2122511BEFD00C076BF /* ContactController.xib in Resources */,
 				228D5682251C4CCF00CE935C /* TaskDetailController.xib in Resources */,
 				4B28018924ECE830007647F8 /* TicketController.xib in Resources */,
@@ -1826,6 +1912,7 @@
 				C23F628F24EF05F100E37560 /* PopupView.xib in Resources */,
 				222B5FCC24F76CF700419452 /* ManagerDashboard.xib in Resources */,
 				2272A245253D902A00D35C9A /* DashboardOpenTicketCollectionViewCell.xib in Resources */,
+				22CCB116255292F600C10AF7 /* DashboardNewlyCreatedArticlesCollectionViewCell.xib in Resources */,
 				2272A249253D904B00D35C9A /* DashboardTrafficCollectionViewCell.xib in Resources */,
 				223EF1EF250F41E800C076BF /* AgentDashboard.xib in Resources */,
 				4B166C5924EF78CD0030C592 /* TicketDetailActivityCollectionViewCell.xib in Resources */,
@@ -1841,6 +1928,7 @@
 				2243270025088332005AE588 /* SortContactsView.xib in Resources */,
 				224EBAF524F5068100CB676F /* ExtendCollectionViewCell.xib in Resources */,
 				2272A24D253D907C00D35C9A /* DashboardDueTicketsCollectionViewCell.xib in Resources */,
+				22CCB10C254FF83D00C10AF7 /* JabberGuest.bundle in Resources */,
 				228D56492519A87F00CE935C /* ExtendView.xib in Resources */,
 				C23F628B24EEE89100E37560 /* CustomTabBarView.xib in Resources */,
 				228D568C251C548300CE935C /* MapView.xib in Resources */,
@@ -2004,7 +2092,9 @@
 				2272A24C253D907C00D35C9A /* DashboardDueTicketsCollectionViewCell.swift in Sources */,
 				225F248F252B16B10050491A /* AccountListRoute.swift in Sources */,
 				225D4E4925130D4200664D70 /* NoteController.swift in Sources */,
+				22CCB11C2552964000C10AF7 /* DashboardNewlyCreatedArticlesCollectionViewCell.swift in Sources */,
 				225D4E5B2513234400664D70 /* EventView.swift in Sources */,
+				22CCB111255292C200C10AF7 /* DashboardActiveUsersCollectionViewCell.swift in Sources */,
 				224326FB25087815005AE588 /* NotificationTableViewCell.swift in Sources */,
 				22802DF024FE1DD900429518 /* CalendarView.swift in Sources */,
 				224326F225077A81005AE588 /* MenuViewController.swift in Sources */,
@@ -2332,15 +2422,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = ULAYXARLG5;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Carthage/Build/iOS/Static",
+					"$(PROJECT_DIR)/sdk",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
 					"$(inherited)",
 					"RELEASE=1",
 				);
@@ -2350,11 +2441,15 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.basebs.ios.crm;
 				PRODUCT_NAME = "BaseBS CRM";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/BaseDemo/Helper/BaseDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 arm64e";
 			};
 			name = Debug;
 		};
@@ -2364,12 +2459,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = ULAYXARLG5;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Carthage/Build/iOS/Static",
+					"$(PROJECT_DIR)/sdk",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
 				INFOPLIST_FILE = BaseDemo/Helper/Resources/Info.plist;
@@ -2378,11 +2475,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.basebs.ios.crm;
 				PRODUCT_NAME = "BaseBS CRM";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/BaseDemo/Helper/BaseDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 arm64e";
 			};
 			name = Release;
 		};

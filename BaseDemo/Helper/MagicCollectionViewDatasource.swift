@@ -281,6 +281,20 @@ extension MagicCollectionViewDatasource: ProfileCollectionViewCellOutput {
 //            RouterManager.shared.handleRouter(AccountRoute())
             return
         }
+        //FIXME Jabber Guest demo
+        if name == Profile_Item.question.rawValue {
+//            let jabberG: CJGuestCallViewController? = CJGuestCallViewController()
+//            
+//            if jabberG != nil {
+//                jabberG!.serverName = "https://demo-exp-e-01.mailbasebs.com"//"jabberguestsandbox.cisco.com"
+//                jabberG!.toURI = "3001@mailbasebs.com"//"5555"
+//            }
+//            let controller = UIApplication.getTopViewController()
+//            
+//            controller?.navigationController?.pushViewController(jabberG!, animated:true)
+//            
+//            return
+        }
         
         let topController = UIApplication.getTopViewController()
         let vc = UIViewController()

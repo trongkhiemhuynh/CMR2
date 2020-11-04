@@ -52,32 +52,50 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="235" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="134 New tickets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHI-3X-LRy">
-                                                                <rect key="frame" x="61.5" y="6" width="112.5" height="18"/>
+                                                                <rect key="frame" x="41.5" y="6" width="112.5" height="18"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                                 <color key="textColor" red="0.83921568627450982" green="0.0" blue="0.33725490196078434" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_newticket" translatesAutoresizingMaskIntoConstraints="NO" id="WLK-Ya-teK">
+                                                                <rect key="frame" x="162" y="10" width="22" height="10"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="10" id="Pd3-9Z-Jz6"/>
+                                                                    <constraint firstAttribute="width" constant="22" id="Yxb-b5-K05"/>
+                                                                </constraints>
+                                                            </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
+                                                            <constraint firstItem="WLK-Ya-teK" firstAttribute="centerY" secondItem="g3p-7V-0ec" secondAttribute="centerY" id="4NY-Ca-n0o"/>
+                                                            <constraint firstItem="WLK-Ya-teK" firstAttribute="leading" secondItem="GHI-3X-LRy" secondAttribute="trailing" constant="8" id="4qM-cU-aMY"/>
                                                             <constraint firstItem="GHI-3X-LRy" firstAttribute="centerY" secondItem="g3p-7V-0ec" secondAttribute="centerY" id="WIz-4r-Pq2"/>
-                                                            <constraint firstItem="GHI-3X-LRy" firstAttribute="centerX" secondItem="g3p-7V-0ec" secondAttribute="centerX" id="z8W-na-X7u"/>
+                                                            <constraint firstItem="GHI-3X-LRy" firstAttribute="centerX" secondItem="g3p-7V-0ec" secondAttribute="centerX" constant="-20" id="z8W-na-X7u"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="48K-Jb-w3d">
                                                         <rect key="frame" x="235" y="0.0" width="235" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="98 Open tickets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOi-Ok-h6u">
-                                                                <rect key="frame" x="61.5" y="6" width="112" height="18"/>
+                                                                <rect key="frame" x="41.5" y="6" width="112" height="18"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                                 <color key="textColor" red="0.12941176470588234" green="0.69803921568627447" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_openticket" translatesAutoresizingMaskIntoConstraints="NO" id="hv9-UN-qEJ">
+                                                                <rect key="frame" x="162.5" y="10" width="22" height="10"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="22" id="fEc-9s-SbY"/>
+                                                                    <constraint firstAttribute="height" constant="10" id="uRh-t8-VoB"/>
+                                                                </constraints>
+                                                            </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
+                                                            <constraint firstItem="hv9-UN-qEJ" firstAttribute="leading" secondItem="DOi-Ok-h6u" secondAttribute="trailing" constant="9" id="0YJ-Nr-WUd"/>
                                                             <constraint firstItem="DOi-Ok-h6u" firstAttribute="centerY" secondItem="48K-Jb-w3d" secondAttribute="centerY" id="Crm-1q-mi6"/>
-                                                            <constraint firstItem="DOi-Ok-h6u" firstAttribute="centerX" secondItem="48K-Jb-w3d" secondAttribute="centerX" id="cfo-RE-2hY"/>
+                                                            <constraint firstItem="hv9-UN-qEJ" firstAttribute="centerY" secondItem="48K-Jb-w3d" secondAttribute="centerY" id="KeO-ja-imo"/>
+                                                            <constraint firstItem="DOi-Ok-h6u" firstAttribute="centerX" secondItem="48K-Jb-w3d" secondAttribute="centerX" constant="-20" id="cfo-RE-2hY"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -123,4 +141,8 @@
             <point key="canvasLocation" x="101" y="57"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="ic_newticket" width="21.5" height="9.5"/>
+        <image name="ic_openticket" width="17" height="18"/>
+    </resources>
 </document>

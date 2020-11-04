@@ -12,8 +12,9 @@ import UIKit
 let heightScreen = UIScreen.main.bounds.size.height
 let widthScreen = UIScreen.main.bounds.size.width
 
-let heightTabbar: CGFloat = 68.0
+let heightTabbar: CGFloat = 67.0
 let delayTime: Double = 0.35
+
 struct Constants {
     struct App {
         
